@@ -1,0 +1,81 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kenney-survival	survival-kit/Models/GLB format/barrel-open.glb	31772	model	380	1			0.92/0.86	1		
+kenney-survival	survival-kit/Models/GLB format/barrel.glb	34256	model	412	1			0.92/0.86	1		
+kenney-survival	survival-kit/Models/GLB format/bedroll-frame.glb	10152	model	100	1			0.68/0.59		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/bedroll-packed.glb	13680	model	124	1			0.65/0.62		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/bedroll.glb	14036	model	144	1			0.92/0.85	1	boxes	
+kenney-survival	survival-kit/Models/GLB format/bottle-large.glb	10484	model	96	1			0.59/0.5		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/bottle.glb	10468	model	96	1			0.54/0.45		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/box-large-open.glb	17068	model	156	1			0.87/0.84		skip	
+kenney-survival	survival-kit/Models/GLB format/box-large.glb	14072	model	124	1			0.93/0.89	1	boxes	
+kenney-survival	survival-kit/Models/GLB format/box-open.glb	17052	model	156	1			0.87/0.82	1	boxes	
+kenney-survival	survival-kit/Models/GLB format/box.glb	14056	model	124	1			0.93/0.89	1	boxes	
+kenney-survival	survival-kit/Models/GLB format/bucket.glb	7816	model	68	1			0.88/0.82	1	boxes	
+kenney-survival	survival-kit/Models/GLB format/campfire-fishing-stand.glb	10188	model	100	1			0.67/0.57		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/campfire-pit.glb	26468	model	305	1			0.74/0.7		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/campfire-stand.glb	8320	model	76	1			0.93/0.73	1		
+kenney-survival	survival-kit/Models/GLB format/chest.glb	35172	model	322	1			0.94/0.91	1		
+kenney-survival	survival-kit/Models/GLB format/fence-doorway.glb	13588	model	108	1			0.89/0.83	1		
+kenney-survival	survival-kit/Models/GLB format/fence-fortified.glb	13592	model	120	1			0.91/0.86	1		
+kenney-survival	survival-kit/Models/GLB format/fence.glb	6428	model	48	1			0.9/0.8	1		
+kenney-survival	survival-kit/Models/GLB format/fish-large.glb	31728	model	233	1			0.63/0.58		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/fish.glb	31688	model	233	1			0.56/0.43		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/floor-hole.glb	16432	model	144	1			0.71/0.62		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/floor-old.glb	10056	model	84	1			0.98/0.94		skip	
+kenney-survival	survival-kit/Models/GLB format/floor.glb	10044	model	84	1			0.99/0.98		skip	
+kenney-survival	survival-kit/Models/GLB format/grass-large.glb	18848	model	144	1			0.44/0.32		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/grass.glb	5992	model	36	1			0.61/0.48		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/metal-panel-narrow.glb	13700	model	152	1			0.81/0.76		skip	
+kenney-survival	survival-kit/Models/GLB format/metal-panel-screws-half.glb	28272	model	320	1			0.82/0.77		skip	
+kenney-survival	survival-kit/Models/GLB format/metal-panel-screws-narrow.glb	18292	model	192	1			0.83/0.7		skip	
+kenney-survival	survival-kit/Models/GLB format/metal-panel-screws.glb	28256	model	320	1			0.87/0.82		skip	
+kenney-survival	survival-kit/Models/GLB format/metal-panel.glb	24120	model	280	1			0.84/0.71		skip	
+kenney-survival	survival-kit/Models/GLB format/patch-grass-large.glb	3508	model	33	1			0.5/0		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/patch-grass.glb	3492	model	33	1			0.67/0		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/resource-planks.glb	8884	model	72	1			0.96/0.95	1		
+kenney-survival	survival-kit/Models/GLB format/resource-stone-large.glb	12664	model	132	1			0.78/0.71		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/resource-stone.glb	5464	model	44	1			0.69/0.63		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/resource-wood.glb	7272	model	64	1			0.59/0.56		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/rock-a.glb	10812	model	104	1			0.77/0.74		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/rock-b.glb	15184	model	156	1			0.75/0.53		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/rock-c.glb	11692	model	120	1			0.76/0.66		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/rock-flat-grass.glb	65376	model	758	1			0.77/0.71		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/rock-flat.glb	24780	model	274	1			0.77/0.71		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/rock-sand-a.glb	9636	model	92	1			0.77/0.73		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/rock-sand-b.glb	17624	model	180	1			0.72/0.7		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/rock-sand-c.glb	14084	model	144	1			0.76/0.64		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/signpost-single.glb	4452	model	28	1			0.92/0.89	1		
+kenney-survival	survival-kit/Models/GLB format/signpost.glb	5924	model	44	1			0.92/0.89	1		
+kenney-survival	survival-kit/Models/GLB format/structure-canvas.glb	11276	model	96	1			0.93/0.88	1	boxes	
+kenney-survival	survival-kit/Models/GLB format/structure-floor.glb	19236	model	164	1			0.96/0.93		skip	
+kenney-survival	survival-kit/Models/GLB format/structure-metal-doorway.glb	18532	model	160	1			0.89/0.88		skip	
+kenney-survival	survival-kit/Models/GLB format/structure-metal-floor.glb	33068	model	352	1			0.94/0.89		skip	
+kenney-survival	survival-kit/Models/GLB format/structure-metal-roof.glb	40704	model	456	1			0.91/0.88		skip	
+kenney-survival	survival-kit/Models/GLB format/structure-metal-wall.glb	10172	model	92	1			0.89/0.87		skip	
+kenney-survival	survival-kit/Models/GLB format/structure-metal.glb	19088	model	184	1			0.89/0.88		skip	
+kenney-survival	survival-kit/Models/GLB format/structure-roof.glb	21740	model	188	1			0.92/0.87	1	boxes	
+kenney-survival	survival-kit/Models/GLB format/structure.glb	9672	model	80	1			0.92/0.9		skip	
+kenney-survival	survival-kit/Models/GLB format/tent-canvas-half.glb	15656	model	136	1			0.66/0.51		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/tent-canvas.glb	16864	model	148	1			0.79/0.76		budget boxes fit	
+kenney-survival	survival-kit/Models/GLB format/tent.glb	14020	model	124	1			0.88/0.87		skip	
+kenney-survival	survival-kit/Models/GLB format/tool-axe-upgraded.glb	13132	model	140	1			0.62/0.59		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/tool-axe.glb	8612	model	84	1			0.63/0.58		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/tool-hammer-upgraded.glb	8940	model	80	1			0.92/0.86	1		
+kenney-survival	survival-kit/Models/GLB format/tool-hammer.glb	6520	model	52	1			0.76/0.66		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/tool-hoe-upgraded.glb	10740	model	106	1			0.65/0.61		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/tool-hoe.glb	6628	model	58	1			0.7/0.65		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/tool-pickaxe-upgraded.glb	11168	model	110	1			0.63/0.6		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/tool-pickaxe.glb	8152	model	74	1			0.52/0.5		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/tool-shovel-upgraded.glb	16400	model	176	1			0.65/0.64		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/tool-shovel.glb	11656	model	124	1			0.77/0.75		boxes fit	
+kenney-survival	survival-kit/Models/GLB format/tree-autumn-tall.glb	19748	model	198	1			0.93/0.9	1		
+kenney-survival	survival-kit/Models/GLB format/tree-autumn-trunk.glb	6928	model	52	1			0.86/0.85		skip	
+kenney-survival	survival-kit/Models/GLB format/tree-autumn.glb	19732	model	198	1			0.92/0.9	1		
+kenney-survival	survival-kit/Models/GLB format/tree-log-small.glb	9216	model	88	1			0.89/0.85	1	boxes	
+kenney-survival	survival-kit/Models/GLB format/tree-log.glb	9180	model	88	1			0.81/0.79	1	boxes	
+kenney-survival	survival-kit/Models/GLB format/tree-tall.glb	24672	model	254	1			0.93/0.9	1		
+kenney-survival	survival-kit/Models/GLB format/tree-trunk.glb	6920	model	52	1			0.86/0.85	1	boxes	
+kenney-survival	survival-kit/Models/GLB format/tree.glb	22184	model	226	1			0.92/0.9	1		
+kenney-survival	survival-kit/Models/GLB format/workbench-anvil.glb	30084	model	298	1			0.89/0.82	1	boxes	
+kenney-survival	survival-kit/Models/GLB format/workbench-grind.glb	24704	model	232	1			0.93/0.91	1		
+kenney-survival	survival-kit/Models/GLB format/workbench.glb	26104	model	236	1			0.94/0.9	1	boxes	

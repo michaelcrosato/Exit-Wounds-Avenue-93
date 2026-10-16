@@ -1,0 +1,54 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/armchair.gltf	3019	model	528	1			0.94/0.86	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/armchair_pillows.gltf	3036	model	614	1			0.94/0.86	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/bed_double_A.gltf	3011	model	540	1			0.94/0.93	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/bed_double_B.gltf	3011	model	600	1			0.96/0.95	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/bed_single_A.gltf	3009	model	474	1			0.92/0.89	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/bed_single_B.gltf	3009	model	534	1			0.93/0.86	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/book_set.gltf	3051	model	196	1			0.78/0.74		boxes fit	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/book_single.gltf	3056	model	68	1			0.61/0.56		boxes fit	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/cabinet_medium.gltf	3000	model	428	1			0.87/0.82	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/cabinet_medium_decorated.gltf	3060	model	1018	1			0.87/0.83	1	budget boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/cabinet_small.gltf	3001	model	322	1			0.94/0.92	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/cabinet_small_decorated.gltf	3068	model	464	1			0.88/0.85	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/cactus_medium_A.gltf	3072	model	448	1			0.87/0.84	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/cactus_medium_B.gltf	3072	model	448	1			0.82/0.8	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/cactus_small_A.gltf	3071	model	252	1			0.59/0.55		boxes fit	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/cactus_small_B.gltf	3071	model	252	1			0.83/0.79	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/chair_A.gltf	3022	model	308	1			0.88/0.84	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/chair_A_wood.gltf	3032	model	308	1			0.87/0.83	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/chair_B.gltf	3049	model	384	1			0.89/0.86	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/chair_B_wood.gltf	3059	model	384	1			0.89/0.87	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/chair_C.gltf	3036	model	288	1			0.75/0.72		boxes fit	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/chair_stool.gltf	3042	model	216	1			0.81/0.78	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/chair_stool_wood.gltf	3052	model	216	1			0.88/0.85	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/couch.gltf	3014	model	636	1			0.88/0.81	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/couch_pillows.gltf	3030	model	808	1			0.88/0.81	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/lamp_standing.gltf	3034	model	320	1			0.85/0.84	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/lamp_table.gltf	3029	model	392	1			0.86/0.82	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/pictureframe_large_A.gltf	3071	model	60	1			0.98/0.96		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/pictureframe_large_B.gltf	3054	model	60	1			0.97/0.92		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/pictureframe_medium.gltf	3069	model	60	1			0.87/0.77		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/pictureframe_small_A.gltf	3073	model	60	1			0.94/0.81		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/pictureframe_small_B.gltf	3073	model	60	1			0.85/0.76		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/pictureframe_small_C.gltf	3071	model	60	1			0.92/0.79		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/pictureframe_standing_A.gltf	3050	model	74	1			0.9/0.79		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/pictureframe_standing_B.gltf	3081	model	74	1			0.88/0.78		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/pillow_A.gltf	3029	model	86	1			0.8/0.78	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/pillow_B.gltf	3029	model	86	1			0.8/0.78	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/rug_oval_A.gltf	2970	model	176	1			0.76/0.72		fit	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/rug_oval_B.gltf	2970	model	176	1			0.76/0.72		fit	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/rug_rectangle_A.gltf	2971	model	44	1			0.97/0.96	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/rug_rectangle_B.gltf	2971	model	44	1			0.97/0.96	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/rug_rectangle_stripes_A.gltf	2988	model	68	1			0.97/0.96		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/rug_rectangle_stripes_B.gltf	2988	model	68	1			0.94/0.93		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/shelf_A_big.gltf	3025	model	212	1			0.84/0.75	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/shelf_A_small.gltf	3033	model	212	1			0.83/0.79		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/shelf_B_large.gltf	3047	model	212	1			0.87/0.83	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/shelf_B_large_decorated.gltf	3069	model	482	1			0.84/0.82	1	boxes	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/shelf_B_small.gltf	3049	model	212	1			0.86/0.78		skip	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/shelf_B_small_decorated.gltf	3071	model	532	1			0.78/0.77		boxes fit	
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/table_low.gltf	2990	model	276	1			0.92/0.91	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/table_medium.gltf	2973	model	168	1			0.92/0.9	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/table_medium_long.gltf	2987	model	168	1			0.93/0.92	1		
+kaykit-furniture-bits	KayKit-Furniture-Bits-1.0/addons/kaykit_furniture_bits/Assets/gltf/table_small.gltf	2979	model	168	1			0.91/0.88	1		

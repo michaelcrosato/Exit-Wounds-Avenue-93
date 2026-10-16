@@ -1,0 +1,44 @@
+{
+  "$sources": {
+    "kaykit-halloween-bits": {"label":"KayKit Halloween Bits","origin":"Kay Lousberg (kaylousberg.com), KayKit-Halloween-Bits-1.0","license":"CC0 1.0","url":"https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0","commit":"6dc69bf6b2fa766a985754f35ec6a0324090e6c6","fetched":"2026-10-14","licenseHash":"a514c41d8d5f2a07","dir":"KayKit-Halloween-Bits-1.0","scale":1}
+  },
+  "$skip": {
+    "candle-melted": "a variant of candle",
+    "candle-thin": "a variant of candle",
+    "crypt": "structural: a whole mausoleum building, flat grey, bigger than a house",
+    "floor-dirt": "structural: TileMap and materials do floors",
+    "floor-dirt-grave": "structural: a floor tile with a mound; TileMap and materials do floors",
+    "floor-dirt-small": "structural: TileMap and materials do floors",
+    "gravestone": "a plain grey box; grave-a and grave-b are the headstones",
+    "path-a": "structural: path pieces; floors do paths",
+    "path-b": "structural: path pieces; floors do paths",
+    "path-c": "structural: path pieces; floors do paths",
+    "plaque": "reads as a floor slab; plaque-candles is the one a game places",
+    "pumpkin-orange-jackolantern": "reads as pumpkin-orange: the carved face sits inside the body and is lost",
+    "shrine": "a plain grey standing stone; a variant of shrine-candles and pillar",
+    "skull": "reads badly: a pale pink block, the face is under it and lost"
+  },
+  "$mats": {
+    "steel": "granite",
+    "shingle": "oak",
+    "porcelain": "bone",
+    "sandstone": "bone",
+    "copper": "clay",
+    "gold-b": "clay"
+  },
+  "bench": ["furniture bench graveyard park","low weathered grey-brown wooden bench on slab legs"],
+  "candle": ["light candle graveyard dungeon","single tall white wax candle"],
+  "candle-triple": ["light candle graveyard dungeon","three white wax candles fused in one cluster"],
+  "coffin": ["container coffin graveyard crypt","closed dark wooden coffin with small iron fittings"],
+  "coffin-decorated": ["container coffin graveyard crypt","dark wooden coffin, skull and bones on the lid"],
+  "fence-broken": ["fence graveyard","broken graveyard fence: two stone posts, bent bars between"],
+  "fence-pillar": ["fence post graveyard","tall square grey stone fence post"],
+  "grave-a": ["grave headstone graveyard","flat-topped grey headstone on a low grave slab"],
+  "grave-b": ["grave headstone graveyard","peaked grey headstone on a low grave slab"],
+  "gravemarker-b": ["grave cross graveyard","small wooden grave cross with grey cloth tied on"],
+  "pillar": ["decoration obelisk graveyard","tall grey stone obelisk with a pointed top"],
+  "plaque-candles": ["decoration altar graveyard candle","flat grey stone slab with a cluster of white candles"],
+  "pumpkin-orange": ["food pumpkin halloween farm","round ribbed orange pumpkin with a short stem"],
+  "pumpkin-yellow-jackolantern": ["decoration pumpkin halloween","golden yellow pumpkin, faint carved face, short stem"],
+  "shrine-candles": ["decoration shrine graveyard candle","stepped grey stone shrine with a white candle on top"]
+}

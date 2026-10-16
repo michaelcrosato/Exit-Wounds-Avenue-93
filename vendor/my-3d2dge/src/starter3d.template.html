@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+  my-3D2dge (My "3D" 2D Game Engine), {{EDITION}} v{{VERSION}} ({{BUILD}})
+  https://github.com/michaelcrosato/my-3d2dge (MIT License)
+
+  AI MODELS: this one file is the engine, the 3D engine, their documentation and {{GAMES}}.
+    1. Read the 3D engine's manual: the comment at the top of the script marked "inlined from engine/my-3d2dge-3d.js".
+       Then the API card in <script type="text/markdown" id="my3d2dge-api"> below, for what the 2D engine still does in
+       a 3D game: the game and its scenes, input, the rigs and their moves, the HUD (font, ui, menus), sound.
+    2. The engines are the scripts marked "inlined from engine/...". Do not change them unless you are asked to extend
+       the engines themselves.
+    3. The games live between GAME START and GAME END: {{CONTENTS}}
+       To make a new game, copy the slice closest to your genre, then replace everything between GAME START and
+       GAME END with only your game. Keep everything else in this file as it is.
+    4. SERVED, NOT DOUBLE-CLICKED: the 3D engine loads three.js r182 and Rapier 0.19.3 from /vendor/ (this repository's
+       vendor/ folder) through the import map below. Serve the repository's root (npx serve, python3 -m http.server)
+       and open this file there, or open it on my-3d2dge.vercel.app. Elsewhere, copy vendor/ beside it and change the
+       four "/vendor/" paths to "./vendor/".
+  HUMANS: open it served and play. Press ? for the API card.
+  {{LINKS}}
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>my-3D2dge · {{EDITION}}</title>
+<script type="text/markdown" id="my3d2dge-api">
+<!-- @inline-raw API.md -->
+</script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "/vendor/three-0.182.0/three.webgpu.min.js",
+    "three/webgpu": "/vendor/three-0.182.0/three.webgpu.min.js",
+    "three/tsl": "/vendor/three-0.182.0/three.tsl.min.js",
+    "@dimforge/rapier3d-simd-compat": "/vendor/rapier3d-simd-compat-0.19.3/rapier.js"
+  }
+}
+</script>
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+#stage{position:relative;width:100%;height:100%;overflow:hidden;background:#000;touch-action:none}
+#view{position:absolute;left:0;top:0;display:block;pointer-events:none;z-index:0}
+#screen{position:absolute;inset:0;width:100%;height:100%;display:block;image-rendering:pixelated;z-index:1;background:transparent}
+#guideBtn{position:absolute;top:calc(8px + env(safe-area-inset-top,0px));right:calc(112px + env(safe-area-inset-right,0px));z-index:5;font:600 12px/1 ui-monospace,Menlo,Consolas,monospace;color:#d8d0f0;background:rgba(20,16,40,.6);border:1px solid rgba(216,208,240,.3);border-radius:4px;padding:5px 7px;cursor:pointer;opacity:.55}
+#guideBtn:hover,#guideBtn:focus-visible{opacity:1}
+#guideBtn.away{opacity:0;transition:opacity .4s;pointer-events:none}
+@media (pointer:coarse){#guideBtn{display:none}}
+#guide{position:absolute;inset:0;z-index:6;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.6)}
+#guide[hidden]{display:none}
+#guide .panel{width:min(860px,100%);max-height:100%;display:flex;flex-direction:column;background:#141226;color:#eee8ff;border:1px solid #4a4470;border-radius:6px}
+#guide header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #4a4470;font:600 14px system-ui,sans-serif}
+#guide header button{font:inherit;color:inherit;background:#2a2648;border:1px solid #4a4470;border-radius:4px;padding:5px 10px;cursor:pointer}
+#guide pre{margin:0;padding:14px;overflow:auto;font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;-webkit-user-select:text;user-select:text}
+</style>
+</head>
+<body>
+<!-- @boot -->
+<div id="stage">
+  <canvas id="view" aria-hidden="true"></canvas>
+  <canvas id="screen" role="img" aria-label="my-3D2dge 3D game screen"></canvas>
+  <button type="button" id="guideBtn" title="The manuals (?)">? API</button>
+  <div id="guide" hidden role="dialog" aria-modal="true" aria-labelledby="guideTitle">
+    <div class="panel">
+      <header><span id="guideTitle">my-3D2dge 3D manual and API card</span><button type="button" id="guideClose">Close</button></header>
+      <pre id="guideText"></pre>
+    </div>
+  </div>
+</div>
+<script>
+// in-page manual viewer: the 3D engine's manual (its header, once the engine has loaded) and the API card. Not part of any game.
+(() => {
+  const g = document.getElementById('guide'), open = v => {
+    g.hidden = !v; if (!v) return;
+    const s = [...document.scripts].find(x => x.textContent.includes('inlined from engine/my-3d2dge-3d.js')), c = s && s.textContent.match(/\/\*![\s\S]*?\*\//);
+    const m = c && c[0].split('\n').map(l => l.replace(/^\s*\/?\*+!? ?\/?/, '')).join('\n').trim();
+    document.getElementById('guideText').textContent = (m ? m + '\n\n' + '-'.repeat(72) + '\n\n' : '') + document.getElementById('my3d2dge-api').textContent.trim();
+    document.getElementById('guideClose').focus();
+  };
+  document.getElementById('guideBtn').addEventListener('click', e => { open(true); e.currentTarget.blur(); });
+  document.getElementById('guideClose').addEventListener('click', () => open(false));
+  addEventListener('keydown', e => { if (e.key === '?') open(g.hidden); else if (e.key === 'Escape' && !g.hidden) open(false); });
+  const btn = document.getElementById('guideBtn'); let hide = setTimeout(() => btn.classList.add('away'), 4000);
+  addEventListener('keydown', () => btn.classList.add('away'));
+  addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; btn.classList.remove('away'); clearTimeout(hide); hide = setTimeout(() => btn.classList.add('away'), 3000); });
+})();
+</script>
+<!-- @inline engine/my-3d2dge.js -->
+<!-- the slices' objects: sets cut from the asset store (docs/ASSETS.md, "Use it"), each only with its slice -->
+<!-- @inline-with 10-action.js src/assets/sets/action3d.js -->
+<!-- @inline-with 20-platformer.js src/assets/sets/platformer3d.js -->
+<!-- @inline-esm engine/my-3d2dge-3d.js -->
+<!-- @inline-module src/starter3d -->
+</body>
+</html>

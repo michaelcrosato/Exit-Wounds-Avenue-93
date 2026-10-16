@@ -1,0 +1,141 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kenney-furniture	furniture-kit/Models/GLTF format/bathroomCabinet.glb	7216	model	64	3			0.98/0.91	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/bathroomCabinetDrawer.glb	34744	model	508	4			0.94/0.91	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/bathroomMirror.glb	6792	model	72	3			0.85/0.76		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/bathroomSink.glb	22536	model	316	3			0.76/0.72		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/bathroomSinkSquare.glb	15108	model	234	3			0.8/0.73	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/bathtub.glb	35500	model	602	3			0.88/0.83		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/bear.glb	11884	model	134	3			0.74/0.66		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/bedBunk.glb	40784	model	580	3			0.82/0.56		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/bedDouble.glb	23368	model	264	4			0.96/0.94	1		
+kenney-furniture	furniture-kit/Models/GLTF format/bedSingle.glb	18636	model	214	4			0.97/0.96	1		
+kenney-furniture	furniture-kit/Models/GLTF format/bench.glb	10756	model	170	1			0.7/0.58		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/benchCushion.glb	12500	model	196	2			0.7/0.56		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/benchCushionLow.glb	10268	model	138	3			0.68/0.62		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/bookcaseClosed.glb	23132	model	372	1			0.95/0.91	1		
+kenney-furniture	furniture-kit/Models/GLTF format/bookcaseClosedDoors.glb	22644	model	296	2			0.95/0.91		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/bookcaseClosedWide.glb	23140	model	372	1			0.95/0.95		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/bookcaseOpen.glb	18020	model	320	1			0.75/0.55		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/bookcaseOpenLow.glb	11520	model	184	1			0.67/0.49		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/books.glb	6864	model	62	4			0.96/0.91		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/cabinetBed.glb	7496	model	72	2			0.94/0.89		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/cabinetBedDrawer.glb	16088	model	182	3			0.91/0.84	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/cabinetBedDrawerTable.glb	12200	model	140	3			0.82/0.7	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/cabinetTelevision.glb	10524	model	154	1			0.93/0.91		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/cabinetTelevisionDoors.glb	16876	model	210	2			0.92/0.9	1		
+kenney-furniture	furniture-kit/Models/GLTF format/cardboardBoxClosed.glb	5400	model	60	2			0.77/0.75		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/cardboardBoxOpen.glb	5404	model	60	2			0.6/0.58		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/ceilingFan.glb	15284	model	214	3			0.79/0.69		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/chair.glb	10756	model	170	1			0.79/0.68		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/chairCushion.glb	12588	model	198	2			0.79/0.67		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/chairDesk.glb	39016	model	588	2			0.85/0.8	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/chairModernCushion.glb	7376	model	92	2			0.65/0.61		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/chairModernFrameCushion.glb	18592	model	284	2			0.56/0.46		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/chairRounded.glb	17156	model	280	1			0.76/0.66		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/coatRack.glb	9948	model	132	2			0.97/0.93		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/coatRackStanding.glb	13288	model	190	1			0.48/0.45		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/computerKeyboard.glb	3476	model	32	2			0.91/0.54		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/computerMouse.glb	5868	model	71	1			0.58/0.38		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/computerScreen.glb	6404	model	72	2			0.69/0.55		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/desk.glb	15048	model	198	2			0.78/0.68		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/deskCorner.glb	17984	model	250	2			0.86/0.74	1		
+kenney-furniture	furniture-kit/Models/GLTF format/doorway.glb	14532	model	188	2			0.98/0.97		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/doorwayFront.glb	13016	model	156	4			0.95/0.92		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/doorwayOpen.glb	3256	model	28	1			0.74/0.56		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/dryer.glb	17760	model	262	3			0.95/0.89		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/floorCorner.glb	2524	model	16	1			0.98/0.97		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/floorCornerRound.glb	5168	model	60	1			0.69/0.65		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/floorFull.glb	2260	model	12	1			1/1		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/floorHalf.glb	2264	model	12	1			0.56/0.52		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/hoodLarge.glb	4652	model	36	2			0.87/0.82	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/hoodModern.glb	3968	model	28	2			0.78/0.73		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenBar.glb	6004	model	76	3			0.85/0.75	1		
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenBarEnd.glb	11084	model	152	2			0.87/0.7		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenBlender.glb	18728	model	246	3			0.51/0.46		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenCabinet.glb	10444	model	114	3			0.97/0.95	1		
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenCabinetCornerInner.glb	5184	model	54	2			0.96/0.94		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenCabinetCornerRound.glb	13656	model	194	2			0.9/0.85		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenCabinetDrawer.glb	15384	model	174	3			0.97/0.95		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenCabinetUpper.glb	8168	model	80	3			0.99/0.98	1		
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenCabinetUpperCorner.glb	13712	model	204	1			0.88/0.77		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenCabinetUpperDouble.glb	18184	model	234	3			0.99/0.98		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenCabinetUpperLow.glb	7216	model	64	3			0.97/0.96		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenCoffeeMachine.glb	13332	model	166	3			0.72/0.67		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenFridge.glb	20116	model	250	4			0.91/0.88	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenFridgeBuiltIn.glb	22616	model	268	5			0.97/0.95	1		
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenFridgeLarge.glb	30632	model	436	2			0.95/0.9		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenFridgeSmall.glb	12988	model	152	4			0.91/0.87		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenMicrowave.glb	11248	model	152	4			0.89/0.85	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenSink.glb	23480	model	318	6			0.91/0.89	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenStove.glb	54324	model	830	5			0.96/0.95	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/kitchenStoveElectric.glb	18604	model	338	6			0.96/0.95		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/lampRoundFloor.glb	6600	model	76	2			0.53/0.45		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/lampRoundTable.glb	6604	model	76	2			0.85/0.72	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/lampSquareCeiling.glb	5628	model	60	2			0.76/0.73		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/lampSquareFloor.glb	5624	model	60	2			0.83/0.73	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/lampSquareTable.glb	5624	model	60	2			0.84/0.74	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/lampWall.glb	4828	model	42	2			0.47/0.32		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/laptop.glb	5540	model	68	3			0.91/0.7	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/loungeChair.glb	9648	model	128	2			0.93/0.9	1		
+kenney-furniture	furniture-kit/Models/GLTF format/loungeChairRelax.glb	13904	model	188	3			0.91/0.89	1		
+kenney-furniture	furniture-kit/Models/GLTF format/loungeDesignChair.glb	9136	model	116	2			0.91/0.86	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/loungeDesignSofa.glb	9128	model	116	2			0.91/0.84	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/loungeDesignSofaCorner.glb	13744	model	176	2			0.91/0.79	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/loungeSofa.glb	9644	model	128	2			0.94/0.86	1		
+kenney-furniture	furniture-kit/Models/GLTF format/loungeSofaCorner.glb	13412	model	190	2			0.92/0.78	1		
+kenney-furniture	furniture-kit/Models/GLTF format/loungeSofaLong.glb	13112	model	186	2			0.88/0.84		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/loungeSofaOttoman.glb	6960	model	84	2			0.93/0.91	1		
+kenney-furniture	furniture-kit/Models/GLTF format/paneling.glb	3960	model	40	1			0.9/0.77		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/pillow.glb	5044	model	50	1			0.85/0.78	1		
+kenney-furniture	furniture-kit/Models/GLTF format/pillowBlue.glb	5056	model	50	1			0.83/0.69		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/pillowBlueLong.glb	5088	model	50	1			0.88/0.72	1		
+kenney-furniture	furniture-kit/Models/GLTF format/pillowLong.glb	5072	model	50	1			0.88/0.79		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/plantSmall1.glb	8224	model	102	2			0.62/0.56		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/plantSmall2.glb	12996	model	158	2			0.67/0.64		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/plantSmall3.glb	8424	model	98	2			0.98/0.91		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/pottedPlant.glb	7576	model	60	3			0.66/0.62		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/radio.glb	25020	model	432	3			0.91/0.86	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/rugDoormat.glb	13812	model	204	1			0.84/0		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/rugRectangle.glb	3188	model	28	2			0.84/0		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/rugRound.glb	10164	model	188	2			0.82/0		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/rugRounded.glb	10876	model	204	2			0.83/0		budget boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/rugSquare.glb	3180	model	28	2			0.85/0		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/shower.glb	52020	model	810	4			0.99/0.97		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/showerRound.glb	72048	model	960	4			0.97/0.96		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/sideTable.glb	8800	model	118	2			0.8/0.69	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/sideTableDrawers.glb	19072	model	238	3			0.84/0.76		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/speaker.glb	15744	model	228	2			0.88/0.84	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/speakerSmall.glb	15244	model	220	2			0.82/0.77	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/stairs.glb	21616	model	308	2			0.91/0.87		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/stairsCorner.glb	21576	model	312	2			0.82/0.75		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/stairsOpen.glb	39924	model	558	3			0.71/0.44		budget boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/stairsOpenSingle.glb	24600	model	326	2			0.56/0.38		budget boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/stoolBar.glb	11816	model	176	2			0.59/0.46		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/stoolBarSquare.glb	9784	model	142	2			0.53/0.39		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/table.glb	8196	model	120	1			0.71/0.57		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/tableCloth.glb	9920	model	144	2			0.72/0.61		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/tableCoffee.glb	8256	model	124	1			0.77/0.5		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/tableCoffeeGlass.glb	9428	model	140	2			0.77/0.5		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/tableCoffeeGlassSquare.glb	9448	model	140	2			0.77/0.55		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/tableCoffeeSquare.glb	8276	model	124	1			0.77/0.55		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/tableCross.glb	12140	model	178	1			0.76/0.57		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/tableCrossCloth.glb	13852	model	202	2			0.76/0.58		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/tableGlass.glb	9848	model	144	2			0.71/0.57		fit	
+kenney-furniture	furniture-kit/Models/GLTF format/tableRound.glb	6444	model	80	1			0.85/0.81	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/televisionAntenna.glb	4500	model	44	1			0.29/0.26		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/televisionModern.glb	6368	model	72	2			0.83/0.69	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/televisionVintage.glb	19392	model	280	4			0.87/0.85	1	boxes	
+kenney-furniture	furniture-kit/Models/GLTF format/toaster.glb	14924	model	220	2			0.9/0.84		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/toilet.glb	18112	model	230	4			0.73/0.72		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/toiletSquare.glb	17548	model	228	2			0.78/0.77		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/trashcan.glb	6452	model	68	2			0.72/0.68		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/wall.glb	3340	model	12	3			0.94/0.85		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/wallCorner.glb	4460	model	28	3			0.95/0.9		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/wallCornerRond.glb	10448	model	116	3			0.95/0.9		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/wallDoorway.glb	6444	model	60	3			0.87/0.77		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/wallDoorwayWide.glb	6468	model	60	3			0.76/0.73		boxes fit	
+kenney-furniture	furniture-kit/Models/GLTF format/wallHalf.glb	3348	model	12	3			0.9/0.86		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/wallWindow.glb	10744	model	108	4			0.94/0.85		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/wallWindowSlide.glb	14564	model	152	4			0.94/0.85		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/washer.glb	48104	model	720	6			0.91/0.88		skip	
+kenney-furniture	furniture-kit/Models/GLTF format/washerDryerStacked.glb	64060	model	992	6			0.92/0.9		skip	

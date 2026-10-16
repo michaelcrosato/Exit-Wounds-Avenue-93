@@ -1,0 +1,92 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kenney-graveyard	graveyard-kit/Models/GLB format/altar-stone.glb	17164	model	166	1			0.93/0.9	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/altar-wood.glb	28368	model	306	1			0.97/0.96	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/bench-damaged.glb	23548	model	240	1			0.79/0.69		boxes fit	
+kenney-graveyard	graveyard-kit/Models/GLB format/bench.glb	15952	model	160	1			0.85/0.81	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/border-pillar.glb	11292	model	104	1			0.88/0.83	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/brick-wall-curve-small.glb	50812	model	524	1			0.95/0.94		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/brick-wall-curve.glb	34684	model	348	1			0.93/0.92		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/brick-wall-end.glb	31056	model	316	1			0.96/0.95		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/brick-wall.glb	19440	model	192	1			0.95/0.94		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/candle-multiple.glb	17304	model	162	1			0.95/0.92	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/candle.glb	6800	model	54	1			0.94/0.89	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/character-ghost.glb	114016	model	413	1			0.87/0.86		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/character-keeper.glb	250200	model	1141	1			0.87/0.85		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/character-skeleton.glb	202796	model	658	1			0.82/0.79		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/character-vampire.glb	248132	model	1100	1			0.86/0.84		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/character-zombie.glb	245500	model	1078	1			0.84/0.82		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/coffin-old.glb	19952	model	216	1			0.96/0.95	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/coffin.glb	24696	model	256	1			0.97/0.95	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/column-large.glb	37540	model	394	1			0.83/0.81		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/cross-column.glb	20820	model	200	1			0.87/0.86	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/cross-wood.glb	13080	model	126	1			0.92/0.87	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/cross.glb	15556	model	158	1			0.9/0.88	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/crypt-a.glb	10904	model	108	1			0.95/0.93	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/crypt-b.glb	12088	model	118	1			0.89/0.86		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/crypt-door.glb	16168	model	136	1			0.93/0.91		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/crypt-large-door.glb	21712	model	200	1			0.87/0.83		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/crypt-large-roof.glb	35600	model	406	1			0.8/0.76		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/crypt-large.glb	54852	model	626	1			0.85/0.72		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/crypt-small-roof.glb	27284	model	275	1			0.96/0.93		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/crypt-small.glb	36872	model	414	1			0.93/0.9		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/crypt.glb	25048	model	252	1			0.94/0.92	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/debris-wood.glb	10820	model	108	1			0.95/0.92	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/debris.glb	25132	model	240	1			0.9/0.88	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/detail-bowl.glb	17472	model	176	1			0.95/0.79	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/detail-chalice.glb	13816	model	136	1			0.92/0.85	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/detail-plate.glb	11424	model	116	1			0.94/0.92	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/fence-damaged.glb	30152	model	320	1			0.92/0.91	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/fence-gate.glb	28848	model	296	1			0.83/0.75		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/fence.glb	40020	model	432	1			0.94/0.93	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/fire-basket.glb	18740	model	196	1			0.8/0.77	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/grave-border.glb	57352	model	600	1			0.94/0.92	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/grave.glb	25080	model	256	1			0.8/0.68	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/gravestone-bevel.glb	15852	model	174	1			0.95/0.92	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/gravestone-broken.glb	12920	model	134	1			0.86/0.77	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/gravestone-cross-large.glb	18212	model	192	1			0.9/0.85	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/gravestone-cross.glb	20584	model	222	1			0.9/0.88	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/gravestone-debris.glb	11908	model	122	1			0.85/0.8	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/gravestone-decorative.glb	10004	model	92	1			0.92/0.88	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/gravestone-roof.glb	16316	model	172	1			0.87/0.82	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/gravestone-round.glb	16832	model	178	1			0.9/0.87	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/gravestone-wide.glb	23020	model	266	1			0.96/0.95	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/hay-bale-bundled.glb	35088	model	364	1			0.87/0.84	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/hay-bale.glb	17828	model	180	1			0.85/0.81	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/iron-fence-bar.glb	10128	model	88	1			0.77/0.69		boxes fit	
+kenney-graveyard	graveyard-kit/Models/GLB format/iron-fence-border-column.glb	40752	model	400	1			0.88/0.81	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/iron-fence-border-curve.glb	55232	model	576	1			0.58/0.52		budget boxes fit	
+kenney-graveyard	graveyard-kit/Models/GLB format/iron-fence-border-gate.glb	26340	model	256	1			0.9/0.88	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/iron-fence-border.glb	39188	model	380	1			0.86/0.78	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/iron-fence-curve.glb	46152	model	472	1			0.43/0.24		budget boxes fit	
+kenney-graveyard	graveyard-kit/Models/GLB format/iron-fence-damaged.glb	34956	model	336	1			0.76/0.67		boxes fit	
+kenney-graveyard	graveyard-kit/Models/GLB format/iron-fence.glb	38576	model	376	1			0.91/0.83	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/lantern-candle.glb	22124	model	224	1			0.91/0.89	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/lantern-glass.glb	18596	model	186	1			0.9/0.86	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/lightpost-all.glb	93724	model	1012	1			0.89/0.83	1	budget boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/lightpost-double.glb	54228	model	572	1			0.91/0.88	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/lightpost-single.glb	34440	model	352	1			0.9/0.87	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/pillar-large.glb	17076	model	152	1			0.87/0.84		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/pillar-obelisk.glb	8552	model	76	1			0.86/0.84	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/pillar-small.glb	10748	model	96	1			0.9/0.88	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/pillar-square.glb	18352	model	178	1			0.88/0.86	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/pine-crooked.glb	35944	model	336	1			0.88/0.87	1	budget boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/pine-fall-crooked.glb	35960	model	336	1			0.89/0.87		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/pine-fall.glb	35936	model	336	1			0.91/0.89		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/pine.glb	35920	model	336	1			0.9/0.89	1	budget boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/pumpkin-carved.glb	46164	model	486	1			0.85/0.81	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/pumpkin-tall-carved.glb	44248	model	460	1			0.92/0.9	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/pumpkin-tall.glb	35456	model	348	1			0.92/0.9	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/pumpkin.glb	35344	model	348	1			0.87/0.84	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/road.glb	29048	model	308	1			0.8/0.74		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/rocks-tall.glb	36924	model	364	1			0.92/0.9	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/rocks.glb	36844	model	364	1			0.93/0.91	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/shovel-dirt.glb	26068	model	280	1			0.78/0.73		boxes fit	
+kenney-graveyard	graveyard-kit/Models/GLB format/shovel.glb	13812	model	148	1			0.96/0.92	1		
+kenney-graveyard	graveyard-kit/Models/GLB format/stone-wall-column.glb	13744	model	138	1			0.92/0.9		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/stone-wall-curve.glb	27584	model	266	1			0.91/0.89		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/stone-wall-damaged.glb	14168	model	144	1			0.87/0.82		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/stone-wall.glb	6944	model	60	1			0.96/0.92		skip	
+kenney-graveyard	graveyard-kit/Models/GLB format/trunk-long.glb	30832	model	312	1			0.86/0.83	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/trunk.glb	27100	model	274	1			0.86/0.83	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/urn-round.glb	23712	model	230	1			0.93/0.92	1	boxes	
+kenney-graveyard	graveyard-kit/Models/GLB format/urn-square.glb	22460	model	218	1			0.78/0.77		boxes fit	

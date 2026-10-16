@@ -1,0 +1,31 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/banner.glb	19272	model	200	1			0.85/0.8	1	boxes	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/barrel.glb	14096	model	148	1			0.92/0.91	1		
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/chair.glb	20464	model	208	1			0.87/0.84	1	boxes	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/character-human.glb	218072	model	465	1			0.9/0.89		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/character-orc.glb	199616	model	374	1			0.91/0.89		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/chest.glb	34048	model	288	1			0.85/0.83		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/coin.glb	22124	model	252	1			0.81/0.78		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/column.glb	11268	model	104	1			0.89/0.85	1		
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/dirt.glb	2816	model	12	1			1/1		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/floor-detail.glb	11924	model	102	1			0.92/0.69		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/floor.glb	1796	model	2	1			0.83/0		boxes fit	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/gate.glb	14152	model	76	1			0.97/0.95		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/key.glb	16812	model	176	1			0.79/0.76		boxes fit	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/pot.glb	26516	model	284	1			0.79/0.76		boxes fit	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/potion.glb	12860	model	120	1			0.93/0.9	1	boxes	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/rocks.glb	18452	model	190	1			0.86/0.83		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/shield-rectangle.glb	13196	model	134	1			0.79/0.7		boxes fit	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/shield-round.glb	15512	model	160	1			0.95/0.92	1	boxes	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/stairs.glb	11556	model	124	1			0.94/0.85		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/stones.glb	24356	model	248	1			0.96/0.95	1		
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/table.glb	15312	model	150	1			0.89/0.85	1		
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/trap.glb	42944	model	408	1			0.84/0.8	1	budget boxes	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/wall-half.glb	15824	model	150	1			0.96/0.95		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/wall-narrow.glb	23248	model	234	1			0.96/0.95		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/wall-opening.glb	19220	model	200	1			0.92/0.79		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/wall.glb	18148	model	186	1			0.95/0.94		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/weapon-spear.glb	7152	model	58	1			0.88/0.82	1		
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/weapon-sword.glb	9284	model	80	1			0.88/0.87		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/wood-structure.glb	26292	model	256	1			0.99/0.97		skip	
+kenney-mini-dungeon	mini-dungeon/Models/GLB format/wood-support.glb	11236	model	104	1			0.94/0.93		skip	

@@ -1,0 +1,168 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/balcony-wall-fence.glb	11236	model	102	1			0.97/0.89		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/balcony-wall.glb	7424	model	64	1			0.97/0.86		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/banner-green.glb	10200	model	102	1			0.73/0.65		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/banner-red.glb	9988	model	98	1			0.76/0.68		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/blade.glb	18792	model	180	1			0.68/0.62		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/cart-high.glb	88560	model	1028	1			0.78/0.76		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/cart.glb	52920	model	608	1			0.82/0.73	1	boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/chimney-base.glb	8408	model	78	1			0.86/0.85		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/chimney-top.glb	7896	model	78	1			0.91/0.84		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/chimney.glb	4656	model	32	1			0.97/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fence-broken.glb	11960	model	124	1			0.67/0.65		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fence-curved.glb	25408	model	308	1			0.68/0.64		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fence-gate.glb	46340	model	560	1			0.75/0.7		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fence.glb	7672	model	84	1			0.68/0.66		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fountain-center.glb	3280	model	4	2			0.85/0		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fountain-corner-inner-square.glb	6908	model	46	2			0.9/0.58		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fountain-corner-inner.glb	15000	model	146	2			0.9/0.58		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fountain-corner.glb	8272	model	60	2			0.91/0.87		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fountain-curved.glb	25048	model	266	2			0.87/0.82		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fountain-edge.glb	6024	model	36	2			0.96/0.89		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fountain-round-detail.glb	136888	model	1628	2			0.98/0.95	1	boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fountain-round.glb	84848	model	1002	2			0.97/0.92		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fountain-square-detail.glb	32092	model	334	2			0.96/0.9	1	boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/fountain-square.glb	27104	model	270	2			0.95/0.79		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/hedge-curved.glb	26312	model	280	1			0.91/0.88	1		
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/hedge-gate.glb	8432	model	76	1			0.89/0.84	1		
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/hedge-large-curved.glb	25024	model	252	1			0.91/0.89	1		
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/hedge-large-gate.glb	18072	model	164	1			0.92/0.88	1		
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/hedge-large.glb	9568	model	90	1			0.93/0.92	1		
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/hedge.glb	6524	model	54	1			0.93/0.9	1		
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/lantern.glb	14984	model	158	1			0.71/0.68		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/overhang.glb	7648	model	68	1			0.82/0.75		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/pillar-stone.glb	11324	model	124	1			0.93/0.88		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/pillar-wood.glb	5312	model	44	1			0.96/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/planks-half.glb	10164	model	84	1			0.64/0.62		fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/planks-opening.glb	16360	model	144	1			0.45/0.37		fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/planks.glb	11148	model	96	1			0.74/0.69		fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/poles-horizontal.glb	5660	model	40	1			0.98/0.9	1		
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/poles.glb	4212	model	28	1			0.98/0.84		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/road-bend.glb	25044	model	280	1			0.67/0.63		fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/road-corner-inner.glb	13552	model	146	1			0.98/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/road-corner.glb	13736	model	150	1			0.88/0.54		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/road-curb-end.glb	4828	model	36	1			0.88/0.58		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/road-curb.glb	2804	model	12	1			1/1		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/road-edge-slope.glb	5724	model	38	1			0.94/0.89		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/road-edge.glb	4912	model	36	1			0.96/0.87		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/road-slope.glb	2820	model	12	1			0.97/0.95		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/road.glb	2788	model	12	1			1/1		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/rock-large.glb	18876	model	200	1			0.73/0.71		fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/rock-small.glb	12620	model	128	1			0.8/0.75	1	budget boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/rock-wide.glb	15172	model	156	1			0.7/0.5		budget boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-corner-inner.glb	4464	model	30	1			0.84/0.69		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-corner-round.glb	5836	model	44	1			0.85/0.77		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-corner.glb	4996	model	36	1			0.87/0.84		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-flat.glb	3448	model	20	1			0.96/0.86		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-gable-detail.glb	12028	model	128	1			0.87/0.86		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-gable-end.glb	6056	model	50	1			0.82/0.75		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-gable-top.glb	6572	model	56	1			0.94/0.92		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-gable.glb	7632	model	72	1			0.95/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-corner-round.glb	6056	model	48	1			0.81/0.71		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-corner.glb	5008	model	36	1			0.87/0.84		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-cornerinner.glb	4284	model	30	1			0.85/0.73		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-flat.glb	3464	model	20	1			0.93/0.85		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-gable-detail.glb	12840	model	140	1			0.95/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-gable-end.glb	6268	model	52	1			0.79/0.73		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-gable-top.glb	6568	model	56	1			0.95/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-gable.glb	7456	model	72	1			0.96/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-left.glb	11376	model	84	1			0.94/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-point.glb	6192	model	44	1			0.81/0.75		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-right.glb	10996	model	84	1			0.89/0.87		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high-window.glb	20732	model	258	1			0.83/0.78		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-high.glb	8088	model	64	1			0.96/0.95		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-left.glb	12904	model	84	1			0.95/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-point.glb	6180	model	44	1			0.77/0.69		fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-right.glb	13004	model	84	1			0.94/0.92		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof-window.glb	15524	model	176	1			0.83/0.78		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/roof.glb	9324	model	64	1			0.95/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-full-corner-inner.glb	8304	model	84	1			0.96/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-full-corner-outer.glb	9440	model	100	1			0.85/0.79		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-full.glb	7064	model	68	1			0.96/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-stone-corner.glb	12792	model	144	1			0.9/0.88		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-stone-handrail.glb	23428	model	272	1			0.65/0.56		budget boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-stone-round.glb	17840	model	154	1			0.71/0.58		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-stone.glb	12172	model	136	1			0.78/0.7		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-wide-stone-handrail.glb	23440	model	272	1			0.74/0.58		budget boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-wide-stone.glb	12188	model	136	1			0.82/0.7		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-wide-wood-handrail.glb	43904	model	560	1			0.67/0.55		budget boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-wide-wood.glb	33060	model	424	1			0.75/0.63		budget boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-wood-handrail.glb	44228	model	568	1			0.6/0.51		budget boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stairs-wood.glb	33384	model	432	1			0.73/0.63		budget boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stall-bench.glb	14168	model	180	1			0.82/0.68	1		
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stall-green.glb	27120	model	322	1			0.8/0.53		budget boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stall-red.glb	24304	model	270	1			0.88/0.75	1	budget boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stall-stool.glb	14172	model	180	1			0.71/0.67		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/stall.glb	11500	model	106	1			0.94/0.79	1		
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/tree-crooked.glb	19252	model	178	1			0.89/0.87	1	boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/tree-high-crooked.glb	21744	model	210	1			0.89/0.85	1	boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/tree-high-round.glb	13176	model	126	1			0.92/0.91	1	boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/tree-high.glb	20700	model	200	1			0.92/0.9	1	boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/tree.glb	18188	model	168	1			0.93/0.91	1	boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-arch-top-detail.glb	16076	model	168	1			0.95/0.92		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-arch-top.glb	12876	model	146	1			0.99/0.96		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-arch.glb	4840	model	32	1			0.93/0.9		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-block-half.glb	8564	model	76	1			1/1		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-block.glb	8532	model	76	1			0.98/0.97		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-broken.glb	16904	model	166	1			0.93/0.89		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-corner-detail.glb	15748	model	176	1			0.7/0.68		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-corner-diagonal-half.glb	4788	model	34	1			0.97/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-corner-diagonal.glb	6032	model	48	1			0.99/0.96		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-corner-edge.glb	5416	model	40	1			0.99/0.97		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-corner.glb	6788	model	52	1			0.99/0.96		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-curved.glb	11432	model	120	1			0.98/0.95		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-detail-cross.glb	8464	model	80	1			0.99/0.95		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-detail-diagonal.glb	6672	model	56	1			0.99/0.96		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-detail-horizontal.glb	6240	model	46	1			0.97/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-diagonal.glb	5212	model	38	1			0.99/0.98		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-door.glb	29276	model	376	1			0.96/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-doorway-base.glb	8028	model	64	1			0.99/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-doorway-round.glb	13332	model	172	1			0.94/0.9		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-doorway-square-wide-curved.glb	14316	model	166	1			0.93/0.91		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-doorway-square-wide.glb	5864	model	46	1			0.98/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-doorway-square.glb	7844	model	70	1			0.98/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-half.glb	4808	model	32	1			0.99/0.96		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-rounded.glb	12616	model	136	1			0.98/0.97		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-side.glb	3852	model	22	1			1/1		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-slope.glb	4812	model	32	1			0.99/0.96		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-window-glass.glb	15708	model	178	1			0.97/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-window-round.glb	22356	model	278	1			0.99/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-window-shutters.glb	23892	model	286	1			0.97/0.95		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-window-small.glb	9376	model	102	1			0.99/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-window-stone.glb	12484	model	140	1			0.99/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-arch-top-detail.glb	16092	model	168	1			0.72/0.62		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-arch-top.glb	12892	model	146	1			0.7/0.62		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-arch.glb	4856	model	32	1			0.97/0.89		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-block-half.glb	8580	model	76	1			0.97/0.95		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-block.glb	8548	model	76	1			0.98/0.97		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-broken.glb	16344	model	166	1			0.93/0.9		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-corner-diagonal-half.glb	4804	model	34	1			0.97/0.91		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-corner-diagonal.glb	6048	model	48	1			0.97/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-corner-edge.glb	5432	model	40	1			0.99/0.98		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-corner.glb	6804	model	52	1			0.99/0.96		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-curved.glb	11444	model	120	1			0.98/0.95		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-detail-cross.glb	8480	model	80	1			0.98/0.95		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-detail-diagonal.glb	6684	model	56	1			0.98/0.95		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-detail-horizontal.glb	6256	model	46	1			0.98/0.97		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-diagonal.glb	5228	model	38	1			0.97/0.95		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-door.glb	30744	model	376	1			0.96/0.94		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-doorway-base.glb	8044	model	64	1			0.94/0.91		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-doorway-round.glb	15068	model	172	1			0.91/0.87		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-doorway-square-wide-curved.glb	14332	model	166	1			0.6/0.5		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-doorway-square-wide.glb	5876	model	46	1			0.6/0.5		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-doorway-square.glb	8664	model	82	1			0.95/0.91		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-half.glb	4824	model	32	1			0.96/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-rounded.glb	12632	model	136	1			0.99/0.98		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-side.glb	3868	model	22	1			0.99/0.99		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-slope.glb	8544	model	84	1			0.95/0.92		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-window-glass.glb	11184	model	122	1			0.97/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-window-round.glb	23636	model	294	1			0.96/0.9		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-window-shutters.glb	10612	model	122	1			0.98/0.89		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-window-small.glb	11808	model	134	1			0.96/0.89		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood-window-stone.glb	16844	model	202	1			0.97/0.93		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall-wood.glb	4808	model	32	1			0.98/0.96		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wall.glb	4792	model	32	1			0.99/0.96		skip	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/watermill-wide.glb	53872	model	600	1			0.93/0.87	1	budget boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/watermill.glb	53856	model	600	1			0.9/0.88	1	budget boxes	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/wheel.glb	17184	model	192	1			0.69/0.63		boxes fit	
+kenney-fantasy-town	fantasy-town-kit/Models/GLB format/windmill.glb	71160	model	732	1			0.27/0.17		budget boxes fit	

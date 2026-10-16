@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>3D Proof · my-3D2dge</title>
+<link rel="icon" href="data:,">
+<!--
+  A temporary lab (src/labs.json, "Temporary"; docs/LAB-3D.md): our characters (the hero, a mocap figure,
+  Emberdeep's Dan) in a fully 3D room built with three.js r182 and Rapier 0.19.3 (SIMD), every piece of art drawn by
+  code. Built by tools/build.mjs from this template and src/lab3d/*.js (one module, parts joined in name order); the
+  engine, the mocap player and Dan's body are inlined unchanged. The two libraries are vendored in vendor/
+  (tools/vendor-3d.mjs) and loaded through the import map below, so this page must be served (the site, or any web
+  server at the repository's root), not opened as a file. Delete it, its labs.json entry and vendor/ once the
+  question is settled.
+-->
+<style>
+:root{
+  --bg:#f0e6d6; --panel:rgba(250,242,228,.94); --ink:#2a2140; --muted:#63557a; --accent:#b8612a; --accent-ink:#fff6e6;
+  --line:rgba(42,33,64,.2); --key:rgba(42,33,64,.1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#06050b; --panel:rgba(18,14,30,.9); --ink:#f1e4c8; --muted:#ab9dc0; --accent:#f0a23a; --accent-ink:#1c1428; --line:rgba(241,228,200,.16); --key:rgba(241,228,200,.12); }
+}
+:root[data-theme="dark"]{ --bg:#06050b; --panel:rgba(18,14,30,.9); --ink:#f1e4c8; --muted:#ab9dc0; --accent:#f0a23a; --accent-ink:#1c1428; --line:rgba(241,228,200,.16); --key:rgba(241,228,200,.12); }
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%;background:var(--bg)}
+body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:'Trebuchet MS',system-ui,sans-serif;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+#stage{position:relative;width:100%;height:100%;overflow:hidden;background:#0d0b14;touch-action:none}
+#view{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+#view.pixels{image-rendering:pixelated;image-rendering:crisp-edges}
+#view.dragging{cursor:grabbing}
+#view.still{cursor:default}
+.panel{position:absolute;z-index:2;background:var(--panel);border:1px solid var(--line);border-radius:8px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.brand{top:12px;left:12px;padding:9px 13px 10px;max-width:min(400px,calc(100% - 24px))}
+.brand h1{margin:0;font-size:20px;font-weight:600;line-height:1.15}
+.brand p{margin:5px 0 0;font-size:13.5px;line-height:1.4;color:var(--muted)}
+a.to-labs{font-size:13px;font-weight:400;margin-left:8px;color:var(--accent);text-decoration:none;white-space:nowrap}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.tag{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:2px 9px;background:var(--key);color:var(--ink)}
+.tag.hot{background:var(--accent);color:var(--accent-ink)}
+.side{top:12px;right:12px;width:320px;max-height:calc(100% - 24px);overflow:auto;padding:4px 14px 12px}
+summary{cursor:pointer;font-size:15px;font-weight:600;padding:8px 0;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'▾';color:var(--muted);font-size:13px}
+details:not([open]) summary::after{content:'▴'}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:12px 0 6px;font-weight:700}
+.seg{display:flex;flex-wrap:wrap;gap:3px;background:var(--key);border-radius:6px;padding:3px}
+.seg + .seg{margin-top:4px}
+button{font:inherit;font-size:13px;color:var(--ink);background:transparent;border:0;border-radius:4px;padding:5px 8px;min-height:32px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;justify-content:center}
+button:hover{background:var(--key)}
+button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+button:disabled{opacity:.45;cursor:default}
+.seg button{flex:1 1 auto}
+.row{display:flex;gap:6px;margin-top:8px}
+.row button{flex:1 1 0;background:var(--key)}
+kbd{font:inherit;font-size:11px;line-height:1;padding:3px 5px;border-radius:3px;background:var(--key)}
+button[aria-pressed="true"] kbd{background:rgba(0,0,0,.16)}
+.code{margin-top:8px;font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;background:var(--key);border-radius:6px;padding:7px 8px;word-break:break-all;-webkit-user-select:text;user-select:text}
+.note{font-size:12.5px;line-height:1.45;color:var(--muted);margin:8px 0 0}
+.note b{color:var(--ink);font-weight:600}
+.keys{font-size:12.5px;line-height:1.5;color:var(--muted);margin:8px 0 0}
+.keys b{color:var(--ink);font-weight:600}
+.list{margin:4px 0 0;padding-left:18px;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.list li{margin:3px 0}
+.list b{color:var(--ink);font-weight:600}
+.half{position:absolute;z-index:1;bottom:12px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#f1e4c8;background:rgba(13,11,20,.7);border-radius:999px;padding:3px 10px;pointer-events:none}
+#halfL{left:12px} #halfR{right:344px}
+#divider{position:absolute;z-index:1;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;background:rgba(241,228,200,.55);pointer-events:none}
+#loading{left:50%;top:50%;transform:translate(-50%,-50%);padding:12px 16px;font-size:14px}
+[hidden]{display:none !important}
+@media (pointer:coarse){ kbd{display:none} .keys .kb{display:none} }
+@media (pointer:fine){ .keys .tp{display:none} }
+@media (max-width:720px){
+  .brand{top:8px;left:8px;padding:7px 10px 8px}
+  .brand h1{font-size:16px}
+  .brand p{display:none}
+  .side{top:auto;bottom:8px;left:8px;right:8px;width:auto;max-height:46%;padding:2px 12px 8px}
+  #halfR{right:12px} .half{bottom:auto;top:84px}
+}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "/vendor/three-0.182.0/three.webgpu.min.js",
+    "three/webgpu": "/vendor/three-0.182.0/three.webgpu.min.js",
+    "three/tsl": "/vendor/three-0.182.0/three.tsl.min.js",
+    "@dimforge/rapier3d-simd-compat": "/vendor/rapier3d-simd-compat-0.19.3/rapier.js"
+  }
+}
+</script>
+</head>
+<body>
+<div id="stage">
+  <canvas id="view" role="img" aria-label="3D Proof: a stone room with four pillars, crates, torches, the hero, a mocap figure and Dan, drawn by three.js from the camera you choose"></canvas>
+  <div id="divider" hidden></div>
+  <div class="half" id="halfL" hidden>Card: the engine draws</div>
+  <div class="half" id="halfR" hidden>Puppet: 3D parts</div>
+  <div class="brand panel">
+    <h1>3D Proof <a class="to-labs" href="labs.html" title="Every lab and test page">All labs</a></h1>
+    <p id="brandNote">Our characters in a real 3D room: three.js r182 and Rapier, every piece of art drawn by code.</p>
+    <div class="tags"><span class="tag" id="backendTag">Starting…</span><span class="tag" id="camTag">Isometric</span><span class="tag hot" id="playTag" hidden>You play</span></div>
+  </div>
+  <div class="side panel">
+    <details id="details" open>
+      <summary>Controls</summary>
+      <h2>Camera</h2>
+      <div class="seg" id="fixedSeg">
+        <button data-cam="iso" title="Isometric (1)">Iso <kbd>1</kbd></button><button data-cam="threequarter" title="Three-quarter (2)">¾ <kbd>2</kbd></button><button data-cam="topdown" title="Top-down (3)">Top <kbd>3</kbd></button><button data-cam="brawler" title="Brawler (4)">Brawler <kbd>4</kbd></button><button data-cam="side" title="Side (5)">Side <kbd>5</kbd></button>
+      </div>
+      <div class="seg">
+        <button data-cam="orbit" title="Free orbit: drag to turn and tilt, wheel to zoom (6)">Orbit <kbd>6</kbd></button><button data-cam="fly" title="Free-floating first-person camera (7)">Fly <kbd>7</kbd></button><button data-cam="chase" title="Third-person chase camera (8)">Chase <kbd>8</kbd></button>
+      </div>
+      <div class="row"><button id="rotL" title="Turn the fixed view 45° (Q)">⟲ <kbd>Q</kbd></button><button id="rotR" title="Turn the fixed view 45° (E)">⟳ <kbd>E</kbd></button><button id="fixBtn" title="Freeze this camera and put it in the address">Fix camera</button></div>
+      <div class="code" id="camCode" hidden></div>
+      <p class="note" id="camNote"></p>
+      <h2>Characters</h2>
+      <div class="seg"><button data-look="card">Card <kbd>C</kbd></button><button data-look="puppet">Puppet</button><button data-look="both">Both</button></div>
+      <p class="note" id="lookNote"></p>
+      <h2>Hero</h2>
+      <div class="seg"><button data-hero="lap">Walks a lap</button><button data-hero="play">You play <kbd>P</kbd></button></div>
+      <p class="keys"><span class="kb"><b>WASD</b> or arrows move (fly: arrows), <b>J</b> or a click attacks (three hits), <b>K</b> or <b>Space</b> dashes. Walk into a crate to push it; hit it to knock it away.</span><span class="tp">Tap <b>You play</b>, then drag to turn the camera.</span></p>
+      <h2>Look</h2>
+      <div class="seg"><button data-opt="pixels" title="Draw at the engine's 240 lines and enlarge with whole pixels (X)">Pixels <kbd>X</kbd></button><button data-opt="outlines">Outlines</button><button data-opt="shadows">Shadows</button><button data-opt="fog">Fog</button></div>
+      <h2>Proof: the renderer never touches gameplay</h2>
+      <p class="note" id="proof">Running…</p>
+      <div class="row"><button id="runBtn" title="Reset and run the same 600 scripted steps">Run 600 steps</button><button id="backendBtn"></button></div>
+      <h2>What carried over</h2>
+      <ul class="list">
+        <li><b>Unchanged:</b> the rigs, every move and pose, the mocap player and its clips, Dan's body, the textures' code.</li>
+        <li><b>Card:</b> the engine's own drawing, so the look is exact; flat, at one depth, lit by its own tones.</li>
+        <li><b>Puppet:</b> the same joints wearing 3D parts listed as data; real depth, light and shadow, any camera; the look is an approximation.</li>
+        <li><b>New:</b> perspective cameras, real shadows and lights, Rapier crates and the hero's controller.</li>
+      </ul>
+    </details>
+  </div>
+  <div id="loading" class="panel">Loading three.js and Rapier…</div>
+</div>
+<!-- @inline engine/my-3d2dge.js -->
+<!-- @inline src/mocap/readable.js -->
+<!-- @inline src/mocap/sets/hero.js -->
+<!-- @inline src/mocap/sets/cmu.js -->
+<!-- @inline src/mocap/mocap.js -->
+<script>
+/* Dan's body as Emberdeep has it (the class DanRig and its colors), with the helpers Emberdeep's scope gives it */
+window.DanRig = (() => {
+'use strict';
+const E = My3D2dge, { px, clamp, lerp, approach, TAU } = E;
+<!-- @inline-head src/emberdeep/22-char-dan.js -->
+return Object.assign(DanRig, { COL: DAN_COL });   // (its colors, for the 3D lab's puppet)
+})();
+</script>
+<!-- @inline-module src/lab3d -->
+</body>
+</html>

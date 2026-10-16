@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Labs · my-3D2dge</title>
+<meta name="theme-color" content="#06050b">
+<!--
+  The Labs page: one place to open every test page, lab and demo of my-3D2dge (my-3d2dge.vercel.app/labs).
+  Built by tools/build.mjs from the list in src/labs.json; edit the list, not this page. tools/labs-test.mjs opens
+  every link. The links work from the site (/mocap-lab) and from the files on disk (examples/mocap-lab.html).
+  Everything is in the list's order. A bar at the top jumps to each section (it marks the one on screen). A card opens its
+  page from anywhere on it; its chips are other places to start. A line's cards are numbered, with when each was made; the
+  kits are small tiles; the Temporary cards lead with their question and say which page each one led to.
+-->
+<style>
+:root{
+  --bg:#f0e6d6; --panel:#faf2e4; --ink:#2a2140; --muted:#63557a; --accent:#b8612a; --accent-ink:#fff6e6;
+  --line:rgba(42,33,64,.18); --chip:rgba(42,33,64,.07); --hover:rgba(184,97,42,.14);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#06050b; --panel:#141022; --ink:#f1e4c8; --muted:#ab9dc0; --accent:#f0a23a; --accent-ink:#1c1428; --line:rgba(241,228,200,.14); --chip:rgba(241,228,200,.08); --hover:rgba(240,162,58,.16); }
+}
+:root[data-theme="dark"]{ --bg:#06050b; --panel:#141022; --ink:#f1e4c8; --muted:#ab9dc0; --accent:#f0a23a; --accent-ink:#1c1428; --line:rgba(241,228,200,.14); --chip:rgba(241,228,200,.08); --hover:rgba(240,162,58,.16); }
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--bg);scroll-padding-top:60px}
+@media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Trebuchet MS',system-ui,sans-serif;line-height:1.4;
+  padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+main{max-width:1080px;margin:0 auto}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+h1{margin:0;font-size:28px}
+.where{font-size:12px;color:var(--muted);padding:2px 9px;border:1px solid var(--line);border-radius:999px}
+.where.preview{color:var(--accent);border-color:var(--accent)}
+.intro{margin:6px 0 10px;color:var(--muted);font-size:15px;max-width:64ch}
+/* the jump bar: one chip a section, with its count; it stays at the top as the page scrolls */
+nav{position:sticky;top:0;z-index:5;display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:8px 16px;background:var(--bg);border-bottom:1px solid var(--line)}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;display:inline-flex;align-items:center;gap:5px;min-height:32px;padding:5px 11px;border-radius:999px;background:var(--chip);color:var(--ink);text-decoration:none;font-size:14px}
+@media (max-width:420px){ nav a{padding:5px 8px;font-size:13px} }
+nav a span{font-size:12px;color:var(--muted)}
+nav a.on{background:var(--accent);color:var(--accent-ink)}
+nav a.on span{color:inherit;opacity:.8}
+section.sec{padding-top:20px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;margin:0 0 10px}
+h2{margin:0;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.sec-head p{margin:0;font-size:14px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:10px;align-items:start}
+.grid.tiles{grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));align-items:stretch}
+@media (max-width:520px){ .grid.tiles{grid-template-columns:1fr 1fr;gap:8px} }
+/* a card: its title's link covers the whole card; the chips and the details sit above it */
+.card{position:relative;display:flex;flex-direction:column;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px 13px}
+.card:hover{border-color:var(--accent)}
+.card h3{margin:0;font-size:18px;line-height:1.25}
+.card h3 a{color:var(--ink);text-decoration:none}
+.card h3 a::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.card h3 a:focus-visible{outline:none}
+.card h3 a:focus-visible::after{outline:2px solid var(--accent);outline-offset:2px}
+.card h3 i{font-style:normal;color:var(--accent)}
+.card p{margin:0;font-size:14px;color:var(--muted)}
+.tiles .card{padding:10px 12px 11px;gap:4px}
+.tiles .card h3{font-size:16px}
+.tiles .card p{font-size:13px}
+.card .meta{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}
+.card .step{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:700}
+.card .q{color:var(--ink);font-size:15px;border-left:3px solid var(--accent);padding-left:9px}
+.card .dev{font-size:13px}
+.card .dev b{color:var(--accent);font-weight:600}
+details,.links{position:relative;z-index:1}
+details{font-size:14px;color:var(--muted)}
+summary{width:max-content;padding:2px 0;cursor:pointer;color:var(--ink);font-size:13px}
+details p{margin-top:4px!important}
+.links{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
+.links a{display:inline-flex;align-items:center;min-height:34px;padding:6px 11px;border-radius:7px;background:var(--chip);color:var(--ink);text-decoration:none;font-size:14px}
+.links a:hover{background:var(--hover)}
+.links a:focus-visible,nav a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.empty{font-size:14px;color:var(--muted);margin:0;padding:10px 14px;border:1px dashed var(--line);border-radius:10px}
+footer{margin-top:28px;font-size:13px;color:var(--muted)}
+footer a{color:var(--accent)}
+footer .ver{margin-top:6px;font-size:12px;opacity:.8}
+</style>
+</head>
+<body>
+<main>
+  <header><h1>Labs</h1><span class="where" id="where"></span></header>
+  <p class="intro">Every page of my-3D2dge to play, test or judge, one tap away. Each opens in this tab; your browser's back button returns here.</p>
+  <nav id="jump" aria-label="Sections"></nav>
+  <div id="list"></div>
+  <footer id="foot"></footer>
+</main>
+<script>
+const LABS = <!-- @inline-raw src/labs.json -->;
+// On the site the pages have short addresses (/mocap-lab, and this page is /labs or /labs.html); as files (on disk, or
+// the site's /examples/ folder) they sit next to this one (examples/mocap-lab.html) and the starters are in ../dist/
+const LOCAL = location.protocol === 'file:' || /\/examples\/[^/]*$/.test(location.pathname);
+const url = p => p.startsWith('dist/') ? (LOCAL ? '../' : '/') + p : LOCAL ? p + '.html' : '/' + p;
+const target = (page, add) => add.startsWith('dist/') ? url(add) : url(page) + add;
+const el = (tag, cls, text, parent) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; if (parent) parent.appendChild(e); return e; };
+// how long a prototype has been up: the doctrine deletes or graduates it once its question is settled
+const age = d => { const n = Math.floor((Date.now() - Date.parse(d + 'T00:00:00')) / 864e5); return n < 1 ? 'today' : n === 1 ? 'yesterday' : n + ' days ago'; };
+const list = document.getElementById('list'), jump = document.getElementById('jump');
+const titleOf = page => { for (const S of LABS.sections) for (const L of S.entries) if (L.page === page) return L.title; return page; };
+for (const S of LABS.sections) {
+  const sec = el('section', 'sec', '', list), head = el('div', 'sec-head', '', sec);
+  sec.id = S.id;
+  el('h2', '', S.title, head);
+  if (S.about) el('p', '', S.about, head);
+  const j = el('a', '', (S.short || S.title) + ' ', jump); j.href = '#' + S.id; el('span', '', String(S.entries.length), j);
+  if (!S.entries.length) { el('p', 'empty', S.empty || 'Nothing here.', sec); continue; }
+  const temp = S.id === 'temporary', kits = S.id === 'kits';
+  const grid = el('div', kits ? 'grid tiles' : 'grid', '', sec);
+  S.entries.forEach((L, i) => {
+    const card = el('article', 'card', '', grid), a = el('a', '', L.title, el('h3', '', '', card));
+    a.href = target(L.page, ''); el('i', '', ' →', a);
+    if (S.line) { const m = el('div', 'meta', '', card); el('span', 'step', String(i + 1), m); m.append(L.made ? 'Made ' + L.made : ''); }   // one line, in the order it was made
+    if (L.added) el('div', 'meta', 'Added ' + L.added + ' · ' + age(L.added), card);
+    if (L.question) el('p', 'q', L.question, card);
+    if (L.deviates) { const d = el('p', 'dev', '', card); el('b', '', 'Deviates: ', d); d.append(L.deviates); }   // a prototype's departure from DOCTRINE.md, in a line
+    if (temp && L.question) { const det = el('details', '', '', card); el('summary', '', 'What it is', det); el('p', '', L.what, det); }
+    else el('p', '', L.what, card);
+    if (L.next) { const d = el('p', 'dev', '', card); el('b', '', 'Led to: ', d); d.append(titleOf(L.next)); }
+    if (L.links.length) { const row = el('div', 'links', '', card); for (const [label, add] of L.links) el('a', '', label, row).href = target(L.page, add); }
+  });
+}
+// the jump bar marks the section in the middle of the screen
+if ('IntersectionObserver' in window) {
+  const mark = id => { for (const a of jump.children) a.classList.toggle('on', a.hash === '#' + id); };
+  const io = new IntersectionObserver(es => { for (const e of es) if (e.isIntersecting) mark(e.target.id); }, { rootMargin: '-40% 0px -55% 0px' });
+  for (const s of list.children) io.observe(s);
+}
+// which copy of the site this is: Vercel builds a preview of each branch at an address with -git- in it
+const preview = /-git-/.test(location.hostname), where = document.getElementById('where');
+where.textContent = location.protocol === 'file:' ? 'files on this computer' : preview ? 'preview of work not merged yet' : location.hostname ? 'live site' : '';
+where.classList.toggle('preview', preview);
+if (!where.textContent) where.remove();
+const foot = document.getElementById('foot');
+foot.append('The list is src/labs.json; ');
+el('a', '', 'the game', foot).href = LOCAL ? 'emberdeep.html' : '/';
+foot.append(' links here from its Settings (Keys & help, and Tools).');
+// the release and the commit it was deployed from (tools/stamp.mjs fills the build in on the site)
+el('div', 'ver', 'my-3D2dge v{{VERSION}} · {{BUILD}}', foot);
+</script>
+</body>
+</html>

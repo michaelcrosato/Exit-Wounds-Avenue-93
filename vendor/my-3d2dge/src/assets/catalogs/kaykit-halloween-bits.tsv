@@ -1,0 +1,64 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/arch.gltf	3035	model	436	1			0.73/0.68		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/arch_gate.gltf	7059	model	868	1			0.59/0.52		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/bench.gltf	3035	model	172	1			0.87/0.79	1	boxes	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/bench_decorated.gltf	3065	model	978	1			0.67/0.5		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/bone_A.gltf	3059	model	204	1			0.53/0.49		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/bone_B.gltf	3057	model	220	1			0.49/0.45		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/bone_C.gltf	3057	model	204	1			0.55/0.53		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/candle.gltf	3037	model	66	1			0.89/0.85	1		
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/candle_melted.gltf	3052	model	66	1			0.82/0.75		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/candle_thin.gltf	3048	model	66	1			0.98/0.97		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/candle_triple.gltf	3056	model	198	1			0.91/0.87	1		
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/coffin.gltf	4828	model	316	1			0.88/0.87	1	boxes	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/coffin_decorated.gltf	3004	model	2064	1			0.94/0.93	1	boxes	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/crypt.gltf	2960	model	952	1			0.93/0.9		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/fence.gltf	2976	model	380	1			0.78/0.71		fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/fence_broken.gltf	2990	model	446	1			0.82/0.8	1	boxes	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/fence_gate.gltf	7001	model	620	1			0.65/0.61		fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/fence_pillar.gltf	3005	model	94	1			0.83/0.8	1		
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/fence_pillar_broken.gltf	3019	model	102	1			0.79/0.76		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/fence_seperate.gltf	3042	model	312	1			0.72/0.69		fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/fence_seperate_broken.gltf	3057	model	354	1			0.7/0.67		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/floor_dirt.gltf	2980	model	120	1			0.95/0.94		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/floor_dirt_grave.gltf	2992	model	132	1			0.87/0.84		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/floor_dirt_small.gltf	2992	model	80	1			0.93/0.92		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/grave_A.gltf	2990	model	323	1			0.89/0.86	1		
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/grave_A_destroyed.gltf	3045	model	416	1			0.79/0.75		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/grave_B.gltf	2990	model	190	1			0.94/0.92	1		
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/gravemarker_A.gltf	3050	model	56	1			0.78/0.74		fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/gravemarker_B.gltf	3049	model	136	1			0.81/0.74	1	boxes	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/gravestone.gltf	3066	model	271	1			0.88/0.83		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/lantern_hanging.gltf	3080	model	472	1			0.74/0.72		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/lantern_standing.gltf	3084	model	264	1			0.74/0.73		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/path_A.gltf	3040	model	361	1			0.94/0.84		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/path_B.gltf	3040	model	370	1			0.9/0.89		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/path_C.gltf	3040	model	393	1			0.84/0.77		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/path_D.gltf	3038	model	275	1			0.75/0.72		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/pillar.gltf	2989	model	94	1			0.86/0.82	1		
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/plaque.gltf	2984	model	88	1			0.96/0.95		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/plaque_candles.gltf	3005	model	418	1			0.95/0.94	1	boxes	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/post.gltf	3029	model	96	1			0.75/0.7		fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/post_lantern.gltf	5135	model	568	1			0.79/0.76		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/post_skull.gltf	5142	model	776	1			0.79/0.74		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/pumpkin_orange.gltf	3072	model	306	1			0.82/0.8	1	boxes	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/pumpkin_orange_jackolantern.gltf	3089	model	374	1			0.85/0.83		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/pumpkin_orange_small.gltf	3086	model	322	1			0.69/0.68		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/pumpkin_yellow.gltf	3072	model	306	1			0.79/0.78		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/pumpkin_yellow_jackolantern.gltf	3089	model	374	1			0.86/0.84	1	budget boxes	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/pumpkin_yellow_small.gltf	3086	model	322	1			0.64/0.61		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/ribcage.gltf	3071	model	1240	1			0.67/0.63		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/shrine.gltf	3035	model	94	1			0.83/0.79		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/shrine_candles.gltf	3056	model	360	1			0.9/0.89	1	boxes	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/skull.gltf	3058	model	344	1			0.82/0.78		skip	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/skull_candle.gltf	3072	model	542	1			0.71/0.67		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/tree_dead_large.gltf	3074	model	256	1			0.64/0.61		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/tree_dead_large_decorated.gltf	3106	model	1496	1			0.7/0.65		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/tree_dead_medium.gltf	3080	model	216	1			0.64/0.61		boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/tree_dead_small.gltf	3076	model	184	1			0.64/0.63		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/tree_pine_orange_large.gltf	3085	model	318	1			0.21/0.18		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/tree_pine_orange_medium.gltf	3089	model	318	1			0.34/0.24		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/tree_pine_orange_small.gltf	3086	model	260	1			0.46/0.33		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/tree_pine_yellow_large.gltf	3085	model	318	1			0.24/0.22		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/tree_pine_yellow_medium.gltf	3089	model	318	1			0.24/0.2		budget boxes fit	
+kaykit-halloween-bits	KayKit-Halloween-Bits-1.0/addons/kaykit_halloween_bits/Assets/gltf/tree_pine_yellow_small.gltf	3086	model	260	1			0.46/0.35		budget boxes fit	

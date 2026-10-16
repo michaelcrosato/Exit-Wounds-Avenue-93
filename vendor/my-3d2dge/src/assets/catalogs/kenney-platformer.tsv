@@ -1,0 +1,154 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kenney-platformer	platformer-kit/Models/GLB format/arrow.glb	7564	model	64	1			0.91/0.88	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/arrows.glb	9916	model	88	1			0.89/0.87	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/barrel.glb	14092	model	148	1			0.92/0.91	1		
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-corner-low.glb	9504	model	84	1			0.79/0.74		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-corner-overhang-low.glb	11628	model	110	1			0.56/0.52		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-corner-overhang.glb	11616	model	110	1			0.79/0.72		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-corner.glb	9492	model	84	1			0.81/0.73		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-curve-half.glb	11024	model	112	1			0.88/0.85		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-curve-low.glb	14036	model	156	1			0.92/0.9		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-curve.glb	19004	model	204	1			0.52/0.36		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-edge.glb	11788	model	112	1			0.83/0.81		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-hexagon.glb	5920	model	44	1			0.95/0.93		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-large-slope-narrow.glb	10884	model	102	1			0.89/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-large-slope-steep-narrow.glb	10908	model	102	1			0.89/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-large-slope-steep.glb	10880	model	102	1			0.93/0.91		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-large-slope.glb	10864	model	102	1			0.93/0.91		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-large-tall.glb	10224	model	92	1			0.88/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-large.glb	10188	model	92	1			0.87/0.84		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-long.glb	10188	model	92	1			0.8/0.65		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-low-hexagon.glb	5952	model	44	1			0.93/0.91		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-low-large.glb	10200	model	92	1			0.85/0.81		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-low-long.glb	10200	model	92	1			0.76/0.65		fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-low-narrow.glb	10228	model	92	1			0.91/0.89		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-low.glb	10188	model	92	1			0.85/0.81		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-narrow.glb	10196	model	92	1			0.92/0.9		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-corner.glb	12732	model	120	1			0.87/0.8		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-edge.glb	14300	model	140	1			0.85/0.79		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-hexagon.glb	7448	model	62	1			0.93/0.89		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-large-slope-narrow.glb	14264	model	142	1			0.8/0.63		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-large-slope-steep-narrow.glb	14344	model	142	1			0.83/0.74		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-large-slope-steep.glb	15528	model	154	1			0.86/0.76		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-large-slope.glb	15512	model	154	1			0.82/0.63		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-large-tall.glb	14348	model	144	1			0.88/0.85		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-large.glb	14336	model	144	1			0.85/0.83		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-long.glb	13508	model	132	1			0.8/0.65		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-low-hexagon.glb	7480	model	62	1			0.9/0.78		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-low-large.glb	14328	model	144	1			0.82/0.78		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-low-long.glb	13520	model	132	1			0.75/0.65		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-low-narrow.glb	12744	model	120	1			0.91/0.9		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-low.glb	12704	model	120	1			0.88/0.75		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass-overhang-narrow.glb	12712	model	120	1			0.92/0.9		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-grass.glb	10192	model	92	1			0.85/0.83		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-moving-blue.glb	23268	model	256	1			0.94/0.92		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-moving-large.glb	12540	model	136	1			0.95/0.92		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-moving.glb	12540	model	136	1			0.95/0.9		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-corner-low.glb	9500	model	84	1			0.76/0.69		fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-corner-overhang-low.glb	10888	model	104	1			0.56/0.52		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-corner-overhang.glb	10876	model	104	1			0.79/0.7		fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-corner.glb	9488	model	84	1			0.78/0.7		fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-curve-half.glb	11020	model	112	1			0.89/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-curve-low.glb	14032	model	156	1			0.92/0.9		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-curve.glb	19004	model	204	1			0.54/0.42		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-edge.glb	11804	model	112	1			0.85/0.84		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-hexagon.glb	5920	model	44	1			0.95/0.93		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-large-slope-narrow.glb	10880	model	102	1			0.89/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-large-slope-steep-narrow.glb	10904	model	102	1			0.89/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-large-slope-steep.glb	10880	model	102	1			0.93/0.91		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-large-slope.glb	10864	model	102	1			0.93/0.91		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-large-tall.glb	10220	model	92	1			0.88/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-large.glb	10208	model	92	1			0.87/0.84		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-long.glb	10204	model	92	1			0.8/0.65		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-low-hexagon.glb	5948	model	44	1			0.93/0.91		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-low-large.glb	10200	model	92	1			0.85/0.81		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-low-long.glb	10196	model	92	1			0.76/0.65		fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-low-narrow.glb	10224	model	92	1			0.91/0.89		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-low.glb	10184	model	92	1			0.88/0.87		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-narrow.glb	10192	model	92	1			0.92/0.9		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-corner.glb	11552	model	112	1			0.85/0.82		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-edge.glb	13140	model	132	1			0.83/0.81		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-hexagon.glb	7356	model	64	1			0.95/0.93		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-large-slope-narrow.glb	12984	model	132	1			0.89/0.85		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-large-slope-steep-narrow.glb	13032	model	132	1			0.89/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-large-slope-steep.glb	15572	model	162	1			0.87/0.77		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-large-slope.glb	15560	model	162	1			0.9/0.82		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-large-tall.glb	14372	model	152	1			0.89/0.87		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-large.glb	14356	model	152	1			0.87/0.84		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-long.glb	12308	model	122	1			0.8/0.66		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-low-hexagon.glb	7384	model	64	1			0.93/0.91		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-low-large.glb	14348	model	152	1			0.85/0.82		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-low-long.glb	12304	model	122	1			0.76/0.66		boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-low-narrow.glb	11156	model	104	1			0.91/0.9		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-low.glb	11524	model	112	1			0.84/0.8		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow-overhang-narrow.glb	11124	model	104	1			0.92/0.9		skip	
+kenney-platformer	platformer-kit/Models/GLB format/block-snow.glb	10172	model	92	1			0.87/0.87		skip	
+kenney-platformer	platformer-kit/Models/GLB format/bomb.glb	16664	model	148	1			0.91/0.87	1		
+kenney-platformer	platformer-kit/Models/GLB format/brick.glb	22412	model	188	1			0.93/0.91		skip	
+kenney-platformer	platformer-kit/Models/GLB format/button-round.glb	14712	model	92	1			0.84/0.82	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/button-square.glb	14704	model	84	1			0.88/0.86	1		
+kenney-platformer	platformer-kit/Models/GLB format/character-oobi.glb	236392	model	1096	1			0.92/0.85		skip	
+kenney-platformer	platformer-kit/Models/GLB format/character-oodi.glb	202604	model	938	1			0.93/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/character-ooli.glb	206704	model	918	1			0.92/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/character-oopi.glb	211344	model	938	1			0.92/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/character-oozi.glb	219072	model	938	1			0.93/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/chest.glb	28012	model	232	1			0.85/0.83		skip	
+kenney-platformer	platformer-kit/Models/GLB format/coin-bronze.glb	10580	model	124	1			0.99/0.98		skip	
+kenney-platformer	platformer-kit/Models/GLB format/coin-gold.glb	10608	model	124	1			0.92/0.89	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/coin-silver.glb	10580	model	124	1			0.98/0.97	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/conveyor-belt.glb	33796	model	364	1			0.89/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/crate-item-strong.glb	37472	model	380	1			0.69/0.65		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/crate-item.glb	13684	model	140	1			0.84/0.83	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/crate-strong.glb	41864	model	428	1			0.96/0.96	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/crate.glb	14336	model	156	1			0.83/0.77		skip	
+kenney-platformer	platformer-kit/Models/GLB format/door-large-open.glb	17012	model	176	1			0.87/0.86		skip	
+kenney-platformer	platformer-kit/Models/GLB format/door-open.glb	7092	model	68	1			0.75/0.71		boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/door-rotate-large.glb	41428	model	380	1			0.83/0.78		skip	
+kenney-platformer	platformer-kit/Models/GLB format/door-rotate.glb	41200	model	401	1			0.93/0.91	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/fence-broken.glb	21480	model	216	1			0.97/0.96	1		
+kenney-platformer	platformer-kit/Models/GLB format/fence-corner-curved.glb	15372	model	160	1			0.92/0.89		skip	
+kenney-platformer	platformer-kit/Models/GLB format/fence-corner.glb	10056	model	92	1			0.95/0.94	1		
+kenney-platformer	platformer-kit/Models/GLB format/fence-low-broken.glb	10472	model	100	1			0.89/0.86	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/fence-low-corner-curved.glb	21272	model	216	1			0.89/0.85		skip	
+kenney-platformer	platformer-kit/Models/GLB format/fence-low-corner.glb	12012	model	116	1			0.78/0.76		boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/fence-low-straight.glb	8060	model	72	1			0.79/0.75		boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/fence-rope.glb	18584	model	180	1			0.83/0.79	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/fence-straight.glb	6468	model	48	1			1/1	1		
+kenney-platformer	platformer-kit/Models/GLB format/flag.glb	11396	model	110	1			0.75/0.7		boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/flowers-tall.glb	39256	model	398	1			0.51/0.42		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/flowers.glb	25928	model	264	1			0.52/0.5		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/grass.glb	8964	model	72	1			0.83/0.81	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/heart.glb	5828	model	44	1			0.75/0.7		fit	
+kenney-platformer	platformer-kit/Models/GLB format/hedge-corner.glb	11660	model	104	1			0.93/0.92	1		
+kenney-platformer	platformer-kit/Models/GLB format/hedge.glb	8916	model	72	1			0.92/0.9	1		
+kenney-platformer	platformer-kit/Models/GLB format/jewel.glb	3580	model	12	1			0.95/0.89	1		
+kenney-platformer	platformer-kit/Models/GLB format/key.glb	13240	model	148	1			0.7/0.66		boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/ladder-broken.glb	10848	model	92	1			0.99/0.99		skip	
+kenney-platformer	platformer-kit/Models/GLB format/ladder-long.glb	10412	model	88	1			0.99/0.99	1		
+kenney-platformer	platformer-kit/Models/GLB format/ladder.glb	7228	model	56	1			1/0.99	1		
+kenney-platformer	platformer-kit/Models/GLB format/lever.glb	20080	model	134	1			0.96/0.9	1		
+kenney-platformer	platformer-kit/Models/GLB format/lock.glb	9372	model	100	1			0.89/0.85	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/mushrooms.glb	13728	model	126	1			0.85/0.83	1		
+kenney-platformer	platformer-kit/Models/GLB format/pipe.glb	20252	model	216	1			0.96/0.94	1		
+kenney-platformer	platformer-kit/Models/GLB format/plant.glb	13124	model	108	1			0.66/0.61		boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/platform-fortified.glb	12376	model	108	1			0.98/0.97		skip	
+kenney-platformer	platformer-kit/Models/GLB format/platform-overhang.glb	8448	model	68	1			0.92/0.84		skip	
+kenney-platformer	platformer-kit/Models/GLB format/platform-ramp.glb	10092	model	84	1			0.76/0.73		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/platform.glb	9968	model	84	1			0.96/0.92		skip	
+kenney-platformer	platformer-kit/Models/GLB format/poles.glb	24188	model	268	1			0.92/0.92		skip	
+kenney-platformer	platformer-kit/Models/GLB format/rocks.glb	9556	model	100	1			0.72/0.67		fit	
+kenney-platformer	platformer-kit/Models/GLB format/saw.glb	14036	model	128	1			0.82/0.72		skip	
+kenney-platformer	platformer-kit/Models/GLB format/sign.glb	8844	model	76	1			0.9/0.87	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/spike-block-wide.glb	27008	model	220	1			0.92/0.92	1	boxes	
+kenney-platformer	platformer-kit/Models/GLB format/spike-block.glb	15292	model	116	1			0.9/0.88	1		
+kenney-platformer	platformer-kit/Models/GLB format/spring.glb	38748	model	356	1			0.61/0.4		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/star.glb	6268	model	30	1			0.61/0.59		boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/stones.glb	13752	model	120	1			0.76/0.72		fit	
+kenney-platformer	platformer-kit/Models/GLB format/trap-spikes-large.glb	28996	model	282	1			0.88/0.81	1	budget boxes	
+kenney-platformer	platformer-kit/Models/GLB format/trap-spikes.glb	21540	model	168	1			0.78/0.73		budget boxes fit	
+kenney-platformer	platformer-kit/Models/GLB format/tree-pine-small.glb	22440	model	204	1			0.96/0.95		skip	
+kenney-platformer	platformer-kit/Models/GLB format/tree-pine-snow-small.glb	22452	model	204	1			0.96/0.95		skip	
+kenney-platformer	platformer-kit/Models/GLB format/tree-pine-snow.glb	22412	model	204	1			0.95/0.94	1		
+kenney-platformer	platformer-kit/Models/GLB format/tree-pine.glb	22396	model	204	1			0.95/0.94	1		
+kenney-platformer	platformer-kit/Models/GLB format/tree-snow.glb	42696	model	408	1			0.86/0.84		skip	
+kenney-platformer	platformer-kit/Models/GLB format/tree.glb	42680	model	408	1			0.86/0.84	1	budget boxes	

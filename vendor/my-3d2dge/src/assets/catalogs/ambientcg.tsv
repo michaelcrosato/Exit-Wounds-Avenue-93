@@ -1,0 +1,770 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+ambientcg-Bricks105	Bricks105/Bricks105.png	384256	image			512	512				
+ambientcg-Bricks105	Bricks105/Bricks105_1K-JPG_AmbientOcclusion.jpg	322553	image			1024	512				
+ambientcg-Bricks105	Bricks105/Bricks105_1K-JPG_Color.jpg	667060	image			1024	512	7/0.36	1		
+ambientcg-Bricks105	Bricks105/Bricks105_1K-JPG_Displacement.jpg	250298	image			1024	512				
+ambientcg-Bricks105	Bricks105/Bricks105_1K-JPG_NormalDX.jpg	769042	image			1024	512				
+ambientcg-Bricks105	Bricks105/Bricks105_1K-JPG_NormalGL.jpg	768706	image			1024	512				
+ambientcg-Bricks105	Bricks105/Bricks105_1K-JPG_Roughness.jpg	347315	image			1024	512				
+ambientcg-Bricks104	Bricks104/Bricks104.png	362860	image			512	512				
+ambientcg-Bricks104	Bricks104/Bricks104_1K-JPG_AmbientOcclusion.jpg	251662	image			1024	512				
+ambientcg-Bricks104	Bricks104/Bricks104_1K-JPG_Color.jpg	634753	image			1024	512	16/0.49	1		
+ambientcg-Bricks104	Bricks104/Bricks104_1K-JPG_Displacement.jpg	189973	image			1024	512				
+ambientcg-Bricks104	Bricks104/Bricks104_1K-JPG_NormalDX.jpg	695646	image			1024	512				
+ambientcg-Bricks104	Bricks104/Bricks104_1K-JPG_NormalGL.jpg	695083	image			1024	512				
+ambientcg-Bricks104	Bricks104/Bricks104_1K-JPG_Roughness.jpg	302952	image			1024	512				
+ambientcg-Bricks097	Bricks097/Bricks097.png	462888	image			512	512			skip	
+ambientcg-Bricks097	Bricks097/Bricks097_1K-JPG_AmbientOcclusion.jpg	355118	image			1024	512			skip	
+ambientcg-Bricks097	Bricks097/Bricks097_1K-JPG_Color.jpg	831880	image			1024	512	5/0.64		skip	
+ambientcg-Bricks097	Bricks097/Bricks097_1K-JPG_Displacement.jpg	199314	image			1024	512			skip	
+ambientcg-Bricks097	Bricks097/Bricks097_1K-JPG_NormalDX.jpg	909490	image			1024	512			skip	
+ambientcg-Bricks097	Bricks097/Bricks097_1K-JPG_NormalGL.jpg	907097	image			1024	512			skip	
+ambientcg-Bricks097	Bricks097/Bricks097_1K-JPG_Roughness.jpg	386766	image			1024	512			skip	
+ambientcg-Bricks102	Bricks102/Bricks102.png	484242	image			512	512				
+ambientcg-Bricks102	Bricks102/Bricks102_1K-JPG_AmbientOcclusion.jpg	285799	image			1024	512				
+ambientcg-Bricks102	Bricks102/Bricks102_1K-JPG_Color.jpg	746718	image			1024	512	5/0.91	1		
+ambientcg-Bricks102	Bricks102/Bricks102_1K-JPG_Displacement.jpg	208474	image			1024	512				
+ambientcg-Bricks102	Bricks102/Bricks102_1K-JPG_NormalDX.jpg	835147	image			1024	512				
+ambientcg-Bricks102	Bricks102/Bricks102_1K-JPG_NormalGL.jpg	837181	image			1024	512				
+ambientcg-Bricks102	Bricks102/Bricks102_1K-JPG_Roughness.jpg	373242	image			1024	512				
+ambientcg-Bricks075A	Bricks075A/Bricks075A.png	439088	image			512	512			skip	
+ambientcg-Bricks075A	Bricks075A/Bricks075A_1K-JPG_AmbientOcclusion.jpg	362237	image			1024	512			skip	
+ambientcg-Bricks075A	Bricks075A/Bricks075A_1K-JPG_Color.jpg	846181	image			1024	512	8/0.33		skip	
+ambientcg-Bricks075A	Bricks075A/Bricks075A_1K-JPG_Displacement.jpg	225005	image			1024	512			skip	
+ambientcg-Bricks075A	Bricks075A/Bricks075A_1K-JPG_NormalDX.jpg	1125832	image			1024	512			skip	
+ambientcg-Bricks075A	Bricks075A/Bricks075A_1K-JPG_NormalGL.jpg	1124816	image			1024	512			skip	
+ambientcg-Bricks075A	Bricks075A/Bricks075A_1K-JPG_Roughness.jpg	315755	image			1024	512			skip	
+ambientcg-Bricks101	Bricks101/Bricks101.png	390417	image			512	512				
+ambientcg-Bricks101	Bricks101/Bricks101_1K-JPG_AmbientOcclusion.jpg	582348	image			1024	1024				
+ambientcg-Bricks101	Bricks101/Bricks101_1K-JPG_Color.jpg	1326374	image			1024	1024	10/0.76	1		
+ambientcg-Bricks101	Bricks101/Bricks101_1K-JPG_Displacement.jpg	447986	image			1024	1024				
+ambientcg-Bricks101	Bricks101/Bricks101_1K-JPG_NormalDX.jpg	1628087	image			1024	1024				
+ambientcg-Bricks101	Bricks101/Bricks101_1K-JPG_NormalGL.jpg	1625172	image			1024	1024				
+ambientcg-Bricks101	Bricks101/Bricks101_1K-JPG_Roughness.jpg	702042	image			1024	1024				
+ambientcg-Bricks085	Bricks085/Bricks085.png	414382	image			512	512			skip	
+ambientcg-Bricks085	Bricks085/Bricks085_1K-JPG_AmbientOcclusion.jpg	327508	image			1024	512			skip	
+ambientcg-Bricks085	Bricks085/Bricks085_1K-JPG_Color.jpg	779839	image			1024	512	10/0.56		skip	
+ambientcg-Bricks085	Bricks085/Bricks085_1K-JPG_Displacement.jpg	201802	image			1024	512			skip	
+ambientcg-Bricks085	Bricks085/Bricks085_1K-JPG_NormalDX.jpg	859777	image			1024	512			skip	
+ambientcg-Bricks085	Bricks085/Bricks085_1K-JPG_NormalGL.jpg	862377	image			1024	512			skip	
+ambientcg-Bricks085	Bricks085/Bricks085_1K-JPG_Roughness.jpg	271991	image			1024	512			skip	
+ambientcg-Bricks094	Bricks094/Bricks094.png	450561	image			512	512				
+ambientcg-Bricks094	Bricks094/Bricks094_1K-JPG_AmbientOcclusion.jpg	377852	image			1024	512				
+ambientcg-Bricks094	Bricks094/Bricks094_1K-JPG_Color.jpg	739308	image			1024	512	9/0.37	1		
+ambientcg-Bricks094	Bricks094/Bricks094_1K-JPG_Displacement.jpg	228922	image			1024	512				
+ambientcg-Bricks094	Bricks094/Bricks094_1K-JPG_NormalDX.jpg	927855	image			1024	512				
+ambientcg-Bricks094	Bricks094/Bricks094_1K-JPG_NormalGL.jpg	927789	image			1024	512				
+ambientcg-Bricks094	Bricks094/Bricks094_1K-JPG_Roughness.jpg	377008	image			1024	512				
+ambientcg-Bricks092	Bricks092/Bricks092.png	353287	image			512	512				
+ambientcg-Bricks092	Bricks092/Bricks092_1K-JPG_AmbientOcclusion.jpg	493104	image			1024	1024				
+ambientcg-Bricks092	Bricks092/Bricks092_1K-JPG_Color.jpg	1164686	image			1024	1024	11/0.42	1		
+ambientcg-Bricks092	Bricks092/Bricks092_1K-JPG_Displacement.jpg	401568	image			1024	1024				
+ambientcg-Bricks092	Bricks092/Bricks092_1K-JPG_NormalDX.jpg	1578576	image			1024	1024				
+ambientcg-Bricks092	Bricks092/Bricks092_1K-JPG_NormalGL.jpg	1579980	image			1024	1024				
+ambientcg-Bricks092	Bricks092/Bricks092_1K-JPG_Roughness.jpg	464476	image			1024	1024				
+ambientcg-Bricks066	Bricks066/Bricks066.png	298399	image			512	512				
+ambientcg-Bricks066	Bricks066/Bricks066_1K-JPG_AmbientOcclusion.jpg	606366	image			1024	1024				
+ambientcg-Bricks066	Bricks066/Bricks066_1K-JPG_Color.jpg	795752	image			1024	1024	4/0.69	1		
+ambientcg-Bricks066	Bricks066/Bricks066_1K-JPG_Displacement.jpg	324130	image			1024	1024				
+ambientcg-Bricks066	Bricks066/Bricks066_1K-JPG_NormalDX.jpg	1846902	image			1024	1024				
+ambientcg-Bricks066	Bricks066/Bricks066_1K-JPG_NormalGL.jpg	1846446	image			1024	1024				
+ambientcg-Bricks066	Bricks066/Bricks066_1K-JPG_Roughness.jpg	391789	image			1024	1024				
+ambientcg-WoodFloor064	WoodFloor064/WoodFloor064.png	273874	image			512	512			skip	
+ambientcg-WoodFloor064	WoodFloor064/WoodFloor064_1K-JPG_Color.jpg	879562	image			1024	1024	12/0.42		skip	
+ambientcg-WoodFloor064	WoodFloor064/WoodFloor064_1K-JPG_Displacement.jpg	414194	image			1024	1024			skip	
+ambientcg-WoodFloor064	WoodFloor064/WoodFloor064_1K-JPG_NormalDX.jpg	467981	image			1024	1024			skip	
+ambientcg-WoodFloor064	WoodFloor064/WoodFloor064_1K-JPG_NormalGL.jpg	467188	image			1024	1024			skip	
+ambientcg-WoodFloor064	WoodFloor064/WoodFloor064_1K-JPG_Roughness.jpg	392051	image			1024	1024			skip	
+ambientcg-WoodFloor043	WoodFloor043/WoodFloor043.png	323259	image			512	512				
+ambientcg-WoodFloor043	WoodFloor043/WoodFloor043_1K-JPG_AmbientOcclusion.jpg	121220	image			1024	512				
+ambientcg-WoodFloor043	WoodFloor043/WoodFloor043_1K-JPG_Color.jpg	649557	image			1024	512	12/0.11	1		
+ambientcg-WoodFloor043	WoodFloor043/WoodFloor043_1K-JPG_Displacement.jpg	176498	image			1024	512				
+ambientcg-WoodFloor043	WoodFloor043/WoodFloor043_1K-JPG_Metalness.jpg	3639	image			1024	512				
+ambientcg-WoodFloor043	WoodFloor043/WoodFloor043_1K-JPG_NormalDX.jpg	409656	image			1024	512				
+ambientcg-WoodFloor043	WoodFloor043/WoodFloor043_1K-JPG_NormalGL.jpg	408639	image			1024	512				
+ambientcg-WoodFloor043	WoodFloor043/WoodFloor043_1K-JPG_Roughness.jpg	216824	image			1024	512				
+ambientcg-WoodFloor040	WoodFloor040/WoodFloor040.png	319799	image			512	512				
+ambientcg-WoodFloor040	WoodFloor040/WoodFloor040_1K-JPG_AmbientOcclusion.jpg	340661	image			1024	1024				
+ambientcg-WoodFloor040	WoodFloor040/WoodFloor040_1K-JPG_Color.jpg	892211	image			1024	1024	7/0.3	1		
+ambientcg-WoodFloor040	WoodFloor040/WoodFloor040_1K-JPG_Displacement.jpg	516407	image			1024	1024				
+ambientcg-WoodFloor040	WoodFloor040/WoodFloor040_1K-JPG_NormalDX.jpg	1198151	image			1024	1024				
+ambientcg-WoodFloor040	WoodFloor040/WoodFloor040_1K-JPG_NormalGL.jpg	1195403	image			1024	1024				
+ambientcg-WoodFloor040	WoodFloor040/WoodFloor040_1K-JPG_Roughness.jpg	333438	image			1024	1024				
+ambientcg-WoodFloor041	WoodFloor041/WoodFloor041.png	346968	image			512	512				
+ambientcg-WoodFloor041	WoodFloor041/WoodFloor041_1K-JPG_AmbientOcclusion.jpg	343515	image			1024	1024				
+ambientcg-WoodFloor041	WoodFloor041/WoodFloor041_1K-JPG_Color.jpg	1308332	image			1024	1024	6/0.44	1		
+ambientcg-WoodFloor041	WoodFloor041/WoodFloor041_1K-JPG_Displacement.jpg	521264	image			1024	1024				
+ambientcg-WoodFloor041	WoodFloor041/WoodFloor041_1K-JPG_NormalDX.jpg	1210867	image			1024	1024				
+ambientcg-WoodFloor041	WoodFloor041/WoodFloor041_1K-JPG_NormalGL.jpg	1208429	image			1024	1024				
+ambientcg-WoodFloor041	WoodFloor041/WoodFloor041_1K-JPG_Roughness.jpg	338171	image			1024	1024				
+ambientcg-WoodFloor062	WoodFloor062/WoodFloor062.png	268748	image			512	512				
+ambientcg-WoodFloor062	WoodFloor062/WoodFloor062_1K-JPG_Color.jpg	852052	image			1024	1024	9/0.26	1		
+ambientcg-WoodFloor062	WoodFloor062/WoodFloor062_1K-JPG_Displacement.jpg	498434	image			1024	1024				
+ambientcg-WoodFloor062	WoodFloor062/WoodFloor062_1K-JPG_NormalDX.jpg	644256	image			1024	1024				
+ambientcg-WoodFloor062	WoodFloor062/WoodFloor062_1K-JPG_NormalGL.jpg	647800	image			1024	1024				
+ambientcg-WoodFloor062	WoodFloor062/WoodFloor062_1K-JPG_Roughness.jpg	450086	image			1024	1024				
+ambientcg-WoodFloor039	WoodFloor039/WoodFloor039.png	269581	image			512	512				
+ambientcg-WoodFloor039	WoodFloor039/WoodFloor039_1K-JPG_AmbientOcclusion.jpg	332553	image			1024	1024				
+ambientcg-WoodFloor039	WoodFloor039/WoodFloor039_1K-JPG_Color.jpg	803291	image			1024	1024	6/0.26	1		
+ambientcg-WoodFloor039	WoodFloor039/WoodFloor039_1K-JPG_Displacement.jpg	509226	image			1024	1024				
+ambientcg-WoodFloor039	WoodFloor039/WoodFloor039_1K-JPG_NormalDX.jpg	1175590	image			1024	1024				
+ambientcg-WoodFloor039	WoodFloor039/WoodFloor039_1K-JPG_NormalGL.jpg	1173871	image			1024	1024				
+ambientcg-WoodFloor039	WoodFloor039/WoodFloor039_1K-JPG_Roughness.jpg	328312	image			1024	1024				
+ambientcg-Planks037A	Planks037A/Planks037A.png	318524	image			512	512				
+ambientcg-Planks037A	Planks037A/Planks037A_1K-JPG_AmbientOcclusion.jpg	279759	image			1024	1024				
+ambientcg-Planks037A	Planks037A/Planks037A_1K-JPG_Color.jpg	1317443	image			1024	1024	7/0.4	1		
+ambientcg-Planks037A	Planks037A/Planks037A_1K-JPG_Displacement.jpg	221848	image			1024	1024				
+ambientcg-Planks037A	Planks037A/Planks037A_1K-JPG_Metalness.jpg	24660	image			1024	1024				
+ambientcg-Planks037A	Planks037A/Planks037A_1K-JPG_NormalDX.jpg	986668	image			1024	1024				
+ambientcg-Planks037A	Planks037A/Planks037A_1K-JPG_NormalGL.jpg	986087	image			1024	1024				
+ambientcg-Planks037A	Planks037A/Planks037A_1K-JPG_Roughness.jpg	559789	image			1024	1024				
+ambientcg-Planks023A	Planks023A/Planks023A.png	326854	image			512	512			skip	
+ambientcg-Planks023A	Planks023A/Planks023A_1K-JPG_AmbientOcclusion.jpg	539237	image			1024	1024			skip	
+ambientcg-Planks023A	Planks023A/Planks023A_1K-JPG_Color.jpg	910213	image			1024	1024	6/0.36		skip	
+ambientcg-Planks023A	Planks023A/Planks023A_1K-JPG_Displacement.jpg	421771	image			1024	1024			skip	
+ambientcg-Planks023A	Planks023A/Planks023A_1K-JPG_Metalness.jpg	13468	image			1024	1024			skip	
+ambientcg-Planks023A	Planks023A/Planks023A_1K-JPG_NormalDX.jpg	1562990	image			1024	1024			skip	
+ambientcg-Planks023A	Planks023A/Planks023A_1K-JPG_NormalGL.jpg	1558095	image			1024	1024			skip	
+ambientcg-Planks023A	Planks023A/Planks023A_1K-JPG_Roughness.jpg	331601	image			1024	1024			skip	
+ambientcg-Planks039	Planks039/Planks039.png	389550	image			512	512				
+ambientcg-Planks039	Planks039/Planks039_1K-JPG_AmbientOcclusion.jpg	323215	image			1024	512				
+ambientcg-Planks039	Planks039/Planks039_1K-JPG_Color.jpg	716040	image			1024	512	12/0.61	1		
+ambientcg-Planks039	Planks039/Planks039_1K-JPG_Displacement.jpg	113423	image			1024	512				
+ambientcg-Planks039	Planks039/Planks039_1K-JPG_NormalDX.jpg	571132	image			1024	512				
+ambientcg-Planks039	Planks039/Planks039_1K-JPG_NormalGL.jpg	575442	image			1024	512				
+ambientcg-Planks039	Planks039/Planks039_1K-JPG_Roughness.jpg	301872	image			1024	512				
+ambientcg-Planks021	Planks021/Planks021.png	327632	image			512	512				
+ambientcg-Planks021	Planks021/Planks021_1K-JPG_AmbientOcclusion.jpg	354737	image			1024	1024				
+ambientcg-Planks021	Planks021/Planks021_1K-JPG_Color.jpg	1303570	image			1024	1024	11/0.37	1		
+ambientcg-Planks021	Planks021/Planks021_1K-JPG_Displacement.jpg	259226	image			1024	1024				
+ambientcg-Planks021	Planks021/Planks021_1K-JPG_NormalDX.jpg	1617483	image			1024	1024				
+ambientcg-Planks021	Planks021/Planks021_1K-JPG_NormalGL.jpg	1621032	image			1024	1024				
+ambientcg-Planks021	Planks021/Planks021_1K-JPG_Roughness.jpg	450338	image			1024	1024				
+ambientcg-Planks033B	Planks033B/Planks033B.png	318966	image			512	512				
+ambientcg-Planks033B	Planks033B/Planks033B_1K-JPG_AmbientOcclusion.jpg	337231	image			1024	1024				
+ambientcg-Planks033B	Planks033B/Planks033B_1K-JPG_Color.jpg	1333551	image			1024	1024	8/0.3	1		
+ambientcg-Planks033B	Planks033B/Planks033B_1K-JPG_Displacement.jpg	215881	image			1024	1024				
+ambientcg-Planks033B	Planks033B/Planks033B_1K-JPG_Metalness.jpg	5227	image			1024	1024				
+ambientcg-Planks033B	Planks033B/Planks033B_1K-JPG_NormalDX.jpg	1116888	image			1024	1024				
+ambientcg-Planks033B	Planks033B/Planks033B_1K-JPG_NormalGL.jpg	1116917	image			1024	1024				
+ambientcg-Planks033B	Planks033B/Planks033B_1K-JPG_Roughness.jpg	555328	image			1024	1024				
+ambientcg-Planks037B	Planks037B/Planks037B.png	316417	image			512	512			skip	
+ambientcg-Planks037B	Planks037B/Planks037B_1K-JPG_AmbientOcclusion.jpg	267546	image			1024	1024			skip	
+ambientcg-Planks037B	Planks037B/Planks037B_1K-JPG_Color.jpg	1308043	image			1024	1024	7/0.39		skip	
+ambientcg-Planks037B	Planks037B/Planks037B_1K-JPG_Displacement.jpg	215197	image			1024	1024			skip	
+ambientcg-Planks037B	Planks037B/Planks037B_1K-JPG_Metalness.jpg	5227	image			1024	1024			skip	
+ambientcg-Planks037B	Planks037B/Planks037B_1K-JPG_NormalDX.jpg	956176	image			1024	1024			skip	
+ambientcg-Planks037B	Planks037B/Planks037B_1K-JPG_NormalGL.jpg	955567	image			1024	1024			skip	
+ambientcg-Planks037B	Planks037B/Planks037B_1K-JPG_Roughness.jpg	557053	image			1024	1024			skip	
+ambientcg-Wood096	Wood096/Wood096.png	227580	image			512	512			skip	
+ambientcg-Wood096	Wood096/Wood096_1K-JPG_Color.jpg	914353	image			1024	1024	21/0.25		skip	
+ambientcg-Wood096	Wood096/Wood096_1K-JPG_Displacement.jpg	537330	image			1024	1024			skip	
+ambientcg-Wood096	Wood096/Wood096_1K-JPG_NormalDX.jpg	863598	image			1024	1024			skip	
+ambientcg-Wood096	Wood096/Wood096_1K-JPG_NormalGL.jpg	864486	image			1024	1024			skip	
+ambientcg-Wood096	Wood096/Wood096_1K-JPG_Roughness.jpg	629325	image			1024	1024			skip	
+ambientcg-Wood095	Wood095/Wood095.png	296585	image			512	512			skip	
+ambientcg-Wood095	Wood095/Wood095_1K-JPG_Color.jpg	524178	image			1024	512	6/0.28		skip	
+ambientcg-Wood095	Wood095/Wood095_1K-JPG_Displacement.jpg	307251	image			1024	512			skip	
+ambientcg-Wood095	Wood095/Wood095_1K-JPG_NormalDX.jpg	696259	image			1024	512			skip	
+ambientcg-Wood095	Wood095/Wood095_1K-JPG_NormalGL.jpg	695658	image			1024	512			skip	
+ambientcg-Wood095	Wood095/Wood095_1K-JPG_Roughness.jpg	253368	image			1024	512			skip	
+ambientcg-Wood094	Wood094/Wood094.png	261996	image			512	512			skip	
+ambientcg-Wood094	Wood094/Wood094_1K-JPG_Color.jpg	967576	image			1024	1024	9/0.24		skip	
+ambientcg-Wood094	Wood094/Wood094_1K-JPG_Displacement.jpg	593569	image			1024	1024			skip	
+ambientcg-Wood094	Wood094/Wood094_1K-JPG_NormalDX.jpg	485121	image			1024	1024			skip	
+ambientcg-Wood094	Wood094/Wood094_1K-JPG_NormalGL.jpg	486237	image			1024	1024			skip	
+ambientcg-Wood094	Wood094/Wood094_1K-JPG_Roughness.jpg	265487	image			1024	1024			skip	
+ambientcg-Wood092	Wood092/Wood092.png	246035	image			512	512			skip	
+ambientcg-Wood092	Wood092/Wood092_1K-JPG_Color.jpg	877470	image			1024	1024	16/0.24		skip	
+ambientcg-Wood092	Wood092/Wood092_1K-JPG_Displacement.jpg	522778	image			1024	1024			skip	
+ambientcg-Wood092	Wood092/Wood092_1K-JPG_NormalDX.jpg	988784	image			1024	1024			skip	
+ambientcg-Wood092	Wood092/Wood092_1K-JPG_NormalGL.jpg	989523	image			1024	1024			skip	
+ambientcg-Wood092	Wood092/Wood092_1K-JPG_Roughness.jpg	433083	image			1024	1024			skip	
+ambientcg-PavingStones151	PavingStones151/PavingStones151.png	478328	image			512	512				
+ambientcg-PavingStones151	PavingStones151/PavingStones151_1K-JPG_AmbientOcclusion.jpg	767423	image			1024	1024				
+ambientcg-PavingStones151	PavingStones151/PavingStones151_1K-JPG_Color.jpg	1417869	image			1024	1024	5/0.46	1		
+ambientcg-PavingStones151	PavingStones151/PavingStones151_1K-JPG_Displacement.jpg	546473	image			1024	1024				
+ambientcg-PavingStones151	PavingStones151/PavingStones151_1K-JPG_NormalDX.jpg	1705871	image			1024	1024				
+ambientcg-PavingStones151	PavingStones151/PavingStones151_1K-JPG_NormalGL.jpg	1704330	image			1024	1024				
+ambientcg-PavingStones151	PavingStones151/PavingStones151_1K-JPG_Roughness.jpg	781398	image			1024	1024				
+ambientcg-PavingStones150	PavingStones150/PavingStones150.png	457073	image			512	512			skip	
+ambientcg-PavingStones150	PavingStones150/PavingStones150_1K-JPG_AmbientOcclusion.jpg	390645	image			1024	512			skip	
+ambientcg-PavingStones150	PavingStones150/PavingStones150_1K-JPG_Color.jpg	737414	image			1024	512	12/0.14		skip	
+ambientcg-PavingStones150	PavingStones150/PavingStones150_1K-JPG_Displacement.jpg	286885	image			1024	512			skip	
+ambientcg-PavingStones150	PavingStones150/PavingStones150_1K-JPG_NormalDX.jpg	995156	image			1024	512			skip	
+ambientcg-PavingStones150	PavingStones150/PavingStones150_1K-JPG_NormalGL.jpg	995888	image			1024	512			skip	
+ambientcg-PavingStones150	PavingStones150/PavingStones150_1K-JPG_Roughness.jpg	352657	image			1024	512			skip	
+ambientcg-PavingStones138	PavingStones138/PavingStones138.png	468551	image			512	512				
+ambientcg-PavingStones138	PavingStones138/PavingStones138_1K-JPG_AmbientOcclusion.jpg	315882	image			512	1024				
+ambientcg-PavingStones138	PavingStones138/PavingStones138_1K-JPG_Color.jpg	836330	image			512	1024	13/0.37	1		
+ambientcg-PavingStones138	PavingStones138/PavingStones138_1K-JPG_Displacement.jpg	225140	image			512	1024				
+ambientcg-PavingStones138	PavingStones138/PavingStones138_1K-JPG_NormalDX.jpg	831125	image			512	1024				
+ambientcg-PavingStones138	PavingStones138/PavingStones138_1K-JPG_NormalGL.jpg	830646	image			512	1024				
+ambientcg-PavingStones138	PavingStones138/PavingStones138_1K-JPG_Roughness.jpg	278891	image			512	1024				
+ambientcg-PavingStones128	PavingStones128/PavingStones128.png	336000	image			512	512				
+ambientcg-PavingStones128	PavingStones128/PavingStones128_1K-JPG_AmbientOcclusion.jpg	744111	image			1024	1024				
+ambientcg-PavingStones128	PavingStones128/PavingStones128_1K-JPG_Color.jpg	1270215	image			1024	1024	4/0.41	1		
+ambientcg-PavingStones128	PavingStones128/PavingStones128_1K-JPG_Displacement.jpg	444754	image			1024	1024				
+ambientcg-PavingStones128	PavingStones128/PavingStones128_1K-JPG_NormalDX.jpg	1937711	image			1024	1024				
+ambientcg-PavingStones128	PavingStones128/PavingStones128_1K-JPG_NormalGL.jpg	1936800	image			1024	1024				
+ambientcg-PavingStones128	PavingStones128/PavingStones128_1K-JPG_Roughness.jpg	594270	image			1024	1024				
+ambientcg-PavingStones142	PavingStones142/PavingStones142.png	464152	image			512	512				
+ambientcg-PavingStones142	PavingStones142/PavingStones142_1K-JPG_AmbientOcclusion.jpg	665513	image			1024	1024				
+ambientcg-PavingStones142	PavingStones142/PavingStones142_1K-JPG_Color.jpg	1518213	image			1024	1024	7/0.5	1		
+ambientcg-PavingStones142	PavingStones142/PavingStones142_1K-JPG_Displacement.jpg	476673	image			1024	1024				
+ambientcg-PavingStones142	PavingStones142/PavingStones142_1K-JPG_NormalDX.jpg	1774155	image			1024	1024				
+ambientcg-PavingStones142	PavingStones142/PavingStones142_1K-JPG_NormalGL.jpg	1771746	image			1024	1024				
+ambientcg-PavingStones142	PavingStones142/PavingStones142_1K-JPG_Roughness.jpg	738907	image			1024	1024				
+ambientcg-PavingStones146	PavingStones146/PavingStones146.png	419691	image			512	512				
+ambientcg-PavingStones146	PavingStones146/PavingStones146_1K-JPG_AmbientOcclusion.jpg	769064	image			1024	1024				
+ambientcg-PavingStones146	PavingStones146/PavingStones146_1K-JPG_Color.jpg	1588092	image			1024	1024	9/0.31	1		
+ambientcg-PavingStones146	PavingStones146/PavingStones146_1K-JPG_Displacement.jpg	488363	image			1024	1024				
+ambientcg-PavingStones146	PavingStones146/PavingStones146_1K-JPG_NormalDX.jpg	1842693	image			1024	1024				
+ambientcg-PavingStones146	PavingStones146/PavingStones146_1K-JPG_NormalGL.jpg	1842449	image			1024	1024				
+ambientcg-PavingStones146	PavingStones146/PavingStones146_1K-JPG_Roughness.jpg	716379	image			1024	1024				
+ambientcg-PavingStones147	PavingStones147/PavingStones147.png	492512	image			512	512			skip	
+ambientcg-PavingStones147	PavingStones147/PavingStones147_1K-JPG_AmbientOcclusion.jpg	782061	image			1024	1024			skip	
+ambientcg-PavingStones147	PavingStones147/PavingStones147_1K-JPG_Color.jpg	1435336	image			1024	1024	9/0.09		skip	
+ambientcg-PavingStones147	PavingStones147/PavingStones147_1K-JPG_Displacement.jpg	666938	image			1024	1024			skip	
+ambientcg-PavingStones147	PavingStones147/PavingStones147_1K-JPG_NormalDX.jpg	2131653	image			1024	1024			skip	
+ambientcg-PavingStones147	PavingStones147/PavingStones147_1K-JPG_NormalGL.jpg	2123219	image			1024	1024			skip	
+ambientcg-PavingStones147	PavingStones147/PavingStones147_1K-JPG_Roughness.jpg	695805	image			1024	1024			skip	
+ambientcg-PavingStones070	PavingStones070/PavingStones070.png	473273	image			512	512				
+ambientcg-PavingStones070	PavingStones070/PavingStones070_1K-JPG_AmbientOcclusion.jpg	473743	image			1024	1024				
+ambientcg-PavingStones070	PavingStones070/PavingStones070_1K-JPG_Color.jpg	1758823	image			1024	1024	7/0.27	1		
+ambientcg-PavingStones070	PavingStones070/PavingStones070_1K-JPG_Displacement.jpg	459878	image			1024	1024				
+ambientcg-PavingStones070	PavingStones070/PavingStones070_1K-JPG_NormalDX.jpg	2099603	image			1024	1024				
+ambientcg-PavingStones070	PavingStones070/PavingStones070_1K-JPG_NormalGL.jpg	2096361	image			1024	1024				
+ambientcg-PavingStones070	PavingStones070/PavingStones070_1K-JPG_Roughness.jpg	566776	image			1024	1024				
+ambientcg-PavingStones149	PavingStones149/PavingStones149.png	446828	image			512	512			skip	
+ambientcg-PavingStones149	PavingStones149/PavingStones149_1K-JPG_AmbientOcclusion.jpg	395316	image			1024	512			skip	
+ambientcg-PavingStones149	PavingStones149/PavingStones149_1K-JPG_Color.jpg	775507	image			1024	512	7/0.42		skip	
+ambientcg-PavingStones149	PavingStones149/PavingStones149_1K-JPG_Displacement.jpg	266526	image			1024	512			skip	
+ambientcg-PavingStones149	PavingStones149/PavingStones149_1K-JPG_NormalDX.jpg	986965	image			1024	512			skip	
+ambientcg-PavingStones149	PavingStones149/PavingStones149_1K-JPG_NormalGL.jpg	987706	image			1024	512			skip	
+ambientcg-PavingStones149	PavingStones149/PavingStones149_1K-JPG_Roughness.jpg	373405	image			1024	512			skip	
+ambientcg-PavingStones136	PavingStones136/PavingStones136.png	312349	image			512	512			skip	
+ambientcg-PavingStones136	PavingStones136/PavingStones136_1K-JPG_AmbientOcclusion.jpg	520371	image			1024	1024			skip	
+ambientcg-PavingStones136	PavingStones136/PavingStones136_1K-JPG_Color.jpg	1192545	image			1024	1024	5/0.19		skip	
+ambientcg-PavingStones136	PavingStones136/PavingStones136_1K-JPG_Displacement.jpg	249055	image			1024	1024			skip	
+ambientcg-PavingStones136	PavingStones136/PavingStones136_1K-JPG_NormalDX.jpg	1209694	image			1024	1024			skip	
+ambientcg-PavingStones136	PavingStones136/PavingStones136_1K-JPG_NormalGL.jpg	1210149	image			1024	1024			skip	
+ambientcg-PavingStones136	PavingStones136/PavingStones136_1K-JPG_Roughness.jpg	664278	image			1024	1024			skip	
+ambientcg-Rock064	Rock064/Rock064.png	443673	image			512	512				
+ambientcg-Rock064	Rock064/Rock064_1K-JPG_AmbientOcclusion.jpg	569344	image			1024	1024				
+ambientcg-Rock064	Rock064/Rock064_1K-JPG_Color.jpg	1674986	image			1024	1024	10/0.23	1		
+ambientcg-Rock064	Rock064/Rock064_1K-JPG_Displacement.jpg	277388	image			1024	1024				
+ambientcg-Rock064	Rock064/Rock064_1K-JPG_NormalDX.jpg	1709758	image			1024	1024				
+ambientcg-Rock064	Rock064/Rock064_1K-JPG_NormalGL.jpg	1710852	image			1024	1024				
+ambientcg-Rock064	Rock064/Rock064_1K-JPG_Roughness.jpg	700019	image			1024	1024				
+ambientcg-Rock063	Rock063/Rock063.png	463099	image			512	512			skip	
+ambientcg-Rock063	Rock063/Rock063_1K-JPG_AmbientOcclusion.jpg	330201	image			1024	512			skip	
+ambientcg-Rock063	Rock063/Rock063_1K-JPG_Color.jpg	902263	image			1024	512	4/0.38		skip	
+ambientcg-Rock063	Rock063/Rock063_1K-JPG_Displacement.jpg	117144	image			1024	512			skip	
+ambientcg-Rock063	Rock063/Rock063_1K-JPG_NormalDX.jpg	844115	image			1024	512			skip	
+ambientcg-Rock063	Rock063/Rock063_1K-JPG_NormalGL.jpg	842156	image			1024	512			skip	
+ambientcg-Rock063	Rock063/Rock063_1K-JPG_Roughness.jpg	359735	image			1024	512			skip	
+ambientcg-Rock058	Rock058/Rock058.png	369099	image			512	512				
+ambientcg-Rock058	Rock058/Rock058_1K-JPG_AmbientOcclusion.jpg	594853	image			1024	1024				
+ambientcg-Rock058	Rock058/Rock058_1K-JPG_Color.jpg	1156859	image			1024	1024	3/0.18	1		
+ambientcg-Rock058	Rock058/Rock058_1K-JPG_Displacement.jpg	279803	image			1024	1024				
+ambientcg-Rock058	Rock058/Rock058_1K-JPG_NormalDX.jpg	1891420	image			1024	1024				
+ambientcg-Rock058	Rock058/Rock058_1K-JPG_NormalGL.jpg	1902440	image			1024	1024				
+ambientcg-Rock058	Rock058/Rock058_1K-JPG_Roughness.jpg	798177	image			1024	1024				
+ambientcg-Rock051	Rock051/Rock051.png	462708	image			512	512			skip	
+ambientcg-Rock051	Rock051/Rock051_1K-JPG_AmbientOcclusion.jpg	671597	image			1024	1024			skip	
+ambientcg-Rock051	Rock051/Rock051_1K-JPG_Color.jpg	1584524	image			1024	1024	6/0.31		skip	
+ambientcg-Rock051	Rock051/Rock051_1K-JPG_Displacement.jpg	360085	image			1024	1024			skip	
+ambientcg-Rock051	Rock051/Rock051_1K-JPG_Metalness.jpg	5227	image			1024	1024			skip	
+ambientcg-Rock051	Rock051/Rock051_1K-JPG_NormalDX.jpg	2099972	image			1024	1024			skip	
+ambientcg-Rock051	Rock051/Rock051_1K-JPG_NormalGL.jpg	2102099	image			1024	1024			skip	
+ambientcg-Rock051	Rock051/Rock051_1K-JPG_Roughness.jpg	577866	image			1024	1024			skip	
+ambientcg-Rock060	Rock060/Rock060.png	361051	image			512	512				
+ambientcg-Rock060	Rock060/Rock060_1K-JPG_AmbientOcclusion.jpg	603867	image			1024	1024				
+ambientcg-Rock060	Rock060/Rock060_1K-JPG_Color.jpg	1028453	image			1024	1024	4/0.16	1		
+ambientcg-Rock060	Rock060/Rock060_1K-JPG_Displacement.jpg	294271	image			1024	1024				
+ambientcg-Rock060	Rock060/Rock060_1K-JPG_NormalDX.jpg	1918440	image			1024	1024				
+ambientcg-Rock060	Rock060/Rock060_1K-JPG_NormalGL.jpg	1921754	image			1024	1024				
+ambientcg-Rock060	Rock060/Rock060_1K-JPG_Roughness.jpg	783640	image			1024	1024				
+ambientcg-Rock035	Rock035/Rock035.png	370193	image			512	512				
+ambientcg-Rock035	Rock035/Rock035_1K-JPG_AmbientOcclusion.jpg	565898	image			1024	1024				
+ambientcg-Rock035	Rock035/Rock035_1K-JPG_Color.jpg	1453569	image			1024	1024	2/0.2	1		
+ambientcg-Rock035	Rock035/Rock035_1K-JPG_Displacement.jpg	332547	image			1024	1024				
+ambientcg-Rock035	Rock035/Rock035_1K-JPG_NormalDX.jpg	2517059	image			1024	1024				
+ambientcg-Rock035	Rock035/Rock035_1K-JPG_NormalGL.jpg	2522360	image			1024	1024				
+ambientcg-Rock035	Rock035/Rock035_1K-JPG_Roughness.jpg	668189	image			1024	1024				
+ambientcg-Tiles141	Tiles141/Tiles141.png	279185	image			512	512				
+ambientcg-Tiles141	Tiles141/Tiles141_1K-JPG_Color.jpg	1135438	image			1024	1024	3/0.79	1		
+ambientcg-Tiles141	Tiles141/Tiles141_1K-JPG_Displacement.jpg	250470	image			1024	1024				
+ambientcg-Tiles141	Tiles141/Tiles141_1K-JPG_NormalDX.jpg	704119	image			1024	1024				
+ambientcg-Tiles141	Tiles141/Tiles141_1K-JPG_NormalGL.jpg	703536	image			1024	1024				
+ambientcg-Tiles141	Tiles141/Tiles141_1K-JPG_Roughness.jpg	578826	image			1024	1024				
+ambientcg-Tiles139	Tiles139/Tiles139.png	293251	image			512	512				
+ambientcg-Tiles139	Tiles139/Tiles139_1K-JPG_Color.jpg	1118671	image			1024	1024	2/0.56	1		
+ambientcg-Tiles139	Tiles139/Tiles139_1K-JPG_Displacement.jpg	235572	image			1024	1024				
+ambientcg-Tiles139	Tiles139/Tiles139_1K-JPG_NormalDX.jpg	652195	image			1024	1024				
+ambientcg-Tiles139	Tiles139/Tiles139_1K-JPG_NormalGL.jpg	645030	image			1024	1024				
+ambientcg-Tiles139	Tiles139/Tiles139_1K-JPG_Roughness.jpg	577266	image			1024	1024				
+ambientcg-Tiles143	Tiles143/Tiles143.png	349930	image			512	512				
+ambientcg-Tiles143	Tiles143/Tiles143_1K-JPG_Color.jpg	1308964	image			1024	1024	7/0.66	1		
+ambientcg-Tiles143	Tiles143/Tiles143_1K-JPG_Displacement.jpg	568339	image			1024	1024				
+ambientcg-Tiles143	Tiles143/Tiles143_1K-JPG_NormalDX.jpg	501810	image			1024	1024				
+ambientcg-Tiles143	Tiles143/Tiles143_1K-JPG_NormalGL.jpg	500845	image			1024	1024				
+ambientcg-Tiles143	Tiles143/Tiles143_1K-JPG_Roughness.jpg	550105	image			1024	1024				
+ambientcg-Tiles140	Tiles140/Tiles140.png	330324	image			512	512				
+ambientcg-Tiles140	Tiles140/Tiles140_1K-JPG_Color.jpg	1141645	image			1024	1024	3/0.77	1		
+ambientcg-Tiles140	Tiles140/Tiles140_1K-JPG_Displacement.jpg	236894	image			1024	1024				
+ambientcg-Tiles140	Tiles140/Tiles140_1K-JPG_NormalDX.jpg	637336	image			1024	1024				
+ambientcg-Tiles140	Tiles140/Tiles140_1K-JPG_NormalGL.jpg	633421	image			1024	1024				
+ambientcg-Tiles140	Tiles140/Tiles140_1K-JPG_Roughness.jpg	580326	image			1024	1024				
+ambientcg-Tiles142	Tiles142/Tiles142.png	352399	image			512	512			skip	
+ambientcg-Tiles142	Tiles142/Tiles142_1K-JPG_Color.jpg	1304149	image			1024	1024	7/0.73		skip	
+ambientcg-Tiles142	Tiles142/Tiles142_1K-JPG_Displacement.jpg	567746	image			1024	1024			skip	
+ambientcg-Tiles142	Tiles142/Tiles142_1K-JPG_NormalDX.jpg	495150	image			1024	1024			skip	
+ambientcg-Tiles142	Tiles142/Tiles142_1K-JPG_NormalGL.jpg	496197	image			1024	1024			skip	
+ambientcg-Tiles142	Tiles142/Tiles142_1K-JPG_Roughness.jpg	546418	image			1024	1024			skip	
+ambientcg-Tiles107	Tiles107/Tiles107.png	160987	image			512	512			skip	
+ambientcg-Tiles107	Tiles107/Tiles107_1K-JPG_AmbientOcclusion.jpg	79930	image			1024	1024			skip	
+ambientcg-Tiles107	Tiles107/Tiles107_1K-JPG_Color.jpg	271201	image			1024	1024	6/0.57		skip	
+ambientcg-Tiles107	Tiles107/Tiles107_1K-JPG_Displacement.jpg	242612	image			1024	1024			skip	
+ambientcg-Tiles107	Tiles107/Tiles107_1K-JPG_NormalDX.jpg	560392	image			1024	1024			skip	
+ambientcg-Tiles107	Tiles107/Tiles107_1K-JPG_NormalGL.jpg	560108	image			1024	1024			skip	
+ambientcg-Tiles107	Tiles107/Tiles107_1K-JPG_Roughness.jpg	208620	image			1024	1024			skip	
+ambientcg-Tiles138	Tiles138/Tiles138.png	330803	image			512	512				
+ambientcg-Tiles138	Tiles138/Tiles138_1K-JPG_AmbientOcclusion.jpg	390536	image			1024	1024				
+ambientcg-Tiles138	Tiles138/Tiles138_1K-JPG_Color.jpg	1098452	image			1024	1024	2/0.47	1		
+ambientcg-Tiles138	Tiles138/Tiles138_1K-JPG_Displacement.jpg	328963	image			1024	1024				
+ambientcg-Tiles138	Tiles138/Tiles138_1K-JPG_NormalDX.jpg	1132761	image			1024	1024				
+ambientcg-Tiles138	Tiles138/Tiles138_1K-JPG_NormalGL.jpg	1133507	image			1024	1024				
+ambientcg-Tiles138	Tiles138/Tiles138_1K-JPG_Roughness.jpg	579244	image			1024	1024				
+ambientcg-Tiles144	Tiles144/Tiles144.png	344089	image			512	512				
+ambientcg-Tiles144	Tiles144/Tiles144_1K-JPG_Color.jpg	1340204	image			1024	1024	2/0.59	1		
+ambientcg-Tiles144	Tiles144/Tiles144_1K-JPG_Displacement.jpg	337835	image			1024	1024				
+ambientcg-Tiles144	Tiles144/Tiles144_1K-JPG_NormalDX.jpg	567492	image			1024	1024				
+ambientcg-Tiles144	Tiles144/Tiles144_1K-JPG_NormalGL.jpg	577418	image			1024	1024				
+ambientcg-Tiles144	Tiles144/Tiles144_1K-JPG_Roughness.jpg	569168	image			1024	1024				
+ambientcg-Tiles133A	Tiles133A/Tiles133A.png	207582	image			512	512				
+ambientcg-Tiles133A	Tiles133A/Tiles133A_1K-JPG_AmbientOcclusion.jpg	187761	image			1024	1024				
+ambientcg-Tiles133A	Tiles133A/Tiles133A_1K-JPG_Color.jpg	480026	image			1024	1024	2/0.62	1		
+ambientcg-Tiles133A	Tiles133A/Tiles133A_1K-JPG_Displacement.jpg	365692	image			1024	1024				
+ambientcg-Tiles133A	Tiles133A/Tiles133A_1K-JPG_NormalDX.jpg	950688	image			1024	1024				
+ambientcg-Tiles133A	Tiles133A/Tiles133A_1K-JPG_NormalGL.jpg	953155	image			1024	1024				
+ambientcg-Tiles133A	Tiles133A/Tiles133A_1K-JPG_Roughness.jpg	542872	image			1024	1024				
+ambientcg-Tiles074	Tiles074/Tiles074.png	297213	image			512	512			skip	
+ambientcg-Tiles074	Tiles074/Tiles074_1K-JPG_Color.jpg	1152913	image			1024	1024	10/0.31		skip	
+ambientcg-Tiles074	Tiles074/Tiles074_1K-JPG_Displacement.jpg	258158	image			1024	1024			skip	
+ambientcg-Tiles074	Tiles074/Tiles074_1K-JPG_NormalDX.jpg	200409	image			1024	1024			skip	
+ambientcg-Tiles074	Tiles074/Tiles074_1K-JPG_NormalGL.jpg	227039	image			1024	1024			skip	
+ambientcg-Tiles074	Tiles074/Tiles074_1K-JPG_Roughness.jpg	463120	image			1024	1024			skip	
+ambientcg-Metal063	Metal063/Metal063.png	314455	image			512	512				
+ambientcg-Metal063	Metal063/Metal063_1K-JPG_Color.jpg	1259638	image			1024	1024	0/0	1		
+ambientcg-Metal063	Metal063/Metal063_1K-JPG_Displacement.jpg	770082	image			1024	1024				
+ambientcg-Metal063	Metal063/Metal063_1K-JPG_Metalness.jpg	737142	image			1024	1024				
+ambientcg-Metal063	Metal063/Metal063_1K-JPG_NormalDX.jpg	343435	image			1024	1024				
+ambientcg-Metal063	Metal063/Metal063_1K-JPG_NormalGL.jpg	343987	image			1024	1024				
+ambientcg-Metal063	Metal063/Metal063_1K-JPG_Roughness.jpg	731180	image			1024	1024				
+ambientcg-Metal049A	Metal049A/Metal049A.png	213095	image			512	512			skip	
+ambientcg-Metal049A	Metal049A/Metal049A_1K-JPG_Color.jpg	455982	image			1024	1024	0/0		skip	
+ambientcg-Metal049A	Metal049A/Metal049A_1K-JPG_Displacement.jpg	5228	image			1024	1024			skip	
+ambientcg-Metal049A	Metal049A/Metal049A_1K-JPG_Metalness.jpg	5839	image			1024	1024			skip	
+ambientcg-Metal049A	Metal049A/Metal049A_1K-JPG_NormalDX.jpg	319113	image			1024	1024			skip	
+ambientcg-Metal049A	Metal049A/Metal049A_1K-JPG_NormalGL.jpg	331693	image			1024	1024			skip	
+ambientcg-Metal049A	Metal049A/Metal049A_1K-JPG_Roughness.jpg	295377	image			1024	1024			skip	
+ambientcg-Metal055A	Metal055A/Metal055A.png	276862	image			512	512				
+ambientcg-Metal055A	Metal055A/Metal055A_1K-JPG_Color.jpg	813574	image			1024	1024	0/0	1		
+ambientcg-Metal055A	Metal055A/Metal055A_1K-JPG_Displacement.jpg	284832	image			1024	1024				
+ambientcg-Metal055A	Metal055A/Metal055A_1K-JPG_Metalness.jpg	77358	image			1024	1024				
+ambientcg-Metal055A	Metal055A/Metal055A_1K-JPG_NormalDX.jpg	599588	image			1024	1024				
+ambientcg-Metal055A	Metal055A/Metal055A_1K-JPG_NormalGL.jpg	598840	image			1024	1024				
+ambientcg-Metal055A	Metal055A/Metal055A_1K-JPG_Roughness.jpg	511418	image			1024	1024				
+ambientcg-Metal046B	Metal046B/Metal046B.png	311743	image			512	512				
+ambientcg-Metal046B	Metal046B/Metal046B_1K-JPG_Color.jpg	706330	image			1024	1024	0/0	1		
+ambientcg-Metal046B	Metal046B/Metal046B_1K-JPG_Displacement.jpg	674122	image			1024	1024				
+ambientcg-Metal046B	Metal046B/Metal046B_1K-JPG_Metalness.jpg	968767	image			1024	1024				
+ambientcg-Metal046B	Metal046B/Metal046B_1K-JPG_NormalDX.jpg	1272704	image			1024	1024				
+ambientcg-Metal046B	Metal046B/Metal046B_1K-JPG_NormalGL.jpg	1272514	image			1024	1024				
+ambientcg-Metal046B	Metal046B/Metal046B_1K-JPG_Roughness.jpg	502726	image			1024	1024				
+ambientcg-MetalPlates006	MetalPlates006/MetalPlates006.png	226584	image			512	512			skip	
+ambientcg-MetalPlates006	MetalPlates006/MetalPlates006_1K-JPG_Color.jpg	587858	image			1024	1024	3/0.38		skip	
+ambientcg-MetalPlates006	MetalPlates006/MetalPlates006_1K-JPG_Displacement.jpg	332772	image			1024	1024			skip	
+ambientcg-MetalPlates006	MetalPlates006/MetalPlates006_1K-JPG_Metalness.jpg	81609	image			1024	1024			skip	
+ambientcg-MetalPlates006	MetalPlates006/MetalPlates006_1K-JPG_NormalDX.jpg	1200276	image			1024	1024			skip	
+ambientcg-MetalPlates006	MetalPlates006/MetalPlates006_1K-JPG_NormalGL.jpg	1215357	image			1024	1024			skip	
+ambientcg-MetalPlates006	MetalPlates006/MetalPlates006_1K-JPG_Roughness.jpg	484105	image			1024	1024			skip	
+ambientcg-MetalPlates013	MetalPlates013/MetalPlates013.png	415990	image			512	512			skip	
+ambientcg-MetalPlates013	MetalPlates013/MetalPlates013_1K-JPG_AmbientOcclusion.jpg	159356	image			1024	1024			skip	
+ambientcg-MetalPlates013	MetalPlates013/MetalPlates013_1K-JPG_Color.jpg	1339722	image			1024	1024	2/0.08		skip	
+ambientcg-MetalPlates013	MetalPlates013/MetalPlates013_1K-JPG_Displacement.jpg	280489	image			1024	1024			skip	
+ambientcg-MetalPlates013	MetalPlates013/MetalPlates013_1K-JPG_Metalness.jpg	471677	image			1024	1024			skip	
+ambientcg-MetalPlates013	MetalPlates013/MetalPlates013_1K-JPG_NormalDX.jpg	1272967	image			1024	1024			skip	
+ambientcg-MetalPlates013	MetalPlates013/MetalPlates013_1K-JPG_NormalGL.jpg	1272098	image			1024	1024			skip	
+ambientcg-MetalPlates013	MetalPlates013/MetalPlates013_1K-JPG_Roughness.jpg	680355	image			1024	1024			skip	
+ambientcg-MetalPlates008	MetalPlates008/MetalPlates008.png	196900	image			512	512			skip	
+ambientcg-MetalPlates008	MetalPlates008/MetalPlates008_1K-JPG_Color.jpg	727204	image			1024	1024	0/0.34		skip	
+ambientcg-MetalPlates008	MetalPlates008/MetalPlates008_1K-JPG_Displacement.jpg	89936	image			1024	1024			skip	
+ambientcg-MetalPlates008	MetalPlates008/MetalPlates008_1K-JPG_Metalness.jpg	4353	image			1024	1024			skip	
+ambientcg-MetalPlates008	MetalPlates008/MetalPlates008_1K-JPG_NormalDX.jpg	586431	image			1024	1024			skip	
+ambientcg-MetalPlates008	MetalPlates008/MetalPlates008_1K-JPG_NormalGL.jpg	586952	image			1024	1024			skip	
+ambientcg-MetalPlates008	MetalPlates008/MetalPlates008_1K-JPG_Roughness.jpg	298331	image			1024	1024			skip	
+ambientcg-MetalPlates004	MetalPlates004/MetalPlates004.png	173991	image			512	512				
+ambientcg-MetalPlates004	MetalPlates004/MetalPlates004_1K-JPG_Color.jpg	315232	image			1024	1024	0/0.2	1		
+ambientcg-MetalPlates004	MetalPlates004/MetalPlates004_1K-JPG_Displacement.jpg	62134	image			1024	1024				
+ambientcg-MetalPlates004	MetalPlates004/MetalPlates004_1K-JPG_Metalness.jpg	21013	image			1024	1024				
+ambientcg-MetalPlates004	MetalPlates004/MetalPlates004_1K-JPG_NormalDX.jpg	525501	image			1024	1024				
+ambientcg-MetalPlates004	MetalPlates004/MetalPlates004_1K-JPG_NormalGL.jpg	524620	image			1024	1024				
+ambientcg-MetalPlates004	MetalPlates004/MetalPlates004_1K-JPG_Roughness.jpg	344966	image			1024	1024				
+ambientcg-MetalPlates014	MetalPlates014/MetalPlates014.png	361096	image			512	512			skip	
+ambientcg-MetalPlates014	MetalPlates014/MetalPlates014_1K-JPG_AmbientOcclusion.jpg	153297	image			1024	1024			skip	
+ambientcg-MetalPlates014	MetalPlates014/MetalPlates014_1K-JPG_Color.jpg	870376	image			1024	1024	0/0.08		skip	
+ambientcg-MetalPlates014	MetalPlates014/MetalPlates014_1K-JPG_Displacement.jpg	248897	image			1024	1024			skip	
+ambientcg-MetalPlates014	MetalPlates014/MetalPlates014_1K-JPG_Metalness.jpg	8322	image			1024	1024			skip	
+ambientcg-MetalPlates014	MetalPlates014/MetalPlates014_1K-JPG_NormalDX.jpg	871968	image			1024	1024			skip	
+ambientcg-MetalPlates014	MetalPlates014/MetalPlates014_1K-JPG_NormalGL.jpg	868082	image			1024	1024			skip	
+ambientcg-MetalPlates014	MetalPlates014/MetalPlates014_1K-JPG_Roughness.jpg	649004	image			1024	1024			skip	
+ambientcg-RoofingTiles013A	RoofingTiles013A/RoofingTiles013A.png	248179	image			512	512				
+ambientcg-RoofingTiles013A	RoofingTiles013A/RoofingTiles013A_1K-JPG_AmbientOcclusion.jpg	310035	image			1024	1024				
+ambientcg-RoofingTiles013A	RoofingTiles013A/RoofingTiles013A_1K-JPG_Color.jpg	403258	image			1024	1024	1/0.18	1		
+ambientcg-RoofingTiles013A	RoofingTiles013A/RoofingTiles013A_1K-JPG_Displacement.jpg	220471	image			1024	1024				
+ambientcg-RoofingTiles013A	RoofingTiles013A/RoofingTiles013A_1K-JPG_NormalDX.jpg	747868	image			1024	1024				
+ambientcg-RoofingTiles013A	RoofingTiles013A/RoofingTiles013A_1K-JPG_NormalGL.jpg	718594	image			1024	1024				
+ambientcg-RoofingTiles013A	RoofingTiles013A/RoofingTiles013A_1K-JPG_Opacity.jpg	5263	image			1024	1024				
+ambientcg-RoofingTiles013A	RoofingTiles013A/RoofingTiles013A_1K-JPG_Roughness.jpg	564671	image			1024	1024				
+ambientcg-RoofingTiles014A	RoofingTiles014A/RoofingTiles014A.png	291469	image			512	512			skip	
+ambientcg-RoofingTiles014A	RoofingTiles014A/RoofingTiles014A_1K-JPG_AmbientOcclusion.jpg	328231	image			1024	1024			skip	
+ambientcg-RoofingTiles014A	RoofingTiles014A/RoofingTiles014A_1K-JPG_Color.jpg	713878	image			1024	1024	2/0.47		skip	
+ambientcg-RoofingTiles014A	RoofingTiles014A/RoofingTiles014A_1K-JPG_Displacement.jpg	275020	image			1024	1024			skip	
+ambientcg-RoofingTiles014A	RoofingTiles014A/RoofingTiles014A_1K-JPG_NormalDX.jpg	853058	image			1024	1024			skip	
+ambientcg-RoofingTiles014A	RoofingTiles014A/RoofingTiles014A_1K-JPG_NormalGL.jpg	837895	image			1024	1024			skip	
+ambientcg-RoofingTiles014A	RoofingTiles014A/RoofingTiles014A_1K-JPG_Opacity.jpg	5677	image			1024	1024			skip	
+ambientcg-RoofingTiles014A	RoofingTiles014A/RoofingTiles014A_1K-JPG_Roughness.jpg	566303	image			1024	1024			skip	
+ambientcg-RoofingTiles012A	RoofingTiles012A/RoofingTiles012A.png	287265	image			512	512				
+ambientcg-RoofingTiles012A	RoofingTiles012A/RoofingTiles012A_1K-JPG_AmbientOcclusion.jpg	343691	image			1024	1024				
+ambientcg-RoofingTiles012A	RoofingTiles012A/RoofingTiles012A_1K-JPG_Color.jpg	509699	image			1024	1024	2/0.4	1		
+ambientcg-RoofingTiles012A	RoofingTiles012A/RoofingTiles012A_1K-JPG_Displacement.jpg	249427	image			1024	1024				
+ambientcg-RoofingTiles012A	RoofingTiles012A/RoofingTiles012A_1K-JPG_NormalDX.jpg	834811	image			1024	1024				
+ambientcg-RoofingTiles012A	RoofingTiles012A/RoofingTiles012A_1K-JPG_NormalGL.jpg	827625	image			1024	1024				
+ambientcg-RoofingTiles012A	RoofingTiles012A/RoofingTiles012A_1K-JPG_Opacity.jpg	5229	image			1024	1024				
+ambientcg-RoofingTiles012A	RoofingTiles012A/RoofingTiles012A_1K-JPG_Roughness.jpg	569980	image			1024	1024				
+ambientcg-RoofingTiles006	RoofingTiles006/RoofingTiles006.png	204072	image			512	512			skip	
+ambientcg-RoofingTiles006	RoofingTiles006/RoofingTiles006_1K-JPG_AmbientOcclusion.jpg	471292	image			1024	1024			skip	
+ambientcg-RoofingTiles006	RoofingTiles006/RoofingTiles006_1K-JPG_Color.jpg	525994	image			1024	1024	1/0.57		skip	
+ambientcg-RoofingTiles006	RoofingTiles006/RoofingTiles006_1K-JPG_Displacement.jpg	270289	image			1024	1024			skip	
+ambientcg-RoofingTiles006	RoofingTiles006/RoofingTiles006_1K-JPG_NormalDX.jpg	1707994	image			1024	1024			skip	
+ambientcg-RoofingTiles006	RoofingTiles006/RoofingTiles006_1K-JPG_NormalGL.jpg	1705907	image			1024	1024			skip	
+ambientcg-RoofingTiles006	RoofingTiles006/RoofingTiles006_1K-JPG_Roughness.jpg	656262	image			1024	1024			skip	
+ambientcg-RoofingTiles014B	RoofingTiles014B/RoofingTiles014B.png	338554	image			512	512				
+ambientcg-RoofingTiles014B	RoofingTiles014B/RoofingTiles014B_1K-JPG_AmbientOcclusion.jpg	466317	image			1024	1024				
+ambientcg-RoofingTiles014B	RoofingTiles014B/RoofingTiles014B_1K-JPG_Color.jpg	979821	image			1024	1024	2/0.53	1		
+ambientcg-RoofingTiles014B	RoofingTiles014B/RoofingTiles014B_1K-JPG_Displacement.jpg	297391	image			1024	1024				
+ambientcg-RoofingTiles014B	RoofingTiles014B/RoofingTiles014B_1K-JPG_NormalDX.jpg	1307038	image			1024	1024				
+ambientcg-RoofingTiles014B	RoofingTiles014B/RoofingTiles014B_1K-JPG_NormalGL.jpg	1294439	image			1024	1024				
+ambientcg-RoofingTiles014B	RoofingTiles014B/RoofingTiles014B_1K-JPG_Opacity.jpg	5749	image			1024	1024				
+ambientcg-RoofingTiles014B	RoofingTiles014B/RoofingTiles014B_1K-JPG_Roughness.jpg	662184	image			1024	1024				
+ambientcg-RoofingTiles012B	RoofingTiles012B/RoofingTiles012B.png	350642	image			512	512			skip	
+ambientcg-RoofingTiles012B	RoofingTiles012B/RoofingTiles012B_1K-JPG_AmbientOcclusion.jpg	469144	image			1024	1024			skip	
+ambientcg-RoofingTiles012B	RoofingTiles012B/RoofingTiles012B_1K-JPG_Color.jpg	1035642	image			1024	1024	2/0.67		skip	
+ambientcg-RoofingTiles012B	RoofingTiles012B/RoofingTiles012B_1K-JPG_Displacement.jpg	277080	image			1024	1024			skip	
+ambientcg-RoofingTiles012B	RoofingTiles012B/RoofingTiles012B_1K-JPG_NormalDX.jpg	1345571	image			1024	1024			skip	
+ambientcg-RoofingTiles012B	RoofingTiles012B/RoofingTiles012B_1K-JPG_NormalGL.jpg	1337576	image			1024	1024			skip	
+ambientcg-RoofingTiles012B	RoofingTiles012B/RoofingTiles012B_1K-JPG_Opacity.jpg	5229	image			1024	1024			skip	
+ambientcg-RoofingTiles012B	RoofingTiles012B/RoofingTiles012B_1K-JPG_Roughness.jpg	607940	image			1024	1024			skip	
+ambientcg-RoofingTiles011A	RoofingTiles011A/RoofingTiles011A.png	273087	image			512	512				
+ambientcg-RoofingTiles011A	RoofingTiles011A/RoofingTiles011A_1K-JPG_AmbientOcclusion.jpg	305362	image			1024	1024				
+ambientcg-RoofingTiles011A	RoofingTiles011A/RoofingTiles011A_1K-JPG_Color.jpg	565020	image			1024	1024	1/0.47	1		
+ambientcg-RoofingTiles011A	RoofingTiles011A/RoofingTiles011A_1K-JPG_Displacement.jpg	226206	image			1024	1024				
+ambientcg-RoofingTiles011A	RoofingTiles011A/RoofingTiles011A_1K-JPG_NormalDX.jpg	763899	image			1024	1024				
+ambientcg-RoofingTiles011A	RoofingTiles011A/RoofingTiles011A_1K-JPG_NormalGL.jpg	749604	image			1024	1024				
+ambientcg-RoofingTiles011A	RoofingTiles011A/RoofingTiles011A_1K-JPG_Opacity.jpg	5229	image			1024	1024				
+ambientcg-RoofingTiles011A	RoofingTiles011A/RoofingTiles011A_1K-JPG_Roughness.jpg	563688	image			1024	1024				
+ambientcg-Fabric085	Fabric085/Fabric085.png	447781	image			512	512				
+ambientcg-Fabric085	Fabric085/Fabric085_1K-JPG_AmbientOcclusion.jpg	742426	image			1024	1024				
+ambientcg-Fabric085	Fabric085/Fabric085_1K-JPG_Color.jpg	1503657	image			1024	1024	4/0.51	1		
+ambientcg-Fabric085	Fabric085/Fabric085_1K-JPG_Displacement.jpg	703243	image			1024	1024				
+ambientcg-Fabric085	Fabric085/Fabric085_1K-JPG_NormalDX.jpg	2128495	image			1024	1024				
+ambientcg-Fabric085	Fabric085/Fabric085_1K-JPG_NormalGL.jpg	2136466	image			1024	1024				
+ambientcg-Fabric085	Fabric085/Fabric085_1K-JPG_Roughness.jpg	648593	image			1024	1024				
+ambientcg-Fabric084	Fabric084/Fabric084.png	414991	image			512	512				
+ambientcg-Fabric084	Fabric084/Fabric084_1K-JPG_AmbientOcclusion.jpg	879364	image			1024	1024				
+ambientcg-Fabric084	Fabric084/Fabric084_1K-JPG_Color.jpg	897654	image			1024	1024	4/0.5	1		
+ambientcg-Fabric084	Fabric084/Fabric084_1K-JPG_Displacement.jpg	676500	image			1024	1024				
+ambientcg-Fabric084	Fabric084/Fabric084_1K-JPG_NormalDX.jpg	2206934	image			1024	1024				
+ambientcg-Fabric084	Fabric084/Fabric084_1K-JPG_NormalGL.jpg	2180705	image			1024	1024				
+ambientcg-Fabric084	Fabric084/Fabric084_1K-JPG_Roughness.jpg	745352	image			1024	1024				
+ambientcg-Fabric081C	Fabric081C/Fabric081C.png	176871	image			512	512				
+ambientcg-Fabric081C	Fabric081C/Fabric081C_1K-JPG_AmbientOcclusion.jpg	603939	image			1024	1024				
+ambientcg-Fabric081C	Fabric081C/Fabric081C_1K-JPG_Color.jpg	108759	image			1024	1024	3/0.27	1		
+ambientcg-Fabric081C	Fabric081C/Fabric081C_1K-JPG_Displacement.jpg	685797	image			1024	1024				
+ambientcg-Fabric081C	Fabric081C/Fabric081C_1K-JPG_NormalDX.jpg	994546	image			1024	1024				
+ambientcg-Fabric081C	Fabric081C/Fabric081C_1K-JPG_NormalGL.jpg	993687	image			1024	1024				
+ambientcg-Fabric081C	Fabric081C/Fabric081C_1K-JPG_Roughness.jpg	359612	image			1024	1024				
+ambientcg-Fabric061	Fabric061/Fabric061.png	494356	image			512	512				
+ambientcg-Fabric061	Fabric061/Fabric061_1K-JPG_AmbientOcclusion.jpg	688096	image			1024	1024				
+ambientcg-Fabric061	Fabric061/Fabric061_1K-JPG_Color.jpg	1408869	image			1024	1024	2/0.52	1		
+ambientcg-Fabric061	Fabric061/Fabric061_1K-JPG_Displacement.jpg	765430	image			1024	1024				
+ambientcg-Fabric061	Fabric061/Fabric061_1K-JPG_NormalDX.jpg	1992724	image			1024	1024				
+ambientcg-Fabric061	Fabric061/Fabric061_1K-JPG_NormalGL.jpg	1984910	image			1024	1024				
+ambientcg-Fabric061	Fabric061/Fabric061_1K-JPG_Roughness.jpg	533228	image			1024	1024				
+ambientcg-Fabric083	Fabric083/Fabric083.png	548424	image			512	512			skip	
+ambientcg-Fabric083	Fabric083/Fabric083_1K-JPG_Color.jpg	1522604	image			1024	1024	3/0.58		skip	
+ambientcg-Fabric083	Fabric083/Fabric083_1K-JPG_Displacement.jpg	652590	image			1024	1024			skip	
+ambientcg-Fabric083	Fabric083/Fabric083_1K-JPG_NormalDX.jpg	1855661	image			1024	1024			skip	
+ambientcg-Fabric083	Fabric083/Fabric083_1K-JPG_NormalGL.jpg	1855675	image			1024	1024			skip	
+ambientcg-Fabric083	Fabric083/Fabric083_1K-JPG_Roughness.jpg	520957	image			1024	1024			skip	
+ambientcg-Fabric066	Fabric066/Fabric066.png	545507	image			512	512			skip	
+ambientcg-Fabric066	Fabric066/Fabric066_1K-JPG_AmbientOcclusion.jpg	757079	image			1024	1024			skip	
+ambientcg-Fabric066	Fabric066/Fabric066_1K-JPG_Color.jpg	1479727	image			1024	1024	4/0.27		skip	
+ambientcg-Fabric066	Fabric066/Fabric066_1K-JPG_Displacement.jpg	857910	image			1024	1024			skip	
+ambientcg-Fabric066	Fabric066/Fabric066_1K-JPG_NormalDX.jpg	2166022	image			1024	1024			skip	
+ambientcg-Fabric066	Fabric066/Fabric066_1K-JPG_NormalGL.jpg	2167469	image			1024	1024			skip	
+ambientcg-Fabric066	Fabric066/Fabric066_1K-JPG_Roughness.jpg	585203	image			1024	1024			skip	
+ambientcg-Fabric030	Fabric030/Fabric030.png	366770	image			512	512				
+ambientcg-Fabric030	Fabric030/Fabric030_1K-JPG_AmbientOcclusion.jpg	835879	image			1024	1024				
+ambientcg-Fabric030	Fabric030/Fabric030_1K-JPG_Color.jpg	1681447	image			1024	1024	2/0.21	1		
+ambientcg-Fabric030	Fabric030/Fabric030_1K-JPG_Displacement.jpg	831560	image			1024	1024				
+ambientcg-Fabric030	Fabric030/Fabric030_1K-JPG_NormalDX.jpg	2681333	image			1024	1024				
+ambientcg-Fabric030	Fabric030/Fabric030_1K-JPG_NormalGL.jpg	2682952	image			1024	1024				
+ambientcg-Fabric030	Fabric030/Fabric030_1K-JPG_Roughness.jpg	866950	image			1024	1024				
+ambientcg-Leather037	Leather037/Leather037.png	381111	image			512	512				
+ambientcg-Leather037	Leather037/Leather037_1K-JPG_Color.jpg	583727	image			1024	1024	4/0.12	1		
+ambientcg-Leather037	Leather037/Leather037_1K-JPG_Displacement.jpg	884510	image			1024	1024				
+ambientcg-Leather037	Leather037/Leather037_1K-JPG_NormalDX.jpg	1818518	image			1024	1024				
+ambientcg-Leather037	Leather037/Leather037_1K-JPG_NormalGL.jpg	1820470	image			1024	1024				
+ambientcg-Leather037	Leather037/Leather037_1K-JPG_Roughness.jpg	728299	image			1024	1024				
+ambientcg-Leather038	Leather038/Leather038.png	332797	image			512	512				
+ambientcg-Leather038	Leather038/Leather038_1K-JPG_Color.jpg	1169172	image			1024	1024	5/0.13	1		
+ambientcg-Leather038	Leather038/Leather038_1K-JPG_Displacement.jpg	690602	image			1024	1024				
+ambientcg-Leather038	Leather038/Leather038_1K-JPG_NormalDX.jpg	1274387	image			1024	1024				
+ambientcg-Leather038	Leather038/Leather038_1K-JPG_NormalGL.jpg	1274996	image			1024	1024				
+ambientcg-Leather038	Leather038/Leather038_1K-JPG_Roughness.jpg	623423	image			1024	1024				
+ambientcg-Leather030	Leather030/Leather030.png	278852	image			512	512				
+ambientcg-Leather030	Leather030/Leather030_1K-JPG_Color.jpg	1278600	image			1024	1024	4/0.06	1		
+ambientcg-Leather030	Leather030/Leather030_1K-JPG_Displacement.jpg	899009	image			1024	1024				
+ambientcg-Leather030	Leather030/Leather030_1K-JPG_NormalDX.jpg	1524160	image			1024	1024				
+ambientcg-Leather030	Leather030/Leather030_1K-JPG_NormalGL.jpg	1519698	image			1024	1024				
+ambientcg-Leather030	Leather030/Leather030_1K-JPG_Roughness.jpg	919661	image			1024	1024				
+ambientcg-Ground112	Ground112/Ground112.png	462547	image			512	512			skip	
+ambientcg-Ground112	Ground112/Ground112_1K-JPG_AmbientOcclusion.jpg	835855	image			1024	1024			skip	
+ambientcg-Ground112	Ground112/Ground112_1K-JPG_Color.jpg	1665225	image			1024	1024	1/0.42		skip	
+ambientcg-Ground112	Ground112/Ground112_1K-JPG_Displacement.jpg	555664	image			1024	1024			skip	
+ambientcg-Ground112	Ground112/Ground112_1K-JPG_NormalDX.jpg	2020951	image			1024	1024			skip	
+ambientcg-Ground112	Ground112/Ground112_1K-JPG_NormalGL.jpg	2021438	image			1024	1024			skip	
+ambientcg-Ground112	Ground112/Ground112_1K-JPG_Roughness.jpg	872858	image			1024	1024			skip	
+ambientcg-Ground111	Ground111/Ground111.png	472461	image			512	512				
+ambientcg-Ground111	Ground111/Ground111_1K-JPG_AmbientOcclusion.jpg	738567	image			1024	1024				
+ambientcg-Ground111	Ground111/Ground111_1K-JPG_Color.jpg	1872901	image			1024	1024	3/0.48	1		
+ambientcg-Ground111	Ground111/Ground111_1K-JPG_Displacement.jpg	489663	image			1024	1024				
+ambientcg-Ground111	Ground111/Ground111_1K-JPG_NormalDX.jpg	2026843	image			1024	1024				
+ambientcg-Ground111	Ground111/Ground111_1K-JPG_NormalGL.jpg	2027069	image			1024	1024				
+ambientcg-Ground111	Ground111/Ground111_1K-JPG_Roughness.jpg	800542	image			1024	1024				
+ambientcg-Ground110	Ground110/Ground110.png	521398	image			512	512				
+ambientcg-Ground110	Ground110/Ground110_1K-JPG_AmbientOcclusion.jpg	908903	image			1024	1024				
+ambientcg-Ground110	Ground110/Ground110_1K-JPG_Color.jpg	1662642	image			1024	1024	1/0.29	1		
+ambientcg-Ground110	Ground110/Ground110_1K-JPG_Displacement.jpg	616661	image			1024	1024				
+ambientcg-Ground110	Ground110/Ground110_1K-JPG_NormalDX.jpg	2280507	image			1024	1024				
+ambientcg-Ground110	Ground110/Ground110_1K-JPG_NormalGL.jpg	2280851	image			1024	1024				
+ambientcg-Ground110	Ground110/Ground110_1K-JPG_Roughness.jpg	811653	image			1024	1024				
+ambientcg-Ground108	Ground108/Ground108.png	495744	image			512	512			skip	
+ambientcg-Ground108	Ground108/Ground108_1K-JPG_AmbientOcclusion.jpg	860514	image			1024	1024			skip	
+ambientcg-Ground108	Ground108/Ground108_1K-JPG_Color.jpg	1637079	image			1024	1024	1/0.3		skip	
+ambientcg-Ground108	Ground108/Ground108_1K-JPG_Displacement.jpg	493979	image			1024	1024			skip	
+ambientcg-Ground108	Ground108/Ground108_1K-JPG_NormalDX.jpg	2108413	image			1024	1024			skip	
+ambientcg-Ground108	Ground108/Ground108_1K-JPG_NormalGL.jpg	2108634	image			1024	1024			skip	
+ambientcg-Ground108	Ground108/Ground108_1K-JPG_Roughness.jpg	797916	image			1024	1024			skip	
+ambientcg-Ground109	Ground109/Ground109.png	437520	image			512	512				
+ambientcg-Ground109	Ground109/Ground109_1K-JPG_AmbientOcclusion.jpg	802902	image			1024	1024				
+ambientcg-Ground109	Ground109/Ground109_1K-JPG_Color.jpg	1463122	image			1024	1024	2/0.46	1		
+ambientcg-Ground109	Ground109/Ground109_1K-JPG_Displacement.jpg	442675	image			1024	1024				
+ambientcg-Ground109	Ground109/Ground109_1K-JPG_NormalDX.jpg	1965385	image			1024	1024				
+ambientcg-Ground109	Ground109/Ground109_1K-JPG_NormalGL.jpg	1965234	image			1024	1024				
+ambientcg-Ground109	Ground109/Ground109_1K-JPG_Roughness.jpg	691268	image			1024	1024				
+ambientcg-Ground106	Ground106/Ground106.png	466740	image			512	512				
+ambientcg-Ground106	Ground106/Ground106_1K-JPG_AmbientOcclusion.jpg	789467	image			1024	1024				
+ambientcg-Ground106	Ground106/Ground106_1K-JPG_Color.jpg	1582442	image			1024	1024	1/0.41	1		
+ambientcg-Ground106	Ground106/Ground106_1K-JPG_Displacement.jpg	562423	image			1024	1024				
+ambientcg-Ground106	Ground106/Ground106_1K-JPG_NormalDX.jpg	2122305	image			1024	1024				
+ambientcg-Ground106	Ground106/Ground106_1K-JPG_NormalGL.jpg	2122182	image			1024	1024				
+ambientcg-Ground106	Ground106/Ground106_1K-JPG_Roughness.jpg	730362	image			1024	1024				
+ambientcg-Ground103	Ground103/Ground103.png	461884	image			512	512			skip	
+ambientcg-Ground103	Ground103/Ground103_1K-JPG_AmbientOcclusion.jpg	904525	image			1024	1024			skip	
+ambientcg-Ground103	Ground103/Ground103_1K-JPG_Color.jpg	1504949	image			1024	1024	1/0.28		skip	
+ambientcg-Ground103	Ground103/Ground103_1K-JPG_Displacement.jpg	479279	image			1024	1024			skip	
+ambientcg-Ground103	Ground103/Ground103_1K-JPG_NormalDX.jpg	2136618	image			1024	1024			skip	
+ambientcg-Ground103	Ground103/Ground103_1K-JPG_NormalGL.jpg	2136725	image			1024	1024			skip	
+ambientcg-Ground103	Ground103/Ground103_1K-JPG_Roughness.jpg	853705	image			1024	1024			skip	
+ambientcg-Gravel043	Gravel043/Gravel043.png	511259	image			512	512				
+ambientcg-Gravel043	Gravel043/Gravel043_1K-JPG_AmbientOcclusion.jpg	855969	image			1024	1024				
+ambientcg-Gravel043	Gravel043/Gravel043_1K-JPG_Color.jpg	1667560	image			1024	1024	0/0.38	1		
+ambientcg-Gravel043	Gravel043/Gravel043_1K-JPG_Displacement.jpg	702099	image			1024	1024				
+ambientcg-Gravel043	Gravel043/Gravel043_1K-JPG_NormalDX.jpg	2273110	image			1024	1024				
+ambientcg-Gravel043	Gravel043/Gravel043_1K-JPG_NormalGL.jpg	2272547	image			1024	1024				
+ambientcg-Gravel043	Gravel043/Gravel043_1K-JPG_Roughness.jpg	790275	image			1024	1024				
+ambientcg-Gravel023	Gravel023/Gravel023.png	457025	image			512	512				
+ambientcg-Gravel023	Gravel023/Gravel023_1K-JPG_AmbientOcclusion.jpg	880985	image			1024	1024				
+ambientcg-Gravel023	Gravel023/Gravel023_1K-JPG_Color.jpg	1244622	image			1024	1024	2/0.41	1		
+ambientcg-Gravel023	Gravel023/Gravel023_1K-JPG_Displacement.jpg	706454	image			1024	1024				
+ambientcg-Gravel023	Gravel023/Gravel023_1K-JPG_NormalDX.jpg	2467946	image			1024	1024				
+ambientcg-Gravel023	Gravel023/Gravel023_1K-JPG_NormalGL.jpg	2464864	image			1024	1024				
+ambientcg-Gravel023	Gravel023/Gravel023_1K-JPG_Roughness.jpg	538605	image			1024	1024				
+ambientcg-Gravel041	Gravel041/Gravel041.png	554705	image			512	512				
+ambientcg-Gravel041	Gravel041/Gravel041_1K-JPG_AmbientOcclusion.jpg	833911	image			1024	1024				
+ambientcg-Gravel041	Gravel041/Gravel041_1K-JPG_Color.jpg	1587447	image			1024	1024	1/0.4	1		
+ambientcg-Gravel041	Gravel041/Gravel041_1K-JPG_Displacement.jpg	700924	image			1024	1024				
+ambientcg-Gravel041	Gravel041/Gravel041_1K-JPG_NormalDX.jpg	2293481	image			1024	1024				
+ambientcg-Gravel041	Gravel041/Gravel041_1K-JPG_NormalGL.jpg	2292846	image			1024	1024				
+ambientcg-Gravel041	Gravel041/Gravel041_1K-JPG_Roughness.jpg	775761	image			1024	1024				
+ambientcg-Gravel040	Gravel040/Gravel040.png	525081	image			512	512			skip	
+ambientcg-Gravel040	Gravel040/Gravel040_1K-JPG_AmbientOcclusion.jpg	837626	image			1024	1024			skip	
+ambientcg-Gravel040	Gravel040/Gravel040_1K-JPG_Color.jpg	1660318	image			1024	1024	8/0.17		skip	
+ambientcg-Gravel040	Gravel040/Gravel040_1K-JPG_Displacement.jpg	687717	image			1024	1024			skip	
+ambientcg-Gravel040	Gravel040/Gravel040_1K-JPG_NormalDX.jpg	2267701	image			1024	1024			skip	
+ambientcg-Gravel040	Gravel040/Gravel040_1K-JPG_NormalGL.jpg	2266311	image			1024	1024			skip	
+ambientcg-Gravel040	Gravel040/Gravel040_1K-JPG_Roughness.jpg	754770	image			1024	1024			skip	
+ambientcg-Marble012	Marble012/Marble012.png	332034	image			512	512				
+ambientcg-Marble012	Marble012/Marble012_1K-JPG_Color.jpg	1220876	image			1024	1024	4/0.6	1		
+ambientcg-Marble012	Marble012/Marble012_1K-JPG_Displacement.jpg	790392	image			1024	1024				
+ambientcg-Marble012	Marble012/Marble012_1K-JPG_NormalDX.jpg	343770	image			1024	1024				
+ambientcg-Marble012	Marble012/Marble012_1K-JPG_NormalGL.jpg	342955	image			1024	1024				
+ambientcg-Marble012	Marble012/Marble012_1K-JPG_Roughness.jpg	535814	image			1024	1024				
+ambientcg-Marble016	Marble016/Marble016.png	359259	image			512	512				
+ambientcg-Marble016	Marble016/Marble016_1K-JPG_Color.jpg	1115823	image			1024	1024	2/0.52	1		
+ambientcg-Marble016	Marble016/Marble016_1K-JPG_Displacement.jpg	752038	image			1024	1024				
+ambientcg-Marble016	Marble016/Marble016_1K-JPG_NormalDX.jpg	340849	image			1024	1024				
+ambientcg-Marble016	Marble016/Marble016_1K-JPG_NormalGL.jpg	340229	image			1024	1024				
+ambientcg-Marble016	Marble016/Marble016_1K-JPG_Roughness.jpg	337203	image			1024	1024				
+ambientcg-Marble021	Marble021/Marble021.png	203307	image			512	512			skip	
+ambientcg-Marble021	Marble021/Marble021_1K-JPG_Color.jpg	1067026	image			1024	1024	4/0.41		skip	
+ambientcg-Marble021	Marble021/Marble021_1K-JPG_Displacement.jpg	735645	image			1024	1024			skip	
+ambientcg-Marble021	Marble021/Marble021_1K-JPG_NormalDX.jpg	340977	image			1024	1024			skip	
+ambientcg-Marble021	Marble021/Marble021_1K-JPG_NormalGL.jpg	339360	image			1024	1024			skip	
+ambientcg-Marble021	Marble021/Marble021_1K-JPG_Roughness.jpg	348218	image			1024	1024			skip	
+ambientcg-Marble006	Marble006/Marble006.png	327072	image			512	512				
+ambientcg-Marble006	Marble006/Marble006_1K-JPG_Color.jpg	1239605	image			1024	1024	2/0.63	1		
+ambientcg-Marble006	Marble006/Marble006_1K-JPG_Displacement.jpg	805446	image			1024	1024				
+ambientcg-Marble006	Marble006/Marble006_1K-JPG_NormalDX.jpg	343237	image			1024	1024				
+ambientcg-Marble006	Marble006/Marble006_1K-JPG_NormalGL.jpg	342803	image			1024	1024				
+ambientcg-Marble006	Marble006/Marble006_1K-JPG_Roughness.jpg	517036	image			1024	1024				
+ambientcg-Concrete034	Concrete034/Concrete034.png	229324	image			512	512			skip	
+ambientcg-Concrete034	Concrete034/Concrete034_1K-JPG_Color.jpg	269501	image			1024	512	1/0.31		skip	
+ambientcg-Concrete034	Concrete034/Concrete034_1K-JPG_Displacement.jpg	189234	image			1024	512			skip	
+ambientcg-Concrete034	Concrete034/Concrete034_1K-JPG_NormalDX.jpg	822978	image			1024	512			skip	
+ambientcg-Concrete034	Concrete034/Concrete034_1K-JPG_NormalGL.jpg	821681	image			1024	512			skip	
+ambientcg-Concrete034	Concrete034/Concrete034_1K-JPG_Roughness.jpg	217708	image			1024	512			skip	
+ambientcg-Concrete048	Concrete048/Concrete048.png	321425	image			512	512				
+ambientcg-Concrete048	Concrete048/Concrete048_1K-JPG_AmbientOcclusion.jpg	659489	image			1024	1024				
+ambientcg-Concrete048	Concrete048/Concrete048_1K-JPG_Color.jpg	1126366	image			1024	1024	3/0.33	1		
+ambientcg-Concrete048	Concrete048/Concrete048_1K-JPG_Displacement.jpg	492343	image			1024	1024				
+ambientcg-Concrete048	Concrete048/Concrete048_1K-JPG_Metalness.jpg	5229	image			1024	1024				
+ambientcg-Concrete048	Concrete048/Concrete048_1K-JPG_NormalDX.jpg	1552023	image			1024	1024				
+ambientcg-Concrete048	Concrete048/Concrete048_1K-JPG_NormalGL.jpg	1548946	image			1024	1024				
+ambientcg-Concrete048	Concrete048/Concrete048_1K-JPG_Roughness.jpg	702183	image			1024	1024				
+ambientcg-Concrete047A	Concrete047A/Concrete047A.png	415852	image			512	512			skip	
+ambientcg-Concrete047A	Concrete047A/Concrete047A_1K-JPG_AmbientOcclusion.jpg	713780	image			1024	1024			skip	
+ambientcg-Concrete047A	Concrete047A/Concrete047A_1K-JPG_Color.jpg	1596193	image			1024	1024	2/0.46		skip	
+ambientcg-Concrete047A	Concrete047A/Concrete047A_1K-JPG_Displacement.jpg	451463	image			1024	1024			skip	
+ambientcg-Concrete047A	Concrete047A/Concrete047A_1K-JPG_NormalDX.jpg	1807323	image			1024	1024			skip	
+ambientcg-Concrete047A	Concrete047A/Concrete047A_1K-JPG_NormalGL.jpg	1806276	image			1024	1024			skip	
+ambientcg-Concrete047A	Concrete047A/Concrete047A_1K-JPG_Roughness.jpg	705460	image			1024	1024			skip	
+ambientcg-Plaster001	Plaster001/Plaster001.png	329146	image			512	512				
+ambientcg-Plaster001	Plaster001/Plaster001_1K-JPG_Color.jpg	828790	image			1024	1024	2/0.43	1		
+ambientcg-Plaster001	Plaster001/Plaster001_1K-JPG_Displacement.jpg	601909	image			1024	1024				
+ambientcg-Plaster001	Plaster001/Plaster001_1K-JPG_NormalDX.jpg	2088321	image			1024	1024				
+ambientcg-Plaster001	Plaster001/Plaster001_1K-JPG_NormalGL.jpg	2091491	image			1024	1024				
+ambientcg-Plaster001	Plaster001/Plaster001_1K-JPG_Roughness.jpg	367391	image			1024	1024				
+ambientcg-Plaster007	Plaster007/Plaster007.png	328767	image			512	512			skip	
+ambientcg-Plaster007	Plaster007/Plaster007_1K-JPG_AmbientOcclusion.jpg	660056	image			1024	1024			skip	
+ambientcg-Plaster007	Plaster007/Plaster007_1K-JPG_Color.jpg	1164937	image			1024	1024	3/0.63		skip	
+ambientcg-Plaster007	Plaster007/Plaster007_1K-JPG_Displacement.jpg	438483	image			1024	1024			skip	
+ambientcg-Plaster007	Plaster007/Plaster007_1K-JPG_NormalDX.jpg	1811786	image			1024	1024			skip	
+ambientcg-Plaster007	Plaster007/Plaster007_1K-JPG_NormalGL.jpg	1810633	image			1024	1024			skip	
+ambientcg-Plaster007	Plaster007/Plaster007_1K-JPG_Roughness.jpg	738576	image			1024	1024			skip	
+ambientcg-Plaster002	Plaster002/Plaster002.png	329309	image			512	512			skip	
+ambientcg-Plaster002	Plaster002/Plaster002_1K-JPG_Color.jpg	1000485	image			1024	1024	2/0.34		skip	
+ambientcg-Plaster002	Plaster002/Plaster002_1K-JPG_Displacement.jpg	553637	image			1024	1024			skip	
+ambientcg-Plaster002	Plaster002/Plaster002_1K-JPG_NormalDX.jpg	2013268	image			1024	1024			skip	
+ambientcg-Plaster002	Plaster002/Plaster002_1K-JPG_NormalGL.jpg	2013476	image			1024	1024			skip	
+ambientcg-Plaster002	Plaster002/Plaster002_1K-JPG_Roughness.jpg	501790	image			1024	1024			skip	
+ambientcg-Snow015	Snow015/Snow015.png	531817	image			512	512				
+ambientcg-Snow015	Snow015/Snow015_1K-JPG_AmbientOcclusion.jpg	918336	image			1024	1024				
+ambientcg-Snow015	Snow015/Snow015_1K-JPG_Color.jpg	1683440	image			1024	1024	6/0.5	1		
+ambientcg-Snow015	Snow015/Snow015_1K-JPG_Displacement.jpg	578383	image			1024	1024				
+ambientcg-Snow015	Snow015/Snow015_1K-JPG_NormalDX.jpg	2085776	image			1024	1024				
+ambientcg-Snow015	Snow015/Snow015_1K-JPG_NormalGL.jpg	2089649	image			1024	1024				
+ambientcg-Snow015	Snow015/Snow015_1K-JPG_Roughness.jpg	779211	image			1024	1024				
+ambientcg-Snow014	Snow014/Snow014.png	309014	image			512	512				
+ambientcg-Snow014	Snow014/Snow014_1K-JPG_AmbientOcclusion.jpg	518709	image			1024	1024				
+ambientcg-Snow014	Snow014/Snow014_1K-JPG_Color.jpg	724157	image			1024	1024	5/0.59	1		
+ambientcg-Snow014	Snow014/Snow014_1K-JPG_Displacement.jpg	408609	image			1024	1024				
+ambientcg-Snow014	Snow014/Snow014_1K-JPG_NormalDX.jpg	1674302	image			1024	1024				
+ambientcg-Snow014	Snow014/Snow014_1K-JPG_NormalGL.jpg	1672609	image			1024	1024				
+ambientcg-Snow014	Snow014/Snow014_1K-JPG_Roughness.jpg	682348	image			1024	1024				
+ambientcg-Bark014	Bark014/Bark014.png	471925	image			512	512				
+ambientcg-Bark014	Bark014/Bark014_1K-JPG_AmbientOcclusion.jpg	753753	image			1024	1024				
+ambientcg-Bark014	Bark014/Bark014_1K-JPG_Color.jpg	1673314	image			1024	1024	9/0.41	1		
+ambientcg-Bark014	Bark014/Bark014_1K-JPG_Displacement.jpg	394989	image			1024	1024				
+ambientcg-Bark014	Bark014/Bark014_1K-JPG_NormalDX.jpg	1747079	image			1024	1024				
+ambientcg-Bark014	Bark014/Bark014_1K-JPG_NormalGL.jpg	1739655	image			1024	1024				
+ambientcg-Bark014	Bark014/Bark014_1K-JPG_Roughness.jpg	802004	image			1024	1024				
+ambientcg-Bark015	Bark015/Bark015.png	526060	image			512	512				
+ambientcg-Bark015	Bark015/Bark015_1K-JPG_AmbientOcclusion.jpg	831667	image			1024	1024				
+ambientcg-Bark015	Bark015/Bark015_1K-JPG_Color.jpg	1772314	image			1024	1024	3/0.55	1		
+ambientcg-Bark015	Bark015/Bark015_1K-JPG_Displacement.jpg	438076	image			1024	1024				
+ambientcg-Bark015	Bark015/Bark015_1K-JPG_NormalDX.jpg	2176851	image			1024	1024				
+ambientcg-Bark015	Bark015/Bark015_1K-JPG_NormalGL.jpg	2174017	image			1024	1024				
+ambientcg-Bark015	Bark015/Bark015_1K-JPG_Roughness.jpg	692388	image			1024	1024				
+ambientcg-Bark012	Bark012/Bark012.png	528450	image			512	512			skip	
+ambientcg-Bark012	Bark012/Bark012_1K-JPG_AmbientOcclusion.jpg	758060	image			1024	1024			skip	
+ambientcg-Bark012	Bark012/Bark012_1K-JPG_Color.jpg	1711274	image			1024	1024	3/0.41		skip	
+ambientcg-Bark012	Bark012/Bark012_1K-JPG_Displacement.jpg	598905	image			1024	1024			skip	
+ambientcg-Bark012	Bark012/Bark012_1K-JPG_NormalDX.jpg	2450338	image			1024	1024			skip	
+ambientcg-Bark012	Bark012/Bark012_1K-JPG_NormalGL.jpg	2443285	image			1024	1024			skip	
+ambientcg-Bark012	Bark012/Bark012_1K-JPG_Roughness.jpg	728470	image			1024	1024			skip	
+ambientcg-Grass005	Grass005/Grass005.png	506576	image			512	512				
+ambientcg-Grass005	Grass005/Grass005_1K-JPG_AmbientOcclusion.jpg	981258	image			1024	1024				
+ambientcg-Grass005	Grass005/Grass005_1K-JPG_Color.jpg	1875015	image			1024	1024	8/0.07	1		
+ambientcg-Grass005	Grass005/Grass005_1K-JPG_Displacement.jpg	835456	image			1024	1024				
+ambientcg-Grass005	Grass005/Grass005_1K-JPG_NormalDX.jpg	2136776	image			1024	1024				
+ambientcg-Grass005	Grass005/Grass005_1K-JPG_NormalGL.jpg	2137845	image			1024	1024				
+ambientcg-Grass005	Grass005/Grass005_1K-JPG_Roughness.jpg	851896	image			1024	1024				
+ambientcg-Grass001	Grass001/Grass001.png	513474	image			512	512				
+ambientcg-Grass001	Grass001/Grass001_1K-JPG_AmbientOcclusion.jpg	902486	image			1024	1024				
+ambientcg-Grass001	Grass001/Grass001_1K-JPG_Color.jpg	1764300	image			1024	1024	7/0.41	1		
+ambientcg-Grass001	Grass001/Grass001_1K-JPG_Displacement.jpg	913308	image			1024	1024				
+ambientcg-Grass001	Grass001/Grass001_1K-JPG_NormalDX.jpg	2337443	image			1024	1024				
+ambientcg-Grass001	Grass001/Grass001_1K-JPG_NormalGL.jpg	2338245	image			1024	1024				
+ambientcg-Grass001	Grass001/Grass001_1K-JPG_Roughness.jpg	823623	image			1024	1024				
+ambientcg-Grass004	Grass004/Grass004.png	546989	image			512	512			skip	
+ambientcg-Grass004	Grass004/Grass004_1K-JPG_AmbientOcclusion.jpg	904824	image			1024	1024			skip	
+ambientcg-Grass004	Grass004/Grass004_1K-JPG_Color.jpg	1985561	image			1024	1024	8/0.5		skip	
+ambientcg-Grass004	Grass004/Grass004_1K-JPG_Displacement.jpg	918011	image			1024	1024			skip	
+ambientcg-Grass004	Grass004/Grass004_1K-JPG_NormalDX.jpg	2339065	image			1024	1024			skip	
+ambientcg-Grass004	Grass004/Grass004_1K-JPG_NormalGL.jpg	2339612	image			1024	1024			skip	
+ambientcg-Grass004	Grass004/Grass004_1K-JPG_Roughness.jpg	851664	image			1024	1024			skip	
+ambientcg-Wicker013	Wicker013/Wicker013.png	345287	image			512	512			skip	
+ambientcg-Wicker013	Wicker013/Wicker013_1K-JPG_AmbientOcclusion.jpg	565289	image			1024	1024			skip	
+ambientcg-Wicker013	Wicker013/Wicker013_1K-JPG_Color.jpg	1235588	image			1024	1024	5/0.29		skip	
+ambientcg-Wicker013	Wicker013/Wicker013_1K-JPG_Displacement.jpg	484639	image			1024	1024			skip	
+ambientcg-Wicker013	Wicker013/Wicker013_1K-JPG_NormalDX.jpg	1647808	image			1024	1024			skip	
+ambientcg-Wicker013	Wicker013/Wicker013_1K-JPG_NormalGL.jpg	1642802	image			1024	1024			skip	
+ambientcg-Wicker013	Wicker013/Wicker013_1K-JPG_Roughness.jpg	549443	image			1024	1024			skip	
+ambientcg-Wicker010A	Wicker010A/Wicker010A.png	377079	image			512	512			skip	
+ambientcg-Wicker010A	Wicker010A/Wicker010A_1K-JPG_AmbientOcclusion.jpg	483862	image			1024	1024			skip	
+ambientcg-Wicker010A	Wicker010A/Wicker010A_1K-JPG_Color.jpg	1056153	image			1024	1024	9/0.34		skip	
+ambientcg-Wicker010A	Wicker010A/Wicker010A_1K-JPG_Displacement.jpg	379625	image			1024	1024			skip	
+ambientcg-Wicker010A	Wicker010A/Wicker010A_1K-JPG_NormalDX.jpg	1593863	image			1024	1024			skip	
+ambientcg-Wicker010A	Wicker010A/Wicker010A_1K-JPG_NormalGL.jpg	1593120	image			1024	1024			skip	
+ambientcg-Wicker010A	Wicker010A/Wicker010A_1K-JPG_Opacity.jpg	132030	image			1024	1024			skip	
+ambientcg-Wicker010A	Wicker010A/Wicker010A_1K-JPG_Roughness.jpg	471228	image			1024	1024			skip	
+ambientcg-Rust009	Rust009/Rust009.png	389760	image			512	512				
+ambientcg-Rust009	Rust009/Rust009_1K-JPG_AmbientOcclusion.jpg	651979	image			1024	1024				
+ambientcg-Rust009	Rust009/Rust009_1K-JPG_Color.jpg	1456310	image			1024	1024	7/0	1		
+ambientcg-Rust009	Rust009/Rust009_1K-JPG_Displacement.jpg	634327	image			1024	1024				
+ambientcg-Rust009	Rust009/Rust009_1K-JPG_NormalDX.jpg	1439749	image			1024	1024				
+ambientcg-Rust009	Rust009/Rust009_1K-JPG_NormalGL.jpg	1442603	image			1024	1024				
+ambientcg-Rust009	Rust009/Rust009_1K-JPG_Roughness.jpg	610798	image			1024	1024				
+ambientcg-Rust010	Rust010/Rust010.png	353876	image			512	512			skip	
+ambientcg-Rust010	Rust010/Rust010_1K-JPG_AmbientOcclusion.jpg	651430	image			1024	1024			skip	
+ambientcg-Rust010	Rust010/Rust010_1K-JPG_Color.jpg	1215187	image			1024	1024	2/0.37		skip	
+ambientcg-Rust010	Rust010/Rust010_1K-JPG_Displacement.jpg	637137	image			1024	1024			skip	
+ambientcg-Rust010	Rust010/Rust010_1K-JPG_NormalDX.jpg	1443987	image			1024	1024			skip	
+ambientcg-Rust010	Rust010/Rust010_1K-JPG_NormalGL.jpg	1444766	image			1024	1024			skip	
+ambientcg-Rust010	Rust010/Rust010_1K-JPG_Roughness.jpg	525797	image			1024	1024			skip	

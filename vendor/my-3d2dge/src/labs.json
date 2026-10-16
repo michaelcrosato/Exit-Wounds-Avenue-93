@@ -1,0 +1,178 @@
+{
+  "$about": "The Labs page (examples/labs.html, my-3d2dge.vercel.app/labs) is built from this list by tools/build.mjs, in the list's order. Each section has a title (short: a shorter name for the bar at the top, if it needs one), a line saying what it holds (about) and its entries; line: true numbers them, one line in the order it was made, each with made (when it was made). Each entry is one page: page is an examples/ page name (examples/<page>.html, served at /<page>) or a dist/ path; its title opens the page, and links are other places to start, [label, what to add to the address] (or another dist/ path). line, kits and keep (Tools) are kept. temporary holds the prototypes (DOCTRINE.md) in the order they were made, one-off comparisons and experiments, each with the date it was added and the question it answers; next: the page it led to, and deviates: one line for each way it departs from the doctrine, if any. When the question is settled, delete the page and its entry, or graduate it to another section (it is then held to the engine tier). A change to a prototype alone needs no version bump. tools/labs-test.mjs opens every link.",
+  "sections": [
+    {
+      "id": "line",
+      "title": "The road to Emberdeep",
+      "short": "Emberdeep",
+      "line": true,
+      "about": "One line, in the order it was made: each of these grew the engine, and together they led to the showcase game.",
+      "entries": [
+        {
+          "page": "scarfrunner-side",
+          "title": "Scarfrunner",
+          "made": "before the engine",
+          "what": "The side-scrolling prototype: platforming, a physics scarf and parallax.",
+          "links": []
+        },
+        {
+          "page": "arena",
+          "title": "Emberwell",
+          "made": "in v0.1.0",
+          "what": "The action-RPG arena demo with GPU lighting. It opens isometric; three more views below.",
+          "links": [["Three-quarter", "#threequarter"], ["Top-down", "#topdown"], ["Brawler", "#brawler"]]
+        },
+        {
+          "page": "perspective-lab",
+          "title": "Perspective Lab",
+          "made": "in v0.1.0",
+          "what": "One room in every camera view (isometric, three-quarter, top-down, brawler, side), with skeleton and lighting toggles.",
+          "links": []
+        },
+        {
+          "page": "stress-test",
+          "title": "Stress test",
+          "made": "in v0.3.0",
+          "what": "Raise the load (up to 5,000 monsters, torches, particles) until the frame rate drops, or run the benchmark to rate this device. Any view the engine can draw (side scrolling, with depth drawn the Mode 7 way, or a custom turn and tilt), fixed in place if you like.",
+          "links": [["Three-quarter view", "?view=threequarter"], ["Side scrolling", "?view=side"], ["Side scrolling with depth (Mode 7)", "?view=side&depth=1"], ["Custom camera, fixed", "?cam=300,20,1.25,8,1.2,520,410"]]
+        },
+        {
+          "page": "emberdeep",
+          "title": "Emberdeep",
+          "made": "in v0.6.0",
+          "what": "The showcase game. Its own test areas are inside it: the Proving Grounds, the Gallery (every monster, skill and pose) and Settings' Tools (spawn any monster, jump to any depth, make any item).",
+          "links": [["Town", "#town"], ["Depth 7", "#depth-7"], ["Proving Grounds", "#proving"], ["Gallery", "#gallery"], ["Bestiary: husk", "#gallery/bestiary/husk"], ["Three-quarter view", "?view=threequarter"]]
+        }
+      ]
+    },
+    {
+      "id": "kits",
+      "title": "Starter kits",
+      "short": "Kits",
+      "about": "Small games for an AI model to build from: one genre each, engine and API card included. The 3D ones put a real 3D world (three.js and Rapier) under the game.",
+      "entries": [
+        {
+          "page": "dist/kits/my-3d2dge-adventure.html",
+          "title": "Adventure",
+          "what": "Top-down action adventure (Secret of Mana, Zelda): a village, ruins and a shrine.",
+          "links": []
+        },
+        {
+          "page": "dist/kits/my-3d2dge-platformer.html",
+          "title": "Platformer",
+          "what": "Side-scroller (Castlevania, Mega Man X): a night approach to a castle, in five zones.",
+          "links": []
+        },
+        {
+          "page": "dist/kits/my-3d2dge-brawler.html",
+          "title": "Brawler",
+          "what": "Beat-'em-up (Final Fight, Streets of Rage 2): a city block at dusk, wave after wave.",
+          "links": []
+        },
+        {
+          "page": "dist/kits/my-3d2dge-shooter.html",
+          "title": "Shooter",
+          "what": "Vertical shoot-'em-up (Raiden, 1943): farmland, a river town and an air base.",
+          "links": []
+        },
+        {
+          "page": "dist/kits/my-3d2dge-rpg.html",
+          "title": "RPG battle",
+          "what": "Side-view battle (Final Fantasy VI, Chrono Trigger): three heroes, three monsters.",
+          "links": []
+        },
+        {
+          "page": "dist/kits/my-3d2dge-stealth.html",
+          "title": "Stealth",
+          "what": "Rooftops at dusk (Tenchu, Assassin's Creed): steal the ledger past three guards.",
+          "links": []
+        },
+        {
+          "page": "dist/kits/my-3d2dge-animlab.html",
+          "title": "Animation lab",
+          "what": "Every move, pose and skin the character rigs have, from every view.",
+          "links": []
+        },
+        {
+          "page": "dist/my-3d2dge.html",
+          "title": "All in one file",
+          "what": "The engine, its API card, all six games and the animation lab, with a title menu. A kit is one game of it, small enough for a chat model.",
+          "links": [["Compact edition", "dist/my-3d2dge-compact.html"]]
+        },
+        {
+          "page": "dist/kits/my-3d2dge-3d-action.html",
+          "title": "3D action",
+          "what": "A torch-lit hall in real 3D (Zelda 64, Diablo): a combo, a dash, a jump and a bolt against five waves, then a knight.",
+          "links": []
+        },
+        {
+          "page": "dist/kits/my-3d2dge-3d-platformer.html",
+          "title": "3D platformer",
+          "what": "A sunlit course of islands over the void (Mario 64, Spyro): double jumps, moving platforms, springs, coins and three stars.",
+          "links": []
+        },
+        {
+          "page": "dist/my-3d2dge-3d.html",
+          "title": "3D in one file",
+          "what": "The 3D engine (three.js r182 and Rapier, under the 2D engine), its manual, the API card and both 3D games. Served, not opened from a disk.",
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "keep",
+      "title": "Tools",
+      "about": "For looking closely: every imported animation clip, on a mannequin and on the hero.",
+      "entries": [
+        {
+          "page": "mocap-lab",
+          "title": "Mocap Lab",
+          "what": "Every imported animation clip, on a mannequin and on the hero, in every view, slow or frame by frame. Sets: Quaternius, Mesh2Motion, CMU motion capture, and the clips the hero uses; the CMU library holds every one of its 2,548 takes.",
+          "links": [["CMU clips", "?set=cmu"], ["Every CMU take", "?set=library"], ["Mesh2Motion", "?set=mesh2motion"], ["Hero's clips", "?set=hero"], ["Side view", "?view=side"], ["Hero only, slow", "?cast=hero&speed=.25"]]
+        },
+        {
+          "page": "asset-lab",
+          "title": "Asset Lab",
+          "what": "Every object, material and sprite a game can use without drawing code: the engine's core library and the asset store's sets (Kenney and KayKit models, ambientCG materials, Kenney pixel packs, all CC0), searchable, in every view and turning beside the hero, each with its text to copy or edit and where it came from.",
+          "links": [["Furniture", "?set=kenney-furniture"], ["Materials", "?kind=materials"], ["Sprites", "?kind=sprites"], ["Three-quarter view", "?view=threequarter"], ["A barrel", "#barrel"]]
+        }
+      ]
+    },
+    {
+      "id": "temporary",
+      "title": "Temporary",
+      "about": "Prototypes, each answering one question, in the order they were made. Once a question is answered, its page is deleted or kept as a tool.",
+      "empty": "Nothing here right now. One-off comparisons and experiments land here, each with its date and the question it answers.",
+      "entries": [
+        {
+          "page": "lab-3d",
+          "title": "3D Proof",
+          "added": "2026-10-08",
+          "question": "Can our characters, animation and look live in a real 3D world (three.js r182 and Rapier), with all its art drawn by code, and stay easy for AI agents to work on?",
+          "deviates": "keeps three.js's WebGL 2 fallback as its cross-check that gameplay never reads the renderer (principle 6: WebGPU only).",
+          "next": "stress-world",
+          "what": "A stone room in real 3D (three.js r182 on WebGPU, or WebGL 2 by itself, and Rapier physics), every texture and shape drawn by code. The hero walks a lap or you play it (move, swing, dash, knock the crates about); a mocap figure and Emberdeep's Dan stand by. Each character is a Card (the engine's own drawing on a card facing the camera) or a Puppet (3D parts on the same joints), or both side by side, in the engine's five fixed views or a free orbit, fly or chase camera. The decisions and trade-offs are in docs/LAB-3D.md.",
+          "links": [["Side by side", "?look=both&view=threequarter"], ["Puppets, fly", "?look=puppet&view=fly"], ["Play: chase camera", "?view=chase"], ["On WebGL 2", "?backend=webgl"]]
+        },
+        {
+          "page": "stress-world",
+          "title": "3D Prototype",
+          "added": "2026-10-09",
+          "question": "What does the stress test become built from the ground up as a 3D game (three.js r182, Rapier physics, a hall written as text), sharing only the engine's animation system, and how does it hold up?",
+          "deviates": "keeps three.js's WebGL 2 fallback as its cross-check that gameplay never reads the renderer (principle 6: WebGPU only).",
+          "what": "The stress test's job done as a 3D game, its own way: every monster is a Rapier body (the crowd pushes and piles up by itself, big hits throw bodies into the air, crates and barrels fly), the hero walks, dashes and jumps onto low walls and galleries, monsters find their way up the stairs after him. The hall is the 2D one's layout written as ASCII text, with a raised rune dais and two galleries. Characters are Cards (the engine draws them) or Puppets, in the engine's views (perspective or orthographic), side scrolling with depth, chase, first person, fly or fixed; filters (Comic cel or Pixel on the scene, the characters or the hall, bloom, FXAA). The benchmark adds a physics column.",
+          "links": [["Puppets", "?look=puppet"], ["400 monsters", "?monsters=400"], ["Chase camera", "?cam3=chase&look=puppet&res=balanced"], ["Side scrolling with depth", "?view=side&depth=1"], ["Orthographic three-quarter", "?view=threequarter&proj=ortho"], ["Comic cel", "?fx=cel&look=puppet&res=full"], ["On WebGL 2", "?backend=webgl"]],
+          "next": "dist/my-3d2dge-3d.html"
+        },
+        {
+          "page": "vesper-ui",
+          "title": "Vesper's interface on E.Shell",
+          "added": "2026-10-11",
+          "question": "Does E.Shell bring a modern adaptation's interface (Vesper's: 15.2k tokens of HTML, CSS and glue) down to a quarter?",
+          "what": "Vesper's title, HUD (objective and distance, status, health, awareness, seals, hold-to-interact prompt, tip, district name, control bar, minimap), toasts, tutorial card, pause, settings, help, district map with a waypoint and results, rebuilt on E.Shell over a small stand-in game: climb to the bell tower, take the ledger, leave by boat. Keyboard, gamepad and touch. The interface is src/vesper-ui.ui.js; the pull request that added it gives the count.",
+          "links": [["Three-quarter view", "#threequarter"]]
+        }
+      ]
+    }
+  ]
+}

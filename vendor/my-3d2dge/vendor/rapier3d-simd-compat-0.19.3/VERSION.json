@@ -1,0 +1,18 @@
+{
+  "package": "@dimforge/rapier3d-simd-compat",
+  "version": "0.19.3",
+  "released": "2025-11-05",
+  "license": "Apache-2.0",
+  "source": "npm pack @dimforge/rapier3d-simd-compat@0.19.3",
+  "note": "Rapier 3D with WebAssembly SIMD; the compat build embeds the wasm as base64, so nothing else is fetched. rapier.js is the package's rapier.mjs, renamed so every static server sends it as JavaScript. Call await RAPIER.init() before use.",
+  "files": {
+    "rapier.js": {
+      "bytes": 2308827,
+      "sha256": "71e1722cfbfd6eeb98675d9e46cdd23803db488c81552ff30708d02cb785677c"
+    },
+    "LICENSE": {
+      "bytes": 11343,
+      "sha256": "4c05555705e3efde601fb1252ae48f1d63992af8a8fb8947745b7fa834e8f519"
+    }
+  }
+}

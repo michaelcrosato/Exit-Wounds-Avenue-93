@@ -1,0 +1,330 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kenney-nature	nature-kit/Models/GLTF format/bed.glb	19108	model	268	3			0.82/0.65	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/bed_floor.glb	10688	model	124	3			0.91/0.89	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/bridge_center_stone.glb	5076	model	52	2			0.97/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_center_stoneRound.glb	5080	model	52	2			0.97/0.95		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_center_wood.glb	5480	model	52	3			0.96/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_center_woodRound.glb	6280	model	60	4			0.97/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_side_stone.glb	11408	model	152	2			0.85/0.77		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_side_stoneRound.glb	13540	model	198	2			0.88/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_side_wood.glb	10604	model	136	3			0.84/0.76		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_side_woodRound.glb	13460	model	190	4			0.88/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_stone.glb	17708	model	252	2			0.86/0.82		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_stoneNarrow.glb	17724	model	252	2			0.84/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_stoneRound.glb	22552	model	360	2			0.87/0.87		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_stoneRoundNarrow.glb	22564	model	360	2			0.84/0.83		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_wood.glb	15692	model	220	3			0.86/0.81		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_woodNarrow.glb	15708	model	220	3			0.85/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_woodRound.glb	21192	model	336	4			0.9/0.89		skip	
+kenney-nature	nature-kit/Models/GLTF format/bridge_woodRoundNarrow.glb	21204	model	336	4			0.85/0.84		skip	
+kenney-nature	nature-kit/Models/GLTF format/cactus_short.glb	8844	model	116	1			0.67/0.64		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/cactus_tall.glb	9668	model	122	1			0.73/0.7		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/campfire_bricks.glb	10220	model	120	1			0.95/0.93	1		
+kenney-nature	nature-kit/Models/GLTF format/campfire_logs.glb	9284	model	112	2			0.65/0.62		fit	
+kenney-nature	nature-kit/Models/GLTF format/campfire_planks.glb	8148	model	108	1			0.67/0.6		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/campfire_stones.glb	17344	model	264	1			0.65/0.6		fit	
+kenney-nature	nature-kit/Models/GLTF format/canoe.glb	15780	model	200	2			0.73/0.7		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/canoe_paddle.glb	3952	model	32	1			0.49/0.25		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockCave_rock.glb	5432	model	56	2			0.8/0.66		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockCave_stone.glb	5436	model	56	2			0.8/0.66		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockDiagonal_rock.glb	2564	model	8	2			0.98/0.97		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockDiagonal_stone.glb	2568	model	8	2			0.98/0.97		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockHalf_rock.glb	2788	model	12	2			0.97/0.96		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockHalf_stone.glb	2792	model	12	2			0.97/0.96		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockQuarter_rock.glb	2796	model	12	2			0.97/0.93		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockQuarter_stone.glb	2800	model	12	2			0.97/0.93		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockSlopeHalfWalls_rock.glb	8880	model	106	2			0.91/0.84		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockSlopeHalfWalls_stone.glb	8884	model	106	2			0.91/0.84		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockSlopeWalls_rock.glb	8900	model	106	2			0.76/0.65		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockSlopeWalls_stone.glb	8904	model	106	2			0.76/0.65		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockSlope_rock.glb	6720	model	70	2			0.94/0.9		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_blockSlope_stone.glb	6724	model	70	2			0.94/0.9		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_block_rock.glb	2776	model	12	2			0.82/0.78		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_block_stone.glb	2780	model	12	2			0.82/0.78		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cave_rock.glb	5480	model	64	1			0.91/0.86		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cave_stone.glb	5484	model	64	1			0.91/0.86		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cornerInnerLarge_rock.glb	4296	model	44	1			0.94/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cornerInnerLarge_stone.glb	4300	model	44	1			0.94/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cornerInnerTop_rock.glb	7608	model	89	2			0.92/0.89		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cornerInnerTop_stone.glb	7612	model	89	2			0.92/0.89		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cornerInner_rock.glb	5008	model	56	1			0.93/0.93		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cornerInner_stone.glb	8568	model	112	1			0.93/0.93		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cornerLarge_rock.glb	2376	model	12	1			0.95/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cornerLarge_stone.glb	3296	model	24	1			0.95/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cornerTop_rock.glb	3108	model	16	2			0.85/0.77		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_cornerTop_stone.glb	3112	model	16	2			0.85/0.77		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_corner_rock.glb	2360	model	12	1			0.89/0.88		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_corner_stone.glb	2364	model	12	1			0.89/0.88		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_diagonal_rock.glb	4296	model	44	1			0.9/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_diagonal_stone.glb	4236	model	44	1			0.9/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_halfCornerInner_rock.glb	8016	model	89	3			0.84/0.76		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_halfCornerInner_stone.glb	8020	model	89	3			0.84/0.76		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_halfCorner_rock.glb	3128	model	16	2			0.68/0.59		fit	
+kenney-nature	nature-kit/Models/GLTF format/cliff_halfCorner_stone.glb	3132	model	16	2			0.68/0.59		fit	
+kenney-nature	nature-kit/Models/GLTF format/cliff_half_rock.glb	5316	model	53	2			0.93/0.88		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_half_stone.glb	5320	model	53	2			0.93/0.88		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_large_rock.glb	3560	model	32	1			0.97/0.95		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_large_stone.glb	3564	model	32	1			0.97/0.95		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_rock.glb	3556	model	32	1			0.98/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_stepsCornerInner_rock.glb	15632	model	213	2			0.71/0.64		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/cliff_stepsCornerInner_stone.glb	15636	model	213	2			0.71/0.64		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/cliff_stepsCorner_rock.glb	17544	model	245	2			0.9/0.86		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_stepsCorner_stone.glb	17548	model	245	2			0.9/0.86		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_steps_rock.glb	15952	model	219	2			0.96/0.96		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_steps_stone.glb	15956	model	219	2			0.96/0.96		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_stone.glb	3560	model	32	1			0.98/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_topDiagonal_rock.glb	6220	model	66	2			0.89/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_topDiagonal_stone.glb	10540	model	132	2			0.82/0.77		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_top_rock.glb	5312	model	53	2			0.95/0.93		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_top_stone.glb	5316	model	53	2			0.95/0.93		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_waterfallTop_rock.glb	7076	model	60	5			0.93/0.89		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_waterfallTop_stone.glb	7508	model	60	6			0.93/0.88		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_waterfall_rock.glb	4488	model	34	3			0.98/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/cliff_waterfall_stone.glb	6100	model	68	2			0.97/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/crop_carrot.glb	12664	model	148	2			0.56/0.54		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/crop_melon.glb	13328	model	236	3			0.77/0.76		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/crop_pumpkin.glb	10840	model	120	2			0.92/0.9	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/crop_turnip.glb	14308	model	168	2			0.58/0.56		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/crops_bambooStageA.glb	22092	model	276	1			0.86/0.81	1		
+kenney-nature	nature-kit/Models/GLTF format/crops_bambooStageB.glb	40144	model	564	1			0.69/0.61		fit	
+kenney-nature	nature-kit/Models/GLTF format/crops_cornStageA.glb	9076	model	100	1			0.51/0.47		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/crops_cornStageB.glb	9780	model	116	1			0.58/0.55		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/crops_cornStageC.glb	11960	model	148	1			0.6/0.58		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/crops_cornStageD.glb	29316	model	300	2			0.56/0.54		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/crops_dirtDoubleRow.glb	7560	model	88	2			0.86/0.84		skip	
+kenney-nature	nature-kit/Models/GLTF format/crops_dirtDoubleRowCorner.glb	5396	model	50	2			0.89/0.82		skip	
+kenney-nature	nature-kit/Models/GLTF format/crops_dirtDoubleRowEnd.glb	6248	model	64	2			0.84/0.8		skip	
+kenney-nature	nature-kit/Models/GLTF format/crops_dirtRow.glb	4712	model	44	2			0.9/0.88		skip	
+kenney-nature	nature-kit/Models/GLTF format/crops_dirtRowCorner.glb	3248	model	19	2			0.91/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/crops_dirtRowEnd.glb	4064	model	32	2			0.86/0.8		skip	
+kenney-nature	nature-kit/Models/GLTF format/crops_dirtSingle.glb	4196	model	32	2			0.87/0.84		skip	
+kenney-nature	nature-kit/Models/GLTF format/crops_leafsStageA.glb	7144	model	76	1			0.55/0.5		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/crops_leafsStageB.glb	7768	model	84	1			0.57/0.52		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/crops_wheatStageA.glb	56228	model	720	1			0.72/0.65		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/crops_wheatStageB.glb	30040	model	360	2			0.72/0.67		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/fence_bend.glb	16276	model	240	2			0.65/0.63		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/fence_bendCenter.glb	20016	model	298	3			0.67/0.64		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/fence_corner.glb	8644	model	116	2			0.68/0.66		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/fence_gate.glb	27652	model	524	3			0.75/0.69		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/fence_planks.glb	7720	model	96	1			0.65/0.62		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/fence_planksDouble.glb	11160	model	152	1			0.64/0.59		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/fence_simple.glb	5712	model	64	2			0.64/0.62		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/fence_simpleCenter.glb	8660	model	116	2			0.65/0.63		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/fence_simpleDiagonal.glb	6688	model	80	2			0.61/0.49		fit	
+kenney-nature	nature-kit/Models/GLTF format/fence_simpleDiagonalCenter.glb	11064	model	148	3			0.67/0.63		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/fence_simpleHigh.glb	4300	model	44	1			0.81/0.73	1		
+kenney-nature	nature-kit/Models/GLTF format/fence_simpleLow.glb	4312	model	44	1			0.83/0.62	1		
+kenney-nature	nature-kit/Models/GLTF format/flower_purpleA.glb	7112	model	76	2			0.45/0.41		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/flower_purpleB.glb	8084	model	98	2			0.5/0.45		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/flower_purpleC.glb	7600	model	78	3			0.54/0.49		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/flower_redA.glb	7104	model	76	2			0.47/0.43		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/flower_redB.glb	8080	model	98	2			0.47/0.44		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/flower_redC.glb	7600	model	78	3			0.56/0.54		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/flower_yellowA.glb	7120	model	76	2			0.48/0.41		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/flower_yellowB.glb	11256	model	154	2			0.5/0.47		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/flower_yellowC.glb	7616	model	78	3			0.56/0.53		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/grass.glb	11496	model	132	1			0.44/0.39		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/grass_large.glb	18504	model	224	1			0.47/0.38		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/grass_leafs.glb	4608	model	36	1			0.52/0.48		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/grass_leafsLarge.glb	13988	model	144	1			0.45/0.36		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_grass.glb	1576	model	2	1			0.81/0		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathBend.glb	4132	model	32	3			0.91/0.82		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathBendBank.glb	4308	model	38	3			0.9/0.81		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathCorner.glb	3532	model	22	3			0.92/0.82		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathCornerSmall.glb	3632	model	24	3			0.81/0.17		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathCross.glb	6404	model	74	3			0.87/0.76		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathEnd.glb	5044	model	52	3			0.89/0.65		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathEndClosed.glb	5824	model	68	3			0.87/0.6		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathOpen.glb	1856	model	8	1			0.81/0		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathRocks.glb	8036	model	102	3			0.88/0.72		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathSide.glb	4124	model	34	3			0.9/0.74		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathSideOpen.glb	4524	model	40	3			0.83/0.44		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathSplit.glb	6012	model	68	3			0.9/0.84		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathStraight.glb	5620	model	62	3			0.89/0.72		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_pathTile.glb	6624	model	86	3			0.88/0.52		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverBend.glb	5684	model	54	4			0.6/0.54		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverBendBank.glb	5692	model	54	4			0.62/0.56		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverCorner.glb	4844	model	40	4			0.61/0.56		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverCornerSmall.glb	4236	model	26	4			0.84/0.28		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverCross.glb	7560	model	82	4			0.88/0.78		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverEnd.glb	5464	model	52	4			0.84/0.65		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverEndClosed.glb	6920	model	84	4			0.59/0.56		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverOpen.glb	1852	model	8	1			0.81/0		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverRocks.glb	8884	model	102	5			0.91/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverSide.glb	4544	model	34	4			0.93/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverSideOpen.glb	5312	model	44	4			0.86/0.55		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverSplit.glb	6804	model	72	4			0.91/0.86		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverStraight.glb	6044	model	62	4			0.92/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/ground_riverTile.glb	9120	model	128	4			0.88/0.54		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/hanging_moss.glb	4776	model	52	1			0.89/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/lily_large.glb	8044	model	86	3			0.85/0.71	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/lily_small.glb	5664	model	52	2			0.89/0.83		skip	
+kenney-nature	nature-kit/Models/GLTF format/log.glb	14288	model	200	2			0.73/0.67		fit	
+kenney-nature	nature-kit/Models/GLTF format/log_large.glb	7924	model	96	2			0.87/0.85	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/log_stack.glb	10896	model	184	2			0.68/0.63		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/log_stackLarge.glb	17604	model	310	3			0.77/0.72		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/mushroom_red.glb	6364	model	48	2			0.65/0.61		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/mushroom_redGroup.glb	14960	model	144	2			0.65/0.58		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/mushroom_redTall.glb	6504	model	48	2			0.55/0.51		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/mushroom_tan.glb	5804	model	48	2			0.61/0.57		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/mushroom_tanGroup.glb	14956	model	144	2			0.65/0.58		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/mushroom_tanTall.glb	6500	model	48	2			0.55/0.51		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/path_stone.glb	12392	model	136	3			0.89/0.86		skip	
+kenney-nature	nature-kit/Models/GLTF format/path_stoneCircle.glb	13100	model	164	2			0.96/0.93		skip	
+kenney-nature	nature-kit/Models/GLTF format/path_stoneCorner.glb	10772	model	112	3			0.83/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/path_stoneEnd.glb	8996	model	92	3			0.84/0.8		skip	
+kenney-nature	nature-kit/Models/GLTF format/path_wood.glb	6448	model	60	2			0.98/0.97		skip	
+kenney-nature	nature-kit/Models/GLTF format/path_woodCorner.glb	6444	model	60	2			0.95/0.94		skip	
+kenney-nature	nature-kit/Models/GLTF format/path_woodEnd.glb	5164	model	36	3			0.89/0.87		skip	
+kenney-nature	nature-kit/Models/GLTF format/plant_bush.glb	4396	model	32	1			0.58/0.49		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/plant_bushDetailed.glb	10172	model	104	1			0.55/0.52		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/plant_bushLarge.glb	6436	model	60	1			0.59/0.56		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/plant_bushLargeTriangle.glb	4564	model	39	1			0.53/0.47		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/plant_bushSmall.glb	3212	model	16	1			0.5/0.46		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/plant_bushTriangle.glb	3956	model	30	1			0.54/0.47		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/plant_flatShort.glb	3936	model	44	1			0.52/0.5		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/plant_flatTall.glb	3480	model	32	1			0.59/0.53		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/platform_beach.glb	13204	model	192	1			0.76/0.71		fit	
+kenney-nature	nature-kit/Models/GLTF format/platform_grass.glb	12568	model	186	2			0.76/0.67		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/platform_stone.glb	13632	model	192	2			0.76/0.71		fit	
+kenney-nature	nature-kit/Models/GLTF format/pot_large.glb	6168	model	68	2			0.86/0.83	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/pot_small.glb	7004	model	72	3			0.93/0.92	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/rock_largeA.glb	7552	model	80	2			0.74/0.71		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_largeB.glb	8560	model	85	3			0.71/0.67		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_largeC.glb	7004	model	72	2			0.74/0.7		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_largeD.glb	7992	model	80	3			0.74/0.69		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_largeE.glb	6464	model	64	2			0.78/0.74		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_largeF.glb	7516	model	73	3			0.71/0.68		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallA.glb	3044	model	16	2			0.7/0.66		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallB.glb	3528	model	24	2			0.64/0.58		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallC.glb	3044	model	16	2			0.65/0.61		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallD.glb	4012	model	32	2			0.87/0.83		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallE.glb	5932	model	64	2			0.85/0.83		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallF.glb	5700	model	60	2			0.88/0.83		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallFlatA.glb	3300	model	20	2			0.86/0.71		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallFlatB.glb	3056	model	16	2			0.85/0.7		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallFlatC.glb	4508	model	40	2			0.84/0.7		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallG.glb	4204	model	32	2			0.88/0.84	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallH.glb	6200	model	60	2			0.95/0.92		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallI.glb	5120	model	44	2			0.89/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallTopA.glb	5220	model	52	2			0.87/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_smallTopB.glb	6660	model	76	2			0.83/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_tallA.glb	12072	model	136	3			0.68/0.55		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_tallB.glb	14060	model	172	3			0.7/0.65		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_tallC.glb	5184	model	37	3			0.81/0.78		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_tallD.glb	5132	model	38	3			0.77/0.72		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/rock_tallE.glb	5192	model	38	3			0.87/0.82		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_tallF.glb	5608	model	46	3			0.82/0.77		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_tallG.glb	6772	model	62	3			0.8/0.74		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_tallH.glb	7792	model	78	3			0.8/0.74		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_tallI.glb	5584	model	44	3			0.82/0.77		skip	
+kenney-nature	nature-kit/Models/GLTF format/rock_tallJ.glb	5424	model	42	3			0.8/0.77		skip	
+kenney-nature	nature-kit/Models/GLTF format/sign.glb	5040	model	44	3			0.66/0.57		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/statue_block.glb	11252	model	140	2			0.85/0.82		skip	
+kenney-nature	nature-kit/Models/GLTF format/statue_column.glb	10472	model	122	3			0.85/0.83	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/statue_columnDamaged.glb	8824	model	108	2			0.9/0.86	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/statue_head.glb	14704	model	196	3			0.85/0.83	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/statue_obelisk.glb	4416	model	38	2			0.81/0.79	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/statue_ring.glb	6568	model	76	2			0.8/0.73		skip	
+kenney-nature	nature-kit/Models/GLTF format/stone_largeA.glb	7124	model	80	1			0.74/0.71		fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_largeB.glb	8132	model	85	2			0.71/0.67		fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_largeC.glb	6580	model	72	1			0.74/0.7		fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_largeD.glb	7564	model	80	2			0.74/0.69		fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_largeE.glb	6036	model	64	1			0.78/0.74		fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_largeF.glb	7092	model	73	2			0.71/0.68		fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_smallA.glb	2620	model	16	1			0.7/0.66		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_smallB.glb	3100	model	24	1			0.65/0.58		fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_smallC.glb	2620	model	16	1			0.65/0.61		fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_smallD.glb	3584	model	32	1			0.89/0.87		skip	
+kenney-nature	nature-kit/Models/GLTF format/stone_smallE.glb	5504	model	64	1			0.85/0.84		skip	
+kenney-nature	nature-kit/Models/GLTF format/stone_smallF.glb	5272	model	60	1			0.92/0.9		skip	
+kenney-nature	nature-kit/Models/GLTF format/stone_smallFlatA.glb	2872	model	20	1			0.89/0.86	1		
+kenney-nature	nature-kit/Models/GLTF format/stone_smallFlatB.glb	2632	model	16	1			0.87/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/stone_smallFlatC.glb	4080	model	40	1			0.87/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/stone_smallG.glb	3776	model	32	1			0.89/0.85	1		
+kenney-nature	nature-kit/Models/GLTF format/stone_smallH.glb	5772	model	60	1			0.96/0.92	1		
+kenney-nature	nature-kit/Models/GLTF format/stone_smallI.glb	4692	model	44	1			0.89/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/stone_smallTopA.glb	4792	model	52	1			0.72/0.69		fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_smallTopB.glb	6232	model	76	1			0.79/0.75		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_tallA.glb	11644	model	136	2			0.68/0.57		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_tallB.glb	13596	model	172	2			0.8/0.75	1	budget boxes	
+kenney-nature	nature-kit/Models/GLTF format/stone_tallC.glb	4788	model	37	2			0.8/0.76	1	budget boxes	
+kenney-nature	nature-kit/Models/GLTF format/stone_tallD.glb	4704	model	38	2			0.77/0.72		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/stone_tallE.glb	4764	model	38	2			0.88/0.82	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/stone_tallF.glb	5180	model	46	2			0.84/0.78		skip	
+kenney-nature	nature-kit/Models/GLTF format/stone_tallG.glb	6344	model	62	2			0.8/0.77		skip	
+kenney-nature	nature-kit/Models/GLTF format/stone_tallH.glb	7364	model	78	2			0.8/0.75		skip	
+kenney-nature	nature-kit/Models/GLTF format/stone_tallI.glb	5160	model	44	2			0.83/0.77		skip	
+kenney-nature	nature-kit/Models/GLTF format/stone_tallJ.glb	4808	model	42	2			0.8/0.77		skip	
+kenney-nature	nature-kit/Models/GLTF format/stump_old.glb	9564	model	120	1			0.72/0.68		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/stump_oldTall.glb	9564	model	120	1			0.74/0.69		fit	
+kenney-nature	nature-kit/Models/GLTF format/stump_round.glb	5644	model	56	2			0.89/0.84	1		
+kenney-nature	nature-kit/Models/GLTF format/stump_roundDetailed.glb	8188	model	96	2			0.77/0.73		fit	
+kenney-nature	nature-kit/Models/GLTF format/stump_square.glb	4584	model	44	2			0.77/0.75		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/stump_squareDetailed.glb	7544	model	84	2			0.84/0.81	1		
+kenney-nature	nature-kit/Models/GLTF format/stump_squareDetailedWide.glb	7536	model	84	2			0.76/0.75		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tent_detailedClosed.glb	15460	model	228	3			0.85/0.83	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tent_detailedOpen.glb	15324	model	232	2			0.86/0.8		skip	
+kenney-nature	nature-kit/Models/GLTF format/tent_smallClosed.glb	13200	model	220	4			0.96/0.95	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tent_smallOpen.glb	13604	model	224	3			0.92/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_blocks.glb	10128	model	132	2			0.86/0.79	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_blocks_dark.glb	10132	model	132	2			0.86/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_blocks_fall.glb	18368	model	264	2			0.74/0.61		fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_cone.glb	10924	model	132	2			0.89/0.87	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_cone_dark.glb	19940	model	264	2			0.88/0.86		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_cone_fall.glb	10916	model	132	2			0.89/0.87		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_default.glb	9428	model	114	2			0.88/0.86	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_default_dark.glb	9436	model	114	2			0.88/0.86	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_default_fall.glb	16940	model	228	2			0.78/0.77		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_detailed.glb	31412	model	402	3			0.83/0.79	1	budget boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_detailed_dark.glb	31416	model	402	3			0.83/0.8		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_detailed_fall.glb	31404	model	402	3			0.83/0.8		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_fat.glb	5576	model	50	2			0.89/0.88	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_fat_darkh.glb	5584	model	50	2			0.88/0.87		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_fat_fall.glb	5572	model	50	2			0.89/0.88	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_oak.glb	14644	model	196	2			0.86/0.85	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_oak_dark.glb	14648	model	196	2			0.86/0.84		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_oak_fall.glb	14640	model	196	2			0.86/0.85	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_palm.glb	13616	model	186	2			0.33/0.26		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_palmBend.glb	14820	model	200	2			0.31/0.25		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_palmDetailedShort.glb	28212	model	336	2			0.43/0.4		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_palmDetailedTall.glb	28204	model	336	2			0.37/0.35		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_palmShort.glb	15596	model	190	2			0.77/0.72		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_palmTall.glb	15592	model	190	2			0.78/0.74		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineDefaultA.glb	17220	model	230	2			0.87/0.79	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineDefaultB.glb	18180	model	246	2			0.86/0.81		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineGroundA.glb	6704	model	82	1			0.91/0.86	1		
+kenney-nature	nature-kit/Models/GLTF format/tree_pineGroundB.glb	6704	model	82	1			0.87/0.85		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineRoundA.glb	14488	model	204	2			0.9/0.87	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineRoundB.glb	18464	model	262	3			0.85/0.78		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineRoundC.glb	15332	model	206	2			0.52/0.51		fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineRoundD.glb	13748	model	170	2			0.85/0.83	1		
+kenney-nature	nature-kit/Models/GLTF format/tree_pineRoundE.glb	15308	model	198	2			0.91/0.89		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineRoundF.glb	16264	model	214	2			0.89/0.87		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineSmallA.glb	12820	model	164	2			0.8/0.75	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineSmallB.glb	7816	model	86	2			0.79/0.76		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineSmallC.glb	5376	model	54	2			0.84/0.83	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineSmallD.glb	5368	model	54	2			0.82/0.8		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineTallA.glb	7200	model	78	2			0.79/0.78		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineTallA_detailed.glb	10708	model	134	2			0.79/0.78		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineTallB.glb	7204	model	78	2			0.78/0.76		boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineTallB_detailed.glb	12632	model	166	2			0.78/0.75		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineTallC.glb	8080	model	98	2			0.84/0.81	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineTallC_detailed.glb	11588	model	154	2			0.84/0.82		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineTallD.glb	8080	model	98	2			0.82/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_pineTallD_detailed.glb	12548	model	170	2			0.82/0.79	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_plateau.glb	16304	model	215	2			0.81/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_plateau_dark.glb	16308	model	215	2			0.81/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_plateau_fall.glb	16296	model	215	2			0.81/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_simple.glb	6500	model	62	2			0.82/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_simple_dark.glb	6508	model	62	2			0.82/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_simple_fall.glb	6496	model	62	2			0.82/0.79		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_small.glb	6500	model	62	2			0.91/0.89	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_small_dark.glb	11092	model	124	2			0.92/0.89		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_small_fall.glb	6492	model	62	2			0.89/0.87		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_tall.glb	7000	model	72	2			0.93/0.9	1	boxes	
+kenney-nature	nature-kit/Models/GLTF format/tree_tall_dark.glb	7008	model	72	2			0.93/0.9		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_tall_fall.glb	12088	model	144	2			0.92/0.89		skip	
+kenney-nature	nature-kit/Models/GLTF format/tree_thin.glb	17200	model	228	2			0.75/0.72		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_thin_dark.glb	32488	model	456	2			0.73/0.7		budget boxes fit	
+kenney-nature	nature-kit/Models/GLTF format/tree_thin_fall.glb	17192	model	228	2			0.75/0.72		budget boxes fit	

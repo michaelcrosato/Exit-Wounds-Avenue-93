@@ -1,0 +1,204 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_blue.gltf.glb	24216	model	97	1			0.86/0.69	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_brown.gltf.glb	24216	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_green.gltf.glb	24216	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternA_blue.gltf.glb	25164	model	110	1			0.86/0.68		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternA_brown.gltf.glb	25168	model	110	1			0.86/0.68		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternA_green.gltf.glb	25168	model	110	1			0.86/0.68		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternA_red.gltf.glb	25164	model	110	1			0.86/0.67		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternA_white.gltf.glb	25168	model	110	1			0.86/0.67		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternA_yellow.gltf.glb	25168	model	110	1			0.86/0.68		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternB_blue.gltf.glb	24224	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternB_brown.gltf.glb	24228	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternB_green.gltf.glb	24228	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternB_red.gltf.glb	24224	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternB_white.gltf.glb	24228	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternB_yellow.gltf.glb	24228	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternC_blue.gltf.glb	24224	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternC_brown.gltf.glb	24228	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternC_green.gltf.glb	24228	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternC_red.gltf.glb	24224	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternC_white.gltf.glb	24228	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternC_yellow.gltf.glb	24228	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_red.gltf.glb	24216	model	97	1			0.86/0.68	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_shield_blue.gltf.glb	55104	model	639	1			0.83/0.72		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_shield_brown.gltf.glb	55104	model	639	1			0.83/0.72		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_shield_green.gltf.glb	55104	model	639	1			0.83/0.72		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_shield_red.gltf.glb	55104	model	639	1			0.83/0.69	1	budget boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_shield_white.gltf.glb	55104	model	639	1			0.83/0.7		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_shield_yellow.gltf.glb	55104	model	639	1			0.83/0.72		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_thin_blue.gltf.glb	23084	model	83	1			0.81/0.62		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_thin_brown.gltf.glb	23084	model	83	1			0.81/0.62		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_thin_green.gltf.glb	23084	model	83	1			0.81/0.64		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_thin_red.gltf.glb	23080	model	83	1			0.78/0.56		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_thin_white.gltf.glb	23084	model	83	1			0.8/0.61		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_thin_yellow.gltf.glb	23084	model	83	1			0.82/0.63		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_triple_blue.gltf.glb	36232	model	263	1			0.82/0.72		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_triple_brown.gltf.glb	36232	model	263	1			0.83/0.71		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_triple_green.gltf.glb	36232	model	263	1			0.79/0.72		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_triple_red.gltf.glb	36232	model	263	1			0.81/0.7		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_triple_white.gltf.glb	36232	model	263	1			0.81/0.68		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_triple_yellow.gltf.glb	36236	model	263	1			0.71/0.63		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_white.gltf.glb	24216	model	97	1			0.86/0.68		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/banner_yellow.gltf.glb	24220	model	97	1			0.86/0.69		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/barrel_large.gltf.glb	44292	model	561	1			0.96/0.96	1		
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/barrel_large_decorated.gltf.glb	73628	model	1047	1			0.93/0.91		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/barrel_small.gltf.glb	32060	model	207	1			0.93/0.88	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/barrel_small_stack.gltf.glb	98092	model	1149	1			0.84/0.82	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/barrier.gltf.glb	23292	model	90	1			0.87/0.85		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/barrier_colum_half.gltf.glb	23196	model	86	1			0.88/0.84		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/barrier_column.gltf.glb	24856	model	110	1			0.88/0.86		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/barrier_corner.gltf.glb	26116	model	128	1			0.86/0.83		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/barrier_half.gltf.glb	19948	model	42	1			0.86/0.83		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/bed_decorated.gltf.glb	94688	model	1410	1			0.87/0.83	1	budget boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/bed_floor.gltf.glb	25496	model	232	1			0.59/0.53		fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/bed_frame.gltf.glb	30688	model	304	1			0.83/0.73	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/bottle_A_brown.gltf.glb	26140	model	144	1			0.66/0.61		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/bottle_A_green.gltf.glb	26460	model	144	1			0.66/0.61		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/bottle_A_labeled_brown.gltf.glb	26276	model	144	1			0.5/0.42		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/bottle_A_labeled_green.gltf.glb	26596	model	144	1			0.5/0.42		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/bottle_B_brown.gltf.glb	26140	model	144	1			0.61/0.55		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/bottle_B_green.gltf.glb	26460	model	144	1			0.77/0.71		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/bottle_C_brown.gltf.glb	26140	model	144	1			0.65/0.61		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/bottle_C_green.gltf.glb	26460	model	144	1			0.8/0.74	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/box_large.gltf.glb	28740	model	188	1			0.91/0.89		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/box_small.gltf.glb	28692	model	188	1			0.91/0.89		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/box_small_decorated.gltf.glb	72748	model	928	1			0.82/0.79	1	budget boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/box_stacked.gltf.glb	146968	model	2173	1			0.92/0.9	1	budget boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/candle.gltf.glb	20784	model	66	1			0.97/0.92		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/candle_lit.gltf.glb	22648	model	120	1			0.91/0.89	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/candle_melted.gltf.glb	20788	model	66	1			0.91/0.88		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/candle_thin.gltf.glb	20788	model	66	1			0.99/0.92		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/candle_thin_lit.gltf.glb	22652	model	120	1			0.84/0.8		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/candle_triple.gltf.glb	28240	model	198	1			0.9/0.81	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/chair.gltf.glb	36252	model	294	1			0.82/0.79	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/chest.glb	81412	model	728	1			0.88/0.86	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/chest_gold.glb	140140	model	1568	1			0.86/0.85		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/coin.gltf.glb	21776	model	80	1			0.39/0.35		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/coin_stack_large.gltf.glb	101076	model	1776	1			0.72/0.68		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/coin_stack_medium.gltf.glb	63996	model	968	1			0.68/0.64		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/coin_stack_small.gltf.glb	38404	model	416	1			0.61/0.56		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/column.gltf.glb	20260	model	44	1			0.9/0.88	1		
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/crates_stacked.gltf.glb	103704	model	1331	1			0.93/0.9	1	budget boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_dirt_large.gltf.glb	24620	model	104	1			0.68/0.65		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_dirt_large_rocky.gltf.glb	30216	model	187	1			0.67/0.65		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_dirt_small_A.gltf.glb	20460	model	45	1			0.98/0.95		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_dirt_small_B.gltf.glb	19536	model	36	1			0.98/0.95		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_dirt_small_C.gltf.glb	19484	model	33	1			0.98/0.95		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_dirt_small_D.gltf.glb	18476	model	20	1			0.99/0.98		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_dirt_small_corner.gltf.glb	20752	model	56	1			0.98/0.97		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_dirt_small_weeds.gltf.glb	41224	model	416	1			0.97/0.87		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_foundation_allsides.gltf.glb	44944	model	360	1			0.94/0.93		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_foundation_corner.gltf.glb	31996	model	202	1			0.96/0.95		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_foundation_diagonal_corner.gltf.glb	25024	model	111	1			0.94/0.93		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_foundation_front.gltf.glb	25516	model	123	1			0.97/0.96		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_foundation_front_and_back.gltf.glb	32004	model	202	1			0.96/0.95		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_foundation_front_and_sides.gltf.glb	38480	model	281	1			0.95/0.94		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_big_grate.gltf.glb	36296	model	292	1			0.75/0.67		fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_big_grate_open.gltf.glb	35740	model	284	1			0.7/0.55		fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_big_spikes.glb	80644	model	638	1			0.94/0.81	1		
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_extralarge_grates.gltf.glb	66408	model	772	1			0.9/0.82		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_extralarge_grates_open.gltf.glb	65852	model	764	1			0.88/0.82		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_grate.gltf.glb	26700	model	142	1			0.91/0.88		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_grate_open.gltf.glb	26564	model	140	1			0.88/0.84		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_large.gltf.glb	28100	model	188	1			0.7/0.66		fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_large_rocks.gltf.glb	38384	model	338	1			0.69/0.66		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_small.gltf.glb	20740	model	66	1			0.98/0.97		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_small_broken_A.gltf.glb	22132	model	94	1			0.98/0.97		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_small_broken_B.gltf.glb	21608	model	76	1			0.98/0.97		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_small_corner.gltf.glb	18868	model	31	1			0.98/0.96		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_small_decorated.gltf.glb	40812	model	390	1			0.96/0.86		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_small_weeds_A.gltf.glb	44020	model	589	1			0.95/0.79		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_small_weeds_B.gltf.glb	42368	model	447	1			0.96/0.81		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_wood_large.gltf.glb	35612	model	272	1			0.69/0.65		fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_wood_large_dark.gltf.glb	35616	model	272	1			0.69/0.65		fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_wood_small.gltf.glb	22156	model	78	1			0.99/0.98		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/floor_wood_small_dark.gltf.glb	22160	model	78	1			0.99/0.98		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/keg.gltf.glb	59912	model	807	1			0.91/0.9	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/keg_decorated.gltf.glb	142052	model	2058	1			0.91/0.9	1	budget boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/key.gltf.glb	24432	model	160	1			0.45/0.41		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/keyring.gltf.glb	49100	model	728	1			0.42/0.34		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/keyring_hanging.gltf.glb	49108	model	728	1			0.5/0.43		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/pillar.gltf.glb	25552	model	136	1			0.92/0.9	1		
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/pillar_decorated.gltf.glb	62460	model	761	1			0.91/0.9		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/plate.gltf.glb	22884	model	120	1			0.9/0.86	1		
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/plate_food_A.gltf.glb	41236	model	547	1			0.82/0.78	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/plate_food_B.gltf.glb	31980	model	306	1			0.84/0.78	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/plate_small.gltf.glb	22892	model	120	1			0.93/0.91		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/plate_stack.gltf.glb	35728	model	360	1			0.9/0.81		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/rubble_half.gltf.glb	38836	model	390	1			0.78/0.73		fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/rubble_large.gltf.glb	60196	model	788	1			0.79/0.69		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/shelf_large.gltf.glb	22012	model	76	1			0.86/0.71		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/shelf_small.gltf.glb	20932	model	60	1			0.95/0.88		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/shelf_small_candles.gltf.glb	30036	model	231	1			0.92/0.86	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/shelves.gltf.glb	26996	model	152	1			0.85/0.73		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/stairs.gltf.glb	43368	model	358	1			0.86/0.81		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/stairs_narrow.gltf.glb	43372	model	358	1			0.86/0.81		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/stairs_wall_left.gltf.glb	57640	model	574	1			0.86/0.73		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/stairs_wall_right.gltf.glb	57704	model	574	1			0.81/0.74		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/stairs_walled.gltf.glb	72072	model	790	1			0.94/0.8		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/stairs_wide.gltf.glb	43372	model	358	1			0.86/0.81		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/stairs_wood.gltf.glb	34632	model	296	1			0.81/0.6		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/stairs_wood_decorated.gltf.glb	171080	model	2537	1			0.74/0.42		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/stool.gltf.glb	28528	model	172	1			0.85/0.82	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/sword_shield.gltf.glb	47764	model	542	1			0.65/0.54		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/sword_shield_broken.gltf.glb	39980	model	396	1			0.68/0.64		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/sword_shield_gold.gltf.glb	47768	model	542	1			0.64/0.53		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_long.gltf.glb	35128	model	280	1			0.86/0.68	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_long_broken.gltf.glb	55192	model	550	1			0.88/0.84	1	budget boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_long_decorated_A.gltf.glb	120792	model	1961	1			0.87/0.75	1	budget boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_long_decorated_C.gltf.glb	231608	model	3499	1			0.92/0.89	1	budget boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_long_tablecloth.gltf.glb	38400	model	354	1			0.88/0.74		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_long_tablecloth_decorated_A.gltf.glb	124064	model	2035	1			0.89/0.78		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_medium.gltf.glb	33832	model	256	1			0.89/0.79	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_medium_broken.gltf.glb	35184	model	247	1			0.59/0.51		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_medium_decorated_A.gltf.glb	82588	model	1186	1			0.88/0.8	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_medium_tablecloth.gltf.glb	35160	model	270	1			0.89/0.81	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_medium_tablecloth_decorated_B.gltf.glb	83916	model	1200	1			0.88/0.84		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_small.gltf.glb	29908	model	192	1			0.79/0.76		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_small_decorated_A.gltf.glb	67672	model	986	1			0.79/0.75		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/table_small_decorated_B.gltf.glb	105068	model	1576	1			0.77/0.74		budget boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/torch.gltf.glb	29380	model	216	1			0.63/0.54		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/torch_lit.gltf.glb	31244	model	270	1			0.64/0.57		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/torch_mounted.gltf.glb	33220	model	278	1			0.51/0.49		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/trunk_large_A.gltf.glb	30180	model	204	1			0.87/0.85		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/trunk_large_B.gltf.glb	30180	model	204	1			0.87/0.86	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/trunk_large_C.gltf.glb	30180	model	204	1			0.87/0.85	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/trunk_medium_A.gltf.glb	26420	model	148	1			0.89/0.86		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/trunk_medium_B.gltf.glb	26420	model	148	1			0.76/0.74		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/trunk_medium_C.gltf.glb	26420	model	148	1			0.89/0.86	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/trunk_small_A.gltf.glb	30184	model	204	1			0.8/0.73		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/trunk_small_B.gltf.glb	30184	model	204	1			0.64/0.6		boxes fit	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/trunk_small_C.gltf.glb	30184	model	204	1			0.8/0.73	1	boxes	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall.gltf.glb	53132	model	494	1			0.96/0.92		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_Tsplit.gltf.glb	60080	model	596	1			0.94/0.89		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_Tsplit_sloped.gltf.glb	57224	model	555	1			0.9/0.75		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_arched.gltf.glb	69124	model	724	1			0.97/0.93		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_archedwindow_gated.gltf.glb	64752	model	732	1			0.88/0.83		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_archedwindow_gated_scaffold.gltf.glb	60988	model	674	1			0.89/0.86		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_archedwindow_open.gltf.glb	58028	model	635	1			0.83/0.76		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_broken.gltf.glb	69276	model	784	1			0.92/0.89		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_corner.gltf.glb	49212	model	443	1			0.89/0.87		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_corner_gated.gltf.glb	51132	model	557	1			0.81/0.77		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_corner_scaffold.gltf.glb	54200	model	515	1			0.92/0.88		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_corner_small.gltf.glb	33640	model	223	1			0.86/0.83		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_cracked.gltf.glb	138396	model	2010	1			0.96/0.92		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_crossing.gltf.glb	66856	model	698	1			0.91/0.89		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_doorway.glb	100596	model	1068	1			0.92/0.9		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_doorway_Tsplit.gltf.glb	93124	model	1096	1			0.9/0.87		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_doorway_scaffold.glb	109416	model	1150	1			0.93/0.9		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_doorway_sides.gltf.glb	97364	model	1160	1			0.9/0.88		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_endcap.gltf.glb	33708	model	222	1			0.88/0.84		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_gated.gltf.glb	46364	model	449	1			0.85/0.77		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_half.gltf.glb	36840	model	272	1			0.97/0.93		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_half_endcap.gltf.glb	36724	model	268	1			0.9/0.88		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_half_endcap_sloped.gltf.glb	33368	model	230	1			0.88/0.85		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_open_scaffold.gltf.glb	29908	model	196	1			0.85/0.8		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_pillar.gltf.glb	55156	model	540	1			0.92/0.83		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_scaffold.gltf.glb	59436	model	584	1			0.96/0.94		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_shelves.gltf.glb	122244	model	1582	1			0.97/0.92		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_sloped.gltf.glb	35964	model	257	1			0.88/0.86		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_window_closed.gltf.glb	61460	model	664	1			0.96/0.92		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_window_closed_scaffold.gltf.glb	66508	model	736	1			0.96/0.94		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_window_open.gltf.glb	57256	model	604	1			0.93/0.9		skip	
+kaykit-dungeon-remastered	KayKit-Dungeon-Remastered-1.0/addons/kaykit_dungeon_remastered/Assets/gltf/wall_window_open_scaffold.gltf.glb	62308	model	676	1			0.93/0.9		skip	

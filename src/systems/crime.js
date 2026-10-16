@@ -59,7 +59,23 @@ export class CrimeSystem {
       report.elapsed += Math.max(0, dt);
       if (report.elapsed + 1e-6 >= report.delay) { this.dispatch(report); dispatched.push(report); }
     }
+    if (this.state.tick > 0 && this.state.tick % 1200 === 0) this.pruneHistory();
     return dispatched;
+  }
+  /** Keep active calls and recent evidence; old completed calls no longer drive pursuit. */
+  pruneHistory() {
+    const s = this.state, cutoff = s.tick - 120 * 45;
+    const pending = new Set(s.crime.reports.filter(r => r.status === 'Reporting').map(r => r.crimeId));
+    const kept = s.crime.incidents.filter(c => c.tick >= cutoff || pending.has(c.id));
+    const recent = kept.length > 256 ? kept.slice(-256) : kept;
+    const ids = new Set(recent.map(c => c.id));
+    s.crime.incidents = recent;
+    const reporting = s.crime.reports.filter(r => r.status === 'Reporting');
+    const resolvedBudget = Math.max(0, 384 - reporting.length);
+    const resolved = resolvedBudget ? s.crime.reports.filter(r => r.status !== 'Reporting' && ids.has(r.crimeId)).slice(-resolvedBudget) : [];
+    s.crime.reports = [...resolved, ...reporting];
+    const reportIds = new Set(s.crime.reports.map(r => r.id));
+    s.wanted.reportsReceived = s.wanted.reportsReceived.filter(id => reportIds.has(id));
   }
   /** @param {CrimeReport} report */
   dispatch(report) { report.status = 'Dispatched'; this.wanted.receiveReport(report); }

@@ -1,0 +1,201 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kenney-food	food-kit/Models/GLB format/advocado-half.glb	11240	model	98	1			0.65/0.56		boxes fit	
+kenney-food	food-kit/Models/GLB format/apple-half.glb	10948	model	124	1			0.52/0.47		boxes fit	
+kenney-food	food-kit/Models/GLB format/apple.glb	14376	model	136	1			0.6/0.56		boxes fit	
+kenney-food	food-kit/Models/GLB format/avocado.glb	6076	model	44	1			0.91/0.9		skip	
+kenney-food	food-kit/Models/GLB format/bacon-raw.glb	5708	model	40	1			0.65/0.35		boxes fit	
+kenney-food	food-kit/Models/GLB format/bacon.glb	5696	model	40	1			0.64/0.35		boxes fit	
+kenney-food	food-kit/Models/GLB format/bag-flat.glb	11280	model	114	1			0.76/0.71		fit	
+kenney-food	food-kit/Models/GLB format/bag.glb	6408	model	46	1			0.91/0.88	1		
+kenney-food	food-kit/Models/GLB format/banana.glb	12348	model	104	1			0.56/0.52		boxes fit	
+kenney-food	food-kit/Models/GLB format/barrel.glb	26812	model	308	1			0.83/0.74		skip	
+kenney-food	food-kit/Models/GLB format/beet.glb	10372	model	100	1			0.45/0.39		boxes fit	
+kenney-food	food-kit/Models/GLB format/bottle-ketchup.glb	9620	model	96	1			0.81/0.77	1	boxes	
+kenney-food	food-kit/Models/GLB format/bottle-musterd.glb	9620	model	96	1			0.81/0.77	1	boxes	
+kenney-food	food-kit/Models/GLB format/bottle-oil.glb	10500	model	96	1			0.87/0.82	1	boxes	
+kenney-food	food-kit/Models/GLB format/bowl-broth.glb	16628	model	210	1			0.83/0.82		skip	
+kenney-food	food-kit/Models/GLB format/bowl-cereal.glb	12468	model	120	1			0.8/0.79		skip	
+kenney-food	food-kit/Models/GLB format/bowl-soup.glb	11188	model	132	1			0.92/0.89	1	boxes	
+kenney-food	food-kit/Models/GLB format/bowl.glb	6340	model	84	1			0.83/0.8	1	boxes	
+kenney-food	food-kit/Models/GLB format/bread.glb	9468	model	116	1			0.95/0.94	1	boxes	
+kenney-food	food-kit/Models/GLB format/broccoli.glb	20452	model	220	1			0.83/0.8	1	boxes	
+kenney-food	food-kit/Models/GLB format/burger-cheese-double.glb	44420	model	392	1			0.81/0.69	1	budget boxes	
+kenney-food	food-kit/Models/GLB format/burger-cheese.glb	25900	model	226	1			0.78/0.71		boxes fit	
+kenney-food	food-kit/Models/GLB format/burger-double.glb	55692	model	468	1			0.81/0.74	1	budget boxes	
+kenney-food	food-kit/Models/GLB format/burger.glb	34536	model	294	1			0.79/0.73		budget boxes fit	
+kenney-food	food-kit/Models/GLB format/cabbage.glb	15360	model	140	1			0.86/0.83	1	boxes	
+kenney-food	food-kit/Models/GLB format/cake-birthday.glb	115324	model	1146	1			0.96/0.96	1	boxes	
+kenney-food	food-kit/Models/GLB format/cake-slicer.glb	5060	model	36	1			0.54/0.21		boxes fit	
+kenney-food	food-kit/Models/GLB format/cake.glb	72884	model	750	1			0.87/0.86	1	boxes	
+kenney-food	food-kit/Models/GLB format/can-open.glb	18428	model	216	1			0.79/0.75		boxes fit	
+kenney-food	food-kit/Models/GLB format/can-small.glb	15964	model	154	1			0.91/0.86	1	boxes	
+kenney-food	food-kit/Models/GLB format/can.glb	13708	model	156	1			0.84/0.81	1	boxes	
+kenney-food	food-kit/Models/GLB format/candy-bar-wrapper.glb	6120	model	48	1			0.87/0.83	1	boxes	
+kenney-food	food-kit/Models/GLB format/candy-bar.glb	7504	model	72	1			0.91/0.86		skip	
+kenney-food	food-kit/Models/GLB format/carrot.glb	16364	model	148	1			0.57/0.54		boxes fit	
+kenney-food	food-kit/Models/GLB format/carton-small.glb	8352	model	74	1			0.95/0.92	1		
+kenney-food	food-kit/Models/GLB format/carton.glb	9352	model	94	1			0.96/0.91	1		
+kenney-food	food-kit/Models/GLB format/cauliflower.glb	16592	model	152	1			0.86/0.84		skip	
+kenney-food	food-kit/Models/GLB format/celery-stick.glb	5964	model	52	1			0.9/0.67		skip	
+kenney-food	food-kit/Models/GLB format/cheese-cut.glb	13456	model	160	1			0.76/0.46		boxes fit	
+kenney-food	food-kit/Models/GLB format/cheese-slicer.glb	5496	model	44	1			0.61/0.17		boxes fit	
+kenney-food	food-kit/Models/GLB format/cheese.glb	60976	model	576	1			0.95/0.93	1	boxes	
+kenney-food	food-kit/Models/GLB format/cherries.glb	13516	model	134	1			0.51/0.47		boxes fit	
+kenney-food	food-kit/Models/GLB format/chinese.glb	19384	model	162	1			0.76/0.72		budget boxes fit	
+kenney-food	food-kit/Models/GLB format/chocolate-wrapper.glb	11720	model	118	1			0.75/0.67		boxes fit	
+kenney-food	food-kit/Models/GLB format/chocolate.glb	12652	model	140	1			0.73/0.68		boxes fit	
+kenney-food	food-kit/Models/GLB format/chopstic-decorative.glb	5416	model	36	1			0.49/0.38		boxes fit	
+kenney-food	food-kit/Models/GLB format/chopstick.glb	3008	model	12	1			0.48/0.4		boxes fit	
+kenney-food	food-kit/Models/GLB format/cocktail.glb	14128	model	144	1			0.85/0.81	1	boxes	
+kenney-food	food-kit/Models/GLB format/coconut-half.glb	8308	model	92	1			0.63/0.61		boxes fit	
+kenney-food	food-kit/Models/GLB format/coconut.glb	8984	model	76	1			0.94/0.9	1		
+kenney-food	food-kit/Models/GLB format/cookie-chocolate.glb	12344	model	136	1			0.89/0.82		skip	
+kenney-food	food-kit/Models/GLB format/cookie.glb	7532	model	68	1			0.72/0.67		boxes fit	
+kenney-food	food-kit/Models/GLB format/cooking-fork.glb	4872	model	36	1			0.42/0.2		boxes fit	
+kenney-food	food-kit/Models/GLB format/cooking-knife-chopping.glb	7796	model	80	1			0.82/0.68	1	boxes	
+kenney-food	food-kit/Models/GLB format/cooking-knife.glb	5380	model	39	1			0.7/0.51		boxes fit	
+kenney-food	food-kit/Models/GLB format/cooking-spatula.glb	6144	model	72	1			0.46/0.26		boxes fit	
+kenney-food	food-kit/Models/GLB format/cooking-spoon.glb	6796	model	56	1			0.67/0.43		boxes fit	
+kenney-food	food-kit/Models/GLB format/corn-dog.glb	9152	model	64	1			0.66/0.6		boxes fit	
+kenney-food	food-kit/Models/GLB format/corn.glb	14284	model	128	1			0.54/0.52		boxes fit	
+kenney-food	food-kit/Models/GLB format/croissant.glb	14352	model	162	1			0.7/0.65		fit	
+kenney-food	food-kit/Models/GLB format/cup-coffee.glb	7872	model	108	1			0.9/0.87		skip	
+kenney-food	food-kit/Models/GLB format/cup-saucer.glb	7848	model	116	1			0.9/0.86		skip	
+kenney-food	food-kit/Models/GLB format/cup-tea.glb	9780	model	144	1			0.86/0.8	1	boxes	
+kenney-food	food-kit/Models/GLB format/cup.glb	8008	model	112	1			0.9/0.86	1	boxes	
+kenney-food	food-kit/Models/GLB format/cupcake.glb	22724	model	204	1			0.77/0.73		boxes fit	
+kenney-food	food-kit/Models/GLB format/cutting-board-japanese.glb	9864	model	104	1			0.63/0.57		fit	
+kenney-food	food-kit/Models/GLB format/cutting-board-round.glb	12608	model	156	1			0.9/0.89	1	boxes	
+kenney-food	food-kit/Models/GLB format/cutting-board.glb	10652	model	120	1			0.95/0.94	1	boxes	
+kenney-food	food-kit/Models/GLB format/dim-sum.glb	7180	model	56	1			0.89/0.84		skip	
+kenney-food	food-kit/Models/GLB format/donut-chocolate.glb	12568	model	120	1			0.86/0.82		skip	
+kenney-food	food-kit/Models/GLB format/donut-sprinkles.glb	20008	model	180	1			0.71/0.65		boxes fit	
+kenney-food	food-kit/Models/GLB format/donut.glb	11360	model	108	1			0.86/0.82		skip	
+kenney-food	food-kit/Models/GLB format/egg-cooked.glb	6752	model	92	1			0.76/0.67		boxes fit	
+kenney-food	food-kit/Models/GLB format/egg-cup.glb	6992	model	84	1			0.61/0.55		boxes fit	
+kenney-food	food-kit/Models/GLB format/egg-half.glb	8256	model	80	1			0.73/0.56		boxes fit	
+kenney-food	food-kit/Models/GLB format/egg.glb	6044	model	44	1			0.53/0.48		boxes fit	
+kenney-food	food-kit/Models/GLB format/eggplant.glb	13416	model	124	1			0.78/0.73		boxes fit	
+kenney-food	food-kit/Models/GLB format/fish-bones.glb	34068	model	384	1			0.51/0.38		boxes fit	
+kenney-food	food-kit/Models/GLB format/fish.glb	31672	model	233	1			0.57/0.51		boxes fit	
+kenney-food	food-kit/Models/GLB format/frappe.glb	22548	model	320	1			0.91/0.89	1		
+kenney-food	food-kit/Models/GLB format/fries-empty.glb	11376	model	116	1			0.87/0.84		skip	
+kenney-food	food-kit/Models/GLB format/fries.glb	59228	model	564	1			0.85/0.82	1	boxes	
+kenney-food	food-kit/Models/GLB format/frikandel-speciaal.glb	25532	model	308	1			0.71/0.68		boxes fit	
+kenney-food	food-kit/Models/GLB format/frying-pan-lid.glb	13856	model	156	2			0.93/0.83		skip	
+kenney-food	food-kit/Models/GLB format/frying-pan.glb	19216	model	200	1			0.84/0.71	1		
+kenney-food	food-kit/Models/GLB format/ginger-bread-cutter.glb	11972	model	136	1			0.55/0.44		fit	
+kenney-food	food-kit/Models/GLB format/ginger-bread.glb	7756	model	80	1			0.63/0.5		boxes fit	
+kenney-food	food-kit/Models/GLB format/glass-wine.glb	23984	model	232	1			0.87/0.78	1		
+kenney-food	food-kit/Models/GLB format/glass.glb	4216	model	44	1			0.97/0.93	1		
+kenney-food	food-kit/Models/GLB format/grapes.glb	58992	model	592	1			0.83/0.8	1	boxes	
+kenney-food	food-kit/Models/GLB format/honey.glb	14888	model	140	1			0.86/0.83	1	boxes	
+kenney-food	food-kit/Models/GLB format/hot-dog-raw.glb	9568	model	92	1			0.69/0.56		fit	
+kenney-food	food-kit/Models/GLB format/hot-dog.glb	27700	model	272	1			0.7/0.64		boxes fit	
+kenney-food	food-kit/Models/GLB format/ice-cream-cne.glb	5460	model	44	1			0.96/0.92		skip	
+kenney-food	food-kit/Models/GLB format/ice-cream-cup.glb	7796	model	68	1			0.68/0.66		boxes fit	
+kenney-food	food-kit/Models/GLB format/ice-cream-scoop-chocolate.glb	9016	model	80	1			0.81/0.79		skip	
+kenney-food	food-kit/Models/GLB format/ice-cream-scoop-mint.glb	7256	model	56	1			0.89/0.83		skip	
+kenney-food	food-kit/Models/GLB format/ice-cream.glb	10124	model	80	1			0.91/0.86	1		
+kenney-food	food-kit/Models/GLB format/knife-block.glb	20204	model	157	1			0.89/0.86		skip	
+kenney-food	food-kit/Models/GLB format/leek.glb	16648	model	172	1			0.63/0.58		boxes fit	
+kenney-food	food-kit/Models/GLB format/lemon-half.glb	10280	model	116	1			0.76/0.7		boxes fit	
+kenney-food	food-kit/Models/GLB format/lemon.glb	11924	model	104	1			0.67/0.61		boxes fit	
+kenney-food	food-kit/Models/GLB format/loaf-baguette.glb	12824	model	122	1			0.79/0.76		boxes fit	
+kenney-food	food-kit/Models/GLB format/loaf-round.glb	11112	model	116	1			0.83/0.79	1		
+kenney-food	food-kit/Models/GLB format/loaf.glb	9464	model	116	1			0.84/0.8	1	boxes	
+kenney-food	food-kit/Models/GLB format/lollypop.glb	8544	model	108	1			0.98/0.95	1	boxes	
+kenney-food	food-kit/Models/GLB format/maki-roe.glb	6568	model	56	1			0.83/0.73		skip	
+kenney-food	food-kit/Models/GLB format/maki-salmon.glb	6004	model	56	1			0.97/0.93		skip	
+kenney-food	food-kit/Models/GLB format/maki-vegetable.glb	6108	model	56	1			0.97/0.93		skip	
+kenney-food	food-kit/Models/GLB format/meat-cooked.glb	10540	model	116	1			0.76/0.53		boxes fit	
+kenney-food	food-kit/Models/GLB format/meat-patty.glb	9092	model	104	1			0.8/0.77		skip	
+kenney-food	food-kit/Models/GLB format/meat-raw.glb	9936	model	110	1			0.76/0.53		boxes fit	
+kenney-food	food-kit/Models/GLB format/meat-ribs.glb	14364	model	164	1			0.75/0.71		boxes fit	
+kenney-food	food-kit/Models/GLB format/meat-sausage.glb	47096	model	320	1			0.44/0.4		boxes fit	
+kenney-food	food-kit/Models/GLB format/meat-tenderizer.glb	31372	model	322	1			0.61/0.56		boxes fit	
+kenney-food	food-kit/Models/GLB format/mincemeat-pie.glb	12700	model	164	1			0.85/0.77		skip	
+kenney-food	food-kit/Models/GLB format/mortar-pestle.glb	7232	model	56	1			0.93/0.86		skip	
+kenney-food	food-kit/Models/GLB format/mortar.glb	10200	model	92	1			0.92/0.86	1		
+kenney-food	food-kit/Models/GLB format/muffin.glb	10252	model	84	1			0.88/0.87	1		
+kenney-food	food-kit/Models/GLB format/mug.glb	20236	model	232	1			0.86/0.84	1		
+kenney-food	food-kit/Models/GLB format/mushroom-half.glb	7024	model	68	1			0.52/0.4		boxes fit	
+kenney-food	food-kit/Models/GLB format/mushroom.glb	8440	model	80	1			0.92/0.81		skip	
+kenney-food	food-kit/Models/GLB format/mussel-open.glb	10216	model	90	1			0.44/0.39		boxes fit	
+kenney-food	food-kit/Models/GLB format/mussel.glb	5328	model	38	1			0.74/0.65		fit	
+kenney-food	food-kit/Models/GLB format/onion-half.glb	9084	model	108	1			0.6/0.52		boxes fit	
+kenney-food	food-kit/Models/GLB format/onion.glb	8356	model	68	1			0.94/0.91	1		
+kenney-food	food-kit/Models/GLB format/orange.glb	13088	model	120	1			0.88/0.85	1	boxes	
+kenney-food	food-kit/Models/GLB format/pan-stew.glb	28316	model	344	1			0.93/0.91		skip	
+kenney-food	food-kit/Models/GLB format/pan.glb	19956	model	236	1			0.93/0.92	1	boxes	
+kenney-food	food-kit/Models/GLB format/pancakes.glb	42592	model	512	1			0.84/0.8		skip	
+kenney-food	food-kit/Models/GLB format/paprika-slice.glb	8988	model	96	1			0.67/0.52		boxes fit	
+kenney-food	food-kit/Models/GLB format/paprika.glb	15124	model	132	1			0.6/0.59		boxes fit	
+kenney-food	food-kit/Models/GLB format/peanut-butter.glb	17408	model	172	1			0.94/0.88	1		
+kenney-food	food-kit/Models/GLB format/pear-half.glb	11336	model	126	1			0.52/0.47		boxes fit	
+kenney-food	food-kit/Models/GLB format/pear.glb	15556	model	136	1			0.88/0.83	1	boxes	
+kenney-food	food-kit/Models/GLB format/pepper-mill.glb	25664	model	252	1			0.96/0.93	1		
+kenney-food	food-kit/Models/GLB format/pepper.glb	12928	model	100	1			0.39/0.33		boxes fit	
+kenney-food	food-kit/Models/GLB format/pie.glb	22420	model	292	1			0.97/0.96	1	boxes	
+kenney-food	food-kit/Models/GLB format/pineapple.glb	20248	model	196	1			0.63/0.59		boxes fit	
+kenney-food	food-kit/Models/GLB format/pizza-box.glb	8788	model	84	1			0.92/0.87		skip	
+kenney-food	food-kit/Models/GLB format/pizza-cutter.glb	8584	model	96	1			0.89/0.86		skip	
+kenney-food	food-kit/Models/GLB format/pizza.glb	106780	model	1208	1			0.98/0.96	1	budget boxes	
+kenney-food	food-kit/Models/GLB format/plate-broken.glb	33220	model	336	1			0.91/0.91		skip	
+kenney-food	food-kit/Models/GLB format/plate-deep.glb	7944	model	140	1			0.87/0.77		skip	
+kenney-food	food-kit/Models/GLB format/plate-dinner.glb	27908	model	354	1			0.87/0.85	1	budget boxes	
+kenney-food	food-kit/Models/GLB format/plate-rectangle.glb	6756	model	68	1			0.86/0.82		skip	
+kenney-food	food-kit/Models/GLB format/plate-sauerkraut.glb	64728	model	580	1			0.91/0.9	1	boxes	
+kenney-food	food-kit/Models/GLB format/plate.glb	8480	model	140	1			0.9/0.88	1		
+kenney-food	food-kit/Models/GLB format/popsicle-chocolate.glb	11796	model	132	1			0.82/0.79	1	boxes	
+kenney-food	food-kit/Models/GLB format/popsicle-stick.glb	4768	model	36	1			0.96/0.93		skip	
+kenney-food	food-kit/Models/GLB format/popsicle.glb	8116	model	78	1			0.75/0.69		boxes fit	
+kenney-food	food-kit/Models/GLB format/pot-lid.glb	10992	model	132	1			0.92/0.91		skip	
+kenney-food	food-kit/Models/GLB format/pot-stew-lid.glb	15824	model	176	2			0.9/0.79		skip	
+kenney-food	food-kit/Models/GLB format/pot-stew.glb	29560	model	370	1			0.93/0.91		skip	
+kenney-food	food-kit/Models/GLB format/pot.glb	18900	model	228	1			0.93/0.91	1	boxes	
+kenney-food	food-kit/Models/GLB format/pudding.glb	6612	model	56	1			0.81/0.78	1	boxes	
+kenney-food	food-kit/Models/GLB format/pumpkin-basic.glb	8484	model	80	1			0.83/0.81	1	boxes	
+kenney-food	food-kit/Models/GLB format/pumpkin.glb	20436	model	188	1			0.87/0.86		skip	
+kenney-food	food-kit/Models/GLB format/radish.glb	16456	model	166	1			0.48/0.45		boxes fit	
+kenney-food	food-kit/Models/GLB format/rice-ball.glb	6200	model	104	1			0.76/0.65		boxes fit	
+kenney-food	food-kit/Models/GLB format/rollingPin.glb	14304	model	140	1			0.92/0.88	1		
+kenney-food	food-kit/Models/GLB format/salad.glb	17200	model	170	1			0.84/0.8	1	boxes	
+kenney-food	food-kit/Models/GLB format/sandwich.glb	19724	model	176	1			0.89/0.61	1	budget boxes	
+kenney-food	food-kit/Models/GLB format/sausage-half.glb	8852	model	100	1			0.66/0.57		boxes fit	
+kenney-food	food-kit/Models/GLB format/sausage.glb	9556	model	92	1			0.89/0.83		skip	
+kenney-food	food-kit/Models/GLB format/shaker-pepper.glb	9300	model	116	1			0.72/0.6		boxes fit	
+kenney-food	food-kit/Models/GLB format/shaker-salt.glb	11792	model	116	1			0.72/0.6		boxes fit	
+kenney-food	food-kit/Models/GLB format/skewer-vegetables.glb	22604	model	156	1			0.89/0.83	1		
+kenney-food	food-kit/Models/GLB format/skewer.glb	16544	model	116	1			0.76/0.69		boxes fit	
+kenney-food	food-kit/Models/GLB format/soda-bottle.glb	11324	model	100	1			0.92/0.88	1		
+kenney-food	food-kit/Models/GLB format/soda-can-crushed.glb	21304	model	212	1			0.94/0.92		skip	
+kenney-food	food-kit/Models/GLB format/soda-can.glb	16384	model	164	1			0.98/0.97	1	boxes	
+kenney-food	food-kit/Models/GLB format/soda-glass.glb	12888	model	124	1			0.93/0.91	1	boxes	
+kenney-food	food-kit/Models/GLB format/soda.glb	12356	model	188	1			0.92/0.9	1		
+kenney-food	food-kit/Models/GLB format/soy.glb	5144	model	68	1			0.86/0.79		skip	
+kenney-food	food-kit/Models/GLB format/steamer.glb	45700	model	492	1			0.96/0.93	1	boxes	
+kenney-food	food-kit/Models/GLB format/strawberry.glb	16620	model	156	1			0.64/0.61		boxes fit	
+kenney-food	food-kit/Models/GLB format/styrofoam-dinner.glb	24448	model	240	1			0.84/0.82		skip	
+kenney-food	food-kit/Models/GLB format/styrofoam.glb	11980	model	152	1			0.84/0.81	1	budget boxes	
+kenney-food	food-kit/Models/GLB format/sub.glb	58388	model	574	1			0.78/0.62		budget boxes fit	
+kenney-food	food-kit/Models/GLB format/sundae.glb	26416	model	316	1			0.9/0.87	1	boxes	
+kenney-food	food-kit/Models/GLB format/sushi-egg.glb	7644	model	78	1			0.79/0.75		boxes fit	
+kenney-food	food-kit/Models/GLB format/sushi-salmon.glb	8852	model	96	1			0.59/0.54		boxes fit	
+kenney-food	food-kit/Models/GLB format/taco.glb	17476	model	174	1			0.9/0.84	1	boxes	
+kenney-food	food-kit/Models/GLB format/tajine-lid.glb	13796	model	136	1			0.97/0.96	1		
+kenney-food	food-kit/Models/GLB format/tajine.glb	15644	model	164	1			0.87/0.8		skip	
+kenney-food	food-kit/Models/GLB format/tomato-slice.glb	12348	model	140	1			0.64/0.4		boxes fit	
+kenney-food	food-kit/Models/GLB format/tomato.glb	14084	model	132	1			0.76/0.68		boxes fit	
+kenney-food	food-kit/Models/GLB format/turkey.glb	37192	model	368	1			0.75/0.71		budget boxes fit	
+kenney-food	food-kit/Models/GLB format/utensil-fork.glb	4816	model	44	1			0.44/0.04		boxes fit	
+kenney-food	food-kit/Models/GLB format/utensil-knife.glb	3492	model	18	1			0.44/0.06		boxes fit	
+kenney-food	food-kit/Models/GLB format/utensil-spoon.glb	6128	model	46	1			0.47/0.07		boxes fit	
+kenney-food	food-kit/Models/GLB format/waffle.glb	47924	model	588	1			0.94/0.91	1		
+kenney-food	food-kit/Models/GLB format/watermelon.glb	93884	model	1376	1			0.75/0.73		budget boxes fit	
+kenney-food	food-kit/Models/GLB format/whipped-cream.glb	4916	model	80	1			0.81/0.74		skip	
+kenney-food	food-kit/Models/GLB format/whisk.glb	10264	model	150	1			0.51/0.45		boxes fit	
+kenney-food	food-kit/Models/GLB format/whole-ham.glb	11752	model	128	1			0.9/0.88	1	boxes	
+kenney-food	food-kit/Models/GLB format/wholer-ham.glb	12916	model	116	1			0.88/0.86	1		
+kenney-food	food-kit/Models/GLB format/wine-red.glb	14200	model	132	1			0.9/0.83	1	boxes	
+kenney-food	food-kit/Models/GLB format/wine-white.glb	13524	model	124	1			0.66/0.62		boxes fit	

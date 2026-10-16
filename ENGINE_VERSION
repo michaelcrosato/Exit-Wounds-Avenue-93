@@ -1,0 +1,10 @@
+engine=my-3d2dge
+version=0.46.1
+build=dev-build
+commit=cfa866aa45474868350cad1a7fc015e612f9305f
+upstream=https://github.com/michaelcrosato/my-3d2dge
+patch=EWA93-P1-analog-input+P2-three-stage-fallback
+three=0.182.0
+rapier=0.19.3-simd-compat
+units_per_metre=16
+gravity_engine_units_per_second_squared=156.96

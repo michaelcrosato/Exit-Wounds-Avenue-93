@@ -1,0 +1,145 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/bowl.gltf	3041	model	256	1			0.96/0.95		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/bowl_dirty.gltf	3054	model	319	1			0.96/0.95		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/bowl_small.gltf	3040	model	256	1			0.94/0.91		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/chair_A.gltf	3037	model	428	1			0.81/0.79	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/chair_B.gltf	3037	model	428	1			0.92/0.9	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/chair_stool.gltf	3009	model	272	1			0.95/0.82	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/crate.gltf	3017	model	132	1			0.96/0.94	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/crate_buns.gltf	3041	model	2772	1			0.96/0.94		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/crate_carrots.gltf	3046	model	1752	1			0.96/0.94	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/crate_cheese.gltf	3043	model	1164	1			0.96/0.94		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/crate_ham.gltf	3030	model	676	1			0.96/0.94		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/crate_lettuce.gltf	3046	model	1980	1			0.96/0.94	1	budget boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/crate_lid.gltf	2980	model	164	1			0.69/0.64		fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/crate_onions.gltf	3043	model	1652	1			0.96/0.94		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/crate_potatoes.gltf	3040	model	1068	1			0.96/0.94		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/crate_steak.gltf	3041	model	1188	1			0.96/0.94		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/crate_tomatoes.gltf	3048	model	2072	1			0.96/0.94		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/cuttingboard.gltf	2966	model	38	1			0.95/0.93	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/dishrack.gltf	3030	model	240	1			0.82/0.78		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/dishrack_plates.gltf	3052	model	880	1			0.83/0.81	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/door_A.gltf	3026	model	188	1			0.94/0.83		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/door_B.gltf	3026	model	188	1			0.94/0.83		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/extractorhood.gltf	2967	model	204	1			0.88/0.8		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/floor_kitchen.gltf	2947	model	48	1			0.98/0.97		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/floor_kitchen_small.gltf	2959	model	48	1			0.96/0.95		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_burger.gltf	3066	model	1622	1			0.94/0.89	1	budget boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_dinner.gltf	3065	model	1196	1			0.84/0.77	1	budget boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_bun.gltf	3071	model	440	1			0.93/0.91	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_bun_bottom.gltf	3082	model	152	1			0.96/0.84		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_bun_top.gltf	3076	model	320	1			0.9/0.84		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_burger_cooked.gltf	3092	model	208	1			0.9/0.81	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_burger_trash.gltf	3090	model	208	1			0.9/0.81		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_burger_uncooked.gltf	3096	model	208	1			0.92/0.84	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_carrot.gltf	3076	model	324	1			0.68/0.64		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_carrot_chopped.gltf	3097	model	534	1			0.68/0.63		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_carrot_pieces.gltf	3096	model	576	1			0.52/0.5		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_cheese.gltf	3061	model	258	1			0.91/0.86	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_cheese_chopped.gltf	3091	model	254	1			0.8/0.76		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_cheese_slice.gltf	3080	model	54	1			0.71/0.64		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_ham.gltf	3068	model	272	1			0.68/0.63		budget boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_ham_cooked.gltf	3082	model	272	1			0.85/0.82	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_ham_trash.gltf	3080	model	272	1			0.84/0.81		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_lettuce.gltf	3193	model	462	1			0.7/0.68		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_lettuce_chopped.gltf	3208	model	462	1			0.68/0.64		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_lettuce_slice.gltf	3086	model	124	1			0.72/0.67		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_onion.gltf	3060	model	304	1			0.93/0.9	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_onion_chopped.gltf	3092	model	704	1			0.81/0.77		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_onion_rings.gltf	3085	model	384	1			0.61/0.51		fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_potato.gltf	3064	model	156	1			0.9/0.84	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_potato_chopped.gltf	3090	model	308	1			0.65/0.62		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_potato_mashed.gltf	3083	model	32	1			0.75/0.68		fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_steak.gltf	3077	model	352	1			0.82/0.78		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_steak_pieces.gltf	3083	model	264	1			0.65/0.61		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_tomato.gltf	3082	model	388	1			0.83/0.81	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_tomato_slice.gltf	3092	model	220	1			0.86/0.81		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_tomato_slices.gltf	3097	model	476	1			0.87/0.83		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_vegetableburger_cooked.gltf	3115	model	338	1			0.88/0.83		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_ingredient_vegetableburger_uncooked.gltf	3119	model	338	1			0.88/0.83		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_stew.gltf	3056	model	560	1			0.93/0.74	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/food_vegetableburger.gltf	3085	model	1698	1			0.94/0.91		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/fridge_A.gltf	7062	model	614	1			0.92/0.9	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/fridge_A_decorated.gltf	7125	model	2398	1			0.92/0.9		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/fridge_B.gltf	5016	model	426	1			0.91/0.9		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_A_large.gltf	3027	model	168	1			0.97/0.95	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_A_medium.gltf	3029	model	188	1			0.98/0.97		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_A_small.gltf	3056	model	192	1			0.96/0.91		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_B_large.gltf	3027	model	168	1			0.96/0.93	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_B_medium.gltf	3029	model	188	1			0.99/0.97		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_B_small.gltf	3056	model	192	1			0.96/0.92		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_C_large.gltf	3027	model	168	1			0.98/0.95		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_C_medium.gltf	3029	model	188	1			0.98/0.97		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_C_small.gltf	3056	model	192	1			0.96/0.91		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_D_large.gltf	3027	model	168	1			0.97/0.95	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_D_medium.gltf	3029	model	188	1			0.98/0.97		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/jar_D_small.gltf	3056	model	192	1			0.96/0.91		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/ketchup.gltf	3030	model	168	1			0.66/0.58		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencabinet.gltf	2965	model	156	1			0.93/0.91		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencabinet_corner.gltf	2964	model	172	1			0.96/0.95		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencabinet_corner_half.gltf	2974	model	172	1			0.95/0.93		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencabinet_half.gltf	2975	model	156	1			0.91/0.88		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_innercorner.gltf	2967	model	38	1			0.87/0.83		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_innercorner_backsplash.gltf	3009	model	56	1			0.95/0.91		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_outercorner.gltf	2984	model	38	1			0.85/0.81		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_outercorner_backsplash.gltf	3026	model	56	1			0.95/0.9		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_sink.gltf	3000	model	674	1			0.96/0.9	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_sink_backsplash.gltf	3020	model	686	1			0.97/0.94		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_straight_A.gltf	2989	model	168	1			0.96/0.95	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_straight_A_backsplash.gltf	3028	model	180	1			0.96/0.95		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_straight_A_decorated.gltf	3055	model	1456	1			0.94/0.9		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_straight_B.gltf	2989	model	168	1			0.96/0.94		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_straight_B_backsplash.gltf	3028	model	180	1			0.96/0.95		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_straight_decorated.gltf	3029	model	894	1			0.93/0.91	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchentable_A.gltf	2974	model	236	1			0.75/0.57		fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchentable_A_large.gltf	2990	model	236	1			0.74/0.57		fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchentable_A_large_decorated.gltf	3037	model	1996	1			0.87/0.84	1	budget boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchentable_B.gltf	2974	model	236	1			0.68/0.63		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchentable_B_large.gltf	2990	model	236	1			0.79/0.62		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchentable_sink.gltf	3002	model	742	1			0.88/0.83	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchentable_sink_large.gltf	3000	model	846	1			0.87/0.82		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/kitchentable_sink_large_decorated.gltf	3023	model	2589	1			0.87/0.83	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/knife.gltf	3039	model	104	1			0.79/0.76		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/lid_A.gltf	2984	model	200	1			0.96/0.91		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/lid_B.gltf	2984	model	200	1			0.96/0.91		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/lid_large.gltf	3023	model	200	1			0.81/0.61		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/menu.gltf	2990	model	108	1			0.94/0.91		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/mustard.gltf	3030	model	168	1			0.66/0.58		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/oven.gltf	5058	model	542	1			0.96/0.94	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/pan_006.gltf	2988	model	278	1			0.86/0.81		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/pan_A.gltf	2947	model	310	1			0.87/0.83	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/pan_B.gltf	2947	model	310	1			0.87/0.83	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/papertowel.gltf	2995	model	228	1			0.98/0.96	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/pillar_A.gltf	3022	model	44	1			0.97/0.86		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/pillar_B.gltf	2958	model	44	1			0.98/0.98		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/plate.gltf	3043	model	160	1			0.93/0.92	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/plate_dirty.gltf	3057	model	262	1			0.93/0.92		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/plate_small.gltf	3015	model	120	1			0.91/0.87		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/pot_A.gltf	2977	model	324	1			0.85/0.82	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/pot_A_stew.gltf	3004	model	612	1			0.82/0.76		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/pot_B.gltf	2977	model	324	1			0.85/0.82	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/pot_B_stew.gltf	3004	model	612	1			0.82/0.76		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/pot_large.gltf	2985	model	388	1			0.82/0.74		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/shelf_papertowel.gltf	3009	model	284	1			0.91/0.88		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/shelf_papertowel_decorated.gltf	3032	model	832	1			0.88/0.85		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/stew_bowl.gltf	3051	model	304	1			0.66/0.51		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/stew_pot.gltf	3046	model	304	1			0.63/0.52		boxes fit	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/stove_multi.gltf	3006	model	1084	1			0.95/0.93	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/stove_multi_countertop.gltf	3075	model	708	1			0.9/0.84		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/stove_multi_decorated.gltf	3046	model	2270	1			0.93/0.91	1	budget boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/stove_single.gltf	3008	model	680	1			0.94/0.91		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/stove_single_countertop.gltf	3073	model	304	1			0.93/0.82		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/table_round_A.gltf	3001	model	312	1			0.97/0.93	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/table_round_A_decorated.gltf	3034	model	4422	1			0.96/0.91	1	budget boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/table_round_A_small.gltf	3017	model	312	1			0.96/0.94		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/table_round_A_small_decorated.gltf	3039	model	756	1			0.95/0.93	1	boxes	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/table_round_B.gltf	3000	model	300	1			0.98/0.98	1		
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/towelrail.gltf	3041	model	180	1			0.84/0.74		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/wall.gltf	2983	model	76	1			0.98/0.97		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/wall_decorated.gltf	3017	model	3880	1			0.97/0.96		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/wall_doorway.gltf	3000	model	162	1			0.94/0.92		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/wall_half.gltf	2996	model	76	1			0.94/0.89		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/wall_orderwindow.gltf	3026	model	206	1			0.95/0.93		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/wall_orderwindow_decorated.gltf	3048	model	650	1			0.95/0.93		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/wall_window_closed.gltf	3014	model	196	1			0.97/0.96		skip	
+kaykit-restaurant-bits	KayKit-Restaurant-Bits-1.0/addons/kaykit_restaurant_bits/Assets/gltf/wall_window_open.gltf	3010	model	192	1			0.88/0.82		skip	

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vesper's interface on E.Shell · my-3D2dge</title>
+<!--
+  A temporary lab (src/labs.json, "Temporary"): Vesper's interface (a GPT-6 model's Assassin's Creed adaptation, which
+  wrote its HTML, CSS and glue by hand) rebuilt on the engine's E.Shell, to count what it costs now. Built from
+  src/vesper-ui.template.html, src/vesper-ui.world.js (a stand-in game, not counted) and src/vesper-ui.ui.js (the
+  interface, counted) by tools/build.mjs. Delete it (and its labs.json entry) once the question is settled.
+-->
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+#screen{position:absolute;inset:0;width:100%;height:100%;display:block;image-rendering:pixelated;touch-action:none}
+</style>
+</head>
+<body>
+<!-- @boot VESPER -->
+<canvas id="screen" role="img" aria-label="The district"></canvas>
+<!-- @inline engine/my-3d2dge.js -->
+<!-- @inline src/vesper-ui.world.js -->
+<!-- @inline src/vesper-ui.ui.js -->
+</body>
+</html>

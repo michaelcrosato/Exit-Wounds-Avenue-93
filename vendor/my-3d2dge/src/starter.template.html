@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+  my-3D2dge (My "3D" 2D Game Engine), {{EDITION}} v{{VERSION}} ({{BUILD}})
+  https://github.com/michaelcrosato/my-3d2dge (MIT License)
+
+  AI MODELS: this one file is the whole engine, its documentation and {{GAMES}}.
+    1. Read the API card in <script type="text/markdown" id="my3d2dge-api"> below. It is short.
+    2. The engine is the script marked "inlined from engine/my-3d2dge.js". Do not change it
+       unless you are asked to extend the engine itself.
+    3. The games live between GAME START and GAME END: {{CONTENTS}}
+       To make a new game, copy the slice closest to your genre, then replace everything between
+       GAME START and GAME END with only your game. Keep everything else in this file as it is.
+  HUMANS: open this file in a browser and play. Press ? for the API card.
+  {{LINKS}}
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>my-3D2dge · {{EDITION}}</title>
+<script type="text/markdown" id="my3d2dge-api">
+<!-- @inline-raw API.md -->
+</script>
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+#stage{position:relative;width:100%;height:100%;overflow:hidden;background:#000;touch-action:none}
+#screen{position:absolute;inset:0;width:100%;height:100%;display:block;image-rendering:pixelated}
+#guideBtn{position:absolute;top:calc(8px + env(safe-area-inset-top,0px));right:calc(112px + env(safe-area-inset-right,0px));z-index:5;font:600 12px/1 ui-monospace,Menlo,Consolas,monospace;color:#d8d0f0;background:rgba(20,16,40,.6);border:1px solid rgba(216,208,240,.3);border-radius:4px;padding:5px 7px;cursor:pointer;opacity:.55}
+#guideBtn:hover,#guideBtn:focus-visible{opacity:1}
+#guideBtn.away{opacity:0;transition:opacity .4s;pointer-events:none}
+@media (pointer:coarse){#guideBtn{display:none}}
+#guide{position:absolute;inset:0;z-index:6;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.6)}
+#guide[hidden]{display:none}
+#guide .panel{width:min(860px,100%);max-height:100%;display:flex;flex-direction:column;background:#141226;color:#eee8ff;border:1px solid #4a4470;border-radius:6px}
+#guide header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #4a4470;font:600 14px system-ui,sans-serif}
+#guide header button{font:inherit;color:inherit;background:#2a2648;border:1px solid #4a4470;border-radius:4px;padding:5px 10px;cursor:pointer}
+#guide pre{margin:0;padding:14px;overflow:auto;font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;-webkit-user-select:text;user-select:text}
+</style>
+</head>
+<body>
+<!-- @boot -->
+<div id="stage">
+  <canvas id="screen" role="img" aria-label="my-3D2dge game screen"></canvas>
+  <button type="button" id="guideBtn" title="API card (?)">? API</button>
+  <div id="guide" hidden role="dialog" aria-modal="true" aria-labelledby="guideTitle">
+    <div class="panel">
+      <header><span id="guideTitle">my-3D2dge API card</span><button type="button" id="guideClose">Close</button></header>
+      <pre id="guideText"></pre>
+    </div>
+  </div>
+</div>
+<script>
+// in-page API card viewer (reads the card at the top of this file). Not part of any game.
+(() => {
+  const g = document.getElementById('guide'), open = v => { g.hidden = !v; if (v) document.getElementById('guideClose').focus(); };
+  document.getElementById('guideText').textContent = document.getElementById('my3d2dge-api').textContent.trim();
+  document.getElementById('guideBtn').addEventListener('click', e => { open(true); e.currentTarget.blur(); });
+  document.getElementById('guideClose').addEventListener('click', () => open(false));
+  addEventListener('keydown', e => { if (e.key === '?') open(g.hidden); else if (e.key === 'Escape' && !g.hidden) open(false); });
+  // the button steps aside while you play and comes back when the mouse moves (a phone has no use for it: hidden)
+  const btn = document.getElementById('guideBtn'); let hide = setTimeout(() => btn.classList.add('away'), 4000);
+  addEventListener('keydown', () => btn.classList.add('away'));
+  addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; btn.classList.remove('away'); clearTimeout(hide); hide = setTimeout(() => btn.classList.add('away'), 3000); });
+})();
+</script>
+<!-- @inline engine/my-3d2dge.js -->
+<!-- the slices' objects: sets cut from the asset store (docs/ASSETS.md, "Use it"), each only with its slice -->
+<!-- @inline-with 10-adventure.js src/assets/sets/adventure.js -->
+<!-- @inline-with 20-platformer.js src/assets/sets/platformer.js -->
+<!-- @inline-with 30-shooter.js src/assets/sets/shooter.js -->
+<!-- @inline-with 40-rpg.js src/assets/sets/rpg.js -->
+<!-- @inline-with 50-brawler.js src/assets/sets/brawler.js -->
+<!-- @inline-with 60-animlab.js src/assets/sets/animlab.js -->
+<!-- @inline-with 70-stealth.js src/assets/sets/stealth.js -->
+<!-- @inline-parts src/starter -->
+</body>
+</html>

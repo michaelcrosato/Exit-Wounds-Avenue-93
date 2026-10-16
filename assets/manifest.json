@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "assets": [
+    { "id": "procedural-morrow-ward", "path": "src/world/district.js", "sha256": "a9aaf7bfb3b4f33c76eb7f0975954a98b461e7a61cf8276db990f487154a426c", "source": "Original source in this repository", "author": "Exit Wounds Avenue-93 implementation team", "license": "LicenseRef-Project-Original", "originalId": "Morrow Ward geometry, signage, lights, rain and procedural textures", "modifications": "Original authored procedural district; no external world model or texture." },
+    { "id": "road-and-foot-graphs", "path": "src/world/roads.js", "sha256": "714ccb68a3510738dc5bb47bce5ad9e0b7bbdc006f4272af95d2c22009ff4737", "source": "Original source in this repository", "author": "Exit Wounds Avenue-93 implementation team", "license": "LicenseRef-Project-Original", "originalId": "Morrow Ward road, signal and foot route data", "modifications": "Original authored route graph." },
+    { "id": "district-interaction-placements", "path": "src/world/interactions.js", "sha256": "7b221ad243b0d749d9b2baab741264944beb3038dc1785672ab93203494d9bce", "source": "Original source in this repository", "author": "Exit Wounds Avenue-93 implementation team", "license": "LicenseRef-Project-Original", "originalId": "Places, services, contacts and mission prop positions", "modifications": "Original authored game placements and place names." },
+    { "id": "resident-outfit-palettes", "path": "src/world/pedestrians.js", "sha256": "b09961241df637ffe7c78c53da1c5b0bcc59ac12928fb9fbf595801fbf2452bd", "source": "Original source in this repository", "author": "Exit Wounds Avenue-93 implementation team", "license": "LicenseRef-Project-Original", "originalId": "Six resident outfit palettes and street-life behaviors", "modifications": "Original palettes on the pinned engine Humanoid rig." },
+    { "id": "traffic-placement-and-behavior", "path": "src/world/traffic.js", "sha256": "0a33703f9ce184ebfa532fe46d813c416f5e5543dee52bdcb27093e668865e33", "source": "Original source in this repository", "author": "Exit Wounds Avenue-93 implementation team", "license": "LicenseRef-Project-Original", "originalId": "Morrow Ward civilian traffic and driver appearance data", "modifications": "Original traffic behavior and vehicle color selection." },
+    { "id": "procedural-sedan-van-cruiser", "path": "src/engine/vehicles.js", "sha256": "da7ea62cbe5c54a699e5460818c8380573978caf95c4d1456e74f4caf6bb5844", "source": "Original source in this repository", "author": "Exit Wounds Avenue-93 implementation team", "license": "LicenseRef-Project-Original", "originalId": "Three original urban vehicle models and Rapier wheel/seat adapter", "modifications": "Original geometry, interiors, lights, damage variants and driving implementation." },
+    {
+      "id": "font-barlow-condensed-regular",
+      "path": "assets/ui/BarlowCondensed-Regular.ttf",
+      "sha256": "583cec5da3b84bc4dc7c9c72e2a565c94d34e431518b19d7e250b7830ad5f996",
+      "source": "https://github.com/google/fonts/blob/main/ofl/barlowcondensed/BarlowCondensed-Regular.ttf",
+      "author": "Jeremy Tribby / The Barlow Project Authors",
+      "license": "OFL-1.1",
+      "originalId": "BarlowCondensed-Regular.ttf",
+      "modifications": "Copied unmodified for local same-origin delivery."
+    },
+    {
+      "id": "font-barlow-condensed-bold",
+      "path": "assets/ui/BarlowCondensed-Bold.ttf",
+      "sha256": "e476562ec9c1e16cf16475895b511f08c804f438cc9a9f80a44ea50a0eeb5b65",
+      "source": "https://github.com/google/fonts/blob/main/ofl/barlowcondensed/BarlowCondensed-Bold.ttf",
+      "author": "Jeremy Tribby / The Barlow Project Authors",
+      "license": "OFL-1.1",
+      "originalId": "BarlowCondensed-Bold.ttf",
+      "modifications": "Copied unmodified for local same-origin delivery."
+    },
+    {
+      "id": "font-dm-sans-variable",
+      "path": "assets/ui/DMSans-Variable.ttf",
+      "sha256": "8cd08d97e89c24d0aa92edd2f0f4c8ee6195eee9b7c9f154865a58b02f0c1c0d",
+      "source": "https://github.com/google/fonts/blob/main/ofl/dmsans/DMSans%5Bopsz,wght%5D.ttf",
+      "author": "Colophon Foundry / The DM Sans Project Authors",
+      "license": "OFL-1.1",
+      "originalId": "DMSans[opsz,wght].ttf",
+      "modifications": "Renamed for a simple local URL; font data unmodified."
+    },
+    {
+      "id": "license-barlow-condensed",
+      "path": "assets/licenses/BarlowCondensed-OFL.txt",
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "source": "https://github.com/google/fonts/blob/main/ofl/barlowcondensed/OFL.txt",
+      "author": "The Barlow Project Authors",
+      "license": "OFL-1.1",
+      "originalId": "OFL.txt",
+      "modifications": "Renamed to identify the font family; license text unmodified."
+    },
+    {
+      "id": "license-dm-sans",
+      "path": "assets/licenses/DMSans-OFL.txt",
+      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+      "source": "https://github.com/google/fonts/blob/main/ofl/dmsans/OFL.txt",
+      "author": "The DM Sans Project Authors",
+      "license": "OFL-1.1",
+      "originalId": "OFL.txt",
+      "modifications": "Renamed to identify the font family; license text unmodified."
+    },
+    {
+      "id": "world-provenance-note",
+      "path": "assets/world/README.md",
+      "sha256": "c0361b28508878bc1d8318ec1357ff3ea92b626903fe5c2801bd1f5ea0468713",
+      "source": "Original source in this repository",
+      "author": "Exit Wounds Avenue-93 implementation team",
+      "license": "LicenseRef-Project-Original",
+      "originalId": "Morrow Ward procedural world asset note",
+      "modifications": "Original provenance note for locally generated district art."
+    },
+    {
+      "id": "morrow-ward-selected-mocap",
+      "path": "assets/animation/urban.js",
+      "sha256": "f7c30e8a204830ffad813b0e21c23f23e446eaf8d429a0e8dc91249b03e9e31c",
+      "source": "https://quaternius.com/packs/universalanimationlibrary.html; https://quaternius.com/packs/universalanimationlibrary2.html; https://github.com/Mesh2Motion/mesh2motion-app",
+      "author": "Quaternius and Mesh2Motion contributors",
+      "license": "CC0-1.0",
+      "originalId": "27 Quaternius clips and 3 Mesh2Motion directional dodges; original clip IDs and source records retained in the set",
+      "modifications": "Selected and converted with the pinned engine anim-set tool; source, original, and fit metadata retained."
+    },
+    {
+      "id": "mocap-runtime-bridge",
+      "path": "assets/animation/bridge.js",
+      "sha256": "cce0fc80661f27e885de5a2976fc7925444e2eabc1c57174607a0490f65f10d2",
+      "source": "Original source in this repository",
+      "author": "Exit Wounds Avenue-93 implementation team",
+      "license": "LicenseRef-Project-Original",
+      "originalId": "bridge.js",
+      "modifications": "Original bridge exposing the pinned classic mocap runtime to the game module."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "about": "Lookups the API index must answer (D39): what the benchmark's agents read the engine's source for (F2.1, F3.1, F4.1), what the briefs and the kits need. Each is a search of API-INDEX.md as the handoff's README says to make it (grep -n \"<pattern>\" API-INDEX.md; \\| is or, . any character); facts are text its hits must hold, all of them. One search answers each but the 7th, which takes two (the class names its instance; the instance's lines hold the methods). node tools/api-index.mjs --check, and so doctrine-check, fails when one stops answering. Add a lookup an agent is seen to miss.",
+  "lookups": [
+    { "n": 1, "from": "F2.1", "need": "the state rig.update takes", "grep": ["rig.update"], "facts": ["aim", "crouch", "sprint", "climb", "hang", "flip", "pose: 'cheer'", "stance: 'guard' | 'ready'", "down: 0..1"] },
+    { "n": 2, "from": "F2.1", "need": "the prop names for r.prop", "grep": ["r.prop\\|PROPS"], "facts": ["r.prop('torch'", "E.PROPS: torch", "barrel", "lantern", "mushroom"] },
+    { "n": 3, "from": "F2.1, F3.1", "need": "the backdrop presets, and what sun takes", "grep": ["Backdrop"], "facts": ["E.Backdrop.presets", "castle-night", "sun, moon: { x, y (0..1 of the screen), r, color }"] },
+    { "n": 4, "from": "F2.1", "need": "make something glow", "grep": ["emissive"], "facts": ["opts.emissive (0..1) makes it glow"] },
+    { "n": 5, "from": "F2.1", "need": "px.blend's modes", "grep": ["px.blend"], "facts": ["'add'", "'multiply'", "'screen'"] },
+    { "n": 6, "from": "F2.1, F3.1", "need": "the song format", "grep": ["audio.music"], "facts": ["bpm", "tracks", "wave: 'square'", "notes", "E.songs"] },
+    { "n": 7, "from": "F2.1, F4.1", "need": "how an E.Attack is driven", "grep": ["E.Attack", "slash\\."], "facts": ["E.Attack: slash", "slash.start(", "slash.update(dt)", "slash.hits(", "slash.state"] },
+    { "n": 8, "from": "F2.1, F4.1", "need": "what game.hitFx does", "grep": ["hitFx"], "facts": ["hit-stop", "shake", "sparks", "damage"] },
+    { "n": 9, "from": "F2.1, F4.1", "need": "whether a dialog holds play", "grep": ["modal"], "facts": ["returns true while open and modal", "talk.modal"] },
+    { "n": 10, "from": "F2.1, F4.1", "need": "the hats and hoods a rig wears", "grep": ["hood"], "facts": ["hat: 'cap' | 'band' | 'crown' | 'helmet' | 'pointed'", "hood: true"] },
+    { "n": 11, "from": "F3.1", "need": "a cheer or kneel pose", "grep": ["cheer\\|kneel"], "facts": ["rig.update", "pose: 'cheer'", "'kneel'"] },
+    { "n": 12, "from": "F3.1", "need": "the platform legend and tile kinds", "grep": ["PlatformMap"], "facts": ["legend: { '#': 1, '@': 'hero' }", "Tile kinds: 'solid' (default) | 'oneway' | 'ladder' | 'slope' | 'hazard' | 'deco' | 'back'"] },
+    { "n": 13, "from": "F3.1", "need": "turn a view", "grep": ["view.set"], "facts": ["view.set(yaw, pitch"] },
+    { "n": 14, "from": "F3.1", "need": "how a body collides and stands", "grep": ["body.update"], "facts": ["map.collide", "gravity", "map.groundAt"] },
+    { "n": 15, "from": "F3.1", "need": "steer an E.Mover from code", "grep": ["mover.update"], "facts": ["ctl: game.input", "move: [dx, dy]"] },
+    { "n": 16, "from": "F3.1", "need": "say with choices", "grep": ["talk.say"], "facts": ["choices: ['YES', 'NO']", "onChoice(i)"] },
+    { "n": 17, "from": "F4.1", "need": "a pausable scene, hit-stop, the fade", "grep": ["pausable\\|hitstop\\|fade"], "facts": ["pausable", "game.hitstop", "game.fadeTime", "opts.fade"] },
+    { "n": 18, "from": "F4.1", "need": "r.sightCone's options", "grep": ["sightCone"], "facts": ["r.sightCone(obs", "range: 120"] },
+    { "n": 19, "from": "the Breath of the Wild brief", "need": "climb onto a ledge", "grep": ["ledge"], "facts": ["map.ledge(from, dir", "mover.climbMax"] },
+    { "n": 20, "from": "the Breath of the Wild brief", "need": "a stamina meter", "grep": ["stamina\\|meter"], "facts": ["bars: [{ label, value, max", "E.ui.bar(g, x, y, w, h", "stamina"] },
+    { "n": 21, "from": "the Arkham brief", "need": "a takedown from behind", "grep": ["takedown"], "facts": ["mover.play('takedown', { other })", "E.targets"] },
+    { "n": 22, "from": "the Arkham brief", "need": "guards that grow suspicious", "grep": ["Suspicion"], "facts": ["E.Suspicion: suspicion", "suspicion.update(dt, seen, target)", "'alert'"] },
+    { "n": 23, "from": "the platformer kit", "need": "the side-scroller input preset", "grep": ["PLATFORMER"], "facts": ["E.Input.PLATFORMER", "input ('PLATFORMER')"] },
+    { "n": 24, "from": "the adventure kit", "need": "a contact shadow", "grep": ["r.shadow"], "facts": ["r.shadow(x, y, rad"] },
+    { "n": 25, "from": "the template game", "need": "a headless test", "grep": ["advance\\|input.tap"], "facts": ["game.advance(seconds", "input.tap(a)", "headless"] },
+    { "n": 26, "from": "F6.1", "need": "what map.bounds gives the camera", "grep": ["map.bounds"], "facts": ["{ x0, y0, x1, y1 }", "game.cam.bounds = v => map.bounds(v)"] },
+    { "n": 27, "from": "F6.1", "need": "the pixel primitives, searched as games write them", "grep": ["^- `px\\.\\(disc\\|poly\\)"], "facts": ["px.disc(g, cx, cy, r, c)", "px.poly(g, pts, c)"] },
+    { "n": 28, "from": "F6.1", "need": "the actions of the third-person preset", "grep": ["THIRDPERSON\\|input\\.use"], "facts": ["E.Input.THIRDPERSON { sprint, jump, crouch, interact, attack, block, dodge, use, map }", "up, down, left, right", "start, pause, confirm, cancel"] }
+  ]
+}

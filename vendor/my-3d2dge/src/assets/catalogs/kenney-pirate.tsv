@@ -1,0 +1,73 @@
+src	file	bytes	kind	tris	mats	w	h	fit	used	flags	note
+kenney-pirate	pirate-kit/Models/GLB format/barrel.glb	14092	model	148	1			0.92/0.91	1		
+kenney-pirate	pirate-kit/Models/GLB format/boat-row-large.glb	15972	model	174	1			0.82/0.8	1	budget boxes	
+kenney-pirate	pirate-kit/Models/GLB format/boat-row-small.glb	17616	model	168	1			0.81/0.79		skip	
+kenney-pirate	pirate-kit/Models/GLB format/bottle-large.glb	12232	model	108	1			0.96/0.88	1		
+kenney-pirate	pirate-kit/Models/GLB format/bottle.glb	13796	model	124	1			0.9/0.84	1		
+kenney-pirate	pirate-kit/Models/GLB format/cannon-ball.glb	7192	model	48	1			0.92/0.89	1		
+kenney-pirate	pirate-kit/Models/GLB format/cannon-mobile.glb	43824	model	472	1			0.9/0.87	1	boxes	
+kenney-pirate	pirate-kit/Models/GLB format/cannon.glb	24024	model	232	1			0.91/0.88	1		
+kenney-pirate	pirate-kit/Models/GLB format/castle-door.glb	37648	model	392	1			0.91/0.88		skip	
+kenney-pirate	pirate-kit/Models/GLB format/castle-gate.glb	67440	model	716	1			0.93/0.91		skip	
+kenney-pirate	pirate-kit/Models/GLB format/castle-wall.glb	30504	model	306	1			0.94/0.91		skip	
+kenney-pirate	pirate-kit/Models/GLB format/castle-window.glb	28668	model	292	1			0.94/0.9		skip	
+kenney-pirate	pirate-kit/Models/GLB format/chest.glb	25240	model	232	1			0.86/0.83		skip	
+kenney-pirate	pirate-kit/Models/GLB format/crate-bottles.glb	58588	model	572	1			0.89/0.87		skip	
+kenney-pirate	pirate-kit/Models/GLB format/crate.glb	9232	model	76	1			0.88/0.83	1	boxes	
+kenney-pirate	pirate-kit/Models/GLB format/flag-high-pennant.glb	13656	model	118	1			0.76/0.73		boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/flag-high.glb	15196	model	144	1			0.78/0.71		boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/flag-pennant.glb	13640	model	118	1			0.75/0.71		boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/flag-pirate-high-pennant.glb	13676	model	118	1			0.74/0.71		boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/flag-pirate-high.glb	15220	model	144	1			0.77/0.71		boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/flag-pirate-pennant.glb	13660	model	118	1			0.76/0.71		boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/flag-pirate.glb	15204	model	144	1			0.81/0.76	1	boxes	
+kenney-pirate	pirate-kit/Models/GLB format/flag.glb	15184	model	144	1			0.8/0.75	1	boxes	
+kenney-pirate	pirate-kit/Models/GLB format/grass-patch.glb	38640	model	360	1			0.67/0.6		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/grass-plant.glb	14400	model	144	1			0.73/0.69		boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/grass.glb	8964	model	72	1			0.64/0.59		boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/hole.glb	28168	model	286	1			0.95/0.94	1	boxes	
+kenney-pirate	pirate-kit/Models/GLB format/mast-ropes.glb	36156	model	350	1			0.67/0.62		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/mast.glb	30816	model	302	1			0.89/0.87		skip	
+kenney-pirate	pirate-kit/Models/GLB format/palm-bend.glb	36528	model	338	1			0.58/0.52		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/palm-detailed-bend.glb	52012	model	482	1			0.57/0.45		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/palm-detailed-straight.glb	51916	model	482	1			0.82/0.78	1	budget boxes	
+kenney-pirate	pirate-kit/Models/GLB format/palm-straight.glb	36524	model	338	1			0.65/0.62		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/patch-grass-foliage.glb	30716	model	300	1			0.86/0.83	1	boxes	
+kenney-pirate	pirate-kit/Models/GLB format/patch-grass.glb	8416	model	84	1			0.86/0.83		skip	
+kenney-pirate	pirate-kit/Models/GLB format/patch-sand-foliage.glb	63008	model	636	1			0.79/0.73		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/patch-sand.glb	10212	model	108	1			0.79/0.77		fit	
+kenney-pirate	pirate-kit/Models/GLB format/platform-planks.glb	6524	model	48	1			0.95/0.91	1	budget boxes	
+kenney-pirate	pirate-kit/Models/GLB format/platform.glb	7668	model	60	1			0.96/0.91		skip	
+kenney-pirate	pirate-kit/Models/GLB format/rocks-a.glb	27644	model	264	1			0.95/0.93	1		
+kenney-pirate	pirate-kit/Models/GLB format/rocks-b.glb	31316	model	300	1			0.94/0.93	1		
+kenney-pirate	pirate-kit/Models/GLB format/rocks-c.glb	24572	model	232	1			0.94/0.93		skip	
+kenney-pirate	pirate-kit/Models/GLB format/rocks-sand-a.glb	57052	model	552	1			0.94/0.93		skip	
+kenney-pirate	pirate-kit/Models/GLB format/rocks-sand-b.glb	53404	model	516	1			0.94/0.92		skip	
+kenney-pirate	pirate-kit/Models/GLB format/rocks-sand-c.glb	46624	model	448	1			0.94/0.93		skip	
+kenney-pirate	pirate-kit/Models/GLB format/ship-ghost.glb	155692	model	1703	1			0.28/0.23		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/ship-large.glb	155792	model	1849	1			0.56/0.41		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/ship-medium.glb	144944	model	1723	1			0.52/0.37		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/ship-pirate-large.glb	177216	model	1938	1			0.57/0.41		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/ship-pirate-medium.glb	166388	model	1812	1			0.53/0.38		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/ship-pirate-small.glb	131464	model	1461	1			0.57/0.43		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/ship-small.glb	116440	model	1370	1			0.56/0.42		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/ship-wreck.glb	223676	model	2282	1			0.7/0.62		budget boxes fit	
+kenney-pirate	pirate-kit/Models/GLB format/structure-fence-sides.glb	44480	model	436	1			0.86/0.82		skip	
+kenney-pirate	pirate-kit/Models/GLB format/structure-fence.glb	35752	model	356	1			0.85/0.8		skip	
+kenney-pirate	pirate-kit/Models/GLB format/structure-platform-dock-small.glb	32156	model	312	1			0.94/0.91		skip	
+kenney-pirate	pirate-kit/Models/GLB format/structure-platform-dock.glb	33336	model	324	1			0.94/0.88		skip	
+kenney-pirate	pirate-kit/Models/GLB format/structure-platform-small.glb	23068	model	208	1			0.97/0.96		skip	
+kenney-pirate	pirate-kit/Models/GLB format/structure-platform.glb	24248	model	220	1			0.96/0.92		skip	
+kenney-pirate	pirate-kit/Models/GLB format/structure-roof.glb	34480	model	348	1			0.89/0.88		skip	
+kenney-pirate	pirate-kit/Models/GLB format/structure.glb	27988	model	276	1			0.83/0.79		skip	
+kenney-pirate	pirate-kit/Models/GLB format/tool-paddle.glb	6864	model	60	1			0.81/0.78	1		
+kenney-pirate	pirate-kit/Models/GLB format/tool-shovel.glb	16144	model	168	1			0.94/0.92	1		
+kenney-pirate	pirate-kit/Models/GLB format/tower-base-door.glb	12592	model	130	1			0.88/0.86		skip	
+kenney-pirate	pirate-kit/Models/GLB format/tower-base.glb	5772	model	44	1			0.95/0.93		skip	
+kenney-pirate	pirate-kit/Models/GLB format/tower-complete-large.glb	54660	model	604	1			0.96/0.95		skip	
+kenney-pirate	pirate-kit/Models/GLB format/tower-complete-small.glb	58412	model	650	1			0.95/0.94		skip	
+kenney-pirate	pirate-kit/Models/GLB format/tower-middle-windows.glb	23188	model	242	1			0.96/0.95		skip	
+kenney-pirate	pirate-kit/Models/GLB format/tower-middle.glb	21112	model	210	1			0.95/0.93		skip	
+kenney-pirate	pirate-kit/Models/GLB format/tower-roof.glb	11772	model	110	1			0.91/0.89		skip	
+kenney-pirate	pirate-kit/Models/GLB format/tower-top.glb	29484	model	334	1			0.85/0.83		skip	
+kenney-pirate	pirate-kit/Models/GLB format/tower-watch.glb	21672	model	248	1			0.95/0.94		skip	

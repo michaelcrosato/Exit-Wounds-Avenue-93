@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Engine integration harness</title>
+<script type="importmap">{"imports":{"three":"../../vendor/my-3d2dge/vendor/three-0.182.0/three.webgpu.min.js","three/webgpu":"../../vendor/my-3d2dge/vendor/three-0.182.0/three.webgpu.min.js","three/tsl":"../../vendor/my-3d2dge/vendor/three-0.182.0/three.tsl.min.js","@dimforge/rapier3d-simd-compat":"../../vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js"}}</script>
+<style>html,body{margin:0;width:100%;height:100%;overflow:hidden}canvas{position:absolute;inset:0;width:100%;height:100%}</style></head><body><canvas id="view"></canvas><canvas id="screen"></canvas>
+<script src="../../vendor/my-3d2dge/engine/my-3d2dge.js"></script>
+<script type="module">
+import {bootEngine} from '../../src/engine/world.js';
+import {m} from '../../src/engine/units.js';
+const runtime=await bootEngine({settings:{backend:new URLSearchParams(location.search).has('native')?undefined:'webgl',quality:'low'}});
+const {world,game}=runtime;game.o.loop=false;
+world.box({x:m(90),y:m(15),z:m(-.5),w:m(200),d:m(40),h:m(.5),fixed:true,color:'#676f74'});
+world.step(1/120);
+window.engineTest={...runtime,m};
+</script></body></html>

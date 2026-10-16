@@ -1,0 +1,39 @@
+{
+  "$sources": {
+    "kenney-mini-dungeon": {"label":"Kenney Mini Dungeon","origin":"Kenney (kenney.nl), mini-dungeon","license":"CC0 1.0","url":"https://kenney.nl/media/pages/assets/mini-dungeon/6cd72dc849-1785314274/kenney_mini-dungeon.zip","page":"https://kenney.nl/assets/mini-dungeon","fetched":"2026-10-14","sha256":"19c4648680cb1d2e8836cade96cbf9781c0c1f45fbc6d2ce41cee8239a3ec4d8","licenseHash":"f8b470068a1c0438","dir":"mini-dungeon","scale":2.5,"factors":"srgb"}
+  },
+  "$skip": {
+    "character-human": "character: bodies are rigs in this engine",
+    "character-orc": "character: bodies are rigs in this engine",
+    "chest": "reads badly: grey end blocks around a tan ball, no box or lid",
+    "coin": "reads badly: a square gold block, not a round coin",
+    "dirt": "structural: a terrain block, TileMap does walls",
+    "floor-detail": "structural: a floor tile",
+    "gate": "structural: a doorway gate, reads as a plain grey slab",
+    "rocks": "structural: a cut cobble terrain block",
+    "stairs": "structural: stairs",
+    "wall": "structural: TileMap walls do walls",
+    "wall-half": "structural: TileMap walls do walls",
+    "wall-narrow": "structural: TileMap walls do walls",
+    "wall-opening": "structural: TileMap walls do doorways",
+    "weapon-sword": "reads badly: a stubby grey post, the blade has no point",
+    "wood-structure": "structural: a mine timber frame, a building part",
+    "wood-support": "structural: a mine timber arch, a building part"
+  },
+  "$mats": {
+    "clay": "oak",
+    "clay-b": "oak",
+    "leather": "walnut",
+    "cobble-b": "steel"
+  },
+  "banner": ["decoration dungeon castle","red cloth banner hanging from a wooden rod"],
+  "barrel": ["container dungeon tavern","squat wooden barrel, two wide blue-grey iron hoops"],
+  "chair": ["furniture dungeon tavern","chunky tan wooden chair, high back"],
+  "column": ["decoration dungeon castle","stone pillar, cobbled shaft, blue-grey octagonal base and cap"],
+  "potion": ["item potion dungeon","round red potion flask, pale glass neck, cork"],
+  "shield-round": ["weapon dungeon castle","round grey shield, pale emblem, wooden back"],
+  "stones": ["rock dungeon cave","pile of grey boulders with scattered pebbles"],
+  "table": ["furniture dungeon tavern","chunky tan wooden table on dark trestle legs"],
+  "trap": ["trap dungeon","spike trap: four grey cone spikes in a square"],
+  "weapon-spear": ["weapon dungeon","upright spear, grey steel head, wooden shaft"]
+}

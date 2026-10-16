@@ -5,7 +5,7 @@ export const STARTING_WALLET = 80;
 /** @typedef {ReturnType<typeof createGameState>} GameState */
 /** @typedef {'INTRO'|'COLLECTION'|'APPROACH'|'RECOVERY'|'EXTRACTION'|'EVASION'|'DECISION'|'HANDOFF'|'AFTERMATH'} MissionPhase */
 /** @typedef {'broker'|'reporter'} Ending */
-/** @typedef {{position:{x:number,y:number,z:number},rotation:number,velocity:{x:number,y:number,z:number},health:number,appearance:number,disabled:boolean,seats:Record<string,string|null>}} VehicleState */
+/** @typedef {{position:{x:number,y:number,z:number},rotation:number,velocity:{x:number,y:number,z:number},health:number,color?:string,appearance:number,disabled:boolean,seats:Record<string,string|null>}} VehicleState */
 /** @param {{seed?:number|string,runId?:string}} [options] */
 export function createGameState({ seed = 93, runId = 'run-93-1' } = {}) {
   return {
@@ -34,8 +34,8 @@ export function createGameState({ seed = 93, runId = 'run-93-1' } = {}) {
       combat: { blocking: false, dodgingUntilTick: 0, nextDodgeTick: 0, nextMeleeTick: 0, combo: 0, comboExpiresTick: 0 },
     },
     vehicles: /** @type {Record<string,VehicleState>} */ ({}),
-    actors: /** @type {Record<string,{position:{x:number,y:number,z:number},health:number,state:string,vehicleId:string|null,seat:string|null}>} */ ({
-      jun: { position: { x: 0, y: 0, z: 0 }, health: 100, state: 'cover', vehicleId: null, seat: null },
+    actors: /** @type {Record<string,{position:{x:number,y:number,z:number},health:number,state:string,vehicleId:string|null,seat:string|null,recoveryAttempts?:number,lastSafe?:{x:number,y:number,z:number},lastKnown?:{x:number,y:number,z:number}|null}>} */ ({
+      jun: { position: { x: 0, y: 0, z: 0 }, health: 100, state: 'cover', vehicleId: null, seat: null, recoveryAttempts: 0, lastSafe: { x: 0, y: 0, z: 0 } },
     }),
     crime: {
       incidents: /** @type {import('../systems/crime.js').CrimeIncident[]} */ ([]),
@@ -49,7 +49,7 @@ export function createGameState({ seed = 93, runId = 'run-93-1' } = {}) {
       reportsReceived: /** @type {string[]} */ ([]), surrendered: false,
     },
     economy: { transactions: /** @type {string[]} */ ([]) },
-    district: { investigationNotice: false, contractorTakeover: false, marketShuttered: false, radio: 'local-evening' },
+    district: { investigationNotice: false, contractorTakeover: false, marketShuttered: false, radio: 'local-evening', traffic: /** @type {any} */(null), pedestrians: /** @type {any} */(null), crewMeta: /** @type {any} */(null) },
   };
 }
 

@@ -1,0 +1,26 @@
+{
+  "package": "three",
+  "version": "0.182.0",
+  "released": "2025-12-10",
+  "license": "MIT",
+  "source": "npm pack three@0.182.0",
+  "note": "three.js r182, the last stable release of 2025. three.webgpu.min.js imports ./three.core.min.js; three.tsl.min.js imports the bare name three/webgpu, which the import map provides.",
+  "files": {
+    "three.core.min.js": {
+      "bytes": 380922,
+      "sha256": "e5a824c8ec97ee44aeb8ce0ab64664e1dd1777df9d0ab2345b35f9941a9fcf33"
+    },
+    "three.webgpu.min.js": {
+      "bytes": 616351,
+      "sha256": "5de5d1af82a392fd4d43662e92481da2985f6c384e75bdf5bda618008dc2eb68"
+    },
+    "three.tsl.min.js": {
+      "bytes": 23117,
+      "sha256": "166f811d4ad2630f697ceae70b48479e1096126d42b51a2597535f2ef078f686"
+    },
+    "LICENSE": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    }
+  }
+}

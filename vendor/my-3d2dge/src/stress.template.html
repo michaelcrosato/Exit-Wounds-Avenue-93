@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stress test · my-3D2dge</title>
+<!-- Built with the my-3D2dge engine: https://github.com/michaelcrosato/my-3d2dge (standalone file) -->
+<style>
+:root{
+  --bg:#efe6d6; --panel:rgba(250,243,230,.94); --ink:#261d38; --muted:#62567a; --accent:#b8612a; --accent-ink:#fff7ea;
+  --line:rgba(38,29,56,.16); --key:rgba(38,29,56,.08); --good:#2f8f5a; --warn:#b98010; --bad:#c23a2e;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#06050b; --panel:rgba(16,12,28,.88); --ink:#f0e3c6; --muted:#a898be; --accent:#f0a23a; --accent-ink:#1c1428; --line:rgba(240,227,198,.14); --key:rgba(240,227,198,.09); --good:#7fe3a0; --warn:#ffcf5a; --bad:#ff6a5a; }
+}
+:root[data-theme="dark"]{ --bg:#06050b; --panel:rgba(16,12,28,.88); --ink:#f0e3c6; --muted:#a898be; --accent:#f0a23a; --accent-ink:#1c1428; --line:rgba(240,227,198,.14); --key:rgba(240,227,198,.09); --good:#7fe3a0; --warn:#ffcf5a; --bad:#ff6a5a; }
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:14px/1.4 Figtree,'Segoe UI',system-ui,sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent}
+#stage{position:relative;width:100%;height:100%;overflow:hidden;background:#000;touch-action:none}
+#screen{position:absolute;inset:0;width:100%;height:100%;display:block;image-rendering:pixelated;cursor:crosshair}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+h1,h2,.big{font-family:'Pixelify Sans','Trebuchet MS',system-ui,sans-serif;font-weight:600}
+
+/* control panel */
+#panel{position:absolute;z-index:3;left:12px;top:12px;bottom:12px;width:300px;overflow-y:auto;padding:14px 14px 18px;scrollbar-width:thin}
+#panel[hidden]{display:none}
+#panel header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px}
+#panel h1{margin:0;font-size:22px;line-height:1.1}
+#panel .lede{margin:4px 0 0;color:var(--muted);font-size:13px}
+section{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+h2{margin:0 0 8px;font-size:16px}
+.field{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:10px 0 4px}
+.field output{font-variant-numeric:tabular-nums;font-weight:600}
+.note{margin:2px 0 0;font-size:12px;color:var(--muted)}
+input[type=range]{width:100%;accent-color:var(--accent);margin:2px 0}
+select{width:100%;font:inherit;color:var(--ink);background:var(--key);border:1px solid var(--line);border-radius:5px;padding:6px 8px}
+select option{color:#261d38}
+.btnrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+button{font:inherit;font-weight:500;color:var(--ink);background:var(--key);border:1px solid var(--line);border-radius:5px;padding:6px 10px;min-height:32px;cursor:pointer}
+button:hover{border-color:var(--muted)}
+button[aria-pressed="true"],button.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button:disabled{opacity:.45;cursor:default}
+.check{display:flex;gap:9px;align-items:flex-start;margin:8px 0;cursor:pointer}
+.check input{margin-top:3px;accent-color:var(--accent);width:15px;height:15px;flex:none}
+.check small{display:block;color:var(--muted);font-size:12px}
+.views{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+kbd{font:inherit;font-size:11px;padding:1px 5px;border-radius:3px;background:var(--key);border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-variant-numeric:tabular-nums;font-size:13px}
+th,td{text-align:right;padding:3px 4px;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:600;color:var(--muted);font-size:12px}
+#benchSummary{font-weight:600;margin:8px 0 0}
+#reportText{width:100%;height:120px;margin-top:8px;font:12px/1.4 ui-monospace,monospace;background:var(--key);color:var(--ink);border:1px solid var(--line);border-radius:5px}
+body.benching #panel section:not(#benchSection) {opacity:.45;pointer-events:none}
+
+/* metrics */
+#metrics{position:absolute;z-index:3;right:12px;top:12px;width:292px;padding:12px 14px 12px}
+.fpsrow{display:flex;align-items:baseline;gap:8px}
+.big{font-size:44px;line-height:.9;font-variant-numeric:tabular-nums}
+.unit{color:var(--muted);font-size:14px}
+#bottleneck{margin-left:auto;font-size:12px;font-weight:600;padding:3px 8px;border-radius:999px;border:1px solid currentColor}
+#bottleneck[data-level=good]{color:var(--good)} #bottleneck[data-level=warn]{color:var(--warn)} #bottleneck[data-level=bad]{color:var(--bad)}
+#graph{display:block;width:100%;height:52px;margin:10px 0 6px;border-radius:4px;background:var(--key)}
+.legend{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:6px}
+dl{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin:8px 0 0}
+dl div{min-width:0}
+dt{font-size:11.5px;color:var(--muted)}
+dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#hint{margin:10px 0 0;font-size:12.5px;color:var(--muted)}
+details{margin-top:8px;font-size:12.5px}
+summary{cursor:pointer;color:var(--muted)}
+#hw{white-space:pre-line;margin:6px 0 0}
+
+#showPanel{position:absolute;z-index:3;left:12px;top:12px}
+.keys{position:absolute;z-index:2;right:12px;bottom:12px;margin:0;padding:7px 11px;font-size:12.5px;color:var(--muted);max-width:min(520px,calc(100% - 350px))}
+.keys b{color:var(--ink)}
+.touch{display:none;position:absolute;z-index:2;right:14px;bottom:14px;gap:10px}
+.touch button{width:60px;height:60px;border-radius:50%}
+@media (pointer:coarse){ .touch{display:flex} .keys{display:none} }
+@media (max-width:760px){
+  #panel{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:48vh}
+  #metrics{right:8px;top:8px;width:210px;padding:10px}
+  .big{font-size:32px}
+  #metrics dl,#metrics details,#hint{display:none}
+  .keys{display:none}
+}
+a.to-labs{font-size:13px;font-weight:400;margin-left:8px;color:var(--accent);text-decoration:none;white-space:nowrap}a.to-labs:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="screen" role="img" aria-label="Stress test arena: a large torch-lit hall filled with a configurable number of monsters"></canvas>
+
+  <aside id="panel" class="panel" aria-label="Stress test controls">
+    <header>
+      <h1>Stress test <a class="to-labs" href="labs.html" title="Every lab and test page">All labs</a></h1>
+      <button type="button" id="hidePanel">Hide <kbd>H</kbd></button>
+    </header>
+    <p class="lede">Raise the load until the frame rate drops, or let the benchmark do it and rate this device.</p>
+
+    <section>
+      <h2>Load</h2>
+      <label class="field" for="monsters"><span>Monsters</span><output id="monstersOut">0</output></label>
+      <input type="range" id="monsters" min="0" max="5000" step="10" value="0">
+      <div class="btnrow">
+        <button type="button" data-add="-100">−100</button>
+        <button type="button" data-add="10">+10</button>
+        <button type="button" data-add="100">+100</button>
+        <button type="button" data-add="500">+500</button>
+        <button type="button" data-add="0" data-clear>Clear</button>
+      </div>
+      <label class="field" for="mix"><span>Mix</span></label>
+      <select id="mix">
+        <option value="balanced">Balanced (half humanoids)</option>
+        <option value="humanoids">Humanoids only (heaviest)</option>
+        <option value="slimes">Slimes only (lightest)</option>
+        <option value="wisps">Wisps only (glowing orbs)</option>
+      </select>
+      <label class="field" for="skin"><span>Humanoid rig</span></label>
+      <select id="skin">
+        <option value="classic">Classic stick husks (cheapest)</option>
+        <option value="hd">HD husks</option>
+        <option value="skeleton">HD skeletons with swords</option>
+        <option value="knight">HD knights in armor (heaviest)</option>
+        <option value="mixed">HD mix: husks, skeletons, knights</option>
+      </select>
+      <p class="note">Drawing time per humanoid with outlines off: sticks 1×, skeletons 2×, HD husks 3×, knights 4× (outlines narrow the gap). Slimes grow horns, ears or wings.</p>
+      <label class="field" for="behavior"><span>Behavior</span></label>
+      <select id="behavior">
+        <option value="swarm">Swarm the hero</option>
+        <option value="wander">Wander</option>
+        <option value="hold">Stand in place</option>
+        <option value="freeze">Freeze (measures drawing only)</option>
+      </select>
+      <p class="note">Swarming monsters take turns: up to three attack at once, each after a wind-up with a red warning arc. Kills stay down until the whole wave is cleared. Then the hero cheers and the wave returns.</p>
+    </section>
+
+    <section>
+      <h2>Camera</h2>
+      <label class="field" for="distance"><span>Camera distance</span><output id="distanceOut">1×</output></label>
+      <input type="range" id="distance" min="1" max="6" step=".25" value="1">
+      <p class="note">Pulls back by rendering more pixels at the same pixel size, so more of the hall and more monsters are on screen.</p>
+      <label class="field"><span>Zoom <kbd>-</kbd> <kbd>=</kbd></span><output id="zoomOut">1×</output></label>
+      <div class="btnrow" role="group" aria-label="Zoom"><button type="button" data-zoom="-1">Zoom out</button><button type="button" data-zoom="1">Zoom in</button></div>
+      <label class="field"><span>Turn <kbd>[</kbd> <kbd>]</kbd></span><output id="turnOut">0°</output></label>
+      <div class="btnrow" role="group" aria-label="Turn"><button type="button" data-turn="-45">Turn left</button><button type="button" data-turn="45">Turn right</button><button type="button" id="camReset">Reset <kbd>0</kbd></button></div>
+      <p class="note">Zoom redraws everything larger or smaller at the same resolution: zooming out fits more monsters on screen without adding pixels. Each new turn angle bakes the floor once.</p>
+      <label class="field"><span>View</span></label>
+      <div class="views" role="group" aria-label="Camera view">
+        <button type="button" data-view="iso">Isometric</button>
+        <button type="button" data-view="threequarter">Three-quarter</button>
+        <button type="button" data-view="topdown">Top-down</button>
+        <button type="button" data-view="brawler">Brawler</button>
+        <button type="button" data-view="side">Side scrolling</button>
+        <button type="button" data-view="custom">Custom</button>
+      </div>
+      <label class="check"><input type="checkbox" id="depth"><span>Depth in side scrolling <kbd>M</kbd><small>Mode 7: a perspective camera on a rail beside the hero, so he shrinks walking into the hall and grows coming back. The floor is drawn a row at a time and every character at the size its distance gives, by the engine at that size, not a scaled sprite, and at the screen's own resolution, so zoomed in or out they stay sharp.</small></span></label>
+      <div id="customCam" hidden>
+        <label class="field" for="camYaw"><span>Turn</span><output id="camYawOut">30°</output></label>
+        <input type="range" id="camYaw" min="0" max="359" step="1" value="30">
+        <label class="field" for="camPitch"><span>Tilt</span><output id="camPitchOut">40°</output></label>
+        <input type="range" id="camPitch" min="0" max="90" step="1" value="40">
+        <label class="field" for="camBoost"><span>Height boost</span><output id="camBoostOut">1.10</output></label>
+        <input type="range" id="camBoost" min="100" max="150" step="5" value="110">
+        <p class="note">Any view the engine can draw: tilt 0 is the side view, 90 straight down. Zoom and the turn keys still apply on top.</p>
+      </div>
+      <div class="btnrow"><button type="button" id="fixBtn" aria-pressed="false">Fix camera here <kbd>F</kbd></button><button type="button" id="camLinkBtn">Copy camera link</button></div>
+      <p class="note">Fixed, the camera stays where it is while the hero moves on, in any view. The link opens this camera (view, turn, tilt, zoom, and where it is fixed).</p>
+      <p class="note">Chase, first-person and fly cameras need real 3D: they are on the <a href="stress-world.html" id="toWorld">3D world stress test</a>.</p>
+    </section>
+
+    <section>
+      <h2>Scene</h2>
+      <label class="field" for="lights"><span>Torches</span><output id="lightsOut">12</output></label>
+      <input type="range" id="lights" min="0" max="30" step="1" value="12">
+      <label class="field" for="shapes" title="The engine's core objects (docs/ASSETS.md) strewn through the hall: barrels, tables, trees, wells. Not in the depth view"><span>Shapes</span><output id="shapesOut">0</output></label>
+      <input type="range" id="shapes" min="0" max="400" step="10" value="0">
+      <label class="field" for="rate"><span>Particle storm</span><output id="rateOut">0/s</output></label>
+      <input type="range" id="rate" min="0" max="3000" step="50" value="0">
+      <label class="field" for="pcap"><span>Particle cap</span><output id="pcapOut">2,000</output></label>
+      <input type="range" id="pcap" min="900" max="10000" step="100" value="2000">
+    </section>
+
+    <section>
+      <h2>Rendering</h2>
+      <div class="btnrow"><button type="button" id="fsBtn">Full screen</button></div>
+      <label class="check"><input type="checkbox" id="fsStart"><span>Start in full screen<small>On this device, the first click or key goes full screen (browsers allow it no sooner)</small></span></label>
+      <label class="check" id="gpuLabel"><input type="checkbox" id="gpuOn"><span>GPU lighting <kbd>G</kbd><small>WebGPU shadows, glow and heat shimmer</small></span></label>
+      <label class="check"><input type="checkbox" id="shadows"><span>GPU shadows<small>Every torch marches shadows through the level</small></span></label>
+      <label class="check"><input type="checkbox" id="canvasLight"><span>Canvas lighting<small>Used when GPU lighting is off</small></span></label>
+      <label class="check"><input type="checkbox" id="outlines"><span>Outlines and rim light<small>Off draws monsters directly, skipping per-character compositing</small></span></label>
+      <label class="check"><input type="checkbox" id="capes"><span>Monster capes<small>Adds a cloth simulation to every humanoid</small></span></label>
+      <label class="check"><input type="checkbox" id="mlights"><span>Monster lights<small>Visible wisps become light sources (up to 16)</small></span></label>
+      <label class="check"><input type="checkbox" id="lod"><span>Skip off-screen animation<small>Monsters outside the view still move but don't pose</small></span></label>
+      <label class="check"><input type="checkbox" id="dither"><span>Dithered translucency<small>The engine's NES and Genesis style: glows, fades and shadows as ordered dither patterns instead of stepped transparency</small></span></label>
+      <label class="check"><input type="checkbox" id="readable"><span>Readable characters<small>In steep views the engine draws characters from a lower angle so their faces show (the SNES cheat); off draws them as the camera sees them</small></span></label>
+      <label class="check"><input type="checkbox" id="god"><span>Invincible hero</span></label>
+    </section>
+
+    <section>
+      <h2>Presets</h2>
+      <div class="btnrow">
+        <button type="button" data-preset="light">Light</button>
+        <button type="button" data-preset="medium">Medium</button>
+        <button type="button" data-preset="heavy">Heavy</button>
+        <button type="button" data-preset="extreme">Extreme</button>
+        <button type="button" data-preset="reset">Reset</button>
+      </div>
+    </section>
+
+    <section id="benchSection">
+      <h2>Benchmark</h2>
+      <p class="note">Steps from 0 to 5,000 monsters with the settings above, measuring 3 seconds at each step. It stops once the frame rate falls below 20.</p>
+      <div class="btnrow"><button type="button" id="benchBtn" class="primary">Run benchmark</button><button type="button" id="copyBtn" hidden>Copy results</button></div>
+      <p id="benchStatus" class="note" aria-live="polite"></p>
+      <p id="benchSummary" aria-live="polite"></p>
+      <table><thead><tr><th>Monsters</th><th>Avg fps</th><th>1% low</th><th title="Game logic, ms a frame">Logic ms</th><th title="Drawing on the CPU, ms a frame">Draw ms</th><th title="Logic and drawing together">CPU ms</th></tr></thead><tbody id="benchTable"></tbody></table>
+      <textarea id="reportText" hidden readonly aria-label="Benchmark report"></textarea>
+    </section>
+  </aside>
+  <button type="button" id="showPanel" class="panel" hidden>Controls <kbd>H</kbd></button>
+
+  <div id="metrics" class="panel" aria-label="Performance">
+    <div class="fpsrow"><span class="big" id="fpsBig">60</span><span class="unit">fps</span><span id="bottleneck" data-level="good">Headroom</span></div>
+    <canvas id="graph" aria-label="Frame time over the last three seconds"></canvas>
+    <div class="legend"><span>Frame time, last 3 s</span><span>lines at 60 and 30 fps</span></div>
+    <dl>
+      <div><dt>Frame</dt><dd id="mFrame">–</dd></div>
+      <div><dt>1% low</dt><dd id="mLow">–</dd></div>
+      <div><dt>Game logic</dt><dd id="mUpdate">–</dd></div>
+      <div><dt>Drawing (CPU)</dt><dd id="mRender">–</dd></div>
+      <div><dt>Monsters</dt><dd id="mMonsters">–</dd></div>
+      <div><dt>Particles</dt><dd id="mParts">–</dd></div>
+      <div><dt>Lights</dt><dd id="mLights">–</dd></div>
+      <div><dt>Draw items</dt><dd id="mItems">–</dd></div>
+      <div><dt>Resolution</dt><dd id="mRes">–</dd></div>
+      <div><dt>GPU lighting</dt><dd id="mGpu">–</dd></div>
+    </dl>
+    <p id="hint"></p>
+    <details><summary>This device</summary><p id="hw">Detecting...</p></details>
+  </div>
+
+  <p class="keys panel"><b>WASD</b> moves, <b>mouse</b> aims, <b>click</b> slashes (three clicks: slash, backslash, spin), <b>E</b> throws, <b>Space</b> dashes (click while dashing to thrust). <b>V</b> cycles the view, <b>-</b> <b>=</b> or the wheel zoom, <b>[</b> <b>]</b> turn, <b>0</b> resets the camera, <b>F</b> fixes it in place, <b>M</b> adds depth to side scrolling, <b>G</b> toggles GPU lighting, <b>R</b> shows skeletons, <b>H</b> hides the panel.</p>
+  <div class="touch" aria-hidden="true"><button data-act="dash">Dash</button><button data-act="skill">Ember</button><button data-act="attack">Slash</button></div>
+</div>
+<!-- @inline engine/my-3d2dge.js -->
+<!-- @inline src/stress.game.js -->
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "my-3d2dge-handoff",
+  "version": "{{VERSION}}",
+  "private": true,
+  "type": "module",
+  "description": "my-3D2dge for coding agents: the engine, its card, index and guide, the tools and a template game",
+  "scripts": {
+    "test": "node game/test.mjs",
+    "check": "node tools/check.mjs game/index.html"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}
