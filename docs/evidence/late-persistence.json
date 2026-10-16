@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "kind": "late-persistence-runtime",
+  "engine": "chromium",
+  "fixtureBasedIntegration": true,
+  "acceleratedFixedSteps": true,
+  "distinctCases": 11,
+  "passed": 11,
+  "cases": [
+    {
+      "name": "actual reload preserves every stable pre-handoff checkpoint",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-persistence-1792175594239/report.json"
+    },
+    {
+      "name": "seated Mara and Jun reconstruct bodies, velocity and live tier-2 search",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-persistence-1792175594239/report.json"
+    },
+    {
+      "name": "seat-transition checkpoint waits then flushes at the stable boundary",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-persistence-1792175594239/report.json"
+    },
+    {
+      "name": "interrupted civilian-car taking restores one valid driver and survives reload",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-persistence-1792175594239/report.json"
+    },
+    {
+      "name": "earned favor, respray, food, armor and ammo persist once through actual interactions",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-persistence-1792175594239/report.json"
+    },
+    {
+      "name": "retry revives checkpoint crew with actual hero collision masks and inventory",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-persistence-1792175594239/report.json"
+    },
+    {
+      "name": "in-session retry from seated Mara and Jun restores the on-foot checkpoint collision bodies",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-persistence-1792175594239/report.json"
+    },
+    {
+      "name": "both choices reload, commit through E, pay once after reload/retry and replay cleanly",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-persistence-1792175594239/report.json"
+    },
+    {
+      "name": "corrupt primary remains intact until explicit backup recovery",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-persistence-1792175594239/report.json"
+    },
+    {
+      "name": "storage write denial preserves the last good save and reports failure visibly",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-persistence-1792177584951/report.json"
+    },
+    {
+      "name": "browser storage denied at boot exposes session-only progress and survives play",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-persistence-1792177584951/report.json"
+    }
+  ],
+  "method": "Nine bulk scenarios passed before a long all-in-one runner termination; the remaining two passed in a separate targeted run. Each fixture uses real browser reload/Continue and normal visible handoff/service UI.",
+  "rawEvidence": [
+    "/tmp/ewa93-persistence-1792175594239/report.json",
+    "/tmp/ewa93-persistence-1792177584951/report.json"
+  ]
+}

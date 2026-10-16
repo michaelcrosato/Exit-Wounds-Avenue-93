@@ -116,7 +116,7 @@ export class VehicleSystem {
     const pos = { x: m(options.x), y: m(options.y), z: m(options.z ?? .78) }, yaw = options.yaw || 0;
     const body = this.world.pw.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(pos.x, pos.y, pos.z).setRotation(yawQuaternion(yaw)).setLinearDamping(.12).setAngularDamping(1.6).setCanSleep(true).setCcdEnabled(true));
     const collider = this.world.pw.createCollider(R.ColliderDesc.cuboid(m(tune.length / 2), m(tune.width / 2), m(.32)).setMass(tune.mass).setFriction(.65).setRestitution(.03).setCollisionGroups(0x0002ffff), body);
-    this.world.pw.createCollider(R.ColliderDesc.cuboid(m(kind === 'van' ? 1.72 : 1.05),m(tune.width * .43),m(kind === 'van' ? .7 : .35)).setTranslation(m(kind === 'van' ? -.35 : -.18),0,m(kind === 'van' ? .7 : .38)).setDensity(0).setCollisionGroups(0x0002ffff),body);
+    const cabinCollider=this.world.pw.createCollider(R.ColliderDesc.cuboid(m(kind === 'van' ? 1.72 : 1.05),m(tune.width * .43),m(kind === 'van' ? .7 : .35)).setTranslation(m(kind === 'van' ? -.35 : -.18),0,m(kind === 'van' ? .7 : .38)).setDensity(0).setCollisionGroups(0x0002ffff),body);
     const controller = this.world.pw.createVehicleController(body);
     controller.indexUpAxis = 2; controller.setIndexForwardAxis = 0;
     for (const x of [tune.wheelbase / 2, -tune.wheelbase / 2]) for (const side of [-1, 1]) {
@@ -129,7 +129,7 @@ export class VehicleSystem {
     }
     const visual = options.visual || createVehicleVisual(this.E, kind, options.color);
     if (visual?.root && this.world.scene) this.world.scene.add(visual.root);
-    const vehicle = { id: options.id, kind, tune, body, collider, controller, visual, x: pos.x, y: pos.y, z: pos.z, yaw, speed: 0, health: 100, appearance: 0, color: options.color || tune.color, controls: {}, steering: 0, seats: Array(tune.seats).fill(null), locked: !!options.locked, siren: false, disabled: false, previousVelocity: { x: 0, y: 0, z: 0 }, impactCooldown: 0 };
+    const vehicle = { id: options.id, kind, tune, body, collider, cabinCollider, colliderHandles:new Set([collider.handle,cabinCollider.handle]), controller, visual, x: pos.x, y: pos.y, z: pos.z, yaw, speed: 0, health: 100, appearance: 0, color: options.color || tune.color, controls: {}, steering: 0, seats: Array(tune.seats).fill(null), locked: !!options.locked, siren: false, disabled: false, previousVelocity: { x: 0, y: 0, z: 0 }, impactCooldown: 0 };
     Object.defineProperty(vehicle, 'position', { get: () => ({ x: metres(vehicle.x), y: metres(vehicle.y), z: metres(vehicle.z) }) });
     this.list.push(vehicle); this.byId.set(vehicle.id, vehicle); this.queries?.register(body, vehicle); this.sync(vehicle); return vehicle;
   }
@@ -143,7 +143,11 @@ export class VehicleSystem {
       const throttle = alive ? clamp(c.throttle || 0, 0, 1) : 0, brake = clamp(c.brake || 0, 0, 1), handbrake = c.handbrake || c.held?.has('handbrake');
       const steer = clamp(c.steer ?? c.moveX ?? 0, -1, 1) * tune.steer / (1 + speed / m(23));
       v.steering += (steer - v.steering) * Math.min(1, dt * 7);
-      const reverse = brake > .1 && v.speed < m(.7), force = (throttle - (reverse ? brake * .65 : 0)) * m(tune.force) * (.36 + .64 * v.health / 100);
+      const reverse = alive && c.reverse === true && brake > .1 && v.speed < m(.7) && !handbrake;
+      // Raycast-wheel engine force does not wake a Rapier chassis left sleeping
+      // during a service stop; deliberate throttle or reverse must wake it.
+      if ((throttle > .05 || reverse) && v.body.isSleeping()) v.body.wakeUp();
+      const force = (throttle - (reverse ? brake * .65 : 0)) * m(tune.force) * (.36 + .64 * v.health / 100);
       for (let i = 0; i < 4; i++) {
         v.controller.setWheelSteering(i, i < 2 ? v.steering : 0);
         v.controller.setWheelEngineForce(i, i >= 2 ? force / 2 : 0);
@@ -151,7 +155,7 @@ export class VehicleSystem {
         v.controller.setWheelFrictionSlip(i, handbrake && i >= 2 ? 1.2 : 4.7);
       }
       v.previousVelocity = v.body.linvel(); v.impactCooldown = Math.max(0, v.impactCooldown - dt);
-      v.controller.updateVehicle(dt, this.E.RAPIER.QueryFilterFlags.EXCLUDE_SENSORS, undefined, collider => collider.parent()?.handle !== v.body.handle);
+      v.controller.updateVehicle(dt, this.E.RAPIER.QueryFilterFlags.EXCLUDE_SENSORS, undefined, collider => !v.colliderHandles.has(collider.handle));
     }
     this.updateTransitions(dt);
   }
@@ -163,7 +167,8 @@ export class VehicleSystem {
       const dv = Math.hypot(velocity.x - v.previousVelocity.x, velocity.y - v.previousVelocity.y);
       let contact = false; this.world.pw.contactPairsWith(v.collider, () => { contact = true; });
       if (contact && dv > m(3.7) && !v.impactCooldown) { const damage = clamp((dv / 16 - 3) * 3.2, 0, 55); v.health = Math.max(0, v.health - damage); v.impactCooldown = .45; this.emit('VehicleImpact', v, { damage, deltaSpeed: metres(dv) }); }
-      if (p.z < m(-4) || Math.abs(q.x) + Math.abs(q.y) > 1.25) v.disabled = true;
+      const upZ=1-2*(q.x*q.x+q.y*q.y);
+      if (p.z < m(-4) || upZ < .2) v.disabled = true;
       this.sync(v);
       for (let seat = 0; seat < v.seats.length; seat++) if (v.seats[seat] && !this.transitions.has(v.seats[seat])) this.attach(v.seats[seat], v, seat);
     }
@@ -186,12 +191,12 @@ export class VehicleSystem {
     const braking=(v.controls?.brake||0)>.1;for(const lamp of v.visual.brakeLights||[])lamp.material.color.set(braking?'#ff493c':'#9f2920');
     root.userData.health = v.health;
   }
-  seatLocal(v, seat) { return { x: m(seat < 2 ? .25 : -.93), y: m(seat % 2 === 0 ? -.45 : .45), z: m(-.35) }; }
+  seatLocal(v, seat) { return { x: m(seat < 2 ? .25 : -.93), y: m(seat % 2 === 0 ? -.45 : .45), z: m(v.kind === 'van' ? -.35 : -.75) }; }
   doorPosition(v, seat, extra = .4) { return rotateLocal({ x: m(seat < 2 ? .05 : -.95), y: m((seat % 2 === 0 ? -1 : 1) * (v.tune.width / 2 + extra)), z: 0 }, v.yaw, v); }
   attach(actor, v, seat) {
     const p = rotateLocal(this.seatLocal(v, seat), v.yaw, v);
     Object.assign(actor, p, { vx: 0, vy: 0, vz: 0, facing: v.yaw, grounded: true, vehicleId: v.id, seatIndex: seat });
-    actor.anim = { ...(actor.anim || {}), pose: 'sit', seated: true };
+    actor.anim = { pose: 'sit', seated: true };
     if (actor.rig && !actor.data?.animationManaged) actor.rig.update(1 / 120, { ...actor, ...(actor.anim || {}) });
   }
   /** @param {any} actor @param {any} id @param {number|string} seat */

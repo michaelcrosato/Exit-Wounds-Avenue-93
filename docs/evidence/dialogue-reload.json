@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "fixtureBasedRecovery": true,
+  "before": {
+    "saved": {
+      "lastId": "intro",
+      "current": {
+        "speaker": "Eli",
+        "text": "Depot shuts down, then the city bills us for the locks. Funny kind of recovery work.",
+        "seconds": 4.666666666666667,
+        "dialogueId": "intro",
+        "lineIndex": 0
+      },
+      "remaining": 3.666666666666667,
+      "queue": [
+        {
+          "speaker": "Mara",
+          "text": "You said there was a collection.",
+          "seconds": 3.3,
+          "dialogueId": "intro",
+          "lineIndex": 1
+        },
+        {
+          "speaker": "Eli",
+          "text": "Sealed payroll case. Bea has the address. Sedan is fueled; your pistol is in the glove box. Bring the case back clean.",
+          "seconds": 6.555555555555555,
+          "dialogueId": "intro",
+          "lineIndex": 2
+        },
+        {
+          "speaker": "Eli",
+          "text": "There is a misplaced toolbox by the market. Bring it to my bay and I owe you one repair and a fresh coat.",
+          "seconds": 5.833333333333333,
+          "dialogueId": "intro",
+          "lineIndex": 3
+        }
+      ]
+    },
+    "current": {
+      "speaker": "Eli",
+      "text": "Depot shuts down, then the city bills us for the locks. Funny kind of recovery work.",
+      "seconds": 4.666666666666667,
+      "dialogueId": "intro",
+      "lineIndex": 0
+    },
+    "remaining": 3.666666666666667
+  },
+  "resumed": {
+    "id": "intro",
+    "current": {
+      "speaker": "Eli",
+      "text": "Depot shuts down, then the city bills us for the locks. Funny kind of recovery work.",
+      "seconds": 4.666666666666667,
+      "dialogueId": "intro",
+      "lineIndex": 0
+    },
+    "remaining": 3.5666666666666673,
+    "queue": 3
+  },
+  "recovery": {
+    "saved": {
+      "lastId": "depot-message",
+      "current": null,
+      "remaining": 0,
+      "queue": [
+        {
+          "speaker": "Eli",
+          "text": "Bea told me about Jun. Do not leave him in there. Two ways in: street gate or service lane. Your call.",
+          "seconds": 5.666666666666667,
+          "dialogueId": "depot-message",
+          "lineIndex": 0
+        }
+      ]
+    },
+    "phase": "RECOVERY",
+    "junReached": false
+  },
+  "after": {
+    "phase": "RECOVERY",
+    "junReached": false,
+    "lastId": "depot-message",
+    "detail": "Find Jun in the depot office and recover the payroll case.\n\nLast conversation:\nEli: Bea told me about Jun. Do not leave him in there. Two ways in: street gate or service lane. Your call.",
+    "replay": true
+  },
+  "errors": []
+}

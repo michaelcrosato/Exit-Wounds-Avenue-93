@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "results": [
+    {
+      "case": "new-game",
+      "tick": 6,
+      "elapsed": 0.049999999999999996,
+      "dodgeUntil": 0,
+      "dodgeDirection": null,
+      "lastSkidAt": -1000,
+      "lastShot": -1000,
+      "junCoverUntil": 0,
+      "surrenderHeld": 0,
+      "toggledAim": false,
+      "toggledSprint": false,
+      "crouched": false,
+      "lastFootstep": -1000,
+      "phase": "INTRO"
+    },
+    {
+      "case": "checkpoint-retry",
+      "tick": 6,
+      "elapsed": 0.049999999999999996,
+      "dodgeUntil": 0,
+      "dodgeDirection": null,
+      "lastSkidAt": -1000,
+      "lastShot": -1000,
+      "junCoverUntil": 0,
+      "surrenderHeld": 0,
+      "toggledAim": false,
+      "toggledSprint": false,
+      "crouched": false,
+      "lastFootstep": -1000,
+      "phase": "INTRO"
+    },
+    {
+      "case": "continue",
+      "tick": 6,
+      "elapsed": 0.049999999999999996,
+      "dodgeUntil": 0,
+      "dodgeDirection": null,
+      "lastSkidAt": -1000,
+      "lastShot": -1000,
+      "junCoverUntil": 0,
+      "surrenderHeld": 0,
+      "toggledAim": false,
+      "toggledSprint": false,
+      "crouched": false,
+      "lastFootstep": -1000,
+      "phase": "INTRO"
+    }
+  ]
+}

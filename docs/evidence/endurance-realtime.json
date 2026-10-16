@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "probeVersion": 4,
+  "outcome": "passed",
+  "finishedAt": "2026-10-16T21:02:20.025Z",
+  "method": {
+    "runner": "tests/e2e/endurance.mjs",
+    "timing": "realtime",
+    "fixedStepHz": 120,
+    "isolatedBrowserContext": true,
+    "rendering": "Native requestAnimationFrame loop throughout gameplay",
+    "requiredTimeScale": 1,
+    "input": "Normal browser keyboard/menu actions",
+    "openingCallChoice": "Declined via normal KeyT phone and Decline call UI before staging.",
+    "staging": [
+      "Move the selected existing car and Mara to the central intersection before each pursuit.",
+      "Restore the chosen car to healthy/unlocked/stationary for this lifecycle scenario.",
+      "Place the existing patrol cars/officers about 24 metres around the occupied car before each report, to exercise nearby perception and response.",
+      "Submit a diagnostic tier-3 police report identifying the occupied car; normal police, traffic, physics and clearance remain live."
+    ],
+    "memory": "CDP HeapProfiler.collectGarbage plus Runtime.getHeapUsage and Memory.getDOMCounters",
+    "accounting": "Tick/elapsed differences during driver intervals; snapshot, screenshot and input gaps are conservatively excluded."
+  },
+  "environment": {
+    "os": "win32",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900K",
+    "browser": "155.0.8059.84",
+    "backend": "WebGPU",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "driver": "32.0.16.1742",
+    "viewport": [
+      960,
+      600
+    ],
+    "quality": "low",
+    "renderResolution": "balanced"
+  },
+  "duration": {
+    "accountedGameplaySeconds": 1801.492,
+    "wallSeconds": 1882.237,
+    "audioContextSeconds": 1872.872,
+    "actualThirtyMinuteWallClockPlay": true
+  },
+  "nativeRendering": {
+    "allSamplesLoopRunning": true,
+    "allSamplesTimeScaleOne": true,
+    "anySampleHidden": false,
+    "firstFrameCount": 166,
+    "lastFrameCount": 111701,
+    "framesBetweenSamples": 111535,
+    "sampleIntervalWallSeconds": 1864.026,
+    "meanObservedFPS": 59.836,
+    "scope": "Aggregate frame-count cadence, including menu/measurement gaps; not a frame-time distribution or 1080p performance certification."
+  },
+  "actions": {
+    "cycles": 30,
+    "vehicleEntries": 30,
+    "vehicleChanges": 29,
+    "checkpointRetries": 30,
+    "accountedActivePursuitSeconds": 638.692,
+    "pursuitsWithActualChasingOfficers": 30
+  },
+  "resourcesAfterWarmup": {
+    "bodies": {
+      "min": 281,
+      "max": 281
+    },
+    "enabledBodies": {
+      "min": 269,
+      "max": 269
+    },
+    "colliders": {
+      "min": 298,
+      "max": 298
+    },
+    "actors": {
+      "min": 52,
+      "max": 52
+    },
+    "vehicles": {
+      "min": 18,
+      "max": 18
+    },
+    "listeners": {
+      "min": 36,
+      "max": 36
+    },
+    "detachedDOMTargets": {
+      "min": 0,
+      "max": 0
+    },
+    "audioNodes": {
+      "min": 22,
+      "max": 37
+    },
+    "audioSources": {
+      "min": 5,
+      "max": 9
+    },
+    "audioContexts": {
+      "min": 1,
+      "max": 1
+    },
+    "intervals": {
+      "min": 2,
+      "max": 2
+    },
+    "primarySaveBytes": {
+      "min": 22064,
+      "max": 22064
+    },
+    "backupSaveBytes": {
+      "min": 18956,
+      "max": 18956
+    },
+    "logicalStateBytes": {
+      "min": 22134,
+      "max": 22174
+    },
+    "sceneNodes": {
+      "min": 1212,
+      "max": 1212
+    },
+    "cpuGeometries": {
+      "min": 771,
+      "max": 771
+    },
+    "cpuMaterials": {
+      "min": 357,
+      "max": 357
+    },
+    "rendererGeometries": {
+      "min": 518,
+      "max": 518
+    },
+    "rendererTextures": {
+      "min": 71,
+      "max": 71
+    },
+    "nativeDOMNodes": {
+      "min": 179,
+      "max": 187
+    },
+    "nativeListeners": {
+      "min": 86,
+      "max": 90
+    }
+  },
+  "heap": {
+    "postGC": true,
+    "earlyMedianBytes": 28145600,
+    "lateMedianBytes": 28347932,
+    "deltaBytes": 202332,
+    "slopeBytesPerSimulationMinute": -7182.609141797328,
+    "samples": 28,
+    "allowanceBytes": 8388608,
+    "sustainedSlopeAlarmBytesPerSimulationMinute": 131072,
+    "sustainedDeltaAllowanceBytes": 2097152,
+    "slopeBytesPerWallMinute": -6939.833332297751,
+    "backingStorage": {
+      "earlyMedianBytes": 11620945,
+      "lateMedianBytes": 11621367,
+      "deltaBytes": 422,
+      "allowanceBytes": 8388608
+    }
+  },
+  "embedderHeapObservation": {
+    "earlyMedianBytes": 5637200,
+    "lateMedianBytes": 5570048,
+    "deltaBytes": -67152,
+    "scope": "Observed Chromium garbage-collected embedder heap; separate from total process/GPU/audio memory."
+  },
+  "rendererCache": {
+    "geometries": {
+      "warm": 518,
+      "min": 518,
+      "max": 518,
+      "finalThirdMin": 518,
+      "finalThirdMax": 518,
+      "growthAllowance": 32,
+      "finalThirdRangeAllowance": 2
+    },
+    "textures": {
+      "warm": 71,
+      "min": 71,
+      "max": 71,
+      "finalThirdMin": 71,
+      "finalThirdMax": 71,
+      "growthAllowance": 32,
+      "finalThirdRangeAllowance": 2
+    }
+  },
+  "checks": {
+    "runtimeErrors": 0,
+    "networkErrors": 0,
+    "engineErrors": 0,
+    "invalidBodyOrSeatAttachments": 0,
+    "orphanedQueries": 0,
+    "allSavedCheckpointsReadable": true,
+    "sourceFingerprintEndpointsEqual": true,
+    "cleanupErrors": 0
+  },
+  "sourceFingerprint": {
+    "fileCount": 61,
+    "canonicalHashAlgorithm": "SHA-256 of UTF-8 compact JSON with sorted path keys",
+    "canonicalSha256": "a2217665d8d75ab492e1478b1dae8793dca39a19c550d5d42ce5ce05fbfd03cb",
+    "selectedSha256": {
+      "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+      "src/ui/interface.js": "5abf673432dfceeb0aebe60296ce174c890515e8d07dd90c82514aeb8af93041",
+      "src/ui/interface.css": "57176f99c79c5e89c95332d9fa0e3e6808f9b2cf5007ec661c2ccfc2a2d9438c",
+      "src/engine/vehicles.js": "f7f18b80301e13645b356d47a61799a6816780d160cf10012951ae299007718b",
+      "src/systems/audio.js": "42a5198ed90d8f835d8cc8b5438bbaf872400a19fa5feeaf1a54906339f40042",
+      "src/game/save.js": "fe8306f248eba3dc8b93affef03b8cf76120cd96ea7852299284ce26153904a4",
+      "assets/manifest.json": "e29786360ed0080790bcae4bd9a7156131bf397d31b8e5bc7dbf46869600d90b",
+      "tests/e2e/endurance.mjs": "cbb8d12cf65897ca861406abc8852ae8c63a53daacd59c35cf898058abee54f4"
+    },
+    "scope": {
+      "directories": [
+        "src",
+        "assets",
+        "vendor/my-3d2dge/vendor/three-0.182.0",
+        "vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3"
+      ],
+      "files": [
+        "index.html",
+        "tests/e2e/endurance.mjs",
+        "vendor/my-3d2dge/engine/my-3d2dge.js",
+        "vendor/my-3d2dge/engine/my-3d2dge-3d.js",
+        "vendor/my-3d2dge/src/mocap/readable.js",
+        "vendor/my-3d2dge/src/mocap/mocap.js"
+      ],
+      "method": "Local file hashes before navigation and after capture; caller freezes source and serves this workspace."
+    }
+  },
+  "evidence": {
+    "rawReportOutsideRepository": true,
+    "artifactDirectoryName": "ewa93-endurance-realtime-vehicle-wake-20261016",
+    "reportFile": "report.json",
+    "inspectedFrames": [
+      "pursuit-20.png",
+      "pursuit-30.png",
+      "cycle-30.png"
+    ]
+  },
+  "limits": [
+    "This diagnostic route is not an ordinary-input mission or fresh-player playthrough.",
+    "AudioContext, setInterval and Web Audio scheduling use actual wall time, even when gameplay uses accelerated fixed steps.",
+    "Heap sampling uses forced GC in Chromium and instrumentation changes allocation/timing; it cannot establish an uninstrumented memory budget.",
+    "Local before/after fingerprints do not detect edit-and-revert or prove a remote source URL serves this workspace.",
+    "Periodic car/police transforms and the initial police report are diagnostic staging; this is not an ordinary-input mission or physical-controller certification.",
+    "Forced GC and instrumentation affect allocation/timing.",
+    "960x600 Low stability capture is separate from 1080p hardware performance acceptance.",
+    "No leak detected within the measured scope; total native/GPU/audio memory budget and continuous audiovisual quality are not certified."
+  ]
+}

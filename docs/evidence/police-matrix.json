@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "kind": "police-failure-matrix",
+  "engine": "chromium",
+  "browserVersion": "153.0.8010.12",
+  "fixtureBasedIntegration": true,
+  "acceleratedFixedSteps": true,
+  "acceptancePlaythrough": false,
+  "distinctCases": 18,
+  "passed": 18,
+  "cases": [
+    {
+      "name": "continuously seen versus unseen E vehicle entry",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-matrix-chromium-20261016/report.json"
+    },
+    {
+      "name": "hidden gunfire produces no omniscient report",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-matrix-chromium-20261016/report.json"
+    },
+    {
+      "name": "civilian gunfire call is delayed and identifies only observed information",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-matrix-chromium-20261016/report.json"
+    },
+    {
+      "name": "leaving a witness before identification prevents the civilian call",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-matrix-chromium-20261016/report.json"
+    },
+    {
+      "name": "gunfire in actual police view dispatches immediately",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-matrix-chromium-20261016/report.json"
+    },
+    {
+      "name": "actual cabinet alarm supplies depot location without person or car",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-matrix-chromium-20261016/report.json"
+    },
+    {
+      "name": "geographical search reentry resets clearance then an unseen escape clears",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-matrix-chromium-20261016/report.json"
+    },
+    {
+      "name": "real pursuit loses sight after sprinting beyond officer view",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-corrected-drivers-20261016/report.json"
+    },
+    {
+      "name": "walking around garage geometry restores sight and updates the search center",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-corrected-drivers-20261016/report.json"
+    },
+    {
+      "name": "observed known vehicle cannot clear after the tier1 clearance interval",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-corrected-drivers-20261016/report.json"
+    },
+    {
+      "name": "garage rejects a seen car and consumes an unseen repair favor once",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-matrix-chromium-20261016/report.json"
+    },
+    {
+      "name": "tier1 deliberate surrender and automatic arrest offer checkpoint retry",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-corrected-drivers-20261016/report.json"
+    },
+    {
+      "name": "tier3 activates three physical patrols and places the junction roadblock",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-tier3-persistent-20261016/report.json"
+    },
+    {
+      "name": "inactive parked patrols stay stationary under their AI brake command",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-matrix-chromium-20261016/report.json"
+    },
+    {
+      "name": "abandoned and destroyed escape cars leave Mara and Jun another vehicle",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-corrected-drivers-20261016/report.json"
+    },
+    {
+      "name": "offscreen companion boundary recovery and unrecoverable fall have explicit outcomes",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-corrected-drivers-20261016/report.json"
+    },
+    {
+      "name": "staged overturned occupied car permits a valid physical exit or explicit retry",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-matrix-chromium-20261016/report.json"
+    },
+    {
+      "name": "live crew fire causes death and restores the current combat-stage checkpoint",
+      "status": "passed",
+      "evidence": "/tmp/ewa93-police-corrected-drivers-20261016/report.json"
+    }
+  ],
+  "errors": [],
+  "method": "First matrix, corrected driver rerun, then persistent patrol roadblock retest; earlier failures retained in raw reports."
+}

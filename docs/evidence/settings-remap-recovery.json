@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "observations": {
+    "boot": {
+      "sensitivity": 1,
+      "masterVolume": 0.82,
+      "quality": "high",
+      "audioContext": "running"
+    },
+    "reservedKeyboard": {
+      "waiting": "fire",
+      "mapping": [
+        "Mouse0",
+        "Pad7",
+        "Act:fire"
+      ]
+    },
+    "validKeyboard": {
+      "waiting": null,
+      "mapping": [
+        "Pad7",
+        "KeyG",
+        "Act:fire"
+      ]
+    },
+    "reservedController": {
+      "waiting": "fire",
+      "before": [
+        "Pad7",
+        "KeyG",
+        "Act:fire"
+      ],
+      "mapping": [
+        "Pad7",
+        "KeyG",
+        "Act:fire"
+      ],
+      "notice": "Button 9 is reserved for menu controls. Choose another button."
+    }
+  },
+  "errors": []
+}

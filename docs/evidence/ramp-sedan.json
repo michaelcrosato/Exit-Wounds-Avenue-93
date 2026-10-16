@@ -1,0 +1,550 @@
+{
+  "status": "passed",
+  "fixtureStaged": true,
+  "setup": {
+    "entry": true,
+    "occupied": "mara-sedan",
+    "car": {
+      "x": 120,
+      "y": 327,
+      "z": 0.7191101312637329
+    },
+    "ramp": {
+      "id": "eli-inspection-ramp",
+      "x": 120,
+      "minY": 291,
+      "maxY": 319,
+      "width": 4.4,
+      "height": 0.65,
+      "northApproach": {
+        "x": 120,
+        "y": 286,
+        "z": 0
+      },
+      "southApproach": {
+        "x": 120,
+        "y": 325,
+        "z": 0
+      }
+    },
+    "props": [
+      {
+        "id": "inspection-soft-cone-west",
+        "position": {
+          "x": 1904.7999267578125,
+          "y": 5174.400390625,
+          "z": 5.9009270668029785
+        }
+      },
+      {
+        "id": "inspection-soft-cone-east",
+        "position": {
+          "x": 1935.1998291015625,
+          "y": 5174.400390625,
+          "z": 5.9009270668029785
+        }
+      }
+    ]
+  },
+  "first": {
+    "elapsed": 1.549999999999997,
+    "position": {
+      "x": 120,
+      "y": 326.979248046875,
+      "z": 0.7190265655517578
+    },
+    "speed": 0.38018167018890553,
+    "health": 100,
+    "disabled": false,
+    "occupant": "mara-sedan",
+    "animation": "Driving_Loop",
+    "props": [
+      {
+        "id": "inspection-soft-cone-west",
+        "position": {
+          "x": 119.04999542236328,
+          "y": 323.4000244140625,
+          "z": 0.36880794167518616
+        }
+      },
+      {
+        "id": "inspection-soft-cone-east",
+        "position": {
+          "x": 120.94998931884766,
+          "y": 323.4000244140625,
+          "z": 0.36880794167518616
+        }
+      }
+    ]
+  },
+  "last": {
+    "elapsed": 6.58333333333345,
+    "position": {
+      "x": 120.08761596679688,
+      "y": 288.0144348144531,
+      "z": 0.7031058669090271
+    },
+    "speed": 13.807575509170288,
+    "health": 100,
+    "disabled": false,
+    "occupant": "mara-sedan",
+    "animation": "Driving_Loop",
+    "props": [
+      {
+        "id": "inspection-soft-cone-west",
+        "position": {
+          "x": 118.99208068847656,
+          "y": 306.3100280761719,
+          "z": 0.8886827826499939
+        }
+      },
+      {
+        "id": "inspection-soft-cone-east",
+        "position": {
+          "x": 121.03299713134766,
+          "y": 306.2548522949219,
+          "z": 0.8886826634407043
+        }
+      }
+    ]
+  },
+  "maxCarZ": 1.4249690771102905,
+  "propMotion": 17.145373057822134,
+  "samples": [
+    {
+      "elapsed": 1.549999999999997,
+      "position": {
+        "x": 120,
+        "y": 326.979248046875,
+        "z": 0.7190265655517578
+      },
+      "speed": 0.38018167018890553,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 119.04999542236328,
+            "y": 323.4000244140625,
+            "z": 0.36880794167518616
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 120.94998931884766,
+            "y": 323.4000244140625,
+            "z": 0.36880794167518616
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 1.9166666666666623,
+      "position": {
+        "x": 120,
+        "y": 326.5836181640625,
+        "z": 0.7190626859664917
+      },
+      "speed": 1.7358067035675144,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 119.04999542236328,
+            "y": 323.4000244140625,
+            "z": 0.36880794167518616
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 120.94998931884766,
+            "y": 323.4000244140625,
+            "z": 0.36880794167518616
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 2.316666666666661,
+      "position": {
+        "x": 120,
+        "y": 325.5992431640625,
+        "z": 0.7191550731658936
+      },
+      "speed": 3.1427166461979454,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 119.04541778564453,
+            "y": 323.0875549316406,
+            "z": 0.37954142689704895
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 120.95555877685547,
+            "y": 323.0876159667969,
+            "z": 0.3802753686904907
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 2.699999999999993,
+      "position": {
+        "x": 120,
+        "y": 324.13916015625,
+        "z": 0.7191098928451538
+      },
+      "speed": 4.428377151489506,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 119.04508209228516,
+            "y": 321.6245422363281,
+            "z": 0.3805898427963257
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 120.95592498779297,
+            "y": 321.6245422363281,
+            "z": 0.38145843148231506
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 3.0999999999999917,
+      "position": {
+        "x": 120,
+        "y": 322.10247802734375,
+        "z": 0.7191141247749329
+      },
+      "speed": 5.708025455475938,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 119.04471588134766,
+            "y": 319.58795166015625,
+            "z": 0.3831728994846344
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 120.95629119873047,
+            "y": 319.5879211425781,
+            "z": 0.38402891159057617
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 3.4833333333333236,
+      "position": {
+        "x": 120,
+        "y": 319.6841735839844,
+        "z": 0.7326892018318176
+      },
+      "speed": 6.834994792941941,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 119.04385375976562,
+            "y": 317.1651916503906,
+            "z": 0.502691924571991
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 120.95718383789062,
+            "y": 317.16510009765625,
+            "z": 0.5027002692222595
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 3.883333333333322,
+      "position": {
+        "x": 120,
+        "y": 316.7338562011719,
+        "z": 0.860363781452179
+      },
+      "speed": 7.828969478604043,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 119.04403686523438,
+            "y": 314.1980895996094,
+            "z": 0.7285753488540649
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 120.95704650878906,
+            "y": 314.197998046875,
+            "z": 0.7285481095314026
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 4.266666666666668,
+      "position": {
+        "x": 120,
+        "y": 313.56640625,
+        "z": 1.0742559432983398
+      },
+      "speed": 8.656688690196804,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 119.04438781738281,
+            "y": 311.0306701660156,
+            "z": 0.9346922039985657
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 120.95669555664062,
+            "y": 311.0305480957031,
+            "z": 0.9346925020217896
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 4.650000000000021,
+      "position": {
+        "x": 120,
+        "y": 310.088623046875,
+        "z": 1.2985155582427979
+      },
+      "speed": 9.452006340026013,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 119.04029083251953,
+            "y": 307.5687561035156,
+            "z": 1.0819209814071655
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 120.96089935302734,
+            "y": 307.5687255859375,
+            "z": 1.081883192062378
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 5.050000000000041,
+      "position": {
+        "x": 120.00607299804688,
+        "y": 306.1640319824219,
+        "z": 1.4249690771102905
+      },
+      "speed": 10.129577191222841,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 119.00155639648438,
+            "y": 306.3350830078125,
+            "z": 0.8757975101470947
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 121.01937866210938,
+            "y": 306.2550964355469,
+            "z": 0.8664920330047607
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 5.433333333333393,
+      "position": {
+        "x": 120.00616455078125,
+        "y": 302.1699523925781,
+        "z": 1.3731346130371094
+      },
+      "speed": 10.772208193990306,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 118.99188995361328,
+            "y": 306.2655334472656,
+            "z": 0.9448624849319458
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 121.03099822998047,
+            "y": 306.1671447753906,
+            "z": 0.9838584065437317
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 5.8166666666667455,
+      "position": {
+        "x": 120.02890014648438,
+        "y": 297.8557434082031,
+        "z": 1.1756913661956787
+      },
+      "speed": 11.694525102458558,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 118.99208068847656,
+            "y": 306.3100280761719,
+            "z": 0.8888287544250488
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 121.03263092041016,
+            "y": 306.248291015625,
+            "z": 0.8996881246566772
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 6.200000000000098,
+      "position": {
+        "x": 120.05694580078125,
+        "y": 293.1412658691406,
+        "z": 0.85969477891922
+      },
+      "speed": 12.84182361197068,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 118.99208068847656,
+            "y": 306.3100280761719,
+            "z": 0.8886829018592834
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 121.03299713134766,
+            "y": 306.2548522949219,
+            "z": 0.8887689709663391
+          }
+        }
+      ]
+    },
+    {
+      "elapsed": 6.58333333333345,
+      "position": {
+        "x": 120.08761596679688,
+        "y": 288.0144348144531,
+        "z": 0.7031058669090271
+      },
+      "speed": 13.807575509170288,
+      "health": 100,
+      "disabled": false,
+      "occupant": "mara-sedan",
+      "animation": "Driving_Loop",
+      "props": [
+        {
+          "id": "inspection-soft-cone-west",
+          "position": {
+            "x": 118.99208068847656,
+            "y": 306.3100280761719,
+            "z": 0.8886827826499939
+          }
+        },
+        {
+          "id": "inspection-soft-cone-east",
+          "position": {
+            "x": 121.03299713134766,
+            "y": 306.2548522949219,
+            "z": 0.8886826634407043
+          }
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "source": "final source build",
+  "rawPngsOutsideRepository": true,
+  "records": [
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "status": "passed",
+      "errors": [],
+      "captures": [
+        {
+          "size": "phone",
+          "state": "gameplay",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 0,
+              "bottom": 667,
+              "left": 0,
+              "right": 375
+            }
+          },
+          "image": "webkit-phone-gameplay.png"
+        },
+        {
+          "size": "phone",
+          "state": "phone",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 322.015625,
+              "bottom": 388.015625,
+              "left": 29,
+              "right": 344
+            }
+          },
+          "image": "webkit-phone-phone.png"
+        },
+        {
+          "size": "phone",
+          "state": "pause",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 172.03125,
+              "bottom": 220.03125,
+              "left": 25,
+              "right": 360
+            }
+          },
+          "image": "webkit-phone-pause.png"
+        },
+        {
+          "size": "phone",
+          "state": "decision",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 123,
+            "focus": {
+              "top": 245.90625,
+              "bottom": 453.46875,
+              "left": 20,
+              "right": 355
+            }
+          },
+          "image": "webkit-phone-decision.png"
+        },
+        {
+          "size": "phone",
+          "state": "retry",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 325.296875,
+              "bottom": 391.296875,
+              "left": 20,
+              "right": 355
+            }
+          },
+          "image": "webkit-phone-retry.png"
+        },
+        {
+          "size": "phone",
+          "state": "ending",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 429,
+              "bottom": 495,
+              "left": 25,
+              "right": 360
+            }
+          },
+          "image": "webkit-phone-ending.png"
+        },
+        {
+          "size": "phone",
+          "state": "credits",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 581,
+              "bottom": 647,
+              "left": 25,
+              "right": 360
+            }
+          },
+          "image": "webkit-phone-credits.png"
+        },
+        {
+          "size": "landscape",
+          "state": "gameplay",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 0,
+            "focus": {
+              "top": 0,
+              "bottom": 352,
+              "left": 0,
+              "right": 756
+            }
+          },
+          "image": "webkit-landscape-gameplay.png"
+        },
+        {
+          "size": "landscape",
+          "state": "phone",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 0,
+            "focus": {
+              "top": 206.203125,
+              "bottom": 254.203125,
+              "left": 29,
+              "right": 589
+            }
+          },
+          "image": "webkit-landscape-phone.png"
+        },
+        {
+          "size": "landscape",
+          "state": "pause",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 199,
+            "focus": {
+              "top": 113.8125,
+              "bottom": 161.8125,
+              "left": 25,
+              "right": 585
+            }
+          },
+          "image": "webkit-landscape-pause.png"
+        },
+        {
+          "size": "landscape",
+          "state": "decision",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 295,
+            "focus": {
+              "top": 172.109375,
+              "bottom": 352.109375,
+              "left": 20,
+              "right": 736
+            }
+          },
+          "image": "webkit-landscape-decision.png"
+        },
+        {
+          "size": "landscape",
+          "state": "retry",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 0,
+            "focus": {
+              "top": 164.046875,
+              "bottom": 212.046875,
+              "left": 25,
+              "right": 585
+            }
+          },
+          "image": "webkit-landscape-retry.png"
+        },
+        {
+          "size": "landscape",
+          "state": "ending",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 0,
+            "focus": {
+              "top": 174.1875,
+              "bottom": 218.1875,
+              "left": 25,
+              "right": 585
+            }
+          },
+          "image": "webkit-landscape-ending.png"
+        },
+        {
+          "size": "landscape",
+          "state": "credits",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 0,
+            "focus": {
+              "top": 266.1875,
+              "bottom": 314.1875,
+              "left": 25,
+              "right": 585
+            }
+          },
+          "image": "webkit-landscape-credits.png"
+        },
+        {
+          "size": "desktop",
+          "state": "gameplay",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 0,
+              "bottom": 720,
+              "left": 0,
+              "right": 1280
+            }
+          },
+          "image": "webkit-desktop-gameplay.png"
+        },
+        {
+          "size": "desktop",
+          "state": "phone",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 363.21875,
+              "bottom": 429.21875,
+              "left": 73,
+              "right": 633
+            }
+          },
+          "image": "webkit-desktop-phone.png"
+        },
+        {
+          "size": "desktop",
+          "state": "pause",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 196.34375,
+              "bottom": 245.34375,
+              "left": 69,
+              "right": 629
+            }
+          },
+          "image": "webkit-desktop-pause.png"
+        },
+        {
+          "size": "desktop",
+          "state": "decision",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 341.21875,
+              "bottom": 521.21875,
+              "left": 64,
+              "right": 556.5
+            }
+          },
+          "image": "webkit-desktop-decision.png"
+        },
+        {
+          "size": "desktop",
+          "state": "retry",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 351.953125,
+              "bottom": 417.953125,
+              "left": 69,
+              "right": 629
+            }
+          },
+          "image": "webkit-desktop-retry.png"
+        },
+        {
+          "size": "desktop",
+          "state": "ending",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 438,
+              "bottom": 504,
+              "left": 69,
+              "right": 629
+            }
+          },
+          "image": "webkit-desktop-ending.png"
+        },
+        {
+          "size": "desktop",
+          "state": "credits",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 590,
+              "bottom": 656,
+              "left": 69,
+              "right": 629
+            }
+          },
+          "image": "webkit-desktop-credits.png"
+        },
+        {
+          "size": "ultrawide",
+          "state": "gameplay",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 0,
+              "bottom": 1080,
+              "left": 0,
+              "right": 2560
+            }
+          },
+          "image": "webkit-ultrawide-gameplay.png"
+        },
+        {
+          "size": "ultrawide",
+          "state": "phone",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 574.703125,
+              "bottom": 640.703125,
+              "left": 97,
+              "right": 657
+            }
+          },
+          "image": "webkit-ultrawide-phone.png"
+        },
+        {
+          "size": "ultrawide",
+          "state": "pause",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 328.71875,
+              "bottom": 394.71875,
+              "left": 93,
+              "right": 653
+            }
+          },
+          "image": "webkit-ultrawide-pause.png"
+        },
+        {
+          "size": "ultrawide",
+          "state": "decision",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 533.140625,
+              "bottom": 713.140625,
+              "left": 88,
+              "right": 580.5
+            }
+          },
+          "image": "webkit-ultrawide-decision.png"
+        },
+        {
+          "size": "ultrawide",
+          "state": "retry",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 541.5625,
+              "bottom": 607.5625,
+              "left": 93,
+              "right": 653
+            }
+          },
+          "image": "webkit-ultrawide-retry.png"
+        },
+        {
+          "size": "ultrawide",
+          "state": "ending",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 744.171875,
+              "bottom": 810.171875,
+              "left": 93,
+              "right": 653
+            }
+          },
+          "image": "webkit-ultrawide-ending.png"
+        },
+        {
+          "size": "ultrawide",
+          "state": "credits",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 862.515625,
+              "bottom": 928.515625,
+              "left": 93,
+              "right": 653
+            }
+          },
+          "image": "webkit-ultrawide-credits.png"
+        }
+      ]
+    }
+  ]
+}

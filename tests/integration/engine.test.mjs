@@ -1,13 +1,15 @@
 import test, { before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
+import { createServer } from 'node:net';
 import { chromium, webkit, firefox } from 'playwright';
 import { m, metres, rotateLocal, threeQuaternion } from '../../src/engine/units.js';
 
-let server, browser, page;
-const origin = 'http://127.0.0.1:5187';
+let server, browser, page, origin;
 before(async () => {
-  server = spawn(process.execPath, ['tools/serve.mjs', '--port', '5187'], { stdio: 'pipe' });
+  const port=await new Promise(resolve=>{const probe=createServer();probe.listen(0,'127.0.0.1',()=>{const value=probe.address().port;probe.close(()=>resolve(value));});});
+  origin=`http://127.0.0.1:${port}`;
+  server = spawn(process.execPath, ['tools/serve.mjs', '--port', String(port)], { stdio: 'pipe' });
   for (let i = 0; i < 80; i++) {
     try { if ((await fetch(origin + '/tests/integration/engine-harness.html')).ok) break; } catch {}
     await new Promise(resolve => setTimeout(resolve, 100));
@@ -32,6 +34,10 @@ test('raw controller poll retains partial triggers, remapping, disconnect and in
     pad.buttons[7]={pressed:false,value:.37};pad.buttons[6]={pressed:false,value:.21};
     Object.defineProperty(navigator,'getGamepads',{configurable:true,value:()=>pad?[pad]:[]});
     game.input.tick(1/120);const first=input.serialize(input.poll(1));
+    pad.buttons[15]={pressed:true,value:1};game.input.tick(1/120);const radioDpad=input.serialize(input.poll(2));
+    pad.buttons[15]={pressed:false,value:0};game.input.tick(1/120);input.poll(2);
+    pad.buttons[12]={pressed:true,value:1};game.input.tick(1/120);const phoneDpad=input.serialize(input.poll(2));
+    pad.buttons[12]={pressed:false,value:0};game.input.tick(1/120);input.poll(2);
     pad.buttons[3]={pressed:true,value:1};game.input.tick(1/120);const edge=input.serialize(input.poll(2));
     game.input.tick(1/120);const held=input.serialize(input.poll(3));
     input.clear();game.input.tick(1/120);const cleared=input.serialize(input.poll(4));
@@ -41,10 +47,12 @@ test('raw controller poll retains partial triggers, remapping, disconnect and in
     game.input.resetBindings();
     const exchanged=input.rebind('fire','keyboard','Mouse2'),exchangeMaps={fire:game.input.map.fire.slice(),aim:game.input.map.aim.slice()};game.input.resetBindings();
     pad=null;game.input.tick(1/120);const disconnected=input.serialize(input.poll(5));
-    return {first,edge,held,cleared,rebound,reboundResult,exchanged,exchangeMaps,disconnected};
+    return {first,radioDpad,phoneDpad,edge,held,cleared,rebound,reboundResult,exchanged,exchangeMaps,disconnected};
   });
   assert.equal(result.first.throttle,.37); assert.equal(result.first.brake,.21); assert.equal(result.first.moveX,0);
   assert.equal(result.first.device,'gamepad'); assert.ok(result.first.lookX>0);
+  assert.equal(result.radioDpad.moveX,0);assert.ok(result.radioDpad.pressed.includes('radio'));
+  assert.equal(result.phoneDpad.moveY,0);assert.ok(result.phoneDpad.pressed.includes('phone'));
   assert.ok(result.edge.pressed.includes('interact')); assert.ok(!result.held.pressed.includes('interact'));
   assert.ok(!result.cleared.pressed.includes('interact')); assert.equal(result.cleared.throttle,0); assert.equal(result.reboundResult,null); assert.equal(result.rebound.throttle,.62);assert.equal(result.exchanged,'aim');assert.ok(result.exchangeMaps.fire.includes('Mouse2'));assert.ok(result.exchangeMaps.aim.includes('Mouse0')); assert.equal(result.disconnected.throttle,0); assert.equal(result.disconnected.connected,false);
 });
@@ -57,15 +65,37 @@ test('real Rapier raycast vehicle drives forward and brake/reverse are distinct'
     step(120,{throttle:0});const start=v.position;
     step(600,{throttle:.65});const driven=v.position,fast=v.speed/16;
     step(180,{brake:.7});const braked=v.speed/16;
-    step(180,{brake:.7});const reversed=v.speed/16;
+    step(180,{brake:.7,reverse:true});const reversed=v.speed/16;
+    const parked=vehicles.create({id:'parked-cruiser',kind:'cruiser',x:20,y:30,yaw:0,visual:{}});
+    step(120,{});const parkedStart=parked.position;
+    vehicles.setControl(parked,{brake:.7});step(360,{});const parkedEnd=parked.position;
     const axes={up:v.controller.indexUpAxis,forward:v.controller.indexForwardAxis,wheels:v.controller.numWheels()};
-    vehicles.setControl(v,{});return{start,driven,fast,braked,reversed,axes,health:v.health};
+    vehicles.setControl(v,{});return{start,driven,fast,braked,reversed,parkedStart,parkedEnd,axes,health:v.health};
   });
   assert.deepEqual(result.axes,{up:2,forward:0,wheels:4});
   assert.ok(result.driven.x > result.start.x + 5,JSON.stringify(result));
   assert.ok(result.fast>2,JSON.stringify(result)); assert.ok(result.braked<result.fast,JSON.stringify(result));
   assert.ok(result.reversed<0,JSON.stringify(result));
+  assert.ok(Math.hypot(result.parkedEnd.x-result.parkedStart.x,result.parkedEnd.y-result.parkedStart.y)<.3,JSON.stringify(result));
   assert.ok(Math.abs(result.driven.z-result.start.z)<.5,JSON.stringify(result));
+});
+
+test('reverse input wakes a parked sleeping van and moves it out of a service bay',async()=>{
+  const result=await page.evaluate(()=>{
+    const {vehicles,world}=window.engineTest;
+    const van=vehicles.create({id:'sleeping-reverse-van',kind:'van',x:60,y:10,yaw:0,visual:{}});
+    const step=n=>{for(let i=0;i<n;i++){vehicles.preStep(1/120);world.step(1/120);vehicles.postStep(1/120);}};
+    step(180);van.body.sleep();
+    const start={...van.position},asleep=van.body.isSleeping();
+    vehicles.setControl(van,{throttle:0,brake:1,reverse:true,handbrake:false});
+    step(240);
+    return{asleep,awake:!van.body.isSleeping(),start,end:van.position,speed:van.speed/16,disabled:van.disabled};
+  });
+  assert.equal(result.asleep,true,JSON.stringify(result));
+  assert.equal(result.awake,true,JSON.stringify(result));
+  assert.ok(result.end.x<result.start.x-.5,JSON.stringify(result));
+  assert.ok(result.speed<0,JSON.stringify(result));
+  assert.equal(result.disabled,false);
 });
 
 test('seat attachment disables collisions and validated exit restores original actor body', async()=>{
@@ -152,6 +182,19 @@ test('real chassis contact produces damage and restored checkpoints release stal
   });
   assert.ok(result.damage>0,JSON.stringify(result));assert.ok(result.health<100,JSON.stringify(result));
   assert.equal(result.entry,true,JSON.stringify(result));assert.equal(result.pending,true);assert.equal(result.cleared,true);assert.equal(result.enabled,true);assert.equal(result.empty,true);
+});
+
+test('an inverted or side-rolled chassis becomes disabled instead of remaining drivable',async()=>{
+  const result=await page.evaluate(()=>{
+    const{vehicles}=engineTest;
+    const inverted=vehicles.create({id:'inverted-test',kind:'sedan',x:82,y:42,yaw:0,visual:{}});
+    const side=vehicles.create({id:'side-roll-test',kind:'van',x:91,y:42,yaw:0,visual:{}});
+    inverted.body.setRotation({x:1,y:0,z:0,w:0},true);
+    side.body.setRotation({x:Math.SQRT1_2,y:0,z:0,w:Math.SQRT1_2},true);
+    vehicles.postStep(0);
+    return {inverted:inverted.disabled,side:side.disabled};
+  });
+  assert.deepEqual(result,{inverted:true,side:true});
 });
 
 test('positive steering turns eastbound vehicles south (keyboard right / controller right)',async()=>{

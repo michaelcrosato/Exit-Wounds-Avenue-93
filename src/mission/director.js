@@ -85,6 +85,8 @@ export class MissionDirector {
         if (m.phase !== 'DECISION' || !m.choice || p.locationId !== ENDINGS[m.choice].destination) return fail('wrong-handoff-location');
         if (s.wanted.tier > 0 || s.wanted.visible) return fail('lose-police-before-handoff');
         if (!s.player.inventory.case || !m.junExtracted) return fail('case-or-jun-missing');
+        if (s.actors.jun.vehicleId) return fail('jun-still-seated');
+        if (Math.hypot(s.player.position.x - s.actors.jun.position.x, s.player.position.y - s.actors.jun.position.y) > 8) return fail('wait-for-jun');
         transition('HANDOFF'); break;
       case 'HandoffCommitted': {
         if (m.completed || m.rewardPaid) return fail('handoff-already-completed');

@@ -56,7 +56,7 @@ export class TrafficSystem {
   }
   createDriver(i, x, y, yaw) {
     const colors = ['#776650', '#48656b', '#7d5553', '#68734f', '#7f7d71', '#444f62'];
-    const actor = this.world.hero({ x: m(x), y: m(y), z: 0, r: 4.1, half: 8.7, facing: yaw, look: 'puppet',
+    const actor = this.world.hero({ x: m(x), y: m(y), z: 0, r: 4.1, half: 8.7, mass: 75, facing: yaw, look: 'puppet',
       rig: new this.E.Humanoid({ build: 'heroic', size: .98, weapon: null, outfit: 'shirt', sleeves: 'long', hat: i % 3 === 0 ? 'cap' : null,
         colors: { skin: i % 2 ? '#a77c60' : '#bf997d', hair: '#2b3031', cloth: colors[i % colors.length], pants: '#313b3d', boot: '#262a2c', belt: '#493f33' } }) });
     actor.id = `civilian-driver-${i}`; actor.data.entityId = actor.id; actor.anim = { pose: 'sit' }; this.actors.push(actor); return actor;
@@ -73,6 +73,18 @@ export class TrafficSystem {
     record.abandoned = true; record.fleeing = true; this.vehicles.setControl(vehicle, { throttle: 0, brake: 0, handbrake: true });
     this.pendingThefts.push({ vehicle, playerActor, record, elapsed: 0 });
     return { ok: true, pending: true, vehicle };
+  }
+  /** An impact interrupts a taking sequence without leaving a seated driver in a permanently abandoned car. */
+  cancelTake(vehicleOrId) {
+    const vehicle=this.vehicles.get(vehicleOrId),index=this.pendingThefts.findIndex(t=>t.vehicle===vehicle);
+    if(index<0)return false;
+    const theft=this.pendingThefts.splice(index,1)[0],record=theft.record,driver=record.driver;
+    this.vehicles.cancelTransition(driver);
+    if(!this.vehicles.occupant(driver)&&vehicle.health>0&&!vehicle.disabled&&Math.abs(vehicle.speed)<m(1.2))this.vehicles.enter(driver,vehicle,0);
+    const seated=!!this.vehicles.occupant(driver);
+    record.abandoned=!seated;record.fleeing=!seated;
+    this.vehicles.setControl(vehicle,{throttle:0,brake:1,handbrake:true});
+    return true;
   }
   signalAllows(nodeId, heading) {
     const signal = this.graph.signals?.find(s => s.id === nodeId);
@@ -158,7 +170,7 @@ export class TrafficSystem {
       const progress = Math.hypot(p.x - record.previous.x, p.y - record.previous.y); record.previous = { x: p.x, y: p.y };
       record.stalled = progress < .015 && targetSpeed > 1 && !blocked ? record.stalled + dt : Math.max(0, record.stalled - dt * 2);
       if (record.stalled > 4.5) { record.reverse = 1.5; record.stalled = 0; }
-      if (record.reverse > 0) { record.reverse -= dt; this.vehicles.setControl(v, { throttle: 0, brake: .45, steer: -Math.sign(error || 1) * .8 }); continue; }
+      if (record.reverse > 0) { record.reverse -= dt; this.vehicles.setControl(v, { throttle: 0, brake: .45, reverse: true, steer: -Math.sign(error || 1) * .8 }); continue; }
       const speed = v.speed / 16;
       this.vehicles.setControl(v, { throttle: clamp((targetSpeed - speed) * .15, 0, .65), brake: targetSpeed < .1 ? 0 : speed > targetSpeed + .5 ? clamp((speed - targetSpeed) * .2, 0, 1) : 0, handbrake: targetSpeed < .1, steer: clamp(error * 1.65, -1, 1) });
     }

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "source": "final source build",
+  "initial": {
+    "captures": 42,
+    "clean": 37,
+    "failed": [
+      {
+        "label": "Pixel 10",
+        "engine": "chromium",
+        "width": 360,
+        "height": 732,
+        "error": "Page.screenshot: Timeout 30000ms exceeded."
+      },
+      {
+        "label": "iPhone 17 Pro landscape",
+        "engine": "chromium",
+        "width": 756,
+        "height": 352,
+        "error": "Page.screenshot: Timeout 30000ms exceeded."
+      },
+      {
+        "label": "Galaxy Tab S9",
+        "engine": "chromium",
+        "width": 640,
+        "height": 1024,
+        "error": "Page.screenshot: Timeout 30000ms exceeded."
+      },
+      {
+        "label": "Laptop 1366x768",
+        "engine": "chromium",
+        "width": 1366,
+        "height": 768,
+        "error": "Page.screenshot: Timeout 30000ms exceeded."
+      },
+      {
+        "label": "16:9 1920x1080",
+        "engine": "chromium",
+        "width": 1920,
+        "height": 1080,
+        "error": "Page.screenshot: Timeout 30000ms exceeded."
+      }
+    ],
+    "layoutIssues": 0
+  },
+  "isolatedRetest": {
+    "status": "passed",
+    "engine": "chromium",
+    "version": "153.0.8010.12",
+    "records": [
+      {
+        "name": "iphone-landscape",
+        "width": 756,
+        "height": 352,
+        "documentWidth": 756,
+        "menuWithinViewport": true
+      },
+      {
+        "name": "pixel-10",
+        "width": 360,
+        "height": 732,
+        "documentWidth": 360,
+        "menuWithinViewport": true
+      },
+      {
+        "name": "laptop",
+        "width": 1366,
+        "height": 768,
+        "documentWidth": 1366,
+        "menuWithinViewport": true
+      },
+      {
+        "name": "desktop-1080",
+        "width": 1920,
+        "height": 1080,
+        "documentWidth": 1920,
+        "menuWithinViewport": true
+      },
+      {
+        "name": "galaxy-tablet",
+        "width": 640,
+        "height": 1024,
+        "documentWidth": 640,
+        "menuWithinViewport": true
+      }
+    ],
+    "errors": []
+  },
+  "method": "viewport-matrix --all-engines produced 37 clean shots and five Chromium SwiftShader screenshot timeouts under parallel load. Five exact sizes were retaken sequentially at DPR 1 with Playwright; all rendered, had no horizontal overflow or browser errors. Raw PNGs remain outside repository.",
+  "rawPngsOutsideRepository": true
+}

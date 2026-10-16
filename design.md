@@ -1,6 +1,6 @@
 # Exit Wounds Avenue-93 — implementation design and Codex handoff
 
-Prepared 2026-10-16. Status: **plan ready for implementation; the game has not been built or tested**. All implementation gates below start open.
+Prepared 2026-10-16. Status: **implementation and verification in progress**. This document records the original acceptance contract; current results and open gates are in `docs/PROGRESS.md` and `docs/TEST-REPORT.md`.
 
 ## 1. Execution contract
 
@@ -12,8 +12,9 @@ Two scope decisions are settled:
 
 - The latest attachment removed the cel-shading requirement. Use the grounded visual direction in section 3; no mandatory toon filter.
 - The user subsequently chose: **“Prioritize controller and keyboard/mouse; remove the touch completion requirement.”** Complete both of those input paths. Do not build touch gameplay controls, gesture schemes, virtual sticks or a mobile HUD. Small-screen checks still apply to layout and compatibility; a coarse-pointer device may show a single menu/settings button.
+- The user later confirmed that no physical controller is available and requested controller simulation/emulation for final verification. Use a standard-mapped Gamepad API fixture through the engine's real poller for the complete controller route, including menus, remapping, analog controls and disconnect/reconnect. Report it as emulated controller evidence; physical feel, browser HID detection and actual wireless/cable behavior remain unmeasured.
 
-The present deliverable is this plan. The following instructions authorize and describe the **future implementation session**, including dependency installation, engine modification, local Git initialization and creation of the requested public repository. No game build, remote publication, physical controller test or engine evaluation is claimed by this planning document.
+This document began as the implementation plan. The user then authorized the implementation; current results and their limits are recorded in `docs/PROGRESS.md` and `docs/TEST-REPORT.md`. The plan itself does not certify a test or publication result.
 
 ### Model selection and launch
 
@@ -348,7 +349,7 @@ E2E tests use the normal boot, menus and gameplay actions. Developer test hooks 
 
 | Test | Procedure and required result |
 | --- | --- |
-| V01 controller | From cold title, use a physical PS5-compatible controller through settings, complete the mission, handoff and credits. No keyboard/mouse rescue. Verify analog driving/aim, wheel/menu focus, unplug/reconnect and pause/resume. Record actual controller/browser/connection. Synthetic input is supplemental evidence. |
+| V01 controller | From cold title, use an emulated standard-mapped PS5-compatible controller through settings, complete the mission, handoff and credits. No keyboard/mouse rescue. Verify analog driving/aim, wheel/menu focus, simulated unplug/reconnect and pause/resume. Record the fixture/browser and explicitly distinguish this from physical-device verification. |
 | V02 keyboard/mouse | From a fresh run, finish the other ending entirely on keyboard/mouse. Test pointer-lock exit/re-entry, menu navigation, remapping, alt-tab and focus loss. |
 | V03 route and choices | Exercise both depot entries, sedan and van extraction, favor earned/not earned, both ending payments/messages and a post-mission purchase. Validate differences through saved state and visible behavior. |
 | V04 failure recovery | Die in each combat stage; surrender/be arrested; abandon/destroy/overturn the starting car; block a door; miss/interrupt a call; lose Jun's path; leave and return to the mission area. Each case resolves to continued play or a clear checkpoint retry. |

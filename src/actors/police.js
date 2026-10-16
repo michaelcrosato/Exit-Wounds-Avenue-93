@@ -14,11 +14,26 @@ export class PoliceActors {
     this.time=0;this.safeSurrender=false;this.officers=POSTS.map((p,i)=>{
       const a=world.mob({x:metresToUnits(p.x),y:metresToUnits(p.y),z:0,r:4.7,half:9,look:'puppet',mass:1.2,
         rig:new E.Humanoid({build:'heroic',size:1.02,weapon:'gun',outfit:'shirt',sleeves:'long',hat:'cap',colors:{skin:i%2?'#c19a7a':'#8b6958',hair:'#20282c',cloth:'#253c49',pants:'#1c2d37',boot:'#111c22',belt:'#161e26',metal:'#a7b1b4'}})});
+      a.col.setMass(86);a.mass=86;
       a.id=`officer-${i+1}`;a.data.entityId=a.id;queries?.register?.(a.body,a);
       return {id:`officer-${i+1}`,actor:a,post:p,mode:'patrol',health:100,nextShot:0,arrestTime:0,lookAt:0,lastProgress:p,stuck:0,nextPath:0,path:[],lastPathTarget:null};
     });
   }
   position(o){return {x:unitsToMetres(o.actor.x),y:unitsToMetres(o.actor.y),z:unitsToMetres(o.actor.z)};}
+  /** A known suspect entering a car stays identifiable when an active officer can see the door. */
+  seesVehicleEntry(player,vehicle){
+    const tier=this.wanted.state.wanted.tier,limit=tier===1?2:tier===2?4:tier===3?6:0;
+    return this.officers.slice(0,limit).some(o=>{
+      if(o.health<=0)return false;
+      const p=this.position(o);
+      if(dist(p,player)>=45)return false;
+      return this.queries?.lineOfSight?.(
+        {x:p.x,y:p.y,z:p.z+1.65},
+        {x:player.x,y:player.y,z:(player.z||0)+1.45},
+        {ignore:[o.actor,vehicle],targetId:'mara'}
+      )??true;
+    });
+  }
   handleHit(id,damage){
     const o=this.officers.find(value=>value.id===id);if(!o||o.health<=0)return {ok:false,reason:'officer-unavailable'};
     o.health=Math.max(0,o.health-damage);o.actor.flash=.22;
@@ -47,7 +62,8 @@ export class PoliceActors {
         }else o.mode='investigate';
       }else if(active)o.mode='search';
       else o.mode='patrol';
-      const destination=o.mode==='chase'?player:objective;
+      const perimeterRadius=i<2?0:i<4?7:10,angle=i*Math.PI/3;
+      const destination=o.mode==='chase'&&perimeterRadius?{x:player.x+Math.cos(angle)*perimeterRadius,y:player.y+Math.sin(angle)*perimeterRadius,z:player.z}:o.mode==='chase'?player:objective;
       const gap=dist(p,destination);
       if(seated){
         a.vx=a.vy=0;a.anim={pose:'sit',point:false};
@@ -90,5 +106,5 @@ export class PoliceActors {
     if(tier&&w.visible&&!saw)this.wanted.loseSight();
   }
   snapshot(){return this.officers.map(o=>({id:o.id,position:this.position(o),mode:o.mode,health:o.health}));}
-  restore(items=[]){for(const s of items){const o=this.officers.find(x=>x.id===s.id);if(!o)continue;o.actor.place(metresToUnits(s.position.x),metresToUnits(s.position.y),metresToUnits(s.position.z||0));o.mode=s.mode;o.health=s.health??100;o.actor.setSolid(o.health>0);}}
+  restore(items=[]){this.time=0;this.safeSurrender=false;for(const [index,s] of items.entries()){const o=this.officers.find(x=>x.id===s.id);if(!o)continue;o.actor.place(metresToUnits(s.position.x),metresToUnits(s.position.y),metresToUnits(s.position.z||0));o.mode=s.mode;o.health=s.health??100;o.nextShot=.6+index*.08;o.arrestTime=0;o.lookAt=0;o.lastProgress={...s.position};o.stuck=0;o.nextPath=0;o.path=[];o.lastPathTarget=null;o.actor.vx=o.actor.vy=0;o.actor.anim=o.health>0?{}:{pose:'die'};o.actor.flash=0;o.actor.setSolid(o.health>0);}}
 }

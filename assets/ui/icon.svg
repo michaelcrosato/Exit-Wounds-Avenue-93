@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Exit Wounds Avenue-93">
+  <rect width="64" height="64" rx="12" fill="#101b20"/>
+  <path d="M8 48h48" stroke="#557678" stroke-width="5"/>
+  <path d="M8 53h48" stroke="#d69a59" stroke-width="2" stroke-dasharray="8 6"/>
+  <path d="M13 13h25v6H20v7h16v6H20v8h19v6H13z" fill="#eef1e8"/>
+  <path d="M44 13h8v27h-8z" fill="#d69a59"/>
+  <path d="M42 24h12" stroke="#101b20" stroke-width="3"/>
+</svg>

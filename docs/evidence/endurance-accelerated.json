@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "probeVersion": 2,
+  "outcome": "passed",
+  "finishedAt": "2026-10-16T19:41:12.549Z",
+  "method": {
+    "runner": "tests/e2e/endurance.mjs",
+    "timing": "accelerated",
+    "fixedStepHz": 120,
+    "isolatedBrowserContext": true,
+    "rendering": "Selected evidence frames; native frame loop stopped",
+    "input": "Normal browser keyboard/menu actions",
+    "staging": [
+      "Move the selected existing car and Mara to the central intersection before each pursuit.",
+      "Restore the chosen car to healthy/unlocked/stationary for this lifecycle scenario.",
+      "Place the existing patrol cars/officers about 24 metres around the occupied car before each report, to exercise nearby perception and response.",
+      "Submit a diagnostic tier-3 police report identifying the occupied car; normal police, traffic, physics and clearance remain live.",
+      "Stop requestAnimationFrame updates and call the engine fixed-step clock between browser inputs; render selected evidence frames."
+    ],
+    "memory": "CDP HeapProfiler.collectGarbage plus Runtime.getHeapUsage and Memory.getDOMCounters"
+  },
+  "environment": {
+    "os": "win32",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900K",
+    "browser": "155.0.8059.84",
+    "backend": "WebGPU",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "driver": "32.0.16.1742",
+    "viewport": [
+      960,
+      600
+    ],
+    "quality": "low",
+    "renderResolution": "balanced"
+  },
+  "duration": {
+    "accountedGameplaySeconds": 1801.0,
+    "wallSeconds": 406.73,
+    "audioContextSeconds": 401.6,
+    "actualThirtyMinuteWallClockPlay": false
+  },
+  "actions": {
+    "cycles": 30,
+    "vehicleEntries": 30,
+    "vehicleChanges": 29,
+    "checkpointRetries": 30,
+    "accountedActivePursuitSeconds": 636.0
+  },
+  "resourcesAfterWarmup": {
+    "bodies": {
+      "min": 281,
+      "max": 281
+    },
+    "enabledBodies": {
+      "min": 269,
+      "max": 269
+    },
+    "colliders": {
+      "min": 298,
+      "max": 298
+    },
+    "actors": {
+      "min": 52,
+      "max": 52
+    },
+    "vehicles": {
+      "min": 18,
+      "max": 18
+    },
+    "listeners": {
+      "min": 36,
+      "max": 36
+    },
+    "detachedDOMTargets": {
+      "min": 0,
+      "max": 0
+    },
+    "audioNodes": {
+      "min": 22,
+      "max": 33
+    },
+    "audioSources": {
+      "min": 6,
+      "max": 9
+    },
+    "audioContexts": {
+      "min": 1,
+      "max": 1
+    },
+    "intervals": {
+      "min": 2,
+      "max": 2
+    },
+    "primarySaveBytes": {
+      "min": 21933,
+      "max": 21933
+    },
+    "backupSaveBytes": {
+      "min": 18956,
+      "max": 18956
+    },
+    "logicalStateBytes": {
+      "min": 22056,
+      "max": 22078
+    },
+    "sceneNodes": {
+      "min": 1212,
+      "max": 1212
+    },
+    "cpuGeometries": {
+      "min": 771,
+      "max": 771
+    },
+    "cpuMaterials": {
+      "min": 356,
+      "max": 356
+    },
+    "rendererGeometries": {
+      "min": 509,
+      "max": 514
+    },
+    "rendererTextures": {
+      "min": 71,
+      "max": 71
+    },
+    "nativeDOMNodes": {
+      "min": 174,
+      "max": 175
+    },
+    "nativeListeners": {
+      "min": 86,
+      "max": 89
+    }
+  },
+  "heap": {
+    "postGC": true,
+    "earlyMedianBytes": 28163396,
+    "lateMedianBytes": 28504548,
+    "deltaBytes": 341152,
+    "slopeBytesPerSimulationMinute": 16116.623973727312,
+    "samples": 28,
+    "allowanceBytes": 8388608,
+    "sustainedSlopeAlarmBytesPerSimulationMinute": 131072,
+    "sustainedDeltaAllowanceBytes": 2097152,
+    "backingStorage": {
+      "earlyMedianBytes": 11698355,
+      "lateMedianBytes": 11698355,
+      "deltaBytes": 0,
+      "allowanceBytes": 8388608
+    }
+  },
+  "rendererCache": {
+    "geometries": {
+      "warm": 509,
+      "min": 509,
+      "max": 514,
+      "finalThirdMin": 514,
+      "finalThirdMax": 514,
+      "growthAllowance": 32,
+      "finalThirdRangeAllowance": 2
+    },
+    "textures": {
+      "warm": 71,
+      "min": 71,
+      "max": 71,
+      "finalThirdMin": 71,
+      "finalThirdMax": 71,
+      "growthAllowance": 32,
+      "finalThirdRangeAllowance": 2
+    }
+  },
+  "checks": {
+    "runtimeErrors": 0,
+    "networkErrors": 0,
+    "invalidBodyOrSeatAttachments": 0,
+    "orphanedQueries": 0,
+    "allSavedCheckpointsReadable": true,
+    "sourceFingerprintEndpointsEqual": true
+  },
+  "sourceFingerprint": {
+    "fileCount": 61,
+    "canonicalHashAlgorithm": "SHA-256 of UTF-8 compact JSON with sorted path keys",
+    "canonicalSha256": "139653650a05d68cb02218ac3def36acd77f9d6357122e1665fa0c29f70d1b7d",
+    "selectedSha256": {
+      "src/main.js": "0f482b70537b943c32b7a6f9572bd5191ba3b2b5c31074b950d372cc32840801",
+      "src/ui/interface.js": "2044f4d15b8dd2bf86294c0960e543c222fc46da9e592c269a85be25163b93bd",
+      "src/ui/interface.css": "98ed71095e97532cf6c35195c0b93f971bd7581317ab81367032d0f3ec24474d",
+      "src/engine/vehicles.js": "aad7479513814a869d102827c192efd03f2aa4fb8c705c72530bb7436c1f2a0c",
+      "src/systems/audio.js": "42a5198ed90d8f835d8cc8b5438bbaf872400a19fa5feeaf1a54906339f40042",
+      "tests/e2e/endurance.mjs": "eef52e418ea1ac62f13038f1dd0c6b5bf34b4cef1fb4339f833bcf65a9454845",
+      "src/game/save.js": "372eb0cbb20d95d7ceb9a118012ec7244f9be0228200dba8898646377bd94b13"
+    },
+    "scope": {
+      "directories": [
+        "src",
+        "assets",
+        "vendor/my-3d2dge/vendor/three-0.182.0",
+        "vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3"
+      ],
+      "files": [
+        "index.html",
+        "tests/e2e/endurance.mjs",
+        "vendor/my-3d2dge/engine/my-3d2dge.js",
+        "vendor/my-3d2dge/engine/my-3d2dge-3d.js",
+        "vendor/my-3d2dge/src/mocap/readable.js",
+        "vendor/my-3d2dge/src/mocap/mocap.js"
+      ],
+      "method": "Local file hashes before navigation and after capture; caller freezes source and serves this workspace."
+    }
+  },
+  "evidence": {
+    "rawReportOutsideRepository": true,
+    "artifactDirectoryName": "ewa93-endurance-hardware-frozen-20261016",
+    "reportFile": "report.json",
+    "inspectedFrames": [
+      "pursuit-3.png",
+      "pursuit-10.png",
+      "pursuit-30.png",
+      "cycle-30.png"
+    ]
+  },
+  "limits": [
+    "This diagnostic route is not an ordinary-input mission or fresh-player playthrough.",
+    "AudioContext, setInterval and Web Audio scheduling use actual wall time, even when gameplay uses accelerated fixed steps.",
+    "Heap sampling uses forced GC in Chromium and instrumentation changes allocation/timing; it cannot establish an uninstrumented memory budget.",
+    "A 30-minute-equivalent accelerated pass does not satisfy actual 30-minute wall-clock V08 play.",
+    "Local before/after fingerprints do not detect edit-and-revert or prove a remote source URL serves this workspace.",
+    "AudioContext ran only 401.6 actual seconds.",
+    "960x600 Low stability capture is separate from 1080p hardware performance acceptance.",
+    "No leak detected within this diagnostic scope; native/GPU/audio memory budget and continuous audiovisual quality are not certified."
+  ]
+}

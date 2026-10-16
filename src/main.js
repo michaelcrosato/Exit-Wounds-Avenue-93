@@ -11,9 +11,11 @@ import {CoverController} from './actors/cover.js';
 import {AnimationSystem} from './actors/animation.js';
 import {CrewSystem} from './actors/crew.js';
 import {PoliceActors} from './actors/police.js';
+import {navigatePatrol} from './actors/patrol-navigation.js';
 import {createContacts} from './actors/contacts.js';
 import {GameInterface} from './ui/interface.js';
 import {CityAudio} from './systems/audio.js';
+import {IncomingCall} from './systems/incoming-call.js';
 import {createGameState,restoreGameState,createReplayState} from './game/state.js';
 import {createEvent} from './game/events.js';
 import {SeededRng} from './game/rng.js';
@@ -47,13 +49,15 @@ class ExitWoundsGame {
     this.audio.onAnnouncement=text=>{if(this.state&&this.ui.screen==='playing'&&!this.dialogue.length&&!this.dialogueCurrent)this.queueLine('Morrow Radio',text,6.2);};
     const {storage,persistent}=storageOrMemory();this.persistentStorage=persistent;
     this.saveStore=new SaveStore(storage);this.settingsStore=new SettingsStore(storage);
-    this.settings={...DEFAULT_SETTINGS,...(this.settingsStore.load().settings||{})};
+    const storedSettings=this.settingsStore.load();
+    this.settings={...DEFAULT_SETTINGS,...(storedSettings.settings||{})};
+    this.settingsWarning=!storedSettings.ok&&storedSettings.reason!=='missing'?'Saved settings were invalid; defaults restored.':'';
     this.audio.setVolumes(this.settings);
     document.documentElement.style.setProperty('--picture-brightness',String(this.settings.brightness));
     this.runtime=null;this.state=null;this.director=null;this.checkpoints=null;this.wanted=null;this.crime=null;this.combat=null;this.economy=null;
-    this.dialogue=[];this.dialogueTimer=0;this.dialogueCurrent=null;this.lastDialogueId=null;this.eventSequence=0;this.lastHUD=0;this.lastShot=0;this.lastSkidAt=-1000;this.lastFiredTick=-1000;this.fireBurstCount=0;this.lastGunfireReportTick=-1000;this.wheelOpen=false;this.pendingConfirmation=null;
+    this.dialogue=[];this.dialogueTimer=0;this.dialogueCurrent=null;this.lastDialogueId=null;this.eliCall=null;this.lastCallRingAt=-1000;this.eventSequence=0;this.lastHUD=0;this.lastShot=0;this.lastSkidAt=-1000;this.lastFiredTick=-1000;this.fireBurstCount=0;this.lastGunfireReportTick=-1000;this.wheelOpen=false;this.pendingConfirmation=null;
     this.settingsFrom='title';this.creditsFrom='title';this.phoneDetail='';this.pointerLockedOnce=false;this.wasConnected=false;this.unknownPadWarned=false;this.toggledAim=false;this.toggledSprint=false;this.currentRebindDevice='keyboard';this.waitingBinding=null;this.previousRawButtons=new Set();
-    this.error=null;this.started=false;this.interaction=null;this.initialVehicleSnapshots=[];this.initialCrewSnapshots=[];this.initialPoliceSnapshots=[];this.titleTime=0;this.policeDriverAssigned=new Set();this.roadblockSet=false;this.surrenderHeld=0;this.dodgeUntil=0;this.dodgeDirection=null;this.vaultState=null;this.lastDisabledPromptCar=null;this.junCoverUntil=0;this.wheelVector={x:0,y:0};
+    this.error=null;this.started=false;this.interaction=null;this.initialVehicleSnapshots=[];this.initialCrewSnapshots=[];this.initialPoliceSnapshots=[];this.titleTime=0;this.policeDriverAssigned=new Set();this.patrolRouteCursors=new Map();this.patrolNavResults=new Map();this.mapRouteCache=null;this.roadblockSet=false;this.surrenderHeld=0;this.dodgeUntil=0;this.dodgeDirection=null;this.vaultState=null;this.lastDisabledPromptCar=null;this.junCoverUntil=0;this.wheelVector={x:0,y:0};
     this.sessionEnvironment=`${navigator.userAgent} · ${navigator.platform||'browser'}`;
     this.attachBrowserEvents();
   }
@@ -102,12 +106,12 @@ class ExitWoundsGame {
     return `Initial date: 2026-10-16 (first prompt known in this thread)\nSOURCE: Grand Theft Auto IV — Xbox 360, PlayStation 3 and PC\nGAME ENGINE: my-3d2dge ${meta.version||'0.46.1'}, build ${meta.build||'dev-build'}, commit ${meta.commit||'cfa866aa45474868350cad1a7fc015e612f9305f'}\nEnvironment: Ubuntu 26.04.1 LTS under WSL2; Chromium, Firefox and WebKit opening checks, with broader QA in progress\nModel and effort: GPT-6.1-Sol with Ultra for delegated implementation; root session model/effort not verified`;
   }
   attachBrowserEvents(){
-    addEventListener('blur',()=>{this.runtime?.input.clear();if(this.ui.screen==='playing')this.pause('Window lost focus.');else if(this.ui.screen==='wheel'){this.ui.show('pause');this.ui.announce('Window lost focus.');}});
-    document.addEventListener('visibilitychange',()=>{if(document.hidden){this.runtime?.input.clear();if(this.ui.screen==='playing')this.pause('Game paused while the tab is hidden.');else if(this.ui.screen==='wheel'){this.ui.show('pause');this.ui.announce('Game paused while the tab is hidden.');}}});
+    addEventListener('blur',()=>{this.runtime?.input.clear();if(this.ui.screen==='playing')this.pause('Window lost focus.');else if(this.ui.screen==='wheel'){this.toggledAim=false;this.toggledSprint=false;this.ui.show('pause',{completed:this.state?.mission.completed});this.ui.announce('Window lost focus.');}});
+    document.addEventListener('visibilitychange',()=>{if(document.hidden){this.runtime?.input.clear();if(this.ui.screen==='playing')this.pause('Game paused while the tab is hidden.');else if(this.ui.screen==='wheel'){this.toggledAim=false;this.toggledSprint=false;this.ui.show('pause',{completed:this.state?.mission.completed});this.ui.announce('Game paused while the tab is hidden.');}}});
     document.addEventListener('pointerlockchange',()=>{
       if(document.pointerLockElement)this.pointerLockedOnce=true;
       else if(this.pointerLockedOnce&&this.ui.screen==='playing'){this.runtime?.input.clear();this.pause('Mouse look released.');}
-      else if(this.pointerLockedOnce&&this.ui.screen==='wheel'){this.runtime?.input.clear();this.ui.show('pause');this.ui.announce('Mouse look released.');}
+      else if(this.pointerLockedOnce&&this.ui.screen==='wheel'){this.runtime?.input.clear();this.toggledAim=false;this.toggledSprint=false;this.ui.show('pause',{completed:this.state?.mission.completed});this.ui.announce('Mouse look released.');}
     });
     document.getElementById('stage').addEventListener('click',e=>{
       if(this.ui.screen!=='playing'||(e.target instanceof Element&&e.target.closest('button')))return;
@@ -117,7 +121,7 @@ class ExitWoundsGame {
   }
   showTitle(){
     const loaded=this.saveStore.load();
-    this.ui.show('title',{canContinue:loaded.ok||loaded.backupAvailable,recoverBackup:!loaded.ok&&loaded.backupAvailable,storageWarning:this.persistentStorage?'':'Browser storage is unavailable. Progress lasts only this session.'});
+    this.ui.show('title',{canContinue:loaded.ok||loaded.backupAvailable,recoverBackup:!loaded.ok&&loaded.backupAvailable,storageWarning:[this.persistentStorage?'':'Browser storage is unavailable. Progress lasts only this session.',this.settingsWarning].filter(Boolean).join(' ')});
     this.runtime?.input.clear();
     this.audio.stopRadio();
   }
@@ -148,14 +152,17 @@ class ExitWoundsGame {
         case 'creditsBack':this.creditsFrom==='title'?this.showTitle():this.ui.show(this.creditsFrom==='playing'?'pause':this.creditsFrom);break;
         case 'openPhone':this.openPhone();break;
         case 'closePhone':this.resume();break;
+        case 'answerEliCall':this.answerEliCall(false);break;
+        case 'declineEliCall':this.declineEliCall();break;
+        case 'returnEliCall':this.answerEliCall(true);break;
         case 'phoneJob':{
           const transcript=(DIALOGUE[this.lastDialogueId]||[]).map(line=>`${line.speaker}: ${line.text}`).join('\n');
           this.phoneDetail=`${this.director?.objective||'Meet Eli in the garage.'}${transcript?'\n\nLast conversation:\n'+transcript:''}`;this.openPhone();break;
         }
         case 'phoneMessages':this.phoneDetail=(this.state?.mission.messages||[]).map(id=>`${MESSAGES[id]?.from||'Unknown'}: ${MESSAGES[id]?.text||id}`).join('\n')||'No new messages.';this.openPhone();break;
-        case 'phoneEli':this.phoneDetail=this.state?contactResponse(this.state,'eli'):'Eli runs the garage.';this.openPhone();break;
+        case 'phoneEli':if(['ringing','missed','declined','interrupted'].includes(this.eliCall?.status))this.answerEliCall(true);else{this.phoneDetail=this.state?contactResponse(this.state,'eli'):'Eli runs the garage.';this.openPhone();}break;
         case 'phoneBea':this.phoneDetail=this.state?contactResponse(this.state,'bea'):'Bea has the collection address.';this.openPhone();break;
-        case 'phoneReplay':if(this.lastDialogueId){this.dialogue=[];this.dialogueCurrent=null;this.dialogueTimer=0;this.queueDialogue(this.lastDialogueId);}this.resume();break;
+        case 'phoneReplay':if(this.lastDialogueId==='intro'){this.answerEliCall(true);break;}if(this.lastDialogueId){this.dialogue=[];this.dialogueCurrent=null;this.dialogueTimer=0;this.queueDialogue(this.lastDialogueId);}this.resume();break;
         case 'openMap':this.openMap();break;
         case 'closeMap':this.resume();break;
         case 'chooseReporter':this.chooseEnding('reporter');break;
@@ -183,13 +190,13 @@ class ExitWoundsGame {
   hasSavedData(){try{return this.saveStore.storage.getItem(this.saveStore.key)!==null||this.saveStore.storage.getItem(this.saveStore.backupKey)!==null;}catch{return true;}}
   applySetting(name,value){
     if(!name)return;this.settings[name]=value;
-    const saved=this.settingsStore.save(this.settings);if(!saved.ok)this.ui.announce('Settings could not be saved.');
+    const saved=this.settingsStore.save(this.settings);if(!saved.ok)this.ui.announce('Settings could not be saved.');else this.settingsWarning='';
     if(this.runtime){
       this.runtime.camera.settings.sensitivity=Number(this.settings.sensitivity);
       this.runtime.camera.settings.invertY=bool(this.settings.invertY);
       this.runtime.camera.shakeStrength=Number(this.settings.shake);
       this.runtime.input.options.sensitivity=Number(this.settings.sensitivity);
-      this.runtime.world.res=this.settings.quality==='low'?'balanced':'full';
+      this.runtime.world.res=this.settings.quality==='high'?'full':'balanced';
       this.runtime.world.shadows=this.settings.quality!=='low';
     }
     this.audio.setVolumes(this.settings);
@@ -198,9 +205,9 @@ class ExitWoundsGame {
   }
   resetBindings(){this.runtime?.input.engine.resetBindings();this.runtime?.input.clear();this.ui.announce('Default bindings restored.');this.ui.show('controls');}
   bindingRows(){
-    const actions=['up','down','left','right','sprint','jump','crouch','aim','fire','reload','cover','interact','wheel','shoulder','phone','map','throttle','brake','handbrake','horn','radio'];
-    const map=this.runtime?.input.engine.map||ACTION_MAP;
-    return Object.fromEntries(actions.map(action=>[action,(map[action]||ACTION_MAP[action]||[]).filter(code=>this.currentRebindDevice==='controller'?code.startsWith('Pad'):!code.startsWith('Pad')).join(' / ')||'Unbound']));
+    const actions=['up','down','left','right','sprint','jump','crouch','aim','fire','reload','cover','interact','wheel','shoulder','phone','map','throttle','brake','handbrake','horn','radio'].filter(action=>this.currentRebindDevice!=='controller'||!['up','down','left','right'].includes(action));
+    const engine=this.runtime?.input.engine,map=engine?.map||ACTION_MAP;
+    return Object.fromEntries(actions.map(action=>[action,(map[action]||ACTION_MAP[action]||[]).filter(code=>!code.startsWith('Act:')&&!code.startsWith('PadAxis')&&(this.currentRebindDevice==='controller'?code.startsWith('Pad'):!code.startsWith('Pad'))).map(code=>engine?.codeLabel?.(code)||code).join(' / ')||'Unbound']));
   }
   showRebind(){this.ui.show('rebind',{bindings:this.bindingRows(),device:this.currentRebindDevice,waiting:this.waitingBinding});}
   rawButtons(){const values=this.runtime?.input.engine.padValues||[];return new Set(values.map((value,index)=>value>.55?index:-1).filter(index=>index>=0));}
@@ -209,27 +216,39 @@ class ExitWoundsGame {
     if(code==='Escape'){this.waitingBinding=null;this.showRebind();return;}
     if(this.currentRebindDevice!=='keyboard')return;
     const result=this.runtime.input.rebind(this.waitingBinding,'keyboard',code);
+    if(result==='reserved'){this.ui.announce(`${code} is reserved for menu controls. Choose another key.`);return;}
     this.ui.announce(typeof result==='string'?`${code} was also used by ${result}; bindings were exchanged.`:`${this.waitingBinding} bound to ${code}.`);
     this.waitingBinding=null;this.showRebind();
+  }
+  resetRunTransients(){
+    this.lastShot=-1000;this.lastSkidAt=-1000;this.lastFiredTick=-1000;this.fireBurstCount=0;this.lastGunfireReportTick=-1000;
+    this.dodgeUntil=0;this.dodgeDirection=null;this.junCoverUntil=0;this.surrenderHeld=0;this.toggledAim=false;this.toggledSprint=false;
+    this.lastHUD=0;this.wheelVector={x:0,y:0};this.audio.lastFootstep=-1000;
+    if(this.player){this.player.crouched=false;this.player.aiming=false;this.player.vault=0;this.player.damageFlash=0;this.player.actor.flash=0;}
   }
   newGame(existing=null){
     if(!this.runtime)return;
     const cleared=this.saveStore.clear({confirmed:true});
     if(!cleared.ok)this.ui.announce('Previous save could not be removed; this run may not persist.');
     this.state=existing||createGameState({seed:93,runId:`run-${Date.now().toString(36)}`});
-    this.lastGunfireReportTick=-1000;this.lastFiredTick=-1000;this.fireBurstCount=0;this.lastDisabledPromptCar=null;
+    this.resetRunTransients();
+    this.lastGunfireReportTick=-1000;this.lastFiredTick=-1000;this.fireBurstCount=0;this.lastDisabledPromptCar=null;this.lastJunBoundaryAttempt=-1000;this.patrolRouteCursors.clear();this.patrolNavResults.clear();
     this.state.player.position={x:SPAWN_POINTS.player.x,y:SPAWN_POINTS.player.y,z:SPAWN_POINTS.player.z||0};
     this.buildDomain();
     this.restoreVisualsToInitial();
     this.checkpoints=new CheckpointManager(this.state);
+    this.dialogue=[];this.dialogueCurrent=null;this.dialogueTimer=0;this.lastDialogueId=null;this.phoneDetail='';
     this.syncState();this.captureCheckpoint('new-run');
-    this.dialogue=[];this.dialogueCurrent=null;this.dialogueTimer=0;this.lastDialogueId=null;this.queueDialogue('intro');this.ui.show('playing');this.runtime.input.clear();this.audio.startRadio();this.audio.play('confirm');
+    this.ui.show('playing');this.runtime.input.clear();this.audio.startRadio();this.audio.play('phone');this.lastCallRingAt=this.state.elapsed;this.ui.announce('Eli is calling. Open the phone to answer, or meet him inside the garage.');
     this.runtime.camera.reset(this.player.actor,-Math.PI/2);
   }
   buildDomain(){
     this.wanted=new WantedSystem(this.state);this.crime=new CrimeSystem(this.state,this.wanted);
     this.director=new MissionDirector(this.state,{crime:this.crime,depotPosition:{x:348,y:124,z:0}});
     this.combat=new CombatSystem(this.state);this.economy=new EconomySystem(this.state,this.wanted);
+    this.eliCall=new IncomingCall({lineCount:DIALOGUE.intro.length,ringSeconds:14,snapshot:this.state.mission.eliCall||null});
+    if(!this.state.mission.eliCall){if(this.state.mission.phase==='INTRO')this.eliCall.start();else this.eliCall.resolveInPerson();}
+    this.state.mission.eliCall=this.eliCall.snapshot();this.lastCallRingAt=-1000;
     this.police.wanted=this.wanted;
     this.pedestrians.crime=this.crime;
     this.audio.setProgram(this.state.district.radio);
@@ -253,22 +272,22 @@ class ExitWoundsGame {
     const loaded=this.saveStore.load({useBackup});
     if(!loaded.ok){this.ui.show('error',{title:loaded.reason==='missing'?'No saved game':'Could not read the save',message:loaded.backupAvailable?'A previous good checkpoint is available. Choose Retry to load it.':(loaded.message||loaded.reason)});this.backupAvailable=loaded.backupAvailable;return;}
     if(useBackup){const restored=this.saveStore.save(loaded.state,{replaceCorrupt:true});if(!restored.ok)this.ui.announce(`Backup loaded for this session; saving failed: ${restored.reason}`);}
-    this.state=loaded.state;this.buildDomain();this.checkpoints=new CheckpointManager(this.state);this.checkpoints.setSnapshot(this.state);
-    this.lastGunfireReportTick=this.state.tick-1000;this.lastFiredTick=this.state.tick-1000;this.fireBurstCount=0;this.lastDisabledPromptCar=null;
-    this.restoreRuntimeFromState();this.dialogue=[];this.dialogueCurrent=null;this.dialogueTimer=0;this.lastDialogueId=PHASES[this.state.mission.phase]?.dialogueId||null;this.ui.show('playing');this.audio.startRadio();
+    this.state=loaded.state;this.resetRunTransients();this.buildDomain();this.checkpoints=new CheckpointManager(this.state);this.checkpoints.setSnapshot(this.state);
+    this.lastGunfireReportTick=this.state.tick-1000;this.lastFiredTick=this.state.tick-1000;this.fireBurstCount=0;this.lastDisabledPromptCar=null;this.lastJunBoundaryAttempt=this.state.elapsed-5;
+    this.restoreRuntimeFromState();this.restoreDialogueState();this.ui.show('playing');this.audio.startRadio();
   }
   restoreRuntimeFromState(){
     const s=this.state,actorMap=this.actorMap();
     this.cancelVault();
     this.player.restore({position:s.player.position,facing:s.player.rotation,weapon:s.player.inventory.equipped,seatedIn:null});this.cover.leave(this.player);
-    this.jun.restore({position:s.actors.jun.position,mode:s.actors.jun.state,active:s.mission.junReached,vehicleId:null,seat:null,recoveryAttempts:s.actors.jun.recoveryAttempts||0,lastSafe:s.actors.jun.lastSafe||s.actors.jun.position});
+    this.jun.restore({position:s.actors.jun.position,mode:s.mission.completed?'cover':s.actors.jun.state,active:s.mission.junReached&&!s.mission.completed,vehicleId:null,seat:null,recoveryAttempts:s.actors.jun.recoveryAttempts||0,lastSafe:s.actors.jun.lastSafe||s.actors.jun.position});
     this.crew.restore(this.crew.enemies.map(e=>({id:e.id,position:s.actors[e.id]?.position||this.crew.positionOf(e),health:s.actors[e.id]?.health??e.health,state:s.actors[e.id]?.state||e.state,lastKnown:s.actors[e.id]?.lastKnown||null})));
     this.crew.active=['RECOVERY','EXTRACTION','EVASION'].includes(s.mission.phase);this.crew.alerted=s.district.crewMeta?.alerted??(this.crew.active&&s.mission.route==='gate');this.crew.sharedLastKnown=s.district.crewMeta?.sharedLastKnown||null;
     this.police.restore(this.police.officers.map(o=>({id:o.id,position:s.actors[o.id]?.position||this.police.position(o),mode:s.actors[o.id]?.state||'patrol',health:s.actors[o.id]?.health??100})));
     const vStates=Object.entries(s.vehicles).map(([id,v])=>({id,kind:this.runtime.vehicles.get(id)?.kind||'sedan',position:v.position,rotation:yawQuaternion(v.rotation),velocity:{x:m(v.velocity.x),y:m(v.velocity.y),z:m(v.velocity.z)},angularVelocity:{x:0,y:0,z:0},health:v.health,color:v.color,appearance:v.appearance,disabled:v.disabled,seats:VEHICLE_SEATS.map(key=>v.seats[key]||null)}));
     this.runtime.vehicles.restore(vStates,actorMap);
     this.traffic.restore(s.district.traffic);this.pedestrians.restore(s.district.pedestrians);
-    this.policeDriverAssigned.clear();for(let i=1;i<=3;i++){const patrol=this.runtime.vehicles.get(`patrol-${i}`);if(patrol?.seats[0]?.id?.startsWith('officer-'))this.policeDriverAssigned.add(i);patrol.siren=i<=s.wanted.tier;patrol.locked=!!patrol?.seats[0]?.id?.startsWith('officer-');}
+    this.policeDriverAssigned.clear();this.patrolRouteCursors.clear();this.patrolNavResults.clear();this.roadblockSet=false;for(let i=1;i<=3;i++){const patrol=this.runtime.vehicles.get(`patrol-${i}`);if(patrol?.seats[0]?.id?.startsWith('officer-'))this.policeDriverAssigned.add(i);patrol.siren=i<=s.wanted.tier;patrol.locked=!!patrol?.seats[0]?.id?.startsWith('officer-');}
     this.player.setVehicle(s.player.vehicleId);
     if(s.actors.jun.vehicleId)this.jun.board(s.actors.jun.vehicleId,s.actors.jun.seat);
     this.district.setEnding?.(s.mission.ending);
@@ -288,31 +307,61 @@ class ExitWoundsGame {
   captureCheckpoint(id){
     if(!this.state||!this.checkpoints)return;
     this.syncState();
+    this.syncDialogueState();
     this.state.district.traffic=this.traffic.snapshot();this.state.district.pedestrians=this.pedestrians.snapshot();
     this.state.district.crewMeta={alerted:this.crew.alerted,sharedLastKnown:this.crew.sharedLastKnown};
     const seatTransition=this.runtime.vehicles.transitions.size>0||!!this.vaultState||!!this.jun.vaultState;
     const result=this.checkpoints.capture(id,{seatTransition,commitInProgress:this.state.mission.phase==='HANDOFF'});
     if(!result.ok)return;
     const saved=this.saveStore.save(this.state,{seatTransition});
-    if(!saved.ok&&saved.reason!=='corrupt-save-requires-choice')this.ui.announce(`Checkpoint unavailable: ${saved.reason}`);
+    if(!saved.ok&&saved.reason!=='corrupt-save-requires-choice')this.ui.announce('Checkpoint could not be saved. Browser storage may be full or blocked.');
     if(saved.reason==='corrupt-save-requires-choice')this.ui.show('error',{title:'Saved data is damaged',message:'A corrupt save will not be replaced without choosing New Game.'});
   }
   retryCheckpoint(){
     if(!this.checkpoints){this.showTitle();return;}
-    this.checkpoints.retry();this.buildDomain();this.restoreRuntimeFromState();
-    this.lastGunfireReportTick=this.state.tick-1000;this.lastFiredTick=this.state.tick-1000;this.fireBurstCount=0;this.lastDisabledPromptCar=null;
-    this.dialogue=[];this.dialogueCurrent=null;this.dialogueTimer=0;this.lastDialogueId=PHASES[this.state.mission.phase]?.dialogueId||null;this.ui.show('playing');this.runtime.input.clear();this.audio.play('confirm');
+    this.checkpoints.retry();this.resetRunTransients();this.buildDomain();this.restoreRuntimeFromState();
+    this.lastGunfireReportTick=this.state.tick-1000;this.lastFiredTick=this.state.tick-1000;this.fireBurstCount=0;this.lastDisabledPromptCar=null;this.lastJunBoundaryAttempt=this.state.elapsed-5;
+    this.restoreDialogueState();this.ui.show('playing');this.runtime.input.clear();this.audio.play('confirm');
   }
-  pause(message=''){if(this.ui.screen!=='playing')return;document.exitPointerLock?.();this.runtime?.input.clear();this.ui.show('pause');if(message)this.ui.announce(message);}
+  pause(message=''){if(this.ui.screen!=='playing')return;this.interruptEliCall();document.exitPointerLock?.();this.runtime?.input.clear();this.toggledAim=false;this.toggledSprint=false;this.ui.show('pause',{completed:this.state?.mission.completed});if(message)this.ui.announce(message);}
   resume(){if(!this.state){this.showTitle();return;}this.runtime?.input.clear();this.ui.show('playing');}
-  openPhone(){if(!this.state)return;this.runtime.input.clear();this.ui.show('phone',{job:this.director.objective,messagePreview:`${this.state.mission.messages.length} saved message(s)`,detail:this.phoneDetail,replayAvailable:!!this.lastDialogueId});this.audio.play('phone');}
+  syncCallState(){if(this.state&&this.eliCall)this.state.mission.eliCall=this.eliCall.snapshot();}
+  canSaveCallBoundary(){return !!this.state&&this.state.wanted.tier===0&&!this.state.mission.failure&&!this.state.player.vehicleId&&!this.runtime.vehicles.occupant(this.player.actor)&&this.runtime.vehicles.transitions.size===0;}
+  interruptEliCall(){if(this.eliCall?.status!=='active')return;const stopped=this.eliCall.interrupt();if(!stopped.changed)return;this.dialogue=this.dialogue.filter(line=>line.dialogueId!=='intro');if(this.dialogueCurrent?.dialogueId==='intro'){this.dialogueCurrent=null;this.dialogueTimer=0;}this.syncCallState();if(this.canSaveCallBoundary())this.captureCheckpoint(this.state.mission.checkpointId);}
+  answerEliCall(fromPhone=false){
+    if(!this.eliCall)return;
+    const result=fromPhone?this.eliCall.returnFromPhone():this.eliCall.answer();
+    if(!result.ok){this.ui.announce(this.humanReason(result.reason));return;}
+    if(result.changed){
+      const later=[...(this.dialogueCurrent?[this.dialogueCurrent]:[]),...this.dialogue].filter(line=>line.dialogueId!=='intro');
+      this.dialogue=[];this.dialogueCurrent=null;this.dialogueTimer=0;
+      for(let index=result.nextLine;index<DIALOGUE.intro.length;index++){const line=DIALOGUE.intro[index];this.queueLine(line.speaker,line.text,Math.max(3.3,Math.min(7.2,line.text.length/18)),'intro',index);}
+      this.dialogue.push(...later);
+      this.syncCallState();
+      if(result.firstContact&&this.state.mission.phase==='INTRO')this.dispatch('JobAccepted',{},'mara','eli',`${this.state.runId}:eli-accepted`);
+      this.captureCheckpoint(this.state.mission.checkpointId);
+    }
+    this.resume();this.ui.announce(result.kind==='replaying'?'Replaying Eli’s call.':'Eli is on the line.');
+  }
+  declineEliCall(){const result=this.eliCall?.decline();if(!result?.ok)return;this.syncCallState();if(this.canSaveCallBoundary())this.captureCheckpoint(this.state.mission.checkpointId);this.resume();this.ui.announce('Call declined. Return Eli’s call from the phone or meet him in the garage.');}
+  openPhone(){if(!this.state)return;this.interruptEliCall();this.runtime.input.clear();this.ui.show('phone',{job:this.director.objective,messagePreview:`${this.state.mission.messages.length} saved message(s)`,detail:this.phoneDetail,replayAvailable:!!this.lastDialogueId,call:this.eliCall?.snapshot()});this.audio.play('phone');}
   openMap(){if(!this.state)return;this.runtime.input.clear();this.ui.show('map',{objective:this.director.objective});requestAnimationFrame(()=>{const canvas=/** @type {HTMLCanvasElement|null} */(document.querySelector('#full-map'));if(canvas){canvas.width=900;canvas.height=550;this.ui.drawMap(canvas,{...this.ui.hudModel,position:this.player.position,destination:this.destination()});}});}
-  queueLine(speaker,text,seconds=4.6){this.dialogue.push({speaker,text,seconds});}
-  queueDialogue(id){this.lastDialogueId=id;for(const line of DIALOGUE[id]||[])this.queueLine(line.speaker,line.text,Math.max(3.3,Math.min(7.2,line.text.length/18)));}
+  queueLine(speaker,text,seconds=4.6,dialogueId=null,lineIndex=null){this.dialogue.push({speaker,text,seconds,dialogueId,lineIndex});}
+  queueDialogue(id){for(const [index,line] of (DIALOGUE[id]||[]).entries())this.queueLine(line.speaker,line.text,Math.max(3.3,Math.min(7.2,line.text.length/18)),id,index);}
+  syncDialogueState(){if(this.state)this.state.district.dialogue={lastId:this.lastDialogueId,current:this.dialogueCurrent?{...this.dialogueCurrent}:null,remaining:Math.max(0,this.dialogueTimer),queue:this.dialogue.map(line=>({...line}))};}
+  restoreDialogueState(){const saved=this.state?.district.dialogue||{lastId:null,current:null,remaining:0,queue:[]};this.lastDialogueId=saved.lastId;this.dialogueCurrent=saved.current?{...saved.current}:null;this.dialogueTimer=saved.remaining;this.dialogue=(saved.queue||[]).map(line=>({...line}));}
   updateDialogue(dt){
     if(this.dialogueTimer>0){this.dialogueTimer-=dt;return;}
+    const finished=this.dialogueCurrent;
+    if(finished?.dialogueId==='intro'&&this.eliCall?.status==='active'){
+      this.eliCall.acknowledgeLine(finished.lineIndex);
+      if(!this.dialogue.some(line=>line.dialogueId==='intro'))this.eliCall.complete();
+      this.state.mission.eliCall=this.eliCall.snapshot();
+    }
+    if(finished?.dialogueId&&!this.dialogue.some(line=>line.dialogueId===finished.dialogueId))this.dispatch('DialogueAcknowledged',{dialogueId:finished.dialogueId},'mara');
     this.dialogueCurrent=this.dialogue.shift()||null;
     this.dialogueTimer=this.dialogueCurrent?.seconds||0;
+    if(this.dialogueCurrent?.dialogueId)this.lastDialogueId=this.dialogueCurrent.dialogueId;
     if(this.dialogueCurrent)this.audio.play('voice');
   }
   dispatch(type,payload={},sourceId='mara',targetId=null,stableId=null){
@@ -348,15 +397,18 @@ class ExitWoundsGame {
   }
   showEnding(){
     const broker=this.state.mission.ending==='broker';
+    this.jun.active=false;this.jun.mode='cover';this.jun.target=this.jun.position;
     this.district.setEnding?.(this.state.mission.ending);
     this.audio.setProgram(this.state.district.radio);
-    this.queueDialogue(broker?'broker-handoff':'reporter-handoff');
-    this.ui.show('ending',{title:broker?'The price of silence':'Names in print',summary:broker?'The contractor takes the market lease. Jun leaves alive, carrying the names with him.':'A wage investigation opens. Jun leaves alive, and the market has a reason to hope.',message:MESSAGES[broker?'broker-ending':'reporter-ending'].text,payment:broker?1200:600});
-    this.audio.play('cash');
+    this.dialogue=[];this.dialogueCurrent=null;this.dialogueTimer=0;
+    const dialogueId=broker?'broker-handoff':'reporter-handoff';this.lastDialogueId=dialogueId;
+    this.ui.show('ending',{title:broker?'The price of silence':'Names in print',summary:broker?'The contractor takes the market lease. Jun leaves alive, carrying the names with him.':'A wage investigation opens. Jun leaves alive, and the market has a reason to hope.',lines:DIALOGUE[dialogueId],message:MESSAGES[broker?'broker-ending':'reporter-ending'].text,payment:broker?1200:600});
+    this.audio.play('cash');this.audio.play('voice');
   }
   update(dt){
     const r=this.runtime;if(!r)return;
     const frame=r.input.poll(this.state?.tick||r.world.n,dt);
+    document.body.classList.toggle('has-controller',frame.connected);
     if(frame.connected&&frame.device==='gamepad'&&frame.mapping!=='standard'&&!this.unknownPadWarned){this.unknownPadWarned=true;this.ui.announce('Controller mapping is unrecognized. Open Controls to remap buttons.');}
     if(!frame.connected)this.unknownPadWarned=false;
     if(this.wasConnected&&!frame.connected&&this.ui.screen==='playing'){r.input.clear();this.pause('Controller disconnected. Connect it or use keyboard and resume.');}
@@ -366,6 +418,7 @@ class ExitWoundsGame {
         const raw=this.rawButtons(),newButton=[...raw].find(index=>!this.previousRawButtons.has(index));this.previousRawButtons=raw;
         if(newButton!==undefined){
           const action=this.waitingBinding,result=r.input.rebind(action,'controller',`Pad${newButton}`);
+          if(result==='reserved'){this.ui.announce(`Button ${newButton} is reserved for menu controls. Choose another button.`);r.input.consume(frame);return;}
           this.waitingBinding=null;this.showRebind();this.ui.announce(typeof result==='string'?`Button ${newButton} was also used by ${result}; bindings were exchanged.`:`${action} bound to button ${newButton}.`);
         }
         r.input.consume(frame);return;
@@ -390,13 +443,19 @@ class ExitWoundsGame {
     if(pressed(frame,'wheel')){this.wheelVector={x:0,y:0};this.ui.show('wheel',{weapons:this.state.player.inventory.weapons});return;}
     this.applyToggleControls(frame);
     const s=this.state;s.tick++;s.elapsed+=dt;
+    if(this.eliCall?.status==='ringing'){
+      const call=this.eliCall.tick(dt);this.syncCallState();
+      if(s.elapsed-this.lastCallRingAt>4){this.audio.play('phone');this.lastCallRingAt=s.elapsed;}
+      if(call.kind==='missed'){if(!s.mission.messages.includes('eli-missed'))s.mission.messages.push('eli-missed');if(this.canSaveCallBoundary())s.mission.pendingCheckpoint=true;this.ui.announce('Missed call from Eli. Return it from the phone or meet him in the garage.');}
+    }
     const occupant=r.vehicles.occupant(this.player.actor),vehicle=occupant?.vehicle||null;
     if(vehicle){
-      r.vehicles.setControl(vehicle,{throttle:frame.throttle,brake:frame.brake,moveX:frame.moveX,handbrake:held(frame,'handbrake')});
-      if(held(frame,'handbrake')&&Math.abs(vehicle.speed)>m(4)&&s.elapsed-this.lastSkidAt>.35){this.audio.play('skid',{intensity:Math.min(1.5,Math.abs(vehicle.speed)/m(12))});this.lastSkidAt=s.elapsed;}
+      const boarding=!!r.vehicles.transitions.get(this.player.actor)||r.vehicles.transitions.get(this.jun.actor)?.vehicle===vehicle;
+      r.vehicles.setControl(vehicle,boarding?{throttle:0,brake:1,handbrake:true}:{throttle:frame.throttle,brake:frame.brake,reverse:true,moveX:frame.moveX,handbrake:held(frame,'handbrake')});
+      if(!boarding&&held(frame,'handbrake')&&Math.abs(vehicle.speed)>m(4)&&s.elapsed-this.lastSkidAt>.35){this.audio.play('skid',{intensity:Math.min(1.5,Math.abs(vehicle.speed)/m(12))});this.lastSkidAt=s.elapsed;}
       if(pressed(frame,'horn'))this.audio.play('horn');
       if(pressed(frame,'radio')){if(this.audio.radioOn)this.audio.stopRadio();else this.audio.startRadio();this.ui.announce(this.audio.radioOn?'Local radio on':'Radio off');}
-      if(pressed(frame,'interact')){const exit=r.vehicles.exit(this.player.actor);if(!exit.ok)this.ui.announce(this.humanReason(exit.reason));}
+      if(!boarding&&pressed(frame,'interact')){const exit=r.vehicles.exit(this.player.actor);if(!exit.ok)this.ui.announce(this.humanReason(exit.reason));}
     }else if(this.vaultState){
       this.updateVault(dt);
     }else{
@@ -418,10 +477,10 @@ class ExitWoundsGame {
       }else if(held(frame,'fire')){if(!this.cover.active||this.cover.canFire)this.fire();else if(pressed(frame,'fire'))this.ui.announce('Aim from cover when there is headroom.');}
       if(this.dodgeDirection&&s.tick<this.dodgeUntil){this.player.actor.vx=m(this.dodgeDirection.x*6.2);this.player.actor.vy=m(this.dodgeDirection.y*6.2);this.player.actor.anim={...(this.player.actor.anim||{}),flip:1-(this.dodgeUntil-s.tick)/45};}
     }
-    this.jun.update(dt,{player:this.player.position,vehicle:vehicle?{position:vehicle.position}:null,combat:this.crew.active,visibleToPlayer:p=>this.isVisibleToPlayer(p),validRegroup:()=>this.district.spawnPoints.recover.depot});
+    this.jun.update(dt,{player:this.player.position,vehicle:vehicle?{position:vehicle.position}:null,combat:this.crew.active,visibleToPlayer:p=>this.isVisibleToPlayer(p),validRegroup:p=>this.safeRegroupNear(p)});
     if(this.jun.mode==='cover'&&s.elapsed>this.junCoverUntil&&s.mission.junReached)this.jun.follow();
     this.crew.update(dt,{player:this.player.position,phase:s.mission.phase});
-    this.pedestrians.update(dt,{playerPosition:this.player.position,vehicles:r.vehicles.list});
+    this.pedestrians.update(dt,{playerPosition:this.player.position,playerVehicleId:vehicle?.id||null,vehicles:r.vehicles.list});
     this.traffic.update(dt,{playerPosition:this.player.position,pedestrians:this.pedestrians.positions});
     this.updatePoliceVehicles(dt);
     r.vehicles.preStep(dt);
@@ -438,7 +497,7 @@ class ExitWoundsGame {
     this.audio.setEnvironment({inside,heat:s.wanted.tier});
     if(!vehicle){const speed=Math.hypot(this.player.actor.vx,this.player.actor.vy)/16;if(speed>.5)this.audio.footstep(s.elapsed,speed,this.district.surfaceAt?.(this.player.position)||'asphalt');}
     this.lastHUD-=dt;if(this.lastHUD<=0){this.updateHUD();this.lastHUD=.08;}
-    if(s.mission.pendingCheckpoint&&r.vehicles.transitions.size===0&&!this.vaultState&&!this.jun.vaultState)this.captureCheckpoint(s.mission.checkpointId);
+    if((s.mission.pendingCheckpoint||this.checkpoints.pendingId)&&r.vehicles.transitions.size===0&&!this.vaultState&&!this.jun.vaultState)this.captureCheckpoint(this.checkpoints.pendingId||s.mission.checkpointId);
     if(s.mission.failure){this.ui.show('retry',{reason:s.mission.failure.reason,title:'The job is not over'});r.input.clear();}
   }
   applyToggleControls(frame){
@@ -457,11 +516,11 @@ class ExitWoundsGame {
     const tier=this.state.wanted.tier,vehicles=this.runtime.vehicles;
     for(let i=1;i<=3;i++){
       const patrol=vehicles.get(`patrol-${i}`),officer=this.police.officers[(i-1)*2];
-      if(vehicles.occupant(this.player.actor)?.vehicle===patrol)continue;
+      if(vehicles.occupant(this.player.actor)?.vehicle===patrol){this.patrolRouteCursors.delete(i);this.patrolNavResults.delete(i);continue;}
       const active=i<=tier;
       patrol.siren=active;
-      if(officer.health<=0){vehicles.setControl(patrol,{throttle:0,brake:1});continue;}
-      if(!active){vehicles.setControl(patrol,{throttle:0,brake:.7});continue;}
+      if(officer.health<=0){this.patrolRouteCursors.delete(i);this.patrolNavResults.delete(i);vehicles.setControl(patrol,{throttle:0,brake:1,handbrake:true});continue;}
+      if(!active){this.patrolRouteCursors.delete(i);this.patrolNavResults.delete(i);vehicles.setControl(patrol,{throttle:0,brake:.7,handbrake:true});continue;}
       if(!this.policeDriverAssigned.has(i)){
         patrol.locked=false;
         const entered=vehicles.enter(officer.actor,patrol.id,'driver');
@@ -471,17 +530,13 @@ class ExitWoundsGame {
       if(!vehicles.occupant(officer.actor)){vehicles.setControl(patrol,{throttle:0,brake:1,handbrake:true});continue;}
       const target=i===3?{x:240,y:202,z:0}:this.state.wanted.visible?this.player.position:this.state.wanted.lastKnown||{x:348,y:124,z:0};
       const carPos=patrol.position;
-      if(i===3&&distance(carPos,target)<5){
+      if(i===3&&distance(carPos,target)<5&&Math.abs(patrol.speed)<m(1.2)){
         if(!this.roadblockSet){patrol.body.setRotation(yawQuaternion(Math.PI/2),true);this.roadblockSet=true;}
         vehicles.setControl(patrol,{throttle:0,brake:1,handbrake:true});continue;
       }
-      const from=this.district.nearestNode('road',carPos),to=this.district.nearestNode('road',target);
-      const route=this.district.path('road',from?.id,to?.id)||[];
-      const waypoint=route.find(node=>distance(node,carPos)>8)||target;
-      const desired=Math.atan2(waypoint.y-carPos.y,waypoint.x-carPos.x);
-      const angle=Math.atan2(Math.sin(desired-patrol.yaw),Math.cos(desired-patrol.y));
-      const speed=metres(patrol.speed),far=distance(carPos,waypoint);
-      vehicles.setControl(patrol,{steer:Math.max(-1,Math.min(1,angle*1.35)),throttle:far>7&&Math.abs(angle)<1.8?.45:0,brake:far<7||Math.abs(angle)>1.8?.65:0});
+      const nav=navigatePatrol({graph:this.district.roadGraph,position:carPos,yaw:patrol.yaw,speed:metres(patrol.speed),target,cursor:this.patrolRouteCursors.get(i)||null});
+      this.patrolRouteCursors.set(i,nav.cursor);this.patrolNavResults.set(i,nav);
+      vehicles.setControl(patrol,nav.controls);
       if(this.state.tick%330===i*20&&distance(carPos,this.player.position)<100)this.audio.play('siren',{intensity:.6});
     }
   }
@@ -496,7 +551,7 @@ class ExitWoundsGame {
     }
     this.combat.tick(dt);
     this.crime.tick(dt);
-    this.police.update(dt,{player:p,vehicleId:s.player.vehicleId,mission:s.mission,playerThreatening:held(frame,'fire')||s.wanted.tier>=3});
+    this.police.update(dt,{player:p,vehicleId:s.player.vehicleId,mission:s.mission,playerThreatening:held(frame,'fire')||(s.tick-this.lastGunfireReportTick<600&&s.player.inventory.equipped!=='unarmed')});
     const clearance=this.wanted.tick(dt,p);
     if(clearance.cleared&&s.mission.phase==='EVASION')this.dispatch('WantedCleared',{},'dispatch');
     if(this.jun.vehicleId){const junCar=this.runtime.vehicles.get(this.jun.vehicleId);if(junCar?.disabled){
@@ -510,7 +565,19 @@ class ExitWoundsGame {
       if(this.jun.vehicleId)this.dispatch('VehicleEntered',{actorId:'jun',vehicleId:this.jun.vehicleId,seat:this.jun.seat},'jun');
       else if(distance(this.jun.position,{x:348,y:124})>55&&distance(p,this.jun.position)<12)this.dispatch('CompanionExtracted',{onFoot:true},'jun');
     }
-    if(s.player.position.x<10||s.player.position.x>470||s.player.position.y<10||s.player.position.y>410||this.player.actor.fell){this.player.recover();this.ui.announce('Returned to a safe street.');}
+    if(!this.district.contains(s.player.position)||this.district.isWater(s.player.position)||this.player.actor.fell)this.recoverOutOfBounds();
+    if(this.jun.active&&!this.jun.vehicleId&&!this.district.contains(this.jun.position)&&s.elapsed-this.lastJunBoundaryAttempt>5){this.lastJunBoundaryAttempt=s.elapsed;this.jun.failOrRegroup(p=>this.isVisibleToPlayer(p),p=>this.safeRegroupNear(p),'outside-district');}
+  }
+  safeRegroupNear(position){return Object.values(this.district.spawnPoints.recover).sort((a,b)=>distance(a,position)-distance(b,position))[0]||null;}
+  recoverOutOfBounds(){
+    const attempts=(this.state.mission.actorRecoveryAttempts.mara||0)+1;this.state.mission.actorRecoveryAttempts.mara=attempts;
+    if(attempts>2){this.dispatch('ActorFailed',{actorId:'mara',reason:'Mara cannot reach a safe street. Retry checkpoint.'},'mara');return;}
+    const carId=this.state.player.vehicleId;
+    if(carId){
+      const car=this.runtime.vehicles.get(carId),recovery=this.district.spawnPoints.recover.waterfront;
+      if(car){car.body.setTranslation({x:m(recovery.x),y:m(recovery.y),z:m(.8)},true);car.body.setLinvel({x:0,y:0,z:0},true);car.body.setAngvel({x:0,y:0,z:0},true);this.runtime.vehicles.postStep(0);}
+    }else this.player.recover();
+    this.syncState();this.ui.announce('Returned to a safe street.');
   }
   syncState(){
     if(!this.state)return;
@@ -531,10 +598,19 @@ class ExitWoundsGame {
     const s=this.state;if(!s)return;
     const i=s.player.inventory,w=i.weapons[i.equipped];
     const nearby=this.nearestInteraction();this.interaction=nearby;
-    let prompt=nearby?`${this.runtime.input.engine.lastDevice==='gamepad'?'△':'E'} · ${nearby.name}`:this.cover.active?'R1 / Q · Leave cover':'';
-    if(this.police.safeSurrender&&i.equipped==='unarmed')prompt='Hold △ / E to surrender';
+    const input=this.runtime.input.engine,interactLabel=input.label('interact'),coverLabel=input.label('cover');
+    let prompt=nearby?`${interactLabel} · ${nearby.name}`:this.cover.active?`${coverLabel} · Leave cover`:'';
+    if(!nearby&&s.mission.phase==='INTRO'&&this.eliCall?.status==='ringing')prompt=`${input.label('phone')} · Eli calling · ${Math.ceil(this.eliCall.remaining)}s`;
+    else if(!nearby&&s.mission.phase==='INTRO'&&['missed','declined','interrupted'].includes(this.eliCall?.status))prompt=`${input.label('phone')} · Return Eli’s call`;
+    if(this.police.safeSurrender&&i.equipped==='unarmed')prompt=`Hold ${interactLabel} to surrender`;
     const destination=this.destination();
-    this.ui.setHUD({objective:this.director.objective,detail:s.mission.phase==='EVASION'?`${s.wanted.status} · ${s.wanted.visible?'police have sight':'leave the search area'}`:'',position:s.player.position,destination,health:s.player.health,armor:s.player.armor,money:s.player.wallet,weapon:i.equipped==='unarmed'?'Unarmed':WEAPONS[i.equipped].name,ammo:w?`${w.magazine} / ${w.reserve}`:'',heat:s.wanted.tier,search:s.wanted.tier?`${s.wanted.status} · ${Math.round(s.wanted.radius)} m area`:'',searchCenter:s.wanted.lastKnown,searchRadius:s.wanted.radius,prompt,subtitle:this.dialogueCurrent?.text||'',speaker:this.dialogueCurrent?.speaker||'',hudScale:Number(this.settings.hudScale),subtitleScale:Number(this.settings.subtitleScale)});
+    let route=[];
+    if(destination){
+      const from=this.district.nearestNode('road',this.player.position),to=this.district.nearestNode('road',destination),key=`${from?.id||''}:${to?.id||''}`;
+      if(this.mapRouteCache?.key!==key)this.mapRouteCache={key,nodes:from&&to?this.district.path('road',from.id,to.id):[]};
+      route=[this.player.position,...this.mapRouteCache.nodes,destination];
+    }
+    this.ui.setHUD({objective:this.director.objective,detail:s.mission.phase==='EVASION'?`${s.wanted.status} · ${s.wanted.visible?'police have sight':'leave the search area'}`:'',position:s.player.position,destination,route,health:s.player.health,armor:s.player.armor,money:s.player.wallet,weapon:i.equipped==='unarmed'?'Unarmed':WEAPONS[i.equipped].name,ammo:w?`${w.magazine} / ${w.reserve}`:'',heat:s.wanted.tier,search:s.wanted.tier?`${s.wanted.status} · ${Math.round(s.wanted.radius)} m area`:'',searchCenter:s.wanted.lastKnown,searchRadius:s.wanted.radius,prompt,subtitle:this.dialogueCurrent?.text||'',speaker:this.dialogueCurrent?.speaker||'',hudScale:Number(this.settings.hudScale),subtitleScale:Number(this.settings.subtitleScale)});
   }
   nearestInteraction(){
     const p=this.player.position,s=this.state;
@@ -544,19 +620,28 @@ class ExitWoundsGame {
       if(e.id==='toolbox-return'&&s.mission.favor!=='carrying')return false;
       if(e.id==='case'&&s.mission.caseRecovered)return false;
       if(e.id==='jun'&&s.mission.junReached)return false;
+      if(e.id==='depot-front-gate'&&s.mission.phase!=='APPROACH')return false;
+      if(e.id==='quiet-stop'&&s.mission.phase!=='DECISION')return false;
       if(e.id==='depot-ammo'&&s.player.inventory.pickups.includes(e.id))return false;
       if(e.id==='depot-smg'&&s.player.inventory.pickups.includes(e.id))return false;
       if(e.kind==='handoff'&&s.mission.phase!=='DECISION')return false;
+      if(e.action!=='vault'){
+        const gap=distance(p,e),angle=Math.atan2(e.y-p.y,e.x-p.x),facing=Math.atan2(Math.sin(angle-this.player.actor.facing),Math.cos(angle-this.player.actor.facing));
+        if(gap>1.4&&Math.abs(facing)>2.5)return false;
+        if(!this.runtime.queries.lineOfSight({x:p.x,y:p.y,z:p.z+1.45},{x:e.x,y:e.y,z:(e.z||0)+1.15},{ignore:[this.player.actor],targetId:['eli','bea','jun'].includes(e.id)?e.id:null,endpointTolerance:e.kind==='contact'?.85:.55}))return false;
+      }
       return true;
     });
     const car=this.runtime.vehicles.nearest(this.player.actor,3.2);
-    if(car&&(!entries[0]||distance(p,car.position)<distance(p,entries[0])))return {id:car.id,name:`Enter ${car.kind}`,action:'enter-car',car};
+    if(car&&this.runtime.queries.lineOfSight({x:p.x,y:p.y,z:p.z+1.45},{x:car.position.x,y:car.position.y,z:car.position.z+.5},{ignore:[this.player.actor],targetId:car.id})&&(!entries[0]||distance(p,car.position)<distance(p,entries[0])))return {id:car.id,name:`Enter ${car.kind}`,action:'enter-car',car};
     return entries[0]||null;
   }
   interact(){
     const e=this.nearestInteraction();if(!e)return;
     const s=this.state,m=s.mission;
     if(e.action==='enter-car'){
+      const pendingTake=this.traffic.pendingThefts.find(t=>t.vehicle===e.car&&t.playerActor===this.player.actor);
+      if(pendingTake){this.traffic.cancelTake(e.car);this.ui.announce('Vehicle taking cancelled.');return;}
       if(e.car.seats[0]&&e.car.seats[0]!==this.player.actor){
         const theft=this.traffic.attemptTake(e.car,this.player.actor);
         this.ui.announce(theft.ok?'Driver is exiting. Stay by the door.':this.humanReason(theft.reason));
@@ -569,7 +654,7 @@ class ExitWoundsGame {
     this.animations.trigger(this.player.actor,'interact');
     switch(e.action){
       case 'talk-eli':
-        if(m.phase==='INTRO'){this.dispatch('JobAccepted',{},'mara','eli',`${s.runId}:eli-accepted`);this.queueLine('Eli','Bea is by the market. You have the sedan. Bring Jun out if the story is true.');}
+        if(m.phase==='INTRO'){this.eliCall?.resolveInPerson();this.syncCallState();this.dispatch('JobAccepted',{},'mara','eli',`${s.runId}:eli-accepted`);this.queueLine('Eli','Bea is by the market. You have the sedan. Bring Jun out if the story is true.');this.ui.announce('Collection accepted. Bea is at the market.');}
         else this.queueLine('Eli',contactResponse(s,'eli'));
         break;
       case 'talk-bea':
@@ -589,7 +674,7 @@ class ExitWoundsGame {
       }
       case 'talk-jun':
         if(m.phase==='RECOVERY'){this.dispatch('JunReached',{},'mara','jun',`${s.runId}:jun-reached`);this.jun.activate();this.queueDialogue('jun-discovery');}
-        else this.queueLine('Jun','Keep moving. I will stay close.');
+        else this.queueLine('Jun','The crew still controls this office. I cannot leave until the way out is safe.');
         break;
       case 'recover-case':this.dispatch('CaseRecovered',{},'mara','case-cabinet',`${s.runId}:case-recovered`);break;
       case 'take-ammo':{
@@ -598,9 +683,11 @@ class ExitWoundsGame {
       case 'take-smg':{
         const result=this.combat.pickup(e.id,'smg',{reserve:e.reserve});if(result.ok){this.syncPickupVisuals();this.combat.equip('smg');this.player.setWeapon('smg');this.ui.announce('Compact SMG recovered.');this.captureCheckpoint(m.checkpointId);}break;
       }
-      case 'decision':if(m.phase==='DECISION')this.ui.show('decision');break;
+      case 'decision':if(m.phase==='DECISION'){if(distance(this.jun.position,this.player.position)>8)this.ui.announce('Wait for Jun before deciding together.');else this.ui.show('decision');}break;
       case 'handoff-broker':case 'handoff-reporter':{
         if(m.choice!==e.ending){this.ui.announce('Choose this destination at the quiet stop first.');break;}
+        if(this.jun.vehicleId||this.runtime.vehicles.transitions.has(this.jun.actor)){this.ui.announce('Wait for Jun to leave the vehicle before the exchange.');break;}
+        if(distance(this.jun.position,this.player.position)>8){this.ui.announce('Jun is still on the way. Wait for him at the drop.');break;}
         const request=this.dispatch('HandoffRequested',{locationId:e.ending==='broker'?'broker':'waterfront'},'mara',e.id,`${s.runId}:handoff-request`);
         if(request.ok)this.dispatch('HandoffCommitted',{},'mara',e.id,`${s.runId}:handoff-commit`);
         break;
@@ -647,9 +734,20 @@ class ExitWoundsGame {
     if(event.type==='VehicleImpact'){
       const position=this.runtime.vehicles.get(event.sourceId)?.position||this.player.position;
       this.audio.play('carImpact',{intensity:Math.min(2,event.payload.damage/20)});this.runtime.camera.shake(Math.min(1,event.payload.damage/45));this.pedestrians.fear(position,28);
-      if(event.payload.damage>8){for(const actor of [this.player.actor,this.jun.actor]){const transition=this.runtime.vehicles.transitions.get(actor);if(transition?.vehicle.id===event.sourceId)this.runtime.vehicles.cancelTransition(actor);}}
+      if(event.payload.damage>8){
+        this.traffic.cancelTake(event.sourceId);
+        for(const actor of [this.player.actor,this.jun.actor]){const transition=this.runtime.vehicles.transitions.get(actor);if(transition?.vehicle.id===event.sourceId)this.runtime.vehicles.cancelTransition(actor);}
+      }
       if(this.state.player.vehicleId===event.sourceId&&event.payload.damage>8)this.reportCrime('collision',1,position,event.sourceId);
       if(event.payload.damage>42&&this.jun.vehicleId===event.sourceId)this.combat.resolveHit('jun',{damage:0,sourceId:event.sourceId,kind:'impact',severe:true});return;
+    }
+    if(event.type==='VehicleEntryStarted'&&id==='mara'){
+      const w=this.state.wanted,car=this.runtime.vehicles.get(event.sourceId);
+      if(car&&w.tier>0&&(w.personId==='mara'||w.visible)&&this.police.seesVehicleEntry(this.player.position,car)){
+        this.wanted.changeVehicle(null,car.id,true);
+        this.wanted.sight({position:this.player.position,personId:'mara',vehicleId:car.id});
+      }
+      return;
     }
     if(event.type==='VehicleEntered'){
       if(id==='mara'){
@@ -663,6 +761,7 @@ class ExitWoundsGame {
     }else if(event.type==='VehicleExited'){
       if(id==='mara'){
         this.player.setVehicle(null);this.wanted.changeVehicle(event.sourceId,null,this.state.wanted.visible);
+        this.runtime.vehicles.setControl(event.sourceId,{throttle:0,brake:1,handbrake:true});
         if(this.jun.vehicleId===event.sourceId){const leave=this.runtime.vehicles.exit(this.jun.actor);if(!leave.ok)this.ui.announce('Jun cannot leave by this door. Move the car to clear an exit.');}
       }
       else if(id==='jun')this.jun.exit(this.jun.position);
@@ -685,7 +784,8 @@ class ExitWoundsGame {
     if(weapon==='unarmed')return;
     const cadence=this.combat.fire({weaponId:weapon});if(!cadence.ok){if(cadence.reason==='empty'&&this.state.tick-this.lastShot>100){this.ui.announce('Out of ammunition. Reload or switch weapons.');this.lastShot=this.state.tick;}return;}
     const ray=this.runtime.camera.aimRay(m(cadence.range));
-    let target=this.runtime.queries.ray(ray.from,ray.to,{ignore:[this.player.actor]})?.point||ray.to;
+    const cameraHit=this.runtime.queries.ray(ray.from,ray.to,{ignore:[this.player.actor]});
+    let target=cameraHit?.point||ray.to;
     const assist=this.aimAssist(ray,target);if(assist)target=assist;
     this.fireBurstCount=this.state.tick-this.lastFiredTick<20?this.fireBurstCount+1:0;this.lastFiredTick=this.state.tick;
     const spread=cadence.spread*(1+Math.min(1.5,this.fireBurstCount*.08));
@@ -696,6 +796,14 @@ class ExitWoundsGame {
     target={x:ray.from.x+Math.cos(pitch)*Math.cos(yaw)*length,y:ray.from.y+Math.cos(pitch)*Math.sin(yaw)*length,z:ray.from.z+Math.sin(pitch)*length};
     const muzzleRaw=this.player.actor.rig?.tip?.()||[this.player.actor.x,this.player.actor.y,this.player.actor.z+m(1.4)];
     const muzzle={x:muzzleRaw[0],y:muzzleRaw[1],z:muzzleRaw[2]};
+    if(cameraHit?.entity?.rig){
+      // The camera hit is the front surface of a capsule. A finite muzzle ray
+      // ending there can stop just short after spread or camera/muzzle parallax.
+      // Carry it through the actor; the physical muzzle query still stops at
+      // any wall, vehicle or cover between the gun and that point.
+      const delta={x:target.x-muzzle.x,y:target.y-muzzle.y,z:target.z-muzzle.z},distance=Math.hypot(delta.x,delta.y,delta.z);
+      if(distance>.01){const reach=Math.min(m(cadence.range),distance+m(1.8));target={x:muzzle.x+delta.x/distance*reach,y:muzzle.y+delta.y/distance*reach,z:muzzle.z+delta.z/distance*reach};}
+    }
     const hit=this.runtime.queries.ray(muzzle,target,{ignore:[this.player.actor]});
     const entity=hit?.entity,id=entity?.id||null;
     const blocked=!!hit&&!id;
@@ -715,10 +823,9 @@ class ExitWoundsGame {
   }
   aimAssist(ray,target){
     if(this.runtime.input.lastFrame?.device!=='gamepad')return null;
-    const p=this.player.position,yaw=this.runtime.camera.yaw,candidates=this.crew.living.map(e=>{
-      const q=this.crew.positionOf(e),a=Math.atan2(q.y-p.y,q.x-p.x),delta=Math.atan2(Math.sin(a-yaw),Math.cos(a-yaw));
-      return {id:e.id,hostile:true,visible:this.runtime.queries.lineOfSight({x:p.x,y:p.y,z:p.z+1.4},{x:q.x,y:q.y,z:q.z+1.4},{ignore:[this.player.actor,e.actor]}),angle:delta,distance:distance(p,q),position:q};
-    });
+    const p=this.player.position,yaw=this.runtime.camera.yaw;
+    const actors=[...this.crew.living.map(e=>({id:e.id,actor:e.actor,position:this.crew.positionOf(e)})),...this.police.officers.filter(o=>o.health>0&&o.mode==='chase').map(o=>({id:o.id,actor:o.actor,position:this.police.position(o)}))];
+    const candidates=actors.map(e=>{const q=e.position,a=Math.atan2(q.y-p.y,q.x-p.x),delta=Math.atan2(Math.sin(a-yaw),Math.cos(a-yaw));return {id:e.id,hostile:true,visible:this.runtime.queries.lineOfSight({x:p.x,y:p.y,z:p.z+1.4},{x:q.x,y:q.y,z:q.z+1.4},{ignore:[this.player.actor,e.actor]}),angle:delta,distance:distance(p,q),position:q};});
     const selected=selectAimAssistTarget(candidates);
     return selected?{x:m(selected.position.x),y:m(selected.position.y),z:m(selected.position.z+1.35)}:null;
   }
@@ -760,12 +867,13 @@ class ExitWoundsGame {
     if(kind==='gunfire'){if(s.tick-this.lastGunfireReportTick<240)return;this.lastGunfireReportTick=s.tick;}
     const id=`${s.runId}:${kind}:${s.tick}:${this.eventSequence++}`,p=position||this.player.position;
     const incident={id,kind,position:p,severity,perpetratorId:'mara',vehicleId:vehicleId||s.player.vehicleId,tick:s.tick};
+    const incidentCar=incident.vehicleId?this.runtime.vehicles.get(incident.vehicleId):null;
     this.crime.recordCrime(incident);
     this.pedestrians.witness(incident);
     if(witnessId)this.crime.observe({crimeId:id,witnessId,witnessKind:'civilian',hasLineOfSight:true,seesPerson:true,seesVehicle:true,reportDelay:2.8});
     for(const o of this.police.officers){
       if(o.health<=0)continue;
-      const q=this.police.position(o);if(distance(p,q)<35&&this.runtime.queries.lineOfSight({x:p.x,y:p.y,z:p.z+1.5},{x:q.x,y:q.y,z:q.z+1.5},{ignore:[this.player.actor,o.actor]})){
+      const q=this.police.position(o);if(distance(p,q)<35&&this.runtime.queries.lineOfSight({x:p.x,y:p.y,z:p.z+1.5},{x:q.x,y:q.y,z:q.z+1.5},{ignore:[this.player.actor,o.actor,incidentCar].filter(Boolean)})){
         this.crime.observe({crimeId:id,witnessId:o.id,witnessKind:'police',hasLineOfSight:true,seesPerson:!s.player.vehicleId,seesVehicle:!!s.player.vehicleId});break;
       }
     }
@@ -776,6 +884,7 @@ class ExitWoundsGame {
   handleError(error){
     console.error(error);this.error=error;
     this.runtime?.input.clear();
+    try{this.runtime?.stop?.();}catch{ /* The error UI remains usable even if the loop was never started. */ }
     this.ui.show('error',{title:'The city could not load',message:error?.message||String(error)});
   }
 }

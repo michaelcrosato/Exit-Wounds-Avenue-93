@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "rawPngsOutsideRepository": true,
+  "records": [
+    {
+      "engine": "chromium",
+      "scenario": "opening-storage",
+      "browserVersion": "153.0.8010.12",
+      "startedAt": "2026-10-16T19:51:48.277Z",
+      "status": "passed",
+      "errors": [],
+      "failedRequests": [],
+      "checkpoints": [
+        {
+          "name": "fresh-play",
+          "screen": "playing",
+          "tick": 42,
+          "elapsed": 0.35000000000000026,
+          "runId": "run-mvbdwlcb",
+          "phase": "INTRO",
+          "checkpointId": "new-run",
+          "position": {
+            "x": 91,
+            "y": 311,
+            "z": 0.08000002145767221
+          },
+          "health": 100,
+          "wallet": 80,
+          "case": false,
+          "pistol": {
+            "owned": true,
+            "magazine": 12,
+            "reserve": 48,
+            "nextFireTick": 0,
+            "reloadEndTick": 0
+          },
+          "favor": "available",
+          "metadata": {
+            "name": "my-3d2dge",
+            "version": "0.46.1",
+            "build": "dev-build",
+            "commit": "cfa866aa45474868350cad1a7fc015e612f9305f",
+            "patch": "EWA93-P1-analog-input+P2-three-stage-fallback",
+            "unitsPerMetre": 16,
+            "gravity": 156.96,
+            "backend": "WebGL 2"
+          }
+        },
+        {
+          "name": "job-accepted",
+          "screen": "playing",
+          "tick": 918,
+          "elapsed": 7.65000000000017,
+          "runId": "run-mvbdwlcb",
+          "phase": "COLLECTION",
+          "checkpointId": "job-accepted",
+          "position": {
+            "x": 104.87591552734375,
+            "y": 307.64453125,
+            "z": 0.08000002145767221
+          },
+          "health": 100,
+          "wallet": 80,
+          "case": false,
+          "pistol": {
+            "owned": true,
+            "magazine": 12,
+            "reserve": 48,
+            "nextFireTick": 0,
+            "reloadEndTick": 0
+          },
+          "favor": "available",
+          "metadata": {
+            "name": "my-3d2dge",
+            "version": "0.46.1",
+            "build": "dev-build",
+            "commit": "cfa866aa45474868350cad1a7fc015e612f9305f",
+            "patch": "EWA93-P1-analog-input+P2-three-stage-fallback",
+            "unitsPerMetre": 16,
+            "gravity": 156.96,
+            "backend": "WebGL 2"
+          }
+        },
+        {
+          "name": "reloaded-job",
+          "screen": "playing",
+          "tick": 919,
+          "elapsed": 7.658333333333504,
+          "runId": "run-mvbdwlcb",
+          "phase": "COLLECTION",
+          "checkpointId": "job-accepted",
+          "position": {
+            "x": 104.6833724975586,
+            "y": 307.6444396972656,
+            "z": 0.08000002145767221
+          },
+          "health": 100,
+          "wallet": 80,
+          "case": false,
+          "pistol": {
+            "owned": true,
+            "magazine": 12,
+            "reserve": 48,
+            "nextFireTick": 0,
+            "reloadEndTick": 0
+          },
+          "favor": "available",
+          "metadata": {
+            "name": "my-3d2dge",
+            "version": "0.46.1",
+            "build": "dev-build",
+            "commit": "cfa866aa45474868350cad1a7fc015e612f9305f",
+            "patch": "EWA93-P1-analog-input+P2-three-stage-fallback",
+            "unitsPerMetre": 16,
+            "gravity": 156.96,
+            "backend": "WebGL 2"
+          }
+        },
+        {
+          "name": "backup-recovered",
+          "screen": "playing",
+          "tick": 204,
+          "elapsed": 1.6999999999999964,
+          "runId": "run-mvbdwlcb",
+          "phase": "INTRO",
+          "checkpointId": "new-run",
+          "position": {
+            "x": 92.2618637084961,
+            "y": 311,
+            "z": 0.08000002145767221
+          },
+          "health": 100,
+          "wallet": 80,
+          "case": false,
+          "pistol": {
+            "owned": true,
+            "magazine": 12,
+            "reserve": 48,
+            "nextFireTick": 0,
+            "reloadEndTick": 0
+          },
+          "favor": "available",
+          "metadata": {
+            "name": "my-3d2dge",
+            "version": "0.46.1",
+            "build": "dev-build",
+            "commit": "cfa866aa45474868350cad1a7fc015e612f9305f",
+            "patch": "EWA93-P1-analog-input+P2-three-stage-fallback",
+            "unitsPerMetre": 16,
+            "gravity": 156.96,
+            "backend": "WebGL 2"
+          }
+        }
+      ],
+      "titleReadyMs": 6558,
+      "finishedAt": "2026-10-16T19:54:27.414Z",
+      "sourceServer": "local HTTP source tree",
+      "captures": [
+        "chromium-title.png",
+        "chromium-settings.png",
+        "chromium-gameplay.png",
+        "chromium-pause.png",
+        "chromium-compact-pause.png",
+        "chromium-phone.png",
+        "chromium-job-accepted.png",
+        "chromium-credits.png",
+        "chromium-save-recovery.png"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "scenario": "opening-storage",
+      "browserVersion": "26.6",
+      "startedAt": "2026-10-16T19:54:27.580Z",
+      "status": "passed",
+      "errors": [],
+      "failedRequests": [],
+      "checkpoints": [
+        {
+          "name": "fresh-play",
+          "screen": "playing",
+          "tick": 12,
+          "elapsed": 0.09999999999999999,
+          "runId": "run-mvbdzjvj",
+          "phase": "INTRO",
+          "checkpointId": "new-run",
+          "position": {
+            "x": 91,
+            "y": 311,
+            "z": 0.08000002145767221
+          },
+          "health": 100,
+          "wallet": 80,
+          "case": false,
+          "pistol": {
+            "owned": true,
+            "magazine": 12,
+            "reserve": 48,
+            "nextFireTick": 0,
+            "reloadEndTick": 0
+          },
+          "favor": "available",
+          "metadata": {
+            "name": "my-3d2dge",
+            "version": "0.46.1",
+            "build": "dev-build",
+            "commit": "cfa866aa45474868350cad1a7fc015e612f9305f",
+            "patch": "EWA93-P1-analog-input+P2-three-stage-fallback",
+            "unitsPerMetre": 16,
+            "gravity": 156.96,
+            "backend": "WebGL 2"
+          }
+        },
+        {
+          "name": "job-accepted",
+          "screen": "playing",
+          "tick": 738,
+          "elapsed": 6.150000000000095,
+          "runId": "run-mvbdzjvj",
+          "phase": "COLLECTION",
+          "checkpointId": "job-accepted",
+          "position": {
+            "x": 104.83384704589844,
+            "y": 307.64459228515625,
+            "z": 0.08000002145767221
+          },
+          "health": 100,
+          "wallet": 80,
+          "case": false,
+          "pistol": {
+            "owned": true,
+            "magazine": 12,
+            "reserve": 48,
+            "nextFireTick": 0,
+            "reloadEndTick": 0
+          },
+          "favor": "available",
+          "metadata": {
+            "name": "my-3d2dge",
+            "version": "0.46.1",
+            "build": "dev-build",
+            "commit": "cfa866aa45474868350cad1a7fc015e612f9305f",
+            "patch": "EWA93-P1-analog-input+P2-three-stage-fallback",
+            "unitsPerMetre": 16,
+            "gravity": 156.96,
+            "backend": "WebGL 2"
+          }
+        },
+        {
+          "name": "reloaded-job",
+          "screen": "playing",
+          "tick": 737,
+          "elapsed": 6.141666666666762,
+          "runId": "run-mvbdzjvj",
+          "phase": "COLLECTION",
+          "checkpointId": "job-accepted",
+          "position": {
+            "x": 104.55525207519531,
+            "y": 307.64459228515625,
+            "z": 0.08000002145767221
+          },
+          "health": 100,
+          "wallet": 80,
+          "case": false,
+          "pistol": {
+            "owned": true,
+            "magazine": 12,
+            "reserve": 48,
+            "nextFireTick": 0,
+            "reloadEndTick": 0
+          },
+          "favor": "available",
+          "metadata": {
+            "name": "my-3d2dge",
+            "version": "0.46.1",
+            "build": "dev-build",
+            "commit": "cfa866aa45474868350cad1a7fc015e612f9305f",
+            "patch": "EWA93-P1-analog-input+P2-three-stage-fallback",
+            "unitsPerMetre": 16,
+            "gravity": 156.96,
+            "backend": "WebGL 2"
+          }
+        },
+        {
+          "name": "backup-recovered",
+          "screen": "playing",
+          "tick": 96,
+          "elapsed": 0.7999999999999996,
+          "runId": "run-mvbdzjvj",
+          "phase": "INTRO",
+          "checkpointId": "new-run",
+          "position": {
+            "x": 92.02729034423828,
+            "y": 311,
+            "z": 0.08000002145767221
+          },
+          "health": 100,
+          "wallet": 80,
+          "case": false,
+          "pistol": {
+            "owned": true,
+            "magazine": 12,
+            "reserve": 48,
+            "nextFireTick": 0,
+            "reloadEndTick": 0
+          },
+          "favor": "available",
+          "metadata": {
+            "name": "my-3d2dge",
+            "version": "0.46.1",
+            "build": "dev-build",
+            "commit": "cfa866aa45474868350cad1a7fc015e612f9305f",
+            "patch": "EWA93-P1-analog-input+P2-three-stage-fallback",
+            "unitsPerMetre": 16,
+            "gravity": 156.96,
+            "backend": "WebGL 2"
+          }
+        }
+      ],
+      "titleReadyMs": 8262,
+      "finishedAt": "2026-10-16T19:55:50.061Z",
+      "sourceServer": "local HTTP source tree",
+      "captures": [
+        "webkit-title.png",
+        "webkit-settings.png",
+        "webkit-gameplay.png",
+        "webkit-pause.png",
+        "webkit-compact-pause.png",
+        "webkit-phone.png",
+        "webkit-job-accepted.png",
+        "webkit-credits.png",
+        "webkit-save-recovery.png"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "scenario": "asset-failure",
+      "browserVersion": "26.6",
+      "startedAt": "2026-10-16T19:55:50.389Z",
+      "status": "passed",
+      "pageErrors": [],
+      "finishedAt": "2026-10-16T19:56:00.590Z",
+      "sourceServer": "local HTTP source tree",
+      "captures": [
+        "webkit-asset-failure.png",
+        "webkit-asset-recovered.png"
+      ]
+    }
+  ]
+}

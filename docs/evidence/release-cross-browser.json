@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "source": "stripped dist package",
+  "rawPngsOutsideRepository": true,
+  "records": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "startedAt": "2026-10-16T22:52:18.705Z",
+      "status": "passed",
+      "errors": [],
+      "networkErrors": [],
+      "titleReadyMs": 16702,
+      "finishedAt": "2026-10-16T22:53:05.276Z",
+      "packageServer": "local static preview",
+      "captures": [
+        "chromium-title.png",
+        "chromium-before-move.png",
+        "chromium-after-move.png",
+        "chromium-phone.png",
+        "chromium-credits.png"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "startedAt": "2026-10-16T22:53:05.541Z",
+      "status": "passed",
+      "errors": [],
+      "networkErrors": [],
+      "titleReadyMs": 8882,
+      "finishedAt": "2026-10-16T22:53:28.197Z",
+      "packageServer": "local static preview",
+      "captures": [
+        "webkit-title.png",
+        "webkit-before-move.png",
+        "webkit-after-move.png",
+        "webkit-phone.png",
+        "webkit-credits.png"
+      ]
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "startedAt": "2026-10-16T22:53:29.252Z",
+      "status": "passed",
+      "errors": [],
+      "networkErrors": [],
+      "titleReadyMs": 6724,
+      "finishedAt": "2026-10-16T22:53:42.385Z",
+      "packageServer": "local static preview",
+      "captures": [
+        "firefox-title.png",
+        "firefox-before-move.png",
+        "firefox-after-move.png",
+        "firefox-phone.png",
+        "firefox-credits.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "browser": "155.0.8059.84",
+  "capture": {
+    "state": "running",
+    "sampleRate": 48000,
+    "mimeType": "audio/webm",
+    "bytes": 84109,
+    "segments": [
+      {
+        "label": "rain-traffic-radio",
+        "maxRms": 0.008855294933886497,
+        "meanRms": 0.004915325758133039,
+        "maxPeak": 0.028561947867274284
+      },
+      {
+        "label": "engine-inside",
+        "maxRms": 0.0053203769358477196,
+        "meanRms": 0.003812780578790602,
+        "maxPeak": 0.018476832658052444
+      },
+      {
+        "label": "gun-pursuit-dialogue",
+        "maxRms": 0.01441899763672288,
+        "meanRms": 0.004969073606009997,
+        "maxPeak": 0.03866145387291908
+      },
+      {
+        "label": "master-muted",
+        "maxRms": 0.001906132637749597,
+        "meanRms": 0.00021728563252472114,
+        "maxPeak": 0.012543157674372196
+      }
+    ],
+    "reporterAnnouncement": "An inquiry has opened into withheld Morrow Ward wages. Workers are asking who approved the transfers.",
+    "brokerAnnouncement": "Northline has taken a new market lease. Several stalls will close before the next shift."
+  },
+  "persisted": {
+    "master": 0,
+    "music": 0.33,
+    "dialogue": 0.85
+  },
+  "errors": []
+}

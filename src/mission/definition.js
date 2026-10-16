@@ -7,7 +7,7 @@ export const ENDINGS = Object.freeze({
   reporter: { label: 'Reporter — $600', destination: 'waterfront', reward: 600, messageId: 'reporter-ending', consequence: 'investigation' },
 });
 export const PHASES = Object.freeze({
-  INTRO: { objective: "Meet Eli inside the garage. Accept the collection job.", locationId: 'garage', dialogueId: 'intro', checkpoint: 'new-run' },
+  INTRO: { objective: "Answer Eli's call or meet him inside the garage to accept the collection job.", locationId: 'garage', dialogueId: 'intro', checkpoint: 'new-run' },
   COLLECTION: { objective: 'Drive to Bea at the market frontage.', locationId: 'market', dialogueId: 'collection-drive', checkpoint: 'job-accepted' },
   APPROACH: { objective: 'Reach the dispatch depot. Choose the street gate or rear service lane.', locationId: 'depot', dialogueId: 'depot-message', checkpoint: 'depot-approach' },
   RECOVERY: { objective: 'Find Jun in the depot office and recover the payroll case.', locationId: 'case-cabinet', dialogueId: 'jun-discovery', checkpoint: 'recovery' },

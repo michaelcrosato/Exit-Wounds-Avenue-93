@@ -21,7 +21,7 @@ export class PedestrianSystem {
     for (let i = 0; i < count; i++) {
       const node = this.ambientNodes[i % this.ambientNodes.length], outfit = OUTFITS[i % OUTFITS.length];
       const x = node.x + ((i % 3) - 1) * 1.1, y = node.y + (Math.floor(i / 6) % 3) * 1.1;
-      const actor = world.hero({ x: m(x), y: m(y), z: 0, r: 4.1, half: 8.7, step: 4, snap: 4, look: 'puppet',
+      const actor = world.hero({ x: m(x), y: m(y), z: 0, r: 4.1, half: 8.7, mass: 72, step: 4, snap: 4, look: 'puppet',
         rig: new E.Humanoid({ build: 'heroic', size: .94 + (i % 3) * .035, weapon: null, outfit: i % 2 ? 'shirt' : 'jacket', sleeves: 'long', hat: outfit.hat,
           colors: { ...outfit, boot: '#292b2b', belt: '#4d4336' } }) });
       actor.id = `resident-${i}`; actor.data.entityId = actor.id; actor.facing = this.random() * Math.PI * 2;
@@ -32,16 +32,16 @@ export class PedestrianSystem {
   }
   random() { this.seed ^= this.seed << 13; this.seed ^= this.seed >>> 17; this.seed ^= this.seed << 5; return (this.seed >>> 0) / 4294967296; }
   position(record) { return { x: metres(record.actor.x), y: metres(record.actor.y), z: metres(record.actor.z) }; }
-  see(record, point, radius = 44) {
+  see(record, point, radius = 44, targetId = null) {
     const p = this.position(record);
-    return Math.hypot(p.x - point.x, p.y - point.y) < radius && (!this.queries || this.queries.lineOfSight({ ...p, z: p.z + 1.5 }, { ...point, z: (point.z || 0) + 1.1 }, { exclude: [record.actor], endpointTolerance: 1.2 }));
+    return Math.hypot(p.x - point.x, p.y - point.y) < radius && (!this.queries || this.queries.lineOfSight({ ...p, z: p.z + 1.5 }, { ...point, z: (point.z || 0) + 1.1 }, { exclude: [record.actor], targetId, endpointTolerance: 1.2 }));
   }
   /** Root records a crime, then asks residents to inspect it. Occluded crimes remain unwitnessed. */
   witness(incident) {
     if (!incident.id) incident = { ...incident, id: `street-crime-${this.world.n}-${this.pendingCrimes.length}`, perpetratorId: 'mara', tick: this.world.n };
     this.crime?.recordCrime(incident);
     if (this.pendingCrimes.some(c => c.incident.id === incident.id)) return;
-    const candidates = this.records.filter(r => this.see(r, incident.position, incident.kind === 'gunfire' ? 60 : 40));
+    const candidates = this.records.filter(r => this.see(r, incident.position, incident.kind === 'gunfire' ? 60 : 40, incident.vehicleId||null));
     this.pendingCrimes.push({ incident, candidates: candidates.map(r => ({ record: r, seen: 0, called: false, lost: 0 })), age: 0 });
     this.fear(incident.position, incident.kind === 'gunfire' ? 60 : 24);
   }
@@ -96,7 +96,7 @@ export class PedestrianSystem {
       pending.age += dt;
       const suspect = context.playerPosition || pending.incident.position;
       for (const candidate of pending.candidates) {
-        const record = candidate.record, sees = this.see(record, suspect, 46);
+        const record = candidate.record, sees = this.see(record, suspect, 46,context.playerVehicleId===pending.incident.vehicleId?pending.incident.vehicleId:null);
         if (!candidate.called) {
           candidate.seen = sees ? candidate.seen + dt : 0;
           // Leaving before a face/vehicle is identified can prevent a call.

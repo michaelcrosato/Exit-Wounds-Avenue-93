@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "method": "Actual browser Continue from the same real garage checkpoint; F remap; both occupants board normally; 10 simulated seconds idle at native frame loop; hold S as ordinary keyboard reverse. No physics, transform, mission or vehicle-state writes.",
+  "before": {
+    "vehicleSha256": "aad7479513814a869d102827c192efd03f2aa4fb8c705c72530bb7436c1f2a0c",
+    "samples": [
+      {
+        "label": "before-reverse-after-idle",
+        "y": 298.2998046875,
+        "speedMetresPerSecond": -1.250970440666812e-9,
+        "sleeping": true,
+        "normalizedBrake": 0,
+        "reverseIntent": true,
+        "handbrake": false,
+        "rearWheelEngineForce": 0,
+        "groundedWheels": 4
+      },
+      {
+        "label": "reverse-0.20",
+        "y": 298.2998046875,
+        "speedMetresPerSecond": -0.0000016821031169847093,
+        "sleeping": true,
+        "normalizedBrake": 1,
+        "reverseIntent": true,
+        "handbrake": false,
+        "rearWheelEngineForce": -50440,
+        "groundedWheels": 4
+      },
+      {
+        "label": "reverse-1.05",
+        "y": 298.2998046875,
+        "speedMetresPerSecond": -0.000005753501290387911,
+        "sleeping": true,
+        "normalizedBrake": 1,
+        "reverseIntent": true,
+        "handbrake": false,
+        "rearWheelEngineForce": -50440,
+        "groundedWheels": 4
+      },
+      {
+        "label": "reverse-3.15",
+        "y": 298.2998046875,
+        "speedMetresPerSecond": -0.00001591335393895063,
+        "sleeping": true,
+        "normalizedBrake": 1,
+        "reverseIntent": true,
+        "handbrake": false,
+        "rearWheelEngineForce": -50440,
+        "groundedWheels": 4
+      }
+    ]
+  },
+  "after": {
+    "vehicleSha256": "f7f18b80301e13645b356d47a61799a6816780d160cf10012951ae299007718b",
+    "samples": [
+      {
+        "label": "before-reverse-after-idle",
+        "y": 298.3199462890625,
+        "speedMetresPerSecond": 1.0061263006519736e-9,
+        "sleeping": true,
+        "normalizedBrake": 0,
+        "reverseIntent": true,
+        "handbrake": false,
+        "rearWheelEngineForce": 0,
+        "groundedWheels": 4
+      },
+      {
+        "label": "reverse-0.20",
+        "y": 298.208251953125,
+        "speedMetresPerSecond": -0.7402705344313524,
+        "sleeping": false,
+        "normalizedBrake": 1,
+        "reverseIntent": true,
+        "handbrake": false,
+        "rearWheelEngineForce": -50440,
+        "groundedWheels": 4
+      },
+      {
+        "label": "reverse-1.05",
+        "y": 296.697998046875,
+        "speedMetresPerSecond": -2.7556287810652713,
+        "sleeping": false,
+        "normalizedBrake": 1,
+        "reverseIntent": true,
+        "handbrake": false,
+        "rearWheelEngineForce": -50440,
+        "groundedWheels": 4
+      },
+      {
+        "label": "reverse-3.15",
+        "y": 286.4599609375,
+        "speedMetresPerSecond": -6.760894227050786,
+        "sleeping": false,
+        "normalizedBrake": 1,
+        "reverseIntent": true,
+        "handbrake": false,
+        "rearWheelEngineForce": -50440,
+        "groundedWheels": 4
+      }
+    ]
+  },
+  "conclusion": "Before: reverse force could not wake sleeping van. After: first reverse input wakes it and it exits north service-bay door.",
+  "rawReportsOutsideRepository": true
+}

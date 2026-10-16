@@ -1,0 +1,63 @@
+{
+  "setup": {
+    "board": true,
+    "car": {
+      "x": 220,
+      "y": 202,
+      "z": 0.7191101312637329
+    },
+    "officer": {
+      "x": 246,
+      "y": 208,
+      "z": -0.0011373281478881392
+    },
+    "occupied": "mara-sedan"
+  },
+  "final": {
+    "elapsed": 4.966666666666703,
+    "car": {
+      "x": 252.12881469726562,
+      "y": 201.99838256835938,
+      "z": 0.679872453212738
+    },
+    "speed": -0.7440698576225593,
+    "health": 55.75040730266934,
+    "collisions": [
+      {
+        "id": "run-mvbaj8ww:collision:593:0",
+        "position": {
+          "x": 252.14828491210938,
+          "y": 201.99880981445312,
+          "z": 0.707569420337677
+        },
+        "vehicleId": "mara-sedan"
+      }
+    ],
+    "reports": [
+      {
+        "witness": "officer-1",
+        "kind": "police",
+        "person": null,
+        "vehicle": "mara-sedan",
+        "status": "Dispatched"
+      }
+    ],
+    "wanted": {
+      "tier": 1,
+      "status": "Pursuing",
+      "vehicles": [
+        "mara-sedan"
+      ],
+      "visible": true
+    },
+    "officer": {
+      "x": 246.07037353515625,
+      "y": 207.928955078125,
+      "z": -0.0011362552642821822
+    },
+    "officerLOS": true
+  },
+  "errors": [],
+  "physicalImpact": true,
+  "visibleOfficerDistance": 8.477995022900693
+}

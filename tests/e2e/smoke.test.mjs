@@ -138,8 +138,13 @@ for (const engine of engines) {
       await noHorizontalOverflow(page);
       await page.setViewportSize({ width: 1280, height: 720 });
       await page.locator('[data-action="openPhone"]').click(); await screen(page, 'phone');
-      await page.locator('[data-action="phoneEli"]').click();
-      assert.match(await page.locator('body').innerText(), /toolbox/i);
+      // The new opening call presents Answer/Decline first. Decline through the
+      // visible phone UI, then inspect the regular contacts before meeting Eli.
+      if(await page.locator('[data-action="declineEliCall"]').isVisible()){
+        await page.locator('[data-action="declineEliCall"]').click();await screen(page,'playing');
+        await page.keyboard.press('Escape');await screen(page,'pause');
+        await page.locator('[data-action="openPhone"]').click();await screen(page,'phone');
+      }
       await page.locator('[data-action="phoneBea"]').click();
       assert.match(await page.locator('body').innerText(), /market/i);
       await page.locator('[data-action="phoneMessages"]').click();
@@ -157,6 +162,10 @@ for (const engine of engines) {
       assert.equal(accepted.checkpointId, 'job-accepted');
       record.checkpoints.push({ name: 'job-accepted', ...accepted });
       captures.push(await capture(page, engine, 'job-accepted'));
+      await page.keyboard.press('KeyT');await screen(page,'phone');
+      await page.locator('[data-action="phoneEli"]').click();
+      assert.match(await page.locator('body').innerText(), /toolbox/i);
+      await page.keyboard.press('Escape');await screen(page,'playing');
       await page.keyboard.press('Escape'); await screen(page, 'pause');
 
       // Actual browser reload and Continue must restore logical state and physics.

@@ -77,3 +77,13 @@ Focused tests live in `tests/integration/engine.test.mjs` and `animation.test.mj
    if (realGP) fixed(navigator, 'getGamepads', () => {
      if (!R) { const pads = realGP(), snap = padSnap(pads), k = JSON.stringify(snap); if (k !== gpLast) { rec.pads.push([gpCalls, snap]); gpLast = k; } gpCalls++; return pads; }
 ```
+
+## Unresolved Rapier runtime observation
+
+An early manually seeded WSL/SwiftShader mixed-scene run failed in its low-quality tier-3 scene with WASM `unreachable`, followed by recursive/unsafe-alias errors. The original first exception was not preserved before later reads of the failed physics world, so its cause is unknown. Its timing sample is invalid.
+
+A cached-handle vehicle filter now excludes the chassis and cabin colliders without a body lookup. This is not a demonstrated panic fix: in this pinned Rapier package `Collider.parent()` itself returns a cached JavaScript reference, and both the old and new predicates passed six reconstruction cycles of 480 fixed steps.
+
+On 2026-10-16, the original six-scene sequence was rerun in Chromium with an observational first-exception trace: high intersection → depot → tier-3, then the same three low-quality scenes, each with a two-second wall warmup and eight-second wall sample. All six remained in play; page errors, console errors, app errors and engine errors were empty, and the observer saw no non-finite cached state. The measured windows advanced 864 fixed ticks in total; this is a short diagnostic, not an endurance result. Tracked source hashes matched before and after the run.
+
+Evidence: `/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-16T17-28-00-621Z/report.json`, its screenshots and `loaded-sources/`. The observer preserves the first stack, operation history, body/seat lifecycle and eight pre-step cached snapshots without querying WASM after failure. Scripts are under `/tmp/ewa-engine-evidence/panic-diagnosis/`. No production code was changed during this investigation. The intermittent failure remains unreproduced and unresolved; isolated and mixed passes do not establish its cause or resolution.

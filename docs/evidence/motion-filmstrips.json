@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "source": "uninterrupted ordinary-time keyboard/mouse broker run 6",
+  "sourceVideoSha256": "1b5f75a221ff5c5ffdd1976aaf3cb5e1756c36e9f24f93d1dae12c118606f174",
+  "sourceVideoOutsideRepository": true,
+  "method": "ffmpeg samples one frame per wall second from the continuous 2,288.4-second WebM and tiles up to 16 frames per image; no game state or render edits",
+  "filmstrips": [
+    {
+      "name": "rear service vault and ensuing aimed fight",
+      "image": "motion-vault-filmstrip.webp",
+      "videoStartSecond": 682,
+      "sampleSeconds": 12,
+      "inspected": true,
+      "observation": "Mara rises over and lands beyond the service barrier, then aims and fires while the live objective, rain and HUD continue."
+    },
+    {
+      "name": "yard van passenger entry and extraction",
+      "image": "motion-van-entry-filmstrip.webp",
+      "videoStartSecond": 1050,
+      "sampleSeconds": 16,
+      "inspected": true,
+      "observation": "Mara reaches the yard van; entry and passenger seating lead into physical movement through the depot yard without a visible position jump in these sampled frames."
+    },
+    {
+      "name": "garage boarding and drive-through departure",
+      "image": "motion-garage-exit-filmstrip.webp",
+      "videoStartSecond": 1580,
+      "sampleSeconds": 20,
+      "inspected": true,
+      "observation": "Mara and Jun approach and board the repaired van, and it moves across the marked garage bay under ordinary input."
+    }
+  ],
+  "limits": [
+    "One-frame-per-second contact sheets do not establish every transition frame or subjective animation polish.",
+    "The full silent WebM is retained outside the repository; this evidence cannot substitute for headphone/speaker audio listening.",
+    "Software-rendered WSL video cadence is not the named-hardware frame-rate baseline."
+  ]
+}

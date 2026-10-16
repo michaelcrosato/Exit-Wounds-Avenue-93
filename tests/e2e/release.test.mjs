@@ -49,8 +49,8 @@ for (const name of engines) await test(`${name}: stripped packaged release boots
     await page.locator('[data-action="openSettings"]').click(); await page.locator('#s-quality').selectOption('low');
     await page.locator('[data-action="settingsBack"]').click(); await page.locator('[data-action="newGame"]').click();
     await page.locator('.hud #hud-objective').waitFor({ state: 'visible' });
-    await page.waitForFunction(() => document.querySelector('#hud-objective')?.textContent?.toLowerCase().includes('meet eli'));
-    assert.match(await page.locator('#hud-objective').innerText(), /meet eli/i);
+    await page.waitForFunction(() => /eli.*call|meet him/i.test(document.querySelector('#hud-objective')?.textContent||''));
+    assert.match(await page.locator('#hud-objective').innerText(), /eli/i);
     assert.equal(await page.locator('#hud-money').innerText(), '$80');
     assert.match(await page.locator('#hud-ammo').innerText(), /12\s*\/\s*48/);
     await page.waitForFunction(() => document.querySelector('#minimap')?.getContext('2d').getImageData(0, 0, 210, 210).data.some(value => value !== 0));
@@ -64,8 +64,15 @@ for (const name of engines) await test(`${name}: stripped packaged release boots
     } finally { await page.keyboard.up('KeyD'); }
     await capture('after-move');
     await page.keyboard.press('Escape'); await page.locator('.screen--pause [data-action="resume"]').waitFor();
-    await page.locator('[data-action="openPhone"]').click(); await page.locator('.screen--phone [data-action="phoneEli"]').waitFor();
-    await page.locator('[data-action="phoneEli"]').click(); assert.match(await page.locator('.screen--phone').innerText(), /toolbox/i);
+    await page.locator('[data-action="openPhone"]').click(); await page.locator('.screen--phone').waitFor();
+    const pendingCall=page.locator('[data-action="answerEliCall"], [data-action="returnEliCall"]').first();
+    if(await pendingCall.count()){await pendingCall.click();await page.locator('.hud').waitFor();await page.keyboard.press('KeyT');}
+    await page.locator('.screen--phone [data-action="phoneEli"]').waitFor();
+    if(await page.locator('[data-action="returnEliCall"]').count()){
+      await page.locator('[data-action="phoneMessages"]').click();assert.match(await page.locator('.screen--phone').innerText(), /collection job/i);
+    }else{
+      await page.locator('[data-action="phoneEli"]').click();assert.match(await page.locator('.screen--phone').innerText(), /toolbox/i);
+    }
     await capture('phone'); await page.keyboard.press('Escape'); await page.locator('.hud').waitFor();
     await page.keyboard.press('Escape'); await page.locator('.screen--pause').waitFor();
     await page.locator('[data-action="openCredits"]').click(); await page.locator('.source-info').waitFor();

@@ -11,14 +11,14 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
   const T = E.THREE, R = E.RAPIER;
   if (!T || !R || !world?.scene || !world?.pw) throw new Error('Morrow Ward needs an initialized E.World3D.');
   const root = new T.Group(); root.name = 'Morrow Ward — original district'; world.scene.add(root);
-  const resources = new Set(), bodies = [], obstacles = [], cover = [], landmarks = [], lamps = [], roofVolumes = [], trafficSignals = [];
+  const resources = new Set(), bodies = [], obstacles = [], cover = [], landmarks = [], lamps = [], roofVolumes = [], trafficSignals = [], softProps = [];
   const buckets = new Map(), materials = new Map(), unique = new Set(), pickups = new Map();
   const own = value => { resources.add(value); return value; };
   const palette = {
     asphalt: '#313c43', pavement: '#777d7d', concrete: '#808a89', pale: '#b0b1a5', brick: '#695652',
     brickRed: '#885f51', brickDark: '#4e4d4c', steel: '#506773', rust: '#8b6853', teal: '#386b70',
     cream: '#c9bea0', trim: '#2c373d', yellow: '#d3ac57', paint: '#d8d0b6', wood: '#887052',
-    black: '#232b30', glass: '#587e8d', warm: '#e9b778', light: '#f8d59a', green: '#617160', water: '#2f5366', signalRed: '#d5574c', signalAmber: '#e2ba62', signalGreen: '#8cc4a1',
+    black: '#232b30', glass: '#587e8d', warm: '#e9b778', light: '#f8d59a', green: '#617160', water: '#2f5366', signalRed: '#d5574c', signalAmber: '#e2ba62', signalGreen: '#8cc4a1', oil: '#343b37', orange: '#b56838', blue: '#557b86', paper: '#ddd4bb',
   };
   let seed = 932026, caseDoor = null, caseDoorTarget = 0, caseDoorBody = null;
   const rnd = () => { seed ^= seed << 13; seed ^= seed >>> 17; seed ^= seed << 5; return (seed >>> 0) / 4294967296; };
@@ -97,6 +97,65 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
     const mesh = new T.Mesh(own(new T.PlaneGeometry(w, h)), mat); mesh.position.set(x, z, y); mesh.rotation.y = -yaw;
     const back = new T.Mesh(mesh.geometry, own(new T.MeshStandardNodeMaterial({ color: bg, roughness: .8, side: T.BackSide }))); back.position.z = -.005; mesh.add(back);
     root.add(mesh); unique.add(mesh); landmarks.push({ text, x, y, z }); return mesh;
+  }
+  function floorStencil(text, x, y, z, w, d, yaw = 0, ink = '#d3b779') {
+    if (typeof document === 'undefined') return;
+    const canvas = document.createElement('canvas'); canvas.width = 512; canvas.height = 192;
+    const c = canvas.getContext('2d'); c.fillStyle = ink; c.font = '800 75px sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(text, 256, 100, 495);
+    c.globalCompositeOperation = 'destination-out'; for (let i = 0; i < 130; i++) c.fillRect(rnd() * 512, rnd() * 192, 1 + rnd() * 5, 1 + rnd() * 3);
+    const map = own(new T.CanvasTexture(canvas)); map.colorSpace = T.SRGBColorSpace;
+    const mesh = new T.Mesh(own(new T.PlaneGeometry(w, d)), own(new T.MeshStandardNodeMaterial({ map, transparent: true, opacity: .67, depthWrite: false, roughness: .83 })));
+    mesh.rotation.set(-Math.PI / 2, 0, -yaw); mesh.position.set(x, z, y); root.add(mesh); unique.add(mesh);
+  }
+  function chair(id, x, y, z = 0, yaw = 0) {
+    box(`${id}-seat`, x, y, z + .43, .56, .53, .12, 'trim', { solid: false, yaw });
+    const bx = x - Math.sin(yaw) * .23, by = y + Math.cos(yaw) * .23;
+    box(`${id}-back`, bx, by, z + .53, .56, .1, .57, 'blue', { solid: false, yaw });
+    for (const dx of [-.2, .2]) for (const dy of [-.18, .18]) box(`${id}-leg`, x + dx, y + dy, z, .06, .06, .45, 'steel', { solid: false });
+    solid(id, x, y, z, .58, .56, 1.1, yaw, { kind: 'furniture' });
+  }
+  function shelf(id, x, y, w, d, height = 3.1) {
+    solid(id, x, y, 0, w, d, height, 0, { kind: 'storage' });
+    for (const dx of [-w / 2 + .06, w / 2 - .06]) for (const dy of [-d / 2 + .06, d / 2 - .06]) box(`${id}-upright`, x + dx, y + dy, 0, .1, .1, height, 'steel', { solid: false });
+    for (let level = 0; level < 4; level++) {
+      const z = .12 + level * .8;
+      box(`${id}-shelf`, x, y, z, w, d, .09, 'steel', { solid: false });
+      for (let i = 0; i < 3; i++) box(`${id}-stock`, x - w * .32 + i * w * .32, y + (i % 2 ? -.12 : .12), z + .1, w * .24, d * .67, .35 + (i % 2) * .12, ['cream', 'teal', 'rust'][(i + level) % 3], { solid: false });
+    }
+  }
+  function striplight(id, x, y, z, length, yaw = 0) {
+    box(`${id}-housing`, x, y, z, length + .2, .37, .17, 'steel', { solid: false, yaw });
+    box(`${id}-tube`, x, y, z - .055, length, .18, .08, 'light', { solid: false, yaw });
+  }
+  function puddle(x, y, z, w, d, oil = false) {
+    const key = oil ? 'oil-patch' : 'wet-patch';
+    if (!materials.has(key)) materials.set(key, own(new T.MeshStandardNodeMaterial({ color: oil ? '#252d2b' : '#8ca1a5', roughness: oil ? .3 : .12, metalness: oil ? .12 : .3, transparent: true, opacity: oil ? .45 : .22, depthWrite: false })));
+    const mesh = new T.Mesh(own(new T.CircleGeometry(1, 16)), materials.get(key)); mesh.rotation.set(-Math.PI / 2, 0, rnd() * Math.PI); mesh.position.set(x, z, y); mesh.scale.set(w, d, 1); root.add(mesh); unique.add(mesh);
+  }
+  function serviceRamp(id, x, y, width, length, northHeight, southHeight) {
+    const vertices = [
+      [-width / 2, -length / 2, -.16], [width / 2, -length / 2, -.16], [width / 2, length / 2, -.16], [-width / 2, length / 2, -.16],
+      [-width / 2, -length / 2, northHeight], [width / 2, -length / 2, northHeight], [width / 2, length / 2, southHeight], [-width / 2, length / 2, southHeight],
+    ];
+    const geometry = new T.BufferGeometry(); geometry.setAttribute('position', new T.Float32BufferAttribute(vertices.flatMap(v => [v[0], v[2], v[1]]), 3));
+    const faces = [0, 2, 1, 0, 3, 2, 4, 5, 6, 4, 6, 7, 0, 1, 5, 0, 5, 4, 3, 7, 6, 3, 6, 2, 0, 4, 7, 0, 7, 3, 1, 2, 6, 1, 6, 5];
+    for (let i = 0; i < faces.length; i += 3) [faces[i + 1], faces[i + 2]] = [faces[i + 2], faces[i + 1]];
+    geometry.setIndex(faces);
+    const flat = own(geometry.toNonIndexed()); geometry.dispose(); flat.computeVertexNormals();
+    const mesh = new T.Mesh(flat, material('concrete')); mesh.position.set(x, 0, y); mesh.castShadow = mesh.receiveShadow = true; root.add(mesh); unique.add(mesh);
+    const body = world.pw.createRigidBody(R.RigidBodyDesc.fixed().setTranslation(x * U, y * U, 0)); body.userData = { id, kind: 'service-ramp', surface: 'concrete' };
+    const collider = world.pw.createCollider(R.ColliderDesc.convexHull(new Float32Array(vertices.flatMap(v => v.map(n => n * U)))).setFriction(.95).setCollisionGroups(0x0001ffff), body);
+    bodies.push(body); obstacles.push({ id, x, y, z: 0, w: width, d: length, h: Math.max(northHeight, southHeight), yaw: 0, body, collider, kind: 'ramp', northHeight, southHeight });
+  }
+  function softCone(id, x, y) {
+    const body = world.pw.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(x * U, y * U, .4 * U).setLinearDamping(.55).setAngularDamping(.7).setCcdEnabled(true));
+    body.userData = { id, kind: 'soft-prop', surface: 'plastic' };
+    const collider = world.pw.createCollider(R.ColliderDesc.cuboid(.24 * U, .24 * U, .37 * U).setMass(.7).setFriction(.6).setRestitution(.06).setCollisionGroups(0x0002ffff), body);
+    const group = new T.Group(); group.name = id; group.position.set(x, .4, y); root.add(group);
+    const base = new T.Mesh(cube, material('black')); base.scale.set(.56, .07, .56); base.position.y = -.34; group.add(base);
+    const cone = new T.Mesh(own(new T.ConeGeometry(.23, .65, 10)), material('orange')); cone.position.y = -.01; group.add(cone);
+    const band = new T.Mesh(own(new T.CylinderGeometry(.09, .14, .16, 10)), material('paint')); band.position.y = .1; group.add(band);
+    bodies.push(body); softProps.push({ id, body, collider, mesh: group, spawn: { x, y, z: .4 } });
   }
   function coverBox(id, x, y, w, d, h, key = 'concrete', yaw = 0) {
     const obstacle = box(id, x, y, 0, w, d, h, key, { yaw, cover: true, kind: 'cover' });
@@ -278,6 +337,58 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
   lamps.push({ x: 95, y: 306, z: 5.4, color: '#ffd19a', power: 19, reach: 26 });
   sign('MORROW WARD', 67, 283, 3.3, 11, 1.35, { yaw: -Math.PI / 2, detail: 'CALDER BAY / AVENUE 93' });
 
+  // The active bay remains broad; working storage, rebuild equipment and a small office occupy its edges.
+  for (const y of [293, 299, 305, 311, 317]) {
+    box('garage-roof-girder', 97.5, y, 6.15, 34.4, .18, .34, 'steel', { solid: false });
+    for (const x of [80.45, 114.55]) box('garage-wall-brace', x, y, .2, .2, .25, 6, 'steel', { solid: false });
+  }
+  for (const x of [80.28, 114.72]) {
+    box('garage-painted-dado', x, 305, .15, .045, 29.4, 1.25, 'cream', { solid: false });
+    box('garage-service-conduit', x + (x < 90 ? .035 : -.035), 305, 3.15, .06, 29.1, .065, 'steel', { solid: false });
+  }
+  for (const [x, y] of [[82.4, 294], [82.4, 317]]) shelf('garage-parts-rack', x, y, 3, 2.8);
+  box('rebuild-bench', 83.4, 307, 0, 4.1, 1.25, .88, 'steel');
+  box('rebuild-engine-block', 83.4, 307, .9, 1.25, .8, .5, 'trim', { solid: false });
+  for (let i = 0; i < 4; i++) { tube(82.95 + i * .3, 307, 1.4, .11, .14, 'steel'); box('engine-exhaust-port', 83 + i * .28, 306.56, 1.08, .15, .15, .17, 'black', { solid: false }); }
+  for (const x of [82.4, 84.4]) tube(x, 306.85, .94, .18, .3, 'orange');
+  box('rolling-tool-chest', 109.1, 314.1, .12, 2.3, 1, 1.1, 'teal');
+  for (let i = 0; i < 4; i++) {
+    box('tool-chest-drawer', 109.1, 313.57, .24 + i * .23, 2.05, .04, .18, 'steel', { solid: false });
+    box('tool-chest-pull', 109.1, 313.52, .29 + i * .23, .6, .06, .04, 'pale', { solid: false });
+  }
+  for (const x of [108.25, 109.95]) for (const y of [313.76, 314.44]) tube(x, y, .04, .13, .15, 'black');
+  tube(112.8, 316.8, .08, .48, 1.4, 'orange');
+  solid('air-compressor', 112.8, 316.8, .08, 1, 1, 1.75, 0, { kind: 'equipment' });
+  box('compressor-motor', 112.8, 316.8, 1.48, .75, .55, .35, 'trim', { solid: false });
+  box('compressor-gauge', 112.8, 316.42, 1.15, .2, .06, .2, 'cream', { solid: false });
+  const hose = new T.Mesh(own(new T.TorusGeometry(.66, .028, 5, 24)), material('black')); hose.rotation.x = -Math.PI / 2; hose.position.set(111.8, .12, 317.1); root.add(hose); unique.add(hose);
+  chair('office-chair-eli', 111.1, 294.65);
+  box('service-counter-screen', 110.9, 293.3, .92, .8, .15, .55, 'trim', { solid: false });
+  box('service-counter-screen-glow', 110.9, 293.2, 1.01, .62, .025, .37, 'blue', { solid: false });
+  sign('REPAIR + RESPRAY / $80', 114.61, 303.1, 2.7, 6.2, .85, { yaw: Math.PI / 2, bg: '#385d59', detail: 'BRING YOUR CAR INTO THE MARKED BAY' });
+  sign('KEEP THE WARD RUNNING', 80.31, 300.4, 3.8, 8, 1.15, { yaw: -Math.PI / 2, bg: '#5e4d3b', detail: 'ELI SERRANO / MUNICIPAL RECOVERY LOCAL 11' });
+  sign('WORK ORDERS / LATE SHIFT', 114.62, 296.5, 2.1, 5, 1.55, { yaw: Math.PI / 2, bg: '#b9ae8d', fg: '#35403c', detail: 'BRAKES  /  TOW-IN  /  COLLECTION  /  COFFEE' });
+  for (const x of [88.5, 99.5]) box('repair-bay-edge', x, 305, .086, .09, 26, .009, 'yellow', { solid: false });
+  for (const y of [292, 318]) box('repair-bay-end', 94, y, .086, 11, .09, .009, 'yellow', { solid: false });
+  floorStencil('SERVICE / 01', 94, 315.2, .098, 7.7, 1.7, 0);
+  floorStencil('KEEP CLEAR', 94, 293.5, .098, 6.3, 1.4, 0);
+  for (const x of [83.5, 104.5]) {
+    box('lift-foot', x, 311, .08, 1.3, 1.1, .12, 'steel', { solid: false });
+    box('lift-swing-arm', x + (x < 90 ? 1.2 : -1.2), 311.3, .2, 2.4, .23, .16, 'yellow');
+  }
+  for (const [x, y, w, d] of [[83.4, 307, 1.8, .75], [104.5, 314, 1.4, .7], [92, 319, 2.3, .55], [96.5, 291, 1.6, .6]]) puddle(x, y, .099, w, d, x < 89 || x > 100);
+
+  // An optional, genuinely sloped inspection lane joins the north service lane to Foundry Road.
+  box('inspection-lane', 120, 301, .008, 5.5, 64, .025, 'asphalt', { solid: false });
+  serviceRamp('inspection-ramp-north', 120, 296, 4.4, 10, 0, .65);
+  box('inspection-deck', 120, 305, -.16, 4.4, 8, .81, 'concrete', { kind: 'service-ramp' });
+  serviceRamp('inspection-ramp-south', 120, 314, 4.4, 10, .65, 0);
+  for (const x of [118.02, 121.98]) box('inspection-deck-edge', x, 305, .655, .12, 8, .012, 'yellow', { solid: false });
+  floorStencil('INSPECTION', 120, 305, .67, 3.6, 1.4, Math.PI / 2);
+  sign('INSPECTION LANE', 115.35, 316.6, 2.6, 7, 1, { yaw: -Math.PI / 2, bg: '#67583e', detail: 'LOW RAMP / WALKING SPEED / BOTH ENDS OPEN' });
+  softCone('inspection-soft-cone-west', 119.05, 323.4);
+  softCone('inspection-soft-cone-east', 120.95, 323.4);
+
   // B — the market has two genuinely open service counters; neighboring shutters are closed.
   box('market-floor', 114, 232, -.01, 84, 24, .12, 'concrete');
   box('market-rear-wall', 114, 243, 0, 84, .45, 4.2, 'brick');
@@ -291,11 +402,19 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
   // Service counters leave broad customer aisles behind the pavement.
   box('food-counter', 91, 229, 0, 13, 1.1, 1.04, 'cream');
   box('food-worktop', 91, 229, 1.04, 13.2, 1.3, .1, 'steel', { solid: false });
-  for (const x of [87, 90, 93, 96]) { box('food-tray', x, 229, 1.16, 1.8, .8, .08, 'wood', { solid: false }); box('bread', x, 229, 1.23, 1.1, .45, .23, 'yellow', { solid: false }); }
+  for (const x of [87, 90, 93, 96]) {
+    box('food-tray', x, 229, 1.16, 1.5, .75, .08, 'wood', { solid: false });
+    for (const dx of [-.43, 0, .43]) box('bread', x + dx, 229, 1.23, .35, .42, .18, 'yellow', { solid: false });
+  }
   box('shop-fridge', 77, 239, 0, 2.2, 1.2, 2.4, 'cream');
   box('shop-fridge-glass', 77, 238.35, .3, 1.7, .04, 1.7, 'glass', { solid: false });
   box('workwear-counter', 140, 230, 0, 16, 1.1, 1.05, 'steel');
-  for (const x of [135, 139, 143, 147]) box('armor-display', x, 241, 1.4, 1.15, .3, 1.3, 'green', { solid: false });
+  for (const x of [135, 139, 143, 147]) {
+    box('vest-display', x, 241, 1.5, .66, .22, .78, 'green', { solid: false });
+    for (const dx of [-.23, .23]) box('vest-shoulder', x + dx, 241, 2.2, .13, .22, .24, 'green', { solid: false });
+    box('vest-reflector', x, 240.87, 1.82, .66, .035, .075, 'yellow', { solid: false });
+    box('vest-pocket', x, 240.86, 1.6, .36, .035, .16, 'trim', { solid: false });
+  }
   sign('MORROW MARKET', 114, 220.5, 4.15, 39, 1.8, { yaw: Math.PI, bg: '#3b5b50', detail: 'HOT FOOD • WORKWEAR • NEIGHBORHOOD GOODS' });
   sign('SOUP & BREAD / $10', 91, 221.4, 2.75, 17, .8, { bg: '#746347', yaw: Math.PI });
   sign('HARBOR WORKWEAR / $60', 141, 221.4, 2.75, 20, .8, { bg: '#3c4a53', yaw: Math.PI });
@@ -308,6 +427,17 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
   pickups.set('toolbox', { meshes: [toolboxMesh, toolboxHandle], body: obstacles.find(o => o.id === 'misplaced-toolbox')?.body });
   for (const x of [82, 163]) { box('market-bin', x, 214.5, 0, .9, .9, 1.2, 'green'); box('market-bin-lid', x, 214.5, 1.2, 1, 1, .1, 'trim', { solid: false }); }
   for (const x of [115, 145]) { box('market-bench-seat', x, 210.5, .43, 3, .6, .15, 'wood', { solid: false }); box('bench-back', x, 210.8, .57, 3, .12, .6, 'wood', { solid: false }); for (const dx of [-1, 1]) box('bench-leg', x + dx, 210.5, 0, .13, .5, .43, 'steel', { solid: false }); }
+  for (const x of [80, 91, 101, 134, 145, 152]) striplight('market-counter-light', x, 225.5, 3.65, 2.1);
+  tube(85, 229, 1.15, .39, .46, 'steel'); tube(85, 229, 1.62, .42, .045, 'pale');
+  for (const x of [98.8, 100.4]) {
+    box('food-supply-stack', x, 240.9, 0, 1.2, 1.1, 1.15, 'wood');
+    for (let i = 0; i < 3; i++) box('supply-crate-slat', x, 240.3, .13 + i * .32, 1.1, .045, .16, 'cream', { solid: false });
+  }
+  sign('HOT MEAL / TEN DOLLARS', 91, 228.38, .72, 5.6, .64, { yaw: Math.PI, bg: '#6b553a', detail: 'SOUP  +  BREAD  /  NO ONE LEFT COLD' });
+  sign('HARBOR WORKWEAR', 140, 229.38, .73, 7, .65, { yaw: Math.PI, bg: '#355359', detail: 'PROTECTIVE VEST / $60 / ASK AT THE COUNTER' });
+  sign('MORROW NIGHT MARKET', 113, 243.27, 2.7, 17, 1.2, { bg: '#614c40', detail: 'LOOK AFTER YOUR NEIGHBORS' });
+  for (const [x, y, z] of [[89, 216.9, .04], [130, 214.4, .04], [153, 221.1, .117]]) puddle(x, y, z, 1.2 + rnd(), .45 + rnd() * .2);
+  for (const x of [81, 110, 135, 154]) box('market-gutter-joint', x, 214.55, 3.11, .07, .13, .14, 'rust', { solid: false });
 
   // C — an elevated freight line frames the market and interrupts police sight at the junction.
   box('elevated-deck', 240, 185, 10.2, 442, 11, 1.1, 'concrete');
@@ -323,6 +453,17 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
   }
   sign('AVENUE 93', 248, 190, 5.8, 12, 1.4, { bg: '#244f52', detail: '← FERRY ST.     QUAY ST. →' });
   sign('NORTHLINE DISPATCH →', 268, 209, 3.7, 13, 1.4, { bg: '#48564d' });
+  for (const x of [101, 165, 304, 368]) {
+    box('overpass-pillar-warning', x, 189.85, .1, 1.65, .035, .65, 'yellow', { solid: false });
+    for (const dx of [-.6, -.2, .2, .6]) box('overpass-pillar-stripe', x + dx, 189.88, .1, .11, .035, .65, 'black', { solid: false });
+    box('overpass-storm-pipe', x + 1.3, 185, .15, .18, .18, 9.1, 'rust', { solid: false });
+  }
+  sign('RIVET / AVENUE 93', 235, 190.4, 3.55, 8.5, 1, { bg: '#2c4f51', detail: 'MORROW WARD / FREIGHT LINE 06' });
+  for (const [x, y] of [[221, 190], [253, 199], [235, 218]]) {
+    box('junction-drain', x, y, .041, 1.1, .65, .014, 'trim', { solid: false });
+    for (let i = 0; i < 6; i++) box('drain-slat', x - .43 + i * .17, y, .057, .055, .57, .008, 'steel', { solid: false });
+    puddle(x + .7, y + .3, .065, 1.8, .55);
+  }
   for (const [x, y] of [[228, 190], [251, 214], [228, 321], [251, 344]]) {
     tube(x, y, 0, .09, 5.3, 'trim'); box('traffic-signal', x, y, 3.8, .45, .35, 1.2, 'black', { solid: false });
     const red = specialBox('traffic-light-red', x, y - .2, 4.56, .22, .07, .22, 'signalRed', { solid: false });
@@ -381,7 +522,66 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
   box('alarm-cable', 318.25, 84, 2.7, .045, 6, .045, 'black', { solid: false });
   box('office-fluorescent', 331, 89, 6.1, 9, .25, .12, 'light', { solid: false });
   box('office-downstairs-fluorescent', 331, 89, 2.8, 5, .25, .1, 'light', { solid: false });
-  lamps.push({ x: 333, y: 89, z: 2.55, color: '#e9e2c5', power: 4, reach: 18 });
+  lamps.push({ x: 333, y: 89, z: 2.55, color: '#e9e2c5', power: 4, reach: 18, maxFocusZ: 2.7 });
+
+  // Dispatch is a working late-shift office: consoles, records, staff table and live alarm hardware.
+  for (const x of [322, 336]) {
+    chair('dispatch-desk-chair', x, 94.1);
+    box('dispatch-keyboard', x, 91.8, .84, .6, .22, .045, 'cream', { solid: false });
+    box('dispatch-monitor-screen', x, 92.29, .98, .57, .025, .32, 'blue', { solid: false });
+    box('dispatch-desk-phone', x + 1.1, 91.9, .84, .34, .25, .13, 'trim', { solid: false });
+    tube(x - 1, 92.1, .85, .09, .18, 'cream');
+  }
+  box('dispatch-console', 331.8, 75.7, 0, 13, 1.2, .97, 'steel');
+  box('dispatch-console-top', 331.8, 75.7, .97, 13.1, 1.3, .08, 'trim', { solid: false });
+  for (const x of [326.5, 330.5, 334.5, 337]) {
+    box('console-terminal', x, 75.7, 1.05, .82, .2, .55, 'trim', { solid: false });
+    box('console-terminal-screen', x, 75.84, 1.12, .66, .025, .38, 'blue', { solid: false });
+    for (let i = 0; i < 3; i++) box('terminal-readout', x, 75.86, 1.2 + i * .08, .44 - i * .08, .015, .017, 'paint', { solid: false });
+  }
+  sign('NORTHLINE / DISPATCH BOARD', 330.8, 73.28, 2.3, 12.5, 1.5, { bg: '#3e5557', detail: 'NIGHT SHIFT  /  06:00 RETURNS  /  UNPAID LOADS ON HOLD' });
+  // Glazed records/staff divisions make human-sized work areas around the open extraction aisle.
+  for (const p of [{ x: 328, y: 79, w: .12, d: 10 }, { x: 322.75, y: 86, w: 6.5, d: .12 }, { x: 339.2, y: 96.6, w: .12, d: 8 }]) {
+    solid('office-glazed-partition', p.x, p.y, .1, p.w, p.d, 2.55, 0, { kind: 'office-partition' });
+    box('partition-base-panel', p.x, p.y, .1, p.w, p.d, .9, 'cream', { solid: false });
+    box('partition-glass', p.x, p.y, 1.05, p.w, p.d, 1.35, 'glass', { solid: false });
+    box('partition-top-rail', p.x, p.y, 2.42, p.w + .04, p.d + .04, .12, 'steel', { solid: false });
+    const length = Math.max(p.w, p.d);
+    for (let offset = -length / 2; offset <= length / 2; offset += 1.5) box('partition-mullion', p.x + (p.w > p.d ? offset : 0), p.y + (p.d > p.w ? offset : 0), .1, .075, .075, 2.55, 'steel', { solid: false });
+  }
+  box('records-door-header', 327, 86, 2.49, 2.1, .15, .18, 'steel', { solid: false });
+  sign('PAYROLL RECORDS', 327, 86.12, 2.78, 2.9, .45, { bg: '#615940' });
+  for (const y of [75.7, 88, 97]) {
+    box('office-files', 319.15, y, 0, .95, 1.5, 2.25, 'steel');
+    for (let i = 0; i < 4; i++) { box('file-drawer-front', 319.66, y, .15 + i * .52, .04, 1.35, .43, 'pale', { solid: false }); box('file-drawer-pull', 319.7, y, .36 + i * .52, .05, .3, .035, 'trim', { solid: false }); }
+  }
+  box('staff-table', 325.3, 97.7, 0, 4.4, 1.65, .78, 'wood');
+  chair('staff-chair-west', 323.6, 99.2);
+  chair('staff-chair-east', 326.8, 99.2);
+  for (const x of [324.3, 326.1]) { tube(x, 97.7, .8, .08, .17, 'cream'); box('staff-paperwork', x + .4, 97.6, .8, .5, .35, .025, 'paper', { solid: false }); }
+  box('dispatch-kitchenette', 348.6, 96.2, 0, 1.8, 5.2, .9, 'cream');
+  box('dispatch-sink', 348.6, 96.8, .91, 1.2, 1.2, .07, 'steel', { solid: false });
+  box('coffee-machine', 348.6, 94.9, .92, .55, .7, .65, 'trim', { solid: false });
+  box('coffee-machine-panel', 348.28, 94.9, 1.1, .04, .44, .2, 'pale', { solid: false });
+  sign('PAYROLL RECORDS / SEALED', 318.24, 82.2, 2.55, 5.8, .76, { yaw: -Math.PI / 2, bg: '#6b5541', detail: 'CABINET 03 / OPENING SIGNALS THE DISPATCHER' });
+  sign('STAFF / STAIRS', 347.2, 100.74, 2.15, 3.7, .68, { yaw: Math.PI, bg: '#3c555b', detail: 'UPPER DISPATCH OFFICE' });
+  box('alarm-wire-to-cabinet', 319.93, 81, 2.69, 3.3, .035, .035, 'black', { solid: false });
+  box('cabinet-contact-wire', 321.57, 81, 2.1, .035, .035, .6, 'black', { solid: false });
+  box('cabinet-magnetic-contact', 321.58, 81, 1.94, .12, .19, .1, 'orange', { solid: false });
+  const cabinetAlarm = specialBox('cabinet-alarm-led', 318.42, 80.86, 2.72, .07, .13, .13, 'signalGreen', { solid: false });
+  floorStencil('DISPATCH', 333, 97.7, .106, 5.5, 1.05);
+  box('office-wall-baseboard', 334, 74.2, .12, 31, .08, .22, 'trim', { solid: false });
+  for (const [x, width] of [[323.1, 10.2], [342.9, 14.2]]) box('office-front-baseboard', x, 100.74, .12, width, .08, .22, 'trim', { solid: false });
+  for (const x of [318.35, 349.65]) box('office-side-baseboard', x, 87, .12, .08, 27, .22, 'trim', { solid: false });
+  for (const [x, y, z, length] of [[327, 81.5, 2.79, 3.1], [325.5, 96, 2.79, 3.1], [333, 90, 6.1, 4]]) striplight('dispatch-light', x, y, z, length);
+  lamps.push({ x: 325.2, y: 82, z: 2.42, color: '#e1ddc7', power: 2.8, reach: 12, maxFocusZ: 2.7 }, { x: 324.8, y: 96, z: 2.43, color: '#e1ddc7', power: 2.2, reach: 11, maxFocusZ: 2.7 });
+  // The upper office reads differently from the records floor without occupying its stair landing.
+  box('upper-office-file-bank', 322, 75.5, 3.23, 5, 1.2, 1.9, 'steel');
+  chair('upper-dispatch-chair', 327, 84.5, 3.23);
+  box('upper-desk-terminal', 327, 83.2, 4.05, .8, .18, .6, 'trim', { solid: false });
+  box('upper-desk-screen', 327, 83.08, 4.17, .64, .025, .35, 'blue', { solid: false });
+  lamps.push({ x: 327, y: 83, z: 5.8, color: '#e6dfc8', power: 5, reach: 15, minFocusZ: 2.8 });
+  sign('MORROW / ROUTE CONTROL', 329, 73.27, 5.25, 13, 1.25, { bg: '#3b4f54', detail: 'FERRY STREET — RIVET AVENUE — QUAY STREET' });
   box('ammo-table', 320, 106, 0, 3, 1.2, .8, 'steel');
   pickups.set('depot-ammo', { meshes: [specialBox('ammo-box', 320, 106, .8, .7, .5, .24, 'yellow', { solid: false })] });
   coverBox('gate-concrete-west', 330, 148, 6, .9, 1.05);
@@ -400,6 +600,15 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
   for (const [x, y] of [[306, 151], [391, 153], [308, 78], [359, 124]]) lamp(`depot-lamp-${x}`, x, y, x < 350 ? 0 : Math.PI);
   lamps.push({ x: 348, y: 162, z: 3.8, color: '#ffd099', power: 28, reach: 27 });
   sign('KEEP THE FLANK CLEAR', 309, 114, 2.1, 8, 1, { yaw: Math.PI / 2, bg: '#7a6d48' });
+  floorStencil('NO PARKING / ACCESS', 348, 154.6, .09, 10.5, 1.25);
+  for (const y of [116, 136, 156]) for (let x = 303; x < 399; x += 7) box('depot-yard-joint', x, y, .084, 5.6, .026, .006, 'trim', { solid: false });
+  for (const [x, y] of [[330, 139], [371, 112], [389, 96], [347, 158]]) puddle(x, y, .09, 2 + rnd(), .65 + rnd() * .3);
+  for (const item of cover) {
+    if (item.id.includes('concrete') || item.id.includes('barrier') || item.id.includes('low-cover')) {
+      box('cover-reflector', item.x, item.y + item.d / 2 + .012, item.h - .22, Math.min(1.5, item.w - .2), .025, .11, 'yellow', { solid: false });
+      box('cover-bottom-stain', item.x, item.y + item.d / 2 + .014, .05, item.w - .1, .025, .2, 'trim', { solid: false });
+    }
+  }
 
   // E — container concealment, two drive exits, foot return and a quiet actual drop.
   box('waterfront-yard', 383, 355, .002, 102, 42, .07, 'asphalt', { solid: false });
@@ -418,6 +627,28 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
   lamp('waterfront-lamp', 389, 356, -Math.PI / 2);
   for (const x of [277, 315]) lamp('quayside-lamp', x, 387, -Math.PI / 2, false);
   sign('WATERFRONT RETURN ←', 435, 379, 2.6, 12, 1.1, { yaw: Math.PI, bg: '#3b5966' });
+  sign('LOW WATER / MORROW WARD', 379, 339.2, 4.1, 24, 1.6, { bg: '#4a666b', detail: 'PUBLIC WALKWAY / KEEP THE QUAY CLEAR' });
+  sign('THE MORROW RECORD', 385, 360.62, 2.15, 6.4, 1.1, { bg: '#294c54', detail: 'A WARD WORTH KEEPING' });
+  box('maintenance-window-frame', 402.5, 356.91, 1.0, 2.6, .14, 1.4, 'trim', { solid: false });
+  box('maintenance-lit-window', 402.5, 356.82, 1.12, 2.25, .035, 1.12, 'warm', { solid: false });
+  for (const x of [401.9, 403.1]) box('maintenance-window-divider', x, 356.78, 1.12, .075, .05, 1.12, 'trim', { solid: false });
+  box('maintenance-closed-door', 406.4, 356.85, .03, 1.2, .1, 2.5, 'teal', { solid: false });
+  box('maintenance-door-lock', 406.0, 356.75, 1.05, .12, .06, .12, 'pale', { solid: false });
+  striplight('maintenance-entry-light', 406.2, 356.5, 2.9, 1.8);
+  sign('STAFF ONLY', 406.4, 356.72, 1.9, .9, .35, { yaw: Math.PI, bg: '#475651' });
+  for (const y of [342, 373, 386]) {
+    tube(448.4, y, .02, .26, .7, 'steel');
+    box('quay-bollard-head', 448.4, y, .58, .9, .35, .16, 'steel', { solid: false });
+    solid('quay-bollard', 448.4, y, 0, .9, .52, .77, 0, { kind: 'quay-equipment' });
+  }
+  const mooringRope = own(new T.TorusGeometry(.65, .045, 5, 24));
+  for (const [x, y] of [[447.2, 372.9], [447.6, 386]]) { const rope = new T.Mesh(mooringRope, material('wood')); rope.rotation.x = -Math.PI / 2; rope.position.set(x, .1, y); root.add(rope); unique.add(rope); }
+  box('pallet-jack-base', 344, 365.2, .08, 1.1, 2.1, .24, 'yellow');
+  for (const x of [343.6, 344.4]) box('pallet-jack-fork', x, 364.3, .08, .18, 2.7, .12, 'yellow', { solid: false });
+  box('pallet-jack-handle', 344, 366.05, .32, .07, .07, 1.15, 'trim', { solid: false });
+  box('pallet-jack-grip', 344, 366.05, 1.44, .52, .08, .1, 'trim', { solid: false });
+  sign('LOW WATER / BAY 04', 343, 366.7, 1.65, 8, .8, { yaw: Math.PI, bg: '#5f6253', detail: 'RETURN TOOLS / PROTECT THE WATER' });
+  for (const [x, y] of [[389.5, 359], [412.6, 352.3], [442.2, 375]]) puddle(x, y, .09, 2.1, .7);
 
   // F — broker court is enclosed by brickwork, opens onto the north loop and has a turn-around.
   box('broker-court-ground', 104, 87, .002, 60, 48, .06, 'asphalt', { solid: false });
@@ -431,13 +662,17 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
   sign('SECURE COURIER DROP', 91, 90.35, 2.25, 6, 1.1, { yaw: Math.PI, bg: '#514650' });
   lamp('broker-lamp', 82, 102, -Math.PI / 2);
   crate('broker-packages', 117, 100, 2, 1.5, 1.4);
+  sign('COURIER BAY / 02', 117.37, 87.4, 3.7, 12, 1.4, { yaw: Math.PI / 2, bg: '#50454b', detail: 'SEALED DELIVERIES / NO SIGNATURE REQUIRED' });
+  for (const y of [82.8, 88, 93.2]) box('loading-dock-bumper', 116.39, y, .22, .2, 1.3, .6, 'black', { solid: false });
+  box('broker-safe-panel', 91, 90.37, .18, 1.14, .055, 1.2, 'trim', { solid: false });
+  box('broker-safe-handle', 91.38, 90.3, .68, .075, .08, .28, 'pale', { solid: false });
+  floorStencil('COURIER / 02', 100, 92, .075, 6.3, 1.2);
 
   // Place lights along the two loops, leaving hero spaces as warmer compositions.
   for (const y of [72, 153, 237, 305, 362]) { lamp('west-streetlight', 49, y, 0); lamp('east-streetlight', 427, y, Math.PI); }
   for (const x of [88, 183, 281, 385]) { lamp('avenue-light', x, 213, -Math.PI / 2); lamp('foundry-light', x, 342.8, -Math.PI / 2); }
   for (const x of [143, 305, 378]) lamp('mercer-light', x, 42, Math.PI / 2);
   lamp('garage-street-lamp', 110, 326, Math.PI);
-  // Low-cost scene lights: only the nearest four practicals are active at once.
   const practicalLights = Array.from({ length: quality === 'low' ? 2 : 4 }, () => { const light = new T.PointLight('#ffd099', 15, 22, 1.3); root.add(light); return light; });
 
   // Enclosed boundaries read as buildings/retaining walls; no invisible street ends.
@@ -468,10 +703,27 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
   if (inquirySign) inquirySign.visible = false;
   let elapsed = 0, ending = null, rainEnabled = rain;
 
+  const districtRoadGraph = { ...ROAD_GRAPH, nodes: [...ROAD_GRAPH.nodes], edges: [...ROAD_GRAPH.edges] };
+  const inspectionNodes = [
+    { id: 'inspection-south', x: 120, y: 332, z: 0 }, { id: 'inspection-entry', x: 120, y: 321, z: 0 },
+    { id: 'inspection-south-crest', x: 120, y: 309, z: .65 }, { id: 'inspection-deck', x: 120, y: 305, z: .65 },
+    { id: 'inspection-north-crest', x: 120, y: 301, z: .65 }, { id: 'inspection-exit', x: 120, y: 289, z: 0 },
+    { id: 'inspection-north', x: 120, y: 270, z: 0 },
+  ];
+  districtRoadGraph.nodes.push(...inspectionNodes.map(node => ({ ...node, intersection: false, radius: 3 })));
+  const connectInspection = (from, to, ramp = false) => {
+    const properties = { width: 4.4, lanes: 1, speed: 3, service: true, ...(ramp ? { action: 'ramp' } : {}) };
+    districtRoadGraph.edges.push({ from, to, ...properties }, { from: to, to: from, ...properties });
+  };
+  connectInspection('r02', 'inspection-south'); connectInspection('inspection-south', 'r12');
+  inspectionNodes.forEach((node, i) => { if (i) connectInspection(inspectionNodes[i - 1].id, node.id, i >= 2 && i <= 5); });
+  connectInspection('garage-lane-bay', 'inspection-north');
   const district = {
     root, bounds: DISTRICT_BOUNDS, units: 'metres', locations: LOCATIONS,
-    interactables: INTERACTABLES.map(value => ({ ...value })), roadGraph: ROAD_GRAPH, footGraph: FOOT_GRAPH,
+    interactables: INTERACTABLES.map(value => ({ ...value })), roadGraph: districtRoadGraph, footGraph: FOOT_GRAPH,
     cover, spawnPoints: SPAWN_POINTS, landmarks, obstacles, lamps, interiorVolumes: roofVolumes,
+    features: { inspectionRamp: { id: 'eli-inspection-ramp', x: 120, minY: 291, maxY: 319, width: 4.4, height: .65, northApproach: { x: 120, y: 286, z: 0 }, southApproach: { x: 120, y: 325, z: 0 } }, softProps },
+    artStats: { instancedBatches: buckets.size, primitiveInstances: [...buckets.values()].reduce((sum, bucket) => sum + bucket.instances.length, 0), signs: landmarks.length, staticBodies: obstacles.length, softBodies: softProps.length },
     signatureViews: {
       garage: { eye: { x: 69, y: 346, z: 5 }, target: { x: 97, y: 312, z: 3 } },
       market: { eye: { x: 80, y: 184, z: 4 }, target: { x: 120, y: 226, z: 2.7 } },
@@ -479,11 +731,12 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
       junction: { eye: { x: 252, y: 227, z: 3.8 }, target: { x: 230, y: 180, z: 6 } },
       waterfront: { eye: { x: 367, y: 379, z: 3.2 }, target: { x: 434, y: 347, z: 2.5 } },
     },
-    path(graphName, fromId, toId) { return findGraphPath(graphName === 'road' ? ROAD_GRAPH : FOOT_GRAPH, fromId, toId); },
-    nearestNode(graphName, point) { return nearestGraphNode(graphName === 'road' ? ROAD_GRAPH : FOOT_GRAPH, point); },
+    path(graphName, fromId, toId) { return findGraphPath(graphName === 'road' ? districtRoadGraph : FOOT_GRAPH, fromId, toId); },
+    nearestNode(graphName, point) { return nearestGraphNode(graphName === 'road' ? districtRoadGraph : FOOT_GRAPH, point); },
     contains(point) { return point.x >= 22 && point.x <= 456 && point.y >= 24 && point.y <= 396; },
     isWater(point) { return point.x > 456 || point.y > 396; },
     surfaceAt(point) {
+      if (point.x > 117.25 && point.x < 122.75 && point.y > 270 && point.y < 333) return point.y > 291 && point.y < 319 ? 'concrete' : 'asphalt';
       for (const seg of ROAD_SEGMENTS) {
         const dx = seg.b[0] - seg.a[0], dy = seg.b[1] - seg.a[1], den = dx * dx + dy * dy;
         const t = Math.max(0, Math.min(1, ((point.x - seg.a[0]) * dx + (point.y - seg.a[1]) * dy) / den));
@@ -505,12 +758,15 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
       const pickup = pickups.get(id); if (!pickup) return;
       for (const mesh of pickup.meshes) mesh.visible = !collected;
       pickup.body?.setEnabled(!collected);
-      if (id === 'case') { caseDoorTarget = collected ? 1.3 : 0; caseDoorBody?.setEnabled(!collected); }
+      if (id === 'case') { caseDoorTarget = collected ? 1.3 : 0; caseDoorBody?.setEnabled(!collected); cabinetAlarm.material = material(collected ? 'signalRed' : 'signalGreen'); }
     },
     /** @param {number} dt @param {{x:number,y:number,z?:number}} focus @param {number} [signalTime] */
     update(dt, focus = SPAWN_POINTS.player, signalTime = elapsed) {
       elapsed += dt;
       if (caseDoor) caseDoor.rotation.y += (caseDoorTarget - caseDoor.rotation.y) * Math.min(1, dt * 7);
+      for (const prop of softProps) {
+        const p = prop.body.translation(), q = prop.body.rotation(); prop.mesh.position.set(p.x / U, p.z / U, p.y / U); prop.mesh.quaternion.set(-q.x, -q.z, -q.y, q.w);
+      }
       for (const signal of trafficSignals) {
         const s = signal.definition, phase = ((signalTime - (signal.horizontal ? 0 : s.period / 2)) % s.period + s.period) % s.period;
         const green = phase < s.green, amber = !green && phase < s.green + s.amber;
@@ -524,8 +780,9 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
         interior.mesh.visible = true; indoors ||= inside;
       }
       rainLines.visible = rainEnabled && !indoors;
-      const sorted = lamps.map(l => ({ l, distance: Math.hypot(focus.x - l.x, focus.y - l.y) })).sort((a, b) => a.distance - b.distance);
-      practicalLights.forEach((light, i) => { const l = sorted[i]?.l; if (!l) return; light.position.set(l.x, l.z, l.y); light.color.set(l.color); light.intensity = l.power; });
+      const sorted = lamps.filter(l => (l.minFocusZ === undefined || (focus.z || 0) >= l.minFocusZ) && (l.maxFocusZ === undefined || (focus.z || 0) <= l.maxFocusZ))
+        .map(l => ({ l, distance: Math.hypot(focus.x - l.x, focus.y - l.y, ((focus.z || 0) + 1.5 - l.z) * .7) })).sort((a, b) => a.distance - b.distance);
+      practicalLights.forEach((light, i) => { const l = sorted[i]?.l; if (!l) { light.intensity = 0; return; } light.position.set(l.x, l.z, l.y); light.color.set(l.color); light.intensity = l.power; light.distance = l.reach || 22; });
       if (rainLines.visible) {
         for (let i = 0; i < rainCount; i++) {
           const s = rainSeeds[i], z = ((s[2] * 16 - elapsed * 14) % 16 + 16) % 16, x = focus.x + (s[0] - .5) * 70, y = focus.y + (s[1] - .5) * 70;

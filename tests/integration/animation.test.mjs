@@ -1,12 +1,14 @@
 import test, { before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
+import { createServer } from 'node:net';
 import { chromium } from 'playwright';
 import { chooseAnimationState } from '../../src/actors/animation.js';
-let server,browser,page;
-const origin='http://127.0.0.1:5188';
+let server,browser,page,origin;
 before(async()=>{
-  server=spawn(process.execPath,['tools/serve.mjs','--port','5188'],{stdio:'pipe'});
+  const port=await new Promise(resolve=>{const probe=createServer();probe.listen(0,'127.0.0.1',()=>{const value=probe.address().port;probe.close(()=>resolve(value));});});
+  origin=`http://127.0.0.1:${port}`;
+  server=spawn(process.execPath,['tools/serve.mjs','--port',String(port)],{stdio:'pipe'});
   for(let i=0;i<80;i++){try{if((await fetch(origin+'/tests/integration/engine-harness.html')).ok)break;}catch{}await new Promise(resolve=>setTimeout(resolve,100));}
   browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});page=await browser.newPage();await page.goto(origin+'/tests/integration/engine-harness.html');await page.waitForFunction(()=>!!window.engineTest);
 });
@@ -49,10 +51,11 @@ test('capture layers, seat pose and death advance visually while gameplay transf
     actor.vx=actor.vy=0;actor.grounded=true;state.aiming=true;animations.update(.2);const aimed=actor.rig.J.handR.slice();
     state.reloading=true;animations.update(.4);const reload=actor.rig.J.handR.slice(),reloadClip=actor.data.animation.upper;
     state.reloading=false;state.seated=true;animations.update(.2);const seated=actor.data.animation.base;
+    actor.flash=.25;animations.update(.3);const flashAfter=actor.flash;
     state.health=0;animations.update(.1);animations.update(4);const dead1=actor.rig.J.head.slice();animations.update(1);const dead2=actor.rig.J.head.slice();
     const death=actor.data.animation.base,position={x:actor.x,y:actor.y,z:actor.z};
-    animations.reset(actor);state.health=100;state.dead=false;state.seated=false;animations.update(.1);
-    return{aimed,reload,reloadClip,seated,death,dead1,dead2,position,after:{x:actor.x,y:actor.y,z:actor.z},resetClip:actor.data.animation.base};
+    actor.flash=.25;animations.reset(actor);const flashReset=actor.flash;state.health=100;state.dead=false;state.seated=false;animations.update(.1);
+    return{aimed,reload,reloadClip,seated,flashAfter,flashReset,death,dead1,dead2,position,after:{x:actor.x,y:actor.y,z:actor.z},resetClip:actor.data.animation.base};
   });
-  assert.notDeepEqual(result.aimed,result.reload);assert.equal(result.reloadClip,'Pistol_Reload');assert.equal(result.seated,'Driving_Loop');assert.equal(result.death,'Death01');assert.deepEqual(result.dead1,result.dead2);assert.deepEqual(result.position,result.after);assert.equal(result.resetClip,'Idle_Loop');
+  assert.notDeepEqual(result.aimed,result.reload);assert.equal(result.reloadClip,'Pistol_Reload');assert.equal(result.seated,'Driving_Loop');assert.equal(result.flashAfter,0);assert.equal(result.flashReset,0);assert.equal(result.death,'Death01');assert.deepEqual(result.dead1,result.dead2);assert.deepEqual(result.position,result.after);assert.equal(result.resetClip,'Idle_Loop');
 });

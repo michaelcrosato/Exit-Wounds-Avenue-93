@@ -1,0 +1,169 @@
+{
+  "status": "passed",
+  "results": [
+    {
+      "case": "answer-interrupt-resume",
+      "state": {
+        "screen": "playing",
+        "phase": "COLLECTION",
+        "call": {
+          "version": 1,
+          "status": "active",
+          "remaining": 0,
+          "nextLine": 0,
+          "contacted": true,
+          "completed": false
+        },
+        "messages": [
+          "eli-opening"
+        ],
+        "jobEvents": [
+          "run-mvbc68hz:eli-accepted"
+        ],
+        "lastDialogueId": "intro",
+        "queue": [
+          [
+            "intro",
+            1
+          ],
+          [
+            "intro",
+            2
+          ],
+          [
+            "intro",
+            3
+          ],
+          [
+            "collection-drive",
+            0
+          ],
+          [
+            "collection-drive",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "case": "reload-active-call",
+      "state": {
+        "screen": "playing",
+        "phase": "COLLECTION",
+        "call": {
+          "version": 1,
+          "status": "interrupted",
+          "remaining": 0,
+          "nextLine": 0,
+          "contacted": true,
+          "completed": false
+        },
+        "messages": [
+          "eli-opening"
+        ],
+        "jobEvents": [
+          "run-mvbc68hz:eli-accepted"
+        ],
+        "lastDialogueId": "collection-drive",
+        "queue": [
+          [
+            "collection-drive",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "case": "miss-return",
+      "state": {
+        "screen": "playing",
+        "phase": "COLLECTION",
+        "call": {
+          "version": 1,
+          "status": "active",
+          "remaining": 0,
+          "nextLine": 0,
+          "contacted": true,
+          "completed": false
+        },
+        "messages": [
+          "eli-opening",
+          "eli-missed"
+        ],
+        "jobEvents": [
+          "run-mvbc7hb5:eli-accepted"
+        ],
+        "lastDialogueId": "intro",
+        "queue": [
+          [
+            "intro",
+            1
+          ],
+          [
+            "intro",
+            2
+          ],
+          [
+            "intro",
+            3
+          ],
+          [
+            "collection-drive",
+            0
+          ],
+          [
+            "collection-drive",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "case": "decline-in-person",
+      "state": {
+        "screen": "playing",
+        "phase": "COLLECTION",
+        "call": {
+          "version": 1,
+          "status": "superseded",
+          "remaining": 0,
+          "nextLine": 0,
+          "contacted": true,
+          "completed": false
+        },
+        "messages": [
+          "eli-opening"
+        ],
+        "jobEvents": [
+          "run-mvbc85ru:eli-accepted"
+        ],
+        "lastDialogueId": "collection-drive",
+        "queue": [
+          [
+            "collection-drive",
+            1
+          ],
+          [
+            null,
+            null
+          ]
+        ]
+      }
+    },
+    {
+      "case": "miss-during-pursuit-keeps-safe-checkpoint",
+      "staged": {
+        "entered": true,
+        "call": "missed",
+        "liveVehicle": "mara-sedan",
+        "liveTier": 2,
+        "checkpointVehicle": null,
+        "checkpointTier": 0,
+        "savedVehicle": null,
+        "savedTier": 0,
+        "pending": false
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,232 @@
+[
+  {
+    "label": "desktop",
+    "screen": "screen screen--ending",
+    "screenScroll": 0,
+    "documentScroll": 0,
+    "panelScroll": 188,
+    "inner": {
+      "top": 64,
+      "bottom": 656,
+      "left": 64,
+      "right": 1064
+    },
+    "menu": {
+      "top": 438,
+      "bottom": 656,
+      "left": 64,
+      "right": 624
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  {
+    "label": "desktop",
+    "screen": "screen screen--credits",
+    "screenScroll": 0,
+    "documentScroll": 0,
+    "panelScroll": 95,
+    "inner": {
+      "top": 64,
+      "bottom": 656,
+      "left": 64,
+      "right": 1064
+    },
+    "menu": {
+      "top": 590,
+      "bottom": 656,
+      "left": 64,
+      "right": 624
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  {
+    "label": "phone",
+    "screen": "screen screen--ending",
+    "screenScroll": 0,
+    "documentScroll": 0,
+    "panelScroll": 205,
+    "inner": {
+      "top": 20,
+      "bottom": 647,
+      "left": 20,
+      "right": 355
+    },
+    "menu": {
+      "top": 429,
+      "bottom": 647,
+      "left": 20,
+      "right": 355
+    },
+    "viewport": {
+      "width": 375,
+      "height": 667
+    }
+  },
+  {
+    "label": "phone",
+    "screen": "screen screen--credits",
+    "screenScroll": 0,
+    "documentScroll": 0,
+    "panelScroll": 374,
+    "inner": {
+      "top": 20,
+      "bottom": 647,
+      "left": 20,
+      "right": 355
+    },
+    "menu": {
+      "top": 581,
+      "bottom": 647,
+      "left": 20,
+      "right": 355
+    },
+    "viewport": {
+      "width": 375,
+      "height": 667
+    }
+  },
+  {
+    "label": "landscape",
+    "screen": "screen screen--ending",
+    "screenScroll": 0,
+    "documentScroll": 0,
+    "panelScroll": 268,
+    "inner": {
+      "top": 37.796875,
+      "bottom": 314.1875,
+      "left": 20,
+      "right": 736
+    },
+    "menu": {
+      "top": 174.1875,
+      "bottom": 314.1875,
+      "left": 20,
+      "right": 580
+    },
+    "viewport": {
+      "width": 756,
+      "height": 352
+    }
+  },
+  {
+    "label": "landscape",
+    "screen": "screen screen--credits",
+    "screenScroll": 0,
+    "documentScroll": 0,
+    "panelScroll": 334,
+    "inner": {
+      "top": 37.796875,
+      "bottom": 314.1875,
+      "left": 20,
+      "right": 736
+    },
+    "menu": {
+      "top": 266.1875,
+      "bottom": 314.1875,
+      "left": 20,
+      "right": 580
+    },
+    "viewport": {
+      "width": 756,
+      "height": 352
+    }
+  },
+  {
+    "label": "tablet",
+    "screen": "screen screen--ending",
+    "screenScroll": 0,
+    "documentScroll": 0,
+    "panelScroll": 0,
+    "inner": {
+      "top": 157.859375,
+      "bottom": 866.140625,
+      "left": 38.390625,
+      "right": 729.609375
+    },
+    "menu": {
+      "top": 648.140625,
+      "bottom": 866.140625,
+      "left": 38.390625,
+      "right": 598.390625
+    },
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    }
+  },
+  {
+    "label": "tablet",
+    "screen": "screen screen--credits",
+    "screenScroll": 0,
+    "documentScroll": 0,
+    "panelScroll": 0,
+    "inner": {
+      "top": 196.046875,
+      "bottom": 827.9375,
+      "left": 38.390625,
+      "right": 729.609375
+    },
+    "menu": {
+      "top": 761.9375,
+      "bottom": 827.9375,
+      "left": 38.390625,
+      "right": 598.390625
+    },
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    }
+  },
+  {
+    "label": "ultrawide",
+    "screen": "screen screen--ending",
+    "screenScroll": 0,
+    "documentScroll": 0,
+    "panelScroll": 0,
+    "inner": {
+      "top": 117.828125,
+      "bottom": 962.171875,
+      "left": 88,
+      "right": 1088
+    },
+    "menu": {
+      "top": 744.171875,
+      "bottom": 962.171875,
+      "left": 88,
+      "right": 648
+    },
+    "viewport": {
+      "width": 2560,
+      "height": 1080
+    }
+  },
+  {
+    "label": "ultrawide",
+    "screen": "screen screen--credits",
+    "screenScroll": 0,
+    "documentScroll": 0,
+    "panelScroll": 0,
+    "inner": {
+      "top": 151.484375,
+      "bottom": 928.515625,
+      "left": 88,
+      "right": 1088
+    },
+    "menu": {
+      "top": 862.515625,
+      "bottom": 928.515625,
+      "left": 88,
+      "right": 648
+    },
+    "viewport": {
+      "width": 2560,
+      "height": 1080
+    }
+  }
+]

@@ -38,7 +38,7 @@ for (const name of engines) {
     await page.waitForFunction(() => window.__exitWounds?.state?.tick > 12, null, { timeout: 90000 });
     for (const state of ['gameplay', 'pause', 'phone']) {
       if (state === 'pause') { await page.keyboard.press('Escape'); await page.locator('[data-action="resume"]').waitFor(); }
-      if (state === 'phone') { await page.locator('[data-action="openPhone"]').click(); await page.locator('[data-action="phoneJob"]').waitFor(); }
+      if (state === 'phone') { await page.locator('[data-action="openPhone"]').click(); await page.locator('.screen--phone').waitFor(); }
       for (const size of sizes) {
         await page.setViewportSize({ width: size.width, height: size.height });
         await page.waitForTimeout(150);

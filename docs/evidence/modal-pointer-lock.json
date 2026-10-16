@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "results": [
+    {
+      "name": "decision",
+      "screen": "decision",
+      "locked": false
+    },
+    {
+      "name": "retry",
+      "screen": "retry",
+      "locked": false
+    },
+    {
+      "name": "ending",
+      "screen": "ending",
+      "locked": false
+    },
+    {
+      "name": "title",
+      "screen": "title",
+      "locked": false
+    }
+  ],
+  "errors": []
+}

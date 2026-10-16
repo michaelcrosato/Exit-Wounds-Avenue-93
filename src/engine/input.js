@@ -1,5 +1,5 @@
 export const ACTION_MAP = {
-  up: ['KeyW', 'ArrowUp', 'Pad12'], down: ['KeyS', 'ArrowDown', 'Pad13'], left: ['KeyA', 'ArrowLeft', 'Pad14'], right: ['KeyD', 'ArrowRight', 'Pad15'],
+  up: ['KeyW', 'ArrowUp'], down: ['KeyS', 'ArrowDown'], left: ['KeyA', 'ArrowLeft'], right: ['KeyD', 'ArrowRight'],
   menuUp: ['KeyW', 'ArrowUp', 'Pad12'], menuDown: ['KeyS', 'ArrowDown', 'Pad13'], menuLeft: ['KeyA', 'ArrowLeft', 'Pad14'], menuRight: ['KeyD', 'ArrowRight', 'Pad15'], back: ['Escape', 'Pad1'], vault: ['Space', 'Pad2'],
   confirm: ['Enter', 'Pad0'], cancel: ['Escape', 'Pad1'], start: ['Enter', 'Pad9'], pause: ['Escape', 'Pad9'],
   sprint: ['ShiftLeft', 'ShiftRight', 'Pad0'], jump: ['Space', 'Pad2'], crouch: ['KeyC', 'Pad10'],

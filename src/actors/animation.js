@@ -80,7 +80,7 @@ export class AnimationSystem {
   }
   update(dt) {
     this.time += dt;
-    for (const entry of this.entries.values()) this.pose(entry, dt);
+    for (const entry of this.entries.values()){if(entry.actor.flash>0)entry.actor.flash=Math.max(0,entry.actor.flash-dt);this.pose(entry, dt);}
   }
   pose(entry, dt) {
     const actor = entry.actor, rig = actor.rig, state = { ...entry.getState(actor) }, animation = actor.anim || {};
@@ -138,7 +138,7 @@ export class AnimationSystem {
     return pose;
   }
   reset(actor = null) {
-    for (const entry of actor ? [this.entries.get(actor)].filter(Boolean) : this.entries.values()) { entry.base = null; entry.baseTime = entry.upperTime = entry.hitTime = entry.shotTime = 0; entry.action = null; entry.previous = null; entry.current = null; entry.previousHealth = null; }
+    for (const entry of actor ? [this.entries.get(actor)].filter(Boolean) : this.entries.values()) { entry.base = null; entry.baseTime = entry.upperTime = entry.hitTime = entry.shotTime = 0; entry.action = null; entry.previous = null; entry.current = null; entry.previousHealth = null; entry.actor.flash=0; }
   }
   unregister(actor) { const entry = this.entries.get(actor); if (!entry) return; actor.pose = entry.oldPose; actor.data.animationManaged = false; actor.rig.mocap = null; this.entries.delete(actor); }
   dispose() { for (const actor of [...this.entries.keys()]) this.unregister(actor); }

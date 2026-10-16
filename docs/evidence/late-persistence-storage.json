@@ -1,0 +1,42 @@
+{
+  "origin": "http://127.0.0.1:38267",
+  "output": "/tmp/ewa93-persistence-1792177584951",
+  "records": [
+    {
+      "name": "storage write denial preserves the last good save and reports failure visibly",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "fixtureBasedIntegration": true,
+      "seed": 93,
+      "startedAt": "2026-10-16T19:06:50.666Z",
+      "status": "passed",
+      "observations": [
+        {
+          "unchanged": true,
+          "notice": "Checkpoint could not be saved. Browser storage may be full or blocked."
+        }
+      ],
+      "capture": "/tmp/ewa93-persistence-1792177584951/storage-write-denied-visible.png",
+      "finishedAt": "2026-10-16T19:07:19.102Z"
+    },
+    {
+      "name": "browser storage denied at boot exposes session-only progress and survives play",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "fixtureBasedIntegration": true,
+      "seed": 93,
+      "startedAt": "2026-10-16T19:07:19.103Z",
+      "status": "passed",
+      "observations": [
+        {
+          "persistent": false,
+          "loaded": true,
+          "health": 100,
+          "phase": "INTRO"
+        }
+      ],
+      "capture": "/tmp/ewa93-persistence-1792177584951/storage-denied-at-boot.png",
+      "finishedAt": "2026-10-16T19:07:59.523Z"
+    }
+  ]
+}

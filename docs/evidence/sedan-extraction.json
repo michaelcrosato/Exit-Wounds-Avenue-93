@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "kind": "focused-sedan-extraction",
+  "status": "passed",
+  "startedAt": "2026-10-16T21:18:45.816Z",
+  "finishedAt": "2026-10-16T21:21:07.030Z",
+  "browserVersion": "155.0.8059.84",
+  "input": "Standard Gamepad API emulation consumed through the engine’s normal poller",
+  "physicalController": false,
+  "acceleratedFixedSteps": true,
+  "staging": {
+    "kind": "real Bea pre-depot browser checkpoint from final controller route",
+    "phase": "APPROACH",
+    "runId": "run-mvbgfrdq",
+    "actorOrVehicleTeleport": false,
+    "injectedMissionEvents": false
+  },
+  "sourceHashes": {
+    "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+    "src/engine/input.js": "36d2ec004f5f55ba522026f23e2c1f946ab8035a4c5eb90e363f2220bf094b72",
+    "src/engine/vehicles.js": "f7f18b80301e13645b356d47a61799a6816780d160cf10012951ae299007718b",
+    "src/actors/companion.js": "c60f680f1e0451442165e685eaf2a6eb86534708e29058a708b70a195295e897",
+    "src/mission/director.js": "365fabc91cf7458367012d7ddd65a358fcdb349c45c37ecad9d95a5424747e33",
+    "tests/e2e/sedan-extraction.mjs": "9f35d4ae52a0931bd5e2d52ed1c910b76de8fccca41556080a7257afb88a5804"
+  },
+  "sourceStable": true,
+  "externalInputs": {
+    "keydown": 0,
+    "mousedown": 0,
+    "pointerdown": 0,
+    "touchstart": 0
+  },
+  "passengerEntry": {
+    "before": {
+      "phase": "EXTRACTION",
+      "junExtracted": false,
+      "seats": [
+        null,
+        null
+      ]
+    },
+    "after": {
+      "phase": "EVASION",
+      "junExtracted": true,
+      "seats": [
+        "mara",
+        "jun"
+      ]
+    }
+  },
+  "departure": {
+    "from": {
+      "x": 348.4428405761719,
+      "y": 148.69732666015625,
+      "z": 0.719111442565918
+    },
+    "to": {
+      "x": 353.4205017089844,
+      "y": 196.9805450439453,
+      "z": 0.719070315361023
+    },
+    "metres": 48.53912121011028,
+    "phase": "EVASION",
+    "control": "continuous analog L2 reverse, neutral steering",
+    "sedanHealth": 100,
+    "junVehicleId": "mara-sedan"
+  },
+  "checkpoints": [
+    {
+      "name": "01-continued-bea-checkpoint",
+      "phase": "APPROACH",
+      "elapsed": 53.54166666666427,
+      "sedan": {
+        "x": 99.5072021484375,
+        "y": 325.64898681640625,
+        "z": 0.7187854051589966
+      },
+      "sedanHealth": 100,
+      "junVehicleId": null,
+      "caseRecovered": false,
+      "junExtracted": false
+    },
+    {
+      "name": "02-sedan-boarded-at-garage",
+      "phase": "APPROACH",
+      "elapsed": 107.0583333333646,
+      "sedan": {
+        "x": 99.5072021484375,
+        "y": 325.64898681640625,
+        "z": 0.719111442565918
+      },
+      "sedanHealth": 100,
+      "junVehicleId": null,
+      "caseRecovered": false,
+      "junExtracted": false
+    },
+    {
+      "name": "03-sedan-driven-inside-depot",
+      "phase": "APPROACH",
+      "elapsed": 226.10833333329202,
+      "sedan": {
+        "x": 348.4416198730469,
+        "y": 148.6917724609375,
+        "z": 0.7192205786705017
+      },
+      "sedanHealth": 100,
+      "junVehicleId": null,
+      "caseRecovered": false,
+      "junExtracted": false
+    },
+    {
+      "name": "04-gate-committed",
+      "phase": "RECOVERY",
+      "elapsed": 232.374999999953,
+      "sedan": {
+        "x": 348.4428405761719,
+        "y": 148.69732666015625,
+        "z": 0.719111442565918
+      },
+      "sedanHealth": 100,
+      "junVehicleId": null,
+      "caseRecovered": false,
+      "junExtracted": false
+    },
+    {
+      "name": "05-case-recovered-with-sedan-parked",
+      "phase": "EXTRACTION",
+      "elapsed": 269.63333333325244,
+      "sedan": {
+        "x": 348.4428405761719,
+        "y": 148.69732666015625,
+        "z": 0.719111442565918
+      },
+      "sedanHealth": 100,
+      "junVehicleId": null,
+      "caseRecovered": true,
+      "junExtracted": false
+    },
+    {
+      "name": "06-jun-ready-at-sedan",
+      "phase": "EXTRACTION",
+      "elapsed": 312.6916666665466,
+      "sedan": {
+        "x": 348.4428405761719,
+        "y": 148.69732666015625,
+        "z": 0.719111442565918
+      },
+      "sedanHealth": 100,
+      "junVehicleId": null,
+      "caseRecovered": true,
+      "junExtracted": false
+    },
+    {
+      "name": "07-jun-boards-sedan-evasion",
+      "phase": "EVASION",
+      "elapsed": 314.12499999987864,
+      "sedan": {
+        "x": 348.4428405761719,
+        "y": 148.69732666015625,
+        "z": 0.719111442565918
+      },
+      "sedanHealth": 100,
+      "junVehicleId": "mara-sedan",
+      "caseRecovered": true,
+      "junExtracted": true
+    },
+    {
+      "name": "08-sedan-and-jun-outside-depot",
+      "phase": "EVASION",
+      "elapsed": 320.99166666653906,
+      "sedan": {
+        "x": 353.4205017089844,
+        "y": 196.9805450439453,
+        "z": 0.719070315361023
+      },
+      "sedanHealth": 100,
+      "junVehicleId": "mara-sedan",
+      "caseRecovered": true,
+      "junExtracted": true
+    }
+  ],
+  "errors": [],
+  "rawEvidenceOutsideRepository": true,
+  "limits": [
+    "Begins from a real pre-depot browser save recorded by the separate complete controller route; it is a checkpoint replay, not a cold-title playthrough.",
+    "Accelerated fixed stepping proves physical route/mission reachability, not ordinary-time driving feel or first-player pacing.",
+    "An earlier speed-limited reverse attempt met an active tier-2 cruiser and failed; the passing run uses continuous neutral-steering L2 reverse."
+  ]
+}

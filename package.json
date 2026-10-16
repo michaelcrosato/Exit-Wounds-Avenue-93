@@ -9,8 +9,10 @@
     "preview": "node tools/serve.mjs --root dist --port 4173",
     "typecheck": "tsc -p jsconfig.json",
     "test:unit": "node --test tests/unit/*.test.mjs",
-    "test:integration": "node --test tests/integration/*.test.mjs",
-    "test:e2e": "node --test tests/e2e/*.test.mjs",
+    "test:integration": "node --test --test-concurrency=1 tests/integration/animation.test.mjs tests/integration/engine.test.mjs tests/integration/package.test.mjs",
+    "test:integration:late": "node --test --test-concurrency=1 tests/integration/late-persistence.test.mjs",
+    "test:e2e": "node --test tests/e2e/smoke.test.mjs",
+    "test:e2e:release": "node --test tests/e2e/release.test.mjs",
     "audit:assets": "node tools/audit-assets.mjs",
     "build": "node tools/build.mjs"
   },

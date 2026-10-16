@@ -61,7 +61,14 @@ export class CityAudio {
       case 'select':this.tone({frequency:660,endFrequency:470,type:'triangle',duration:.08,volume:.055});break;
       case 'confirm':this.tone({frequency:350,endFrequency:520,type:'sine',duration:.18,volume:.08});break;
       case 'error':this.tone({frequency:170,endFrequency:112,type:'triangle',duration:.23,volume:.09});break;
-      case 'step':this.noise({duration:.028,release:.08,volume:(surface==='interior'?.034:.065)*v,lowpass:surface==='interior'?900:500,pan});break;
+      case 'step':
+        if(surface==='wood'){
+          this.noise({duration:.023,release:.065,volume:.048*v,lowpass:720,highpass:110,pan});
+          this.tone({frequency:185,endFrequency:115,type:'triangle',duration:.075,volume:.026*v,pan});
+        }else if(surface==='concrete'||surface==='interior'){
+          this.noise({duration:.018,release:.055,volume:.063*v,lowpass:1700,highpass:300,pan});
+        }else this.noise({duration:.03,release:.1,volume:.066*v,lowpass:510,pan});
+        break;
       case 'vault':this.noise({duration:.15,release:.18,volume:.08*v,lowpass:650,pan});this.tone({frequency:120,endFrequency:65,duration:.18,volume:.04*v,pan});break;
       case 'door':this.noise({duration:.17,release:.1,volume:.1*v,lowpass:550,pan});this.tone({frequency:92,endFrequency:65,duration:.23,volume:.08*v,pan});break;
       case 'gunPistol':this.noise({duration:.06,release:.31,volume:.42*v,lowpass:4300,highpass:160,pan});this.tone({frequency:160,endFrequency:52,type:'triangle',duration:.23,volume:.2*v,pan});break;
@@ -76,7 +83,7 @@ export class CityAudio {
       case 'phone':this.tone({frequency:760,endFrequency:760,type:'sine',duration:.12,volume:.065});setTimeout(()=>this.tone({frequency:980,endFrequency:980,duration:.12,volume:.065}),180);break;
       case 'cash':this.tone({frequency:620,endFrequency:890,type:'sine',duration:.17,volume:.07});break;
       case 'rainSplash':this.noise({duration:.04,release:.14,volume:.03*v,lowpass:2000,highpass:450,pan});break;
-      case 'voice':this.tone({frequency:140,endFrequency:145,duration:.1,volume:.014,bus:'dialogue'});break;
+      case 'voice':this.noise({duration:.15,release:.15,volume:.035,lowpass:540,highpass:90,bus:'dialogue'});this.tone({frequency:142,endFrequency:128,type:'triangle',duration:.18,volume:.012,bus:'dialogue'});break;
     }
   }
   startCity(){
@@ -142,6 +149,6 @@ export class CityAudio {
     },330);
   }
   stopRadio(){this.radioOn=false;clearInterval(this.radioTimer);this.radioTimer=null;}
-  footstep(now,speed,surface='asphalt'){if(now-this.lastFootstep<(speed>3.5?.27:.42))return;this.lastFootstep=now;this.play('step',{surface,intensity:Math.min(1.3,.6+speed*.12)});}
+  footstep(now,speed,surface='asphalt'){if(now<this.lastFootstep)this.lastFootstep=-1000;if(now-this.lastFootstep<(speed>3.5?.27:.42))return;this.lastFootstep=now;this.play('step',{surface,intensity:Math.min(1.3,.6+speed*.12)});}
   dispose(){this.stopRadio();clearInterval(this.rainTimer);this.ctx?.close();this.ctx=null;}
 }

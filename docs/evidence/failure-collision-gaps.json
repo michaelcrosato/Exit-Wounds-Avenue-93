@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "kind": "V04/V07 fixture-based collision and mission-return diagnostic",
+  "status": "passed",
+  "engine": "chromium",
+  "browserVersion": "155.0.8059.84",
+  "sourceFingerprint": "1e201979be4c79e8ec7a29588b81b72e73919c9571fe842f7b52f65aa2372df9",
+  "sourceStable": true,
+  "acceleratedFixedSteps": true,
+  "fixtureBasedIntegration": true,
+  "acceptancePlaythrough": false,
+  "wallSeconds": 16.448,
+  "cases": [
+    {
+      "name": "blocked driver side chooses free passenger side",
+      "status": "passed",
+      "blockedSideClearance": [
+        false,
+        false,
+        false
+      ],
+      "freeSideClearance": [
+        true,
+        true,
+        true
+      ],
+      "actualExitTarget": {
+        "x": 330.05,
+        "y": 333.54,
+        "z": 5.006790160244634e-8
+      },
+      "actorBodyEnabled": true,
+      "screenshot": "failure-collision-door-alternate.webp"
+    },
+    {
+      "name": "both sides blocked expose normal checkpoint retry",
+      "status": "passed",
+      "attemptedLandingsClearance": [
+        [
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false
+        ]
+      ],
+      "visibleMessage": "doors blocked",
+      "retryPosition": {
+        "x": 91,
+        "y": 311,
+        "z": 0.05
+      },
+      "retryBodyEnabled": true,
+      "screenshot": "failure-collision-door-blocked.webp"
+    },
+    {
+      "name": "physical lift collision rolls occupied car",
+      "status": "passed",
+      "fixture": "test-only kinematic lift plate under passenger side plus fixed curb; no post-setup car rotation write",
+      "collisionContactObservations": 57,
+      "firstDisabledUpZ": 0.18130918226839154,
+      "firstDisabledTick": 195,
+      "disabled": true,
+      "normalEExit": true,
+      "exitBodyEnabled": true,
+      "afterFixtureRemoval": {
+        "player": {
+          "x": 330.0436096191406,
+          "y": 333.443115234375,
+          "z": -2.1457672028102337e-8
+        },
+        "bodyEnabled": true,
+        "missionFailure": null,
+        "screen": "playing"
+      },
+      "screenshot": "failure-collision-roll.webp"
+    },
+    {
+      "name": "depot leave and return preserves mission",
+      "status": "passed",
+      "stagedPhase": "APPROACH",
+      "outsideDistanceMetres": 77.41108760678094,
+      "depotRadiusMetres": 61,
+      "gateAfterReturn": {
+        "phase": "RECOVERY",
+        "route": "gate",
+        "checkpoint": "recovery",
+        "failure": null
+      },
+      "secondOutsidePhase": "RECOVERY",
+      "screenshot": "failure-collision-depot-return.webp"
+    }
+  ],
+  "errors": [],
+  "networkErrors": [],
+  "localRawReport": "C:\\Temp\\EWA93FailureCollisionFullPass\\report.json",
+  "retainedNonpassingFixtureAttempts": [
+    "C:\\Temp\\EWA93FailureCollisionInitialRaw\\report.json",
+    "C:\\Temp\\EWA93FailureCollisionRollSide2\\report.json",
+    "C:\\Temp\\EWA93FailureCollisionRollRoof1\\report.json"
+  ],
+  "limits": [
+    "World and actor locations and collision rig were staged.",
+    "The roll used a test-only rising collider, not traffic or an ordinary driving crash.",
+    "The test did not measure real-time pacing, damage feel, or complete mission play."
+  ]
+}

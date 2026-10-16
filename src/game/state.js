@@ -18,6 +18,7 @@ export function createGameState({ seed = 93, runId = 'run-93-1' } = {}) {
       favor: /** @type {'available'|'carrying'|'earned'|'consumed'} */ ('available'),
       defeatedCrew: /** @type {string[]} */ ([]), processedEvents: /** @type {string[]} */ ([]),
       acknowledgedDialogue: /** @type {string[]} */ ([]), messages: ['eli-opening'],
+      eliCall: /** @type {import('../systems/incoming-call.js').CallSnapshot|null} */ (null),
       failure: /** @type {{reason:string,tick:number}|null} */ (null), actorRecoveryAttempts: /** @type {Record<string,number>} */ ({}),
     },
     player: {
@@ -49,7 +50,7 @@ export function createGameState({ seed = 93, runId = 'run-93-1' } = {}) {
       reportsReceived: /** @type {string[]} */ ([]), surrendered: false,
     },
     economy: { transactions: /** @type {string[]} */ ([]) },
-    district: { investigationNotice: false, contractorTakeover: false, marketShuttered: false, radio: 'local-evening', traffic: /** @type {any} */(null), pedestrians: /** @type {any} */(null), crewMeta: /** @type {any} */(null) },
+    district: { investigationNotice: false, contractorTakeover: false, marketShuttered: false, radio: 'local-evening', traffic: /** @type {any} */(null), pedestrians: /** @type {any} */(null), crewMeta: /** @type {any} */(null), dialogue: /** @type {{lastId:string|null,current:any,remaining:number,queue:any[]}} */({lastId:null,current:null,remaining:0,queue:[]}) },
   };
 }
 

@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "kind": "three-car-same-route",
+  "fixtureStaged": true,
+  "acceleratedFixedSteps": true,
+  "route": "Each car staged at (120,327), heading north over the same garage inspection ramp and two soft cones; standard pad R2 held at 0.72 until y<~290.",
+  "vehicleSourceSha256": "7d7d593d0ea189a1494b5481b1d15353466ab02754a557181957ef5a5dbe0f5c",
+  "vehicles": [
+    {
+      "kind": "sedan",
+      "carId": "mara-sedan",
+      "status": "passed",
+      "secondsToExit": 4.916666666666787,
+      "peakSpeedMetresPerSecond": 13.553667047425172,
+      "maxCarHeightMetres": 1.4045871496200562,
+      "finalY": 289.6116943359375,
+      "finalHealth": 100,
+      "softPropMotionMetres": 17.14278377581091,
+      "seatedAnimation": "Driving_Loop",
+      "rawEvidence": "/mnt/c/Temp/EWA93CompareSedan/report.json"
+    },
+    {
+      "kind": "van",
+      "carId": "yard-van",
+      "status": "passed",
+      "secondsToExit": 5.8166666666668325,
+      "peakSpeedMetresPerSecond": 11.268778923347147,
+      "maxCarHeightMetres": 1.409118413925171,
+      "finalY": 291.0632629394531,
+      "finalHealth": 100,
+      "softPropMotionMetres": 5.433717879218538,
+      "seatedAnimation": "Driving_Loop",
+      "rawEvidence": "/mnt/c/Temp/EWA93CompareVan/report.json"
+    },
+    {
+      "kind": "cruiser",
+      "carId": "patrol-1",
+      "status": "passed",
+      "secondsToExit": 4.466666666666764,
+      "peakSpeedMetresPerSecond": 14.74110511419721,
+      "maxCarHeightMetres": 1.3799930810928345,
+      "finalY": 290.48175048828125,
+      "finalHealth": 100,
+      "softPropMotionMetres": 35.73029436500744,
+      "seatedAnimation": "Driving_Loop",
+      "rawEvidence": "/mnt/c/Temp/EWA93CompareCruiser/report.json"
+    }
+  ]
+}

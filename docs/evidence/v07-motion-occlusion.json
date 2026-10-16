@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "kind": "V07 focused actual-runtime motion and occlusion review",
+  "status": "passed",
+  "engine": "chromium",
+  "browserVersion": "155.0.8059.84",
+  "sourceFingerprint": "cc692c939ac05e1b83bfd042456d0a1d54af7fc373ee8ee30fd12082fab173da",
+  "sourceStable": true,
+  "fixtureBasedIntegration": true,
+  "acceleratedFixedSteps": true,
+  "acceptancePlaythrough": false,
+  "wallSeconds": 6.812,
+  "cases": [
+    {
+      "name": "held aim and live shot at wall",
+      "status": "passed",
+      "normalInput": "standard-mapped L2 aim and R2 fire through engine poller",
+      "cameraEyeMetres": {
+        "x": 227.46266663174043,
+        "y": 202.62,
+        "z": 2.0786908961813726
+      },
+      "cameraRayHitsPhysicalWall": true,
+      "muzzleRayHitsPhysicalWall": true,
+      "pistolMagazineBefore": 12,
+      "pistolMagazineAfter": 11,
+      "guardHealthBefore": 65,
+      "guardHealthAfter": 65,
+      "frame": "v07-wall-shot.webp"
+    },
+    {
+      "name": "moving car beside standing actor",
+      "status": "passed",
+      "normalInput": "keyboard W in occupied sedan",
+      "closestCenterDistanceMetres": 1.246405401465687,
+      "speedAtAdjacencyMetresPerSecond": 16.876890182495117,
+      "actorBodyEnabled": true,
+      "actorVehicleId": null,
+      "actorFell": false,
+      "finalCarPosition": {
+        "x": 348.8790283203125,
+        "y": 332,
+        "z": 0.7187613248825073
+      },
+      "frame": "v07-car-adjacent-side.webp"
+    },
+    {
+      "name": "service vault and rear cover transitions",
+      "status": "passed",
+      "normalInput": "keyboard E vault, physical walk, Q enter/leave cover",
+      "midVaultAnimation": "ClimbUp_1m_RM",
+      "bodyDetachedDuringVault": true,
+      "bodyRestoredAtLanding": true,
+      "landingMetres": {
+        "x": 396,
+        "y": 88.00010681152344,
+        "z": 3.814697274728829e-8
+      },
+      "missionPhase": "RECOVERY",
+      "route": "service",
+      "coverEntered": "rear-cabinet",
+      "coverAfterExit": null,
+      "frames": [
+        "v07-vault-mid.webp",
+        "v07-cover-active.webp",
+        "v07-cover-left.webp"
+      ]
+    },
+    {
+      "name": "same barrier at two physical impact speeds",
+      "status": "passed",
+      "normalInput": "standard-mapped R2 throttle through engine poller",
+      "low": {
+        "startXMetres": 240,
+        "peakSpeedMetresPerSecond": 10.271639823913574,
+        "collisionDeltaSpeedMetresPerSecond": 10.95719068343608,
+        "damage": 25.463010186995458,
+        "finalHealth": 74.53698981300454
+      },
+      "high": {
+        "startXMetres": 220,
+        "peakSpeedMetresPerSecond": 15.872617721557617,
+        "collisionDeltaSpeedMetresPerSecond": 16.82799771791583,
+        "damage": 44.24959269733066,
+        "finalHealth": 55.75040730266934
+      },
+      "frame": "v07-impact-high.webp"
+    }
+  ],
+  "errors": [],
+  "networkErrors": [],
+  "separateFinalSourceChecks": [
+    "ramp/soft-prop comparison",
+    "witnessed sedan impact"
+  ],
+  "limits": [
+    "The wall, car/actor positions, depot state, and impact starting distances were staged.",
+    "Fixed-step browser integration and stills do not establish continuous motion quality or ordinary mission completion.",
+    "The two impact trials isolate speed on the same barrier; they do not cover every vehicle/material pairing.",
+    "Blocked exit doors and collision-created rollover are covered separately by failure-collision-gaps.json."
+  ],
+  "rawReportOutsideRepository": true
+}

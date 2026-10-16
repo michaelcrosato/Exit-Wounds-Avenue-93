@@ -1,0 +1,834 @@
+{
+  "schemaVersion": 1,
+  "test": "V02 keyboard/mouse broker route",
+  "status": "passed",
+  "ending": "broker",
+  "ordinaryTimeCompletion": true,
+  "usesGameAdvance": false,
+  "sourceUnchangedThroughExport": true,
+  "startedAt": "2026-10-16T21:58:11.424Z",
+  "finishedAt": "2026-10-16T22:36:18.948Z",
+  "wallSeconds": 2287.524,
+  "gameElapsedSecondsAtCredits": 929.158,
+  "browser": {
+    "engine": "chromium",
+    "version": "153.0.8010.12",
+    "platform": "linux",
+    "input": "Playwright keyboard events and native XTest mouse; no gamepad fixture",
+    "viewportCssPixels": [
+      1280,
+      720
+    ],
+    "quality": "low",
+    "runtime": {
+      "name": "my-3d2dge",
+      "version": "0.46.1",
+      "build": "dev-build",
+      "commit": "cfa866aa45474868350cad1a7fc015e612f9305f",
+      "patch": "EWA93-P1-analog-input+P2-three-stage-fallback",
+      "unitsPerMetre": 16,
+      "gravity": 156.96,
+      "backend": "WebGL 2"
+    }
+  },
+  "runId": "run-mvbifbxz",
+  "checks": {
+    "remap": true,
+    "pointerLockExitReentry": true,
+    "focusLoss": true,
+    "pause": true,
+    "remappedPrompt": true,
+    "remappedInteraction": true,
+    "toolboxFavor": true,
+    "serviceVault": true,
+    "smgPickup": true,
+    "smgFired": true,
+    "smgHit": true,
+    "vanPassengerExtraction": true,
+    "wantedClearedWithVan": true,
+    "freeRespray": true,
+    "southGarageExit": true,
+    "postMissionPurchase": true
+  },
+  "trustedFocusEvents": [
+    {
+      "type": "blur",
+      "trusted": true,
+      "focused": false,
+      "hidden": false,
+      "at": 57190.699999999255
+    },
+    {
+      "type": "focus",
+      "trusted": true,
+      "focused": true,
+      "hidden": false,
+      "at": 57591.300000000745
+    }
+  ],
+  "focusRecovery": {
+    "before": {
+      "x": 91.11717224121094,
+      "y": 310.48004150390625,
+      "z": 0.08000002145767221
+    },
+    "after": {
+      "x": 91.11717224121094,
+      "y": 310.48004150390625,
+      "z": 0.08000002145767221
+    },
+    "held": [],
+    "move": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "toolboxPromptAfterRemap": "F \u00b7 Eli\u2019s misplaced toolbox",
+  "naturalRetries": 0,
+  "smgProof": {
+    "weapon": "smg",
+    "target": "crew-guard-gate",
+    "healthBefore": 65,
+    "healthAfter": 45,
+    "damage": 20,
+    "magazineAfter": 18,
+    "wallTime": "2026-10-16T22:11:19.235Z"
+  },
+  "passengerProof": {
+    "vehicleId": "yard-van",
+    "seats": [
+      "mara",
+      "jun"
+    ],
+    "junState": "seated",
+    "transitions": []
+  },
+  "favorRepairProof": {
+    "favorBefore": "earned",
+    "favorAfter": "consumed",
+    "walletBefore": 20,
+    "walletAfter": 20,
+    "appearanceBefore": 0,
+    "appearanceAfter": 1,
+    "vehicleHealthAfter": 100,
+    "wantedVisible": false
+  },
+  "brokerProof": {
+    "ending": "broker",
+    "reward": 1200,
+    "walletAfter": 1220,
+    "rewardPaid": true,
+    "closingMessageId": "broker-ending",
+    "closingMessageSaved": true,
+    "junState": "safe",
+    "handoffGapMetres": 4.913,
+    "district": {
+      "contractorTakeover": true,
+      "marketShuttered": true,
+      "investigationNotice": false
+    }
+  },
+  "postEndingPurchase": {
+    "service": "armor",
+    "price": 60,
+    "walletBefore": 1220,
+    "walletAfter": 1160,
+    "armorBefore": 0,
+    "armorAfter": 100,
+    "missionStillCompleted": true
+  },
+  "credits": {
+    "screen": "credits",
+    "sourceInfoVisible": true
+  },
+  "checkpoints": [
+    {
+      "name": "01-new-game-remapped",
+      "screen": "playing",
+      "phase": "INTRO",
+      "gameElapsedSeconds": 0.25,
+      "positionMetres": {
+        "x": 91,
+        "y": 311,
+        "z": 0.08
+      },
+      "health": 100,
+      "armor": 0,
+      "wallet": 80,
+      "vehicleId": null,
+      "mission": {
+        "route": null,
+        "favor": "available",
+        "junReached": false,
+        "caseRecovered": false,
+        "junExtracted": false,
+        "choice": null,
+        "ending": null,
+        "completed": false,
+        "rewardPaid": false
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Unaware",
+        "visible": false
+      },
+      "jun": {
+        "state": "cover",
+        "vehicleId": null,
+        "seat": null,
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 331,
+          "y": 88,
+          "z": 0.1
+        }
+      }
+    },
+    {
+      "name": "03-input-recovery-checked",
+      "screen": "playing",
+      "phase": "INTRO",
+      "gameElapsedSeconds": 3.483,
+      "positionMetres": {
+        "x": 91.205,
+        "y": 310.188,
+        "z": 0.08
+      },
+      "health": 100,
+      "armor": 0,
+      "wallet": 80,
+      "vehicleId": null,
+      "mission": {
+        "route": null,
+        "favor": "available",
+        "junReached": false,
+        "caseRecovered": false,
+        "junExtracted": false,
+        "choice": null,
+        "ending": null,
+        "completed": false,
+        "rewardPaid": false
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Unaware",
+        "visible": false
+      },
+      "jun": {
+        "state": "cover",
+        "vehicleId": null,
+        "seat": null,
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 331,
+          "y": 88,
+          "z": 0.1
+        }
+      }
+    },
+    {
+      "name": "05b-toolbox-returned",
+      "screen": "playing",
+      "phase": "APPROACH",
+      "gameElapsedSeconds": 115.133,
+      "positionMetres": {
+        "x": 104.675,
+        "y": 304.002,
+        "z": 0.08
+      },
+      "health": 100,
+      "armor": 0,
+      "wallet": 80,
+      "vehicleId": null,
+      "mission": {
+        "route": null,
+        "favor": "earned",
+        "junReached": false,
+        "caseRecovered": false,
+        "junExtracted": false,
+        "choice": null,
+        "ending": null,
+        "completed": false,
+        "rewardPaid": false
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Unaware",
+        "visible": false
+      },
+      "jun": {
+        "state": "cover",
+        "vehicleId": null,
+        "seat": null,
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 331,
+          "y": 88,
+          "z": 0.1
+        }
+      }
+    },
+    {
+      "name": "06-service-vault",
+      "screen": "playing",
+      "phase": "RECOVERY",
+      "gameElapsedSeconds": 256.833,
+      "positionMetres": {
+        "x": 396,
+        "y": 88.0,
+        "z": 0.0
+      },
+      "health": 100,
+      "armor": 100,
+      "wallet": 20,
+      "vehicleId": null,
+      "mission": {
+        "route": "service",
+        "favor": "earned",
+        "junReached": false,
+        "caseRecovered": false,
+        "junExtracted": false,
+        "choice": null,
+        "ending": null,
+        "completed": false,
+        "rewardPaid": false
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Unaware",
+        "visible": false
+      },
+      "jun": {
+        "state": "cover",
+        "vehicleId": null,
+        "seat": null,
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 331,
+          "y": 88,
+          "z": 0.1
+        }
+      }
+    },
+    {
+      "name": "08-case-alarm",
+      "screen": "playing",
+      "phase": "EXTRACTION",
+      "gameElapsedSeconds": 342.225,
+      "positionMetres": {
+        "x": 324.791,
+        "y": 84.071,
+        "z": 0.1
+      },
+      "health": 66,
+      "armor": 0,
+      "wallet": 20,
+      "vehicleId": null,
+      "mission": {
+        "route": "service",
+        "favor": "earned",
+        "junReached": true,
+        "caseRecovered": true,
+        "junExtracted": false,
+        "choice": null,
+        "ending": null,
+        "completed": false,
+        "rewardPaid": false
+      },
+      "wanted": {
+        "tier": 2,
+        "status": "Searching",
+        "visible": false
+      },
+      "jun": {
+        "state": "follow",
+        "vehicleId": null,
+        "seat": null,
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 326.85,
+          "y": 85.629,
+          "z": 0.1
+        }
+      }
+    },
+    {
+      "name": "09-van-passenger-extraction",
+      "screen": "playing",
+      "phase": "EVASION",
+      "gameElapsedSeconds": 397.225,
+      "positionMetres": {
+        "x": 365.45,
+        "y": 148.25,
+        "z": 0.409
+      },
+      "health": 66,
+      "armor": 0,
+      "wallet": 20,
+      "vehicleId": "yard-van",
+      "mission": {
+        "route": "service",
+        "favor": "earned",
+        "junReached": true,
+        "caseRecovered": true,
+        "junExtracted": true,
+        "choice": null,
+        "ending": null,
+        "completed": false,
+        "rewardPaid": false
+      },
+      "wanted": {
+        "tier": 2,
+        "status": "Searching",
+        "visible": false
+      },
+      "jun": {
+        "state": "seated",
+        "vehicleId": "yard-van",
+        "seat": "passenger",
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 364.55,
+          "y": 148.25,
+          "z": 0.409
+        }
+      }
+    },
+    {
+      "name": "09b-wanted-cleared-waterfront",
+      "screen": "playing",
+      "phase": "DECISION",
+      "gameElapsedSeconds": 563.325,
+      "positionMetres": {
+        "x": 73.435,
+        "y": 380.425,
+        "z": 0.409
+      },
+      "health": 66,
+      "armor": 0,
+      "wallet": 20,
+      "vehicleId": "yard-van",
+      "mission": {
+        "route": "service",
+        "favor": "earned",
+        "junReached": true,
+        "caseRecovered": true,
+        "junExtracted": true,
+        "choice": null,
+        "ending": null,
+        "completed": false,
+        "rewardPaid": false
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Cleared",
+        "visible": false
+      },
+      "jun": {
+        "state": "seated",
+        "vehicleId": "yard-van",
+        "seat": "passenger",
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 73.368,
+          "y": 379.527,
+          "z": 0.409
+        }
+      }
+    },
+    {
+      "name": "09a-free-garage-respray",
+      "screen": "playing",
+      "phase": "DECISION",
+      "gameElapsedSeconds": 621.325,
+      "positionMetres": {
+        "x": 93.906,
+        "y": 304.539,
+        "z": 0.08
+      },
+      "health": 66,
+      "armor": 0,
+      "wallet": 20,
+      "vehicleId": null,
+      "mission": {
+        "route": "service",
+        "favor": "consumed",
+        "junReached": true,
+        "caseRecovered": true,
+        "junExtracted": true,
+        "choice": null,
+        "ending": null,
+        "completed": false,
+        "rewardPaid": false
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Cleared",
+        "visible": false
+      },
+      "jun": {
+        "state": "follow",
+        "vehicleId": null,
+        "seat": null,
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 94.974,
+          "y": 302.18,
+          "z": 0.08
+        }
+      }
+    },
+    {
+      "name": "09c-south-drive-through",
+      "screen": "playing",
+      "phase": "DECISION",
+      "gameElapsedSeconds": 646.975,
+      "positionMetres": {
+        "x": 98.399,
+        "y": 329.95,
+        "z": 0.409
+      },
+      "health": 66,
+      "armor": 0,
+      "wallet": 20,
+      "vehicleId": "yard-van",
+      "mission": {
+        "route": "service",
+        "favor": "consumed",
+        "junReached": true,
+        "caseRecovered": true,
+        "junExtracted": true,
+        "choice": null,
+        "ending": null,
+        "completed": false,
+        "rewardPaid": false
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Cleared",
+        "visible": false
+      },
+      "jun": {
+        "state": "seated",
+        "vehicleId": "yard-van",
+        "seat": "passenger",
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 97.499,
+          "y": 329.981,
+          "z": 0.409
+        }
+      }
+    },
+    {
+      "name": "10-choice",
+      "screen": "playing",
+      "phase": "DECISION",
+      "gameElapsedSeconds": 707.567,
+      "positionMetres": {
+        "x": 269.437,
+        "y": 353.753,
+        "z": -0.0
+      },
+      "health": 66,
+      "armor": 0,
+      "wallet": 20,
+      "vehicleId": null,
+      "mission": {
+        "route": "service",
+        "favor": "consumed",
+        "junReached": true,
+        "caseRecovered": true,
+        "junExtracted": true,
+        "choice": "broker",
+        "ending": null,
+        "completed": false,
+        "rewardPaid": false
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Cleared",
+        "visible": false
+      },
+      "jun": {
+        "state": "follow",
+        "vehicleId": null,
+        "seat": null,
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 267.153,
+          "y": 352.521,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "name": "10a-jun-at-handoff",
+      "screen": "playing",
+      "phase": "DECISION",
+      "gameElapsedSeconds": 857.117,
+      "positionMetres": {
+        "x": 93.973,
+        "y": 88.131,
+        "z": -0.0
+      },
+      "health": 66,
+      "armor": 0,
+      "wallet": 20,
+      "vehicleId": null,
+      "mission": {
+        "route": "service",
+        "favor": "consumed",
+        "junReached": true,
+        "caseRecovered": true,
+        "junExtracted": true,
+        "choice": "broker",
+        "ending": null,
+        "completed": false,
+        "rewardPaid": false
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Cleared",
+        "visible": false
+      },
+      "jun": {
+        "state": "follow",
+        "vehicleId": null,
+        "seat": null,
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 94.541,
+          "y": 83.251,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "name": "11-handoff",
+      "screen": "ending",
+      "phase": "AFTERMATH",
+      "gameElapsedSeconds": 857.675,
+      "positionMetres": {
+        "x": 93.973,
+        "y": 88.147,
+        "z": -0.0
+      },
+      "health": 66,
+      "armor": 0,
+      "wallet": 1220,
+      "vehicleId": null,
+      "mission": {
+        "route": "service",
+        "favor": "consumed",
+        "junReached": true,
+        "caseRecovered": true,
+        "junExtracted": true,
+        "choice": "broker",
+        "ending": "broker",
+        "completed": true,
+        "rewardPaid": true
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Cleared",
+        "visible": false
+      },
+      "jun": {
+        "state": "safe",
+        "vehicleId": null,
+        "seat": null,
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 93.522,
+          "y": 84.618,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "name": "12-post-mission-purchase",
+      "screen": "playing",
+      "phase": "AFTERMATH",
+      "gameElapsedSeconds": 928.708,
+      "positionMetres": {
+        "x": 143.001,
+        "y": 223.166,
+        "z": 0.11
+      },
+      "health": 66,
+      "armor": 100,
+      "wallet": 1160,
+      "vehicleId": null,
+      "mission": {
+        "route": "service",
+        "favor": "consumed",
+        "junReached": true,
+        "caseRecovered": true,
+        "junExtracted": true,
+        "choice": "broker",
+        "ending": "broker",
+        "completed": true,
+        "rewardPaid": true
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Cleared",
+        "visible": false
+      },
+      "jun": {
+        "state": "safe",
+        "vehicleId": null,
+        "seat": null,
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 93.522,
+          "y": 84.618,
+          "z": -0.0
+        }
+      }
+    },
+    {
+      "name": "13-credits",
+      "screen": "credits",
+      "phase": "AFTERMATH",
+      "gameElapsedSeconds": 929.158,
+      "positionMetres": {
+        "x": 143.001,
+        "y": 223.166,
+        "z": 0.11
+      },
+      "health": 66,
+      "armor": 100,
+      "wallet": 1160,
+      "vehicleId": null,
+      "mission": {
+        "route": "service",
+        "favor": "consumed",
+        "junReached": true,
+        "caseRecovered": true,
+        "junExtracted": true,
+        "choice": "broker",
+        "ending": "broker",
+        "completed": true,
+        "rewardPaid": true
+      },
+      "wanted": {
+        "tier": 0,
+        "status": "Cleared",
+        "visible": false
+      },
+      "jun": {
+        "state": "safe",
+        "vehicleId": null,
+        "seat": null,
+        "health": 100,
+        "recoveryAttempts": 0,
+        "positionMetres": {
+          "x": 93.522,
+          "y": 84.618,
+          "z": -0.0
+        }
+      }
+    }
+  ],
+  "servedSourceAndRunnerSha256": {
+    "src/ui/interface.css": "57176f99c79c5e89c95332d9fa0e3e6808f9b2cf5007ec661c2ccfc2a2d9438c",
+    "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+    "src/engine/world.js": "275c69298a1ce3d61cc54173b2b72517b0a52ad4a587c9ab603fdf8eeb6ea68e",
+    "src/engine/units.js": "51ca16a7229c536bef4f3ef1c360ada7a2bea19438327c1e35506383c7e42388",
+    "src/engine/input.js": "36d2ec004f5f55ba522026f23e2c1f946ab8035a4c5eb90e363f2220bf094b72",
+    "src/world/interactions.js": "7b221ad243b0d749d9b2baab741264944beb3038dc1785672ab93203494d9bce",
+    "src/actors/player.js": "07a31d1648fd492ae6182a5717e975bee94330f0675d32a2acce3788279432c9",
+    "src/world/pedestrians.js": "a27c6730895fdcd979e6098001fc5f3393c6f97dddff8d12be0e319a530e3c68",
+    "src/world/traffic.js": "072434114b092aa6405221732676a346e5d59f083b856507929d995eb3ca9c82",
+    "src/actors/companion.js": "c60f680f1e0451442165e685eaf2a6eb86534708e29058a708b70a195295e897",
+    "src/world/district.js": "cd4b56e7c17b0604d6557fecd67e3575aa0b4787c44b0799bbdba795563ae40b",
+    "src/actors/contacts.js": "03ff14d8ed30408419fc5c279ec4c9631def90d878bc6b74c4cfb1e942b8b8e9",
+    "src/actors/cover.js": "badc068745b5a23f21fb0379a9d33841cce5a493c92d76034e54bf7de588a464",
+    "src/actors/patrol-navigation.js": "0b80f379c265072687f85788533fe86bec3c52d9059e0364ed2a336578ab1365",
+    "src/actors/crew.js": "8eac8ed0ae631e8922db06a265e3185fb98910d493986fcf575937f39a2a4953",
+    "src/actors/animation.js": "13b954861e6821087dbc01d422b16f84a379d36d4b530d5ea918d4d615546b2e",
+    "src/actors/police.js": "72d30c9bf828012d9fdc39af95569b19c738c28ef70520ede336a5181b3aeb4e",
+    "src/game/events.js": "a5bbd7d4c13ddf0e20288dffa6965bf89697621ff88f0370619ffd2106f2ab25",
+    "src/ui/interface.js": "5abf673432dfceeb0aebe60296ce174c890515e8d07dd90c82514aeb8af93041",
+    "src/systems/audio.js": "42a5198ed90d8f835d8cc8b5438bbaf872400a19fa5feeaf1a54906339f40042",
+    "src/game/rng.js": "1ed8eb32d5299ca566d5bdeae1a78985fd2546141a2a3d7080c0706c03461edf",
+    "src/game/state.js": "9ac776a8159218469c355ea1276b3b0954de96fe2b4e79d0de3d084c7c027819",
+    "src/systems/incoming-call.js": "dd8e9e10f1b611bbca467f86b25784ff6b523037ed6b0e00f5faaa68e5150517",
+    "src/mission/checkpoints.js": "3e7e1b45ec0f1f1e2e913be983779527e38c8e13e119b0e54061da068f78f50d",
+    "src/mission/definition.js": "9d38dd716bbf598ca173281d2e0ee29471053a5c144f73d961d0111921fc44e3",
+    "src/systems/combat.js": "8395905794ec6436858924cc4c9ef01eb5e6da285f476c24581492cd9c77073c",
+    "src/mission/dialogue.js": "12748f172d14ddb7e15ab7a871eba3b3c4292cc24ceb9467ca39d7f1e84e14e4",
+    "src/game/save.js": "fe8306f248eba3dc8b93affef03b8cf76120cd96ea7852299284ce26153904a4",
+    "src/mission/director.js": "365fabc91cf7458367012d7ddd65a358fcdb349c45c37ecad9d95a5424747e33",
+    "src/systems/economy.js": "b55c93b2d5d016f7dc057979917a9674c39a3c843ce3e881beac6c1a2867d77f",
+    "src/systems/wanted.js": "0a749df3a01c51c84e13140659e0c3f1af27f645686ed8b7b54dda79efed8f90",
+    "src/systems/crime.js": "742d099f8a6b8a8ea5a9d9818c3c89499aa1cd8cf93b117dcddd6c5466506e8e",
+    "src/engine/queries.js": "796202c35c196e2b4753905282d3e584a3902018689590e0519b46cfc42b5b75",
+    "src/engine/camera.js": "dc8fb6a1a9e0930b5b24ba7c9b609905888048c09f22565886b4278460fb0304",
+    "src/engine/vehicles.js": "f7f18b80301e13645b356d47a61799a6816780d160cf10012951ae299007718b",
+    "src/world/roads.js": "714ccb68a3510738dc5bb47bce5ad9e0b7bbdc006f4272af95d2c22009ff4737",
+    "tests/e2e/keyboard-route.mjs": "038c7ca31a0ec3dd6dec943b80b1bf33b478dc1c8af9e3f5e5d2b2d1386a1be7"
+  },
+  "errors": [],
+  "rawArtifacts": {
+    "directory": "/tmp/ewa93-keyboard-final-xvfb-6",
+    "report": "/tmp/ewa93-keyboard-final-xvfb-6/report.json",
+    "reportSha256": "620ef0b1ab88de89f1094a4252780d1d79e7d3f98abef91f85717e2fe01b173a",
+    "video": "/tmp/ewa93-keyboard-final-xvfb-6/video/page@f75fdcebb0f282b08604dafde8da28bc.webm",
+    "videoSha256": "1b5f75a221ff5c5ffdd1976aaf3cb5e1756c36e9f24f93d1dae12c118606f174",
+    "videoDurationSeconds": 2288.4,
+    "videoBytes": 279114481
+  },
+  "limits": [
+    "Automated skilled route uses read-only semantic navigation and native XTest mouse plus Playwright keyboard input. It does not establish fresh-player pacing or physical-controller behavior.",
+    "The private Xvfb/WSL software renderer slows wall time relative to simulation time; this run is input/reachability evidence, not a hardware performance benchmark.",
+    "Continuous WebM records visuals only; it does not verify audio."
+  ],
+  "screenshots": [
+    {
+      "file": "keyboard-van.webp",
+      "checkpoint": "09-van-passenger-extraction",
+      "sha256": "d6d6b609d4c406d9a271fd4b21f6f069c27da30aedec9b67f22caf533572472e",
+      "sourcePngSha256": "f7bd4f2b3b10afb51b54807c2c98b7c5b00bdf5c4c2c49115775ae2581baa9c6"
+    },
+    {
+      "file": "keyboard-broker.webp",
+      "checkpoint": "11-handoff",
+      "sha256": "05db1c5a6e287b1a9652454d092febf64f9f39a1de5a9ed2977ecd03ab3e9522",
+      "sourcePngSha256": "d76354325989855cb6924c54eff0a4d42581662d17a022eaecbc7e11e4890fbb"
+    },
+    {
+      "file": "keyboard-after-purchase.webp",
+      "checkpoint": "12-post-mission-purchase",
+      "sha256": "1d3e8664dcfd3a49052e737575d20c668f2c38d80de302347099d959645a7e89",
+      "sourcePngSha256": "1ccb025a7738f160311f29a8328abed0a1c039f74971689b19942a705fdd8c72"
+    },
+    {
+      "file": "keyboard-credits.webp",
+      "checkpoint": "13-credits",
+      "sha256": "d1a8d03ebf10d9897a936e2ed6d4e11433d0ca53f57874b7a4db05ea1e4d8732",
+      "sourcePngSha256": "0daa4b22f4e9f388eeb56e04a5f694b7b26d0ac993e958dbc778421754bc54b2"
+    },
+    {
+      "file": "keyboard-smg.webp",
+      "event": "Actual first successful SMG burst",
+      "sourceVideoTimeSeconds": 786.443,
+      "sha256": "70a07af573ecbc5a21af0fd949345ba6b5ace530ba54929fd60edaf910e2c19b"
+    }
+  ]
+}

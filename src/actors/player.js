@@ -48,7 +48,7 @@ export class PlayerActor {
     if(length>.16&&!this.aiming) a.facing=approachAngle(a.facing,Math.atan2(ny,nx),dt*(this.inCover?6:10));
     else if(this.aiming&&Number.isFinite(opts.aimYaw))a.facing=approachAngle(a.facing,opts.aimYaw,dt*12);
     a.anim={crouch:this.crouched,sprint,dash:this.vault>0,point:this.aiming,aim:opts.aimPitch||0,stance:this.inCover?'guard':'ready',hurt:this.damageFlash>0};
-    if(a.grounded&&!a.fell){const p=this.position;if(p.x>=5&&p.x<=475&&p.y>=5&&p.y<=415)this.lastSafe=p;}
+    if(a.grounded&&!a.fell){const p=this.position;if(p.x>=22&&p.x<=456&&p.y>=24&&p.y<=396)this.lastSafe=p;}
   }
   hurt(){this.damageFlash=.25;this.actor.flash=.25;}
   recover(){this.place(this.lastSafe);this.inCover=false;this.vault=0;}

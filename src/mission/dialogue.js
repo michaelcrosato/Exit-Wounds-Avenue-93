@@ -11,7 +11,7 @@ export const DIALOGUE = Object.freeze({
     { speaker: 'Mara', text: 'Still plenty of people waiting to get paid.' },
   ],
   collection: [
-    { speaker: 'Bea', text: 'They moved your case to dispatch. Northeast depot, upstairs office.' },
+    { speaker: 'Bea', text: 'They moved your case to dispatch. Northeast depot, ground-floor records office.' },
     { speaker: 'Bea', text: 'Crew is holding a clerk named Jun. Front gate is watched. Service lane has a low fence and one guard.' },
     { speaker: 'Mara', text: 'A collection was supposed to mean someone had agreed to give it back.' },
   ],
@@ -51,7 +51,8 @@ export const DIALOGUE = Object.freeze({
 });
 export const MESSAGES = Object.freeze({
   'eli-opening': { from: 'Eli', text: 'Meet me in the garage. Collection job; sedan and pistol supplied.' },
-  'depot-address': { from: 'Bea', text: 'Dispatch depot, northeast. Jun and the payroll case are upstairs. Gate or rear service lane.' },
+  'eli-missed': { from: 'Eli', text: 'Missed you. Call me back for the collection details, or come to the garage. The work will wait.' },
+  'depot-address': { from: 'Bea', text: 'Dispatch depot, northeast. Jun and the payroll case are in the ground-floor records office. Gate or rear service lane.' },
   'favor-earned': { from: 'Eli', text: 'Toolbox received. One free repair and respray. Lose police sight before using my bay.' },
   'broker-ending': { from: 'Jun', text: 'I am safe. The contractor has taken the market lease. I hope the money gets you somewhere.' },
   'reporter-ending': { from: 'Jun', text: 'I am safe. They opened an investigation. People at the market are saying our names.' },

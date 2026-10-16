@@ -19,6 +19,7 @@ export class CrewSystem {
       const a=world.mob({x:metresToUnits(x),y:metresToUnits(y),z:0,r:4.7,half:8.7,look:'puppet',mass:1.2,
         rig:new E.Humanoid({build:'heroic',size:role==='rusher'?1.06:1,weapon:'gun',outfit:'shirt',sleeves:'long',hat:index%2?'cap':null,
           colors:{skin:['#a47a63','#d3ad88','#806352'][index%3],hair:'#24272a',cloth:role==='flanker'?'#675a50':'#625e54',pants:'#303033',boot:'#24272a',belt:'#2c2825'}})});
+      a.col.setMass(role==='rusher'?88:78);a.mass=role==='rusher'?88:78;
       a.id=id;a.data.entityId=id;queries?.register?.(a.body,a);
       return {id,role,actor:a,health:role==='rusher'?75:65,state:'holding',lastKnown:null,shotAt:0,thinkAt:index*.12,spotAccum:0,stuck:0,lastPosition:{x,y},coverId:null,visible:false,pressure:false,bark:false,path:[],nextPath:0,lastPathTarget:null};
     });
@@ -88,5 +89,5 @@ export class CrewSystem {
     }
   }
   snapshot(){return this.enemies.map(e=>({id:e.id,position:this.positionOf(e),health:e.health,state:e.state,lastKnown:e.lastKnown}));}
-  restore(items=[]){for(const s of items){const e=this.enemies.find(x=>x.id===s.id);if(!e)continue;e.actor.place(metresToUnits(s.position.x),metresToUnits(s.position.y),metresToUnits(s.position.z||0));e.health=s.health;e.state=s.state;e.lastKnown=s.lastKnown;e.path=[];e.nextPath=0;e.actor.setSolid(e.health>0);e.actor.flash=0;}}
+  restore(items=[]){this.time=0;for(const [index,s] of items.entries()){const e=this.enemies.find(x=>x.id===s.id);if(!e)continue;e.actor.place(metresToUnits(s.position.x),metresToUnits(s.position.y),metresToUnits(s.position.z||0));e.health=s.health;e.state=s.state;e.lastKnown=s.lastKnown;e.shotAt=.6+index*.08;e.thinkAt=index*.12;e.spotAccum=0;e.stuck=0;e.lastPosition={...s.position};e.coverId=null;e.visible=false;e.pressure=false;e.bark=false;e.path=[];e.nextPath=0;e.lastPathTarget=null;e.actor.vx=e.actor.vy=0;e.actor.anim=e.health>0?{}:{pose:'die'};e.actor.setSolid(e.health>0);e.actor.flash=0;}}
 }

@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "source": "final source build",
+  "rawPngsOutsideRepository": true,
+  "records": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "status": "passed",
+      "errors": [],
+      "issues": [],
+      "captures": [
+        {
+          "size": {
+            "name": "small-phone",
+            "width": 375,
+            "height": 667
+          },
+          "state": "gameplay",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screen": "playing",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-small-phone-gameplay.png"
+        },
+        {
+          "size": {
+            "name": "phone-landscape",
+            "width": 756,
+            "height": 352
+          },
+          "state": "gameplay",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screen": "playing",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-phone-landscape-gameplay.png"
+        },
+        {
+          "size": {
+            "name": "tablet",
+            "width": 768,
+            "height": 1024
+          },
+          "state": "gameplay",
+          "layout": {
+            "width": 768,
+            "height": 1024,
+            "documentWidth": 768,
+            "screen": "playing",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-tablet-gameplay.png"
+        },
+        {
+          "size": {
+            "name": "ultrawide",
+            "width": 2560,
+            "height": 1080
+          },
+          "state": "gameplay",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screen": "playing",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-ultrawide-gameplay.png"
+        },
+        {
+          "size": {
+            "name": "small-phone",
+            "width": 375,
+            "height": 667
+          },
+          "state": "pause",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screen": "pause",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-small-phone-pause.png"
+        },
+        {
+          "size": {
+            "name": "phone-landscape",
+            "width": 756,
+            "height": 352
+          },
+          "state": "pause",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screen": "pause",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-phone-landscape-pause.png"
+        },
+        {
+          "size": {
+            "name": "tablet",
+            "width": 768,
+            "height": 1024
+          },
+          "state": "pause",
+          "layout": {
+            "width": 768,
+            "height": 1024,
+            "documentWidth": 768,
+            "screen": "pause",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-tablet-pause.png"
+        },
+        {
+          "size": {
+            "name": "ultrawide",
+            "width": 2560,
+            "height": 1080
+          },
+          "state": "pause",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screen": "pause",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-ultrawide-pause.png"
+        },
+        {
+          "size": {
+            "name": "small-phone",
+            "width": 375,
+            "height": 667
+          },
+          "state": "phone",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screen": "phone",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-small-phone-phone.png"
+        },
+        {
+          "size": {
+            "name": "phone-landscape",
+            "width": 756,
+            "height": 352
+          },
+          "state": "phone",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screen": "phone",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-phone-landscape-phone.png"
+        },
+        {
+          "size": {
+            "name": "tablet",
+            "width": 768,
+            "height": 1024
+          },
+          "state": "phone",
+          "layout": {
+            "width": 768,
+            "height": 1024,
+            "documentWidth": 768,
+            "screen": "phone",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-tablet-phone.png"
+        },
+        {
+          "size": {
+            "name": "ultrawide",
+            "width": 2560,
+            "height": 1080
+          },
+          "state": "phone",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screen": "phone",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "chromium-ultrawide-phone.png"
+        }
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "status": "passed",
+      "errors": [],
+      "issues": [],
+      "captures": [
+        {
+          "size": {
+            "name": "small-phone",
+            "width": 375,
+            "height": 667
+          },
+          "state": "gameplay",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screen": "playing",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-small-phone-gameplay.png"
+        },
+        {
+          "size": {
+            "name": "phone-landscape",
+            "width": 756,
+            "height": 352
+          },
+          "state": "gameplay",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screen": "playing",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-phone-landscape-gameplay.png"
+        },
+        {
+          "size": {
+            "name": "tablet",
+            "width": 768,
+            "height": 1024
+          },
+          "state": "gameplay",
+          "layout": {
+            "width": 768,
+            "height": 1024,
+            "documentWidth": 768,
+            "screen": "playing",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-tablet-gameplay.png"
+        },
+        {
+          "size": {
+            "name": "ultrawide",
+            "width": 2560,
+            "height": 1080
+          },
+          "state": "gameplay",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screen": "playing",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-ultrawide-gameplay.png"
+        },
+        {
+          "size": {
+            "name": "small-phone",
+            "width": 375,
+            "height": 667
+          },
+          "state": "pause",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screen": "pause",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-small-phone-pause.png"
+        },
+        {
+          "size": {
+            "name": "phone-landscape",
+            "width": 756,
+            "height": 352
+          },
+          "state": "pause",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screen": "pause",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-phone-landscape-pause.png"
+        },
+        {
+          "size": {
+            "name": "tablet",
+            "width": 768,
+            "height": 1024
+          },
+          "state": "pause",
+          "layout": {
+            "width": 768,
+            "height": 1024,
+            "documentWidth": 768,
+            "screen": "pause",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-tablet-pause.png"
+        },
+        {
+          "size": {
+            "name": "ultrawide",
+            "width": 2560,
+            "height": 1080
+          },
+          "state": "pause",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screen": "pause",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-ultrawide-pause.png"
+        },
+        {
+          "size": {
+            "name": "small-phone",
+            "width": 375,
+            "height": 667
+          },
+          "state": "phone",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screen": "phone",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-small-phone-phone.png"
+        },
+        {
+          "size": {
+            "name": "phone-landscape",
+            "width": 756,
+            "height": 352
+          },
+          "state": "phone",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screen": "phone",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-phone-landscape-phone.png"
+        },
+        {
+          "size": {
+            "name": "tablet",
+            "width": 768,
+            "height": 1024
+          },
+          "state": "phone",
+          "layout": {
+            "width": 768,
+            "height": 1024,
+            "documentWidth": 768,
+            "screen": "phone",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-tablet-phone.png"
+        },
+        {
+          "size": {
+            "name": "ultrawide",
+            "width": 2560,
+            "height": 1080
+          },
+          "state": "phone",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screen": "phone",
+            "coarse": false,
+            "horizontalOffenders": [],
+            "subtitleOverlaps": []
+          },
+          "image": "webkit-ultrawide-phone.png"
+        }
+      ]
+    }
+  ]
+}

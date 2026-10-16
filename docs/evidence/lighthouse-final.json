@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "source": "final stripped dist package at local HTTP preview",
+  "environment": "Ubuntu 26.04.1 WSL2 Chromium 153 SwiftShader/software rendering; mobile audit uses Lighthouse throttling",
+  "runs": [
+    {
+      "mode": "desktop",
+      "chrome": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "categories": {
+        "performance": 0.29,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1,
+        "agentic-browsing": 1
+      },
+      "metricsMs": {
+        "fcp": 2805.5031999999997,
+        "lcp": 4315.0055999999995,
+        "interactive": 45893.004799999995,
+        "totalBlocking": 38560.499599999996
+      },
+      "cumulativeLayoutShift": 0.009539235071359778,
+      "warnings": [
+        "The page loaded too slowly to finish within the time limit. Results may be incomplete."
+      ]
+    },
+    {
+      "mode": "mobile",
+      "chrome": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "categories": {
+        "performance": 0.25,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1,
+        "agentic-browsing": 1
+      },
+      "metricsMs": {
+        "fcp": 8627.6435,
+        "lcp": 10352.6435,
+        "interactive": 156299.2175,
+        "totalBlocking": 133949
+      },
+      "cumulativeLayoutShift": 0.006816701896184538,
+      "warnings": [
+        "The page loaded too slowly to finish within the time limit. Results may be incomplete."
+      ]
+    }
+  ],
+  "limits": [
+    "Lighthouse scores evaluate the HTML/application shell on this software-rendered WSL browser, not named-hardware gameplay FPS or visual quality.",
+    "Both runs reported a slow-load time-limit warning; performance and interactive metrics may be incomplete.",
+    "The separate Windows Chrome155 RTX3060Ti title-ready sample was 11.754 seconds in a fresh context and is reported in controller-run.json."
+  ],
+  "rawReportsOutsideRepository": true
+}

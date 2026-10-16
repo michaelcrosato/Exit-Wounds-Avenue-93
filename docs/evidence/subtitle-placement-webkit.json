@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "engine": "webkit",
+  "records": [
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 720,
+      "subtitle": {
+        "left": 294.40625,
+        "right": 985.59375,
+        "top": 399.203125,
+        "bottom": 528.015625
+      },
+      "meters": {
+        "left": 248.375,
+        "right": 453.171875,
+        "top": 538.8125,
+        "bottom": 668.8125
+      },
+      "minimap": {
+        "left": 51.1875,
+        "right": 230.375,
+        "top": 489.625,
+        "bottom": 668.8125
+      },
+      "right": {
+        "left": 1048.09375,
+        "right": 1228.8125,
+        "top": 582.8125,
+        "bottom": 668.8125
+      },
+      "prompt": {
+        "left": 530.171875,
+        "right": 749.828125,
+        "top": 293.203125,
+        "bottom": 349.203125
+      },
+      "toast": {
+        "left": 858.8125,
+        "right": 1228.8125,
+        "top": 176.1875,
+        "bottom": 248.1875
+      }
+    },
+    {
+      "name": "phone",
+      "width": 375,
+      "height": 667,
+      "subtitle": {
+        "left": 18,
+        "right": 357,
+        "top": 336,
+        "bottom": 464
+      },
+      "meters": {
+        "left": 141,
+        "right": 233,
+        "top": 519,
+        "bottom": 649
+      },
+      "minimap": {
+        "left": 18,
+        "right": 133,
+        "top": 534,
+        "bottom": 649
+      },
+      "right": {
+        "left": 245,
+        "right": 357,
+        "top": 554,
+        "bottom": 649
+      },
+      "prompt": {
+        "left": 93.390625,
+        "right": 281.59375,
+        "top": 235,
+        "bottom": 286
+      },
+      "toast": {
+        "left": 18,
+        "right": 357,
+        "top": 174.5625,
+        "bottom": 236.0625
+      }
+    },
+    {
+      "name": "landscape",
+      "width": 756,
+      "height": 352,
+      "subtitle": {
+        "left": 18.90625,
+        "right": 737.09375,
+        "top": 205.40625,
+        "bottom": 257
+      },
+      "meters": {
+        "left": 98,
+        "right": 178,
+        "top": 264,
+        "bottom": 342
+      },
+      "minimap": {
+        "left": 10,
+        "right": 92,
+        "top": 260,
+        "bottom": 342
+      },
+      "right": {
+        "left": 627.40625,
+        "right": 746,
+        "top": 287,
+        "bottom": 342
+      },
+      "prompt": {
+        "left": 305.59375,
+        "right": 450.40625,
+        "top": 160.40625,
+        "bottom": 193.40625
+      },
+      "toast": null
+    }
+  ],
+  "errors": []
+}

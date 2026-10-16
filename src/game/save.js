@@ -1,9 +1,13 @@
 import { SCHEMA_VERSION, stateDigest } from './state.js';
+import { DIALOGUE } from '../mission/dialogue.js';
+import { IncomingCall } from '../systems/incoming-call.js';
 /** @typedef {import('./state.js').GameState} GameState */
 /** @typedef {{getItem:(key:string)=>string|null,setItem:(key:string,value:string)=>void,removeItem:(key:string)=>void}} StorageLike */
 export const SAVE_KEY = 'exit-wounds-avenue-93.save.v1';
 export const SETTINGS_KEY = 'exit-wounds-avenue-93.settings.v1';
 const PHASES = ['INTRO', 'COLLECTION', 'APPROACH', 'RECOVERY', 'EXTRACTION', 'EVASION', 'DECISION', 'HANDOFF', 'AFTERMATH'];
+const SETTINGS_NUMBERS={brightness:[.6,1.4],hudScale:[.8,1.35],subtitleScale:[.8,1.4],sensitivity:[.3,1.8],shake:[0,1],masterVolume:[0,1],musicVolume:[0,1],dialogueVolume:[0,1]};
+const SETTINGS_CHOICES={quality:['high','medium','low'],aimMode:['hold','toggle'],sprintMode:['hold','toggle'],invertY:['true','false',true,false]};
 
 /** @param {unknown} error */
 function errorMessage(error) { return error instanceof Error ? error.message : String(error); }
@@ -14,12 +18,25 @@ function finiteTree(value) {
   if (value && typeof value === 'object') return Object.values(value).every(finiteTree);
   return value === null || ['string', 'boolean'].includes(typeof value);
 }
+/** Accept partial/legacy settings, but never feed invalid known controls into audio, camera or CSS. @param {unknown} value */
+function validSettings(value){
+  if(!value||typeof value!=='object'||Array.isArray(value)||!finiteTree(value))return false;
+  for(const [name,[min,max]] of Object.entries(SETTINGS_NUMBERS)){
+    if(Object.hasOwn(value,name)){
+      const number=value[name];
+      if(typeof number!=='number'||!Number.isFinite(number)||number<min||number>max)return false;
+    }
+  }
+  for(const [name,choices] of Object.entries(SETTINGS_CHOICES))if(Object.hasOwn(value,name)&&!choices.includes(value[name]))return false;
+  return true;
+}
 /** Validate semantics before attaching restored passengers or paying rewards. @param {any} s @returns {{ok:boolean,reason?:string}} */
 export function validateGameState(s) {
   if (!s || typeof s !== 'object' || s.schemaVersion !== SCHEMA_VERSION) return { ok: false, reason: 'unsupported-version' };
   if (!finiteTree(s)) return { ok: false, reason: 'invalid-number-or-value' };
   if (typeof s.runId !== 'string' || !s.runId || !Number.isInteger(s.tick) || s.tick < 0 || !Number.isInteger(s.rngState)) return { ok: false, reason: 'invalid-run' };
   if (!s.mission || !PHASES.includes(s.mission.phase) || !Array.isArray(s.mission.processedEvents) || !Array.isArray(s.mission.messages) || !Array.isArray(s.mission.defeatedCrew) || !Array.isArray(s.mission.acknowledgedDialogue) || !s.mission.actorRecoveryAttempts) return { ok: false, reason: 'invalid-mission' };
+  if(s.mission.eliCall!=null){try{new IncomingCall({lineCount:DIALOGUE.intro.length,ringSeconds:14,snapshot:s.mission.eliCall});}catch{return {ok:false,reason:'invalid-eli-call'};}}
   if (!['caseRecovered', 'junReached', 'junExtracted', 'completed', 'rewardPaid', 'alarmTriggered'].every(key => typeof s.mission[key] === 'boolean')) return { ok: false, reason: 'invalid-mission-flags' };
   if (!['available', 'carrying', 'earned', 'consumed'].includes(s.mission.favor)) return { ok: false, reason: 'invalid-favor' };
   if (!s.player || s.player.id !== 'mara' || !Number.isFinite(s.player.health) || s.player.health < 0 || s.player.health > 100 || !Number.isFinite(s.player.armor) || s.player.armor < 0 || s.player.armor > 100 || !Number.isInteger(s.player.wallet) || s.player.wallet < 0 || !s.player.combat) return { ok: false, reason: 'invalid-player' };
@@ -34,6 +51,11 @@ export function validateGameState(s) {
   if (m.caseRecovered && !m.completed && !s.player.inventory.case) return { ok: false, reason: 'missing-case' };
   if (!s.wanted || ![0, 1, 2, 3].includes(s.wanted.tier) || typeof s.wanted.visible !== 'boolean' || !Number.isFinite(s.wanted.clearProgress) || !Number.isFinite(s.wanted.unseenSeconds) || !['Unaware', 'Reporting', 'Dispatched', 'Pursuing', 'Searching', 'Cleared'].includes(s.wanted.status) || !Array.isArray(s.wanted.vehicleIds) || !Array.isArray(s.wanted.reportsReceived) || !s.crime || !Array.isArray(s.crime.incidents) || !Array.isArray(s.crime.reports)) return { ok: false, reason: 'invalid-crime-state' };
   if (!s.vehicles || !s.actors || !s.actors.jun || !s.economy || !Array.isArray(s.economy.transactions) || !s.district) return { ok: false, reason: 'missing-persistent-state' };
+  const dialogue=s.district.dialogue;
+  if(dialogue!==undefined){
+    const validLine=line=>line&&typeof line.speaker==='string'&&typeof line.text==='string'&&Number.isFinite(line.seconds)&&line.seconds>0&&line.seconds<=30&&(line.dialogueId===null||typeof line.dialogueId==='string')&&(line.lineIndex===null||Number.isInteger(line.lineIndex));
+    if(!dialogue||!Array.isArray(dialogue.queue)||dialogue.queue.length>100||!(dialogue.lastId===null||typeof dialogue.lastId==='string')||!Number.isFinite(dialogue.remaining)||dialogue.remaining<0||dialogue.remaining>30||(dialogue.current!==null&&!validLine(dialogue.current))||!dialogue.queue.every(validLine))return {ok:false,reason:'invalid-dialogue'};
+  }
   const occupants = new Set();
   for (const vehicle of Object.values(s.vehicles)) {
     const car = /** @type {any} */ (vehicle);
@@ -55,6 +77,7 @@ export function validateGameState(s) {
 export function migrateSave(state) {
   if (state?.schemaVersion !== SCHEMA_VERSION) return { ok: false, reason: 'unsupported-version', state: null };
   const valid = validateGameState(state);
+  if(valid.ok&&!state.district.dialogue)state.district.dialogue={lastId:null,current:null,remaining:0,queue:[]};
   return { ...valid, state: valid.ok ? /** @type {GameState} */ (state) : null };
 }
 
@@ -123,6 +146,7 @@ export class SettingsStore {
   constructor(storage) { this.storage = storage; }
   /** @param {Record<string,unknown>} settings */
   save(settings) {
+    if(!validSettings(settings))return{ok:false,reason:'invalid-settings'};
     try { this.storage.setItem(SETTINGS_KEY, JSON.stringify({ version: 1, settings })); return { ok: true }; }
     catch (error) { return { ok: false, reason: errorMessage(error) }; }
   }
@@ -131,7 +155,7 @@ export class SettingsStore {
       const raw = this.storage.getItem(SETTINGS_KEY);
       if (!raw) return { ok: false, reason: 'missing', settings: null };
       const data = JSON.parse(raw);
-      if (data.version !== 1 || !data.settings || typeof data.settings !== 'object' || !finiteTree(data.settings)) return { ok: false, reason: 'invalid-settings', settings: null };
+      if (!data || data.version !== 1 || !validSettings(data.settings)) return { ok: false, reason: 'invalid-settings', settings: null };
       return { ok: true, settings: data.settings };
     } catch (error) { return { ok: false, reason: errorMessage(error), settings: null }; }
   }

@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "browser": "155.0.8059.84",
+  "segments": [
+    {
+      "surface": "asphalt",
+      "maxRms": 0.0027614866261847656,
+      "meanCentroidHz": 587.9477352590329,
+      "samples": 7
+    },
+    {
+      "surface": "concrete",
+      "maxRms": 0.003459325842284982,
+      "meanCentroidHz": 1307.155169557503,
+      "samples": 8
+    },
+    {
+      "surface": "wood",
+      "maxRms": 0.00379544750387119,
+      "meanCentroidHz": 665.4872738679162,
+      "samples": 8
+    }
+  ],
+  "sampleRate": 48000,
+  "bytes": 49283,
+  "mimeType": "audio/webm",
+  "errors": []
+}

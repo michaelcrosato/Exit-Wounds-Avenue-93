@@ -18,7 +18,7 @@ export async function bootEngine({ canvas3d = 'view', canvasHud = 'screen', sett
   game.screen.setOptions({ minW: 320, minH: 240, maxW: 7680, maxH: 4320 });
   await E.World3D.init(game, { canvas: canvas3d, backend: settings.backend });
   const world = new E.World3D(game, {
-    level: { rows: [' '], bottom: -160 }, gravity: GRAVITY, look: 'puppet', res: settings.quality === 'low' ? 'balanced' : 'full', outlines: false,
+    level: { rows: [' '], bottom: -160 }, gravity: GRAVITY, look: 'puppet', res: settings.quality === 'high' ? 'full' : 'balanced', outlines: false,
     shadows: settings.quality !== 'low', camera: { mode: 'fixed', mouseLook: false },
     fog: { color: '#7b8f98', near: m(80), far: m(330) }, sky: '#788b96', ambient: ['#b4c9cd', '#3c4246', 1.65],
     sun: { color: '#d2dfdc', intensity: 1.35, dir: [.5, .2, -.8], area: m(70), map: 1024 }, filter: { look: 'clean', bloom: 0, fxaa: true }

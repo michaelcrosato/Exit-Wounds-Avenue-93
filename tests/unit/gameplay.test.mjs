@@ -31,6 +31,7 @@ function reachDecision(f, route = 'gate') {
   assert.equal(f.event('CaseRecovered').ok, true);
   assert.equal(f.event('CompanionExtracted', { onFoot: true }).ok, true);
   f.state.player.position.x = 200;
+  f.state.actors.jun.position = { ...f.state.player.position };
   assert.equal(f.wanted.tick(12).cleared, true);
   assert.equal(f.event('WantedCleared').ok, true);
 }
@@ -81,6 +82,14 @@ test('ending is changeable before commitment, destination and active wanted stat
   f.state.wanted.tier = 1;
   assert.equal(f.event('HandoffRequested', { locationId: 'waterfront' }).reason, 'lose-police-before-handoff');
   assert.equal(f.state.mission.phase, 'DECISION');
+});
+test('handoff waits for the living companion to physically arrive', () => {
+  const f = fixture(); reachDecision(f); f.director.chooseEnding('reporter');
+  f.state.actors.jun.position = { x: f.state.player.position.x - 68, y: f.state.player.position.y + 17, z: 0 };
+  assert.equal(f.event('HandoffRequested', { locationId: 'waterfront' }).reason, 'wait-for-jun');
+  assert.equal(f.state.mission.phase, 'DECISION');
+  f.state.actors.jun.position = { x: f.state.player.position.x - 3, y: f.state.player.position.y, z: 0 };
+  assert.equal(f.event('HandoffRequested', { locationId: 'waterfront' }).ok, true);
 });
 test('cabinet alarm uses normal reporting, has no magical identity, and persists at extraction checkpoint', () => {
   const f = fixture(); reachRecovery(f); f.event('JunReached'); f.event('CaseRecovered');

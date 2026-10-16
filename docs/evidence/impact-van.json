@@ -1,0 +1,64 @@
+{
+  "carId": "yard-van",
+  "setup": {
+    "board": true,
+    "car": {
+      "x": 220,
+      "y": 202,
+      "z": 0.7591108083724976
+    },
+    "officer": {
+      "x": 246,
+      "y": 208,
+      "z": -0.0011373281478881392
+    },
+    "occupied": "yard-van"
+  },
+  "final": {
+    "elapsed": 5.516666666666731,
+    "car": {
+      "x": 251.79632568359375,
+      "y": 201.99842834472656,
+      "z": 0.7504675984382629
+    },
+    "speed": -0.7175102715712769,
+    "health": 64.26986477600764,
+    "collisions": [
+      {
+        "id": "run-mvbalnbz:collision:662:0",
+        "position": {
+          "x": 251.79632568359375,
+          "y": 201.99842834472656,
+          "z": 0.7504675984382629
+        },
+        "vehicleId": "yard-van"
+      }
+    ],
+    "reports": [
+      {
+        "witness": "officer-1",
+        "kind": "police",
+        "person": null,
+        "vehicle": "yard-van",
+        "status": "Dispatched"
+      }
+    ],
+    "wanted": {
+      "tier": 1,
+      "status": "Pursuing",
+      "vehicles": [
+        "yard-van"
+      ],
+      "visible": true
+    },
+    "officer": {
+      "x": 246,
+      "y": 208,
+      "z": -0.0011373281478881392
+    },
+    "officerLOS": true
+  },
+  "errors": [],
+  "physicalImpact": true,
+  "visibleOfficerDistance": 8.343635524378453
+}

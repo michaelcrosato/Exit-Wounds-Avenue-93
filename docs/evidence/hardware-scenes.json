@@ -1,0 +1,73 @@
+{
+  "browser": "Chrome/155.0.8059.84",
+  "devices": [
+    {
+      "name": "NVIDIA GeForce RTX 3060 Ti",
+      "vendorId": 4318,
+      "deviceId": 9353,
+      "driverVersion": "32.0.16.1742"
+    },
+    {
+      "name": "Microsoft Basic Render Driver",
+      "vendorId": 5140,
+      "deviceId": 140,
+      "driverVersion": "10.0.26100.9711"
+    }
+  ],
+  "scenarios": {
+    "central": {
+      "frames": 480,
+      "avgMs": 16.66645833333333,
+      "p95Ms": 16.800000000000182,
+      "p99Ms": 16.80000000000109,
+      "width": 1920,
+      "height": 1080,
+      "quality": "high",
+      "worldRes": "full",
+      "calls": 321,
+      "tris": 172852,
+      "actors": 52,
+      "vehicles": 18,
+      "bodies": 281,
+      "phase": "INTRO",
+      "ui": "playing",
+      "error": null
+    },
+    "depot": {
+      "frames": 480,
+      "avgMs": 16.666666666666668,
+      "p95Ms": 16.800000000000182,
+      "p99Ms": 16.80000000000109,
+      "width": 1920,
+      "height": 1080,
+      "quality": "high",
+      "worldRes": "full",
+      "calls": 252,
+      "tris": 167980,
+      "actors": 52,
+      "vehicles": 18,
+      "bodies": 281,
+      "phase": "RECOVERY",
+      "ui": "playing",
+      "error": null
+    },
+    "tier3": {
+      "frames": 480,
+      "avgMs": 16.666666666666668,
+      "p95Ms": 16.799999999999272,
+      "p99Ms": 16.799999999999272,
+      "width": 1920,
+      "height": 1080,
+      "quality": "high",
+      "worldRes": "full",
+      "calls": 335,
+      "tris": 175866,
+      "actors": 52,
+      "vehicles": 18,
+      "bodies": 281,
+      "phase": "EVASION",
+      "ui": "playing",
+      "error": null
+    }
+  }
+}

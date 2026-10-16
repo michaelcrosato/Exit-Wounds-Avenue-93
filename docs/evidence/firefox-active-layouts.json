@@ -1,0 +1,489 @@
+{
+  "origin": "http://127.0.0.1:5173",
+  "records": [
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "status": "passed",
+      "captures": [
+        {
+          "size": "phone",
+          "state": "gameplay",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-phone-gameplay.png",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 0,
+              "bottom": 667,
+              "left": 0,
+              "right": 375
+            }
+          }
+        },
+        {
+          "size": "phone",
+          "state": "phone",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-phone-phone.png",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 322.0333251953125,
+              "bottom": 388.0333251953125,
+              "left": 29,
+              "right": 344
+            }
+          }
+        },
+        {
+          "size": "phone",
+          "state": "pause",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-phone-pause.png",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 172.03334045410156,
+              "bottom": 220.03334045410156,
+              "left": 25,
+              "right": 360
+            }
+          }
+        },
+        {
+          "size": "phone",
+          "state": "decision",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-phone-decision.png",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 123,
+            "focus": {
+              "top": 245.93333435058594,
+              "bottom": 453.53334045410156,
+              "left": 20,
+              "right": 355
+            }
+          }
+        },
+        {
+          "size": "phone",
+          "state": "retry",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-phone-retry.png",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 325.316650390625,
+              "bottom": 391.316650390625,
+              "left": 25,
+              "right": 360
+            }
+          }
+        },
+        {
+          "size": "phone",
+          "state": "ending",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-phone-ending.png",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 429,
+              "bottom": 495,
+              "left": 25,
+              "right": 360
+            }
+          }
+        },
+        {
+          "size": "phone",
+          "state": "credits",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-phone-credits.png",
+          "layout": {
+            "width": 375,
+            "height": 667,
+            "documentWidth": 375,
+            "screenScroll": 0,
+            "focus": {
+              "top": 581,
+              "bottom": 647,
+              "left": 25,
+              "right": 360
+            }
+          }
+        },
+        {
+          "size": "landscape",
+          "state": "gameplay",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-landscape-gameplay.png",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 0,
+            "focus": {
+              "top": 0,
+              "bottom": 352,
+              "left": 0,
+              "right": 756
+            }
+          }
+        },
+        {
+          "size": "landscape",
+          "state": "phone",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-landscape-phone.png",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 0,
+            "focus": {
+              "top": 206.21665954589844,
+              "bottom": 254.21665954589844,
+              "left": 29,
+              "right": 589
+            }
+          }
+        },
+        {
+          "size": "landscape",
+          "state": "pause",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-landscape-pause.png",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 199,
+            "focus": {
+              "top": 113.81666564941406,
+              "bottom": 161.81666564941406,
+              "left": 25,
+              "right": 585
+            }
+          }
+        },
+        {
+          "size": "landscape",
+          "state": "decision",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-landscape-decision.png",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 295,
+            "focus": {
+              "top": 171.11666870117188,
+              "bottom": 351.1166687011719,
+              "left": 20,
+              "right": 736
+            }
+          }
+        },
+        {
+          "size": "landscape",
+          "state": "retry",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-landscape-retry.png",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 0,
+            "focus": {
+              "top": 164.0500030517578,
+              "bottom": 212.0500030517578,
+              "left": 25,
+              "right": 585
+            }
+          }
+        },
+        {
+          "size": "landscape",
+          "state": "ending",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-landscape-ending.png",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 0,
+            "focus": {
+              "top": 174.1999969482422,
+              "bottom": 218.1999969482422,
+              "left": 25,
+              "right": 585
+            }
+          }
+        },
+        {
+          "size": "landscape",
+          "state": "credits",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-landscape-credits.png",
+          "layout": {
+            "width": 756,
+            "height": 352,
+            "documentWidth": 756,
+            "screenScroll": 0,
+            "focus": {
+              "top": 266.20001220703125,
+              "bottom": 314.20001220703125,
+              "left": 25,
+              "right": 585
+            }
+          }
+        },
+        {
+          "size": "desktop",
+          "state": "gameplay",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-desktop-gameplay.png",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 0,
+              "bottom": 720,
+              "left": 0,
+              "right": 1280
+            }
+          }
+        },
+        {
+          "size": "desktop",
+          "state": "phone",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-desktop-phone.png",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 363.23333740234375,
+              "bottom": 429.23333740234375,
+              "left": 73,
+              "right": 633
+            }
+          }
+        },
+        {
+          "size": "desktop",
+          "state": "pause",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-desktop-pause.png",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 196.36666870117188,
+              "bottom": 245.36666870117188,
+              "left": 69,
+              "right": 629
+            }
+          }
+        },
+        {
+          "size": "desktop",
+          "state": "decision",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-desktop-decision.png",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 341.23333740234375,
+              "bottom": 521.2333374023438,
+              "left": 64,
+              "right": 556.5
+            }
+          }
+        },
+        {
+          "size": "desktop",
+          "state": "retry",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-desktop-retry.png",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 351.9666748046875,
+              "bottom": 417.9666748046875,
+              "left": 69,
+              "right": 629
+            }
+          }
+        },
+        {
+          "size": "desktop",
+          "state": "ending",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-desktop-ending.png",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 438,
+              "bottom": 504,
+              "left": 69,
+              "right": 629
+            }
+          }
+        },
+        {
+          "size": "desktop",
+          "state": "credits",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-desktop-credits.png",
+          "layout": {
+            "width": 1280,
+            "height": 720,
+            "documentWidth": 1280,
+            "screenScroll": 0,
+            "focus": {
+              "top": 590,
+              "bottom": 656,
+              "left": 69,
+              "right": 629
+            }
+          }
+        },
+        {
+          "size": "ultrawide",
+          "state": "gameplay",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-ultrawide-gameplay.png",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 0,
+              "bottom": 1080,
+              "left": 0,
+              "right": 2560
+            }
+          }
+        },
+        {
+          "size": "ultrawide",
+          "state": "phone",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-ultrawide-phone.png",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 574.7166748046875,
+              "bottom": 640.7166748046875,
+              "left": 97,
+              "right": 657
+            }
+          }
+        },
+        {
+          "size": "ultrawide",
+          "state": "pause",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-ultrawide-pause.png",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 328.7166748046875,
+              "bottom": 394.7166748046875,
+              "left": 93,
+              "right": 653
+            }
+          }
+        },
+        {
+          "size": "ultrawide",
+          "state": "decision",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-ultrawide-decision.png",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 533.1500244140625,
+              "bottom": 713.1500244140625,
+              "left": 88,
+              "right": 580.5
+            }
+          }
+        },
+        {
+          "size": "ultrawide",
+          "state": "retry",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-ultrawide-retry.png",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 541.566650390625,
+              "bottom": 607.566650390625,
+              "left": 93,
+              "right": 653
+            }
+          }
+        },
+        {
+          "size": "ultrawide",
+          "state": "ending",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-ultrawide-ending.png",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 744.2000122070312,
+              "bottom": 810.2000122070312,
+              "left": 93,
+              "right": 653
+            }
+          }
+        },
+        {
+          "size": "ultrawide",
+          "state": "credits",
+          "path": "/tmp/ewa93-active-firefox-toast-fix/firefox-ultrawide-credits.png",
+          "layout": {
+            "width": 2560,
+            "height": 1080,
+            "documentWidth": 2560,
+            "screenScroll": 0,
+            "focus": {
+              "top": 862.5499877929688,
+              "bottom": 928.5499877929688,
+              "left": 93,
+              "right": 653
+            }
+          }
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

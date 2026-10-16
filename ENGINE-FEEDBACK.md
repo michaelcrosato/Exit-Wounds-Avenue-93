@@ -30,3 +30,5 @@ Workarounds in this build:
 The most useful single engine addition would be a public `World3D` query API covering **all collider categories**, with explicit masks, exclusions and tagged entity results. Camera, combat, cover, witness sight, floor placement and seat validation currently need the same direct-Rapier query layer. Broadening that API would remove repeated boundary work while leaving game-specific behavior in the game.
 
 Focused browser tests exercise actual engine stepping, vehicle movement, steering, contacts, seats, analog inputs, query occlusion and capture playback. They do not establish physical-controller completion, hardware-rendered performance or final audiovisual acceptance; those belong in the game's test report.
+
+One early WSL mixed-scene diagnostic produced a Rapier WASM panic and then unsafe-alias errors. Its cause is unresolved. A later instrumented rerun of the full six-scene sequence on unchanged source completed without exceptions or non-finite cached state. The cached-handle vehicle filter is not a proven fix; `docs/ENGINE-PATCHES.md` records the evidence and uncertainty.
