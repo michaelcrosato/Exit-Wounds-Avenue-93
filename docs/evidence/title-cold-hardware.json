@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "sourceCommit": "e6cd7524f8f1552be87aa20226848641bd1d0fd3",
+  "sourceHashes": {
+    "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+    "src/ui/interface.css": "57176f99c79c5e89c95332d9fa0e3e6808f9b2cf5007ec661c2ccfc2a2d9438c",
+    "assets/manifest.json": "e29786360ed0080790bcae4bd9a7156131bf397d31b8e5bc7dbf46869600d90b"
+  },
+  "method": {
+    "browserProcessCold": true,
+    "newEmptyProfile": true,
+    "oneRunOnly": true,
+    "server": "repository-local HTTP source game at 127.0.0.1:4193",
+    "launch": "Windows Node 24.16.0 spawned its own Chrome headless process with fresh CDP port 9357 and profile under C:\\Temp; Playwright connected to that port and navigated the normal game page",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "quality": "High default in new profile",
+    "interactiveProof": "Settings opened and returned to title through normal UI"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 10.0.26300",
+    "cpu": "Intel Core i9-13900K",
+    "chrome": "Chrome/155.0.8059.84",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 3060 Ti",
+      "vendor": "NVIDIA",
+      "driverVersion": "32.0.16.1742"
+    },
+    "webglRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 Ti (0x00002489) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "gameBackend": "WebGPU",
+    "webgpuFeatureStatus": "enabled"
+  },
+  "timing": {
+    "processStartUtc": "2026-10-16T23:49:15.090Z",
+    "navigationStartedUtc": "2026-10-16T23:49:15.378Z",
+    "titleVisibleUtc": "2026-10-16T23:49:17.429Z",
+    "processStartToCdpReadyMs": 242.15149999999994,
+    "processStartToPageReadyMs": 285.49210000000005,
+    "navigationToTitleVisibleMs": 2051.0773,
+    "processStartToTitleVisibleMs": 2339.0785,
+    "targetMs": 10000,
+    "targetPassed": true
+  },
+  "network": {
+    "httpStatus": 200,
+    "responseCount": 51,
+    "responseBodyBytes": 5255929,
+    "encodedTransferBytes": 5268512,
+    "failedRequests": []
+  },
+  "browser": {
+    "titleScreen": "title",
+    "titleVisible": true,
+    "newGameEnabled": true,
+    "errors": [],
+    "ownedChromePid": 37612,
+    "ownedChromeStopped": true,
+    "port9357Closed": true,
+    "existingPort9223Untouched": true
+  },
+  "comparison": {
+    "earlierFreshContextNavigationToTitleMs": 11754,
+    "earlierRunType": "Existing Chrome process, fresh context; different host load and run conditions"
+  },
+  "limits": [
+    "Single process-cold browser/profile observation; operating-system file cache and the local server process may have been warm.",
+    "This measures visible, enabled title and a Settings round trip, not a fresh-player mission or gameplay frame time.",
+    "The earlier 11.754-second existing-process fresh-context observation remains valid evidence of timing variability."
+  ],
+  "raw": {
+    "report": "C:\\Temp\\EWA93ColdTitleHardware\\run-2026-10-16T23-49-15-083Z\\report.json",
+    "titlePng": "C:\\Temp\\EWA93ColdTitleHardware\\run-2026-10-16T23-49-15-083Z\\title.png",
+    "runner": "C:\\Temp\\EWA93ColdTitleHardware\\run.cjs"
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-16T23:45:31.857Z",
+  "sourceCommit": "e6cd7524f8f1552be87aa20226848641bd1d0fd3",
+  "publicRepository": "https://github.com/michaelcrosato/Exit-Wounds-Avenue-93",
+  "publicVisibility": "PUBLIC",
+  "remoteHead": "e6cd7524f8f1552be87aa20226848641bd1d0fd3",
+  "clone": {
+    "path": "/tmp/ewa93-public-v10-P7700k/repo",
+    "clean": true,
+    "sourceHashes": {
+      "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+      "src/ui/interface.css": "57176f99c79c5e89c95332d9fa0e3e6808f9b2cf5007ec661c2ccfc2a2d9438c",
+      "assets/manifest.json": "e29786360ed0080790bcae4bd9a7156131bf397d31b8e5bc7dbf46869600d90b"
+    },
+    "previewRoot": "/tmp/ewa93-public-v10-P7700k/repo/dist",
+    "baseUrlEnvironmentUnset": true
+  },
+  "environment": {
+    "os": "Ubuntu 26.04.1 LTS under WSL2",
+    "node": "v22.23.3",
+    "npm": "12.2.0",
+    "playwright": "1.63.0",
+    "browsers": {
+      "chromium": "153.0.8010.12",
+      "webkit": "26.6",
+      "firefox": "155.0"
+    },
+    "previewRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "checks": {
+    "npmCi": {
+      "passed": true,
+      "packagesAdded": 3,
+      "vulnerabilities": 0
+    },
+    "typecheck": {
+      "passed": true
+    },
+    "unit": {
+      "passed": 44,
+      "total": 44
+    },
+    "coreIntegration": {
+      "passed": 19,
+      "total": 19
+    },
+    "latePersistence": {
+      "passed": 11,
+      "total": 11,
+      "uniqueNames": 11,
+      "groups": [
+        {
+          "name": "late-a",
+          "passed": 3,
+          "total": 3,
+          "origin": "http://127.0.0.1:46585"
+        },
+        {
+          "name": "late-b",
+          "passed": 4,
+          "total": 4,
+          "origin": "http://127.0.0.1:45461"
+        },
+        {
+          "name": "late-c",
+          "passed": 4,
+          "total": 4,
+          "origin": "http://127.0.0.1:34117"
+        }
+      ]
+    },
+    "opening": {
+      "passed": 3,
+      "total": 3,
+      "browsers": [
+        {
+          "engine": "chromium",
+          "version": "153.0.8010.12",
+          "status": "passed"
+        },
+        {
+          "engine": "webkit",
+          "version": "26.6",
+          "status": "passed"
+        },
+        {
+          "engine": "webkit",
+          "version": "26.6",
+          "status": "passed"
+        }
+      ]
+    },
+    "strippedRelease": {
+      "passed": 3,
+      "total": 3,
+      "browsers": [
+        {
+          "engine": "chromium",
+          "version": "153.0.8010.12",
+          "status": "passed",
+          "titleReadyMs": 16126,
+          "errors": 0,
+          "networkErrors": 0
+        },
+        {
+          "engine": "webkit",
+          "version": "26.6",
+          "status": "passed",
+          "titleReadyMs": 7711,
+          "errors": 0,
+          "networkErrors": 0
+        },
+        {
+          "engine": "firefox",
+          "version": "155.0",
+          "status": "passed",
+          "titleReadyMs": 5143,
+          "errors": 0,
+          "networkErrors": 0
+        }
+      ]
+    },
+    "assetAudit": {
+      "passed": true,
+      "attributedEntries": 15
+    },
+    "build": {
+      "passed": true,
+      "files": 136,
+      "fileBytes": 9179349,
+      "gzipPotentialBytes": 2672075
+    },
+    "preview": {
+      "passed": true,
+      "httpStatus": 200,
+      "titleReadyMs": 16519,
+      "initialResponses": 50,
+      "initialResponseBodyBytes": 5255248,
+      "errors": [],
+      "failedRequests": [],
+      "sourceInfo": "Initial date: 2026-10-16 (first prompt known in this thread)\nSOURCE: Grand Theft Auto IV — Xbox 360, PlayStation 3 and PC\nGAME ENGINE: my-3d2dge 0.46.1, build dev-build, commit cfa866aa45474868350cad1a7fc015e612f9305f\nEnvironment: Ubuntu 26.04.1 LTS under WSL2; Chromium, Firefox and WebKit opening checks, with broader QA in progress\nModel and effort: GPT-6.1-Sol with Ultra for delegated implementation; root session model/effort not verified"
+    },
+    "lighthouse": {
+      "version": "13.5.0",
+      "preset": "desktop",
+      "scores": {
+        "performance": 0.28,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1,
+        "agentic-browsing": 1
+      },
+      "totalByteWeight": 5268306,
+      "totalBlockingTimeMs": 38384,
+      "interactiveMs": 45963.901,
+      "warnings": [
+        "The page loaded too slowly to finish within the time limit. Results may be incomplete."
+      ]
+    },
+    "viewport": {
+      "matrixTotal": 24,
+      "matrixClean": 22,
+      "matrixScreenshotTimeouts": [
+        {
+          "label": "Laptop 1366x768",
+          "engine": "chromium",
+          "error": "Page.screenshot: Timeout 30000ms exceeded."
+        },
+        {
+          "label": "16:9 1920x1080",
+          "engine": "chromium",
+          "error": "Page.screenshot: Timeout 30000ms exceeded."
+        }
+      ],
+      "matrixLayoutIssues": 0,
+      "serialRetests": [
+        {
+          "width": 1366,
+          "height": 768,
+          "status": 200,
+          "screenshotMs": 1970,
+          "overflow": {
+            "viewport": 1366,
+            "scrollWidth": 1366,
+            "bodyWidth": 1366
+          },
+          "screenshotError": null,
+          "errors": [],
+          "failedRequests": []
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "status": 200,
+          "screenshotMs": 3054,
+          "overflow": {
+            "viewport": 1920,
+            "scrollWidth": 1920,
+            "bodyWidth": 1920
+          },
+          "screenshotError": null,
+          "errors": [],
+          "failedRequests": []
+        }
+      ],
+      "shortLandscapeMenu": {
+        "scrollable": true,
+        "keyboardFocus": "openSettings",
+        "creditsVisible": true,
+        "errors": []
+      },
+      "inspectedFrames": [
+        "iPhone SE WebKit",
+        "iPad Mini WebKit",
+        "iPhone 17 Pro landscape WebKit",
+        "Galaxy Tab S9 Chromium",
+        "21:9 2560x1080 WebKit",
+        "1366x768 Chromium serial retest",
+        "1920x1080 Chromium serial retest"
+      ]
+    }
+  },
+  "limitations": [
+    "The 16.5-second cold title and Lighthouse performance score were measured with WSL SwiftShader, not the named hardware GPU baseline; the 10-second cold-title target was not met in this environment.",
+    "Lighthouse warned that the page loaded too slowly to finish within its time limit; its performance result may be incomplete.",
+    "The viewport matrix had two 30-second Chromium screenshot timeouts under six concurrent contexts; both exact sizes passed serial 90-second-timeout retests without layout or console errors.",
+    "WebKit iPhone profiles approximate Safari and do not constitute real iOS Safari testing.",
+    "Controller playthrough evidence uses a Gamepad API emulator, not a physical controller."
+  ],
+  "rawReports": {
+    "root": "/tmp/ewa93-public-v10-P7700k",
+    "late": [
+      "late-a/report.json",
+      "late-b/report.json",
+      "late-c/report.json"
+    ],
+    "opening": "opening/report.json",
+    "release": "release/report.json",
+    "preview": "preview-observation.json",
+    "lighthouse": "lighthouse-desktop.json",
+    "viewport": "viewports/report.json",
+    "viewportRetest": "viewports-retest/report.json",
+    "landscape": "landscape-menu.json"
+  }
+}
