@@ -1,0 +1,341 @@
+{
+  "schema": 2,
+  "kind": "controller-route",
+  "status": "passed",
+  "startedAt": "2026-10-16T21:02:57.314Z",
+  "finishedAt": "2026-10-16T21:06:18.791Z",
+  "engine": "chromium",
+  "browserVersion": "155.0.8059.84",
+  "ending": "reporter",
+  "seed": 93,
+  "input": "Gamepad API emulation; no keyboard or mouse gameplay/menu input",
+  "physicalController": false,
+  "acceleratedFixedSteps": true,
+  "titleReadyWallMs": 11754,
+  "titleTargetWallMs": 10000,
+  "sourceFileCount": 320,
+  "sourceDigestSha256": "a4eab5cd60501b6f686c8100cd2e2f9a6bae6de67627416b513fdc402fa3b6a4",
+  "sourceDigestMethod": "SHA-256 of JSON sorted [relative path, SHA-256] pairs",
+  "sourceHashes": {
+    "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+    "src/game/save.js": "fe8306f248eba3dc8b93affef03b8cf76120cd96ea7852299284ce26153904a4",
+    "src/engine/vehicles.js": "f7f18b80301e13645b356d47a61799a6816780d160cf10012951ae299007718b",
+    "src/ui/interface.js": "5abf673432dfceeb0aebe60296ce174c890515e8d07dd90c82514aeb8af93041",
+    "src/ui/interface.css": "57176f99c79c5e89c95332d9fa0e3e6808f9b2cf5007ec661c2ccfc2a2d9438c",
+    "assets/manifest.json": "e29786360ed0080790bcae4bd9a7156131bf397d31b8e5bc7dbf46869600d90b",
+    "tests/e2e/controller-route.mjs": "32ea3783b3dd4c6fa47f4456925ee9aa74c101b8a53d683258cd9649c2c1d3b4"
+  },
+  "sourceStable": true,
+  "externalInputs": {
+    "keydown": 0,
+    "mousedown": 0,
+    "pointerdown": 0,
+    "touchstart": 0
+  },
+  "analogDrive": {
+    "carBefore": {
+      "x": 94,
+      "y": 324.79998779296875,
+      "z": 0.719111442565918
+    },
+    "carAfter": {
+      "x": 98.76809692382812,
+      "y": 325.51690673828125,
+      "z": 0.7190764546394348
+    }
+  },
+  "creditsScroll": {
+    "before": 0,
+    "after": 95
+  },
+  "checkpoints": [
+    {
+      "name": "00-controller-settings",
+      "screen": "title",
+      "junGap": null
+    },
+    {
+      "name": "01-new-game",
+      "screen": "playing",
+      "phase": "INTRO",
+      "elapsed": 0.4000000000000004,
+      "player": {
+        "x": 91,
+        "y": 311,
+        "z": 0.08000002145767221
+      },
+      "jun": {
+        "x": 331,
+        "y": 88,
+        "z": 0.10000000238418577
+      },
+      "junGap": 327.61104987469514,
+      "health": 100,
+      "armor": 0,
+      "wallet": 80,
+      "vehicleId": null,
+      "wantedTier": 0,
+      "caseRecovered": false
+    },
+    {
+      "name": "01a-analog-driving",
+      "screen": "playing",
+      "phase": "INTRO",
+      "elapsed": 9.666666666666758,
+      "player": {
+        "x": 99.19746398925781,
+        "y": 327.2010803222656,
+        "z": -2.1457672028102337e-8
+      },
+      "jun": {
+        "x": 331,
+        "y": 88,
+        "z": 0.10000000238418577
+      },
+      "junGap": 333.09093732545534,
+      "health": 100,
+      "armor": 0,
+      "wallet": 80,
+      "vehicleId": null,
+      "wantedTier": 0,
+      "caseRecovered": false
+    },
+    {
+      "name": "02-job-accepted",
+      "screen": "playing",
+      "phase": "COLLECTION",
+      "elapsed": 18.574999999999587,
+      "player": {
+        "x": 105.4534683227539,
+        "y": 307.4995422363281,
+        "z": 0.08000002145767221
+      },
+      "jun": {
+        "x": 331,
+        "y": 88,
+        "z": 0.10000000238418577
+      },
+      "junGap": 314.7241442812937,
+      "health": 100,
+      "armor": 0,
+      "wallet": 80,
+      "vehicleId": null,
+      "wantedTier": 0,
+      "caseRecovered": false
+    },
+    {
+      "name": "02a-hotplug-recovery",
+      "screen": "playing",
+      "phase": "COLLECTION",
+      "elapsed": 19.5416666666662,
+      "player": {
+        "x": 105.4534683227539,
+        "y": 307.4995422363281,
+        "z": 0.08000002145767221
+      },
+      "jun": {
+        "x": 331,
+        "y": 88,
+        "z": 0.10000000238418577
+      },
+      "junGap": 314.7241442812937,
+      "health": 100,
+      "armor": 0,
+      "wallet": 80,
+      "vehicleId": null,
+      "wantedTier": 0,
+      "caseRecovered": false
+    },
+    {
+      "name": "03-bea-market",
+      "screen": "playing",
+      "phase": "APPROACH",
+      "elapsed": 53.42499999999761,
+      "player": {
+        "x": 111.76261138916016,
+        "y": 215.9468231201172,
+        "z": 3.814697274728829e-8
+      },
+      "jun": {
+        "x": 331,
+        "y": 88,
+        "z": 0.10000000238418577
+      },
+      "junGap": 253.84133255132224,
+      "health": 100,
+      "armor": 0,
+      "wallet": 80,
+      "vehicleId": null,
+      "wantedTier": 0,
+      "caseRecovered": false
+    },
+    {
+      "name": "04-gate-committed",
+      "screen": "playing",
+      "phase": "RECOVERY",
+      "elapsed": 110.74166666670087,
+      "player": {
+        "x": 347.9862365722656,
+        "y": 164.47637939453125,
+        "z": -2.1457672028102337e-8
+      },
+      "jun": {
+        "x": 331,
+        "y": 88,
+        "z": 0.10000000238418577
+      },
+      "junGap": 78.34008449181847,
+      "health": 100,
+      "armor": 88,
+      "wallet": 20,
+      "vehicleId": null,
+      "wantedTier": 0,
+      "caseRecovered": false
+    },
+    {
+      "name": "05-gate-fight",
+      "screen": "playing",
+      "phase": "RECOVERY",
+      "elapsed": 124.15833333337821,
+      "player": {
+        "x": 347.99835205078125,
+        "y": 157.2655792236328,
+        "z": -2.1457672028102337e-8
+      },
+      "jun": {
+        "x": 331,
+        "y": 88,
+        "z": 0.10000000238418577
+      },
+      "junGap": 71.32085555871896,
+      "health": 100,
+      "armor": 40,
+      "wallet": 20,
+      "vehicleId": null,
+      "wantedTier": 0,
+      "caseRecovered": false
+    },
+    {
+      "name": "06-case-and-alarm",
+      "screen": "playing",
+      "phase": "EXTRACTION",
+      "elapsed": 151.05833333336028,
+      "player": {
+        "x": 322.9643859863281,
+        "y": 83.80387878417969,
+        "z": 0.10000000238418588
+      },
+      "jun": {
+        "x": 326.6260681152344,
+        "y": 85.5006103515625,
+        "z": 0.10000000238418577
+      },
+      "junGap": 4.0356925087157896,
+      "health": 100,
+      "armor": 40,
+      "wallet": 20,
+      "vehicleId": null,
+      "wantedTier": 2,
+      "caseRecovered": true
+    },
+    {
+      "name": "07-extracted",
+      "screen": "playing",
+      "phase": "EVASION",
+      "elapsed": 215.79999999996807,
+      "player": {
+        "x": 347.9964599609375,
+        "y": 211.72943115234375,
+        "z": -2.1457672028102337e-8
+      },
+      "jun": {
+        "x": 347.981689453125,
+        "y": 208.46775817871094,
+        "z": 3.8146972636265986e-8
+      },
+      "junGap": 3.261706417632917,
+      "health": 100,
+      "armor": 40,
+      "wallet": 20,
+      "vehicleId": null,
+      "wantedTier": 2,
+      "caseRecovered": true
+    },
+    {
+      "name": "08-destination-chosen",
+      "screen": "playing",
+      "phase": "DECISION",
+      "elapsed": 300.191666666558,
+      "player": {
+        "x": 271.7379150390625,
+        "y": 353.79266357421875,
+        "z": 3.814697274728829e-8
+      },
+      "jun": {
+        "x": 269.42962646484375,
+        "y": 352.6461181640625,
+        "z": 3.8146972636265986e-8
+      },
+      "junGap": 2.5773557223284476,
+      "health": 100,
+      "armor": 40,
+      "wallet": 20,
+      "vehicleId": null,
+      "wantedTier": 0,
+      "caseRecovered": true
+    },
+    {
+      "name": "09-completed-handoff",
+      "screen": "ending",
+      "phase": "AFTERMATH",
+      "elapsed": 361.07499999983594,
+      "player": {
+        "x": 382.5826416015625,
+        "y": 358.14581298828125,
+        "z": 3.814697274728829e-8
+      },
+      "jun": {
+        "x": 375.7069091796875,
+        "y": 359.30706787109375,
+        "z": 3.8146972636265986e-8
+      },
+      "junGap": 6.973106140026762,
+      "health": 100,
+      "armor": 40,
+      "wallet": 620,
+      "vehicleId": null,
+      "wantedTier": 0,
+      "caseRecovered": false
+    },
+    {
+      "name": "10-credits",
+      "screen": "credits",
+      "phase": "AFTERMATH",
+      "elapsed": 361.07499999983594,
+      "player": {
+        "x": 382.5826416015625,
+        "y": 358.14581298828125,
+        "z": 3.814697274728829e-8
+      },
+      "jun": {
+        "x": 375.7069091796875,
+        "y": 359.30706787109375,
+        "z": 3.8146972636265986e-8
+      },
+      "junGap": 6.973106140026762,
+      "health": 100,
+      "armor": 40,
+      "wallet": 620,
+      "vehicleId": null,
+      "wantedTier": 0,
+      "caseRecovered": false
+    }
+  ],
+  "errors": [],
+  "rawEvidenceOutsideRepository": true,
+  "limits": [
+    "Standard Gamepad API fixture tests engine polling and UI/game actions, not physical pad HID/latency/rumble/feel.",
+    "Gameplay uses accelerated engine fixed steps; title-ready timing is wall time in a fresh browser context, not a fresh browser process.",
+    "Automated skilled route does not establish first-player pacing or ordinary-time controller play."
+  ]
+}

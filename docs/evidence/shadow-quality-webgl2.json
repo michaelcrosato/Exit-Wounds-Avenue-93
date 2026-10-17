@@ -1,0 +1,471 @@
+{
+  "kind": "normal UI High/Low shadow-quality regression",
+  "requestedBackend": "webgl",
+  "browserVersion": "153.0.8010.12",
+  "baseURL": "http://127.0.0.1:40885",
+  "cdpURL": null,
+  "sourceAtStart": {
+    "src/main.js": "4a6cae13bed58a32178f68e6acd866a0bd4bc58f2541c59237c9924fb5a880e2",
+    "src/engine/world.js": "6a5287a14b1ca4c435c0572866334a7f40cc17c2ebff2f6290cb5c29a1df61bb",
+    "vendor/my-3d2dge/engine/my-3d2dge-3d.js": "bb89882022a09c4d457aebdd08a04b59493714d829caf79c0225e5586dcc3a21",
+    "vendor/my-3d2dge/vendor/three-0.182.0/three.webgpu.min.js": "522b07095d914ba2a74dd3a96a4d7bdac296973404de4f8f578fda7550abda24",
+    "tests/e2e/shadow-quality-toggle.mjs": "0fe5a9c96faa2aed38e2ee04bb4d985fdda3a23dbece0a21b7d8acbd02ee79bf"
+  },
+  "sourceAtEnd": {
+    "src/main.js": "4a6cae13bed58a32178f68e6acd866a0bd4bc58f2541c59237c9924fb5a880e2",
+    "src/engine/world.js": "6a5287a14b1ca4c435c0572866334a7f40cc17c2ebff2f6290cb5c29a1df61bb",
+    "vendor/my-3d2dge/engine/my-3d2dge-3d.js": "bb89882022a09c4d457aebdd08a04b59493714d829caf79c0225e5586dcc3a21",
+    "vendor/my-3d2dge/vendor/three-0.182.0/three.webgpu.min.js": "522b07095d914ba2a74dd3a96a4d7bdac296973404de4f8f578fda7550abda24",
+    "tests/e2e/shadow-quality-toggle.mjs": "0fe5a9c96faa2aed38e2ee04bb4d985fdda3a23dbece0a21b7d8acbd02ee79bf"
+  },
+  "sourceStable": true,
+  "records": [
+    {
+      "name": "warm-high-two-cycles",
+      "initialQuality": "high",
+      "sequence": [
+        "low",
+        "high",
+        "low",
+        "high"
+      ],
+      "status": "passed",
+      "stages": [
+        {
+          "label": "initial",
+          "screen": "playing",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "high",
+          "resolution": "full",
+          "worldShadows": true,
+          "frames": 21,
+          "drawCalls": 384,
+          "tick": 48,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 1,
+              "autoUpdate": true,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 17
+            }
+          ]
+        },
+        {
+          "label": "settings-low",
+          "screen": "settings",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "low",
+          "resolution": "balanced",
+          "worldShadows": true,
+          "frames": 39,
+          "drawCalls": 281,
+          "tick": 54,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 0,
+              "autoUpdate": false,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 32
+            }
+          ]
+        },
+        {
+          "label": "playing-low",
+          "screen": "playing",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "low",
+          "resolution": "balanced",
+          "worldShadows": true,
+          "frames": 63,
+          "drawCalls": 281,
+          "tick": 102,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 0,
+              "autoUpdate": false,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 32
+            }
+          ],
+          "frameDelta": 5,
+          "tickDelta": 30
+        },
+        {
+          "label": "settings-high",
+          "screen": "settings",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "high",
+          "resolution": "full",
+          "worldShadows": true,
+          "frames": 82,
+          "drawCalls": 384,
+          "tick": 108,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 1,
+              "autoUpdate": true,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 35
+            }
+          ]
+        },
+        {
+          "label": "playing-high",
+          "screen": "playing",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "high",
+          "resolution": "full",
+          "worldShadows": true,
+          "frames": 105,
+          "drawCalls": 384,
+          "tick": 150,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 1,
+              "autoUpdate": true,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 58
+            }
+          ],
+          "frameDelta": 4,
+          "tickDelta": 24
+        },
+        {
+          "label": "settings-low",
+          "screen": "settings",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "low",
+          "resolution": "balanced",
+          "worldShadows": true,
+          "frames": 123,
+          "drawCalls": 281,
+          "tick": 156,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 0,
+              "autoUpdate": false,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 73
+            }
+          ]
+        },
+        {
+          "label": "playing-low",
+          "screen": "playing",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "low",
+          "resolution": "balanced",
+          "worldShadows": true,
+          "frames": 147,
+          "drawCalls": 281,
+          "tick": 204,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 0,
+              "autoUpdate": false,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 73
+            }
+          ],
+          "frameDelta": 5,
+          "tickDelta": 30
+        },
+        {
+          "label": "settings-high",
+          "screen": "settings",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "high",
+          "resolution": "full",
+          "worldShadows": true,
+          "frames": 165,
+          "drawCalls": 384,
+          "tick": 210,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 1,
+              "autoUpdate": true,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 76
+            }
+          ]
+        },
+        {
+          "label": "playing-high",
+          "screen": "playing",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "high",
+          "resolution": "full",
+          "worldShadows": true,
+          "frames": 188,
+          "drawCalls": 388,
+          "tick": 252,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 1,
+              "autoUpdate": true,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 99
+            }
+          ],
+          "frameDelta": 4,
+          "tickDelta": 24
+        }
+      ],
+      "errors": [],
+      "networkErrors": [],
+      "startedAt": "2026-10-17T00:41:24.217Z",
+      "finishedAt": "2026-10-17T00:42:28.159Z"
+    },
+    {
+      "name": "cold-low-to-high",
+      "initialQuality": "low",
+      "sequence": [
+        "high",
+        "low",
+        "high"
+      ],
+      "status": "passed",
+      "stages": [
+        {
+          "label": "initial",
+          "screen": "playing",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "low",
+          "resolution": "balanced",
+          "worldShadows": true,
+          "frames": 21,
+          "drawCalls": 281,
+          "tick": 48,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 0,
+              "autoUpdate": false,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 0
+            }
+          ]
+        },
+        {
+          "label": "settings-high",
+          "screen": "settings",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "high",
+          "resolution": "full",
+          "worldShadows": true,
+          "frames": 39,
+          "drawCalls": 384,
+          "tick": 54,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 1,
+              "autoUpdate": true,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 3
+            }
+          ]
+        },
+        {
+          "label": "playing-high",
+          "screen": "playing",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "high",
+          "resolution": "full",
+          "worldShadows": true,
+          "frames": 62,
+          "drawCalls": 384,
+          "tick": 96,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 1,
+              "autoUpdate": true,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 26
+            }
+          ],
+          "frameDelta": 4,
+          "tickDelta": 24
+        },
+        {
+          "label": "settings-low",
+          "screen": "settings",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "low",
+          "resolution": "balanced",
+          "worldShadows": true,
+          "frames": 80,
+          "drawCalls": 281,
+          "tick": 102,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 0,
+              "autoUpdate": false,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 41
+            }
+          ]
+        },
+        {
+          "label": "playing-low",
+          "screen": "playing",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "low",
+          "resolution": "balanced",
+          "worldShadows": true,
+          "frames": 104,
+          "drawCalls": 281,
+          "tick": 150,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 0,
+              "autoUpdate": false,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 41
+            }
+          ],
+          "frameDelta": 5,
+          "tickDelta": 30
+        },
+        {
+          "label": "settings-high",
+          "screen": "settings",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "high",
+          "resolution": "full",
+          "worldShadows": true,
+          "frames": 122,
+          "drawCalls": 384,
+          "tick": 156,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 1,
+              "autoUpdate": true,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 44
+            }
+          ]
+        },
+        {
+          "label": "playing-high",
+          "screen": "playing",
+          "appError": null,
+          "backend": "WebGL 2",
+          "quality": "high",
+          "resolution": "full",
+          "worldShadows": true,
+          "frames": 145,
+          "drawCalls": 384,
+          "tick": 198,
+          "lights": [
+            {
+              "kind": "sun",
+              "id": 53,
+              "lightIntensity": 1.35,
+              "castShadow": true,
+              "shadowIntensity": 1,
+              "autoUpdate": true,
+              "needsUpdate": false,
+              "mapPresent": true,
+              "updateMatricesCalls": 67
+            }
+          ],
+          "frameDelta": 4,
+          "tickDelta": 24
+        }
+      ],
+      "errors": [],
+      "networkErrors": [],
+      "startedAt": "2026-10-17T00:42:28.165Z",
+      "finishedAt": "2026-10-17T00:43:16.173Z"
+    }
+  ]
+}

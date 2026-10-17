@@ -1,0 +1,1061 @@
+{
+  "schemaVersion": 1,
+  "test": "S13 objective audio volume matrix",
+  "status": "passed",
+  "sourceCommit": "928d93c",
+  "startedAt": "2026-10-17T00:17:21.268Z",
+  "finishedAt": "2026-10-17T00:23:48.992Z",
+  "wallSeconds": 387.724,
+  "browser": {
+    "engine": "chromium",
+    "version": "153.0.8010.12",
+    "platform": "WSL Ubuntu",
+    "viewportCssPixels": [
+      1280,
+      720
+    ],
+    "audioSampleRate": 44100
+  },
+  "method": "Normal settings menu keyboard input; native Web Audio target/connection observers and a measurement-only analyser tee.",
+  "normalSettingsInputOnly": true,
+  "usesGameAdvance": false,
+  "checks": {
+    "all27GainCombinations": true,
+    "actualScheduledAndSettledParameters": true,
+    "independentBusGraph": true,
+    "measuredMasterMute": true,
+    "allThreeLevelsPersistForEveryChannel": true,
+    "subtitleScaling": true,
+    "captionsRemainWithMasterOrDialogueMuted": true,
+    "subtitleScalePersists": true
+  },
+  "observedBusGraph": {
+    "masterToDestination": true,
+    "effectsToMaster": true,
+    "musicToMaster": true,
+    "dialogueToMaster": true
+  },
+  "masterOutputSummary": [
+    {
+      "master": 0,
+      "cells": 9,
+      "maximumPeak": 0,
+      "meanRms": 0
+    },
+    {
+      "master": 0.5,
+      "cells": 9,
+      "maximumPeak": 0.02537820301949978,
+      "meanRms": 0.007514248837019587
+    },
+    {
+      "master": 1,
+      "cells": 9,
+      "maximumPeak": 0.05022740736603737,
+      "meanRms": 0.015104140966253454
+    }
+  ],
+  "matrix": [
+    {
+      "index": 0,
+      "changedControl": "initial",
+      "expected": {
+        "masterVolume": 0,
+        "musicVolume": 0,
+        "dialogueVolume": 0
+      },
+      "scheduledTargets": {
+        "master": 0,
+        "music": 0,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0,
+        "music": 0,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0,
+        "music": 0,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0,
+        "peak": 0
+      }
+    },
+    {
+      "index": 1,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0,
+        "musicVolume": 0,
+        "dialogueVolume": 0.5
+      },
+      "scheduledTargets": {
+        "master": 0,
+        "music": 0,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0,
+        "music": 0,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0,
+        "music": 0,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0,
+        "peak": 0
+      }
+    },
+    {
+      "index": 2,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0,
+        "musicVolume": 0,
+        "dialogueVolume": 1
+      },
+      "scheduledTargets": {
+        "master": 0,
+        "music": 0,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0,
+        "music": 0,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0,
+        "music": 0,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0,
+        "peak": 0
+      }
+    },
+    {
+      "index": 3,
+      "changedControl": "musicVolume",
+      "expected": {
+        "masterVolume": 0,
+        "musicVolume": 0.5,
+        "dialogueVolume": 1
+      },
+      "scheduledTargets": {
+        "master": 0,
+        "music": 0.5,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0,
+        "music": 0.5,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0,
+        "music": 0,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0,
+        "peak": 0
+      }
+    },
+    {
+      "index": 4,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0,
+        "musicVolume": 0.5,
+        "dialogueVolume": 0.5
+      },
+      "scheduledTargets": {
+        "master": 0,
+        "music": 0.5,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0,
+        "music": 0.5,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0,
+        "music": 0,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0,
+        "peak": 0
+      }
+    },
+    {
+      "index": 5,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0,
+        "musicVolume": 0.5,
+        "dialogueVolume": 0
+      },
+      "scheduledTargets": {
+        "master": 0,
+        "music": 0.5,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0,
+        "music": 0.5,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0,
+        "music": 0,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0,
+        "peak": 0
+      }
+    },
+    {
+      "index": 6,
+      "changedControl": "musicVolume",
+      "expected": {
+        "masterVolume": 0,
+        "musicVolume": 1,
+        "dialogueVolume": 0
+      },
+      "scheduledTargets": {
+        "master": 0,
+        "music": 1,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0,
+        "music": 1,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0,
+        "music": 0,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0,
+        "peak": 0
+      }
+    },
+    {
+      "index": 7,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0,
+        "musicVolume": 1,
+        "dialogueVolume": 0.5
+      },
+      "scheduledTargets": {
+        "master": 0,
+        "music": 1,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0,
+        "music": 1,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0,
+        "music": 0,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0,
+        "peak": 0
+      }
+    },
+    {
+      "index": 8,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0,
+        "musicVolume": 1,
+        "dialogueVolume": 1
+      },
+      "scheduledTargets": {
+        "master": 0,
+        "music": 1,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0,
+        "music": 1,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0,
+        "music": 0,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0,
+        "peak": 0
+      }
+    },
+    {
+      "index": 9,
+      "changedControl": "masterVolume",
+      "expected": {
+        "masterVolume": 0.5,
+        "musicVolume": 1,
+        "dialogueVolume": 1
+      },
+      "scheduledTargets": {
+        "master": 0.5,
+        "music": 1,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0.5,
+        "music": 1,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0.5,
+        "music": 0.5,
+        "dialogue": 0.5
+      },
+      "masterOutput": {
+        "mean": 0.007489402280311427,
+        "peak": 0.02367713488638401
+      }
+    },
+    {
+      "index": 10,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0.5,
+        "musicVolume": 1,
+        "dialogueVolume": 0.5
+      },
+      "scheduledTargets": {
+        "master": 0.5,
+        "music": 1,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0.5,
+        "music": 1,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0.5,
+        "music": 0.5,
+        "dialogue": 0.25
+      },
+      "masterOutput": {
+        "mean": 0.0075412766409609505,
+        "peak": 0.02413785085082054
+      }
+    },
+    {
+      "index": 11,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0.5,
+        "musicVolume": 1,
+        "dialogueVolume": 0
+      },
+      "scheduledTargets": {
+        "master": 0.5,
+        "music": 1,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0.5,
+        "music": 1,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0.5,
+        "music": 0.5,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0.007569101381022335,
+        "peak": 0.02463926561176777
+      }
+    },
+    {
+      "index": 12,
+      "changedControl": "musicVolume",
+      "expected": {
+        "masterVolume": 0.5,
+        "musicVolume": 0.5,
+        "dialogueVolume": 0
+      },
+      "scheduledTargets": {
+        "master": 0.5,
+        "music": 0.5,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0.5,
+        "music": 0.5,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0.5,
+        "music": 0.25,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0.007469179340272382,
+        "peak": 0.023215055465698242
+      }
+    },
+    {
+      "index": 13,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0.5,
+        "musicVolume": 0.5,
+        "dialogueVolume": 0.5
+      },
+      "scheduledTargets": {
+        "master": 0.5,
+        "music": 0.5,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0.5,
+        "music": 0.5,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0.5,
+        "music": 0.25,
+        "dialogue": 0.25
+      },
+      "masterOutput": {
+        "mean": 0.007551072687179526,
+        "peak": 0.02463926561176777
+      }
+    },
+    {
+      "index": 14,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0.5,
+        "musicVolume": 0.5,
+        "dialogueVolume": 1
+      },
+      "scheduledTargets": {
+        "master": 0.5,
+        "music": 0.5,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0.5,
+        "music": 0.5,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0.5,
+        "music": 0.25,
+        "dialogue": 0.5
+      },
+      "masterOutput": {
+        "mean": 0.007539220630443157,
+        "peak": 0.024894261732697487
+      }
+    },
+    {
+      "index": 15,
+      "changedControl": "musicVolume",
+      "expected": {
+        "masterVolume": 0.5,
+        "musicVolume": 0,
+        "dialogueVolume": 1
+      },
+      "scheduledTargets": {
+        "master": 0.5,
+        "music": 0,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0.5,
+        "music": 0,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0.5,
+        "music": 0,
+        "dialogue": 0.5
+      },
+      "masterOutput": {
+        "mean": 0.007639406554264661,
+        "peak": 0.02537820301949978
+      }
+    },
+    {
+      "index": 16,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0.5,
+        "musicVolume": 0,
+        "dialogueVolume": 0.5
+      },
+      "scheduledTargets": {
+        "master": 0.5,
+        "music": 0,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0.5,
+        "music": 0,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0.5,
+        "music": 0,
+        "dialogue": 0.25
+      },
+      "masterOutput": {
+        "mean": 0.007477619346073907,
+        "peak": 0.02467666193842888
+      }
+    },
+    {
+      "index": 17,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 0.5,
+        "musicVolume": 0,
+        "dialogueVolume": 0
+      },
+      "scheduledTargets": {
+        "master": 0.5,
+        "music": 0,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0.5,
+        "music": 0,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0.5,
+        "music": 0,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0.007351960672647932,
+        "peak": 0.024964092299342155
+      }
+    },
+    {
+      "index": 18,
+      "changedControl": "masterVolume",
+      "expected": {
+        "masterVolume": 1,
+        "musicVolume": 0,
+        "dialogueVolume": 0
+      },
+      "scheduledTargets": {
+        "master": 1,
+        "music": 0,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 1,
+        "music": 0,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 1,
+        "music": 0,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0.01511557095340533,
+        "peak": 0.049530841410160065
+      }
+    },
+    {
+      "index": 19,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 1,
+        "musicVolume": 0,
+        "dialogueVolume": 0.5
+      },
+      "scheduledTargets": {
+        "master": 1,
+        "music": 0,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 1,
+        "music": 0,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 1,
+        "music": 0,
+        "dialogue": 0.5
+      },
+      "masterOutput": {
+        "mean": 0.014950042998290478,
+        "peak": 0.049788523465394974
+      }
+    },
+    {
+      "index": 20,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 1,
+        "musicVolume": 0,
+        "dialogueVolume": 1
+      },
+      "scheduledTargets": {
+        "master": 1,
+        "music": 0,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 1,
+        "music": 0,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 1,
+        "music": 0,
+        "dialogue": 1
+      },
+      "masterOutput": {
+        "mean": 0.015171097601738721,
+        "peak": 0.04725164547562599
+      }
+    },
+    {
+      "index": 21,
+      "changedControl": "musicVolume",
+      "expected": {
+        "masterVolume": 1,
+        "musicVolume": 0.5,
+        "dialogueVolume": 1
+      },
+      "scheduledTargets": {
+        "master": 1,
+        "music": 0.5,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 1,
+        "music": 0.5,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 1,
+        "music": 0.5,
+        "dialogue": 1
+      },
+      "masterOutput": {
+        "mean": 0.01536010091031359,
+        "peak": 0.04963574931025505
+      }
+    },
+    {
+      "index": 22,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 1,
+        "musicVolume": 0.5,
+        "dialogueVolume": 0.5
+      },
+      "scheduledTargets": {
+        "master": 1,
+        "music": 0.5,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 1,
+        "music": 0.5,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 1,
+        "music": 0.5,
+        "dialogue": 0.5
+      },
+      "masterOutput": {
+        "mean": 0.014882694535554492,
+        "peak": 0.04725164547562599
+      }
+    },
+    {
+      "index": 23,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 1,
+        "musicVolume": 0.5,
+        "dialogueVolume": 0
+      },
+      "scheduledTargets": {
+        "master": 1,
+        "music": 0.5,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 1,
+        "music": 0.5,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 1,
+        "music": 0.5,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0.015178925248331279,
+        "peak": 0.04600910842418671
+      }
+    },
+    {
+      "index": 24,
+      "changedControl": "musicVolume",
+      "expected": {
+        "masterVolume": 1,
+        "musicVolume": 1,
+        "dialogueVolume": 0
+      },
+      "scheduledTargets": {
+        "master": 1,
+        "music": 1,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 1,
+        "music": 1,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 1,
+        "music": 1,
+        "dialogue": 0
+      },
+      "masterOutput": {
+        "mean": 0.014971258305328925,
+        "peak": 0.05022740736603737
+      }
+    },
+    {
+      "index": 25,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 1,
+        "musicVolume": 1,
+        "dialogueVolume": 0.5
+      },
+      "scheduledTargets": {
+        "master": 1,
+        "music": 1,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 1,
+        "music": 1,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 1,
+        "music": 1,
+        "dialogue": 0.5
+      },
+      "masterOutput": {
+        "mean": 0.015413988699275646,
+        "peak": 0.04902195185422897
+      }
+    },
+    {
+      "index": 26,
+      "changedControl": "dialogueVolume",
+      "expected": {
+        "masterVolume": 1,
+        "musicVolume": 1,
+        "dialogueVolume": 1
+      },
+      "scheduledTargets": {
+        "master": 1,
+        "music": 1,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 1,
+        "music": 1,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 1,
+        "music": 1,
+        "dialogue": 1
+      },
+      "masterOutput": {
+        "mean": 0.014893589444042633,
+        "peak": 0.046698134392499924
+      }
+    }
+  ],
+  "reloads": [
+    {
+      "expected": {
+        "masterVolume": 0,
+        "musicVolume": 0.5,
+        "dialogueVolume": 1
+      },
+      "scheduledTargets": {
+        "master": 0,
+        "music": 0.5,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0,
+        "music": 0.5,
+        "dialogue": 1,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0,
+        "music": 0,
+        "dialogue": 0
+      },
+      "loadedSettings": {
+        "masterVolume": 0,
+        "musicVolume": 0.5,
+        "dialogueVolume": 1
+      }
+    },
+    {
+      "expected": {
+        "masterVolume": 0.5,
+        "musicVolume": 1,
+        "dialogueVolume": 0
+      },
+      "scheduledTargets": {
+        "master": 0.5,
+        "music": 1,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 0.5,
+        "music": 1,
+        "dialogue": 0,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 0.5,
+        "music": 0.5,
+        "dialogue": 0
+      },
+      "loadedSettings": {
+        "masterVolume": 0.5,
+        "musicVolume": 1,
+        "dialogueVolume": 0
+      }
+    },
+    {
+      "expected": {
+        "masterVolume": 1,
+        "musicVolume": 0,
+        "dialogueVolume": 0.5
+      },
+      "scheduledTargets": {
+        "master": 1,
+        "music": 0,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "settledGains": {
+        "master": 1,
+        "music": 0,
+        "dialogue": 0.5,
+        "effects": 1
+      },
+      "effectiveGains": {
+        "effects": 1,
+        "music": 0,
+        "dialogue": 0.5
+      },
+      "loadedSettings": {
+        "masterVolume": 1,
+        "musicVolume": 0,
+        "dialogueVolume": 0.5
+      }
+    }
+  ],
+  "subtitleCases": [
+    {
+      "scale": 0.8,
+      "masterMusicDialogue": {
+        "masterVolume": 0,
+        "musicVolume": 1,
+        "dialogueVolume": 1
+      },
+      "fontSizePx": 21.504,
+      "cssScale": 0.8,
+      "captionPresent": true,
+      "captionText": "Eli: Depot shuts down, then the city bills us for the locks. Funny kind of recovery work.",
+      "hudScale": 1,
+      "observedSourceConnections": {
+        "effects": 45,
+        "music": 6,
+        "dialogue": 2
+      }
+    },
+    {
+      "scale": 1,
+      "masterMusicDialogue": {
+        "masterVolume": 1,
+        "musicVolume": 0,
+        "dialogueVolume": 1
+      },
+      "fontSizePx": 26.88,
+      "cssScale": 1,
+      "captionPresent": true,
+      "captionText": "Eli: Depot shuts down, then the city bills us for the locks. Funny kind of recovery work.",
+      "hudScale": 1,
+      "observedSourceConnections": {
+        "effects": 79,
+        "music": 55,
+        "dialogue": 6
+      }
+    },
+    {
+      "scale": 1.4,
+      "masterMusicDialogue": {
+        "masterVolume": 1,
+        "musicVolume": 1,
+        "dialogueVolume": 0
+      },
+      "fontSizePx": 37.632,
+      "cssScale": 1.4,
+      "captionPresent": true,
+      "captionText": "Eli: Depot shuts down, then the city bills us for the locks. Funny kind of recovery work.",
+      "hudScale": 1,
+      "observedSourceConnections": {
+        "effects": 111,
+        "music": 112,
+        "dialogue": 8
+      }
+    }
+  ],
+  "subtitleAfterReload": {
+    "scale": 1.4,
+    "masterMusicDialogue": {
+      "masterVolume": 1,
+      "musicVolume": 1,
+      "dialogueVolume": 0
+    },
+    "fontSizePx": 37.632,
+    "cssScale": 1.4,
+    "captionPresent": true,
+    "captionText": "Eli: Depot shuts down, then the city bills us for the locks. Funny kind of recovery work.",
+    "hudScale": 1,
+    "observedSourceConnections": {
+      "effects": 18,
+      "music": 13,
+      "dialogue": 4
+    }
+  },
+  "checkedSourcesUnchanged": true,
+  "sourceSha256": {
+    "src/systems/audio.js": "42a5198ed90d8f835d8cc8b5438bbaf872400a19fa5feeaf1a54906339f40042",
+    "src/ui/interface.js": "5abf673432dfceeb0aebe60296ce174c890515e8d07dd90c82514aeb8af93041",
+    "src/ui/interface.css": "57176f99c79c5e89c95332d9fa0e3e6808f9b2cf5007ec661c2ccfc2a2d9438c",
+    "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+    "src/game/save.js": "fe8306f248eba3dc8b93affef03b8cf76120cd96ea7852299284ce26153904a4",
+    "tests/e2e/audio-volume-matrix.mjs": "b1fe3bc3eaefbfc1a2eda608c16b55eed2293eeab3c5d9a2332709253b276848"
+  },
+  "servedSourceSha256": {
+    "src/ui/interface.css": "57176f99c79c5e89c95332d9fa0e3e6808f9b2cf5007ec661c2ccfc2a2d9438c",
+    "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+    "src/ui/interface.js": "5abf673432dfceeb0aebe60296ce174c890515e8d07dd90c82514aeb8af93041",
+    "src/systems/audio.js": "42a5198ed90d8f835d8cc8b5438bbaf872400a19fa5feeaf1a54906339f40042",
+    "src/game/save.js": "fe8306f248eba3dc8b93affef03b8cf76120cd96ea7852299284ce26153904a4"
+  },
+  "errors": [],
+  "rawReport": {
+    "path": "/tmp/ewa93-audio-volume-matrix-928d93c-final/report.json",
+    "sha256": "b7796f16936124bfbeccdea5f49244251f1fd1a0c562dd786a392842e8b8d6c7",
+    "bytes": 56611
+  },
+  "artifacts": "Parameter/RMS report only; no audio recording or screenshot was produced by the passing run.",
+  "limits": [
+    "Does not assess subjective dialogue intelligibility, speaker/headphone listening, timbre quality or operating-system output volume.",
+    "This focused settings check does not independently verify every S13 ambience/vehicle/combat/ending cue or licensing requirement."
+  ],
+  "sourceCommitFull": "928d93c22215636b078b0e478f2f70df34464b08"
+}

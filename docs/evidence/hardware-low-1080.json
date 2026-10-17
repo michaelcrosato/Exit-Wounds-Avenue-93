@@ -1,0 +1,785 @@
+{
+  "schemaVersion": 1,
+  "capture": "hardware-low-1080-20261016",
+  "status": "passed",
+  "startedAt": "2026-10-17T00:09:02.977Z",
+  "finishedAt": "2026-10-17T00:11:55.690Z",
+  "scope": "1080p presentation Low target and final-source short High consistency check; staged active scenes, native normal-rate loop",
+  "publishedRuntimeCommit": "e6cd7524f8f1552be87aa20226848641bd1d0fd3",
+  "checkoutCommit": "928d93c22215636b078b0e478f2f70df34464b08",
+  "runtimeDiffFromPublishedCommit": [],
+  "environment": {
+    "host": {
+      "platform": "win32",
+      "release": "10.0.26300",
+      "cpu": "13th Gen Intel(R) Core(TM) i9-13900K",
+      "logicalCPUs": 32
+    },
+    "browser": "Windows Chrome 155.0.8059.84",
+    "gpuInfo": {
+      "devices": [
+        {
+          "name": "NVIDIA GeForce RTX 3060 Ti",
+          "vendorId": 4318,
+          "deviceId": 9353,
+          "driverVersion": "32.0.16.1742"
+        },
+        {
+          "name": "Microsoft Basic Render Driver",
+          "vendorId": 5140,
+          "deviceId": 140,
+          "driverVersion": "10.0.26100.9711"
+        }
+      ],
+      "glRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 Ti (0x00002489) Direct3D11 vs_5_0 ps_5_0, D3D11-32.0.16.1742)",
+      "featureStatus": {
+        "2d_canvas": "enabled",
+        "direct_rendering_display_compositor": "disabled_off_ok",
+        "gpu_compositing": "enabled",
+        "multiple_raster_threads": "enabled_on",
+        "opengl": "enabled_on",
+        "rasterization": "enabled",
+        "raw_draw": "disabled_off_ok",
+        "skia_graphite": "disabled_off",
+        "trees_in_viz": "disabled_off",
+        "video_decode": "enabled",
+        "video_encode": "enabled",
+        "webgl": "enabled",
+        "webgpu": "enabled",
+        "webnn": "disabled_off"
+      }
+    },
+    "viewport": [
+      1920,
+      1080
+    ],
+    "deviceScaleFactor": 1,
+    "otherPageTargetsAtStart": 1,
+    "isolatedContextClosedNormally": true,
+    "existingChromePreserved": true
+  },
+  "targets": {
+    "low": {
+      "averageFPSAtLeast": 30,
+      "p95FrameMsAtMost": 40,
+      "repeatedStallsOver100ms": false
+    },
+    "highShortConsistency": {
+      "nominalAverageFPS": 60,
+      "acceptanceFPSAtLeast": 59,
+      "p95FrameMsAtMost": 22,
+      "p99FrameMsAtMost": 50
+    },
+    "nominalFPSAllowance": "An 8s display-paced sample may straddle refresh timestamps; High confirmation uses >=59FPS and reports the observed average without rounding it to the nominal target."
+  },
+  "method": {
+    "viewport": [
+      1920,
+      1080
+    ],
+    "deviceScaleFactor": 1,
+    "quality": "Low then one High confirmation",
+    "nativeFrameLoop": true,
+    "frameTimes": "requestAnimationFrame timestamp intervals; 480 intervals for short scenes and >=60s between first/last RAF for sustained Low tier3",
+    "noManualAdvance": true,
+    "noForcedGC": true,
+    "isolatedContext": true,
+    "staging": [
+      "Existing diagnostic source hook; published runtime modules unchanged, packaged build only strips that hook.",
+      "Player/mission/camera and existing officers/patrol transforms staged to repeatable locations.",
+      "Player health/armor boosted to 10,000 for active depot and tier3 timing, preserving hostile AI, hits, audio and physics.",
+      "A future recent-gunfire timestamp maintains the armed-threat branch for tier3; police perception still establishes real nearby chase.",
+      "No arrest callback, AI update, physics step or rendering rule is disabled."
+    ],
+    "limits": [
+      "RAF cadence is a frame-time proxy, not GPU timestamp/present latency.",
+      "Artificial setup is performance load, not natural mission/police correctness or human pacing.",
+      "Existing browser process, GPU/OS caches may be warm; not a cold-load measure.",
+      "One hardware/browser/viewport sample per scene."
+    ]
+  },
+  "scenarioSetup": {
+    "central": {
+      "playerMetres": [
+        240,
+        202,
+        0
+      ],
+      "cameraYawRadians": -1.5707963267948966
+    },
+    "depot": {
+      "playerMetres": [
+        348,
+        143,
+        0
+      ],
+      "phase": "RECOVERY",
+      "route": "gate",
+      "crewStart": true,
+      "playerHealthArmor": [
+        10000,
+        10000
+      ]
+    },
+    "tier3": {
+      "playerMetres": [
+        240,
+        202,
+        0
+      ],
+      "phase": "EVASION",
+      "patrolPositionsMetres": [
+        [
+          219,
+          202
+        ],
+        [
+          252,
+          212
+        ],
+        [
+          240,
+          184
+        ]
+      ],
+      "officers": 6,
+      "report": "severity3 gunfire, observed Mara, current tick",
+      "futureGunfireTimestampTicks": 21600,
+      "playerHealthArmor": [
+        10000,
+        10000
+      ],
+      "sustainedLowSharesSceneWithShortLow": true,
+      "highSharesContinuingScene": true
+    },
+    "publicUI": "Settings quality selector, New Game/confirmation, phone Decline; Pause/Settings/High/Resume before final sample."
+  },
+  "scenarios": [
+    {
+      "name": "low-central-480",
+      "warmupSeconds": 8,
+      "quality": "low",
+      "presentationPixels": [
+        1920,
+        1080
+      ],
+      "viewBufferPixels": [
+        960,
+        540
+      ],
+      "hudBufferPixels": [
+        1920,
+        1080
+      ],
+      "resolutionMode": "balanced",
+      "backend": "WebGPU",
+      "timing": {
+        "frames": 480,
+        "measuredIntervalMs": 8000.1,
+        "averageFPS": 59.9993,
+        "meanFrameMs": 16.6669,
+        "medianMs": 16.7,
+        "p95Ms": 16.8,
+        "p99Ms": 16.8,
+        "minMs": 16.4,
+        "maxMs": 16.9,
+        "over100ms": 0
+      },
+      "stallsOver100ms": [],
+      "sampledRanges": {
+        "calls": [
+          191,
+          191
+        ],
+        "triangles": [
+          102586,
+          103890
+        ],
+        "actors": [
+          52,
+          52
+        ],
+        "vehicles": [
+          18,
+          18
+        ],
+        "bodies": [
+          281,
+          281
+        ],
+        "colliders": [
+          298,
+          298
+        ],
+        "chasingOfficers": [
+          0,
+          0
+        ],
+        "livingOfficers": [
+          6,
+          6
+        ],
+        "livingCrew": [
+          6,
+          6
+        ],
+        "visibleCrew": [
+          0,
+          0
+        ],
+        "geometries": [
+          453,
+          453
+        ],
+        "textures": [
+          60,
+          60
+        ],
+        "wantedTier": [
+          0,
+          0
+        ]
+      },
+      "nativeLoop": {
+        "allSamplesPlaying": true,
+        "allSamplesRunning": true,
+        "allTimeScalesOne": true,
+        "allSamplesVisible": true,
+        "renderedFrames": [
+          500,
+          981
+        ],
+        "gameplaySeconds": 8.0167
+      },
+      "hostileShotsDuringMeasuredWindow": {
+        "total": 0,
+        "crew": 0,
+        "police": 0
+      },
+      "acceptance": {
+        "targetFPS": 30,
+        "p95LimitMs": 40,
+        "passed": true
+      }
+    },
+    {
+      "name": "low-depot-fight-480",
+      "warmupSeconds": 10,
+      "quality": "low",
+      "presentationPixels": [
+        1920,
+        1080
+      ],
+      "viewBufferPixels": [
+        960,
+        540
+      ],
+      "hudBufferPixels": [
+        1920,
+        1080
+      ],
+      "resolutionMode": "balanced",
+      "backend": "WebGPU",
+      "timing": {
+        "frames": 480,
+        "measuredIntervalMs": 7999.9,
+        "averageFPS": 60.0008,
+        "meanFrameMs": 16.6665,
+        "medianMs": 16.7,
+        "p95Ms": 16.8,
+        "p99Ms": 16.8,
+        "minMs": 16.5,
+        "maxMs": 16.9,
+        "over100ms": 0
+      },
+      "stallsOver100ms": [],
+      "sampledRanges": {
+        "calls": [
+          122,
+          122
+        ],
+        "triangles": [
+          99132,
+          100436
+        ],
+        "actors": [
+          52,
+          52
+        ],
+        "vehicles": [
+          18,
+          18
+        ],
+        "bodies": [
+          281,
+          281
+        ],
+        "colliders": [
+          298,
+          298
+        ],
+        "chasingOfficers": [
+          0,
+          0
+        ],
+        "livingOfficers": [
+          6,
+          6
+        ],
+        "livingCrew": [
+          6,
+          6
+        ],
+        "visibleCrew": [
+          3,
+          4
+        ],
+        "geometries": [
+          448,
+          448
+        ],
+        "textures": [
+          60,
+          60
+        ],
+        "wantedTier": [
+          0,
+          0
+        ]
+      },
+      "nativeLoop": {
+        "allSamplesPlaying": true,
+        "allSamplesRunning": true,
+        "allTimeScalesOne": true,
+        "allSamplesVisible": true,
+        "renderedFrames": [
+          615,
+          1096
+        ],
+        "gameplaySeconds": 8.0167
+      },
+      "hostileShotsDuringMeasuredWindow": {
+        "total": 42,
+        "crew": 42,
+        "police": 0
+      },
+      "acceptance": {
+        "targetFPS": 30,
+        "p95LimitMs": 40,
+        "passed": true
+      }
+    },
+    {
+      "name": "low-tier3-near-480",
+      "warmupSeconds": 12,
+      "quality": "low",
+      "presentationPixels": [
+        1920,
+        1080
+      ],
+      "viewBufferPixels": [
+        960,
+        540
+      ],
+      "hudBufferPixels": [
+        1920,
+        1080
+      ],
+      "resolutionMode": "balanced",
+      "backend": "WebGPU",
+      "timing": {
+        "frames": 480,
+        "measuredIntervalMs": 8000,
+        "averageFPS": 60,
+        "meanFrameMs": 16.6667,
+        "medianMs": 16.7,
+        "p95Ms": 16.8,
+        "p99Ms": 16.8,
+        "minMs": 16.5,
+        "maxMs": 16.8,
+        "over100ms": 0
+      },
+      "stallsOver100ms": [],
+      "sampledRanges": {
+        "calls": [
+          225,
+          232
+        ],
+        "triangles": [
+          113082,
+          113160
+        ],
+        "actors": [
+          52,
+          52
+        ],
+        "vehicles": [
+          18,
+          18
+        ],
+        "bodies": [
+          281,
+          281
+        ],
+        "colliders": [
+          298,
+          298
+        ],
+        "chasingOfficers": [
+          6,
+          6
+        ],
+        "livingOfficers": [
+          6,
+          6
+        ],
+        "livingCrew": [
+          6,
+          6
+        ],
+        "visibleCrew": [
+          0,
+          0
+        ],
+        "geometries": [
+          448,
+          448
+        ],
+        "textures": [
+          60,
+          60
+        ],
+        "wantedTier": [
+          3,
+          3
+        ]
+      },
+      "nativeLoop": {
+        "allSamplesPlaying": true,
+        "allSamplesRunning": true,
+        "allTimeScalesOne": true,
+        "allSamplesVisible": true,
+        "renderedFrames": [
+          761,
+          1242
+        ],
+        "gameplaySeconds": 8.0167
+      },
+      "hostileShotsDuringMeasuredWindow": {
+        "total": 47,
+        "crew": 0,
+        "police": 47
+      },
+      "acceptance": {
+        "targetFPS": 30,
+        "p95LimitMs": 40,
+        "passed": true
+      }
+    },
+    {
+      "name": "low-tier3-near-60s",
+      "warmupSeconds": 0,
+      "quality": "low",
+      "presentationPixels": [
+        1920,
+        1080
+      ],
+      "viewBufferPixels": [
+        960,
+        540
+      ],
+      "hudBufferPixels": [
+        1920,
+        1080
+      ],
+      "resolutionMode": "balanced",
+      "backend": "WebGPU",
+      "timing": {
+        "frames": 3601,
+        "measuredIntervalMs": 60016.5,
+        "averageFPS": 60.0002,
+        "meanFrameMs": 16.6666,
+        "medianMs": 16.7,
+        "p95Ms": 16.8,
+        "p99Ms": 16.9,
+        "minMs": 16.2,
+        "maxMs": 17.2,
+        "over100ms": 0
+      },
+      "stallsOver100ms": [],
+      "sampledRanges": {
+        "calls": [
+          225,
+          247
+        ],
+        "triangles": [
+          113082,
+          115118
+        ],
+        "actors": [
+          52,
+          52
+        ],
+        "vehicles": [
+          18,
+          18
+        ],
+        "bodies": [
+          281,
+          281
+        ],
+        "colliders": [
+          298,
+          298
+        ],
+        "chasingOfficers": [
+          6,
+          6
+        ],
+        "livingOfficers": [
+          6,
+          6
+        ],
+        "livingCrew": [
+          6,
+          6
+        ],
+        "visibleCrew": [
+          0,
+          0
+        ],
+        "geometries": [
+          448,
+          448
+        ],
+        "textures": [
+          60,
+          60
+        ],
+        "wantedTier": [
+          3,
+          3
+        ]
+      },
+      "nativeLoop": {
+        "allSamplesPlaying": true,
+        "allSamplesRunning": true,
+        "allTimeScalesOne": true,
+        "allSamplesVisible": true,
+        "renderedFrames": [
+          1264,
+          4866
+        ],
+        "gameplaySeconds": 60.0333
+      },
+      "hostileShotsDuringMeasuredWindow": {
+        "total": 339,
+        "crew": 0,
+        "police": 339
+      },
+      "acceptance": {
+        "targetFPS": 30,
+        "p95LimitMs": 40,
+        "passed": true
+      }
+    },
+    {
+      "name": "high-tier3-near-480",
+      "warmupSeconds": 12,
+      "quality": "high",
+      "presentationPixels": [
+        1920,
+        1080
+      ],
+      "viewBufferPixels": [
+        1920,
+        1080
+      ],
+      "hudBufferPixels": [
+        1920,
+        1080
+      ],
+      "resolutionMode": "full",
+      "backend": "WebGPU",
+      "timing": {
+        "frames": 480,
+        "measuredIntervalMs": 8000,
+        "averageFPS": 60,
+        "meanFrameMs": 16.6667,
+        "medianMs": 16.7,
+        "p95Ms": 16.8,
+        "p99Ms": 16.8,
+        "minMs": 16.5,
+        "maxMs": 16.8,
+        "over100ms": 0
+      },
+      "stallsOver100ms": [],
+      "sampledRanges": {
+        "calls": [
+          356,
+          398
+        ],
+        "triangles": [
+          189616,
+          193530
+        ],
+        "actors": [
+          52,
+          52
+        ],
+        "vehicles": [
+          18,
+          18
+        ],
+        "bodies": [
+          281,
+          281
+        ],
+        "colliders": [
+          298,
+          298
+        ],
+        "chasingOfficers": [
+          6,
+          6
+        ],
+        "livingOfficers": [
+          6,
+          6
+        ],
+        "livingCrew": [
+          6,
+          6
+        ],
+        "visibleCrew": [
+          0,
+          0
+        ],
+        "geometries": [
+          448,
+          448
+        ],
+        "textures": [
+          62,
+          62
+        ],
+        "wantedTier": [
+          3,
+          3
+        ]
+      },
+      "nativeLoop": {
+        "allSamplesPlaying": true,
+        "allSamplesRunning": true,
+        "allTimeScalesOne": true,
+        "allSamplesVisible": true,
+        "renderedFrames": [
+          5626,
+          6107
+        ],
+        "gameplaySeconds": 8.0167
+      },
+      "hostileShotsDuringMeasuredWindow": {
+        "total": 45,
+        "crew": 0,
+        "police": 45
+      },
+      "acceptance": {
+        "nominalTargetFPS": 60,
+        "p95LimitMs": 22,
+        "p99LimitMs": 50,
+        "shortConsistencyCheck": true,
+        "passed": true
+      }
+    }
+  ],
+  "validation": {
+    "pageConsoleEngineRuntimeErrors": 0,
+    "networkErrors": 0,
+    "sourceFilesFingerprinted": 60,
+    "servedFilesMatchedSourceHashes": 51,
+    "servedSourceMismatches": [],
+    "sourceFingerprintEndpointsEqual": true,
+    "independentlyRecomputedTiming": [
+      "low-central-480",
+      "low-depot-fight-480",
+      "low-tier3-near-480",
+      "low-tier3-near-60s",
+      "high-tier3-near-480"
+    ],
+    "screenshotsInspected": [
+      "low-central-480",
+      "low-depot-fight-480",
+      "low-tier3-near-480",
+      "low-tier3-near-60s",
+      "high-tier3-near-480"
+    ],
+    "noAppSourceEdits": true,
+    "noManualAdvanceOrForcedGC": true
+  },
+  "sourceHashes": {
+    "assets/animation/bridge.js": "cce0fc80661f27e885de5a2976fc7925444e2eabc1c57174607a0490f65f10d2",
+    "assets/animation/urban.js": "f7c30e8a204830ffad813b0e21c23f23e446eaf8d429a0e8dc91249b03e9e31c",
+    "assets/licenses/BarlowCondensed-OFL.txt": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+    "assets/licenses/DMSans-OFL.txt": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+    "assets/manifest.json": "e29786360ed0080790bcae4bd9a7156131bf397d31b8e5bc7dbf46869600d90b",
+    "assets/ui/BarlowCondensed-Bold.ttf": "e476562ec9c1e16cf16475895b511f08c804f438cc9a9f80a44ea50a0eeb5b65",
+    "assets/ui/BarlowCondensed-Regular.ttf": "583cec5da3b84bc4dc7c9c72e2a565c94d34e431518b19d7e250b7830ad5f996",
+    "assets/ui/DMSans-Variable.ttf": "8cd08d97e89c24d0aa92edd2f0f4c8ee6195eee9b7c9f154865a58b02f0c1c0d",
+    "assets/ui/icon.svg": "96be6a420238f28c2216c3e72d031e3c069c5d63e84d8795e227df79368722e1",
+    "assets/world/README.md": "c0361b28508878bc1d8318ec1357ff3ea92b626903fe5c2801bd1f5ea0468713",
+    "index.html": "1283125294d36df425aea9bfd2e5342d84c8f8655dae9841fb0b34727dadbf80",
+    "src/actors/animation.js": "13b954861e6821087dbc01d422b16f84a379d36d4b530d5ea918d4d615546b2e",
+    "src/actors/companion.js": "c60f680f1e0451442165e685eaf2a6eb86534708e29058a708b70a195295e897",
+    "src/actors/contacts.js": "03ff14d8ed30408419fc5c279ec4c9631def90d878bc6b74c4cfb1e942b8b8e9",
+    "src/actors/cover.js": "badc068745b5a23f21fb0379a9d33841cce5a493c92d76034e54bf7de588a464",
+    "src/actors/crew.js": "8eac8ed0ae631e8922db06a265e3185fb98910d493986fcf575937f39a2a4953",
+    "src/actors/patrol-navigation.js": "0b80f379c265072687f85788533fe86bec3c52d9059e0364ed2a336578ab1365",
+    "src/actors/player.js": "07a31d1648fd492ae6182a5717e975bee94330f0675d32a2acce3788279432c9",
+    "src/actors/police.js": "72d30c9bf828012d9fdc39af95569b19c738c28ef70520ede336a5181b3aeb4e",
+    "src/engine/camera.js": "dc8fb6a1a9e0930b5b24ba7c9b609905888048c09f22565886b4278460fb0304",
+    "src/engine/input.js": "36d2ec004f5f55ba522026f23e2c1f946ab8035a4c5eb90e363f2220bf094b72",
+    "src/engine/queries.js": "796202c35c196e2b4753905282d3e584a3902018689590e0519b46cfc42b5b75",
+    "src/engine/units.js": "51ca16a7229c536bef4f3ef1c360ada7a2bea19438327c1e35506383c7e42388",
+    "src/engine/vehicles.js": "f7f18b80301e13645b356d47a61799a6816780d160cf10012951ae299007718b",
+    "src/engine/world.js": "275c69298a1ce3d61cc54173b2b72517b0a52ad4a587c9ab603fdf8eeb6ea68e",
+    "src/game/actions.js": "0c6968e7fa47e4c8c0a99c7a07688bb4b7155ed87a69455282183a92f3d57cbc",
+    "src/game/events.js": "a5bbd7d4c13ddf0e20288dffa6965bf89697621ff88f0370619ffd2106f2ab25",
+    "src/game/rng.js": "1ed8eb32d5299ca566d5bdeae1a78985fd2546141a2a3d7080c0706c03461edf",
+    "src/game/save.js": "fe8306f248eba3dc8b93affef03b8cf76120cd96ea7852299284ce26153904a4",
+    "src/game/state.js": "9ac776a8159218469c355ea1276b3b0954de96fe2b4e79d0de3d084c7c027819",
+    "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+    "src/mission/checkpoints.js": "3e7e1b45ec0f1f1e2e913be983779527e38c8e13e119b0e54061da068f78f50d",
+    "src/mission/definition.js": "9d38dd716bbf598ca173281d2e0ee29471053a5c144f73d961d0111921fc44e3",
+    "src/mission/dialogue.js": "12748f172d14ddb7e15ab7a871eba3b3c4292cc24ceb9467ca39d7f1e84e14e4",
+    "src/mission/director.js": "365fabc91cf7458367012d7ddd65a358fcdb349c45c37ecad9d95a5424747e33",
+    "src/systems/audio.js": "42a5198ed90d8f835d8cc8b5438bbaf872400a19fa5feeaf1a54906339f40042",
+    "src/systems/combat.js": "8395905794ec6436858924cc4c9ef01eb5e6da285f476c24581492cd9c77073c",
+    "src/systems/crime.js": "742d099f8a6b8a8ea5a9d9818c3c89499aa1cd8cf93b117dcddd6c5466506e8e",
+    "src/systems/economy.js": "b55c93b2d5d016f7dc057979917a9674c39a3c843ce3e881beac6c1a2867d77f",
+    "src/systems/incoming-call.js": "dd8e9e10f1b611bbca467f86b25784ff6b523037ed6b0e00f5faaa68e5150517",
+    "src/systems/wanted.js": "0a749df3a01c51c84e13140659e0c3f1af27f645686ed8b7b54dda79efed8f90",
+    "src/ui/interface.css": "57176f99c79c5e89c95332d9fa0e3e6808f9b2cf5007ec661c2ccfc2a2d9438c",
+    "src/ui/interface.js": "5abf673432dfceeb0aebe60296ce174c890515e8d07dd90c82514aeb8af93041",
+    "src/world/district.js": "cd4b56e7c17b0604d6557fecd67e3575aa0b4787c44b0799bbdba795563ae40b",
+    "src/world/interactions.js": "7b221ad243b0d749d9b2baab741264944beb3038dc1785672ab93203494d9bce",
+    "src/world/pedestrians.js": "a27c6730895fdcd979e6098001fc5f3393c6f97dddff8d12be0e319a530e3c68",
+    "src/world/roads.js": "714ccb68a3510738dc5bb47bce5ad9e0b7bbdc006f4272af95d2c22009ff4737",
+    "src/world/traffic.js": "072434114b092aa6405221732676a346e5d59f083b856507929d995eb3ca9c82",
+    "vendor/my-3d2dge/engine/my-3d2dge-3d.js": "bb89882022a09c4d457aebdd08a04b59493714d829caf79c0225e5586dcc3a21",
+    "vendor/my-3d2dge/engine/my-3d2dge.js": "9f4050eb7638a8060e3413a8351acd0053f05163b85143ba1ad8f855a6b49019",
+    "vendor/my-3d2dge/src/mocap/mocap.js": "d8b9c91f1b0615df25d078c120e70033e009e8c50e6250722d87d921f7acb73a",
+    "vendor/my-3d2dge/src/mocap/readable.js": "627ab2b65c6a4c88fd326c1f5039aba50afabc4a79875085e1d7c54fcc72144e",
+    "vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/LICENSE": "4c05555705e3efde601fb1252ae48f1d63992af8a8fb8947745b7fa834e8f519",
+    "vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/VERSION.json": "377b47461e69b38c3f4bf9c9c9b4a90ac18c8ae9a608a5e78b27c492602c2dff",
+    "vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js": "71e1722cfbfd6eeb98675d9e46cdd23803db488c81552ff30708d02cb785677c",
+    "vendor/my-3d2dge/vendor/three-0.182.0/LICENSE": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+    "vendor/my-3d2dge/vendor/three-0.182.0/VERSION.json": "d2ae2dc3b9e958153fbf95b4ab53b448d10bb45dd72889f0098848dd198bbc49",
+    "vendor/my-3d2dge/vendor/three-0.182.0/three.core.min.js": "e5a824c8ec97ee44aeb8ce0ab64664e1dd1777df9d0ab2345b35f9941a9fcf33",
+    "vendor/my-3d2dge/vendor/three-0.182.0/three.tsl.min.js": "166f811d4ad2630f697ceae70b48479e1096126d42b51a2597535f2ef078f686",
+    "vendor/my-3d2dge/vendor/three-0.182.0/three.webgpu.min.js": "522b07095d914ba2a74dd3a96a4d7bdac296973404de4f8f578fda7550abda24"
+  },
+  "probeSha256": "313dc5062edb593aae89c613ef14f0c6b28b502f05ba85da3969363d92e76453",
+  "rawReportSha256": "80d805e8af9c6f2858c3e747742f7e4325df429ce65d0ee6a969e50e01ee2783",
+  "rawEvidence": "Full per-frame intervals, one-second live-state samples, PNGs and probe source retained outside repository under capture ID; no large arrays included here."
+}

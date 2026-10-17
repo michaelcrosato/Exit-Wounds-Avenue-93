@@ -1,0 +1,5714 @@
+{
+  "schemaVersion": 1,
+  "outcome": "reproduced; solver-mask prevention verified in disposable fixtures; production integration pending",
+  "checkedCommit": "928d93c22215636b078b0e478f2f70df34464b08",
+  "summary": "Two original mixed runs trapped in pinned SIMD physics at a disabled dynamic capsule ground contact. A two-body from-scratch fixture reproduces it. Saving/zeroing/restoring collider solver masks prevents this minimal fault over repeated cycles and two guarded High-to-Low mixed sequences; production integration and remaining lifecycle gates are reported separately.",
+  "environment": {
+    "platform": "Ubuntu 26.04 WSL2",
+    "browserVersion": "153.0.8010.12",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+    "renderer": "forced WebGL2 / ANGLE SwiftShader",
+    "viewport": [
+      1920,
+      1080
+    ],
+    "engine": {
+      "name": "my-3d2dge",
+      "version": "0.46.1",
+      "build": "dev-build",
+      "commit": "cfa866aa45474868350cad1a7fc015e612f9305f",
+      "patch": "EWA93-P1-analog-input+P2-three-stage-fallback",
+      "unitsPerMetre": 16,
+      "gravity": 156.96,
+      "backend": "WebGL 2"
+    }
+  },
+  "method": {
+    "url": "http://127.0.0.1:5279/?backend=webgl",
+    "setup": "Artificial scene/mission positions, three patrol drivers seated, reported tier-3 heat, player health retained at 5000/armor 100. Native game loop/wall-clock windows; no game.advance. New Game restores entities in same physics world between scenes.",
+    "sequence": [
+      "high central-intersection",
+      "high depot-fight",
+      "high tier3-pursuit",
+      "low central-intersection",
+      "low depot-fight",
+      "low tier3-pursuit"
+    ],
+    "warmupWallMs": 2000,
+    "positiveSampleWallMs": 8000,
+    "observer": "Runtime method wrappers capture first exception immediately and rethrow it. First-failure snapshot reads only cached JavaScript state and input, before the app makes its later failing draw query.",
+    "boundedControls": "Fresh tier-3; four repeated tier-3 reset/seating cycles; full mixed sequence with 10-second samples; final at-most-two original 8-second mixed cycles. Later controls additionally copy physics immediately before each step and inspect paused WASM scopes on an exception."
+  },
+  "firstFailure": {
+    "label": "Rapier.World.step",
+    "name": "RuntimeError",
+    "message": "unreachable",
+    "stack": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (http://127.0.0.1:5279/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (http://127.0.0.1:5279/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (http://127.0.0.1:5279/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at sg.wrapped [as step] (eval at evaluate (:311:30), <anonymous>:36:25)\n    at World3D.step (http://127.0.0.1:5279/vendor/my-3d2dge/engine/my-3d2dge-3d.js:1690:26)",
+    "operationStack": [
+      {
+        "sequence": 927264,
+        "label": "app.update",
+        "tick": 240,
+        "engineTick": 1504,
+        "args": [
+          0.008333333333333333
+        ]
+      },
+      {
+        "sequence": 927573,
+        "label": "world.step",
+        "tick": 241,
+        "engineTick": 1504,
+        "args": [
+          0.008333333333333333
+        ]
+      },
+      {
+        "sequence": 927631,
+        "label": "Rapier.World.step",
+        "tick": 241,
+        "engineTick": 1505,
+        "args": []
+      }
+    ]
+  },
+  "firstFailureState": {
+    "gameTick": 241,
+    "attemptedWorldStep": 1505,
+    "worldTime": 12.541666666666595,
+    "phase": "EVASION",
+    "input": {
+      "tick": 240,
+      "dt": 0.008333333333333333,
+      "device": "keyboard",
+      "deviceId": "",
+      "mapping": "",
+      "connected": false,
+      "moveX": 0,
+      "moveY": -1,
+      "lookX": 0,
+      "lookY": 0,
+      "mouseX": 0,
+      "mouseY": 0,
+      "throttle": 1,
+      "brake": 0,
+      "aimValue": 0,
+      "fireValue": 0,
+      "held": [
+        "up",
+        "menuUp",
+        "throttle"
+      ],
+      "pressed": [],
+      "released": []
+    },
+    "actors": 52,
+    "vehicles": 18,
+    "seats": [
+      {
+        "actor": "civilian-driver-0",
+        "vehicle": "ambient-car-0",
+        "seat": 0
+      },
+      {
+        "actor": "civilian-driver-1",
+        "vehicle": "ambient-car-1",
+        "seat": 0
+      },
+      {
+        "actor": "civilian-driver-2",
+        "vehicle": "ambient-car-2",
+        "seat": 0
+      },
+      {
+        "actor": "civilian-driver-3",
+        "vehicle": "ambient-car-3",
+        "seat": 0
+      },
+      {
+        "actor": "civilian-driver-4",
+        "vehicle": "ambient-car-4",
+        "seat": 0
+      },
+      {
+        "actor": "civilian-driver-5",
+        "vehicle": "ambient-car-5",
+        "seat": 0
+      },
+      {
+        "actor": "civilian-driver-6",
+        "vehicle": "ambient-car-6",
+        "seat": 0
+      },
+      {
+        "actor": "civilian-driver-7",
+        "vehicle": "ambient-car-7",
+        "seat": 0
+      },
+      {
+        "actor": "civilian-driver-8",
+        "vehicle": "ambient-car-8",
+        "seat": 0
+      },
+      {
+        "actor": "civilian-driver-9",
+        "vehicle": "ambient-car-9",
+        "seat": 0
+      },
+      {
+        "actor": "civilian-driver-10",
+        "vehicle": "ambient-car-10",
+        "seat": 0
+      },
+      {
+        "actor": "civilian-driver-11",
+        "vehicle": "ambient-car-11",
+        "seat": 0
+      },
+      {
+        "actor": "mara",
+        "vehicle": "mara-sedan",
+        "seat": 0
+      },
+      {
+        "actor": "officer-1",
+        "vehicle": "patrol-1",
+        "seat": 0
+      },
+      {
+        "actor": "officer-3",
+        "vehicle": "patrol-2",
+        "seat": 0
+      },
+      {
+        "actor": "officer-5",
+        "vehicle": "patrol-3",
+        "seat": 0
+      }
+    ],
+    "transitions": [],
+    "lastPreStepTicks": [
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241
+    ],
+    "cachedVehicles": [
+      {
+        "id": "mara-sedan",
+        "body": 1.12e-321,
+        "collider": 1.117e-321,
+        "cabin": 1.12e-321,
+        "x": 4044.6396484375,
+        "y": 3264,
+        "z": 11.504650115966797,
+        "yaw": 0,
+        "speed": 83.22622680664062,
+        "health": 100,
+        "steering": 0,
+        "disabled": false,
+        "controls": {
+          "throttle": 1,
+          "brake": 0,
+          "moveX": 0,
+          "handbrake": false
+        },
+        "seats": [
+          "mara",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "yard-van",
+        "body": 1.126e-321,
+        "collider": 1.126e-321,
+        "cabin": 1.13e-321,
+        "x": 5840,
+        "y": 2368,
+        "z": 12.145783424377441,
+        "yaw": 1.570796461153735,
+        "speed": 0,
+        "health": 100,
+        "steering": 0,
+        "disabled": false,
+        "controls": "[object Object]",
+        "seats": [
+          null,
+          null
+        ]
+      },
+      {
+        "id": "waterfront-sedan",
+        "body": 1.13e-321,
+        "collider": 1.136e-321,
+        "cabin": 1.14e-321,
+        "x": 6288,
+        "y": 5904,
+        "z": 11.505783081054688,
+        "yaw": 1.570796461153735,
+        "speed": 0,
+        "health": 100,
+        "steering": 0,
+        "disabled": false,
+        "controls": "[object Object]",
+        "seats": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "patrol-1",
+        "body": 1.136e-321,
+        "collider": 1.146e-321,
+        "cabin": 1.15e-321,
+        "x": 3763.79296875,
+        "y": 3258.58203125,
+        "z": 11.665505409240723,
+        "yaw": -0.27102203636174677,
+        "speed": 83.82596082869776,
+        "health": 100,
+        "steering": -0.019827440788936477,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.5,
+          "brake": 0,
+          "steer": 0.047091976752586015,
+          "handbrake": false
+        },
+        "seats": [
+          "officer-1",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "patrol-2",
+        "body": 1.14e-321,
+        "collider": 1.156e-321,
+        "cabin": 1.16e-321,
+        "x": 4230.650390625,
+        "y": 3191.490234375,
+        "z": 11.665505409240723,
+        "yaw": 3.051417270651572,
+        "speed": 85.90359651550246,
+        "health": 100,
+        "steering": -0.012840836188055111,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.5,
+          "brake": 0,
+          "steer": -0.0222013644213059,
+          "handbrake": false
+        },
+        "seats": [
+          "officer-3",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "patrol-3",
+        "body": 1.146e-321,
+        "collider": 1.166e-321,
+        "cabin": 1.17e-321,
+        "x": 3852.517578125,
+        "y": 3481.83349609375,
+        "z": 11.614862442016602,
+        "yaw": -1.6138729744681652,
+        "speed": 82.45483119181101,
+        "health": 100,
+        "steering": -0.006822219267905886,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.5,
+          "brake": 0,
+          "steer": -0.011971607580969556,
+          "handbrake": false
+        },
+        "seats": [
+          "officer-5",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-0",
+        "body": 1.27e-321,
+        "collider": 1.294e-321,
+        "cabin": 1.3e-321,
+        "x": 1595.6923828125,
+        "y": 878.4000244140625,
+        "z": 11.505660057067871,
+        "yaw": 0,
+        "speed": 62.85114288330078,
+        "health": 100,
+        "steering": -9.247642251709144e-09,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.31077053065121235,
+          "brake": 0,
+          "steer": -1.9628248626446518e-08,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-0",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-1",
+        "body": 1.28e-321,
+        "collider": 1.31e-321,
+        "cabin": 1.314e-321,
+        "x": 6609.60009765625,
+        "y": 1370.94775390625,
+        "z": 11.505537986755371,
+        "yaw": 1.5707962748636064,
+        "speed": 70.6738433837886,
+        "health": 100,
+        "steering": 9.895089664021186e-09,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.4324326638570355,
+          "brake": 0,
+          "steer": 1.8222813125134962e-07,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-1",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-2",
+        "body": 1.29e-321,
+        "collider": 1.324e-321,
+        "cabin": 1.33e-321,
+        "x": 3210.0146484375,
+        "y": 5265.60009765625,
+        "z": 11.505311012268066,
+        "yaw": 3.141592653589793,
+        "speed": 72.59873962402344,
+        "health": 100,
+        "steering": 3.633194278062602e-08,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.6093867884790811,
+          "brake": 0,
+          "steer": 7.829526893488037e-08,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-2",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-3",
+        "body": 1.3e-321,
+        "collider": 1.34e-321,
+        "cabin": 1.344e-321,
+        "x": 3886.39990234375,
+        "y": 4850.94140625,
+        "z": 11.505611419677734,
+        "yaw": -1.5707964333864375,
+        "speed": 57.72603225707985,
+        "health": 100,
+        "steering": 1.0445328400453712e-07,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.3588183767031295,
+          "brake": 0,
+          "steer": 2.887978576282535e-07,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-3",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-4",
+        "body": 1.31e-321,
+        "collider": 1.354e-321,
+        "cabin": 1.36e-321,
+        "x": 3231.82421875,
+        "y": 6033.60009765625,
+        "z": 12.145620346069336,
+        "yaw": 3.141592653589793,
+        "speed": 48.843814849853516,
+        "health": 100,
+        "steering": 3.243218054719432e-08,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.637089212645996,
+          "brake": 0,
+          "steer": 7.747424621840082e-08,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-4",
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-5",
+        "body": 1.32e-321,
+        "collider": 1.37e-321,
+        "cabin": 1.374e-321,
+        "x": 2477.482177734375,
+        "y": 3185.60009765625,
+        "z": 11.505304336547852,
+        "yaw": 3.141592653589793,
+        "speed": 61.34540939331055,
+        "health": 100,
+        "steering": 5.7874480457050356e-08,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.65,
+          "brake": 0,
+          "steer": 1.2156543145458442e-07,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-5",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-6",
+        "body": 1.33e-321,
+        "collider": 1.383e-321,
+        "cabin": 1.39e-321,
+        "x": 3886.39990234375,
+        "y": 2096.18359375,
+        "z": 11.505547523498535,
+        "yaw": -1.5707963431590415,
+        "speed": 51.32513427734376,
+        "health": 100,
+        "steering": 1.0990381477835026e-07,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.4188268226343555,
+          "brake": 0,
+          "steer": 1.772855608983548e-07,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-6",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-7",
+        "body": 1.34e-321,
+        "collider": 1.4e-321,
+        "cabin": 1.403e-321,
+        "x": 2313.354736328125,
+        "y": 3278.39990234375,
+        "z": 11.505313873291016,
+        "yaw": 0,
+        "speed": 53.4063720703125,
+        "health": 100,
+        "steering": 5.8590348020432746e-08,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.5943152257862083,
+          "brake": 0,
+          "steer": 1.2073081627761438e-07,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-7",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-8",
+        "body": 1.35e-321,
+        "collider": 1.413e-321,
+        "cabin": 1.42e-321,
+        "x": 6609.60009765625,
+        "y": 4213.4619140625,
+        "z": 11.505301475524902,
+        "yaw": 1.5707963812893573,
+        "speed": 50.013835906982656,
+        "health": 100,
+        "steering": 4.032608349641028e-08,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.65,
+          "brake": 0,
+          "steer": 8.782935925211176e-08,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-8",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-9",
+        "body": 1.36e-321,
+        "collider": 1.43e-321,
+        "cabin": 1.433e-321,
+        "x": 2499.791748046875,
+        "y": 6033.60009765625,
+        "z": 12.145633697509766,
+        "yaw": 3.141592653589793,
+        "speed": 33.897830963134766,
+        "health": 100,
+        "steering": 5.183563801945563e-08,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.5822078053757361,
+          "brake": 0,
+          "steer": 1.1955319627610093e-07,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-9",
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-10",
+        "body": 1.37e-321,
+        "collider": 1.443e-321,
+        "cabin": 1.45e-321,
+        "x": 3050.56884765625,
+        "y": 878.4000244140625,
+        "z": 11.505313873291016,
+        "yaw": 0,
+        "speed": 41.723472595214844,
+        "health": 100,
+        "steering": -3.3506259254773576e-08,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.65,
+          "brake": 0,
+          "steer": -6.742735596532156e-08,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-10",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "id": "ambient-car-11",
+        "body": 1.38e-321,
+        "collider": 1.457e-321,
+        "cabin": 1.46e-321,
+        "x": 6609.60009765625,
+        "y": 2573.962890625,
+        "z": 11.505331039428711,
+        "yaw": 1.5707964094911073,
+        "speed": 37.93839263916037,
+        "health": 100,
+        "steering": 1.2627929895757213e-07,
+        "disabled": false,
+        "controls": {
+          "throttle": 0.65,
+          "brake": 0,
+          "steer": 2.0930228430415807e-07,
+          "handbrake": false
+        },
+        "seats": [
+          "civilian-driver-11",
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "cachedActors": [
+      {
+        "id": "mara",
+        "kind": "hero",
+        "seatBody": 1.042e-321,
+        "col": 1.04e-321,
+        "x": 4048.6396484375,
+        "y": 3256.8,
+        "z": -0.4953498840332031,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "mara-sedan",
+        "seatIndex": 0
+      },
+      {
+        "id": "jun",
+        "kind": "hero",
+        "body": 1.047e-321,
+        "col": 1.042e-321,
+        "x": 5296,
+        "y": 1408,
+        "z": 1.6000000381469723,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "eli",
+        "kind": "hero",
+        "body": 1.05e-321,
+        "col": 1.047e-321,
+        "x": 1696,
+        "y": 4912,
+        "z": 1.2800002479553223,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "bea",
+        "kind": "hero",
+        "body": 1.057e-321,
+        "col": 1.05e-321,
+        "x": 1807.9945068359375,
+        "y": 3455.99560546875,
+        "z": 3.814697269177714e-08,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "crew-guard-gate",
+        "kind": "mob",
+        "body": 1.06e-321,
+        "col": 1.057e-321,
+        "x": 5424,
+        "y": 2400,
+        "z": -0.018197441101072798,
+        "vx": -0.016171807423233986,
+        "vy": 0.01014966331422329,
+        "vz": -1.1745141819119453e-06,
+        "grounded": true
+      },
+      {
+        "id": "crew-guard-service",
+        "kind": "mob",
+        "body": 1.067e-321,
+        "col": 1.06e-321,
+        "x": 6256,
+        "y": 1456,
+        "z": -0.01819648742675639,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "crew-rusher-1",
+        "kind": "mob",
+        "body": 1.07e-321,
+        "col": 1.067e-321,
+        "x": 5856,
+        "y": 1903.9886474609375,
+        "z": -0.018197441101072798,
+        "vx": 0.01214576605707407,
+        "vy": -0.03245401382446289,
+        "vz": -3.844499588012695e-06,
+        "grounded": true
+      },
+      {
+        "id": "crew-rusher-2",
+        "kind": "mob",
+        "body": 1.077e-321,
+        "col": 1.07e-321,
+        "x": 5296,
+        "y": 1552,
+        "z": 1.5817762374877944,
+        "vx": 0,
+        "vy": -0.0003862936864607036,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "crew-flanker-1",
+        "kind": "mob",
+        "body": 1.08e-321,
+        "col": 1.077e-321,
+        "x": 5008,
+        "y": 1760,
+        "z": -0.01819648742675639,
+        "vx": 6.794380897190422e-05,
+        "vy": 3.397190448595211e-05,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "crew-flanker-2",
+        "kind": "mob",
+        "body": 1.087e-321,
+        "col": 1.08e-321,
+        "x": 6112,
+        "y": 2096,
+        "z": -0.01819648742675639,
+        "vx": 0.012179736979305744,
+        "vy": 1.6985952242976055e-05,
+        "vz": -4.76837158203125e-07,
+        "grounded": true
+      },
+      {
+        "id": "officer-1",
+        "kind": "mob",
+        "seatBody": 1.09e-321,
+        "col": 1.087e-321,
+        "x": 3765.7194024813266,
+        "y": 3250.573981981994,
+        "z": -0.33449459075927734,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "patrol-1",
+        "seatIndex": 0
+      },
+      {
+        "id": "officer-2",
+        "kind": "mob",
+        "body": 1.097e-321,
+        "col": 1.09e-321,
+        "x": 4001.587890625,
+        "y": 3232.48828125,
+        "z": -0.018296432495116477,
+        "vx": 56.858447910627035,
+        "vy": 29.378851257231123,
+        "vz": -0.005983512848615646,
+        "grounded": true
+      },
+      {
+        "id": "officer-3",
+        "kind": "mob",
+        "seatBody": 1.1e-321,
+        "col": 1.097e-321,
+        "x": 4227.315025997584,
+        "y": 3199.021193331347,
+        "z": -0.33449459075927734,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "patrol-2",
+        "seatIndex": 0
+      },
+      {
+        "id": "officer-4",
+        "kind": "mob",
+        "body": 1.107e-321,
+        "col": 1.1e-321,
+        "x": 3924.2685546875,
+        "y": 3243.7734375,
+        "z": -0.018204879760741477,
+        "vx": -6.047296859231985e-15,
+        "vy": 2.8775250939361285e-05,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "officer-5",
+        "kind": "mob",
+        "seatBody": 1.11e-321,
+        "col": 1.107e-321,
+        "x": 3845.152003936339,
+        "y": 3478.1472626677,
+        "z": -0.38513755798339844,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "patrol-3",
+        "seatIndex": 0
+      },
+      {
+        "id": "officer-6",
+        "kind": "mob",
+        "body": 1.117e-321,
+        "col": 1.11e-321,
+        "x": 4076.5810546875,
+        "y": 3204.4853515625,
+        "z": -0.01820678710937429,
+        "vx": 33.07192834848118,
+        "vy": -54.79276918821431,
+        "vz": 0.0014337152242660522,
+        "grounded": true
+      },
+      {
+        "id": "resident-0",
+        "kind": "hero",
+        "body": 1.15e-321,
+        "col": 1.176e-321,
+        "x": 1097.770263671875,
+        "y": 997.008056640625,
+        "z": 2.2888183703884124e-07,
+        "vx": 0.1190053940711531,
+        "vy": 16.31956610073264,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-1",
+        "kind": "hero",
+        "body": 1.156e-321,
+        "col": 1.18e-321,
+        "x": 3995.196533203125,
+        "y": 972.7998657226562,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-2",
+        "kind": "hero",
+        "body": 1.16e-321,
+        "col": 1.186e-321,
+        "x": 6828.7451171875,
+        "y": 985.1259765625,
+        "z": 2.2888183703884124e-07,
+        "vx": -0.14724780506662263,
+        "vy": 20.159462246892975,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-3",
+        "kind": "hero",
+        "body": 1.166e-321,
+        "col": 1.19e-321,
+        "x": 1097.6007080078125,
+        "y": 3387.203125,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-4",
+        "kind": "hero",
+        "body": 1.17e-321,
+        "col": 1.196e-321,
+        "x": 3995.19580078125,
+        "y": 3387.19580078125,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-5",
+        "kind": "hero",
+        "body": 1.176e-321,
+        "col": 1.2e-321,
+        "x": 6828.80029296875,
+        "y": 3387.205322265625,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-6",
+        "kind": "hero",
+        "body": 1.18e-321,
+        "col": 1.206e-321,
+        "x": 1115.3492431640625,
+        "y": 5484.697265625,
+        "z": 2.2888183703884124e-07,
+        "vx": 16.319698783650313,
+        "vy": -0.09915448009231316,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-7",
+        "kind": "hero",
+        "body": 1.186e-321,
+        "col": 1.21e-321,
+        "x": 3995.193359375,
+        "y": 5484.802734375,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-8",
+        "kind": "hero",
+        "body": 1.19e-321,
+        "col": 1.215e-321,
+        "x": 6828.7998046875,
+        "y": 5484.7998046875,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-9",
+        "kind": "hero",
+        "body": 1.196e-321,
+        "col": 1.22e-321,
+        "x": 1097.601806640625,
+        "y": 6252.7998046875,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-10",
+        "kind": "hero",
+        "body": 1.2e-321,
+        "col": 1.225e-321,
+        "x": 3984.19921875,
+        "y": 6252.72705078125,
+        "z": 2.2888183703884124e-07,
+        "vx": -18.239659639218523,
+        "vy": -0.11142820766210862,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-11",
+        "kind": "hero",
+        "body": 1.206e-321,
+        "col": 1.23e-321,
+        "x": 6807.03173828125,
+        "y": 6252.66796875,
+        "z": 2.2888183703884124e-07,
+        "vx": -20.159610995955173,
+        "vy": -0.12523774096979123,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-12",
+        "kind": "hero",
+        "body": 1.21e-321,
+        "col": 1.235e-321,
+        "x": 1118.3984375,
+        "y": 4355.2001953125,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-13",
+        "kind": "hero",
+        "body": 1.215e-321,
+        "col": 1.24e-321,
+        "x": 1786.856689453125,
+        "y": 3488.035400390625,
+        "z": 2.2888183703884124e-07,
+        "vx": -18.037856582053248,
+        "vy": -2.708012172291409,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-14",
+        "kind": "hero",
+        "body": 1.22e-321,
+        "col": 1.245e-321,
+        "x": 1568.7252197265625,
+        "y": 3609.482177734375,
+        "z": 0.1240324020385753,
+        "vx": 16.969031346258973,
+        "vy": -10.884740473235016,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-15",
+        "kind": "hero",
+        "body": 1.225e-321,
+        "col": 1.25e-321,
+        "x": 2260.65869140625,
+        "y": 3615.767333984375,
+        "z": 0.1240324020385753,
+        "vx": -15.389544166477927,
+        "vy": -5.431788871819773,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-16",
+        "kind": "hero",
+        "body": 1.23e-321,
+        "col": 1.255e-321,
+        "x": 1115.194580078125,
+        "y": 1007.9978637695312,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-17",
+        "kind": "hero",
+        "body": 1.235e-321,
+        "col": 1.26e-321,
+        "x": 4032.78369140625,
+        "y": 1007.7357177734375,
+        "z": 2.2888183703884124e-07,
+        "vx": 20.158406493865044,
+        "vy": -0.25347115831908706,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-18",
+        "kind": "hero",
+        "body": 1.24e-321,
+        "col": 1.265e-321,
+        "x": 6793.71728515625,
+        "y": 989.1189575195312,
+        "z": 2.2888183703884124e-07,
+        "vx": 0.1189744297235134,
+        "vy": 16.319566326501203,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-19",
+        "kind": "hero",
+        "body": 1.245e-321,
+        "col": 1.27e-321,
+        "x": 1115.199462890625,
+        "y": 3387.19970703125,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-20",
+        "kind": "hero",
+        "body": 1.25e-321,
+        "col": 1.275e-321,
+        "x": 4012.800537109375,
+        "y": 3387.2001953125,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-21",
+        "kind": "hero",
+        "body": 1.255e-321,
+        "col": 1.28e-321,
+        "x": 6793.60009765625,
+        "y": 3387.200927734375,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-22",
+        "kind": "hero",
+        "body": 1.26e-321,
+        "col": 1.285e-321,
+        "x": 1115.199951171875,
+        "y": 5467.2001953125,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "resident-23",
+        "kind": "hero",
+        "body": 1.265e-321,
+        "col": 1.29e-321,
+        "x": 4012.800048828125,
+        "y": 5467.19189453125,
+        "z": 2.2888183703884124e-07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true
+      },
+      {
+        "id": "civilian-driver-0",
+        "kind": "hero",
+        "seatBody": 1.275e-321,
+        "col": 1.304e-321,
+        "x": 1599.6923828125,
+        "y": 871.2000244140625,
+        "z": -0.4943399429321289,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-0",
+        "seatIndex": 0
+      },
+      {
+        "id": "civilian-driver-1",
+        "kind": "hero",
+        "seatBody": 1.285e-321,
+        "col": 1.32e-321,
+        "x": 6616.800097863975,
+        "y": 1374.9477535323447,
+        "z": -0.4944620132446289,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-1",
+        "seatIndex": 0
+      },
+      {
+        "id": "civilian-driver-2",
+        "kind": "hero",
+        "seatBody": 1.294e-321,
+        "col": 1.334e-321,
+        "x": 3206.0146484375,
+        "y": 5272.80009765625,
+        "z": -0.4946889877319336,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-2",
+        "seatIndex": 0
+      },
+      {
+        "id": "civilian-driver-3",
+        "kind": "hero",
+        "seatBody": 1.304e-321,
+        "col": 1.35e-321,
+        "x": 3879.199901917384,
+        "y": 4846.941407017459,
+        "z": -0.4943885803222656,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-3",
+        "seatIndex": 0
+      },
+      {
+        "id": "civilian-driver-4",
+        "kind": "hero",
+        "seatBody": 1.314e-321,
+        "col": 1.364e-321,
+        "x": 3227.82421875,
+        "y": 6040.80009765625,
+        "z": 6.545620346069336,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-4",
+        "seatIndex": 0
+      },
+      {
+        "id": "civilian-driver-5",
+        "kind": "hero",
+        "seatBody": 1.324e-321,
+        "col": 1.38e-321,
+        "x": 2473.482177734375,
+        "y": 3192.80009765625,
+        "z": -0.49469566345214844,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-5",
+        "seatIndex": 0
+      },
+      {
+        "id": "civilian-driver-6",
+        "kind": "hero",
+        "seatBody": 1.334e-321,
+        "col": 1.393e-321,
+        "x": 3879.1999022782934,
+        "y": 2092.183593867822,
+        "z": -0.49445247650146484,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-6",
+        "seatIndex": 0
+      },
+      {
+        "id": "civilian-driver-7",
+        "kind": "hero",
+        "seatBody": 1.344e-321,
+        "col": 1.41e-321,
+        "x": 2317.354736328125,
+        "y": 3271.19990234375,
+        "z": -0.4946861267089844,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-7",
+        "seatIndex": 0
+      },
+      {
+        "id": "civilian-driver-8",
+        "kind": "hero",
+        "seatBody": 1.354e-321,
+        "col": 1.423e-321,
+        "x": 6616.800097438272,
+        "y": 4217.461914454861,
+        "z": -0.49469852447509766,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-8",
+        "seatIndex": 0
+      },
+      {
+        "id": "civilian-driver-9",
+        "kind": "hero",
+        "seatBody": 1.364e-321,
+        "col": 1.44e-321,
+        "x": 2495.791748046875,
+        "y": 6040.80009765625,
+        "z": 6.545633697509766,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-9",
+        "seatIndex": 0
+      },
+      {
+        "id": "civilian-driver-10",
+        "kind": "hero",
+        "seatBody": 1.374e-321,
+        "col": 1.453e-321,
+        "x": 3054.56884765625,
+        "y": 871.2000244140625,
+        "z": -0.4946861267089844,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-10",
+        "seatIndex": 0
+      },
+      {
+        "id": "civilian-driver-11",
+        "kind": "hero",
+        "seatBody": 1.383e-321,
+        "col": 1.467e-321,
+        "x": 6616.800097325465,
+        "y": 2577.9628912204125,
+        "z": -0.49466896057128906,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "vehicleId": "ambient-car-11",
+        "seatIndex": 0
+      }
+    ]
+  },
+  "operationTail": [
+    {
+      "sequence": 927504,
+      "label": "VehicleController.updateVehicle",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-7",
+      "args": [
+        0.008333333333333333,
+        8,
+        null,
+        "<callback>"
+      ]
+    },
+    {
+      "sequence": 927505,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        0,
+        4.032608349641028e-08
+      ]
+    },
+    {
+      "sequence": 927506,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        0,
+        0
+      ]
+    },
+    {
+      "sequence": 927507,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        0,
+        0
+      ]
+    },
+    {
+      "sequence": 927508,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        0,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927509,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        1,
+        4.032608349641028e-08
+      ]
+    },
+    {
+      "sequence": 927510,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        1,
+        0
+      ]
+    },
+    {
+      "sequence": 927511,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        1,
+        0
+      ]
+    },
+    {
+      "sequence": 927512,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        1,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927513,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": 927514,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        2,
+        39520
+      ]
+    },
+    {
+      "sequence": 927515,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": 927516,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        2,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927517,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        3,
+        0
+      ]
+    },
+    {
+      "sequence": 927518,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        3,
+        39520
+      ]
+    },
+    {
+      "sequence": 927519,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        3,
+        0
+      ]
+    },
+    {
+      "sequence": 927520,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        3,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927521,
+      "label": "VehicleController.updateVehicle",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-8",
+      "args": [
+        0.008333333333333333,
+        8,
+        null,
+        "<callback>"
+      ]
+    },
+    {
+      "sequence": 927522,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        0,
+        5.183563801945563e-08
+      ]
+    },
+    {
+      "sequence": 927523,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        0,
+        0
+      ]
+    },
+    {
+      "sequence": 927524,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        0,
+        0
+      ]
+    },
+    {
+      "sequence": 927525,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        0,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927526,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        1,
+        5.183563801945563e-08
+      ]
+    },
+    {
+      "sequence": 927527,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        1,
+        0
+      ]
+    },
+    {
+      "sequence": 927528,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        1,
+        0
+      ]
+    },
+    {
+      "sequence": 927529,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        1,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927530,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": 927531,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        2,
+        45179.325697157125
+      ]
+    },
+    {
+      "sequence": 927532,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": 927533,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        2,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927534,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        3,
+        0
+      ]
+    },
+    {
+      "sequence": 927535,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        3,
+        45179.325697157125
+      ]
+    },
+    {
+      "sequence": 927536,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        3,
+        0
+      ]
+    },
+    {
+      "sequence": 927537,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        3,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927538,
+      "label": "VehicleController.updateVehicle",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-9",
+      "args": [
+        0.008333333333333333,
+        8,
+        null,
+        "<callback>"
+      ]
+    },
+    {
+      "sequence": 927539,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        0,
+        -3.3506259254773576e-08
+      ]
+    },
+    {
+      "sequence": 927540,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        0,
+        0
+      ]
+    },
+    {
+      "sequence": 927541,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        0,
+        0
+      ]
+    },
+    {
+      "sequence": 927542,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        0,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927543,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        1,
+        -3.3506259254773576e-08
+      ]
+    },
+    {
+      "sequence": 927544,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        1,
+        0
+      ]
+    },
+    {
+      "sequence": 927545,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        1,
+        0
+      ]
+    },
+    {
+      "sequence": 927546,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        1,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927547,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": 927548,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        2,
+        39520
+      ]
+    },
+    {
+      "sequence": 927549,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": 927550,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        2,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927551,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        3,
+        0
+      ]
+    },
+    {
+      "sequence": 927552,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        3,
+        39520
+      ]
+    },
+    {
+      "sequence": 927553,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        3,
+        0
+      ]
+    },
+    {
+      "sequence": 927554,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        3,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927555,
+      "label": "VehicleController.updateVehicle",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-10",
+      "args": [
+        0.008333333333333333,
+        8,
+        null,
+        "<callback>"
+      ]
+    },
+    {
+      "sequence": 927556,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        0,
+        1.2627929895757213e-07
+      ]
+    },
+    {
+      "sequence": 927557,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        0,
+        0
+      ]
+    },
+    {
+      "sequence": 927558,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        0,
+        0
+      ]
+    },
+    {
+      "sequence": 927559,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        0,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927560,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        1,
+        1.2627929895757213e-07
+      ]
+    },
+    {
+      "sequence": 927561,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        1,
+        0
+      ]
+    },
+    {
+      "sequence": 927562,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        1,
+        0
+      ]
+    },
+    {
+      "sequence": 927563,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        1,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927564,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": 927565,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        2,
+        39520
+      ]
+    },
+    {
+      "sequence": 927566,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": 927567,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        2,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927568,
+      "label": "VehicleController.setWheelSteering",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        3,
+        0
+      ]
+    },
+    {
+      "sequence": 927569,
+      "label": "VehicleController.setWheelEngineForce",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        3,
+        39520
+      ]
+    },
+    {
+      "sequence": 927570,
+      "label": "VehicleController.setWheelBrake",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        3,
+        0
+      ]
+    },
+    {
+      "sequence": 927571,
+      "label": "VehicleController.setWheelFrictionSlip",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        3,
+        4.7
+      ]
+    },
+    {
+      "sequence": 927572,
+      "label": "VehicleController.updateVehicle",
+      "tick": 241,
+      "engineTick": 1504,
+      "owner": "ambient-car-11",
+      "args": [
+        0.008333333333333333,
+        8,
+        null,
+        "<callback>"
+      ]
+    },
+    {
+      "sequence": 927573,
+      "label": "world.step",
+      "tick": 241,
+      "engineTick": 1504,
+      "args": [
+        0.008333333333333333
+      ]
+    },
+    {
+      "sequence": 927574,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.042e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927575,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "jun",
+      "args": [
+        {
+          "x": 5296,
+          "y": 1408,
+          "z": 14.124132974240638
+        }
+      ]
+    },
+    {
+      "sequence": 927576,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.047e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927577,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "eli",
+      "args": [
+        {
+          "x": 1696,
+          "y": 4912,
+          "z": 13.539704187009193
+        }
+      ]
+    },
+    {
+      "sequence": 927578,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.05e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927579,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "bea",
+      "args": [
+        {
+          "x": 1807.9945068359375,
+          "y": 3455.99560546875,
+          "z": 13.300100190732337
+        }
+      ]
+    },
+    {
+      "sequence": 927580,
+      "label": "Rapier.RigidBody.setLinvel",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "officer-2",
+      "args": [
+        {
+          "x": 56.858447910627035,
+          "y": 29.378851257231123,
+          "z": -0.005983512848615646
+        },
+        true
+      ]
+    },
+    {
+      "sequence": 927581,
+      "label": "Rapier.RigidBody.setLinvel",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "officer-4",
+      "args": [
+        {
+          "x": -6.047296859231985e-15,
+          "y": 2.8775250939361285e-05,
+          "z": 0
+        },
+        true
+      ]
+    },
+    {
+      "sequence": 927582,
+      "label": "Rapier.RigidBody.setLinvel",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "officer-6",
+      "args": [
+        {
+          "x": 33.07192834848118,
+          "y": -54.79276918821431,
+          "z": 0.0014337152242660522
+        },
+        true
+      ]
+    },
+    {
+      "sequence": 927583,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.176e-321
+        },
+        {
+          "x": 0.000991711617259609,
+          "y": 0.135996384172772,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927584,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-0",
+      "args": [
+        {
+          "x": 1097.7712577687344,
+          "y": 997.1440542191267,
+          "z": 13.081006181579141
+        }
+      ]
+    },
+    {
+      "sequence": 927585,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.18e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927586,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-1",
+      "args": [
+        {
+          "x": 3995.196533203125,
+          "y": 972.7998657226562,
+          "z": 13.098305566403724
+        }
+      ]
+    },
+    {
+      "sequence": 927587,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.186e-321
+        },
+        {
+          "x": -0.0012270650422218552,
+          "y": 0.16799551872410812,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927588,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-2",
+      "args": [
+        {
+          "x": 6828.743890813319,
+          "y": 985.2939709126949,
+          "z": 13.089424628931738
+        }
+      ]
+    },
+    {
+      "sequence": 927589,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.19e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927590,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-3",
+      "args": [
+        {
+          "x": 1097.6007079976205,
+          "y": 3387.203125040768,
+          "z": 13.099525067664217
+        }
+      ]
+    },
+    {
+      "sequence": 927591,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.196e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927592,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-4",
+      "args": [
+        {
+          "x": 3995.1958007513495,
+          "y": 3387.1958008111505,
+          "z": 13.029744012434094
+        }
+      ]
+    },
+    {
+      "sequence": 927593,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.2e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927594,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-5",
+      "args": [
+        {
+          "x": 6828.800328051995,
+          "y": 3387.205322265625,
+          "z": 13.100071706729068
+        }
+      ]
+    },
+    {
+      "sequence": 927595,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.206e-321
+        },
+        {
+          "x": 0.1359974898637526,
+          "y": -0.0008262873341026096,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927596,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-6",
+      "args": [
+        {
+          "x": 1115.4852416068316,
+          "y": 5484.696435859427,
+          "z": 13.089295725490956
+        }
+      ]
+    },
+    {
+      "sequence": 927597,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.21e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927598,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-7",
+      "args": [
+        {
+          "x": 3995.193359375,
+          "y": 5484.802699971431,
+          "z": 13.100079914212984
+        }
+      ]
+    },
+    {
+      "sequence": 927599,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.215e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927600,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-8",
+      "args": [
+        {
+          "x": 6828.799780787433,
+          "y": 5484.799766447391,
+          "z": 13.100052676316409
+        }
+      ]
+    },
+    {
+      "sequence": 927601,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.22e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927602,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-9",
+      "args": [
+        {
+          "x": 1097.601806640625,
+          "y": 6252.799789092798,
+          "z": 13.10009260649531
+        }
+      ]
+    },
+    {
+      "sequence": 927603,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.225e-321
+        },
+        {
+          "x": -0.15199716366015437,
+          "y": -0.0009285683971842385,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927604,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-10",
+      "args": [
+        {
+          "x": 3984.047221586108,
+          "y": 6252.726122781867,
+          "z": 13.095073612574197
+        }
+      ]
+    },
+    {
+      "sequence": 927605,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.23e-321
+        },
+        {
+          "x": -0.16799675829962643,
+          "y": -0.0010436478414149269,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927606,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-11",
+      "args": [
+        {
+          "x": 6806.863743841648,
+          "y": 6252.666925156489,
+          "z": 13.089830374490703
+        }
+      ]
+    },
+    {
+      "sequence": 927607,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.235e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927608,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-12",
+      "args": [
+        {
+          "x": 1118.3984375,
+          "y": 4355.2001953125,
+          "z": 13.100099427792884
+        }
+      ]
+    },
+    {
+      "sequence": 927609,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.24e-321
+        },
+        {
+          "x": -0.1503154715171104,
+          "y": -0.022566768102428407,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927610,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-13",
+      "args": [
+        {
+          "x": 1786.7063728123903,
+          "y": 3488.0128336232156,
+          "z": 13.090956993568398
+        }
+      ]
+    },
+    {
+      "sequence": 927611,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.245e-321
+        },
+        {
+          "x": 0.1414085945521581,
+          "y": -0.0907061706102918,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927612,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-14",
+      "args": [
+        {
+          "x": 1568.866628319025,
+          "y": 3609.3914715647697,
+          "z": 13.224132402036048
+        }
+      ]
+    },
+    {
+      "sequence": 927613,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.25e-321
+        },
+        {
+          "x": -0.12824620138731607,
+          "y": -0.04526490726516477,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927614,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-15",
+      "args": [
+        {
+          "x": 2260.530445203185,
+          "y": 3615.7220690771937,
+          "z": 13.224132402036048
+        }
+      ]
+    },
+    {
+      "sequence": 927615,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.255e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927616,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-16",
+      "args": [
+        {
+          "x": 1115.1945602339674,
+          "y": 1007.9978722555579,
+          "z": 13.081043403850344
+        }
+      ]
+    },
+    {
+      "sequence": 927617,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.26e-321
+        },
+        {
+          "x": 0.1679867207822087,
+          "y": -0.0021122596526590588,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927618,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-17",
+      "args": [
+        {
+          "x": 4032.9516826570034,
+          "y": 1007.7336055138148,
+          "z": 13.094980196248798
+        }
+      ]
+    },
+    {
+      "sequence": 927619,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.265e-321
+        },
+        {
+          "x": 0.0009914535810292783,
+          "y": 0.1359963860541767,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927620,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-18",
+      "args": [
+        {
+          "x": 6793.718278579996,
+          "y": 989.25495390594,
+          "z": 12.97048251254455
+        }
+      ]
+    },
+    {
+      "sequence": 927621,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.27e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927622,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-19",
+      "args": [
+        {
+          "x": 1115.1994617476082,
+          "y": 3387.19970703125,
+          "z": 13.09378991851554
+        }
+      ]
+    },
+    {
+      "sequence": 927623,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.275e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927624,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-20",
+      "args": [
+        {
+          "x": 4012.800537098749,
+          "y": 3387.2001953550043,
+          "z": 13.015495164479944
+        }
+      ]
+    },
+    {
+      "sequence": 927625,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.28e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927626,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-21",
+      "args": [
+        {
+          "x": 6793.600062720245,
+          "y": 3387.200927734375,
+          "z": 13.100070471366053
+        }
+      ]
+    },
+    {
+      "sequence": 927627,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.285e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927628,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-22",
+      "args": [
+        {
+          "x": 1115.1999511916144,
+          "y": 5467.20019529355,
+          "z": 13.041663987722131
+        }
+      ]
+    },
+    {
+      "sequence": 927629,
+      "label": "Rapier.CharacterController.computeColliderMovement",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": [
+        {
+          "handle": 1.29e-321
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -0.0109
+        },
+        8,
+        262211
+      ]
+    },
+    {
+      "sequence": 927630,
+      "label": "Rapier.RigidBody.setNextKinematicTranslation",
+      "tick": 241,
+      "engineTick": 1505,
+      "owner": "resident-23",
+      "args": [
+        {
+          "x": 4012.8000487867184,
+          "y": 5467.191894520898,
+          "z": 13.094910485822766
+        }
+      ]
+    },
+    {
+      "sequence": 927631,
+      "label": "Rapier.World.step",
+      "tick": 241,
+      "engineTick": 1505,
+      "args": []
+    }
+  ],
+  "lifecycle": {
+    "capturedEntries": 182,
+    "capacity": 1024,
+    "counts": {
+      "vehicles.restore": 6,
+      "Rapier.RigidBody.setEnabled": 168,
+      "vehicles.enter": 8
+    },
+    "truncated": false,
+    "lastChanges": [
+      {
+        "sequence": 782038,
+        "label": "vehicles.enter",
+        "tick": 0,
+        "engineTick": 1264,
+        "args": [
+          {
+            "x": 4000,
+            "y": 3235.2,
+            "z": 0,
+            "id": "mara",
+            "kind": "hero"
+          },
+          {
+            "x": 4000,
+            "y": 3264,
+            "z": 12.48,
+            "id": "mara-sedan",
+            "kind": "sedan"
+          },
+          0
+        ]
+      },
+      {
+        "sequence": 782039,
+        "label": "Rapier.RigidBody.setEnabled",
+        "tick": 0,
+        "engineTick": 1264,
+        "owner": "mara",
+        "args": [
+          false
+        ]
+      },
+      {
+        "sequence": 782045,
+        "label": "vehicles.enter",
+        "tick": 0,
+        "engineTick": 1264,
+        "args": [
+          {
+            "x": 3680,
+            "y": 3256,
+            "z": 0,
+            "id": "officer-1",
+            "kind": "mob"
+          },
+          {
+            "x": 3680,
+            "y": 3280,
+            "z": 12.48,
+            "id": "patrol-1",
+            "kind": "cruiser"
+          },
+          0
+        ]
+      },
+      {
+        "sequence": 782046,
+        "label": "Rapier.RigidBody.setEnabled",
+        "tick": 0,
+        "engineTick": 1264,
+        "owner": "officer-1",
+        "args": [
+          false
+        ]
+      },
+      {
+        "sequence": 782052,
+        "label": "vehicles.enter",
+        "tick": 0,
+        "engineTick": 1264,
+        "args": [
+          {
+            "x": 4320,
+            "y": 3160,
+            "z": 0,
+            "id": "officer-3",
+            "kind": "mob"
+          },
+          {
+            "x": 4320,
+            "y": 3184,
+            "z": 12.48,
+            "id": "patrol-2",
+            "kind": "cruiser"
+          },
+          0
+        ]
+      },
+      {
+        "sequence": 782053,
+        "label": "Rapier.RigidBody.setEnabled",
+        "tick": 0,
+        "engineTick": 1264,
+        "owner": "officer-3",
+        "args": [
+          false
+        ]
+      },
+      {
+        "sequence": 782059,
+        "label": "vehicles.enter",
+        "tick": 0,
+        "engineTick": 1264,
+        "args": [
+          {
+            "x": 3856,
+            "y": 3544,
+            "z": 0,
+            "id": "officer-5",
+            "kind": "mob"
+          },
+          {
+            "x": 3856,
+            "y": 3568,
+            "z": 12.48,
+            "id": "patrol-3",
+            "kind": "cruiser"
+          },
+          0
+        ]
+      },
+      {
+        "sequence": 782060,
+        "label": "Rapier.RigidBody.setEnabled",
+        "tick": 0,
+        "engineTick": 1264,
+        "owner": "officer-5",
+        "args": [
+          false
+        ]
+      }
+    ],
+    "finding": "No recorded body/collider creation or removal after observer installation. The 182-entry complete ring contains restores, entry and body enable/disable only; last seat changes were scene tick 0/world 1264, 241 attempted steps before failure. All 16 cached seat/body associations were consistent, and no transition was active."
+  },
+  "binaryLocalization": {
+    "javascriptSha256": "71e1722cfbfd6eeb98675d9e46cdd23803db488c81552ff30708d02cb785677c",
+    "wasmSha256": "11cbc1cf97ec4c2d4f5e9b47af9534ac554328a6dd1d987e98faf3d5c73031b0",
+    "recordedCallerPC": "0x2a79c",
+    "panicFunctionIndex": 1413,
+    "locationRecordAddress": 1086576,
+    "embeddedSourcePath": "/Users/sebcrozet/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rapier3d-0.30.1/src/dynamics/solver/interaction_groups.rs",
+    "line": 454,
+    "column": 36,
+    "panicFormatFragments": [
+      "index out of bounds: the len is ",
+      " but the index is "
+    ],
+    "sourceURL": "https://github.com/dimforge/rapier/blob/v0.30.1/src/dynamics/solver/interaction_groups.rs#L454",
+    "interpretation": "Bounds-check failure in SIMD contact-manifold body mask indexing; offending index/body and trigger remain unproved."
+  },
+  "secondaryFailure": {
+    "sequenceAfterPrimary": [
+      {
+        "sequence": 927632,
+        "label": "app.handleError",
+        "tick": 241,
+        "engineTick": 1505,
+        "args": [
+          "[object Error]"
+        ]
+      },
+      {
+        "sequence": 927633,
+        "label": "app.update",
+        "tick": 241,
+        "engineTick": 1505,
+        "args": [
+          0.008333333333333333
+        ]
+      },
+      {
+        "sequence": 927634,
+        "label": "world.draw",
+        "tick": 241,
+        "engineTick": 1505,
+        "args": [
+          {}
+        ]
+      },
+      {
+        "sequence": 927635,
+        "label": "queries.floorAt",
+        "tick": 241,
+        "engineTick": 1505,
+        "args": [
+          4048.6396484375,
+          3256.8,
+          0.5046501159667969
+        ]
+      },
+      {
+        "sequence": 927636,
+        "label": "queries.ray",
+        "tick": 241,
+        "engineTick": 1505,
+        "args": [
+          {
+            "x": 4048.6396484375,
+            "y": 3256.8,
+            "z": 4.344650115966797
+          },
+          {
+            "x": 4048.6396484375,
+            "y": 3256.8,
+            "z": -799.4953498840332
+          },
+          "[object Object]"
+        ]
+      },
+      {
+        "sequence": 927637,
+        "label": "Rapier.World.castRayAndGetNormal",
+        "tick": 241,
+        "engineTick": 1505,
+        "args": [
+          "[object Object]",
+          803.84,
+          true,
+          8,
+          null,
+          null,
+          null,
+          "<callback>"
+        ]
+      },
+      {
+        "sequence": 927638,
+        "label": "engine._fail",
+        "tick": 241,
+        "engineTick": 1505,
+        "args": [
+          "draw",
+          "[object Error]"
+        ]
+      }
+    ],
+    "consoleErrors": [
+      {
+        "at": "2026-10-17T00:05:13.919Z",
+        "text": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (http://127.0.0.1:5279/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (http://127.0.0.1:5279/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (http://127.0.0.1:5279/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at sg.wrapped [as step] (eval at evaluate (:311:30), <anonymous>:36:25)\n    at World3D.step (http://127.0.0.1:5279/vendor/my-3d2dge/engine/my-3d2dge-3d.js:1690:26)",
+        "location": {
+          "url": "http://127.0.0.1:5279/src/main.js",
+          "line": 884,
+          "column": 12,
+          "lineNumber": 884,
+          "columnNumber": 12
+        }
+      },
+      {
+        "at": "2026-10-17T00:05:13.919Z",
+        "text": "my-3D2dge: error in draw (scene \"main\"): Error: recursive use of an object detected which would lead to unsafe aliasing in rust\n    at I.wbg.__wbindgen_throw (http://127.0.0.1:5279/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:74704)\n    at wasm://wasm/00630266:wasm-function[1922]:0x178f07\n    at wasm://wasm/00630266:wasm-function[1924]:0x178f23\n    at wasm://wasm/00630266:wasm-function[275]:0xea0aa\n    at l.castRayAndGetNormal (http://127.0.0.1:5279/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:3691)\n    at xI.castRayAndGetNormal (http://127.0.0.1:5279/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:97764)\n    at sg.castRayAndGetNormal (http://127.0.0.1:5279/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:123406)\n    at sg.wrapped [as castRayAndGetNormal] (eval at evaluate (:311:30), <anonymous>:36:25)\n    at QuerySystem.ray (http://127.0.0.1:5279/src/engine/queries.js:23:31)\n    at QuerySystem.wrapped [as ray] (eval at evaluate (:311:30), <anonymous>:36:25)",
+        "location": {
+          "url": "http://127.0.0.1:5279/vendor/my-3d2dge/engine/my-3d2dge.js",
+          "line": 2585,
+          "column": 14,
+          "lineNumber": 2585,
+          "columnNumber": 14
+        }
+      }
+    ],
+    "finding": "The same engine frame continued to draw after app.handleError stopped future frames. world.draw called floorAt/raycast on poisoned Rapier state, producing the later unsafe-alias exception.",
+    "proposedContainment": "Latch a fatal update failure in runtime.start; stop and skip subsequent update/draw callbacks before invoking onError. Proposal only, not applied; it would not repair the initiating solver panic."
+  },
+  "sourceIntegrity": {
+    "before": {
+      "assets/animation/bridge.js": "cce0fc80661f27e885de5a2976fc7925444e2eabc1c57174607a0490f65f10d2",
+      "assets/animation/urban.js": "f7c30e8a204830ffad813b0e21c23f23e446eaf8d429a0e8dc91249b03e9e31c",
+      "src/actors/animation.js": "13b954861e6821087dbc01d422b16f84a379d36d4b530d5ea918d4d615546b2e",
+      "src/actors/companion.js": "c60f680f1e0451442165e685eaf2a6eb86534708e29058a708b70a195295e897",
+      "src/actors/contacts.js": "03ff14d8ed30408419fc5c279ec4c9631def90d878bc6b74c4cfb1e942b8b8e9",
+      "src/actors/cover.js": "badc068745b5a23f21fb0379a9d33841cce5a493c92d76034e54bf7de588a464",
+      "src/actors/crew.js": "8eac8ed0ae631e8922db06a265e3185fb98910d493986fcf575937f39a2a4953",
+      "src/actors/patrol-navigation.js": "0b80f379c265072687f85788533fe86bec3c52d9059e0364ed2a336578ab1365",
+      "src/actors/player.js": "07a31d1648fd492ae6182a5717e975bee94330f0675d32a2acce3788279432c9",
+      "src/actors/police.js": "72d30c9bf828012d9fdc39af95569b19c738c28ef70520ede336a5181b3aeb4e",
+      "src/engine/camera.js": "dc8fb6a1a9e0930b5b24ba7c9b609905888048c09f22565886b4278460fb0304",
+      "src/engine/input.js": "36d2ec004f5f55ba522026f23e2c1f946ab8035a4c5eb90e363f2220bf094b72",
+      "src/engine/queries.js": "796202c35c196e2b4753905282d3e584a3902018689590e0519b46cfc42b5b75",
+      "src/engine/units.js": "51ca16a7229c536bef4f3ef1c360ada7a2bea19438327c1e35506383c7e42388",
+      "src/engine/vehicles.js": "f7f18b80301e13645b356d47a61799a6816780d160cf10012951ae299007718b",
+      "src/engine/world.js": "275c69298a1ce3d61cc54173b2b72517b0a52ad4a587c9ab603fdf8eeb6ea68e",
+      "src/game/actions.js": "0c6968e7fa47e4c8c0a99c7a07688bb4b7155ed87a69455282183a92f3d57cbc",
+      "src/game/events.js": "a5bbd7d4c13ddf0e20288dffa6965bf89697621ff88f0370619ffd2106f2ab25",
+      "src/game/rng.js": "1ed8eb32d5299ca566d5bdeae1a78985fd2546141a2a3d7080c0706c03461edf",
+      "src/game/save.js": "fe8306f248eba3dc8b93affef03b8cf76120cd96ea7852299284ce26153904a4",
+      "src/game/state.js": "9ac776a8159218469c355ea1276b3b0954de96fe2b4e79d0de3d084c7c027819",
+      "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+      "src/mission/checkpoints.js": "3e7e1b45ec0f1f1e2e913be983779527e38c8e13e119b0e54061da068f78f50d",
+      "src/mission/definition.js": "9d38dd716bbf598ca173281d2e0ee29471053a5c144f73d961d0111921fc44e3",
+      "src/mission/dialogue.js": "12748f172d14ddb7e15ab7a871eba3b3c4292cc24ceb9467ca39d7f1e84e14e4",
+      "src/mission/director.js": "365fabc91cf7458367012d7ddd65a358fcdb349c45c37ecad9d95a5424747e33",
+      "src/systems/audio.js": "42a5198ed90d8f835d8cc8b5438bbaf872400a19fa5feeaf1a54906339f40042",
+      "src/systems/combat.js": "8395905794ec6436858924cc4c9ef01eb5e6da285f476c24581492cd9c77073c",
+      "src/systems/crime.js": "742d099f8a6b8a8ea5a9d9818c3c89499aa1cd8cf93b117dcddd6c5466506e8e",
+      "src/systems/economy.js": "b55c93b2d5d016f7dc057979917a9674c39a3c843ce3e881beac6c1a2867d77f",
+      "src/systems/incoming-call.js": "dd8e9e10f1b611bbca467f86b25784ff6b523037ed6b0e00f5faaa68e5150517",
+      "src/systems/wanted.js": "0a749df3a01c51c84e13140659e0c3f1af27f645686ed8b7b54dda79efed8f90",
+      "src/ui/interface.js": "5abf673432dfceeb0aebe60296ce174c890515e8d07dd90c82514aeb8af93041",
+      "src/world/district.js": "cd4b56e7c17b0604d6557fecd67e3575aa0b4787c44b0799bbdba795563ae40b",
+      "src/world/interactions.js": "7b221ad243b0d749d9b2baab741264944beb3038dc1785672ab93203494d9bce",
+      "src/world/pedestrians.js": "a27c6730895fdcd979e6098001fc5f3393c6f97dddff8d12be0e319a530e3c68",
+      "src/world/roads.js": "714ccb68a3510738dc5bb47bce5ad9e0b7bbdc006f4272af95d2c22009ff4737",
+      "src/world/traffic.js": "072434114b092aa6405221732676a346e5d59f083b856507929d995eb3ca9c82",
+      "vendor/my-3d2dge/engine/my-3d2dge-3d.js": "bb89882022a09c4d457aebdd08a04b59493714d829caf79c0225e5586dcc3a21",
+      "vendor/my-3d2dge/engine/my-3d2dge-agent.js": "464c1c057ac297be58d347939765fe9179303f7d0f39363e223700cfbd1aaa35",
+      "vendor/my-3d2dge/engine/my-3d2dge.js": "9f4050eb7638a8060e3413a8351acd0053f05163b85143ba1ad8f855a6b49019",
+      "vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js": "71e1722cfbfd6eeb98675d9e46cdd23803db488c81552ff30708d02cb785677c",
+      "vendor/my-3d2dge/vendor/three-0.182.0/three.core.min.js": "e5a824c8ec97ee44aeb8ce0ab64664e1dd1777df9d0ab2345b35f9941a9fcf33",
+      "vendor/my-3d2dge/vendor/three-0.182.0/three.tsl.min.js": "166f811d4ad2630f697ceae70b48479e1096126d42b51a2597535f2ef078f686",
+      "vendor/my-3d2dge/vendor/three-0.182.0/three.webgpu.min.js": "522b07095d914ba2a74dd3a96a4d7bdac296973404de4f8f578fda7550abda24"
+    },
+    "after": {
+      "assets/animation/bridge.js": "cce0fc80661f27e885de5a2976fc7925444e2eabc1c57174607a0490f65f10d2",
+      "assets/animation/urban.js": "f7c30e8a204830ffad813b0e21c23f23e446eaf8d429a0e8dc91249b03e9e31c",
+      "src/actors/animation.js": "13b954861e6821087dbc01d422b16f84a379d36d4b530d5ea918d4d615546b2e",
+      "src/actors/companion.js": "c60f680f1e0451442165e685eaf2a6eb86534708e29058a708b70a195295e897",
+      "src/actors/contacts.js": "03ff14d8ed30408419fc5c279ec4c9631def90d878bc6b74c4cfb1e942b8b8e9",
+      "src/actors/cover.js": "badc068745b5a23f21fb0379a9d33841cce5a493c92d76034e54bf7de588a464",
+      "src/actors/crew.js": "8eac8ed0ae631e8922db06a265e3185fb98910d493986fcf575937f39a2a4953",
+      "src/actors/patrol-navigation.js": "0b80f379c265072687f85788533fe86bec3c52d9059e0364ed2a336578ab1365",
+      "src/actors/player.js": "07a31d1648fd492ae6182a5717e975bee94330f0675d32a2acce3788279432c9",
+      "src/actors/police.js": "72d30c9bf828012d9fdc39af95569b19c738c28ef70520ede336a5181b3aeb4e",
+      "src/engine/camera.js": "dc8fb6a1a9e0930b5b24ba7c9b609905888048c09f22565886b4278460fb0304",
+      "src/engine/input.js": "36d2ec004f5f55ba522026f23e2c1f946ab8035a4c5eb90e363f2220bf094b72",
+      "src/engine/queries.js": "796202c35c196e2b4753905282d3e584a3902018689590e0519b46cfc42b5b75",
+      "src/engine/units.js": "51ca16a7229c536bef4f3ef1c360ada7a2bea19438327c1e35506383c7e42388",
+      "src/engine/vehicles.js": "f7f18b80301e13645b356d47a61799a6816780d160cf10012951ae299007718b",
+      "src/engine/world.js": "275c69298a1ce3d61cc54173b2b72517b0a52ad4a587c9ab603fdf8eeb6ea68e",
+      "src/game/actions.js": "0c6968e7fa47e4c8c0a99c7a07688bb4b7155ed87a69455282183a92f3d57cbc",
+      "src/game/events.js": "a5bbd7d4c13ddf0e20288dffa6965bf89697621ff88f0370619ffd2106f2ab25",
+      "src/game/rng.js": "1ed8eb32d5299ca566d5bdeae1a78985fd2546141a2a3d7080c0706c03461edf",
+      "src/game/save.js": "fe8306f248eba3dc8b93affef03b8cf76120cd96ea7852299284ce26153904a4",
+      "src/game/state.js": "9ac776a8159218469c355ea1276b3b0954de96fe2b4e79d0de3d084c7c027819",
+      "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+      "src/mission/checkpoints.js": "3e7e1b45ec0f1f1e2e913be983779527e38c8e13e119b0e54061da068f78f50d",
+      "src/mission/definition.js": "9d38dd716bbf598ca173281d2e0ee29471053a5c144f73d961d0111921fc44e3",
+      "src/mission/dialogue.js": "12748f172d14ddb7e15ab7a871eba3b3c4292cc24ceb9467ca39d7f1e84e14e4",
+      "src/mission/director.js": "365fabc91cf7458367012d7ddd65a358fcdb349c45c37ecad9d95a5424747e33",
+      "src/systems/audio.js": "42a5198ed90d8f835d8cc8b5438bbaf872400a19fa5feeaf1a54906339f40042",
+      "src/systems/combat.js": "8395905794ec6436858924cc4c9ef01eb5e6da285f476c24581492cd9c77073c",
+      "src/systems/crime.js": "742d099f8a6b8a8ea5a9d9818c3c89499aa1cd8cf93b117dcddd6c5466506e8e",
+      "src/systems/economy.js": "b55c93b2d5d016f7dc057979917a9674c39a3c843ce3e881beac6c1a2867d77f",
+      "src/systems/incoming-call.js": "dd8e9e10f1b611bbca467f86b25784ff6b523037ed6b0e00f5faaa68e5150517",
+      "src/systems/wanted.js": "0a749df3a01c51c84e13140659e0c3f1af27f645686ed8b7b54dda79efed8f90",
+      "src/ui/interface.js": "5abf673432dfceeb0aebe60296ce174c890515e8d07dd90c82514aeb8af93041",
+      "src/world/district.js": "cd4b56e7c17b0604d6557fecd67e3575aa0b4787c44b0799bbdba795563ae40b",
+      "src/world/interactions.js": "7b221ad243b0d749d9b2baab741264944beb3038dc1785672ab93203494d9bce",
+      "src/world/pedestrians.js": "a27c6730895fdcd979e6098001fc5f3393c6f97dddff8d12be0e319a530e3c68",
+      "src/world/roads.js": "714ccb68a3510738dc5bb47bce5ad9e0b7bbdc006f4272af95d2c22009ff4737",
+      "src/world/traffic.js": "072434114b092aa6405221732676a346e5d59f083b856507929d995eb3ca9c82",
+      "vendor/my-3d2dge/engine/my-3d2dge-3d.js": "bb89882022a09c4d457aebdd08a04b59493714d829caf79c0225e5586dcc3a21",
+      "vendor/my-3d2dge/engine/my-3d2dge-agent.js": "464c1c057ac297be58d347939765fe9179303f7d0f39363e223700cfbd1aaa35",
+      "vendor/my-3d2dge/engine/my-3d2dge.js": "9f4050eb7638a8060e3413a8351acd0053f05163b85143ba1ad8f855a6b49019",
+      "vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js": "71e1722cfbfd6eeb98675d9e46cdd23803db488c81552ff30708d02cb785677c",
+      "vendor/my-3d2dge/vendor/three-0.182.0/three.core.min.js": "e5a824c8ec97ee44aeb8ce0ab64664e1dd1777df9d0ab2345b35f9941a9fcf33",
+      "vendor/my-3d2dge/vendor/three-0.182.0/three.tsl.min.js": "166f811d4ad2630f697ceae70b48479e1096126d42b51a2597535f2ef078f686",
+      "vendor/my-3d2dge/vendor/three-0.182.0/three.webgpu.min.js": "522b07095d914ba2a74dd3a96a4d7bdac296973404de4f8f578fda7550abda24"
+    },
+    "changed": false,
+    "loadedJavaScript": {
+      "/src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
+      "/src/engine/world.js": "275c69298a1ce3d61cc54173b2b72517b0a52ad4a587c9ab603fdf8eeb6ea68e",
+      "/vendor/my-3d2dge/engine/my-3d2dge.js": "9f4050eb7638a8060e3413a8351acd0053f05163b85143ba1ad8f855a6b49019",
+      "/src/engine/input.js": "36d2ec004f5f55ba522026f23e2c1f946ab8035a4c5eb90e363f2220bf094b72",
+      "/src/engine/units.js": "51ca16a7229c536bef4f3ef1c360ada7a2bea19438327c1e35506383c7e42388",
+      "/src/world/interactions.js": "7b221ad243b0d749d9b2baab741264944beb3038dc1785672ab93203494d9bce",
+      "/src/actors/player.js": "07a31d1648fd492ae6182a5717e975bee94330f0675d32a2acce3788279432c9",
+      "/src/world/traffic.js": "072434114b092aa6405221732676a346e5d59f083b856507929d995eb3ca9c82",
+      "/src/actors/companion.js": "c60f680f1e0451442165e685eaf2a6eb86534708e29058a708b70a195295e897",
+      "/src/world/pedestrians.js": "a27c6730895fdcd979e6098001fc5f3393c6f97dddff8d12be0e319a530e3c68",
+      "/src/world/district.js": "cd4b56e7c17b0604d6557fecd67e3575aa0b4787c44b0799bbdba795563ae40b",
+      "/src/actors/cover.js": "badc068745b5a23f21fb0379a9d33841cce5a493c92d76034e54bf7de588a464",
+      "/src/actors/animation.js": "13b954861e6821087dbc01d422b16f84a379d36d4b530d5ea918d4d615546b2e",
+      "/src/actors/contacts.js": "03ff14d8ed30408419fc5c279ec4c9631def90d878bc6b74c4cfb1e942b8b8e9",
+      "/src/actors/crew.js": "8eac8ed0ae631e8922db06a265e3185fb98910d493986fcf575937f39a2a4953",
+      "/src/actors/patrol-navigation.js": "0b80f379c265072687f85788533fe86bec3c52d9059e0364ed2a336578ab1365",
+      "/src/actors/police.js": "72d30c9bf828012d9fdc39af95569b19c738c28ef70520ede336a5181b3aeb4e",
+      "/src/game/rng.js": "1ed8eb32d5299ca566d5bdeae1a78985fd2546141a2a3d7080c0706c03461edf",
+      "/src/game/events.js": "a5bbd7d4c13ddf0e20288dffa6965bf89697621ff88f0370619ffd2106f2ab25",
+      "/src/ui/interface.js": "5abf673432dfceeb0aebe60296ce174c890515e8d07dd90c82514aeb8af93041",
+      "/src/systems/audio.js": "42a5198ed90d8f835d8cc8b5438bbaf872400a19fa5feeaf1a54906339f40042",
+      "/src/game/state.js": "9ac776a8159218469c355ea1276b3b0954de96fe2b4e79d0de3d084c7c027819",
+      "/src/systems/incoming-call.js": "dd8e9e10f1b611bbca467f86b25784ff6b523037ed6b0e00f5faaa68e5150517",
+      "/src/mission/checkpoints.js": "3e7e1b45ec0f1f1e2e913be983779527e38c8e13e119b0e54061da068f78f50d",
+      "/src/mission/definition.js": "9d38dd716bbf598ca173281d2e0ee29471053a5c144f73d961d0111921fc44e3",
+      "/src/game/save.js": "fe8306f248eba3dc8b93affef03b8cf76120cd96ea7852299284ce26153904a4",
+      "/src/mission/director.js": "365fabc91cf7458367012d7ddd65a358fcdb349c45c37ecad9d95a5424747e33",
+      "/src/systems/combat.js": "8395905794ec6436858924cc4c9ef01eb5e6da285f476c24581492cd9c77073c",
+      "/src/mission/dialogue.js": "12748f172d14ddb7e15ab7a871eba3b3c4292cc24ceb9467ca39d7f1e84e14e4",
+      "/src/systems/economy.js": "b55c93b2d5d016f7dc057979917a9674c39a3c843ce3e881beac6c1a2867d77f",
+      "/src/systems/crime.js": "742d099f8a6b8a8ea5a9d9818c3c89499aa1cd8cf93b117dcddd6c5466506e8e",
+      "/src/systems/wanted.js": "0a749df3a01c51c84e13140659e0c3f1af27f645686ed8b7b54dda79efed8f90",
+      "/src/engine/camera.js": "dc8fb6a1a9e0930b5b24ba7c9b609905888048c09f22565886b4278460fb0304",
+      "/src/engine/queries.js": "796202c35c196e2b4753905282d3e584a3902018689590e0519b46cfc42b5b75",
+      "/src/engine/vehicles.js": "f7f18b80301e13645b356d47a61799a6816780d160cf10012951ae299007718b",
+      "/src/world/roads.js": "714ccb68a3510738dc5bb47bce5ad9e0b7bbdc006f4272af95d2c22009ff4737",
+      "/vendor/my-3d2dge/engine/my-3d2dge-3d.js": "bb89882022a09c4d457aebdd08a04b59493714d829caf79c0225e5586dcc3a21",
+      "/vendor/my-3d2dge/vendor/three-0.182.0/three.tsl.min.js": "166f811d4ad2630f697ceae70b48479e1096126d42b51a2597535f2ef078f686",
+      "/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js": "71e1722cfbfd6eeb98675d9e46cdd23803db488c81552ff30708d02cb785677c",
+      "/vendor/my-3d2dge/vendor/three-0.182.0/three.core.min.js": "e5a824c8ec97ee44aeb8ce0ab64664e1dd1777df9d0ab2345b35f9941a9fcf33",
+      "/vendor/my-3d2dge/vendor/three-0.182.0/three.webgpu.min.js": "522b07095d914ba2a74dd3a96a4d7bdac296973404de4f8f578fda7550abda24",
+      "/vendor/my-3d2dge/src/mocap/readable.js": "627ab2b65c6a4c88fd326c1f5039aba50afabc4a79875085e1d7c54fcc72144e",
+      "/vendor/my-3d2dge/src/mocap/mocap.js": "d8b9c91f1b0615df25d078c120e70033e009e8c50e6250722d87d921f7acb73a",
+      "/assets/animation/urban.js": "f7c30e8a204830ffad813b0e21c23f23e446eaf8d429a0e8dc91249b03e9e31c",
+      "/assets/animation/bridge.js": "cce0fc80661f27e885de5a2976fc7925444e2eabc1c57174607a0490f65f10d2"
+    },
+    "matchedLoadedAndTracked": 43,
+    "loadedOnly": [
+      "vendor/my-3d2dge/src/mocap/readable.js",
+      "vendor/my-3d2dge/src/mocap/mocap.js"
+    ]
+  },
+  "controls": [
+    {
+      "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-03-24-410Z",
+      "startedAt": "2026-10-17T00:03:24.416Z",
+      "finishedAt": "2026-10-17T00:05:17.310Z",
+      "commit": "928d93c22215636b078b0e478f2f70df34464b08",
+      "maxCycles": 2,
+      "sampleMs": 8000,
+      "selectedScenes": [],
+      "firstFailure": true,
+      "sourceChanged": false,
+      "solverGuard": null,
+      "firstFailureLabel": "Rapier.World.step",
+      "firstFailureMessage": "unreachable",
+      "browserVersion": "153.0.8010.12",
+      "harnessSha256": "6b14ed16d193e50616347e1d0428d63f6ed277c7dd2dd668b098838b1d074017",
+      "observerSha256": "31e4c4aea8cf62fbbe5c9e0b5b4d4a4db2476620eda7ab327ecdb5619a4cb947",
+      "sampledTicks": 811,
+      "scenes": [
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "central-intersection",
+          "ticks": 54,
+          "worldSteps": 54,
+          "durationMs": 8000.30000000447,
+          "phase": "INTRO",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "depot-fight",
+          "ticks": 94,
+          "worldSteps": 94,
+          "durationMs": 8000.10000000149,
+          "phase": "RECOVERY",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "tier3-pursuit",
+          "ticks": 82,
+          "worldSteps": 82,
+          "durationMs": 8000.10000000149,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "central-intersection",
+          "ticks": 114,
+          "worldSteps": 114,
+          "durationMs": 8000.29999999702,
+          "phase": "INTRO",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "depot-fight",
+          "ticks": 318,
+          "worldSteps": 318,
+          "durationMs": 8000.20000000298,
+          "phase": "RECOVERY",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "tier3-pursuit",
+          "ticks": 149,
+          "worldSteps": 149,
+          "durationMs": 4600.10000000149,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "error"
+        }
+      ],
+      "physicsSnapshot": null,
+      "rawReportSha256": "b52a804a361e3f6fc3db030ca55bc7822fb2e31bd4fa267c10dbd402973975e8"
+    },
+    {
+      "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-08-40-327Z",
+      "startedAt": "2026-10-17T00:08:40.333Z",
+      "finishedAt": "2026-10-17T00:09:13.569Z",
+      "commit": "928d93c22215636b078b0e478f2f70df34464b08",
+      "maxCycles": 1,
+      "sampleMs": 15000,
+      "selectedScenes": [
+        "low:tier3-pursuit"
+      ],
+      "firstFailure": false,
+      "sourceChanged": false,
+      "solverGuard": null,
+      "firstFailureLabel": null,
+      "firstFailureMessage": null,
+      "browserVersion": "153.0.8010.12",
+      "harnessSha256": "40e23c4e55ec3fb760c2a74a37740603718766c541849ade67b3060e2f3a620a",
+      "observerSha256": "31e4c4aea8cf62fbbe5c9e0b5b4d4a4db2476620eda7ab327ecdb5619a4cb947",
+      "sampledTicks": 272,
+      "scenes": [
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "tier3-pursuit",
+          "ticks": 272,
+          "worldSteps": 272,
+          "durationMs": 15019.80000000447,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing"
+        }
+      ],
+      "physicsSnapshot": null,
+      "rawReportSha256": "3bf67bafbf15b539f0f2f33657fa32555daf7e97480f9f23c91a957cbb2c3f2b"
+    },
+    {
+      "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-09-41-259Z",
+      "startedAt": "2026-10-17T00:09:41.265Z",
+      "finishedAt": "2026-10-17T00:10:57.209Z",
+      "commit": "928d93c22215636b078b0e478f2f70df34464b08",
+      "maxCycles": 4,
+      "sampleMs": 10000,
+      "selectedScenes": [
+        "low:tier3-pursuit"
+      ],
+      "firstFailure": false,
+      "sourceChanged": false,
+      "solverGuard": null,
+      "firstFailureLabel": null,
+      "firstFailureMessage": null,
+      "browserVersion": "153.0.8010.12",
+      "harnessSha256": "f22155a474ec484b7f7c3fc236a676a1708986118ca87fc3908d9e150100a86f",
+      "observerSha256": "31e4c4aea8cf62fbbe5c9e0b5b4d4a4db2476620eda7ab327ecdb5619a4cb947",
+      "sampledTicks": 1108,
+      "scenes": [
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "tier3-pursuit",
+          "ticks": 136,
+          "worldSteps": 136,
+          "durationMs": 10000.19999999553,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing"
+        },
+        {
+          "cycle": 2,
+          "quality": "low",
+          "scene": "tier3-pursuit",
+          "ticks": 336,
+          "worldSteps": 336,
+          "durationMs": 10000.19999999553,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing"
+        },
+        {
+          "cycle": 3,
+          "quality": "low",
+          "scene": "tier3-pursuit",
+          "ticks": 318,
+          "worldSteps": 318,
+          "durationMs": 10000.30000000447,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing"
+        },
+        {
+          "cycle": 4,
+          "quality": "low",
+          "scene": "tier3-pursuit",
+          "ticks": 318,
+          "worldSteps": 318,
+          "durationMs": 10000.29999999702,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing"
+        }
+      ],
+      "physicsSnapshot": null,
+      "rawReportSha256": "7f3fee5261af0c67cacd06fa0f73fb2769e0035f4523d6e38a3c6579eacd48f2"
+    },
+    {
+      "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-11-27-023Z",
+      "startedAt": "2026-10-17T00:11:27.031Z",
+      "finishedAt": "2026-10-17T00:13:35.256Z",
+      "commit": "928d93c22215636b078b0e478f2f70df34464b08",
+      "maxCycles": 1,
+      "sampleMs": 10000,
+      "selectedScenes": [],
+      "firstFailure": false,
+      "sourceChanged": false,
+      "solverGuard": null,
+      "firstFailureLabel": null,
+      "firstFailureMessage": null,
+      "browserVersion": "153.0.8010.12",
+      "harnessSha256": "f22155a474ec484b7f7c3fc236a676a1708986118ca87fc3908d9e150100a86f",
+      "observerSha256": "31e4c4aea8cf62fbbe5c9e0b5b4d4a4db2476620eda7ab327ecdb5619a4cb947",
+      "sampledTicks": 1158,
+      "scenes": [
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "central-intersection",
+          "ticks": 72,
+          "worldSteps": 72,
+          "durationMs": 10034.5,
+          "phase": "INTRO",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "depot-fight",
+          "ticks": 122,
+          "worldSteps": 122,
+          "durationMs": 10000.39999999851,
+          "phase": "RECOVERY",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "tier3-pursuit",
+          "ticks": 102,
+          "worldSteps": 102,
+          "durationMs": 10000.19999999553,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "central-intersection",
+          "ticks": 182,
+          "worldSteps": 182,
+          "durationMs": 10000.20000000298,
+          "phase": "INTRO",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "depot-fight",
+          "ticks": 374,
+          "worldSteps": 374,
+          "durationMs": 10000.29999999702,
+          "phase": "RECOVERY",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "tier3-pursuit",
+          "ticks": 306,
+          "worldSteps": 306,
+          "durationMs": 10000.29999999702,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing"
+        }
+      ],
+      "physicsSnapshot": null,
+      "rawReportSha256": "72c051f2d6121ac82e503378f346e248c5b0d1c5bc11adceed1f5c540cfa7510"
+    },
+    {
+      "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-13-50-749Z",
+      "startedAt": "2026-10-17T00:13:50.754Z",
+      "finishedAt": "2026-10-17T00:15:42.878Z",
+      "commit": "928d93c22215636b078b0e478f2f70df34464b08",
+      "maxCycles": 2,
+      "sampleMs": 8000,
+      "selectedScenes": [],
+      "firstFailure": true,
+      "sourceChanged": false,
+      "solverGuard": null,
+      "firstFailureLabel": "Rapier.World.step",
+      "firstFailureMessage": "unreachable",
+      "browserVersion": "153.0.8010.12",
+      "harnessSha256": "f22155a474ec484b7f7c3fc236a676a1708986118ca87fc3908d9e150100a86f",
+      "observerSha256": "31e4c4aea8cf62fbbe5c9e0b5b4d4a4db2476620eda7ab327ecdb5619a4cb947",
+      "sampledTicks": 799,
+      "scenes": [
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "central-intersection",
+          "ticks": 48,
+          "worldSteps": 48,
+          "durationMs": 8000.19999999553,
+          "phase": "INTRO",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "depot-fight",
+          "ticks": 102,
+          "worldSteps": 102,
+          "durationMs": 8000.29999999702,
+          "phase": "RECOVERY",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "tier3-pursuit",
+          "ticks": 90,
+          "worldSteps": 90,
+          "durationMs": 8000.29999999702,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "central-intersection",
+          "ticks": 102,
+          "worldSteps": 102,
+          "durationMs": 8002.70000000298,
+          "phase": "INTRO",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "depot-fight",
+          "ticks": 300,
+          "worldSteps": 300,
+          "durationMs": 8000.19999999553,
+          "phase": "RECOVERY",
+          "tier": 0,
+          "screen": "playing"
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "tier3-pursuit",
+          "ticks": 157,
+          "worldSteps": 157,
+          "durationMs": 5402.10000000149,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "error"
+        }
+      ],
+      "physicsSnapshot": {
+        "tick": 241,
+        "worldTick": 1503,
+        "bytes": 228336,
+        "sha256": "ea467c55b5ea04a4cd794ea76c0ce9317b34089814ac0181b07b70c608f1ad4f"
+      },
+      "rawReportSha256": "8ced66b29b48e843349b6ed30573c1813a5af2123f9059cc70ce32e3a6c2288a"
+    },
+    {
+      "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-24-58-915Z",
+      "startedAt": "2026-10-17T00:24:58.920Z",
+      "finishedAt": "2026-10-17T00:27:06.232Z",
+      "commit": "928d93c22215636b078b0e478f2f70df34464b08",
+      "maxCycles": 2,
+      "sampleMs": 8000,
+      "selectedScenes": [],
+      "firstFailure": true,
+      "sourceChanged": false,
+      "solverGuard": "runtime-only prototype wrapper for all body enable/disable calls, including already seated boot actors",
+      "firstFailureLabel": "world.draw",
+      "firstFailureMessage": "Cannot read properties of null (reading 'depthTexture')",
+      "browserVersion": "153.0.8010.12",
+      "harnessSha256": "3313d3e2f466ba6fdf1ae9e7468ddcec403d89ae4c59df5817e3c9da184701b5",
+      "observerSha256": "31e4c4aea8cf62fbbe5c9e0b5b4d4a4db2476620eda7ab327ecdb5619a4cb947",
+      "sampledTicks": 954,
+      "scenes": [
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "central-intersection",
+          "ticks": 54,
+          "worldSteps": 54,
+          "durationMs": 8000.39999999851,
+          "phase": "INTRO",
+          "tier": 0,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 38
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "depot-fight",
+          "ticks": 102,
+          "worldSteps": 102,
+          "durationMs": 8000.20000000298,
+          "phase": "RECOVERY",
+          "tier": 0,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 64
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "tier3-pursuit",
+          "ticks": 102,
+          "worldSteps": 102,
+          "durationMs": 8000.29999999702,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 94
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "central-intersection",
+          "ticks": 116,
+          "worldSteps": 116,
+          "durationMs": 8002.60000000149,
+          "phase": "INTRO",
+          "tier": 0,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 124
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "depot-fight",
+          "ticks": 322,
+          "worldSteps": 322,
+          "durationMs": 8000.29999999702,
+          "phase": "RECOVERY",
+          "tier": 0,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 150
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "tier3-pursuit",
+          "ticks": 252,
+          "worldSteps": 252,
+          "durationMs": 8000.30000000447,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 180
+          }
+        },
+        {
+          "cycle": 2,
+          "quality": "high",
+          "scene": "central-intersection",
+          "ticks": 6,
+          "worldSteps": 6,
+          "durationMs": 638.7000000029802,
+          "phase": "INTRO",
+          "tier": 0,
+          "screen": "playing"
+        }
+      ],
+      "physicsSnapshot": {
+        "tick": 6,
+        "worldTick": 1726,
+        "bytes": 229851,
+        "sha256": "9d9215f2f064ed9e13c082ed5ceb011178492bd65ba62cadca06be0bc179476c"
+      },
+      "rawReportSha256": "85f0a2df3e7cdaad0bc7b221ed1548c731c2ce2cb5a672c15815b41a52e66691"
+    },
+    {
+      "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-27-32-575Z",
+      "startedAt": "2026-10-17T00:27:32.580Z",
+      "finishedAt": "2026-10-17T00:29:26.629Z",
+      "commit": "928d93c22215636b078b0e478f2f70df34464b08",
+      "maxCycles": 1,
+      "sampleMs": 8000,
+      "selectedScenes": [],
+      "firstFailure": false,
+      "sourceChanged": false,
+      "solverGuard": "runtime-only prototype wrapper for all body enable/disable calls, including already seated boot actors",
+      "firstFailureLabel": null,
+      "firstFailureMessage": null,
+      "browserVersion": "153.0.8010.12",
+      "harnessSha256": "3313d3e2f466ba6fdf1ae9e7468ddcec403d89ae4c59df5817e3c9da184701b5",
+      "observerSha256": "31e4c4aea8cf62fbbe5c9e0b5b4d4a4db2476620eda7ab327ecdb5619a4cb947",
+      "sampledTicks": 950,
+      "scenes": [
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "central-intersection",
+          "ticks": 60,
+          "worldSteps": 60,
+          "durationMs": 8000.20000000298,
+          "phase": "INTRO",
+          "tier": 0,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 38
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "depot-fight",
+          "ticks": 98,
+          "worldSteps": 98,
+          "durationMs": 8000.30000000447,
+          "phase": "RECOVERY",
+          "tier": 0,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 64
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "high",
+          "scene": "tier3-pursuit",
+          "ticks": 96,
+          "worldSteps": 96,
+          "durationMs": 8000.30000000447,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 94
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "central-intersection",
+          "ticks": 138,
+          "worldSteps": 138,
+          "durationMs": 8003,
+          "phase": "INTRO",
+          "tier": 0,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 124
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "depot-fight",
+          "ticks": 306,
+          "worldSteps": 306,
+          "durationMs": 8000.10000000149,
+          "phase": "RECOVERY",
+          "tier": 0,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 150
+          }
+        },
+        {
+          "cycle": 1,
+          "quality": "low",
+          "scene": "tier3-pursuit",
+          "ticks": 252,
+          "worldSteps": 252,
+          "durationMs": 8000.30000000447,
+          "phase": "EVASION",
+          "tier": 3,
+          "screen": "playing",
+          "solverGuardAudit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 180
+          }
+        }
+      ],
+      "physicsSnapshot": null,
+      "rawReportSha256": "cfe49f01cde43a20ec1046e40d62cd437d0eab64055379e0a2163e4b0855bf70"
+    }
+  ],
+  "artifacts": {
+    "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-03-24-410Z",
+    "firstFailureSha256": "76fae65497aa8d3c97b072b0280b75c6c12a96a6e731c5fb0f6864eaee6c34e6",
+    "originalHarness": "/tmp/ewa-engine-evidence/panic-diagnosis/mixed-928d93c.mjs",
+    "controlledHarness": "/tmp/ewa-engine-evidence/panic-diagnosis/controlled-928d93c.mjs",
+    "observer": "/tmp/ewa-engine-evidence/panic-diagnosis/install-trace.mjs",
+    "binaryDecoder": "/tmp/ewa-engine-evidence/panic-diagnosis/locate-panic.py",
+    "sourceURL": "https://github.com/dimforge/rapier/blob/v0.30.1/src/dynamics/solver/interaction_groups.rs#L454",
+    "relatedIssue": "https://github.com/dimforge/rapier.js/issues/363"
+  },
+  "limits": [
+    "No runtime source was edited, no pinned dependency replaced and no remote push performed during these diagnostics.",
+    "Browser scenes and later lifecycle positions are staged; timing instrumentation and game.advance lifecycle checks do not establish natural-route acceptance or performance.",
+    "The second positive capture includes a deterministic physics snapshot and numerical index/length. The original first capture has only cached JavaScript state.",
+    "Original fixture officer-5 penetrates its rotated chassis, but that overlap is not necessary: the fresh ground/capsule test reproduces the same fault without any vehicle.",
+    "The first guarded mixed run encountered a separate Three depthTexture error on the next Low-to-High renderer transition; it is retained as a renderer failure, not counted as a Rapier recurrence.",
+    "Disposable runtime guard passes are evidence for a source change proposal, not proof that a production source change has shipped or passed release checks."
+  ],
+  "deterministicSnapshot": {
+    "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-13-50-749Z",
+    "bytes": 228336,
+    "sha256": "ea467c55b5ea04a4cd794ea76c0ce9317b34089814ac0181b07b70c608f1ad4f",
+    "nodeReplay": {
+      "snapshot": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-13-50-749Z/pre-step-physics.bin",
+      "sha256": "ea467c55b5ea04a4cd794ea76c0ce9317b34089814ac0181b07b70c608f1ad4f",
+      "node": "v22.23.3",
+      "results": [
+        {
+          "run": 1,
+          "timestep": 0.008333333767950535,
+          "outcome": "threw",
+          "name": "RuntimeError",
+          "message": "unreachable",
+          "stack": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at file:///tmp/ewa-engine-evidence/panic-diagnosis/replay-snapshot.mjs:11:12"
+        },
+        {
+          "run": 2,
+          "timestep": 0.008333333767950535,
+          "outcome": "threw",
+          "name": "RuntimeError",
+          "message": "unreachable",
+          "stack": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at file:///tmp/ewa-engine-evidence/panic-diagnosis/replay-snapshot.mjs:11:12"
+        },
+        {
+          "run": 3,
+          "timestep": 0.008333333767950535,
+          "outcome": "threw",
+          "name": "RuntimeError",
+          "message": "unreachable",
+          "stack": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at file:///tmp/ewa-engine-evidence/panic-diagnosis/replay-snapshot.mjs:11:12"
+        }
+      ]
+    },
+    "temporaryScalarReplay": {
+      "snapshot": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-13-50-749Z/pre-step-physics.bin",
+      "sha256": "ea467c55b5ea04a4cd794ea76c0ce9317b34089814ac0181b07b70c608f1ad4f",
+      "node": "v22.23.3",
+      "results": [
+        {
+          "run": 1,
+          "timestep": 0.008333333767950535,
+          "outcome": "step-returned"
+        },
+        {
+          "run": 2,
+          "timestep": 0.008333333767950535,
+          "outcome": "step-returned"
+        },
+        {
+          "run": 3,
+          "timestep": 0.008333333767950535,
+          "outcome": "step-returned"
+        }
+      ]
+    },
+    "reducedBodyIds": [
+      "static ground",
+      "disabled officer-1 capsule"
+    ],
+    "reducedSnapshotSha256": "6c8c7e2964f19b57412b3a7f76040e899f51c1f9100377dea72eadd7b94a28cb",
+    "reducedNodeReplay": {
+      "snapshot": "/tmp/ewa-engine-evidence/panic-diagnosis/run-2026-10-17T00-13-50-749Z/tiny-0.bin",
+      "sha256": "6c8c7e2964f19b57412b3a7f76040e899f51c1f9100377dea72eadd7b94a28cb",
+      "node": "v22.23.3",
+      "results": [
+        {
+          "run": 1,
+          "timestep": 0.008333333767950535,
+          "outcome": "threw",
+          "name": "RuntimeError",
+          "message": "unreachable",
+          "stack": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at file:///tmp/ewa-engine-evidence/panic-diagnosis/replay-snapshot.mjs:11:12"
+        },
+        {
+          "run": 2,
+          "timestep": 0.008333333767950535,
+          "outcome": "threw",
+          "name": "RuntimeError",
+          "message": "unreachable",
+          "stack": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at file:///tmp/ewa-engine-evidence/panic-diagnosis/replay-snapshot.mjs:11:12"
+        },
+        {
+          "run": 3,
+          "timestep": 0.008333333767950535,
+          "outcome": "threw",
+          "name": "RuntimeError",
+          "message": "unreachable",
+          "stack": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at file:///tmp/ewa-engine-evidence/panic-diagnosis/replay-snapshot.mjs:11:12"
+        }
+      ]
+    },
+    "cdpObservedPanicArguments": {
+      "index": 49,
+      "length": 49,
+      "sourceLocationAddress": 1086576
+    },
+    "finiteAndNormalization": {
+      "bodyCount": 281,
+      "colliderCount": 298,
+      "invalidBodies": [],
+      "invalidColliders": [],
+      "maxBodyQuaternionNormError": 1.3435885648505064e-07,
+      "maxColliderQuaternionNormError": 1.3435885648505064e-07,
+      "negativeBodyMassOrInertia": [],
+      "targetHandle": 1.09e-321,
+      "targetCollider": 1.087e-321,
+      "bodyEnabled": false,
+      "colliderEnabled": false,
+      "changedBodies": [],
+      "changedColliders": [],
+      "contactHandlesBefore": [
+        0
+      ],
+      "contactHandlesAfterNormalizationBeforeStep": [
+        0
+      ],
+      "step": "returned",
+      "contactHandlesAfterStep": [],
+      "bodyAndColliderStillRegistered": true,
+      "bodyCountAfter": 281,
+      "colliderCountAfter": 298
+    },
+    "individualReductions": [
+      {
+        "action": "remove",
+        "id": "static-2.4e-322",
+        "handle": 2.4e-322,
+        "enabled": true,
+        "sleeping": true,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "wake",
+        "id": "static-2.4e-322",
+        "handle": 2.4e-322,
+        "enabled": true,
+        "sleeping": true,
+        "outcome": "step-returned"
+      },
+      {
+        "action": "remove",
+        "id": "static-2.47e-322",
+        "handle": 2.47e-322,
+        "enabled": true,
+        "sleeping": true,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "wake",
+        "id": "static-2.47e-322",
+        "handle": 2.47e-322,
+        "enabled": true,
+        "sleeping": true,
+        "outcome": "step-returned"
+      },
+      {
+        "action": "remove",
+        "id": "mara",
+        "handle": 1.042e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "officer-1",
+        "handle": 1.09e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "step-returned"
+      },
+      {
+        "action": "remove",
+        "id": "officer-2",
+        "handle": 1.097e-321,
+        "enabled": true,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "officer-3",
+        "handle": 1.1e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "officer-4",
+        "handle": 1.107e-321,
+        "enabled": true,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "officer-5",
+        "handle": 1.11e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "officer-6",
+        "handle": 1.117e-321,
+        "enabled": true,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-0",
+        "handle": 1.275e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-1",
+        "handle": 1.285e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-2",
+        "handle": 1.294e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-3",
+        "handle": 1.304e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-4",
+        "handle": 1.314e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-5",
+        "handle": 1.324e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-6",
+        "handle": 1.334e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-7",
+        "handle": 1.344e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-8",
+        "handle": 1.354e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-9",
+        "handle": 1.364e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-10",
+        "handle": 1.374e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "action": "remove",
+        "id": "civilian-driver-11",
+        "handle": 1.383e-321,
+        "enabled": false,
+        "sleeping": false,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      }
+    ],
+    "targetContacts": {
+      "target": {
+        "handle": 1.09e-321,
+        "id": "officer-1",
+        "type": 0,
+        "enabled": false,
+        "sleeping": false,
+        "translation": {
+          "x": 3680,
+          "y": 3256,
+          "z": 13.699999809265137
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "w": 1
+        },
+        "linvel": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "angvel": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "mass": 86,
+        "invMass": 0.011627906933426857,
+        "principalInertia": {
+          "x": 4774.37255859375,
+          "y": 900.810791015625,
+          "z": 4774.37255859375
+        },
+        "invPrincipalInertia": {
+          "x": 0.0002094516094075516,
+          "y": 0.0011101110139861703,
+          "z": 0.0002094516094075516
+        },
+        "ccd": false
+      },
+      "colliders": [
+        {
+          "handle": 1.087e-321,
+          "enabled": false,
+          "sensor": false,
+          "groups": 524367,
+          "translation": {
+            "x": 3680,
+            "y": 3256,
+            "z": 13.699999809265137
+          },
+          "rotation": {
+            "x": 0.7071067690849304,
+            "y": 0,
+            "z": 0,
+            "w": 0.7071067690849304
+          },
+          "pairs": [
+            {
+              "handle": 0,
+              "parent": 5e-324,
+              "id": "static-5e-324"
+            }
+          ]
+        }
+      ],
+      "contacts": [
+        {
+          "a": 1.087e-321,
+          "b": 0,
+          "bId": "static-5e-324",
+          "flipped": true,
+          "contacts": 3,
+          "solverContacts": 2,
+          "normal": {
+            "x": 0,
+            "y": -2.2320033167488873e-05,
+            "z": 1
+          },
+          "distances": [
+            9.5367431640625e-07,
+            18,
+            -4.76837158203125e-07
+          ],
+          "solverPoints": [
+            {
+              "x": 3680,
+              "y": 3256,
+              "z": 9.5367431640625e-07
+            },
+            {
+              "x": 3680,
+              "y": 3256,
+              "z": 1.1920928955078125e-06
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "name": "baseline",
+          "outcome": "threw",
+          "message": "unreachable",
+          "sameSite": true
+        },
+        {
+          "name": "body-disable-again",
+          "outcome": "threw",
+          "message": "unreachable",
+          "sameSite": true
+        },
+        {
+          "name": "collider-disable",
+          "outcome": "step-returned"
+        },
+        {
+          "name": "collider-groups-zero",
+          "outcome": "step-returned"
+        },
+        {
+          "name": "body-enable",
+          "outcome": "step-returned"
+        },
+        {
+          "name": "body-wake-disabled",
+          "outcome": "threw",
+          "message": "unreachable",
+          "sameSite": true
+        },
+        {
+          "name": "body-sleep-disabled",
+          "outcome": "step-returned"
+        },
+        {
+          "name": "body-to-fixed",
+          "outcome": "step-returned"
+        },
+        {
+          "name": "remove-collider",
+          "outcome": "step-returned"
+        }
+      ]
+    }
+  },
+  "minimalFixture": {
+    "method": "Create fixed ground and one Z-up dynamic capsule resting on it; step once; body.setEnabled(false); next world.step traps on pinned SIMD. No game, renderer, vehicle, teleport or patrol placement is required.",
+    "script": "/tmp/ewa-engine-evidence/panic-diagnosis/minimal-disable-guards.mjs",
+    "results": [
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "dynamic",
+        "mode": "body-only",
+        "completedCycles": 0,
+        "outcome": "threw",
+        "phase": "disabled-step",
+        "message": "unreachable",
+        "sameSite": true,
+        "stack": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at file:///tmp/ewa-engine-evidence/panic-diagnosis/minimal-disable-guards.mjs:21:28"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "dynamic",
+        "mode": "collider-before",
+        "completedCycles": 0,
+        "outcome": "threw",
+        "phase": "disabled-step",
+        "message": "unreachable",
+        "sameSite": true,
+        "stack": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at file:///tmp/ewa-engine-evidence/panic-diagnosis/minimal-disable-guards.mjs:21:28"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "dynamic",
+        "mode": "collider-after",
+        "completedCycles": 0,
+        "outcome": "threw",
+        "phase": "disabled-step",
+        "message": "unreachable",
+        "sameSite": true,
+        "stack": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at file:///tmp/ewa-engine-evidence/panic-diagnosis/minimal-disable-guards.mjs:21:28"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "dynamic",
+        "mode": "collision-groups",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "dynamic",
+        "mode": "solver-groups",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "dynamic",
+        "mode": "sensor",
+        "completedCycles": 0,
+        "outcome": "threw",
+        "phase": "disabled-step",
+        "message": "unreachable",
+        "sameSite": true,
+        "stack": "RuntimeError: unreachable\n    at wasm://wasm/00630266:wasm-function[1143]:0x15b5bf\n    at wasm://wasm/00630266:wasm-function[1721]:0x175f21\n    at wasm://wasm/00630266:wasm-function[1413]:0x16efac\n    at wasm://wasm/00630266:wasm-function[37]:0x2a79c\n    at wasm://wasm/00630266:wasm-function[198]:0xd2d62\n    at hA.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:48595)\n    at hg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:109807)\n    at sg.step (file:///home/micha/dev/gta4-gpt6a/vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3/rapier.js:1:120421)\n    at file:///tmp/ewa-engine-evidence/panic-diagnosis/minimal-disable-guards.mjs:21:28"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "dynamic",
+        "mode": "fixed-type",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "kinematic",
+        "mode": "body-only",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "kinematic",
+        "mode": "collider-before",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "kinematic",
+        "mode": "collider-after",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "kinematic",
+        "mode": "collision-groups",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "kinematic",
+        "mode": "solver-groups",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "kinematic",
+        "mode": "sensor",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "pinned-simd-0.19.3",
+        "type": "kinematic",
+        "mode": "fixed-type",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "dynamic",
+        "mode": "body-only",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "dynamic",
+        "mode": "collider-before",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "dynamic",
+        "mode": "collider-after",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "dynamic",
+        "mode": "collision-groups",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "dynamic",
+        "mode": "solver-groups",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "dynamic",
+        "mode": "sensor",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "dynamic",
+        "mode": "fixed-type",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "kinematic",
+        "mode": "body-only",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "kinematic",
+        "mode": "collider-before",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "kinematic",
+        "mode": "collider-after",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "kinematic",
+        "mode": "collision-groups",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "kinematic",
+        "mode": "solver-groups",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "kinematic",
+        "mode": "sensor",
+        "completedCycles": 50,
+        "outcome": "pass"
+      },
+      {
+        "build": "temporary-scalar-0.19.3",
+        "type": "kinematic",
+        "mode": "fixed-type",
+        "completedCycles": 50,
+        "outcome": "pass"
+      }
+    ],
+    "rawBodyOnlyRepetitions": [
+      {
+        "mode": "disable",
+        "settle": 1,
+        "at": 0,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "mode": "disable",
+        "settle": 60,
+        "at": 0,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "mode": "disable",
+        "settle": 240,
+        "at": 0,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "mode": "toggle-same-step",
+        "settle": 1,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "mode": "toggle-same-step",
+        "settle": 60,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "mode": "toggle-same-step",
+        "settle": 240,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "mode": "restore-toggle",
+        "settle": 1,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "mode": "restore-toggle",
+        "settle": 60,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "mode": "restore-toggle",
+        "settle": 240,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "mode": "sleep-toggle",
+        "settle": 1,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "mode": "sleep-toggle",
+        "settle": 60,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      },
+      {
+        "mode": "sleep-toggle",
+        "settle": 240,
+        "outcome": "threw",
+        "message": "unreachable",
+        "sameSite": true
+      }
+    ],
+    "candidateGuard": "For each collider preserve original solverGroups; setSolverGroups(0) before body disable. Enable body before restoring original solverGroups. Preserve collisionGroups, type, sensor state and object identities. Repeated disable must not overwrite original masks.",
+    "rejectedShortcuts": "Collider setEnabled(false) cleared the already-stale snapshot but immediate before/after-body collider disabling still traps in fresh dynamic contact. Waking an unrelated crate changes active-set size and is not a legitimate prevention.",
+    "temporaryAlternatePackage": "@dimforge/rapier3d-compat@0.19.3 downloaded to /tmp/ewa-engine-evidence/rapier-scalar only; pinned SIMD runtime untouched."
+  },
+  "fixturePlacement": [
+    {
+      "id": "officer-1",
+      "x": 230,
+      "y": 205,
+      "yaw": 0,
+      "actorCenter": {
+        "x": 3680,
+        "y": 3256,
+        "z": 13.7
+      },
+      "carCenter": {
+        "x": 3680,
+        "y": 3280,
+        "z": 12.48
+      },
+      "contact": {
+        "distance": 3.620004653930664,
+        "point1": {
+          "x": 3680.001953125,
+          "y": 3260.699951171875,
+          "z": 12.922686576843262
+        },
+        "point2": {
+          "x": 3680.001953125,
+          "y": 3264.320068359375,
+          "z": 12.922685623168945
+        },
+        "normal1": {
+          "x": 1.9758417124648986e-07,
+          "y": 0.9999999403953552,
+          "z": 3.5762786865234375e-07
+        },
+        "normal2": {
+          "x": -1.9758417124648986e-07,
+          "y": -0.9999999403953552,
+          "z": -3.5762786865234375e-07
+        }
+      },
+      "signedClearanceMetres": 0.2262502908706665
+    },
+    {
+      "id": "officer-3",
+      "x": 270,
+      "y": 199,
+      "yaw": 3.141592653589793,
+      "actorCenter": {
+        "x": 4320,
+        "y": 3160,
+        "z": 13.7
+      },
+      "carCenter": {
+        "x": 4320,
+        "y": 3184,
+        "z": 12.48
+      },
+      "contact": {
+        "distance": 3.620004653930664,
+        "point1": {
+          "x": 4320.001953125,
+          "y": 3164.699951171875,
+          "z": 12.922688484191895
+        },
+        "point2": {
+          "x": 4320.001953125,
+          "y": 3168.320068359375,
+          "z": 12.922685623168945
+        },
+        "normal1": {
+          "x": 3.29306963919862e-08,
+          "y": 0.9999999403953552,
+          "z": 1.1920928955078125e-07
+        },
+        "normal2": {
+          "x": -3.2930689286558845e-08,
+          "y": -1,
+          "z": -2.384185791015625e-07
+        }
+      },
+      "signedClearanceMetres": 0.2262502908706665
+    },
+    {
+      "id": "officer-5",
+      "x": 241,
+      "y": 223,
+      "yaw": -1.5707963267948966,
+      "actorCenter": {
+        "x": 3856,
+        "y": 3544,
+        "z": 13.7
+      },
+      "carCenter": {
+        "x": 3856,
+        "y": 3568,
+        "z": 12.48
+      },
+      "contact": {
+        "distance": -17.600000381469727,
+        "point1": {
+          "x": 3855.999267578125,
+          "y": 3544.00048828125,
+          "z": 1.9073486328125e-06
+        },
+        "point2": {
+          "x": 3855.999267578125,
+          "y": 3544.00048828125,
+          "z": 17.60000228881836
+        },
+        "normal1": {
+          "x": -1.3020033185276447e-12,
+          "y": -1.1920928955078125e-07,
+          "z": -0.9999999403953552
+        },
+        "normal2": {
+          "x": 1.1920928244535389e-07,
+          "y": 5.960335158761154e-08,
+          "z": 0.9999998807907104
+        }
+      },
+      "signedClearanceMetres": -1.100000023841858
+    }
+  ],
+  "lifecycleTrials": [
+    {
+      "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/lifecycle-2026-10-17T00-29-31-460Z",
+      "commit": "928d93c22215636b078b0e478f2f70df34464b08",
+      "outcome": "failed",
+      "checks": [
+        {
+          "name": "keyboard-player-seat",
+          "ok": false,
+          "solverGroups": 4294967295
+        }
+      ],
+      "sourceChanged": false,
+      "errors": [],
+      "harnessError": {
+        "message": "Lifecycle check failed: keyboard-player-seat",
+        "stack": "Error: Lifecycle check failed: keyboard-player-seat\n    at check (file:///tmp/ewa-engine-evidence/panic-diagnosis/guard-lifecycle.mjs:9:165)\n    at async file:///tmp/ewa-engine-evidence/panic-diagnosis/guard-lifecycle.mjs:16:2"
+      },
+      "method": "Runtime-only solverGroups guard; actual application lifecycle methods and keyboard E/Retry UI on controlled positions; deterministic game.advance after boot, not ordinary-time route acceptance."
+    },
+    {
+      "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/lifecycle-2026-10-17T00-33-31-695Z",
+      "commit": "928d93c22215636b078b0e478f2f70df34464b08",
+      "outcome": "failed",
+      "checks": [
+        {
+          "name": "production-player-seat",
+          "ok": true,
+          "vehicle": "mara-sedan",
+          "solverGroups": 0
+        }
+      ],
+      "sourceChanged": false,
+      "errors": [],
+      "harnessError": {
+        "message": "page.evaluate: Error: Player exit: busy\n    at eval (eval at evaluate (:311:30), <anonymous>:1:98)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+        "stack": "page.evaluate: Error: Player exit: busy\n    at eval (eval at evaluate (:311:30), <anonymous>:1:98)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /tmp/ewa-engine-evidence/panic-diagnosis/guard-lifecycle.mjs:17:13"
+      },
+      "method": "Runtime-only solverGroups guard; actual production VehicleSystem/player/companion lifecycle methods and Retry UI on controlled positions; deterministic game.advance after boot, not ordinary-time route acceptance."
+    },
+    {
+      "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/lifecycle-2026-10-17T00-35-38-749Z",
+      "commit": "928d93c22215636b078b0e478f2f70df34464b08",
+      "outcome": "failed",
+      "checks": [
+        {
+          "name": "production-player-seat",
+          "ok": true,
+          "vehicle": "mara-sedan",
+          "solverGroups": 0
+        }
+      ],
+      "sourceChanged": false,
+      "errors": [],
+      "harnessError": {
+        "message": "page.evaluate: Error: Player exit: busy\n    at eval (eval at evaluate (:311:30), <anonymous>:1:98)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+        "stack": "page.evaluate: Error: Player exit: busy\n    at eval (eval at evaluate (:311:30), <anonymous>:1:98)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /tmp/ewa-engine-evidence/panic-diagnosis/guard-lifecycle.mjs:17:13"
+      },
+      "method": "Runtime-only solverGroups guard; actual production VehicleSystem/player/companion lifecycle methods and Retry UI on controlled positions; deterministic game.advance after boot, not ordinary-time route acceptance."
+    },
+    {
+      "rawDirectory": "/tmp/ewa-engine-evidence/panic-diagnosis/lifecycle-2026-10-17T00-36-10-979Z",
+      "commit": "928d93c22215636b078b0e478f2f70df34464b08",
+      "outcome": "pass",
+      "checks": [
+        {
+          "name": "production-player-seat",
+          "ok": true,
+          "vehicle": "mara-sedan",
+          "solverGroups": 0
+        },
+        {
+          "name": "production-player-exit",
+          "ok": true,
+          "solverGroups": 4294967295
+        },
+        {
+          "name": "cancel-entry-restores-original-body",
+          "ok": true
+        },
+        {
+          "name": "player-vault-begins",
+          "ok": true,
+          "result": {
+            "ok": true
+          }
+        },
+        {
+          "name": "player-vault-completes",
+          "ok": true,
+          "position": {
+            "x": 396,
+            "y": 88.00010681152344,
+            "z": -2.1457672028102337e-08
+          }
+        },
+        {
+          "name": "player-vault-cancel-begins",
+          "ok": true
+        },
+        {
+          "name": "player-vault-cancel-restores",
+          "ok": true
+        },
+        {
+          "name": "companion-vault-begins",
+          "ok": true
+        },
+        {
+          "name": "companion-vault-completes",
+          "ok": true,
+          "position": {
+            "x": 404.99951171875,
+            "y": 88,
+            "z": 3.8146972636265986e-08
+          }
+        },
+        {
+          "name": "companion-vault-cancel-begins",
+          "ok": true
+        },
+        {
+          "name": "companion-vault-cancel-restores",
+          "ok": true
+        },
+        {
+          "name": "dynamic-officer-seat-start",
+          "ok": true,
+          "entry": {
+            "ok": true
+          }
+        },
+        {
+          "name": "dynamic-officer-seat-complete",
+          "ok": true
+        },
+        {
+          "name": "dynamic-officer-exit-start",
+          "ok": true,
+          "exit": {
+            "ok": true,
+            "position": {
+              "x": 950.3999998925132,
+              "y": 976.7999965604137,
+              "z": -1.5258789076710855e-07
+            }
+          }
+        },
+        {
+          "name": "dynamic-officer-exit-completes",
+          "ok": true
+        },
+        {
+          "name": "retry-restores-on-foot-checkpoint",
+          "ok": true,
+          "screen": "playing"
+        },
+        {
+          "name": "fixed-pickup-case-door-toggles",
+          "ok": true,
+          "cycles": 10,
+          "changed": []
+        },
+        {
+          "name": "body-collider-query-seat-invariants",
+          "ok": true,
+          "audit": {
+            "baseline": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "live": {
+              "bodies": 281,
+              "colliders": 298,
+              "queryRegistry": 58
+            },
+            "violations": [],
+            "eventCount": 146,
+            "lastEvents": [
+              {
+                "tick": 29,
+                "body": 6.37e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 29,
+                "body": 3.16e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 30,
+                "body": 6.37e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 30,
+                "body": 3.16e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 31,
+                "body": 6.37e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 31,
+                "body": 3.16e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 32,
+                "body": 6.37e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 32,
+                "body": 3.16e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 33,
+                "body": 6.37e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 33,
+                "body": 3.16e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 34,
+                "body": 6.37e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 34,
+                "body": 3.16e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 35,
+                "body": 6.37e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 35,
+                "body": 3.16e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 36,
+                "body": 6.37e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 36,
+                "body": 3.16e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 37,
+                "body": 6.37e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 37,
+                "body": 3.16e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 38,
+                "body": 6.37e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 38,
+                "body": 3.16e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 39,
+                "body": 6.37e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 39,
+                "body": 3.16e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 40,
+                "body": 6.37e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 40,
+                "body": 3.16e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 41,
+                "body": 6.37e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 41,
+                "body": 3.16e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 42,
+                "body": 6.37e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 42,
+                "body": 3.16e-322,
+                "enabled": false,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 0
+                  }
+                ]
+              },
+              {
+                "tick": 43,
+                "body": 6.37e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 6.3e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              },
+              {
+                "tick": 43,
+                "body": 3.16e-322,
+                "enabled": true,
+                "masks": [
+                  {
+                    "handle": 3.1e-322,
+                    "original": 4294967295,
+                    "now": 4294967295
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "sourceChanged": false,
+      "errors": [],
+      "harnessError": null,
+      "method": "Runtime-only solverGroups guard; actual production VehicleSystem/player/companion lifecycle methods and Retry UI on controlled positions; deterministic game.advance after boot, not ordinary-time route acceptance."
+    }
+  ]
+}

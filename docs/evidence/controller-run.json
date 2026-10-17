@@ -2,8 +2,8 @@
   "schema": 2,
   "kind": "controller-route",
   "status": "passed",
-  "startedAt": "2026-10-16T21:02:57.314Z",
-  "finishedAt": "2026-10-16T21:06:18.791Z",
+  "startedAt": "2026-10-17T00:45:15.687Z",
+  "finishedAt": "2026-10-17T00:46:46.609Z",
   "engine": "chromium",
   "browserVersion": "155.0.8059.84",
   "ending": "reporter",
@@ -11,18 +11,19 @@
   "input": "Gamepad API emulation; no keyboard or mouse gameplay/menu input",
   "physicalController": false,
   "acceleratedFixedSteps": true,
-  "titleReadyWallMs": 11754,
+  "titleReadyWallMs": 4659,
   "titleTargetWallMs": 10000,
-  "sourceFileCount": 320,
-  "sourceDigestSha256": "a4eab5cd60501b6f686c8100cd2e2f9a6bae6de67627416b513fdc402fa3b6a4",
+  "sourceFileCount": 321,
+  "sourceDigestSha256": "46119167adc766cbb325e5d66862ea60232450db0fdc9d75d09562df24078ab0",
   "sourceDigestMethod": "SHA-256 of JSON sorted [relative path, SHA-256] pairs",
   "sourceHashes": {
-    "src/main.js": "2203654f3e716babe094d7baac02e431c34bf90de278fb3d21900f8341debd6c",
-    "src/game/save.js": "fe8306f248eba3dc8b93affef03b8cf76120cd96ea7852299284ce26153904a4",
-    "src/engine/vehicles.js": "f7f18b80301e13645b356d47a61799a6816780d160cf10012951ae299007718b",
-    "src/ui/interface.js": "5abf673432dfceeb0aebe60296ce174c890515e8d07dd90c82514aeb8af93041",
-    "src/ui/interface.css": "57176f99c79c5e89c95332d9fa0e3e6808f9b2cf5007ec661c2ccfc2a2d9438c",
-    "assets/manifest.json": "e29786360ed0080790bcae4bd9a7156131bf397d31b8e5bc7dbf46869600d90b",
+    "src/main.js": "4a6cae13bed58a32178f68e6acd866a0bd4bc58f2541c59237c9924fb5a880e2",
+    "src/engine/body-lifecycle.js": "9b7fb5f5e8d214e1edfe004d0b04a54c3cb06d18ca933393571d02f342782aef",
+    "src/engine/world.js": "6a5287a14b1ca4c435c0572866334a7f40cc17c2ebff2f6290cb5c29a1df61bb",
+    "src/engine/vehicles.js": "03a1e49210f4106624872c89fe37e3f46482450b78fdcd4b244615b3e6972011",
+    "src/actors/companion.js": "84d3530466ada14a55c19edee0d4a7613973f7bd3c9b8422a47038e034cbd509",
+    "src/world/district.js": "1546f4e2c9d178dc15cf69c70752f911860d9e011f3a4efd4561b89ddcac6941",
+    "assets/manifest.json": "72d37c00ff1c2d4d640c7b9fd60174bbd430d842c5514f6f30f79378082ab281",
     "tests/e2e/controller-route.mjs": "32ea3783b3dd4c6fa47f4456925ee9aa74c101b8a53d683258cd9649c2c1d3b4"
   },
   "sourceStable": true,
@@ -52,13 +53,17 @@
     {
       "name": "00-controller-settings",
       "screen": "title",
+      "player": null,
+      "jun": null,
       "junGap": null
     },
     {
       "name": "01-new-game",
       "screen": "playing",
       "phase": "INTRO",
-      "elapsed": 0.4000000000000004,
+      "elapsed": 0.2333333333333333,
+      "ending": null,
+      "completed": false,
       "player": {
         "x": 91,
         "y": 311,
@@ -81,18 +86,20 @@
       "name": "01a-analog-driving",
       "screen": "playing",
       "phase": "INTRO",
-      "elapsed": 9.666666666666758,
+      "elapsed": 8.633333333333484,
+      "ending": null,
+      "completed": false,
       "player": {
-        "x": 99.19746398925781,
-        "y": 327.2010803222656,
-        "z": -2.1457672028102337e-8
+        "x": 98.92901611328125,
+        "y": 327.1300964355469,
+        "z": 3.814697274728829e-8
       },
       "jun": {
         "x": 331,
         "y": 88,
         "z": 0.10000000238418577
       },
-      "junGap": 333.09093732545534,
+      "junGap": 333.22686653903463,
       "health": 100,
       "armor": 0,
       "wallet": 80,
@@ -104,10 +111,12 @@
       "name": "02-job-accepted",
       "screen": "playing",
       "phase": "COLLECTION",
-      "elapsed": 18.574999999999587,
+      "elapsed": 16.908333333333015,
+      "ending": null,
+      "completed": false,
       "player": {
-        "x": 105.4534683227539,
-        "y": 307.4995422363281,
+        "x": 105.36267852783203,
+        "y": 307.4981384277344,
         "z": 0.08000002145767221
       },
       "jun": {
@@ -115,7 +124,7 @@
         "y": 88,
         "z": 0.10000000238418577
       },
-      "junGap": 314.7241442812937,
+      "junGap": 314.78823614356253,
       "health": 100,
       "armor": 0,
       "wallet": 80,
@@ -127,10 +136,12 @@
       "name": "02a-hotplug-recovery",
       "screen": "playing",
       "phase": "COLLECTION",
-      "elapsed": 19.5416666666662,
+      "elapsed": 17.56666666666631,
+      "ending": null,
+      "completed": false,
       "player": {
-        "x": 105.4534683227539,
-        "y": 307.4995422363281,
+        "x": 105.42733001708984,
+        "y": 307.4981384277344,
         "z": 0.08000002145767221
       },
       "jun": {
@@ -138,7 +149,7 @@
         "y": 88,
         "z": 0.10000000238418577
       },
-      "junGap": 314.7241442812937,
+      "junGap": 314.7418977773054,
       "health": 100,
       "armor": 0,
       "wallet": 80,
@@ -150,18 +161,20 @@
       "name": "03-bea-market",
       "screen": "playing",
       "phase": "APPROACH",
-      "elapsed": 53.42499999999761,
+      "elapsed": 54.899999999997526,
+      "ending": null,
+      "completed": false,
       "player": {
-        "x": 111.76261138916016,
-        "y": 215.9468231201172,
-        "z": 3.814697274728829e-8
+        "x": 111.91459655761719,
+        "y": 215.98526000976562,
+        "z": -2.1457672028102337e-8
       },
       "jun": {
         "x": 331,
         "y": 88,
         "z": 0.10000000238418577
       },
-      "junGap": 253.84133255132224,
+      "junGap": 253.72946376264417,
       "health": 100,
       "armor": 0,
       "wallet": 80,
@@ -173,18 +186,20 @@
       "name": "04-gate-committed",
       "screen": "playing",
       "phase": "RECOVERY",
-      "elapsed": 110.74166666670087,
+      "elapsed": 111.5833333333682,
+      "ending": null,
+      "completed": false,
       "player": {
-        "x": 347.9862365722656,
-        "y": 164.47637939453125,
-        "z": -2.1457672028102337e-8
+        "x": 348.01318359375,
+        "y": 164.76953125,
+        "z": 3.814697274728829e-8
       },
       "jun": {
         "x": 331,
         "y": 88,
         "z": 0.10000000238418577
       },
-      "junGap": 78.34008449181847,
+      "junGap": 78.63211395059508,
       "health": 100,
       "armor": 88,
       "wallet": 20,
@@ -196,10 +211,12 @@
       "name": "05-gate-fight",
       "screen": "playing",
       "phase": "RECOVERY",
-      "elapsed": 124.15833333337821,
+      "elapsed": 122.3416666667101,
+      "ending": null,
+      "completed": false,
       "player": {
-        "x": 347.99835205078125,
-        "y": 157.2655792236328,
+        "x": 348.0013427734375,
+        "y": 157.04351806640625,
         "z": -2.1457672028102337e-8
       },
       "jun": {
@@ -207,9 +224,9 @@
         "y": 88,
         "z": 0.10000000238418577
       },
-      "junGap": 71.32085555871896,
+      "junGap": 71.10592832588631,
       "health": 100,
-      "armor": 40,
+      "armor": 52,
       "wallet": 20,
       "vehicleId": null,
       "wantedTier": 0,
@@ -219,20 +236,22 @@
       "name": "06-case-and-alarm",
       "screen": "playing",
       "phase": "EXTRACTION",
-      "elapsed": 151.05833333336028,
+      "elapsed": 147.79166666669659,
+      "ending": null,
+      "completed": false,
       "player": {
-        "x": 322.9643859863281,
-        "y": 83.80387878417969,
+        "x": 323.6477355957031,
+        "y": 84.03710174560547,
         "z": 0.10000000238418588
       },
       "jun": {
-        "x": 326.6260681152344,
-        "y": 85.5006103515625,
+        "x": 327.63543701171875,
+        "y": 86.077392578125,
         "z": 0.10000000238418577
       },
-      "junGap": 4.0356925087157896,
+      "junGap": 4.479346968538636,
       "health": 100,
-      "armor": 40,
+      "armor": 52,
       "wallet": 20,
       "vehicleId": null,
       "wantedTier": 2,
@@ -242,20 +261,22 @@
       "name": "07-extracted",
       "screen": "playing",
       "phase": "EVASION",
-      "elapsed": 215.79999999996807,
+      "elapsed": 210.43333333330628,
+      "ending": null,
+      "completed": false,
       "player": {
-        "x": 347.9964599609375,
-        "y": 211.72943115234375,
-        "z": -2.1457672028102337e-8
+        "x": 347.99853515625,
+        "y": 211.42041015625,
+        "z": 3.814697274728829e-8
       },
       "jun": {
-        "x": 347.981689453125,
-        "y": 208.46775817871094,
+        "x": 347.99505615234375,
+        "y": 207.8610076904297,
         "z": 3.8146972636265986e-8
       },
-      "junGap": 3.261706417632917,
+      "junGap": 3.5594041660305877,
       "health": 100,
-      "armor": 40,
+      "armor": 52,
       "wallet": 20,
       "vehicleId": null,
       "wantedTier": 2,
@@ -265,20 +286,22 @@
       "name": "08-destination-chosen",
       "screen": "playing",
       "phase": "DECISION",
-      "elapsed": 300.191666666558,
+      "elapsed": 294.16666666656346,
+      "ending": null,
+      "completed": false,
       "player": {
-        "x": 271.7379150390625,
-        "y": 353.79266357421875,
-        "z": 3.814697274728829e-8
+        "x": 271.4209899902344,
+        "y": 353.617431640625,
+        "z": -2.1457672028102337e-8
       },
       "jun": {
-        "x": 269.42962646484375,
-        "y": 352.6461181640625,
+        "x": 269.1187438964844,
+        "y": 352.4311218261719,
         "z": 3.8146972636265986e-8
       },
-      "junGap": 2.5773557223284476,
+      "junGap": 2.5899166110234018,
       "health": 100,
-      "armor": 40,
+      "armor": 52,
       "wallet": 20,
       "vehicleId": null,
       "wantedTier": 0,
@@ -288,20 +311,22 @@
       "name": "09-completed-handoff",
       "screen": "ending",
       "phase": "AFTERMATH",
-      "elapsed": 361.07499999983594,
+      "elapsed": 352.92499999984335,
+      "ending": "reporter",
+      "completed": true,
       "player": {
-        "x": 382.5826416015625,
-        "y": 358.14581298828125,
+        "x": 382.5274658203125,
+        "y": 358.0009765625,
         "z": 3.814697274728829e-8
       },
       "jun": {
-        "x": 375.7069091796875,
-        "y": 359.30706787109375,
-        "z": 3.8146972636265986e-8
+        "x": 376.53533935546875,
+        "y": 361.8857727050781,
+        "z": -2.145767213912464e-8
       },
-      "junGap": 6.973106140026762,
+      "junGap": 7.1412338317738016,
       "health": 100,
-      "armor": 40,
+      "armor": 52,
       "wallet": 620,
       "vehicleId": null,
       "wantedTier": 0,
@@ -311,20 +336,22 @@
       "name": "10-credits",
       "screen": "credits",
       "phase": "AFTERMATH",
-      "elapsed": 361.07499999983594,
+      "elapsed": 352.92499999984335,
+      "ending": "reporter",
+      "completed": true,
       "player": {
-        "x": 382.5826416015625,
-        "y": 358.14581298828125,
+        "x": 382.5274658203125,
+        "y": 358.0009765625,
         "z": 3.814697274728829e-8
       },
       "jun": {
-        "x": 375.7069091796875,
-        "y": 359.30706787109375,
-        "z": 3.8146972636265986e-8
+        "x": 376.53533935546875,
+        "y": 361.8857727050781,
+        "z": -2.145767213912464e-8
       },
-      "junGap": 6.973106140026762,
+      "junGap": 7.1412338317738016,
       "health": 100,
-      "armor": 40,
+      "armor": 52,
       "wallet": 620,
       "vehicleId": null,
       "wantedTier": 0,
@@ -332,10 +359,6 @@
     }
   ],
   "errors": [],
-  "rawEvidenceOutsideRepository": true,
-  "limits": [
-    "Standard Gamepad API fixture tests engine polling and UI/game actions, not physical pad HID/latency/rumble/feel.",
-    "Gameplay uses accelerated engine fixed steps; title-ready timing is wall time in a fresh browser context, not a fresh browser process.",
-    "Automated skilled route does not establish first-player pacing or ordinary-time controller play."
-  ]
+  "rawEvidenceOutsideRepository": "C:\\Temp\\EWA93ControllerSolverShadowFinal\\report.json (13 PNG checkpoints and full source hash map)",
+  "limits": "Standard-mapped Gamepad API emulation on a hardware-accelerated Windows browser; no physical pad HID, rumble, input latency, ordinary-time controller pacing, or human first-player timing measured."
 }
