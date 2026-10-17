@@ -1,4 +1,5 @@
 import { m, metres, yawQuaternion, threeQuaternion, rotateLocal } from './units.js';
+import { setBodyEnabled } from './body-lifecycle.js';
 
 export const VEHICLE_TUNING = {
   sedan: { mass: 1430, length: 4.55, width: 1.84, height: 1.45, wheelbase: 2.65, track: 1.53, radius: .34, force: 7600, brake: 260, steer: .55, color: '#52676d', seats: 4 },
@@ -210,7 +211,7 @@ export class VehicleSystem {
     if (v.seats[seat]) return { ok: false, reason: 'occupied' };
     if (Math.hypot(actor.x - v.x, actor.y - v.y) > m(5)) return { ok: false, reason: 'too-far' };
     v.seats[seat] = actor; this.seated.set(actor, { vehicle: v, seat });
-    if (actor.body) { actor._seatBody = actor.body; actor._seatBody.setEnabled(false); actor.body = null; }
+    if (actor.body) { actor._seatBody = actor.body; setBodyEnabled(actor._seatBody, false); actor.body = null; }
     actor.vx = actor.vy = actor.vz = 0;
     this.transitions.set(actor, { kind: 'enter', vehicle: v, seat, time: 0, duration: .95, from: { x: actor.x, y: actor.y, z: actor.z }, target: rotateLocal(this.seatLocal(v, seat), v.yaw, v) });
     this.emit('VehicleEntryStarted', v, { actorId: actor.id, seat }); return { ok: true, vehicle: v, seat };
@@ -243,7 +244,7 @@ export class VehicleSystem {
       else {
         t.vehicle.seats[t.seat] = null; this.seated.delete(actor); actor.vehicleId = null; actor.seatIndex = null;
         actor.body = actor._seatBody; delete actor._seatBody;
-        if (actor.body) { actor.body.setEnabled(true); actor.place(t.target.x, t.target.y, t.target.z); }
+        if (actor.body) { setBodyEnabled(actor.body, true); actor.place(t.target.x, t.target.y, t.target.z); }
         actor.anim = {}; this.emit('VehicleExited', t.vehicle, { actorId: actor.id, seat: t.seat });
       }
     }
@@ -253,7 +254,7 @@ export class VehicleSystem {
     this.transitions.delete(actor);
     if (t.kind === 'enter') {
       t.vehicle.seats[t.seat] = null; this.seated.delete(actor); actor.body = actor._seatBody; delete actor._seatBody;
-      if (actor.body) { actor.body.setEnabled(true); actor.place(t.from.x, t.from.y, t.from.z); }
+      if (actor.body) { setBodyEnabled(actor.body, true); actor.place(t.from.x, t.from.y, t.from.z); }
     } else this.attach(actor, t.vehicle, t.seat);
     actor.anim = {}; return true;
   }
@@ -264,7 +265,7 @@ export class VehicleSystem {
   restore(snapshots, actors = new Map()) {
     // Reconstruct attachments atomically; stale transitions must never retain a seat.
     for(const actor of new Set([...this.seated.keys(),...this.transitions.keys()])) {
-      if(actor._seatBody){actor.body=actor._seatBody;delete actor._seatBody;actor.body.setEnabled(true);if(actor.place)actor.place(actor.x,actor.y,actor.z);}
+      if(actor._seatBody){actor.body=actor._seatBody;delete actor._seatBody;setBodyEnabled(actor.body,true);if(actor.place)actor.place(actor.x,actor.y,actor.z);}
       actor.vehicleId=null;actor.seatIndex=null;actor.anim={};
     }
     this.seated.clear();this.transitions.clear();
@@ -274,12 +275,12 @@ export class VehicleSystem {
       v.body.setTranslation({ x: m(state.position.x), y: m(state.position.y), z: m(state.position.z) }, true); v.body.setRotation(state.rotation, true); v.body.setLinvel(state.velocity, true); v.body.setAngvel(state.angularVelocity, true); v.health = state.health; v.disabled = state.disabled;v.previousVelocity={...state.velocity};v.impactCooldown=.5;v.appearance=state.appearance||0;if(state.color){v.color=state.color;v.visual?.paint?.color.set(state.color);}
       const p=v.body.translation(),q=v.body.rotation();v.x=p.x;v.y=p.y;v.z=p.z;v.yaw=Math.atan2(2*(q.w*q.z+q.x*q.y),1-2*(q.y*q.y+q.z*q.z));
       v.seats.fill(null);
-      state.seats.forEach((id, seat) => { const actor = actors.get(id); if (actor) { if (actor.body) { actor._seatBody = actor.body; actor.body.setEnabled(false); actor.body = null; } v.seats[seat] = actor; this.seated.set(actor, { vehicle: v, seat }); this.attach(actor, v, seat); } });
+      state.seats.forEach((id, seat) => { const actor = actors.get(id); if (actor) { if (actor.body) { actor._seatBody = actor.body; setBodyEnabled(actor.body,false); actor.body = null; } v.seats[seat] = actor; this.seated.set(actor, { vehicle: v, seat }); this.attach(actor, v, seat); } });
     }
     this.postStep(0);
   }
   dispose() {
-    for (const actor of [...this.seated.keys()]) { this.cancelTransition(actor); const entry = this.seated.get(actor); if (entry) { actor.body = actor._seatBody; delete actor._seatBody; if (actor.body) actor.body.setEnabled(true); this.seated.delete(actor); } }
+    for (const actor of [...this.seated.keys()]) { this.cancelTransition(actor); const entry = this.seated.get(actor); if (entry) { actor.body = actor._seatBody; delete actor._seatBody; if (actor.body) setBodyEnabled(actor.body,true); this.seated.delete(actor); } }
     for (const v of this.list) { this.queries?.unregister(v.body); this.world.pw.removeVehicleController(v.controller); this.world.pw.removeRigidBody(v.body); if (v.visual?.root) {this.world.scene?.remove(v.visual.root);const resources=new Set();v.visual.root.traverse(node=>{if(node.geometry)resources.add(node.geometry);for(const material of Array.isArray(node.material)?node.material:node.material?[node.material]:[])resources.add(material);});for(const resource of resources)resource.dispose();} }
     this.list.length = 0; this.byId.clear(); this.transitions.clear();
   }

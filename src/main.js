@@ -1,6 +1,7 @@
 import {bootEngine} from './engine/world.js';
 import {ACTION_MAP} from './engine/input.js';
 import {m,metres,yawQuaternion} from './engine/units.js';
+import {setBodyEnabled} from './engine/body-lifecycle.js';
 import {createDistrict} from './world/district.js';
 import {nearbyInteractions,SPAWN_POINTS} from './world/interactions.js';
 import {TrafficSystem} from './world/traffic.js';
@@ -196,8 +197,7 @@ class ExitWoundsGame {
       this.runtime.camera.settings.invertY=bool(this.settings.invertY);
       this.runtime.camera.shakeStrength=Number(this.settings.shake);
       this.runtime.input.options.sensitivity=Number(this.settings.sensitivity);
-      this.runtime.world.res=this.settings.quality==='high'?'full':'balanced';
-      this.runtime.world.shadows=this.settings.quality!=='low';
+      this.runtime.setQuality(this.settings.quality);
     }
     this.audio.setVolumes(this.settings);
     document.documentElement.style.setProperty('--picture-brightness',String(this.settings.brightness));
@@ -709,7 +709,7 @@ class ExitWoundsGame {
     const clear=this.runtime.queries.capsuleClear({x:m(to.x),y:m(to.y),z:m(to.z||0)},actor.r,actor.half,{ignore:[actor]});
     if(!clear)return {ok:false,reason:'landing-blocked'};
     this.cover.leave(this.player);
-    const body=actor.body;body.setEnabled(false);actor.body=null;actor.vx=actor.vy=actor.vz=0;
+    const body=actor.body;setBodyEnabled(body,false);actor.body=null;actor.vx=actor.vy=actor.vz=0;
     this.vaultState={from,to,body,t:0,duration:.72};
     this.animations.trigger(actor,'vault',{duration:.72});
     actor.facing=Math.atan2(to.y-from.y,to.x-from.x);
@@ -722,11 +722,11 @@ class ExitWoundsGame {
     actor.x=m(v.from.x+(v.to.x-v.from.x)*k);actor.y=m(v.from.y+(v.to.y-v.from.y)*k);actor.z=m((v.from.z||0)+((v.to.z||0)-(v.from.z||0))*k+lift);
     actor.anim={climb:true,pose:'interact',air:true};
     if(!actor.data.animationManaged)actor.rig?.update?.(dt,{...actor,...actor.anim});
-    if(u>=1){actor.body=v.body;actor.body.setEnabled(true);actor.place(m(v.to.x),m(v.to.y),m(v.to.z||0));actor.anim={};this.vaultState=null;}
+    if(u>=1){actor.body=v.body;setBodyEnabled(actor.body,true);actor.place(m(v.to.x),m(v.to.y),m(v.to.z||0));actor.anim={};this.vaultState=null;}
   }
   cancelVault(){
     const v=this.vaultState;if(!v)return;
-    const actor=this.player.actor;actor.body=v.body;actor.body.setEnabled(true);actor.place(m(v.from.x),m(v.from.y),m(v.from.z||0));actor.anim={};this.vaultState=null;
+    const actor=this.player.actor;actor.body=v.body;setBodyEnabled(actor.body,true);actor.place(m(v.from.x),m(v.from.y),m(v.from.z||0));actor.anim={};this.vaultState=null;
   }
   onVehicleEvent(event){
     if(!this.state)return;

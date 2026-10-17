@@ -1,4 +1,5 @@
 import { U } from '../engine/units.js';
+import { setBodyEnabled } from '../engine/body-lifecycle.js';
 import { DISTRICT_BOUNDS, ROAD_SEGMENTS, ROAD_GRAPH, FOOT_GRAPH, findGraphPath, nearestGraphNode } from './roads.js';
 import { LOCATIONS, INTERACTABLES, SPAWN_POINTS } from './interactions.js';
 
@@ -757,8 +758,8 @@ export function createDistrict({ E, world, rain = true, quality = 'high' }) {
     setPickupCollected(id, collected) {
       const pickup = pickups.get(id); if (!pickup) return;
       for (const mesh of pickup.meshes) mesh.visible = !collected;
-      pickup.body?.setEnabled(!collected);
-      if (id === 'case') { caseDoorTarget = collected ? 1.3 : 0; caseDoorBody?.setEnabled(!collected); cabinetAlarm.material = material(collected ? 'signalRed' : 'signalGreen'); }
+      setBodyEnabled(pickup.body, !collected);
+      if (id === 'case') { caseDoorTarget = collected ? 1.3 : 0; setBodyEnabled(caseDoorBody, !collected); cabinetAlarm.material = material(collected ? 'signalRed' : 'signalGreen'); }
     },
     /** @param {number} dt @param {{x:number,y:number,z?:number}} focus @param {number} [signalTime] */
     update(dt, focus = SPAWN_POINTS.player, signalTime = elapsed) {

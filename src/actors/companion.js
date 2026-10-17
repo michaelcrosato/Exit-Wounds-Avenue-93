@@ -1,4 +1,5 @@
 import {metresToUnits,unitsToMetres} from '../engine/units.js';
+import {setBodyEnabled} from '../engine/body-lifecycle.js';
 
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 const spatialDistance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y,(a.z||0)-(b.z||0));
@@ -72,7 +73,7 @@ export class CompanionActor {
   startVault(to){
     const actor=this.actor,from=this.position;if(!actor.body)return false;
     if(this.queries&&!this.queries.capsuleClear({x:metresToUnits(to.x),y:metresToUnits(to.y),z:metresToUnits(to.z||0)},actor.r,actor.half,{ignore:[actor]}))return false;
-    const body=actor.body;body.setEnabled(false);actor.body=null;actor.vx=actor.vy=actor.vz=0;
+    const body=actor.body;setBodyEnabled(body,false);actor.body=null;actor.vx=actor.vy=actor.vz=0;
     this.vaultState={from,to,body,t:0,duration:.85};actor.facing=Math.atan2(to.y-from.y,to.x-from.x);return true;
   }
   updateVault(dt){
@@ -80,9 +81,9 @@ export class CompanionActor {
     const u=v.t/v.duration,k=u*u*(3-2*u),a=this.actor;
     a.x=metresToUnits(v.from.x+(v.to.x-v.from.x)*k);a.y=metresToUnits(v.from.y+(v.to.y-v.from.y)*k);a.z=metresToUnits((v.from.z||0)+Math.sin(Math.PI*u)*1.25);a.anim={climb:true,pose:'interact',air:true};
     if(!a.data.animationManaged)a.rig?.update?.(dt,{...a,...a.anim});
-    if(u>=1){a.body=v.body;a.body.setEnabled(true);a.place(metresToUnits(v.to.x),metresToUnits(v.to.y),metresToUnits(v.to.z||0));this.vaultState=null;this.stuckFor=0;}
+    if(u>=1){a.body=v.body;setBodyEnabled(a.body,true);a.place(metresToUnits(v.to.x),metresToUnits(v.to.y),metresToUnits(v.to.z||0));this.vaultState=null;this.stuckFor=0;}
   }
-  cancelVault(){const v=this.vaultState;if(!v)return;const a=this.actor;a.body=v.body;a.body.setEnabled(true);a.place(metresToUnits(v.from.x),metresToUnits(v.from.y),metresToUnits(v.from.z||0));this.vaultState=null;}
+  cancelVault(){const v=this.vaultState;if(!v)return;const a=this.actor;a.body=v.body;setBodyEnabled(a.body,true);a.place(metresToUnits(v.from.x),metresToUnits(v.from.y),metresToUnits(v.from.z||0));this.vaultState=null;}
   /** @param {(p:any)=>boolean} visibleToPlayer @param {(p:any,target:any)=>any} validRegroup @param {string} reason */
   failOrRegroup(visibleToPlayer,validRegroup,reason){
     const p=this.position,proposed=validRegroup(p,this.target);

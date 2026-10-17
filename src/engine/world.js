@@ -19,7 +19,9 @@ export async function bootEngine({ canvas3d = 'view', canvasHud = 'screen', sett
   await E.World3D.init(game, { canvas: canvas3d, backend: settings.backend });
   const world = new E.World3D(game, {
     level: { rows: [' '], bottom: -160 }, gravity: GRAVITY, look: 'puppet', res: settings.quality === 'high' ? 'full' : 'balanced', outlines: false,
-    shadows: settings.quality !== 'low', camera: { mode: 'fixed', mouseLook: false },
+    // Keep shadow-caster identity stable. Three r182 can retain a disposed
+    // shadow node when castShadow is switched off and back on at runtime.
+    shadows: true, camera: { mode: 'fixed', mouseLook: false },
     fog: { color: '#7b8f98', near: m(80), far: m(330) }, sky: '#788b96', ambient: ['#b4c9cd', '#3c4246', 1.65],
     sun: { color: '#d2dfdc', intensity: 1.35, dir: [.5, .2, -.8], area: m(70), map: 1024 }, filter: { look: 'clean', bloom: 0, fxaa: true }
   });
@@ -29,17 +31,37 @@ export async function bootEngine({ canvas3d = 'view', canvasHud = 'screen', sett
   // Native floor helpers only know tile floors. Urban meshes, stairs, props and vehicle bodies are Rapier geometry.
   world.floorAt = (x, y, z = m(2)) => queries.floorAt(x, y, z);
   world.ground = (x, y) => queries.floorAt(x, y, m(3));
+  const shadowLights = [world._sun, ...(world._shadowLights || [])].filter(Boolean).map(light => ({
+    shadow: light.shadow, intensity: light.shadow.intensity, autoUpdate: light.shadow.autoUpdate
+  }));
+  const setQuality = quality => {
+    world.res = quality === 'high' ? 'full' : 'balanced';
+    world.shadows = true;
+    const low = quality === 'low';
+    for (const light of shadowLights) {
+      light.shadow.intensity = low ? 0 : light.intensity;
+      light.shadow.autoUpdate = low ? false : light.autoUpdate;
+      light.shadow.needsUpdate = !low;
+    }
+  };
   const metadata = { ...ENGINE_METADATA, version: E.version, build: E.build, backend: E.World3D.backend };
   const runtime = {
-    E, world, game, input, queries, camera, vehicles, metadata,
+    E, world, game, input, queries, camera, vehicles, metadata, setQuality,
     start({ update = dt => {}, draw = r => {}, onError = null } = {}) {
-      game.start({ update(dt) { try { update(dt); } catch (error) { if (onError) onError(error); else throw error; } }, draw(r) { world.draw(r); draw(r); }, pausable: false, input: ACTION_MAP });
+      let failed = false;
+      const fail = error => { failed = true; game.stop(); if (onError) onError(error); else throw error; };
+      game.start({
+        update(dt) { if (failed) return; try { update(dt); } catch (error) { fail(error); } },
+        draw(r) { if (failed) return; try { world.draw(r); draw(r); } catch (error) { fail(error); } },
+        pausable: false, input: ACTION_MAP
+      });
       return runtime;
     },
     async prepare() { await world.prepare(); },
     stop() { game.stop(); },
     dispose() { game.stop(); input.dispose(); vehicles.dispose(); world.dispose(); game.dispose(); }
   };
+  setQuality(settings.quality);
   return runtime;
 }
 export const createEngineRuntime = bootEngine;

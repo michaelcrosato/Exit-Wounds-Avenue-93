@@ -163,6 +163,53 @@ test('one engine physics step per fixed tick is independent of render cadence',a
   assert.ok(result[0].x>20,JSON.stringify(result));
 });
 
+for (const failurePhase of ['update', 'draw']) {
+  test(`fatal ${failurePhase} failure stops current-frame world access and reports once`, async () => {
+    // A separate runtime avoids carrying the intentionally failed scene into other integration cases.
+    const tab = await browser.newPage({ viewport: { width: 640, height: 480 } });
+    const pageErrors = [];
+    tab.on('pageerror', error => pageErrors.push(error.message));
+    try {
+      await tab.goto(origin + '/tests/integration/engine-harness.html');
+      await tab.waitForFunction(() => !!window.engineTest, null, { timeout: 60000 });
+      const result = await tab.evaluate(phase => {
+        const { world, game, start } = window.engineTest;
+        const originalDraw = world.draw, originalStop = game.stop;
+        const calls = [], sentinel = new Error(`injected ${phase} failure`);
+        let sameError = false;
+        world.draw = () => {
+          calls.push('world.draw');
+          if (phase === 'draw') throw sentinel;
+        };
+        start({
+          update() { calls.push('update'); if (phase === 'update') throw sentinel; },
+          draw() { calls.push('game.draw'); },
+          onError(error) { sameError = error === sentinel; calls.push('onError'); }
+        });
+        game.stop = function () { calls.push('stop'); return originalStop.call(this); };
+        try {
+          const worldTick = world.n;
+          game.advance(1 / 120, { draw: true });
+          // Stopping RAF alone is insufficient: callbacks in this frame and later explicit steps must stay latched.
+          game.advance(1 / 60, { draw: true });
+          return { calls, sameError, worldTick, finalWorldTick: world.n, engineErrors: game.errors };
+        } finally {
+          world.draw = originalDraw;
+          game.stop = originalStop;
+          game.stop();
+        }
+      }, failurePhase);
+      assert.deepEqual(result.calls, failurePhase === 'update'
+        ? ['update', 'stop', 'onError']
+        : ['update', 'world.draw', 'stop', 'onError']);
+      assert.equal(result.sameError, true, 'onError must receive the original exception');
+      assert.equal(result.finalWorldTick, result.worldTick);
+      assert.deepEqual(result.engineErrors, []);
+      assert.deepEqual(pageErrors, []);
+    } finally { await tab.close(); }
+  });
+}
+
 test('real chassis contact produces damage and restored checkpoints release stale occupants',async()=>{
   const result=await page.evaluate(()=>{
     const {vehicles,world,queries,m}=window.engineTest;
