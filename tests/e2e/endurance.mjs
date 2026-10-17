@@ -17,6 +17,8 @@ const timing = process.env.EWA93_ENDURANCE_TIMING || 'accelerated';
 const cdpEndpoint = process.env.EWA93_ENDURANCE_CDP || null;
 const cycles = Number(process.env.EWA93_ENDURANCE_CYCLES || 30);
 const cycleSeconds = Number(process.env.EWA93_ENDURANCE_CYCLE_SECONDS || 60);
+const viewportWidth = Number(process.env.EWA93_ENDURANCE_WIDTH || 960);
+const viewportHeight = Number(process.env.EWA93_ENDURANCE_HEIGHT || 600);
 const baseURL = process.env.EWA93_BASE_URL || 'http://127.0.0.1:5173';
 const output = process.env.EWA93_ENDURANCE_OUTPUT || `/tmp/ewa93-endurance-${Date.now()}`;
 const stopFile = process.env.EWA93_ENDURANCE_STOP_FILE || `${output}/STOP`;
@@ -25,6 +27,8 @@ assert.ok(['accelerated', 'realtime'].includes(timing));
 assert.ok(!cdpEndpoint || engine === 'chromium', 'CDP attach requires Chromium.');
 assert.ok(Number.isInteger(cycles) && cycles >= 3 && cycles <= 240);
 assert.ok(cycleSeconds >= 30 && cycleSeconds <= 300);
+assert.ok(Number.isInteger(viewportWidth) && viewportWidth >= 640 && viewportWidth <= 3840);
+assert.ok(Number.isInteger(viewportHeight) && viewportHeight >= 360 && viewportHeight <= 2160);
 await mkdir(output, { recursive: true });
 const fingerprintDirectories = ['src', 'assets', 'vendor/my-3d2dge/vendor/three-0.182.0', 'vendor/my-3d2dge/vendor/rapier3d-simd-compat-0.19.3'];
 const fingerprintFiles = ['index.html', 'tests/e2e/endurance.mjs', 'vendor/my-3d2dge/engine/my-3d2dge.js',
@@ -43,7 +47,7 @@ const browser = cdpEndpoint ? await chromium.connectOverCDP(cdpEndpoint) : await
   headless: true,
   args: engine === 'chromium' ? ['--enable-unsafe-swiftshader'] : [],
 });
-const context = await browser.newContext({ viewport: { width: 960, height: 600 }, reducedMotion: 'reduce' });
+const context = await browser.newContext({ viewport: { width: viewportWidth, height: viewportHeight }, deviceScaleFactor: 1, reducedMotion: 'reduce' });
 await context.addInitScript(() => {
   const originalAdd = EventTarget.prototype.addEventListener;
   const originalRemove = EventTarget.prototype.removeEventListener;
@@ -57,6 +61,53 @@ await context.addInitScript(() => {
   window.clearInterval = function(id) { intervals.delete(id); return originalClearInterval.call(this, id); };
   const createdAudio = {}, audioSources = new Map();
   const totals = { adds: 0, removes: 0, onceCompleted: 0, aborted: 0, audioStarted: 0, audioEnded: 0 };
+  // Fixed-size counters keep this monitor from manufacturing a growing heap.
+  const frameBins = new Uint32Array(5001), stalls = [];
+  let previousFrame = null, frames = 0, frameTotalMs = 0, frameMinMs = Infinity, frameMaxMs = 0;
+  let hiddenActiveFrames = 0, invalidCameraFrames = 0, cameraChecks = 0, over100ms = 0;
+  let cameraMinDistance = Infinity, cameraMaxDistance = 0;
+  function cameraSnapshot() {
+    const a = window.__exitWounds?.app, c = a?.runtime?.camera, target = a?.player?.actor, eye = c?.eye;
+    if (!c || !target || !eye) return null;
+    const values = [eye.x, eye.y, eye.z, target.x, target.y, target.z ?? 0, c.yaw, c.pitch, c.distance];
+    const targetDistanceMetres = Math.hypot(eye.x - target.x, eye.y - target.y, eye.z - (target.z ?? 0)) / 16;
+    return { finite: values.every(Number.isFinite), bounded: targetDistanceMetres <= 15 && c.distance >= 0 && c.distance <= 16 * 13,
+      eye: { ...eye }, target: { x: target.x, y: target.y, z: target.z ?? 0 }, targetDistanceMetres,
+      distanceMetres: c.distance / 16, yaw: c.yaw, pitch: c.pitch };
+  }
+  function monitorFrame(now) {
+    const a = window.__exitWounds?.app, game = a?.runtime?.game;
+    const active = a?.ui?.screen === 'playing' && game?._running && !game.paused;
+    if (active) {
+      if (document.hidden) hiddenActiveFrames++;
+      const camera = cameraSnapshot();
+      cameraChecks++;
+      if (!camera?.finite || !camera?.bounded) invalidCameraFrames++;
+      if (camera?.finite) {
+        cameraMinDistance = Math.min(cameraMinDistance, camera.targetDistanceMetres);
+        cameraMaxDistance = Math.max(cameraMaxDistance, camera.targetDistanceMetres);
+      }
+      if (previousFrame !== null) {
+        const ms = now - previousFrame;
+        frames++; frameTotalMs += ms; frameMinMs = Math.min(frameMinMs, ms); frameMaxMs = Math.max(frameMaxMs, ms);
+        frameBins[Math.min(5000, Math.round(ms * 10))]++;
+        if (ms > 100) { over100ms++; if (stalls.length < 64) stalls.push({ atMs: now, frameMs: ms, tick: a.state.tick }); }
+      }
+      previousFrame = now;
+    } else previousFrame = null;
+    requestAnimationFrame(monitorFrame);
+  }
+  requestAnimationFrame(monitorFrame);
+  function frameSnapshot() {
+    const percentile = p => { let count = 0; for (let i = 0; i < frameBins.length; i++) { count += frameBins[i]; if (count >= Math.ceil(frames * p)) return i / 10; } return null; };
+    return { frames, activeIntervalMs: frameTotalMs, averageFPS: frameTotalMs ? frames * 1000 / frameTotalMs : null,
+      p95Ms: frames ? percentile(.95) : null, p99Ms: frames ? percentile(.99) : null,
+      minMs: frames ? frameMinMs : null, maxMs: frameMaxMs, over100ms, firstStalls: [...stalls],
+      hiddenActiveFrames, cameraChecks, invalidCameraFrames,
+      cameraTargetDistanceMetres: cameraChecks ? { min: cameraMinDistance, max: cameraMaxDistance } : null,
+      percentileMethod: 'Nearest rank in fixed 0.1ms bins, rounded to nearest bin; final bin includes >=500ms.',
+      limits: 'Instrumented cadence includes screenshot/forced-GC pauses; excludes menu/non-running gaps. Camera checks cover finite values and <=15m target separation, not occlusion/art quality.' };
+  }
   const captureOf = options => typeof options === 'boolean' ? options : !!options?.capture;
   const removeEntry = entry => listeners.delete(entry);
   EventTarget.prototype.addEventListener = function(type, callback, options) {
@@ -103,6 +154,8 @@ await context.addInitScript(() => {
     };
   }
   window.__endurance = {
+    cameraSnapshot,
+    frameSnapshot,
     snapshot() {
       listeners = new Set([...listeners].filter(entry => entry.target.deref() && entry.callback.deref()));
       audioNodes = new Set([...audioNodes].filter(entry => entry.ref.deref()));
@@ -129,12 +182,13 @@ const page = await context.newPage();
 page.setDefaultTimeout(90000);
 const cdp = engine === 'chromium' ? await context.newCDPSession(page) : null;
 const report = {
-  testVersion: 4, engine, browserVersion: browser.version(), timing, baseURL, output,
+  testVersion: 5, engine, browserVersion: browser.version(), timing, baseURL, output,
   stopFile,
   browserConnection: cdpEndpoint ? 'Isolated context on dedicated existing Chromium CDP; disconnect after test' : 'Fresh browser launched by Playwright',
   memoryMethod: cdp ? 'CDP HeapProfiler.collectGarbage plus Runtime.getHeapUsage and Memory.getDOMCounters' : 'Weak resource counters; forced-GC heap trend unavailable',
   host: { platform: platform(), release: release(), cpu: cpus()[0]?.model, logicalCPUs: cpus().length },
   configuredCycles: cycles, configuredCycleSeconds: cycleSeconds, targetSimulationSeconds: 1800,
+  viewport: { width: viewportWidth, height: viewportHeight, deviceScaleFactor: 1 },
   input: 'Playwright keyboard events for entry, drive, brake, horn, exit and pause; public restart/confirmation UI',
   staging: ['Move the selected existing car and Mara to the central intersection before each pursuit.',
     'Restore the chosen car to healthy/unlocked/stationary for this lifecycle scenario.',
@@ -145,9 +199,10 @@ const report = {
     'AudioContext, setInterval and Web Audio scheduling use actual wall time, even when gameplay uses accelerated fixed steps.',
     'Heap sampling uses forced GC in Chromium and instrumentation changes allocation/timing; it cannot establish an uninstrumented memory budget.',
     'A 30-minute-equivalent accelerated pass does not satisfy actual 30-minute wall-clock V08 play.',
-    'Local before/after fingerprints do not detect edit-and-revert or prove a remote source URL serves this workspace.'],
+    'Local before/after fingerprints do not detect edit-and-revert; response hashes cover only loaded fingerprinted resources.'],
   startedAt: new Date().toISOString(), status: 'running', advancedSimulationSeconds: 0,
   completedCycles: 0, retries: 0, vehicleEntries: 0, vehicleSwitches: 0, pursuitSeconds: 0, errors: [], networkErrors: [], samples: [], cycleRecords: [],
+  servedSourceHashes: {},
 };
 if (cdpEndpoint) {
   const browserSession = await browser.newBrowserCDPSession(), info = await browserSession.send('SystemInfo.getInfo');
@@ -157,12 +212,19 @@ if (cdpEndpoint) {
 }
 report.sourceHashes = initialSourceHashes;
 report.sourceFingerprintScope = { directories: fingerprintDirectories, files: fingerprintFiles,
-  method: 'Local file hashes before navigation and after capture; caller freezes source and serves this workspace.' };
+  method: 'Local file hashes before navigation and after capture, plus response-body hashes for loaded fingerprinted resources.' };
 page.on('crash', () => report.errors.push({ kind: 'crash', message: 'Browser page crashed.' }));
 page.on('pageerror', error => report.errors.push({ kind: 'pageerror', message: error.message }));
 page.on('console', message => { if (message.type() === 'error') report.errors.push({ kind: 'console', message: message.text() }); });
 page.on('requestfailed', request => report.networkErrors.push({ url: request.url(), error: request.failure()?.errorText }));
-page.on('response', response => { if (response.status() >= 400) report.networkErrors.push({ url: response.url(), status: response.status() }); });
+const sourceHashJobs = [];
+page.on('response', response => {
+  if (response.status() >= 400) report.networkErrors.push({ url: response.url(), status: response.status() });
+  const url = new URL(response.url()), name = url.origin === new URL(baseURL).origin ? decodeURIComponent(url.pathname).replace(/^\//, '') || 'index.html' : null;
+  if (name && initialSourceHashes[name]) sourceHashJobs.push(response.body().then(body => {
+    report.servedSourceHashes[name] = createHash('sha256').update(body).digest('hex');
+  }).catch(error => report.networkErrors.push({ hashRead: name, message: error.message })));
+});
 const wallStarted = Date.now();
 let cycleStartSimulation = 0, cancelled = false;
 for (const signal of ['SIGTERM', 'SIGINT']) process.once(signal, () => { cancelled = true; });
@@ -184,7 +246,7 @@ async function state() {
       vehicleSpeed: (a.runtime.vehicles.get(a.state.player.vehicleId)?.speed || 0) / 16, wantedTier: a.state.wanted.tier, wantedStatus: a.state.wanted.status,
       transition: a.runtime.vehicles.transitions.has(a.player.actor),
       nativeLoopRunning: a.runtime.game._running, enginePaused: a.runtime.game.paused, timeScale: a.runtime.game.timeScale,
-      renderedFrames: a.runtime.world.stats.frames, hidden: document.hidden, focused: document.hasFocus(),
+      renderedFrames: a.runtime.world.stats.frames, hidden: document.hidden, focused: document.hasFocus(), camera: window.__endurance.cameraSnapshot(),
       chasingOfficers: a.police.officers.filter(officer => officer.mode === 'chase').length, toast: document.querySelector('#hud-toast')?.textContent, prompt: document.querySelector('#hud-prompt')?.textContent };
   });
 }
@@ -197,11 +259,17 @@ async function advance(seconds) {
       assert.equal(before.nativeLoopRunning, true, 'Normal-rate probe requires the native frame loop to keep running.');
       assert.equal(before.enginePaused, false, 'The engine clock must run during active normal-rate gameplay.');
       assert.equal(before.timeScale, 1, 'Normal-rate probe must not change the engine time scale.');
+      assert.equal(before.hidden, false, 'Normal-rate probe must remain visible.');
+      assert.ok(before.camera?.finite && before.camera?.bounded, 'Camera must remain finite and near its target.');
     }
     if (before.failure || before.error || before.screen === 'retry' || before.screen === 'error') throw new Error(`Unexpected runtime/failure before step: ${JSON.stringify(before)}`);
     if (timing === 'accelerated') await page.evaluate(s => window.__exitWounds.runtime.game.advance(s), chunk);
     else await page.waitForTimeout(chunk * 1000);
     const after = await state(), simulated = Math.max(0, (after.tick - before.tick) / 120);
+    if (timing === 'realtime') {
+      assert.equal(after.hidden, false, 'Normal-rate probe became hidden.');
+      assert.ok(after.camera?.finite && after.camera?.bounded, 'Camera left its finite target bounds.');
+    }
     assert.ok(Math.abs((after.elapsed - before.elapsed) - simulated) < .001, 'Gameplay elapsed time diverged from the fixed-step tick accounting.');
     if (simulated > 0) lastProgressAt = Date.now();
     else if (Date.now() - lastProgressAt > 10000) throw new Error(`Gameplay clock made no progress for 10 wall seconds: ${JSON.stringify(after)}`);
@@ -263,6 +331,7 @@ async function snapshot(label, { capture = false } = {}) {
         transitions: r.vehicles.transitions.size, maraSeated: !!r.vehicles.occupant(a.player.actor), maraBodyEnabled: !!a.player.actor.body?.isEnabled(), orphanedQueries, invalidSeats, unattachedActors,
         downedCrew: a.crew.enemies.filter(actor => actor.health <= 0).length,
         downedOfficers: a.police.officers.filter(actor => actor.health <= 0).length },
+      camera: window.__endurance.cameraSnapshot(), frameTiming: window.__endurance.frameSnapshot(),
       renderer: { backend: r.metadata.backend, calls: w.stats.calls, triangles: w.stats.tris,
         geometries: memory?.geometries ?? null, textures: memory?.textures ?? null },
       engine: { nativeLoopRunning: r.game._running, paused: r.game.paused, timeScale: r.game.timeScale, renderedFrames: w.stats.frames, hidden: document.hidden, focused: document.hasFocus(), resizeListeners: r.game.screen.listeners.length, timers: r.game._timers.length, particles: r.game.particles.list.length, errors: r.game.errors.length },
@@ -285,6 +354,8 @@ async function snapshot(label, { capture = false } = {}) {
   assert.deepEqual(sample.entities.unattachedActors, [], 'Actors lost both their body and seat.');
   if (timing === 'realtime') {
     assert.equal(sample.engine.nativeLoopRunning, true); assert.equal(sample.engine.paused, false); assert.equal(sample.engine.timeScale, 1);
+    assert.equal(sample.frameTiming.hiddenActiveFrames, 0, 'An active rendered frame was hidden.');
+    assert.equal(sample.frameTiming.invalidCameraFrames, 0, 'Camera became nonfinite or left its target bounds.');
   }
   if (!sample.entities.maraSeated) assert.equal(sample.entities.maraBodyEnabled, true, 'Mara’s on-foot body stayed disabled after exit/retry.');
   assert.ok(sample.histories.incidents <= 256 && sample.histories.reports <= 384 && sample.histories.receivedReports <= 384);
@@ -484,6 +555,7 @@ try {
     firstRenderedFrameCount: report.samples[0]?.engine.renderedFrames ?? null, lastRenderedFrameCount: report.samples.at(-1)?.engine.renderedFrames ?? null,
     accountedGameplayToWallRatio: report.advancedSimulationSeconds / report.wallSeconds,
     accountedGameplayExcludesSnapshotAndMenuGaps: true } : null;
+  report.frameTiming = await page.evaluate(() => window.__endurance?.frameSnapshot()).catch(() => null);
   const comparison = report.samples.filter(sample => sample.label.startsWith('cycle-') && Number(sample.label.slice(6)) >= 3);
   const range = values => { const numbers = values.filter(Number.isFinite); return numbers.length ? { min: Math.min(...numbers), max: Math.max(...numbers) } : null; };
   report.resourceRanges = Object.fromEntries([
@@ -499,16 +571,21 @@ try {
     ['nativeDOMNodes', sample => sample.domCounters?.nodes ?? null], ['nativeListeners', sample => sample.domCounters?.jsEventListeners ?? null],
   ].map(([key, pick]) => [key, range(comparison.map(pick))]));
   try {
+    await Promise.all(sourceHashJobs);
+    assert.ok(report.servedSourceHashes['index.html'] && report.servedSourceHashes['src/main.js'],
+      'Served source verification requires the entry HTML and game module.');
+    assert.ok(!report.networkErrors.some(error => error.hashRead), 'Could not hash a served source response.');
+    report.servedSourceMismatches = Object.keys(report.servedSourceHashes).filter(path => report.servedSourceHashes[path] !== initialSourceHashes[path]);
     const finalHashes = await fingerprintSources();
     report.sourceFingerprintDifferences = [...new Set([...Object.keys(report.sourceHashes), ...Object.keys(finalHashes)])]
       .filter(path => report.sourceHashes[path] !== finalHashes[path]).sort();
-    report.sourceFingerprintEndpointsEqual = report.sourceFingerprintDifferences.length === 0;
+    report.sourceFingerprintEndpointsEqual = report.sourceFingerprintDifferences.length === 0 && report.servedSourceMismatches.length === 0;
   } catch (error) {
     report.sourceFingerprintEndpointsEqual = false; report.sourceFingerprintError = error.message;
   }
   if (!report.sourceFingerprintEndpointsEqual && report.status === 'passed') {
     report.status = 'invalidated-by-source-drift';
-    report.failure = 'Game source or runtime assets changed during the capture; rerun on frozen source.';
+    report.failure = 'Source fingerprints changed, differed from served resources, or could not be verified; rerun on frozen source.';
     process.exitCode = 1;
   }
   await flushReport();
