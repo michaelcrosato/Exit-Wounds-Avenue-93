@@ -39,6 +39,16 @@ for (const name of engines) await test(`${name}: stripped packaged release boots
   page.on('requestfailed', request => record.networkErrors.push({ url: request.url(), error: request.failure()?.errorText }));
   page.on('response', response => { if (response.status() >= 400) record.networkErrors.push({ url: response.url(), status: response.status() }); });
   const capture = async state => { const path = `${output}/${name}-${state}.png`; await page.screenshot({ path, timeout: 90000 }); record.captures.push(path); };
+  // Static roads/destination are painted relative to Mara, so movement changes
+  // the minimap without relying on the diagnostic hook stripped from releases.
+  const moveRight = async () => {
+    const before = await page.locator('#minimap').evaluate(canvas => canvas.toDataURL());
+    await page.keyboard.down('KeyD');
+    try {
+      await page.waitForFunction(previous => document.querySelector('#minimap')?.toDataURL() !== previous,
+        before, { timeout: 45000 });
+    } finally { await page.keyboard.up('KeyD'); }
+  };
   try {
     const started = Date.now();
     await page.goto(url, { waitUntil: 'domcontentloaded' });
@@ -54,15 +64,23 @@ for (const name of engines) await test(`${name}: stripped packaged release boots
     assert.equal(await page.locator('#hud-money').innerText(), '$80');
     assert.match(await page.locator('#hud-ammo').innerText(), /12\s*\/\s*48/);
     await page.waitForFunction(() => document.querySelector('#minimap')?.getContext('2d').getImageData(0, 0, 210, 210).data.some(value => value !== 0));
-    const mapBefore = await page.locator('#minimap').evaluate(canvas => canvas.toDataURL());
     await capture('before-move');
-    // The public minimap paints static roads/destination relative to Mara. With
-    // no interaction or mission change, its change demonstrates actual movement.
-    await page.keyboard.down('KeyD');
-    try {
-      await page.waitForFunction(before => document.querySelector('#minimap')?.toDataURL() !== before, mapBefore, { timeout: 45000 });
-    } finally { await page.keyboard.up('KeyD'); }
+    await moveRight();
     await capture('after-move');
+    // Exercise the shipped Settings path after a rendered world exists. The
+    // r182 shadow-node regression used to leave the UI alive but freeze play.
+    for (const quality of ['high', 'low', 'high']) {
+      await page.keyboard.press('Escape');
+      await page.locator('.screen--pause [data-action="openSettings"]').click();
+      await page.locator('#s-quality').selectOption(quality);
+      await page.locator('[data-action="settingsBack"]').click();
+      await page.locator('.screen--pause [data-action="resume"]').click();
+      await page.locator('.hud').waitFor();
+      await moveRight();
+      record.qualitySwitches ??= [];
+      record.qualitySwitches.push({ quality, gameplayAdvanced: true });
+    }
+    await capture('after-quality-switches');
     await page.keyboard.press('Escape'); await page.locator('.screen--pause [data-action="resume"]').waitFor();
     await page.locator('[data-action="openPhone"]').click(); await page.locator('.screen--phone').waitFor();
     const pendingCall=page.locator('[data-action="answerEliCall"], [data-action="returnEliCall"]').first();

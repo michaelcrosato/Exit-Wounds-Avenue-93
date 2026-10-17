@@ -1,6 +1,6 @@
 # V08 endurance probe
 
-`tests/e2e/endurance.mjs` now has a passing **31-minute normal-rate hardware capture** and a separate accelerated capture. Both exercise repeated pursuit, checkpoint retry and sedan/van/cruiser changes with resource and memory checks. Player/car/police transforms and the first police report are explicit diagnostic staging; these results do not certify an ordinary-input mission or physical controller. The command defaults to accelerated timing, so set `EWA93_ENDURANCE_TIMING=realtime` for normal-rate play. The latest completed capture is tied to the vehicle-wake revision `f7f18b80…`; earlier source revisions are retained separately.
+`tests/e2e/endurance.mjs` has a historical **31-minute normal-rate hardware capture** and a separate accelerated capture from runner v4 on e6 source, before the e642 lifecycle/shadow fixes. Both exercise repeated pursuit, checkpoint retry and sedan/van/cruiser changes with resource and memory checks; they do not validate the current runner v5 or later runtime changes. Player/car/police transforms and the first police report are explicit diagnostic staging; these results do not certify an ordinary-input mission or physical controller. The command defaults to accelerated timing, so set `EWA93_ENDURANCE_TIMING=realtime` for normal-rate play. The latest completed capture below is tied to the vehicle-wake revision `f7f18b80…`; earlier source revisions are retained separately.
 
 Run a source server with `npm run dev`, then:
 
@@ -8,7 +8,7 @@ Run a source server with `npm run dev`, then:
 node tests/e2e/endurance.mjs
 ```
 
-Artifacts go to `/tmp/ewa93-endurance-<timestamp>/`: a report with before/after source-hash consistency, host/browser/renderer metadata, every cycle's state and resource sample, and selected pursuit/post-retry PNGs. It needs the source server because release builds deliberately strip `window.__exitWounds`. Fingerprints cover all game source and assets, the entry HTML, this runner, pinned Three/Rapier resources, engine bundles and loaded mocap scripts. Added, changed or deleted files invalidate a would-be pass with `invalidated-by-source-drift`; frozen-source evidence cannot silently certify later edits. The hashes compare local files before/after; they cannot detect an edit-and-revert or prove a remote URL serves this checkout. Serve this workspace and freeze it for the capture.
+Artifacts go to `/tmp/ewa93-endurance-<timestamp>/`: a report with before/after source-hash consistency, host/browser/renderer metadata, every cycle's state and resource sample, and selected pursuit/post-retry PNGs. It needs the source server because release builds deliberately strip `window.__exitWounds`. Fingerprints cover all game source and assets, the entry HTML, this runner, pinned Three/Rapier resources, engine bundles and loaded mocap scripts. Added, changed or deleted files invalidate a would-be pass with `invalidated-by-source-drift`; frozen-source evidence cannot silently certify later edits. Runner v5 also hashes loaded fingerprinted response bodies, requires the entry HTML and game module to be verified, and rejects mismatches or unreadable bodies. These checks cannot detect a local edit-and-revert or verify resources the browser never requests. Serve this workspace and freeze it for the capture.
 
 Environment options:
 
@@ -20,6 +20,7 @@ Environment options:
 | `EWA93_ENDURANCE_CDP` | Unset | Attach Chromium to a dedicated existing CDP endpoint; create/close only the probe context |
 | `EWA93_ENDURANCE_ENGINE` | `chromium` | `chromium`, `webkit`, or `firefox` |
 | `EWA93_ENDURANCE_TIMING` | `accelerated` | `realtime` keeps the native frame loop and waits for gameplay time |
+| `EWA93_ENDURANCE_WIDTH` / `EWA93_ENDURANCE_HEIGHT` | `960` / `600` | Presentation viewport at DPR 1; use `1920` / `1080` for a 1080p capture |
 | `EWA93_ENDURANCE_CYCLES` | `30` | Minimum 3; shorter runs are development probes, not 30-minute evidence |
 | `EWA93_ENDURANCE_CYCLE_SECONDS` | `60` | Gameplay simulation duration per cycle; minimum 30 |
 
@@ -36,6 +37,8 @@ The player/car/police positions and initial police report are deliberate diagnos
 The accelerated mode stops the native frame loop and calls the engine's existing fixed-step clock at 120 Hz. The district, AI, Rapier, mission and vehicle updates execute for each step; selected frames are rendered for evidence. It accumulates actual gameplay tick differences across checkpoint restores, so resetting checkpoint time cannot inflate its total. The report separately records wall duration, simulated duration and whether either 30-minute criterion was reached.
 
 Web Audio and radio/rain intervals retain the real browser clock. Accelerated stepping stresses gameplay-triggered effects, vehicle loop reuse and checkpoint lifecycle; it does not compress 30 minutes of real radio/ambience into the test. Use `EWA93_ENDURANCE_TIMING=realtime` for actual continuous runtime evidence. This mode leaves the native frame loop running, requires engine time scale 1, records rendered-frame counts, cross-checks elapsed seconds against fixed-step ticks and fails if the gameplay clock stalls for 10 wall seconds. It records heap slopes against both gameplay and wall time. Accounted gameplay excludes snapshot, screenshot and input gaps, so its 30-minute threshold is conservative. On slow software rendering it may take substantially longer than 30 wall minutes because it waits for 30 minutes of accounted gameplay as well.
+
+Runner v5 also keeps a fixed-size 0.1 ms RAF histogram during active, unpaused native-loop frames. It reports aggregate FPS, p95/p99, maximum interval and >100 ms stalls without retaining an ever-growing per-frame array. These instrumented timings include GC/screenshot pauses and exclude menu/non-running gaps, so they remain separate from short performance probes. Every active rendered frame checks page visibility and finite camera/target values with ≤15 m camera-to-target separation; this catches a broken camera transform, without certifying occlusion or visual polish. Two-second driver checks also require a visible page and a valid camera. Served response bodies are checked against the local source hashes, in addition to before/after fingerprints.
 
 ## Measurements and acceptance checks
 
@@ -54,7 +57,7 @@ In Chromium, live AudioNodes after drain and forced GC may not exceed the first 
 
 ## Execution evidence
 
-### Normal-rate hardware capture — vehicle-wake revision
+### Historical normal-rate hardware capture — vehicle-wake revision
 
 **Passed: 1,801.49 accounted gameplay seconds over 1,882.24 wall seconds (31m 22.24s).** The native frame loop stayed running at time scale 1; rendered frames advanced from 166 to 111,701. That is 111,535 observed frames over 1,864.03 seconds between sample endpoints, or 59.836 FPS aggregate cadence. No sampled page was hidden. This is evidence of continuing native rendering, not a frame-time distribution or a 1080p performance certification.
 
